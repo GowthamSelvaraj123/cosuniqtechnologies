@@ -1,50 +1,38 @@
 .heroRoot {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  min-height: 600px;
-  background-color: #f5f5f5; /* Light gray background */
+  inset: 0;
+  z-index: 9999;
+  background: #f5f5f5;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 2rem;
-  box-sizing: border-box;
-  z-index: 99999;
-  transition: transform 1s cubic-bezier(0.76, 0, 0.24, 1), opacity 1s cubic-bezier(0.76, 0, 0.24, 1), background-color 0.8s ease;
+  font-family: var(--font-plus-jakarta), sans-serif;
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.heroRoot.exiting {
-  transform: translateY(-100%); /* Slides up smoothly revealing the site below */
-  background-color: #FF6B00; /* Fade to orange during exit */
-  opacity: 1;
+.exiting {
+  opacity: 0;
+  transform: scale(1.04);
   pointer-events: none;
 }
 
 .cursorGradient {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(255, 106, 0, 0.4) 0%, rgba(255, 106, 0, 0.15) 30%, rgba(255, 106, 0, 0) 60%);
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 106, 0, 0.18) 0%, transparent 70%);
   pointer-events: none;
-  z-index: 0;
   will-change: transform;
+  z-index: 0;
 }
 
 .heroContent {
   position: relative;
-  width: 100%;
-  max-width: 1200px;
+  z-index: 1;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
+  padding: 0 2rem;
 }
 
 .heroText {
@@ -52,99 +40,62 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100%;
-  margin: 0;
-  font-family: var(--font-plus-jakarta), sans-serif !important;
-  font-size: clamp(2rem, 5vw, 6rem);
+  width: 90vw;
+  max-width: 900px;
+  font-family: var(--font-plus-jakarta), sans-serif;
+  font-size: clamp(1.6rem, 3.8vw, 3.6rem);
   font-weight: 800;
-  letter-spacing: -0.02em; /* slightly tight for large headlines */
-  line-height: 1.1;
-  color: #000000;
-  white-space: nowrap; /* Force single line */
+  letter-spacing: -0.03em;
+  line-height: 1;
+  white-space: nowrap;
+  color: #111111;
   opacity: 0;
-  visibility: hidden;
-  transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
-  /* Slide up and fade in */
-  transform: translate(-50%, 20px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  transform: translate(-50%, calc(-50% + 14px));
+  pointer-events: none;
+  text-align: center;
 }
 
 .heroText.active {
   opacity: 1;
-  visibility: visible;
-  transform: translate(-50%, -50%); /* Centered exactly */
+  transform: translate(-50%, -50%);
 }
 
 .heroText.previous {
-  /* Exit animation: slide up and fade out */
   opacity: 0;
-  visibility: hidden;
-  transform: translate(-50%, -80px); 
+  transform: translate(-50%, calc(-50% - 20px));
 }
 
-/* For the final text, it might be better to lift it slightly when CTA appears */
-.heroText:last-of-type.active {
-  transform: translate(-50%, -60%);
-}
-
-
-
-.ctaWrapper {
-  position: absolute;
-  bottom: 80px;
+/* ── Progress counter ─────────────────────── */
+.progressCounter {
+  position: fixed;
+  bottom: 2.5rem;
   left: 50%;
   transform: translateX(-50%);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 1.2s ease, transform 1.2s ease;
-  z-index: 20;
+  display: flex;
+  align-items: baseline;
+  gap: 0.1em;
+  z-index: 10;
+  pointer-events: none;
 }
 
-.ctaWrapper.ctaProminent {
-  opacity: 1; 
-  visibility: visible;
-  animation: floatReady 3s ease-in-out infinite 1.2s;
-}
-
-@keyframes floatReady {
-  0% { transform: translate(-50%, 0); }
-  50% { transform: translate(-50%, -10px); }
-  100% { transform: translate(-50%, 0); }
-}
-
-.squareCta {
-  background: #000000;
-  color: #ff6a00;
-  border: none;
-  border-radius: 4px;
-  padding: 14px 40px;
+.progressNumber {
   font-family: var(--font-plus-jakarta), sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #111111;
+  font-variant-numeric: tabular-nums;
+  min-width: 3ch;
+  text-align: right;
+  line-height: 1;
+}
+
+.progressPercent {
+  font-family: var(--font-plus-jakarta), sans-serif;
+  font-size: clamp(0.9rem, 2vw, 1.4rem);
   font-weight: 700;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.squareCta:hover {
-  transform: translateY(-2px);
-  background: #222222;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-}
-
-
-
-@media (max-width: 768px) {
-  .heroText {
-    font-size: clamp(0.9rem, 4vw, 2rem);
-  }
-  
-  .heroText:last-of-type.active {
-    transform: translate(-50%, -70%);
-  }
-
-  .ctaWrapper {
-    bottom: 40px; 
-  }
+  color: #FF6B00;
+  line-height: 1;
+  margin-bottom: 0.15em;
 }

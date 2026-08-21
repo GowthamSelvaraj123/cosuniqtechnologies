@@ -672,16 +672,15 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 
 __turbopack_context__.v({
   "active": "CinematicHero-module__Lo_MJG__active",
-  "ctaProminent": "CinematicHero-module__Lo_MJG__ctaProminent",
-  "ctaWrapper": "CinematicHero-module__Lo_MJG__ctaWrapper",
   "cursorGradient": "CinematicHero-module__Lo_MJG__cursorGradient",
   "exiting": "CinematicHero-module__Lo_MJG__exiting",
-  "floatReady": "CinematicHero-module__Lo_MJG__floatReady",
   "heroContent": "CinematicHero-module__Lo_MJG__heroContent",
   "heroRoot": "CinematicHero-module__Lo_MJG__heroRoot",
   "heroText": "CinematicHero-module__Lo_MJG__heroText",
   "previous": "CinematicHero-module__Lo_MJG__previous",
-  "squareCta": "CinematicHero-module__Lo_MJG__squareCta",
+  "progressCounter": "CinematicHero-module__Lo_MJG__progressCounter",
+  "progressNumber": "CinematicHero-module__Lo_MJG__progressNumber",
+  "progressPercent": "CinematicHero-module__Lo_MJG__progressPercent",
 });
 }),
 "[project]/components/CinematicHero.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
@@ -714,53 +713,62 @@ const sequence = [
     "We discuss. We design. We build.",
     "Everything to grow."
 ];
+// 1.2s per item × 11 items = ~13.2s total
+const TOTAL_MS = sequence.length * 1200;
 function CinematicHero() {
     _s();
     const [currentIndex, setCurrentIndex] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
-    const [showCTA, setShowCTA] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [isEntered, setIsEntered] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isExiting, setIsExiting] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [isEntered, setIsEntered] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [transitionProgress, setTransitionProgress] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
     const [textTransitionProgress, setTextTransitionProgress] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
-    const [isHoveringCTA, setIsHoveringCTA] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [count, setCount] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
     const gradientRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const sectionRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const startTimeRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(performance.now());
+    // Force correct font by reading resolved value from <html> after hydration
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "CinematicHero.useEffect": ()=>{
-            let animationFrameId;
+            const htmlFont = getComputedStyle(document.documentElement).fontFamily;
+            if (sectionRef.current) {
+                sectionRef.current.style.fontFamily = htmlFont;
+            }
+        }
+    }["CinematicHero.useEffect"], []);
+    // Cursor-following gradient
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "CinematicHero.useEffect": ()=>{
+            let animId;
             let targetX = window.innerWidth / 2;
             let targetY = window.innerHeight / 2;
-            let currentX = targetX;
-            let currentY = targetY;
-            const handleMouseMove = {
-                "CinematicHero.useEffect.handleMouseMove": (e)=>{
+            let curX = targetX, curY = targetY;
+            const onMove = {
+                "CinematicHero.useEffect.onMove": (e)=>{
                     targetX = e.clientX;
                     targetY = e.clientY;
                 }
-            }["CinematicHero.useEffect.handleMouseMove"];
-            const updateGradient = {
-                "CinematicHero.useEffect.updateGradient": ()=>{
-                    // Fluid interpolation
-                    currentX += (targetX - currentX) * 0.08;
-                    currentY += (targetY - currentY) * 0.08;
-                    if (gradientRef.current) {
-                        gradientRef.current.style.transform = `translate(${currentX}px, ${currentY}px) translate(-50%, -50%)`;
-                    }
-                    animationFrameId = requestAnimationFrame(updateGradient);
+            }["CinematicHero.useEffect.onMove"];
+            const loop = {
+                "CinematicHero.useEffect.loop": ()=>{
+                    curX += (targetX - curX) * 0.08;
+                    curY += (targetY - curY) * 0.08;
+                    if (gradientRef.current) gradientRef.current.style.transform = `translate(${curX}px, ${curY}px) translate(-50%, -50%)`;
+                    animId = requestAnimationFrame(loop);
                 }
-            }["CinematicHero.useEffect.updateGradient"];
-            window.addEventListener('mousemove', handleMouseMove);
-            updateGradient();
+            }["CinematicHero.useEffect.loop"];
+            window.addEventListener("mousemove", onMove);
+            loop();
             return ({
                 "CinematicHero.useEffect": ()=>{
-                    window.removeEventListener('mousemove', handleMouseMove);
-                    cancelAnimationFrame(animationFrameId);
+                    window.removeEventListener("mousemove", onMove);
+                    cancelAnimationFrame(animId);
                 }
             })["CinematicHero.useEffect"];
         }
     }["CinematicHero.useEffect"], []);
+    // Lock scroll
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "CinematicHero.useEffect": ()=>{
-            // Lock scrolling on both body and html to ensure no scrollbars appear
             if (!isEntered && !isExiting) {
                 document.body.style.overflow = "hidden";
                 document.documentElement.style.overflow = "hidden";
@@ -779,61 +787,71 @@ function CinematicHero() {
         isEntered,
         isExiting
     ]);
+    // Advance text every 3.5s
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "CinematicHero.useEffect": ()=>{
             if (currentIndex < sequence.length - 1) {
-                const timer = setTimeout({
-                    "CinematicHero.useEffect.timer": ()=>{
-                        setCurrentIndex({
-                            "CinematicHero.useEffect.timer": (prev)=>prev + 1
-                        }["CinematicHero.useEffect.timer"]);
-                    }
-                }["CinematicHero.useEffect.timer"], 3500); // 3.5s per line
+                const t = setTimeout({
+                    "CinematicHero.useEffect.t": ()=>setCurrentIndex({
+                            "CinematicHero.useEffect.t": (i)=>i + 1
+                        }["CinematicHero.useEffect.t"])
+                }["CinematicHero.useEffect.t"], 1200);
                 return ({
-                    "CinematicHero.useEffect": ()=>clearTimeout(timer)
-                })["CinematicHero.useEffect"];
-            } else {
-                const ctaTimer = setTimeout({
-                    "CinematicHero.useEffect.ctaTimer": ()=>{
-                        setShowCTA(true);
-                    }
-                }["CinematicHero.useEffect.ctaTimer"], 1000); // Wait 1s after last text appears to show CTA
-                return ({
-                    "CinematicHero.useEffect": ()=>clearTimeout(ctaTimer)
+                    "CinematicHero.useEffect": ()=>clearTimeout(t)
                 })["CinematicHero.useEffect"];
             }
         }
     }["CinematicHero.useEffect"], [
         currentIndex
     ]);
-    // Fire a 1-second pulse for the text transition shader whenever the scene changes
+    // Text transition shader pulse
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "CinematicHero.useEffect": ()=>{
-            if (currentIndex === 0) return; // Don't fire on initial load
-            const duration = 1000;
-            const startTime = performance.now();
-            let animationFrameId;
-            const animateTextTransition = {
-                "CinematicHero.useEffect.animateTextTransition": (time)=>{
-                    const elapsed = time - startTime;
-                    const progress = Math.min(elapsed / duration, 1.0);
-                    setTextTransitionProgress(progress);
-                    if (progress < 1.0) {
-                        animationFrameId = requestAnimationFrame(animateTextTransition);
-                    }
+            if (currentIndex === 0) return;
+            const dur = 1000, t0 = performance.now();
+            let id;
+            const run = {
+                "CinematicHero.useEffect.run": (now)=>{
+                    const p = Math.min((now - t0) / dur, 1);
+                    setTextTransitionProgress(p);
+                    if (p < 1) id = requestAnimationFrame(run);
                 }
-            }["CinematicHero.useEffect.animateTextTransition"];
-            animationFrameId = requestAnimationFrame(animateTextTransition);
+            }["CinematicHero.useEffect.run"];
+            id = requestAnimationFrame(run);
             return ({
-                "CinematicHero.useEffect": ()=>cancelAnimationFrame(animationFrameId)
+                "CinematicHero.useEffect": ()=>cancelAnimationFrame(id)
             })["CinematicHero.useEffect"];
         }
     }["CinematicHero.useEffect"], [
         currentIndex
     ]);
-    const handleEnter = (e)=>{
-        if (transitionProgress > 0) return; // Prevent multiple clicks
-        // Trigger massive festival splash across the entire screen!
+    // 0→100 counter synced to total splash duration, auto-exits at 100
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "CinematicHero.useEffect": ()=>{
+            startTimeRef.current = performance.now();
+            let id;
+            const run = {
+                "CinematicHero.useEffect.run": (now)=>{
+                    const elapsed = now - startTimeRef.current;
+                    const raw = Math.min(elapsed / TOTAL_MS, 1);
+                    const eased = 1 - Math.pow(1 - raw, 2); // ease-out quad
+                    const value = Math.round(eased * 100);
+                    setCount(value);
+                    if (raw < 1) {
+                        id = requestAnimationFrame(run);
+                    } else {
+                        // Auto-trigger exit when counter hits 100
+                        triggerExit();
+                    }
+                }
+            }["CinematicHero.useEffect.run"];
+            id = requestAnimationFrame(run);
+            return ({
+                "CinematicHero.useEffect": ()=>cancelAnimationFrame(id)
+            })["CinematicHero.useEffect"];
+        }
+    }["CinematicHero.useEffect"], []);
+    const triggerExit = ()=>{
         (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$canvas$2d$confetti$2f$dist$2f$confetti$2e$module$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])({
             particleCount: 350,
             spread: 360,
@@ -843,40 +861,37 @@ function CinematicHero() {
                 y: 0.5
             },
             colors: [
-                '#ffffff',
-                '#ff5e00',
-                '#000000',
-                '#ff8c00',
-                '#ff3300'
+                "#ffffff",
+                "#ff5e00",
+                "#000000",
+                "#ff8c00",
+                "#ff3300"
             ],
             zIndex: 99999
         });
-        // Animate transitionProgress from 0 to 1 over 1.5 seconds
-        const duration = 1500;
-        const startTime = performance.now();
-        let exitTriggered = false;
-        const animateTransition = (time)=>{
-            const elapsed = time - startTime;
-            const progress = Math.min(elapsed / duration, 1.0);
-            setTransitionProgress(progress);
-            if (progress > 0.8 && !exitTriggered) {
-                exitTriggered = true;
-                setIsExiting(true); // Trigger CSS exit animation near the end of the webgl distortion
+        const dur = 1500, t0 = performance.now();
+        let exitDone = false;
+        const animate = (now)=>{
+            const p = Math.min((now - t0) / dur, 1);
+            setTransitionProgress(p);
+            if (p > 0.8 && !exitDone) {
+                exitDone = true;
+                setIsExiting(true);
             }
-            if (progress < 1.0) {
-                requestAnimationFrame(animateTransition);
-            } else {
-                setTimeout(()=>{
-                    setIsEntered(true);
-                }, 800); // Wait for the remaining CSS exit animation
-            }
+            if (p < 1) requestAnimationFrame(animate);
+            else setTimeout(()=>setIsEntered(true), 800);
         };
-        requestAnimationFrame(animateTransition);
+        requestAnimationFrame(animate);
+    };
+    // Allow manual click to skip
+    const handleClick = ()=>{
+        if (transitionProgress === 0) triggerExit();
     };
     if (isEntered) return null;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        ref: sectionRef,
         className: `${__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CinematicHero$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].heroRoot} ${isExiting ? __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CinematicHero$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].exiting : ""}`,
-        onClick: handleEnter,
+        onClick: handleClick,
         style: {
             cursor: "pointer"
         },
@@ -886,7 +901,7 @@ function CinematicHero() {
                 className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CinematicHero$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].cursorGradient
             }, void 0, false, {
                 fileName: "[project]/components/CinematicHero.tsx",
-                lineNumber: 167,
+                lineNumber: 149,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -894,7 +909,7 @@ function CinematicHero() {
                 children: sequence.map((text, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                         className: `${__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CinematicHero$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].heroText} ${idx === currentIndex ? __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CinematicHero$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].active : ""} ${idx < currentIndex ? __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CinematicHero$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].previous : ""}`,
                         "aria-hidden": idx !== currentIndex,
-                        children: text.endsWith('.') ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                        children: text.endsWith(".") ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                             children: [
                                 text.slice(0, -1),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -904,52 +919,58 @@ function CinematicHero() {
                                     children: "."
                                 }, void 0, false, {
                                     fileName: "[project]/components/CinematicHero.tsx",
-                                    lineNumber: 180,
-                                    columnNumber: 17
+                                    lineNumber: 159,
+                                    columnNumber: 36
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/CinematicHero.tsx",
-                            lineNumber: 178,
+                            lineNumber: 159,
                             columnNumber: 15
                         }, this) : text
                     }, idx, false, {
                         fileName: "[project]/components/CinematicHero.tsx",
-                        lineNumber: 170,
+                        lineNumber: 153,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/components/CinematicHero.tsx",
-                lineNumber: 168,
+                lineNumber: 151,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: `${__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CinematicHero$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].ctaWrapper} ${showCTA ? __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CinematicHero$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].ctaProminent : ""}`,
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                    onClick: handleEnter,
-                    onMouseEnter: ()=>setIsHoveringCTA(true),
-                    onMouseLeave: ()=>setIsHoveringCTA(false),
-                    className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CinematicHero$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].squareCta,
-                    "aria-label": "Start",
-                    children: "START"
-                }, void 0, false, {
-                    fileName: "[project]/components/CinematicHero.tsx",
-                    lineNumber: 190,
-                    columnNumber: 9
-                }, this)
-            }, void 0, false, {
+                className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CinematicHero$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].progressCounter,
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CinematicHero$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].progressNumber,
+                        children: count
+                    }, void 0, false, {
+                        fileName: "[project]/components/CinematicHero.tsx",
+                        lineNumber: 167,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CinematicHero$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].progressPercent,
+                        children: "%"
+                    }, void 0, false, {
+                        fileName: "[project]/components/CinematicHero.tsx",
+                        lineNumber: 168,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
                 fileName: "[project]/components/CinematicHero.tsx",
-                lineNumber: 189,
+                lineNumber: 166,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/CinematicHero.tsx",
-        lineNumber: 162,
+        lineNumber: 143,
         columnNumber: 5
     }, this);
 }
-_s(CinematicHero, "zBMDz3ThbyFtfCMDpD5NO0KmpZI=");
+_s(CinematicHero, "qVxXn1b0M88+5GsY9xJcBWT7pxU=");
 _c = CinematicHero;
 var _c;
 __turbopack_context__.k.register(_c, "CinematicHero");
@@ -1235,8 +1256,44 @@ function LivingBrandHero() {
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                     href: "/contact",
                                     className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$LivingBrandHero$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].primaryCta,
-                                    children: "Let's Build"
-                                }, void 0, false, {
+                                    children: [
+                                        "Let's Build",
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                            className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$LivingBrandHero$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].ctaArrow,
+                                            width: "14",
+                                            height: "14",
+                                            viewBox: "0 0 24 24",
+                                            fill: "none",
+                                            stroke: "currentColor",
+                                            strokeWidth: "2.5",
+                                            strokeLinecap: "round",
+                                            strokeLinejoin: "round",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                                                    x1: "5",
+                                                    y1: "12",
+                                                    x2: "19",
+                                                    y2: "12"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/LivingBrandHero.tsx",
+                                                    lineNumber: 90,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("polyline", {
+                                                    points: "12 5 19 12 12 19"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/LivingBrandHero.tsx",
+                                                    lineNumber: 91,
+                                                    columnNumber: 17
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/components/LivingBrandHero.tsx",
+                                            lineNumber: 83,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
                                     fileName: "[project]/components/LivingBrandHero.tsx",
                                     lineNumber: 81,
                                     columnNumber: 13
@@ -1247,7 +1304,7 @@ function LivingBrandHero() {
                                     children: "View Our Work"
                                 }, void 0, false, {
                                     fileName: "[project]/components/LivingBrandHero.tsx",
-                                    lineNumber: 85,
+                                    lineNumber: 95,
                                     columnNumber: 13
                                 }, this)
                             ]
@@ -1268,12 +1325,12 @@ function LivingBrandHero() {
                         scrollProgressRef: scrollRef
                     }, void 0, false, {
                         fileName: "[project]/components/LivingBrandHero.tsx",
-                        lineNumber: 93,
+                        lineNumber: 103,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/LivingBrandHero.tsx",
-                    lineNumber: 92,
+                    lineNumber: 102,
                     columnNumber: 9
                 }, this)
             ]
