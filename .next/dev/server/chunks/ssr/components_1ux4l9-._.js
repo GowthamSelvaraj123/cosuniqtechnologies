@@ -3,10 +3,6 @@ module.exports = [
 
 __turbopack_context__.v({
   "active": "CinematicHero-module__Lo_MJG__active",
-  "centerArrow": "CinematicHero-module__Lo_MJG__centerArrow",
-  "circularCta": "CinematicHero-module__Lo_MJG__circularCta",
-  "circularText": "CinematicHero-module__Lo_MJG__circularText",
-  "circularTextWrapper": "CinematicHero-module__Lo_MJG__circularTextWrapper",
   "ctaProminent": "CinematicHero-module__Lo_MJG__ctaProminent",
   "ctaWrapper": "CinematicHero-module__Lo_MJG__ctaWrapper",
   "cursorGradient": "CinematicHero-module__Lo_MJG__cursorGradient",
@@ -16,7 +12,7 @@ __turbopack_context__.v({
   "heroRoot": "CinematicHero-module__Lo_MJG__heroRoot",
   "heroText": "CinematicHero-module__Lo_MJG__heroText",
   "previous": "CinematicHero-module__Lo_MJG__previous",
-  "spinText": "CinematicHero-module__Lo_MJG__spinText",
+  "squareCta": "CinematicHero-module__Lo_MJG__squareCta",
 });
 }),
 "[project]/components/CinematicHero.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
@@ -232,88 +228,10 @@ function CinematicHero() {
                     onClick: handleEnter,
                     onMouseEnter: ()=>setIsHoveringCTA(true),
                     onMouseLeave: ()=>setIsHoveringCTA(false),
-                    className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CinematicHero$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].circularCta,
-                    "aria-label": "Start Our Branding Story",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CinematicHero$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].circularTextWrapper,
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                viewBox: "0 0 100 100",
-                                width: "100%",
-                                height: "100%",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("defs", {
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                            id: "circlePath",
-                                            d: "M 50, 50 m -40, 0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0"
-                                        }, void 0, false, {
-                                            fileName: "[project]/components/CinematicHero.tsx",
-                                            lineNumber: 200,
-                                            columnNumber: 17
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/CinematicHero.tsx",
-                                        lineNumber: 199,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
-                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CinematicHero$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].circularText,
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textPath", {
-                                            href: "#circlePath",
-                                            startOffset: "0%",
-                                            children: "START OUR BRANDING STORY • START OUR BRANDING STORY •"
-                                        }, void 0, false, {
-                                            fileName: "[project]/components/CinematicHero.tsx",
-                                            lineNumber: 206,
-                                            columnNumber: 17
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/CinematicHero.tsx",
-                                        lineNumber: 205,
-                                        columnNumber: 15
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/components/CinematicHero.tsx",
-                                lineNumber: 198,
-                                columnNumber: 13
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "[project]/components/CinematicHero.tsx",
-                            lineNumber: 197,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                            className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CinematicHero$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].centerArrow,
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                width: "32",
-                                height: "32",
-                                viewBox: "0 0 24 24",
-                                fill: "none",
-                                xmlns: "http://www.w3.org/2000/svg",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                    d: "M5 12H19M19 12L12 5M19 12L12 19",
-                                    stroke: "currentColor",
-                                    strokeWidth: "2",
-                                    strokeLinecap: "round",
-                                    strokeLinejoin: "round"
-                                }, void 0, false, {
-                                    fileName: "[project]/components/CinematicHero.tsx",
-                                    lineNumber: 214,
-                                    columnNumber: 15
-                                }, this)
-                            }, void 0, false, {
-                                fileName: "[project]/components/CinematicHero.tsx",
-                                lineNumber: 213,
-                                columnNumber: 13
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "[project]/components/CinematicHero.tsx",
-                            lineNumber: 212,
-                            columnNumber: 11
-                        }, this)
-                    ]
-                }, void 0, true, {
+                    className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CinematicHero$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].squareCta,
+                    "aria-label": "Start",
+                    children: "START"
+                }, void 0, false, {
                     fileName: "[project]/components/CinematicHero.tsx",
                     lineNumber: 190,
                     columnNumber: 9

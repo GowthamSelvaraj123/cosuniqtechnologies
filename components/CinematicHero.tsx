@@ -191,29 +191,10 @@ export default function CinematicHero() {
           onClick={handleEnter} 
           onMouseEnter={() => setIsHoveringCTA(true)}
           onMouseLeave={() => setIsHoveringCTA(false)}
-          className={styles.circularCta} 
-          aria-label="Start Our Branding Story"
+          className={styles.squareCta} 
+          aria-label="Start"
         >
-          <div className={styles.circularTextWrapper}>
-            <svg viewBox="0 0 100 100" width="100%" height="100%">
-              <defs>
-                <path
-                  id="circlePath"
-                  d="M 50, 50 m -40, 0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0"
-                />
-              </defs>
-              <text className={styles.circularText}>
-                <textPath href="#circlePath" startOffset="0%">
-                  START OUR BRANDING STORY • START OUR BRANDING STORY • 
-                </textPath>
-              </text>
-            </svg>
-          </div>
-          <span className={styles.centerArrow}>
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </span>
+          START
         </button>
       </div>
     </section>
