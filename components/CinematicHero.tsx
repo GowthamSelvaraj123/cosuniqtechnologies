@@ -18,7 +18,7 @@ const sequence = [
   "We discuss. We design. We build.",
   "Everything to grow.",
 ];
-
+  
 export default function CinematicHero() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showCTA, setShowCTA] = useState(false);

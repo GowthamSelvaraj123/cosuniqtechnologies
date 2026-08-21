@@ -1,13 +1,13 @@
 /* [project]/components/LivingBrandHero.module.css [app-client] (css) */
 .LivingBrandHero-module__qTCAXq__heroSection {
   color: #fff;
-  background-color: #ff6b00;
   align-items: center;
   width: 100vw;
   min-height: 100vh;
   display: flex;
   position: relative;
   overflow: hidden;
+  background-color: #ff6b00 !important;
 }
 
 .LivingBrandHero-module__qTCAXq__container {

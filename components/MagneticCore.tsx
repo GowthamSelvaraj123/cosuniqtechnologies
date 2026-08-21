@@ -250,7 +250,7 @@ function MagneticParticles({ scrollProgressRef }: { scrollProgressRef: React.Mut
         }}
         transparent={true}
         depthWrite={false}
-        blending={THREE.AdditiveBlending}
+        blending={THREE.NormalBlending}
       />
     </points>
   );

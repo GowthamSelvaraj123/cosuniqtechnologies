@@ -930,7 +930,7 @@ function MagneticParticles({ scrollProgressRef }) {
                 },
                 transparent: true,
                 depthWrite: false,
-                blending: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$three$2f$build$2f$three$2e$core$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AdditiveBlending"]
+                blending: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$three$2f$build$2f$three$2e$core$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["NormalBlending"]
             }, void 0, false, {
                 fileName: "[project]/components/MagneticCore.tsx",
                 lineNumber: 242,
