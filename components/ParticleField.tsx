@@ -65,7 +65,6 @@ const vertexShader = `
   
   varying vec3 vColor;
   varying float vAlpha;
-  varying float vProtection;
   
   void main() {
     vColor = aColor;
@@ -144,15 +143,7 @@ const vertexShader = `
       }
     }
     
-    // 6. Text Protection Zone
-    float ellipseDist = length(vec2(pos.x * 0.25, pos.y * 1.2)); 
-    float protectionRadius = 4.0; 
-    float inZone = smoothstep(protectionRadius + 4.0, protectionRadius, ellipseDist);
-    vec2 awayFromCenter = normalize(pos.xy);
-    vec2 tangentialFlow = vec2(-awayFromCenter.y, awayFromCenter.x);
-    pos.xy += (awayFromCenter * 8.0 + tangentialFlow * 6.0) * inZone; 
-    pos.z -= inZone * 20.0; 
-    vProtection = inZone;
+    // 6. Text Protection Zone removed as requested by user
 
     vec4 mvPosition = modelViewMatrix * vec4(pos, 1.0);
     gl_PointSize = aSize * (15.0 / -mvPosition.z);
@@ -169,7 +160,6 @@ const vertexShader = `
 const fragmentShader = `
   varying vec3 vColor;
   varying float vAlpha;
-  varying float vProtection;
   
   void main() {
     vec2 cxy = 2.0 * gl_PointCoord - 1.0;
@@ -177,9 +167,8 @@ const fragmentShader = `
     if (r > 1.0) discard;
     
     float alpha = (1.0 - smoothstep(0.5, 1.0, r)) * vAlpha;
-    float a = alpha * (1.0 - (vProtection * 0.99));
     
-    gl_FragColor = vec4(vColor, a * 0.85);
+    gl_FragColor = vec4(vColor, alpha * 0.35);
   }
 `;
 
@@ -214,7 +203,7 @@ function Particles({
     ];
 
     for (let i = 0; i < count; i++) {
-      const isCore = Math.random() > 0.5; // 50% core, 50% disk
+      const isCore = Math.random() > 0.4; // 40% core, 60% disk/ambient
       
       if (isCore) {
         // Dense 3D Spherical Core
@@ -222,16 +211,16 @@ function Particles({
         const v = Math.random();
         const theta = u * 2.0 * Math.PI;
         const phi = Math.acos(2.0 * v - 1.0);
-        const r = Math.pow(Math.random(), 0.5) * 3.0; // Concentrate near center
+        const r = Math.pow(Math.random(), 0.5) * 4.0; // Slightly larger core
         
         pos[i * 3] = r * Math.sin(phi) * Math.cos(theta);
         pos[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
         pos[i * 3 + 2] = r * Math.cos(phi);
       } else {
-        // Sweeping Accretion Disk / Vortex
-        const r = 3.5 + Math.random() * 6.5; // Radius 3.5 to 10
+        // Ambient / Wide disk spanning to the far corners
+        const r = 4.0 + Math.random() * 25.0; // Radius up to 29 to easily cover 16:9 corners
         const theta = Math.random() * Math.PI * 2;
-        const thickness = (1.0 - (r - 3.5) / 6.5) * 4.0; // Thicker near core
+        const thickness = (1.0 - (r - 4.0) / 25.0) * 8.0 + 2.0; // More vertical spread
         const height = (Math.random() - 0.5) * thickness;
         
         pos[i * 3] = Math.cos(theta) * r;
@@ -291,9 +280,9 @@ function Particles({
         ref={materialRef}
         vertexShader={vertexShader}
         fragmentShader={fragmentShader}
-        transparent
+        transparent={true}
         depthWrite={false}
-        blending={THREE.AdditiveBlending}
+        blending={THREE.NormalBlending}
         uniforms={{
           uTime: { value: 0 },
           uMouse: { value: new THREE.Vector2(0, 0) },

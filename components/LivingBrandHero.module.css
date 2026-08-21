@@ -42,7 +42,7 @@
 
 .headline {
   font-family: var(--font-plus-jakarta), sans-serif !important;
-  font-weight: 800;
+  font-weight: 700;
   font-size: clamp(2.5rem, 4.5vw, 4.2rem);
   line-height: 1.05;
   letter-spacing: -0.02em;
@@ -57,7 +57,7 @@
   line-height: 1.5;
   max-width: 500px;
   margin: 0 0 2rem 0;
-  color: rgba(255, 255, 255, 0.9);
+  color: #ffffff;
 }
 
 .services {

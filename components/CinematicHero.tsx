@@ -3,7 +3,7 @@
 import { useEffect, useState, useRef } from "react";
 import styles from "./CinematicHero.module.css";
 import confetti from "canvas-confetti";
-import ParticleField from "./ParticleField";
+
 
 const sequence = [
   "Your brand can do more.",
@@ -165,12 +165,6 @@ export default function CinematicHero() {
       style={{ cursor: "pointer" }}
     >
       <div ref={gradientRef} className={styles.cursorGradient} />
-      <ParticleField 
-        transitionProgress={transitionProgress}
-        textTransitionProgress={textTransitionProgress}
-        isHoveringCTA={isHoveringCTA}
-      />
-      
       <div className={styles.heroContent}>
         {sequence.map((text, idx) => (
           <h1
@@ -180,7 +174,14 @@ export default function CinematicHero() {
             } ${idx < currentIndex ? styles.previous : ""}`}
             aria-hidden={idx !== currentIndex}
           >
-            {text}
+            {text.endsWith('.') ? (
+              <>
+                {text.slice(0, -1)}
+                <span style={{ color: "#ff6a00" }}>.</span>
+              </>
+            ) : (
+              text
+            )}
           </h1>
         ))}
       </div>

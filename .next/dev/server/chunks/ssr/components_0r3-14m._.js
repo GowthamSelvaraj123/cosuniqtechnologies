@@ -208,7 +208,25 @@ function CinematicHero() {
                 children: sequence.map((text, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                         className: `${__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CinematicHero$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].heroText} ${idx === currentIndex ? __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CinematicHero$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].active : ""} ${idx < currentIndex ? __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CinematicHero$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].previous : ""}`,
                         "aria-hidden": idx !== currentIndex,
-                        children: text
+                        children: text.endsWith('.') ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
+                            children: [
+                                text.slice(0, -1),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    style: {
+                                        color: "#ff6a00"
+                                    },
+                                    children: "."
+                                }, void 0, false, {
+                                    fileName: "[project]/components/CinematicHero.tsx",
+                                    lineNumber: 186,
+                                    columnNumber: 17
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/components/CinematicHero.tsx",
+                            lineNumber: 184,
+                            columnNumber: 15
+                        }, this) : text
                     }, idx, false, {
                         fileName: "[project]/components/CinematicHero.tsx",
                         lineNumber: 176,
@@ -241,12 +259,12 @@ function CinematicHero() {
                                             d: "M 50, 50 m -40, 0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0"
                                         }, void 0, false, {
                                             fileName: "[project]/components/CinematicHero.tsx",
-                                            lineNumber: 199,
+                                            lineNumber: 206,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/CinematicHero.tsx",
-                                        lineNumber: 198,
+                                        lineNumber: 205,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
@@ -257,23 +275,23 @@ function CinematicHero() {
                                             children: "START OUR BRANDING STORY • START OUR BRANDING STORY •"
                                         }, void 0, false, {
                                             fileName: "[project]/components/CinematicHero.tsx",
-                                            lineNumber: 205,
+                                            lineNumber: 212,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/CinematicHero.tsx",
-                                        lineNumber: 204,
+                                        lineNumber: 211,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/CinematicHero.tsx",
-                                lineNumber: 197,
+                                lineNumber: 204,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/CinematicHero.tsx",
-                            lineNumber: 196,
+                            lineNumber: 203,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -292,28 +310,28 @@ function CinematicHero() {
                                     strokeLinejoin: "round"
                                 }, void 0, false, {
                                     fileName: "[project]/components/CinematicHero.tsx",
-                                    lineNumber: 213,
+                                    lineNumber: 220,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/CinematicHero.tsx",
-                                lineNumber: 212,
+                                lineNumber: 219,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/CinematicHero.tsx",
-                            lineNumber: 211,
+                            lineNumber: 218,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/CinematicHero.tsx",
-                    lineNumber: 189,
+                    lineNumber: 196,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/CinematicHero.tsx",
-                lineNumber: 188,
+                lineNumber: 195,
                 columnNumber: 7
             }, this)
         ]
@@ -1046,7 +1064,6 @@ const vertexShader = `
   
   varying vec3 vColor;
   varying float vAlpha;
-  varying float vProtection;
   
   void main() {
     vColor = aColor;
@@ -1125,15 +1142,7 @@ const vertexShader = `
       }
     }
     
-    // 6. Text Protection Zone
-    float ellipseDist = length(vec2(pos.x * 0.25, pos.y * 1.2)); 
-    float protectionRadius = 4.0; 
-    float inZone = smoothstep(protectionRadius + 4.0, protectionRadius, ellipseDist);
-    vec2 awayFromCenter = normalize(pos.xy);
-    vec2 tangentialFlow = vec2(-awayFromCenter.y, awayFromCenter.x);
-    pos.xy += (awayFromCenter * 8.0 + tangentialFlow * 6.0) * inZone; 
-    pos.z -= inZone * 20.0; 
-    vProtection = inZone;
+    // 6. Text Protection Zone removed as requested by user
 
     vec4 mvPosition = modelViewMatrix * vec4(pos, 1.0);
     gl_PointSize = aSize * (15.0 / -mvPosition.z);
@@ -1149,7 +1158,6 @@ const vertexShader = `
 const fragmentShader = `
   varying vec3 vColor;
   varying float vAlpha;
-  varying float vProtection;
   
   void main() {
     vec2 cxy = 2.0 * gl_PointCoord - 1.0;
@@ -1157,9 +1165,8 @@ const fragmentShader = `
     if (r > 1.0) discard;
     
     float alpha = (1.0 - smoothstep(0.5, 1.0, r)) * vAlpha;
-    float a = alpha * (1.0 - (vProtection * 0.99));
     
-    gl_FragColor = vec4(vColor, a * 0.85);
+    gl_FragColor = vec4(vColor, alpha * 0.35);
   }
 `;
 function Particles({ transitionProgress, textTransitionProgress, isHoveringCTA, mousePos }) {
@@ -1179,22 +1186,22 @@ function Particles({ transitionProgress, textTransitionProgress, isHoveringCTA, 
             new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$three$2f$build$2f$three$2e$core$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Color"]("#722A00")
         ];
         for(let i = 0; i < count; i++){
-            const isCore = Math.random() > 0.5; // 50% core, 50% disk
+            const isCore = Math.random() > 0.4; // 40% core, 60% disk/ambient
             if (isCore) {
                 // Dense 3D Spherical Core
                 const u = Math.random();
                 const v = Math.random();
                 const theta = u * 2.0 * Math.PI;
                 const phi = Math.acos(2.0 * v - 1.0);
-                const r = Math.pow(Math.random(), 0.5) * 3.0; // Concentrate near center
+                const r = Math.pow(Math.random(), 0.5) * 4.0; // Slightly larger core
                 pos[i * 3] = r * Math.sin(phi) * Math.cos(theta);
                 pos[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
                 pos[i * 3 + 2] = r * Math.cos(phi);
             } else {
-                // Sweeping Accretion Disk / Vortex
-                const r = 3.5 + Math.random() * 6.5; // Radius 3.5 to 10
+                // Ambient / Wide disk spanning to the far corners
+                const r = 4.0 + Math.random() * 25.0; // Radius up to 29 to easily cover 16:9 corners
                 const theta = Math.random() * Math.PI * 2;
-                const thickness = (1.0 - (r - 3.5) / 6.5) * 4.0; // Thicker near core
+                const thickness = (1.0 - (r - 4.0) / 25.0) * 8.0 + 2.0; // More vertical spread
                 const height = (Math.random() - 0.5) * thickness;
                 pos[i * 3] = Math.cos(theta) * r;
                 pos[i * 3 + 1] = Math.sin(theta) * r;
@@ -1249,7 +1256,7 @@ function Particles({ transitionProgress, textTransitionProgress, isHoveringCTA, 
                         itemSize: 3
                     }, void 0, false, {
                         fileName: "[project]/components/ParticleField.tsx",
-                        lineNumber: 285,
+                        lineNumber: 274,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("bufferAttribute", {
@@ -1259,7 +1266,7 @@ function Particles({ transitionProgress, textTransitionProgress, isHoveringCTA, 
                         itemSize: 3
                     }, void 0, false, {
                         fileName: "[project]/components/ParticleField.tsx",
-                        lineNumber: 286,
+                        lineNumber: 275,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("bufferAttribute", {
@@ -1269,7 +1276,7 @@ function Particles({ transitionProgress, textTransitionProgress, isHoveringCTA, 
                         itemSize: 1
                     }, void 0, false, {
                         fileName: "[project]/components/ParticleField.tsx",
-                        lineNumber: 287,
+                        lineNumber: 276,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("bufferAttribute", {
@@ -1279,13 +1286,13 @@ function Particles({ transitionProgress, textTransitionProgress, isHoveringCTA, 
                         itemSize: 1
                     }, void 0, false, {
                         fileName: "[project]/components/ParticleField.tsx",
-                        lineNumber: 288,
+                        lineNumber: 277,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/ParticleField.tsx",
-                lineNumber: 284,
+                lineNumber: 273,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("shaderMaterial", {
@@ -1294,7 +1301,7 @@ function Particles({ transitionProgress, textTransitionProgress, isHoveringCTA, 
                 fragmentShader: fragmentShader,
                 transparent: true,
                 depthWrite: false,
-                blending: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$three$2f$build$2f$three$2e$core$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AdditiveBlending"],
+                blending: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$three$2f$build$2f$three$2e$core$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["NormalBlending"],
                 uniforms: {
                     uTime: {
                         value: 0
@@ -1314,13 +1321,13 @@ function Particles({ transitionProgress, textTransitionProgress, isHoveringCTA, 
                 }
             }, void 0, false, {
                 fileName: "[project]/components/ParticleField.tsx",
-                lineNumber: 290,
+                lineNumber: 279,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/ParticleField.tsx",
-        lineNumber: 283,
+        lineNumber: 272,
         columnNumber: 5
     }, this);
 }
@@ -1392,17 +1399,17 @@ function ParticleField({ transitionProgress, textTransitionProgress, isHoveringC
                 mousePos: targetMouse
             }, void 0, false, {
                 fileName: "[project]/components/ParticleField.tsx",
-                lineNumber: 359,
+                lineNumber: 348,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/components/ParticleField.tsx",
-            lineNumber: 358,
+            lineNumber: 347,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/ParticleField.tsx",
-        lineNumber: 357,
+        lineNumber: 346,
         columnNumber: 5
     }, this);
 }

@@ -47,13 +47,13 @@
   will-change: transform;
   margin: 0 0 1.5rem;
   font-size: clamp(2.5rem, 4.5vw, 4.2rem);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.05;
   font-family: var(--font-plus-jakarta), sans-serif !important;
 }
 
 .LivingBrandHero-module__qTCAXq__description {
-  color: #ffffffe6;
+  color: #fff;
   max-width: 500px;
   margin: 0 0 2rem;
   font-size: clamp(1.1rem, 1.8vw, 1.35rem);
