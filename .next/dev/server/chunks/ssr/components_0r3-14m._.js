@@ -402,6 +402,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$mo
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$value$2f$use$2d$scroll$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/value/use-scroll.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$value$2f$use$2d$transform$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/value/use-transform.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$utils$2f$use$2d$motion$2d$value$2d$event$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/utils/use-motion-value-event.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/components/AnimatePresence/index.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$LivingBrandHero$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__ = __turbopack_context__.i("[project]/components/LivingBrandHero.module.css [app-ssr] (css module)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$MagneticCore$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/MagneticCore.tsx [app-ssr] (ecmascript)");
@@ -415,6 +416,20 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$MagneticCore$2
 function LivingBrandHero() {
     const containerRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
     const scrollRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(0);
+    const [wordIndex, setWordIndex] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(0);
+    const rotatingWords = [
+        "people remember.",
+        "that inspire.",
+        "that scale.",
+        "that connect.",
+        "that convert."
+    ];
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        const interval = setInterval(()=>{
+            setWordIndex((prev)=>(prev + 1) % rotatingWords.length);
+        }, 2500);
+        return ()=>clearInterval(interval);
+    }, []);
     // Track scroll progress of this specific section
     const { scrollYProgress } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$value$2f$use$2d$scroll$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useScroll"])({
         target: containerRef,
@@ -460,7 +475,7 @@ function LivingBrandHero() {
                             children: "Creative Technology + Branding"
                         }, void 0, false, {
                             fileName: "[project]/components/LivingBrandHero.tsx",
-                            lineNumber: 36,
+                            lineNumber: 52,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -469,14 +484,63 @@ function LivingBrandHero() {
                                 "We build brands",
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                     fileName: "[project]/components/LivingBrandHero.tsx",
-                                    lineNumber: 39,
+                                    lineNumber: 55,
                                     columnNumber: 28
                                 }, this),
-                                "people remember."
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    style: {
+                                        display: "inline-block",
+                                        position: "relative",
+                                        width: "100%",
+                                        height: "1.1em"
+                                    },
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AnimatePresence"], {
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].span, {
+                                            initial: {
+                                                opacity: 0,
+                                                y: 30
+                                            },
+                                            animate: {
+                                                opacity: 1,
+                                                y: 0
+                                            },
+                                            exit: {
+                                                opacity: 0,
+                                                y: -30
+                                            },
+                                            transition: {
+                                                duration: 0.5,
+                                                ease: [
+                                                    0.76,
+                                                    0,
+                                                    0.24,
+                                                    1
+                                                ]
+                                            },
+                                            style: {
+                                                position: "absolute",
+                                                left: 0
+                                            },
+                                            children: rotatingWords[wordIndex]
+                                        }, wordIndex, false, {
+                                            fileName: "[project]/components/LivingBrandHero.tsx",
+                                            lineNumber: 58,
+                                            columnNumber: 17
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/LivingBrandHero.tsx",
+                                        lineNumber: 57,
+                                        columnNumber: 15
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/components/LivingBrandHero.tsx",
+                                    lineNumber: 56,
+                                    columnNumber: 13
+                                }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/LivingBrandHero.tsx",
-                            lineNumber: 38,
+                            lineNumber: 54,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -484,7 +548,7 @@ function LivingBrandHero() {
                             children: "Branding, websites, web apps and mobile experiences built to grow your business."
                         }, void 0, false, {
                             fileName: "[project]/components/LivingBrandHero.tsx",
-                            lineNumber: 43,
+                            lineNumber: 72,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -492,7 +556,7 @@ function LivingBrandHero() {
                             children: "Branding  ·  Websites  ·  Web Apps  ·  Mobile Apps"
                         }, void 0, false, {
                             fileName: "[project]/components/LivingBrandHero.tsx",
-                            lineNumber: 47,
+                            lineNumber: 76,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -501,41 +565,10 @@ function LivingBrandHero() {
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                     href: "/contact",
                                     className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$LivingBrandHero$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].primaryCta,
-                                    children: [
-                                        "Let's Build",
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$LivingBrandHero$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].ctaArrow,
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                                width: "20",
-                                                height: "20",
-                                                viewBox: "0 0 24 24",
-                                                fill: "none",
-                                                xmlns: "http://www.w3.org/2000/svg",
-                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                                    d: "M5 12H19M19 12L12 5M19 12L12 19",
-                                                    stroke: "currentColor",
-                                                    strokeWidth: "2.5",
-                                                    strokeLinecap: "round",
-                                                    strokeLinejoin: "round"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/components/LivingBrandHero.tsx",
-                                                    lineNumber: 56,
-                                                    columnNumber: 19
-                                                }, this)
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/LivingBrandHero.tsx",
-                                                lineNumber: 55,
-                                                columnNumber: 17
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "[project]/components/LivingBrandHero.tsx",
-                                            lineNumber: 54,
-                                            columnNumber: 15
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
+                                    children: "Let's Build"
+                                }, void 0, false, {
                                     fileName: "[project]/components/LivingBrandHero.tsx",
-                                    lineNumber: 52,
+                                    lineNumber: 81,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -544,19 +577,19 @@ function LivingBrandHero() {
                                     children: "View Our Work"
                                 }, void 0, false, {
                                     fileName: "[project]/components/LivingBrandHero.tsx",
-                                    lineNumber: 61,
+                                    lineNumber: 85,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/LivingBrandHero.tsx",
-                            lineNumber: 51,
+                            lineNumber: 80,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/LivingBrandHero.tsx",
-                    lineNumber: 32,
+                    lineNumber: 48,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -565,23 +598,23 @@ function LivingBrandHero() {
                         scrollProgressRef: scrollRef
                     }, void 0, false, {
                         fileName: "[project]/components/LivingBrandHero.tsx",
-                        lineNumber: 69,
+                        lineNumber: 93,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/LivingBrandHero.tsx",
-                    lineNumber: 68,
+                    lineNumber: 92,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/components/LivingBrandHero.tsx",
-            lineNumber: 30,
+            lineNumber: 46,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/LivingBrandHero.tsx",
-        lineNumber: 29,
+        lineNumber: 45,
         columnNumber: 5
     }, this);
 }
@@ -757,13 +790,27 @@ function MagneticParticles({ scrollProgressRef }) {
             new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$three$2f$build$2f$three$2e$core$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Color"]("#722A00")
         ];
         for(let i = 0; i < count; i++){
-            // Abstract vortex initial shape (layered discs)
-            const radius = Math.random() * Math.random() * 8 + 0.5;
-            const theta = Math.random() * Math.PI * 2;
-            const height = (Math.random() - 0.5) * 4 * (1 - radius / 8); // Taper at edges
-            pos[i * 3] = Math.cos(theta) * radius;
-            pos[i * 3 + 1] = Math.sin(theta) * radius;
-            pos[i * 3 + 2] = height;
+            const isCore = Math.random() > 0.5; // 50% core, 50% disk
+            if (isCore) {
+                // Dense 3D Spherical Core
+                const u = Math.random();
+                const v = Math.random();
+                const theta = u * 2.0 * Math.PI;
+                const phi = Math.acos(2.0 * v - 1.0);
+                const r = Math.pow(Math.random(), 0.5) * 3.0; // Concentrate near center
+                pos[i * 3] = r * Math.sin(phi) * Math.cos(theta);
+                pos[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
+                pos[i * 3 + 2] = r * Math.cos(phi);
+            } else {
+                // Sweeping Accretion Disk / Vortex
+                const r = 3.5 + Math.random() * 6.5; // Radius 3.5 to 10
+                const theta = Math.random() * Math.PI * 2;
+                const thickness = (1.0 - (r - 3.5) / 6.5) * 4.0; // Thicker near core
+                const height = (Math.random() - 0.5) * thickness;
+                pos[i * 3] = Math.cos(theta) * r;
+                pos[i * 3 + 1] = Math.sin(theta) * r;
+                pos[i * 3 + 2] = height;
+            }
             // Assign color based on distance from center to create depth
             const colorBlend = Math.random();
             const baseColor = colorPalette[Math.floor(Math.random() * colorPalette.length)];
@@ -820,7 +867,7 @@ function MagneticParticles({ scrollProgressRef }) {
                         itemSize: 3
                     }, void 0, false, {
                         fileName: "[project]/components/MagneticCore.tsx",
-                        lineNumber: 221,
+                        lineNumber: 237,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("bufferAttribute", {
@@ -830,7 +877,7 @@ function MagneticParticles({ scrollProgressRef }) {
                         itemSize: 3
                     }, void 0, false, {
                         fileName: "[project]/components/MagneticCore.tsx",
-                        lineNumber: 222,
+                        lineNumber: 238,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("bufferAttribute", {
@@ -840,7 +887,7 @@ function MagneticParticles({ scrollProgressRef }) {
                         itemSize: 1
                     }, void 0, false, {
                         fileName: "[project]/components/MagneticCore.tsx",
-                        lineNumber: 223,
+                        lineNumber: 239,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("bufferAttribute", {
@@ -850,13 +897,13 @@ function MagneticParticles({ scrollProgressRef }) {
                         itemSize: 1
                     }, void 0, false, {
                         fileName: "[project]/components/MagneticCore.tsx",
-                        lineNumber: 224,
+                        lineNumber: 240,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/MagneticCore.tsx",
-                lineNumber: 220,
+                lineNumber: 236,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("shaderMaterial", {
@@ -879,13 +926,13 @@ function MagneticParticles({ scrollProgressRef }) {
                 blending: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$three$2f$build$2f$three$2e$core$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AdditiveBlending"]
             }, void 0, false, {
                 fileName: "[project]/components/MagneticCore.tsx",
-                lineNumber: 226,
+                lineNumber: 242,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/MagneticCore.tsx",
-        lineNumber: 219,
+        lineNumber: 235,
         columnNumber: 5
     }, this);
 }
@@ -911,12 +958,12 @@ function MagneticCore({ scrollProgressRef }) {
             scrollProgressRef: scrollProgressRef
         }, void 0, false, {
             fileName: "[project]/components/MagneticCore.tsx",
-            lineNumber: 250,
+            lineNumber: 266,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/MagneticCore.tsx",
-        lineNumber: 245,
+        lineNumber: 261,
         columnNumber: 5
     }, this);
 }
@@ -1132,12 +1179,27 @@ function Particles({ transitionProgress, textTransitionProgress, isHoveringCTA, 
             new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$three$2f$build$2f$three$2e$core$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Color"]("#722A00")
         ];
         for(let i = 0; i < count; i++){
-            const radius = Math.random() * Math.random() * 8 + 0.5;
-            const theta = Math.random() * Math.PI * 2;
-            const height = (Math.random() - 0.5) * 4 * (1 - radius / 8);
-            pos[i * 3] = Math.cos(theta) * radius;
-            pos[i * 3 + 1] = Math.sin(theta) * radius;
-            pos[i * 3 + 2] = height;
+            const isCore = Math.random() > 0.5; // 50% core, 50% disk
+            if (isCore) {
+                // Dense 3D Spherical Core
+                const u = Math.random();
+                const v = Math.random();
+                const theta = u * 2.0 * Math.PI;
+                const phi = Math.acos(2.0 * v - 1.0);
+                const r = Math.pow(Math.random(), 0.5) * 3.0; // Concentrate near center
+                pos[i * 3] = r * Math.sin(phi) * Math.cos(theta);
+                pos[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
+                pos[i * 3 + 2] = r * Math.cos(phi);
+            } else {
+                // Sweeping Accretion Disk / Vortex
+                const r = 3.5 + Math.random() * 6.5; // Radius 3.5 to 10
+                const theta = Math.random() * Math.PI * 2;
+                const thickness = (1.0 - (r - 3.5) / 6.5) * 4.0; // Thicker near core
+                const height = (Math.random() - 0.5) * thickness;
+                pos[i * 3] = Math.cos(theta) * r;
+                pos[i * 3 + 1] = Math.sin(theta) * r;
+                pos[i * 3 + 2] = height;
+            }
             const baseColor = colorPalette[Math.floor(Math.random() * colorPalette.length)];
             col[i * 3] = baseColor.r;
             col[i * 3 + 1] = baseColor.g;
@@ -1187,7 +1249,7 @@ function Particles({ transitionProgress, textTransitionProgress, isHoveringCTA, 
                         itemSize: 3
                     }, void 0, false, {
                         fileName: "[project]/components/ParticleField.tsx",
-                        lineNumber: 268,
+                        lineNumber: 285,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("bufferAttribute", {
@@ -1197,7 +1259,7 @@ function Particles({ transitionProgress, textTransitionProgress, isHoveringCTA, 
                         itemSize: 3
                     }, void 0, false, {
                         fileName: "[project]/components/ParticleField.tsx",
-                        lineNumber: 269,
+                        lineNumber: 286,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("bufferAttribute", {
@@ -1207,7 +1269,7 @@ function Particles({ transitionProgress, textTransitionProgress, isHoveringCTA, 
                         itemSize: 1
                     }, void 0, false, {
                         fileName: "[project]/components/ParticleField.tsx",
-                        lineNumber: 270,
+                        lineNumber: 287,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("bufferAttribute", {
@@ -1217,13 +1279,13 @@ function Particles({ transitionProgress, textTransitionProgress, isHoveringCTA, 
                         itemSize: 1
                     }, void 0, false, {
                         fileName: "[project]/components/ParticleField.tsx",
-                        lineNumber: 271,
+                        lineNumber: 288,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/ParticleField.tsx",
-                lineNumber: 267,
+                lineNumber: 284,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("shaderMaterial", {
@@ -1252,13 +1314,13 @@ function Particles({ transitionProgress, textTransitionProgress, isHoveringCTA, 
                 }
             }, void 0, false, {
                 fileName: "[project]/components/ParticleField.tsx",
-                lineNumber: 273,
+                lineNumber: 290,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/ParticleField.tsx",
-        lineNumber: 266,
+        lineNumber: 283,
         columnNumber: 5
     }, this);
 }
@@ -1330,17 +1392,17 @@ function ParticleField({ transitionProgress, textTransitionProgress, isHoveringC
                 mousePos: targetMouse
             }, void 0, false, {
                 fileName: "[project]/components/ParticleField.tsx",
-                lineNumber: 342,
+                lineNumber: 359,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/components/ParticleField.tsx",
-            lineNumber: 341,
+            lineNumber: 358,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/ParticleField.tsx",
-        lineNumber: 340,
+        lineNumber: 357,
         columnNumber: 5
     }, this);
 }

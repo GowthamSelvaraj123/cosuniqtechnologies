@@ -159,14 +159,30 @@ function MagneticParticles({ scrollProgressRef }: { scrollProgressRef: React.Mut
     ];
 
     for (let i = 0; i < count; i++) {
-      // Abstract vortex initial shape (layered discs)
-      const radius = Math.random() * Math.random() * 8 + 0.5;
-      const theta = Math.random() * Math.PI * 2;
-      const height = (Math.random() - 0.5) * 4 * (1 - radius / 8); // Taper at edges
+      const isCore = Math.random() > 0.5; // 50% core, 50% disk
       
-      pos[i * 3] = Math.cos(theta) * radius;
-      pos[i * 3 + 1] = Math.sin(theta) * radius;
-      pos[i * 3 + 2] = height;
+      if (isCore) {
+        // Dense 3D Spherical Core
+        const u = Math.random();
+        const v = Math.random();
+        const theta = u * 2.0 * Math.PI;
+        const phi = Math.acos(2.0 * v - 1.0);
+        const r = Math.pow(Math.random(), 0.5) * 3.0; // Concentrate near center
+        
+        pos[i * 3] = r * Math.sin(phi) * Math.cos(theta);
+        pos[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
+        pos[i * 3 + 2] = r * Math.cos(phi);
+      } else {
+        // Sweeping Accretion Disk / Vortex
+        const r = 3.5 + Math.random() * 6.5; // Radius 3.5 to 10
+        const theta = Math.random() * Math.PI * 2;
+        const thickness = (1.0 - (r - 3.5) / 6.5) * 4.0; // Thicker near core
+        const height = (Math.random() - 0.5) * thickness;
+        
+        pos[i * 3] = Math.cos(theta) * r;
+        pos[i * 3 + 1] = Math.sin(theta) * r;
+        pos[i * 3 + 2] = height;
+      }
 
       // Assign color based on distance from center to create depth
       const colorBlend = Math.random();

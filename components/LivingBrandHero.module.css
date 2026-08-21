@@ -31,19 +31,19 @@
 }
 
 .eyebrow {
-  font-family: var(--font-plus-jakarta), sans-serif;
+  font-family: var(--font-plus-jakarta), sans-serif !important;
   font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   color: rgba(255, 255, 255, 0.8);
 }
 
 .headline {
-  font-family: var(--font-plus-jakarta), sans-serif;
+  font-family: var(--font-plus-jakarta), sans-serif !important;
   font-weight: 800;
-  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-size: clamp(2.5rem, 4.5vw, 4.2rem);
   line-height: 1.05;
   letter-spacing: -0.02em;
   margin: 0 0 1.5rem 0;
@@ -52,20 +52,21 @@
 }
 
 .description {
-  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-family: var(--font-plus-jakarta), sans-serif !important;
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
   line-height: 1.5;
   max-width: 500px;
-  margin: 0 0 3rem 0;
+  margin: 0 0 2rem 0;
   color: rgba(255, 255, 255, 0.9);
 }
 
 .services {
-  font-family: var(--font-plus-jakarta), sans-serif;
+  font-family: var(--font-plus-jakarta), sans-serif !important;
   font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 .ctaGroup {
@@ -77,18 +78,21 @@
 
 .primaryCta {
   display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  aspect-ratio: 1 / 1;
+  padding: 0 0.5rem;
   background: #ffffff;
   color: #FF6B00;
   font-family: var(--font-plus-jakarta), sans-serif;
-  font-weight: 700;
-  font-size: 1.1rem;
-  padding: 1rem 2.5rem;
-  border-radius: 50px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border-radius: 4px;
   text-decoration: none;
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .primaryCta:hover {

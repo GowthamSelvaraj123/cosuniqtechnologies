@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import { motion, useScroll, useTransform, useMotionValueEvent, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import styles from "./LivingBrandHero.module.css";
 import MagneticCore from "./MagneticCore";
@@ -9,6 +9,22 @@ import MagneticCore from "./MagneticCore";
 export default function LivingBrandHero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef(0);
+  
+  const [wordIndex, setWordIndex] = useState(0);
+  const rotatingWords = [
+    "people remember.",
+    "that inspire.",
+    "that scale.",
+    "that connect.",
+    "that convert.",
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setWordIndex((prev) => (prev + 1) % rotatingWords.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
 
   // Track scroll progress of this specific section
   const { scrollYProgress } = useScroll({
@@ -37,7 +53,20 @@ export default function LivingBrandHero() {
           
           <h1 className={styles.headline}>
             We build brands<br />
-            people remember.
+            <span style={{ display: "inline-block", position: "relative", width: "100%", height: "1.1em" }}>
+              <AnimatePresence>
+                <motion.span
+                  key={wordIndex}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -30 }}
+                  transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
+                  style={{ position: "absolute", left: 0 }}
+                >
+                  {rotatingWords[wordIndex]}
+                </motion.span>
+              </AnimatePresence>
+            </span>
           </h1>
           
           <p className={styles.description}>
@@ -50,12 +79,7 @@ export default function LivingBrandHero() {
           
           <div className={styles.ctaGroup}>
             <Link href="/contact" className={styles.primaryCta}>
-              Let's Build 
-              <span className={styles.ctaArrow}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </span>
+              Let's Build
             </Link>
             
             <Link href="/portfolio" className={styles.secondaryCta}>
