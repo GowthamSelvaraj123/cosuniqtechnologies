@@ -1755,6 +1755,42 @@ textarea.field {
   .cursor, .cursor-dot {
     display: none !important;
   }
+
+  .band {
+    padding: 3.5rem 0;
+  }
+
+  .band--tight {
+    padding: 2.5rem 0;
+  }
+
+  .section-intro {
+    margin-bottom: 2rem;
+  }
+
+  .section-intro h2 {
+    font-size: clamp(1.75rem, 6vw, 2rem);
+  }
+
+  .mega-line {
+    font-size: clamp(1.4rem, 5vw, 1.8rem);
+  }
+
+  .cta-blob {
+    padding: 3rem 1.5rem;
+  }
+
+  .cta-blob h2 {
+    font-size: clamp(1.6rem, 5vw, 2rem);
+  }
+
+  .process-card, .result, .path-card {
+    padding: 1.5rem;
+  }
+
+  .result strong {
+    font-size: 2.2rem;
+  }
 }
 
 @media (hover: none) {

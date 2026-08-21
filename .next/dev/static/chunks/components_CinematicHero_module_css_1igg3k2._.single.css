@@ -41,14 +41,14 @@
   max-width: 900px;
   font-family: var(--font-plus-jakarta), sans-serif;
   letter-spacing: -.03em;
-  white-space: nowrap;
+  white-space: normal;
   color: #111;
   opacity: 0;
   pointer-events: none;
   text-align: center;
-  font-size: clamp(1.6rem, 3.8vw, 3.6rem);
+  font-size: clamp(1.5rem, 5vw, 3.6rem);
   font-weight: 800;
-  line-height: 1;
+  line-height: 1.1;
   transition: opacity .35s, transform .35s;
   position: absolute;
   top: 50%;

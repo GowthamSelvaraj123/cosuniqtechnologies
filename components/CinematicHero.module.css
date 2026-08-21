@@ -43,11 +43,11 @@
   width: 90vw;
   max-width: 900px;
   font-family: var(--font-plus-jakarta), sans-serif;
-  font-size: clamp(1.6rem, 3.8vw, 3.6rem);
+  font-size: clamp(1.5rem, 5vw, 3.6rem);
   font-weight: 800;
   letter-spacing: -0.03em;
-  line-height: 1;
-  white-space: nowrap;
+  line-height: 1.1;
+  white-space: normal;
   color: #111111;
   opacity: 0;
   transition: opacity 0.35s ease, transform 0.35s ease;
