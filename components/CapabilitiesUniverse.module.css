@@ -118,14 +118,14 @@
 
 /* ── Card surface ───────────────────────────────── */
 .card {
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  background: rgba(255, 237, 220, 0.85);
+  border: 1px solid rgba(255, 107, 0, 0.12);
   border-radius: 20px;
   padding: 1.2rem 1.5rem;
   color: #111111;
   box-shadow:
-    0 2px 8px rgba(0, 0, 0, 0.03),
-    0 8px 28px rgba(0, 0, 0, 0.05);
+    0 2px 8px rgba(255, 107, 0, 0.04),
+    0 8px 28px rgba(255, 107, 0, 0.07);
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
@@ -156,8 +156,8 @@
 
 .card:hover {
   box-shadow:
-    0 4px 16px rgba(0, 0, 0, 0.05),
-    0 16px 40px rgba(0, 0, 0, 0.09);
+    0 4px 16px rgba(255, 107, 0, 0.1),
+    0 16px 40px rgba(255, 107, 0, 0.14);
 }
 
 /* ── Card content ───────────────────────────────── */
@@ -219,7 +219,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  background: #111111;
+  background: #FF6B00;
   color: #ffffff;
   font-weight: 700;
   text-transform: uppercase;
@@ -236,14 +236,14 @@
 }
 
 .ctaArrow {
-  color: #FF6B00;
+  color: #ffffff;
   transition: transform 0.3s ease;
 }
 
 .exploreCta:hover {
-  background: #222222;
+  background: #e65c00;
   transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 28px rgba(255, 107, 0, 0.35);
 }
 
 .exploreCta:hover .ctaArrow {

@@ -349,7 +349,7 @@ body.has-cursor .cursor-dot {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
 }
 
-/* Orange accent — add this class alongside btn-primary for the arrow icon */
+/* Orange accent â€” add this class alongside btn-primary for the arrow icon */
 .btn-primary svg,
 .btn-primary .btn-icon {
   color: #FF6B00;
@@ -379,7 +379,7 @@ body.has-cursor .cursor-dot {
   font-size: 0.68rem;
 }
 
-/* Orange variant — kept for hero CTAs that need brand color */
+/* Orange variant â€” kept for hero CTAs that need brand color */
 .btn-brand {
   background: var(--brand);
   color: #ffffff;
@@ -390,6 +390,16 @@ body.has-cursor .cursor-dot {
   background: #e65c00;
   transform: translateY(-2px);
   box-shadow: 0 12px 32px rgba(255, 107, 0, 0.4);
+}
+
+/* ---------- Container ---------- */
+.container {
+  width: 100%;
+  max-width: var(--max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: max(1.5rem, calc((100vw - var(--max)) / 2));
+  padding-right: max(1.5rem, calc((100vw - var(--max)) / 2));
 }
 
 /* ---------- Bands ---------- */
@@ -409,6 +419,253 @@ body.has-cursor .cursor-dot {
 
 .band--cream {
   background: var(--cream);
+}
+
+/* ---------- Section intro ---------- */
+.section-intro {
+  max-width: 36rem;
+  margin-bottom: 3rem;
+}
+
+.section-intro h2 {
+  font-size: clamp(2rem, 3.8vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: #111111;
+  margin: 0.5rem 0 0.75rem;
+}
+
+.section-intro p {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--brand);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: rgba(255, 107, 0, 0.08);
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+
+/* ---------- Process cards ---------- */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.process-card {
+  padding: 2rem;
+  border-radius: 20px;
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.07);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.process-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--brand);
+  box-shadow: 0 12px 36px rgba(255, 107, 0, 0.12);
+}
+
+.process-num {
+  display: inline-block;
+  font-weight: 800;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand);
+  background: rgba(255, 107, 0, 0.1);
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 1.25rem;
+}
+
+.process-card h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #111;
+  margin-bottom: 0.6rem;
+}
+
+.process-card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* ---------- Results ---------- */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.result {
+  padding: 2rem 1.5rem;
+  border-radius: 20px;
+  border: 1px solid rgba(0,0,0,0.07);
+  background: var(--white);
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.result:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(255,107,0,0.1);
+}
+
+.result strong {
+  display: block;
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--brand);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.result span {
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* ---------- Pathways ---------- */
+.paths-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.path-card {
+  padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(0,0,0,0.07);
+  background: var(--white);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.path-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--brand);
+  box-shadow: 0 12px 36px rgba(255,107,0,0.12);
+}
+
+.path-card--hot {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: var(--white);
+  box-shadow: 0 8px 32px rgba(255,107,0,0.3);
+}
+
+.path-card--hot:hover {
+  background: #e65c00;
+  border-color: #e65c00;
+  box-shadow: 0 16px 48px rgba(255,107,0,0.4);
+}
+
+.path-card--hot p,
+.path-card--hot a {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.path-card h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.75rem;
+  color: inherit;
+}
+
+.path-card p {
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.path-card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--brand);
+  text-decoration: none;
+  transition: gap 0.2s ease;
+}
+
+.path-card a:hover { gap: 0.6rem; }
+
+/* ---------- CTA blob ---------- */
+.cta-blob {
+  text-align: center;
+  padding: 4rem 2rem;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #fff4ee 0%, #ffffff 100%);
+  border: 1.5px solid rgba(255, 106, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-blob::before {
+  content: '';
+  position: absolute;
+  top: -60px; left: 50%; transform: translateX(-50%);
+  width: 400px; height: 200px;
+  background: radial-gradient(ellipse, rgba(255,107,0,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-blob h2 {
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #111;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.cta-blob p {
+  color: var(--muted);
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+  max-width: 42ch;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+/* ---------- Manifesto ---------- */
+.mega-line {
+  font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+  color: #111;
+}
+
+.line-accent {
+  display: block;
+  color: var(--brand);
+  margin-top: 0.4rem;
 }
 
 .section-intro {
@@ -1869,7 +2126,7 @@ button,
 .eyebrow,
 .tags span,
 .mobile-nav a {
-  font-family: "Lato", "Helvetica Neue", Arial, sans-serif !important;
+  font-family: var(--font-plus-jakarta), "Plus Jakarta Sans", sans-serif;
 }
 
 h1,
@@ -1900,14 +2157,14 @@ h4,
 .portfolio-body h3,
 .team-card h3,
 .service-tile h3 {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif !important;
+  font-family: var(--font-plus-jakarta), "Plus Jakarta Sans", sans-serif;
   font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 1.15;
 }
 
 .brand-text strong {
-  font-family: "Playfair Display", Georgia, serif !important;
+  font-family: var(--font-plus-jakarta), "Plus Jakarta Sans", sans-serif;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1918,7 +2175,7 @@ h4,
 .eyebrow,
 .portfolio-body .tag,
 .tags span {
-  font-family: "Lato", Arial, sans-serif !important;
+  font-family: var(--font-plus-jakarta), "Plus Jakarta Sans", sans-serif;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1956,7 +2213,7 @@ h4,
 
 .stat-badge,
 .ai-chip {
-  font-family: "Lato", Arial, sans-serif !important;
+  font-family: var(--font-plus-jakarta), "Plus Jakarta Sans", sans-serif;
   font-weight: 900 !important;
   letter-spacing: 0.02em;
 }
@@ -1974,7 +2231,7 @@ body {
   }
 }
 /* ============================================
-   Fullscreen hero slider � Stellar Souls style
+   Fullscreen hero slider ï¿½ Stellar Souls style
    + Designpluz messaging clarity
    ============================================ */
 
@@ -2055,7 +2312,7 @@ body {
   align-items: center;
   gap: 0.4rem;
   color: var(--brand);
-  font-family: "Lato", Arial, sans-serif !important;
+  font-family: var(--font-plus-jakarta), "Plus Jakarta Sans", sans-serif;
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.16em;
@@ -2064,7 +2321,7 @@ body {
 }
 
 .hero-slide h1 {
-  font-family: "Playfair Display", Georgia, serif !important;
+  font-family: var(--font-plus-jakarta), "Plus Jakarta Sans", sans-serif;
   font-size: clamp(2.6rem, 6.5vw, 5rem) !important;
   font-weight: 700 !important;
   line-height: 1.05 !important;
@@ -2080,7 +2337,7 @@ body {
 }
 
 .hero-slide__sub {
-  font-family: "Lato", Arial, sans-serif !important;
+  font-family: var(--font-plus-jakarta), "Plus Jakarta Sans", sans-serif;
   font-size: clamp(1rem, 1.6vw, 1.2rem);
   line-height: 1.65;
   color: rgba(255, 255, 255, 0.82) !important;
@@ -2103,7 +2360,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  font-family: "Lato", Arial, sans-serif !important;
+  font-family: var(--font-plus-jakarta), "Plus Jakarta Sans", sans-serif;
   font-weight: 700;
   font-size: 0.85rem;
   letter-spacing: 0.14em;
@@ -2151,7 +2408,7 @@ body {
 }
 
 .hero-slider__count {
-  font-family: "Playfair Display", Georgia, serif !important;
+  font-family: var(--font-plus-jakarta), "Plus Jakarta Sans", sans-serif;
   font-size: 1.35rem;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -2173,7 +2430,7 @@ body {
   background: transparent;
   border: none;
   color: rgba(255, 255, 255, 0.75);
-  font-family: "Lato", Arial, sans-serif !important;
+  font-family: var(--font-plus-jakarta), "Plus Jakarta Sans", sans-serif;
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.18em;
@@ -2394,7 +2651,7 @@ body {
 }
 
 .hero-scroll-a span {
-  font-family: "Playfair Display", Georgia, serif !important;
+  font-family: var(--font-plus-jakarta), "Plus Jakarta Sans", sans-serif;
   font-size: 1.35rem;
   font-weight: 700;
   line-height: 1;
@@ -2402,7 +2659,7 @@ body {
 }
 
 .hero-scroll-a small {
-  font-family: "Lato", Arial, sans-serif !important;
+  font-family: var(--font-plus-jakarta), "Plus Jakarta Sans", sans-serif;
   font-size: 0.58rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -2444,3 +2701,4 @@ body {
     height: 56px;
   }
 }
+

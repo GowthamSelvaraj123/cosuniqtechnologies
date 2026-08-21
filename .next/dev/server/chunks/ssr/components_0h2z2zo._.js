@@ -59,7 +59,7 @@ const services = [
         name: "BRANDING",
         desc: "Make your brand memorable.",
         pos: {
-            top: "12%",
+            top: "20%",
             left: "6%"
         },
         rot: -4,
@@ -76,7 +76,7 @@ const services = [
         name: "STRATEGY",
         desc: "Clear pathways for growth.",
         pos: {
-            top: "7%",
+            top: "14%",
             left: "40%"
         },
         rot: 2,
@@ -93,7 +93,7 @@ const services = [
         name: "AI SOLUTIONS",
         desc: "Build with intelligence.",
         pos: {
-            top: "11%",
+            top: "19%",
             right: "6%"
         },
         rot: 4,
@@ -144,7 +144,7 @@ const services = [
         name: "UI / UX",
         desc: "Design that performs.",
         pos: {
-            top: "73%",
+            top: "68%",
             left: "7%"
         },
         rot: -3,
@@ -162,7 +162,7 @@ const services = [
         name: "WEBSITES",
         desc: "Digital experiences that stand out.",
         pos: {
-            top: "76%",
+            top: "71%",
             left: "38%"
         },
         rot: 2,
@@ -179,7 +179,7 @@ const services = [
         name: "E-COMMERCE",
         desc: "Stores built to convert.",
         pos: {
-            top: "73%",
+            top: "68%",
             right: "6%"
         },
         rot: -3,
