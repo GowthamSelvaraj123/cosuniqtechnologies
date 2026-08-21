@@ -1,0 +1,212 @@
+.heroRoot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  min-height: 600px;
+  background-color: #FF6B00; /* Bold, magnetic orange base */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 2rem;
+  box-sizing: border-box;
+  z-index: 99999;
+  transition: transform 1s cubic-bezier(0.76, 0, 0.24, 1), opacity 1s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.heroRoot.exiting {
+  transform: translateY(-100%); /* Slides up smoothly revealing the site below */
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cursorGradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(192, 192, 192, 0.7) 0%, rgba(192, 192, 192, 0.3) 30%, rgba(192, 192, 192, 0) 60%);
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform;
+}
+
+.heroContent {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.heroText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  margin: 0;
+  font-family: var(--font-plus-jakarta), sans-serif !important;
+  font-size: clamp(2rem, 5vw, 6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em; /* slightly tight for large headlines */
+  line-height: 1.1;
+  color: #ffffff;
+  white-space: nowrap; /* Force single line */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+  /* Slide up and fade in */
+  transform: translate(-50%, 20px);
+}
+
+.heroText.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%); /* Centered exactly */
+}
+
+.heroText.previous {
+  /* Exit animation: slide up and fade out */
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -80px); 
+}
+
+/* For the final text, it might be better to lift it slightly when CTA appears */
+.heroText:last-of-type.active {
+  transform: translate(-50%, -60%);
+}
+
+.ctaWrapper {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  opacity: 0.8; /* Slightly faded initially */
+  visibility: visible;
+  transition: opacity 1.2s ease, transform 1.2s ease;
+  z-index: 20;
+}
+
+.ctaWrapper.ctaProminent {
+  opacity: 1; /* Full opacity */
+  animation: floatReady 3s ease-in-out infinite 1.2s; /* Add a subtle floating animation after it enters */
+}
+
+@keyframes floatReady {
+  0% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, -10px);
+  }
+  100% {
+    transform: translate(-50%, 0);
+  }
+}
+
+.circularCta {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  background: #ffffff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #ff5e00; /* Set to orange for arrow SVG */
+  padding: 0;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  font-family: var(--font-plus-jakarta), sans-serif !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.circularTextWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: spinText 12s linear infinite;
+  transform-origin: center center;
+  transition: animation-duration 0.4s ease;
+  transform: scale(0.85); /* Creates padding between text and outer edge */
+  pointer-events: none; /* Let clicks pass through to the button */
+}
+
+.circularText {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  fill: #ff5e00; /* Orange text */
+  text-transform: uppercase;
+}
+
+.centerArrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff5e00; /* Orange icon */
+  pointer-events: none; /* Let clicks pass through to the button */
+}
+
+.circularCta:hover {
+  transform: scale(1.04);
+}
+
+.circularCta:hover .circularTextWrapper {
+  animation-duration: 5s; /* Speed up rotation on hover */
+}
+
+.circularCta:hover .centerArrow {
+  transform: translate(-30%, -50%); /* Move slightly forward */
+}
+
+@keyframes spinText {
+  0% {
+    transform: scale(0.85) rotate(0deg);
+  }
+  100% {
+    transform: scale(0.85) rotate(360deg);
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .heroText {
+    font-size: clamp(0.9rem, 4vw, 2rem);
+  }
+  
+  .heroText:last-of-type.active {
+    transform: translate(-50%, -70%);
+  }
+
+  .ctaWrapper {
+    bottom: 20px; 
+    right: 20px;
+  }
+  
+  .circularCta {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .circularText {
+    font-size: 8px;
+  }
+}

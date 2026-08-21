@@ -1,0 +1,212 @@
+/* [project]/components/CinematicHero.module.css [app-client] (css) */
+.CinematicHero-module__Lo_MJG__heroRoot {
+  box-sizing: border-box;
+  z-index: 99999;
+  background-color: #ff6b00;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  min-height: 600px;
+  padding: 2rem;
+  transition: transform 1s cubic-bezier(.76, 0, .24, 1), opacity 1s cubic-bezier(.76, 0, .24, 1);
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.CinematicHero-module__Lo_MJG__heroRoot.CinematicHero-module__Lo_MJG__exiting {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-100%);
+}
+
+.CinematicHero-module__Lo_MJG__cursorGradient {
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform;
+  background: radial-gradient(circle, #c0c0c0b3 0%, #c0c0c04d 30%, #c0c0c000 60%);
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.CinematicHero-module__Lo_MJG__heroContent {
+  text-align: center;
+  z-index: 10;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  position: relative;
+}
+
+.CinematicHero-module__Lo_MJG__heroText {
+  letter-spacing: -.02em;
+  color: #fff;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  width: 100%;
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 6rem);
+  font-weight: 800;
+  line-height: 1.1;
+  transition: opacity 1.2s cubic-bezier(.25, 1, .5, 1), transform 1.2s cubic-bezier(.25, 1, .5, 1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 20px);
+  font-family: var(--font-plus-jakarta), sans-serif !important;
+}
+
+.CinematicHero-module__Lo_MJG__heroText.CinematicHero-module__Lo_MJG__active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%);
+}
+
+.CinematicHero-module__Lo_MJG__heroText.CinematicHero-module__Lo_MJG__previous {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -80px);
+}
+
+.CinematicHero-module__Lo_MJG__heroText:last-of-type.CinematicHero-module__Lo_MJG__active {
+  transform: translate(-50%, -60%);
+}
+
+.CinematicHero-module__Lo_MJG__ctaWrapper {
+  opacity: .8;
+  visibility: visible;
+  z-index: 20;
+  transition: opacity 1.2s, transform 1.2s;
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+}
+
+.CinematicHero-module__Lo_MJG__ctaWrapper.CinematicHero-module__Lo_MJG__ctaProminent {
+  opacity: 1;
+  animation: 3s ease-in-out 1.2s infinite CinematicHero-module__Lo_MJG__floatReady;
+}
+
+@keyframes CinematicHero-module__Lo_MJG__floatReady {
+  0% {
+    transform: translate(-50%);
+  }
+
+  50% {
+    transform: translate(-50%, -10px);
+  }
+
+  100% {
+    transform: translate(-50%);
+  }
+}
+
+.CinematicHero-module__Lo_MJG__circularCta {
+  cursor: pointer;
+  color: #ff5e00;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 140px;
+  height: 140px;
+  padding: 0;
+  transition: transform .4s cubic-bezier(.25, 1, .5, 1);
+  display: flex;
+  position: relative;
+  box-shadow: 0 4px 20px #0000001a;
+  font-family: var(--font-plus-jakarta), sans-serif !important;
+}
+
+.CinematicHero-module__Lo_MJG__circularTextWrapper {
+  transform-origin: center;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  transition: animation-duration .4s;
+  animation: 12s linear infinite CinematicHero-module__Lo_MJG__spinText;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(.85);
+}
+
+.CinematicHero-module__Lo_MJG__circularText {
+  letter-spacing: 2px;
+  fill: #ff5e00;
+  text-transform: uppercase;
+  font-size: 10.5px;
+  font-weight: 600;
+}
+
+.CinematicHero-module__Lo_MJG__centerArrow {
+  color: #ff5e00;
+  pointer-events: none;
+  justify-content: center;
+  align-items: center;
+  transition: transform .4s cubic-bezier(.25, 1, .5, 1);
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.CinematicHero-module__Lo_MJG__circularCta:hover {
+  transform: scale(1.04);
+}
+
+.CinematicHero-module__Lo_MJG__circularCta:hover .CinematicHero-module__Lo_MJG__circularTextWrapper {
+  animation-duration: 5s;
+}
+
+.CinematicHero-module__Lo_MJG__circularCta:hover .CinematicHero-module__Lo_MJG__centerArrow {
+  transform: translate(-30%, -50%);
+}
+
+@keyframes CinematicHero-module__Lo_MJG__spinText {
+  0% {
+    transform: scale(.85)rotate(0);
+  }
+
+  100% {
+    transform: scale(.85)rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .CinematicHero-module__Lo_MJG__heroText {
+    font-size: clamp(.9rem, 4vw, 2rem);
+  }
+
+  .CinematicHero-module__Lo_MJG__heroText:last-of-type.CinematicHero-module__Lo_MJG__active {
+    transform: translate(-50%, -70%);
+  }
+
+  .CinematicHero-module__Lo_MJG__ctaWrapper {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .CinematicHero-module__Lo_MJG__circularCta {
+    width: 100px;
+    height: 100px;
+  }
+
+  .CinematicHero-module__Lo_MJG__circularText {
+    font-size: 8px;
+  }
+}
+
+/*# sourceMappingURL=components_CinematicHero_module_0g75c00.css.map*/
