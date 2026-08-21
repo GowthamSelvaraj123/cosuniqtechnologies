@@ -1,6 +1,7 @@
 import Link from "next/link";
 import CinematicHero from "../components/CinematicHero";
 import LivingBrandHero from "../components/LivingBrandHero";
+import CapabilitiesUniverse from "../components/CapabilitiesUniverse";
 import WorkSlider from "../components/WorkSlider";
 import QuoteSlider from "../components/QuoteSlider";
 import InitReveal from "../components/InitReveal";
@@ -12,6 +13,7 @@ export default function Home() {
       
       <CinematicHero />
       <LivingBrandHero />
+      <CapabilitiesUniverse />
 
       {/* Scroll starts here — Section A */}
       <section className="band band--cream" id="section-a">
@@ -54,47 +56,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SERVICES — RSNL / Kota service clarity */}
-      <section className="band band--cream" id="services">
-        <div className="container">
-          <div className="section-intro reveal">
-            <span className="eyebrow"><span className="spark spark--inline"></span> What we do</span>
-            <h2>We create from concept to completion.</h2>
-          </div>
-          <div className="service-bento reveal">
-            <Link className="svc" href="/services#software">
-              <span className="svc-icon spark" aria-hidden="true"></span>
-              <h3>Software &amp; SaaS</h3>
-              <p>Custom platforms engineered to scale.</p>
-            </Link>
-            <Link className="svc" href="/services#crm">
-              <span className="svc-icon spark" aria-hidden="true"></span>
-              <h3>CRM</h3>
-              <p>Pipelines, automation, clear foresight.</p>
-            </Link>
-            <Link className="svc" href="/services#ecommerce">
-              <span className="svc-icon spark" aria-hidden="true"></span>
-              <h3>E-commerce</h3>
-              <p>Stores built to convert and delight.</p>
-            </Link>
-            <Link className="svc" href="/services#web">
-              <span className="svc-icon spark" aria-hidden="true"></span>
-              <h3>Web Design</h3>
-              <p>Sites where beauty meets ROI.</p>
-            </Link>
-            <Link className="svc" href="/services#branding">
-              <span className="svc-icon spark" aria-hidden="true"></span>
-              <h3>Branding</h3>
-              <p>Identity systems that feel inevitable.</p>
-            </Link>
-            <Link className="svc" href="/services#video">
-              <span className="svc-icon spark" aria-hidden="true"></span>
-              <h3>Video</h3>
-              <p>Motion that makes brands memorable.</p>
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* Services are now handled by CapabilitiesUniverse */}
 
       <WorkSlider />
 

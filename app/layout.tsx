@@ -2,7 +2,7 @@ import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import CustomCursor from "../components/CustomCursor";
-import ScrollProgress from "../components/ScrollProgress";
+
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 
@@ -37,7 +37,7 @@ export default function RootLayout({
       </head>
       <body>
         <CustomCursor />
-        <ScrollProgress />
+
         <Header />
         <main>{children}</main>
         <Footer />

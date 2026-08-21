@@ -1,0 +1,310 @@
+/* [project]/components/CapabilitiesUniverse.module.css [app-client] (css) */
+.CapabilitiesUniverse-module__Zv_uza__universeSection {
+  width: 100%;
+  min-height: 100vh;
+  font-family: var(--font-plus-jakarta), sans-serif;
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.CapabilitiesUniverse-module__Zv_uza__centerGlow {
+  pointer-events: none;
+  z-index: 1;
+  background: radial-gradient(#ff6b000d 0%, #0000 60%);
+  width: 65vw;
+  height: 60vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.CapabilitiesUniverse-module__Zv_uza__canvasWrapper {
+  z-index: 0;
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+}
+
+.CapabilitiesUniverse-module__Zv_uza__sectionLabel {
+  z-index: 25;
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  color: #aaa;
+  white-space: nowrap;
+  align-items: center;
+  gap: .4rem;
+  font-size: .7rem;
+  font-weight: 700;
+  display: flex;
+  position: absolute;
+  top: 40px;
+  left: 5vw;
+}
+
+.CapabilitiesUniverse-module__Zv_uza__sectionLabel .CapabilitiesUniverse-module__Zv_uza__num {
+  color: #ff6b00;
+}
+
+.CapabilitiesUniverse-module__Zv_uza__centerContent {
+  text-align: center;
+  z-index: 5;
+  pointer-events: none;
+  width: min(700px, 54vw);
+  position: relative;
+}
+
+.CapabilitiesUniverse-module__Zv_uza__headline {
+  letter-spacing: -.03em;
+  color: #111;
+  margin: 0 0 1.5rem;
+  font-size: clamp(2.6rem, 4.5vw, 4.2rem);
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+.CapabilitiesUniverse-module__Zv_uza__headlineDot {
+  color: #ff6b00;
+}
+
+.CapabilitiesUniverse-module__Zv_uza__subheadline {
+  color: #888;
+  max-width: 520px;
+  margin: 1.5rem auto 0;
+  font-size: clamp(.9rem, 1.2vw, 1rem);
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+.CapabilitiesUniverse-module__Zv_uza__scatterLayer {
+  z-index: 10;
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+}
+
+.CapabilitiesUniverse-module__Zv_uza__cardOrbit {
+  pointer-events: auto;
+  position: absolute;
+}
+
+.CapabilitiesUniverse-module__Zv_uza__cardFloat {
+  animation: ease-in-out infinite alternate CapabilitiesUniverse-module__Zv_uza__cardFloat;
+}
+
+@keyframes CapabilitiesUniverse-module__Zv_uza__cardFloat {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-7px);
+  }
+}
+
+.CapabilitiesUniverse-module__Zv_uza__card {
+  color: #111;
+  cursor: pointer;
+  background: #ffffffeb;
+  border: 1px solid #0000000d;
+  border-radius: 20px;
+  flex-direction: column;
+  gap: .35rem;
+  padding: 1.2rem 1.5rem;
+  transition: box-shadow .3s;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 8px #00000008, 0 8px 28px #0000000d;
+}
+
+.CapabilitiesUniverse-module__Zv_uza__card:before {
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg, #ff6b0008 0%, #0000 60%);
+  border-radius: 20px;
+  transition: opacity .3s;
+  position: absolute;
+  inset: 0;
+}
+
+.CapabilitiesUniverse-module__Zv_uza__card:hover:before {
+  opacity: 1;
+}
+
+.CapabilitiesUniverse-module__Zv_uza__card:hover {
+  box-shadow: 0 4px 16px #0000000d, 0 16px 40px #00000017;
+}
+
+.CapabilitiesUniverse-module__Zv_uza__cardTitle {
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: #111;
+  justify-content: space-between;
+  align-items: center;
+  gap: .5rem;
+  font-size: .78rem;
+  font-weight: 800;
+  display: flex;
+}
+
+.CapabilitiesUniverse-module__Zv_uza__cardDesc {
+  color: #888;
+  margin: 0;
+  font-size: .8rem;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.CapabilitiesUniverse-module__Zv_uza__arrowIcon {
+  color: #ff6b00;
+  opacity: 0;
+  flex-shrink: 0;
+  width: 13px;
+  height: 13px;
+  transition: opacity .25s, transform .25s;
+  transform: translateX(-5px);
+}
+
+.CapabilitiesUniverse-module__Zv_uza__card:hover .CapabilitiesUniverse-module__Zv_uza__arrowIcon {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.CapabilitiesUniverse-module__Zv_uza__bottomCtaWrapper {
+  text-align: center;
+  z-index: 25;
+  white-space: nowrap;
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.CapabilitiesUniverse-module__Zv_uza__bottomText {
+  letter-spacing: .01em;
+  color: #777;
+  margin-bottom: 1rem;
+  font-size: .85rem;
+  font-weight: 600;
+}
+
+.CapabilitiesUniverse-module__Zv_uza__exploreCta {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  background: #111;
+  border-radius: 99px;
+  align-items: center;
+  gap: .55rem;
+  margin: 1.5rem auto 0;
+  padding: 13px 30px;
+  font-size: .72rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform .3s cubic-bezier(.25, 1, .5, 1), background .3s, box-shadow .3s;
+  display: inline-flex;
+}
+
+.CapabilitiesUniverse-module__Zv_uza__ctaArrow {
+  color: #ff6b00;
+  transition: transform .3s;
+}
+
+.CapabilitiesUniverse-module__Zv_uza__exploreCta:hover {
+  background: #222;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px #0003;
+}
+
+.CapabilitiesUniverse-module__Zv_uza__exploreCta:hover .CapabilitiesUniverse-module__Zv_uza__ctaArrow {
+  transform: translateX(4px);
+}
+
+@media (max-width: 1024px) {
+  .CapabilitiesUniverse-module__Zv_uza__universeSection {
+    flex-direction: column;
+    align-items: center;
+    min-height: auto;
+    padding: 4rem 1.25rem 5rem;
+    display: flex;
+    overflow: visible;
+  }
+
+  .CapabilitiesUniverse-module__Zv_uza__sectionLabel {
+    align-self: flex-start;
+    margin-bottom: 1.75rem;
+    position: relative;
+    top: auto;
+    left: auto;
+  }
+
+  .CapabilitiesUniverse-module__Zv_uza__centerGlow {
+    display: none;
+  }
+
+  .CapabilitiesUniverse-module__Zv_uza__scatterLayer {
+    flex-direction: column;
+    align-items: center;
+    gap: .9rem;
+    width: 100%;
+    margin-top: 2.5rem;
+    display: flex;
+    position: relative;
+    inset: auto;
+  }
+
+  .CapabilitiesUniverse-module__Zv_uza__cardOrbit {
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+  }
+
+  .CapabilitiesUniverse-module__Zv_uza__cardFloat {
+    animation: none !important;
+  }
+
+  .CapabilitiesUniverse-module__Zv_uza__card {
+    max-width: 340px;
+    width: 100% !important;
+  }
+
+  .CapabilitiesUniverse-module__Zv_uza__cardOrbit:nth-child(odd) {
+    align-self: flex-start;
+    margin-left: 4%;
+  }
+
+  .CapabilitiesUniverse-module__Zv_uza__cardOrbit:nth-child(2n) {
+    align-self: flex-end;
+    margin-right: 4%;
+  }
+
+  .CapabilitiesUniverse-module__Zv_uza__centerContent {
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+  }
+
+  .CapabilitiesUniverse-module__Zv_uza__headline {
+    font-size: clamp(2rem, 7vw, 2.8rem);
+  }
+
+  .CapabilitiesUniverse-module__Zv_uza__bottomCtaWrapper {
+    align-self: center;
+    margin-top: 3rem;
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+  }
+}
+
+/*# sourceMappingURL=components_CapabilitiesUniverse_module_css_1igg3k2._.single.css.map*/

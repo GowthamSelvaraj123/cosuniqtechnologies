@@ -997,7 +997,7 @@ body.has-cursor .cursor-dot {
 }
 
 main > section:not(.hero-creative):not(.band):not(.page-hero):not(.cta-band) {
-  padding: 4.5rem 0;
+  padding: 2.25rem 0;
   border-bottom: 1px solid var(--line);
 }
 

@@ -1,0 +1,329 @@
+/* ═══════════════════════════════════════════════════
+   CapabilitiesUniverse — Premium Orbital Layout
+═══════════════════════════════════════════════════ */
+
+/* ── Section shell ─────────────────────────────── */
+.universeSection {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: #ffffff;
+  font-family: var(--font-plus-jakarta), sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Subtle orange center atmospheric glow ──────── */
+.centerGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65vw;
+  height: 60vh;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 107, 0, 0.05) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Three.js particle canvas ───────────────────── */
+.canvasWrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ── Section label — top-left ───────────────────── */
+.sectionLabel {
+  position: absolute;
+  top: 40px;
+  left: 5vw;
+  z-index: 25;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: #aaaaaa;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.sectionLabel .num {
+  color: #FF6B00;
+}
+
+/* ── Central typography (sacred center zone) ────── */
+.centerContent {
+  position: relative;
+  width: min(700px, 54vw);
+  text-align: center;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.headline {
+  font-size: clamp(2.6rem, 4.5vw, 4.2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: #111111;
+  margin: 0 0 1.5rem;
+}
+
+.headlineDot {
+  color: #FF6B00;
+}
+
+.subheadline {
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  font-weight: 400;
+  color: #888888;
+  line-height: 1.65;
+  max-width: 520px;
+  margin: 1.5rem auto 0;
+}
+
+/* ── Scatter layer (inset: 0 = full section) ────── */
+.scatterLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* ── Card orbit wrapper (handles absolute pos + base rotation) */
+.cardOrbit {
+  position: absolute;
+  pointer-events: auto;
+}
+
+/* ── Float animation wrapper (CSS-only, no Framer) ─ */
+.cardFloat {
+  animation: cardFloat ease-in-out infinite alternate;
+}
+
+@keyframes cardFloat {
+  from { transform: translateY(0px); }
+  to   { transform: translateY(-7px); }
+}
+
+/* ── Card surface ───────────────────────────────── */
+.card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  padding: 1.2rem 1.5rem;
+  color: #111111;
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.03),
+    0 8px 28px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 0, 0.03) 0%,
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover {
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.05),
+    0 16px 40px rgba(0, 0, 0, 0.09);
+}
+
+/* ── Card content ───────────────────────────────── */
+.cardTitle {
+  font-weight: 800;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #111111;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.cardDesc {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #888888;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.arrowIcon {
+  width: 13px;
+  height: 13px;
+  color: #FF6B00;
+  opacity: 0;
+  transform: translateX(-5px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.card:hover .arrowIcon {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Bottom CTA ─────────────────────────────────── */
+.bottomCtaWrapper {
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 25;
+  white-space: nowrap;
+}
+
+.bottomText {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #777777;
+  margin-bottom: 1rem;
+}
+
+.exploreCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: #111111;
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-size: 0.72rem;
+  padding: 13px 30px;
+  border-radius: 99px;
+  text-decoration: none;
+  margin: 1.5rem auto 0;
+  transition:
+    transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.ctaArrow {
+  color: #FF6B00;
+  transition: transform 0.3s ease;
+}
+
+.exploreCta:hover {
+  background: #222222;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+}
+
+.exploreCta:hover .ctaArrow {
+  transform: translateX(4px);
+}
+
+/* ════════════════════════════════════════════════
+   Responsive — mobile / tablet
+════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .universeSection {
+    min-height: auto;
+    overflow: visible;
+    padding: 4rem 1.25rem 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sectionLabel {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin-bottom: 1.75rem;
+    align-self: flex-start;
+  }
+
+  .centerGlow { display: none; }
+
+  .scatterLayer {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9rem;
+    margin-top: 2.5rem;
+  }
+
+  .cardOrbit {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+  }
+
+  .cardFloat {
+    animation: none !important;
+  }
+
+  .card {
+    width: 100% !important;
+    max-width: 340px;
+  }
+
+  .cardOrbit:nth-child(odd)  { align-self: flex-start; margin-left: 4%; }
+  .cardOrbit:nth-child(even) { align-self: flex-end;   margin-right: 4%; }
+
+  .centerContent {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .headline {
+    font-size: clamp(2rem, 7vw, 2.8rem);
+  }
+
+  .bottomCtaWrapper {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin-top: 3rem;
+    align-self: center;
+  }
+}

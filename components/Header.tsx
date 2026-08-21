@@ -2,27 +2,42 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import styles from "./Header.module.css";
 import MenuOrb from "./MenuOrb";
 import FullscreenMenu from "./FullscreenMenu";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const { scrollY } = useScroll();
+
+  // Scroll progress: 0 = top, 1 = scrolled (after 80px)
+  const scrollProgress = useTransform(scrollY, [0, 80], [0, 1], { clamp: true });
+  const spring = useSpring(scrollProgress, { stiffness: 90, damping: 22, mass: 0.6 });
+
+  // Animate from pill (0) to full-width (1) — all values spring-interpolated
+  // Pill: left: 5vw (centering 90vw pill), width: 90vw, radius: 100px, top: 24px
+  // Full: left: 0,   width: 100%,          radius: 0,     top: 0
+  const top          = useTransform(spring, [0, 1], [24, 0]);
+  const left         = useTransform(spring, [0, 1], ["5vw", "0vw"]);
+  const width        = useTransform(spring, [0, 1], ["90vw", "100vw"]);
+  const borderRadius = useTransform(spring, [0, 1], [100, 0]);
+  const paddingTop   = useTransform(spring, [0, 1], [12, 14]);
+  const paddingBot   = useTransform(spring, [0, 1], [12, 14]);
+  const paddingLeft  = useTransform(spring, [0, 1], [24, 48]);
+  const paddingRight = useTransform(spring, [0, 1], [16, 48]);
+  const bgOpacity    = useTransform(spring, [0, 1], [1.0, 1.0]);
+  const boxShadow    = useTransform(
+    spring,
+    [0, 1],
+    ["0 10px 40px rgba(0,0,0,0.06)", "0 2px 20px rgba(0,0,0,0.07)"]
+  );
+  const borderOpacity  = useTransform(spring, [0, 1], [0.18, 0.09]);
+  // Derived string values — must be top-level, NOT inside style={{}}
+  const backgroundColor = useTransform(bgOpacity,     (v) => `rgba(255,255,255,${v})`);
+  const borderStyle     = useTransform(borderOpacity, (v) => `1px solid rgba(0,0,0,${v})`);
 
   useEffect(() => {
-    const handleScroll = () => {
-      // Show glass background after scrolling down a bit
-      setIsScrolled(window.scrollY > 100);
-    };
-    
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Check on mount
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    // Lock body scroll when menu is open
     if (isOpen) {
       document.body.style.overflow = "hidden";
       document.documentElement.style.overflow = "hidden";
@@ -30,7 +45,6 @@ export default function Header() {
       document.body.style.overflow = "";
       document.documentElement.style.overflow = "";
     }
-    
     return () => {
       document.body.style.overflow = "";
       document.documentElement.style.overflow = "";
@@ -38,11 +52,26 @@ export default function Header() {
   }, [isOpen]);
 
   const toggleMenu = () => setIsOpen(!isOpen);
-  const closeMenu = () => setIsOpen(false);
+  const closeMenu  = () => setIsOpen(false);
 
   return (
     <>
-      <header className={`${styles.headerRoot} ${isScrolled || isOpen ? styles.scrolled : ""}`}>
+      <motion.header
+        className={styles.headerRoot}
+        style={{
+          top,
+          left,
+          width,
+          borderRadius,
+          paddingTop,
+          paddingBottom: paddingBot,
+          paddingLeft,
+          paddingRight,
+          boxShadow,
+          backgroundColor,
+          border: borderStyle,
+        }}
+      >
         <Link href="/" className={styles.brand} aria-label="Cosuniq home">
           <img src="/assets/logo.png" alt="Cosuniq" />
           <div className={styles.brandText}>
@@ -50,12 +79,12 @@ export default function Header() {
             <span>Technologies</span>
           </div>
         </Link>
-        
+
         <nav className={styles.desktopNav}>
-          <Link href="/services" className={styles.navItem}>Services</Link>
+          <Link href="/services"  className={styles.navItem}>Services</Link>
           <Link href="/portfolio" className={styles.navItem}>Work</Link>
-          <Link href="/about" className={styles.navItem}>About</Link>
-          <Link href="/contact" className={styles.navItem}>Contact</Link>
+          <Link href="/about"     className={styles.navItem}>About</Link>
+          <Link href="/contact"   className={styles.navItem}>Contact</Link>
         </nav>
 
         <div className={styles.headerRight}>
@@ -68,8 +97,8 @@ export default function Header() {
             <MenuOrb isOpen={isOpen} onClick={toggleMenu} />
           </div>
         </div>
-      </header>
-      
+      </motion.header>
+
       <FullscreenMenu isOpen={isOpen} onClose={closeMenu} />
     </>
   );
