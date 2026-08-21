@@ -663,13 +663,7 @@ const sequence = [
     "More attention.",
     "More impact.",
     "More connection.",
-    "More growth.",
-    "Websites that stand out.",
-    "Web apps that move business.",
-    "Mobile apps that connect.",
-    "Branding people remember.",
-    "We discuss. We design. We build.",
-    "Everything to grow."
+    "Branding people remember."
 ];
 // 1.2s per item × 11 items = ~13.2s total
 const TOTAL_MS = sequence.length * 1200;
@@ -683,11 +677,11 @@ function CinematicHero() {
     const gradientRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
     const sectionRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
     const startTimeRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(performance.now());
-    // Force correct font by reading resolved value from <html> after hydration
+    // Force correct font — read resolved value from <body> where font-family is actually set
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        const htmlFont = getComputedStyle(document.documentElement).fontFamily;
+        const bodyFont = getComputedStyle(document.body).fontFamily;
         if (sectionRef.current) {
-            sectionRef.current.style.fontFamily = htmlFont;
+            sectionRef.current.style.fontFamily = bodyFont;
         }
     }, []);
     // Cursor-following gradient
@@ -824,7 +818,7 @@ function CinematicHero() {
                 className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CinematicHero$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].cursorGradient
             }, void 0, false, {
                 fileName: "[project]/components/CinematicHero.tsx",
-                lineNumber: 149,
+                lineNumber: 143,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -842,23 +836,23 @@ function CinematicHero() {
                                     children: "."
                                 }, void 0, false, {
                                     fileName: "[project]/components/CinematicHero.tsx",
-                                    lineNumber: 159,
+                                    lineNumber: 153,
                                     columnNumber: 36
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/CinematicHero.tsx",
-                            lineNumber: 159,
+                            lineNumber: 153,
                             columnNumber: 15
                         }, this) : text
                     }, idx, false, {
                         fileName: "[project]/components/CinematicHero.tsx",
-                        lineNumber: 153,
+                        lineNumber: 147,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/components/CinematicHero.tsx",
-                lineNumber: 151,
+                lineNumber: 145,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -869,7 +863,7 @@ function CinematicHero() {
                         children: count
                     }, void 0, false, {
                         fileName: "[project]/components/CinematicHero.tsx",
-                        lineNumber: 167,
+                        lineNumber: 161,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -877,19 +871,19 @@ function CinematicHero() {
                         children: "%"
                     }, void 0, false, {
                         fileName: "[project]/components/CinematicHero.tsx",
-                        lineNumber: 168,
+                        lineNumber: 162,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/CinematicHero.tsx",
-                lineNumber: 166,
+                lineNumber: 160,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/CinematicHero.tsx",
-        lineNumber: 143,
+        lineNumber: 137,
         columnNumber: 5
     }, this);
 }

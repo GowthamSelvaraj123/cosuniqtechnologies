@@ -17,8 +17,8 @@
   --radius-lg: 2rem;
   --max: 1160px;
   --nav-h: 74px;
-  --font: "Lato", "Helvetica Neue", Arial, sans-serif;
-  --display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font: var(--font-plus-jakarta), "Plus Jakarta Sans", "Helvetica Neue", Arial, sans-serif;
+  --display: var(--font-plus-jakarta), "Plus Jakarta Sans", "Helvetica Neue", Arial, sans-serif;
 }
 
 *,

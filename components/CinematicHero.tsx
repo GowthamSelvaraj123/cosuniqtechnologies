@@ -9,13 +9,7 @@ const sequence = [
   "More attention.",
   "More impact.",
   "More connection.",
-  "More growth.",
-  "Websites that stand out.",
-  "Web apps that move business.",
-  "Mobile apps that connect.",
   "Branding people remember.",
-  "We discuss. We design. We build.",
-  "Everything to grow.",
 ];
 
 // 1.2s per item × 11 items = ~13.2s total
@@ -32,11 +26,11 @@ export default function CinematicHero() {
   const sectionRef   = useRef<HTMLElement>(null);
   const startTimeRef = useRef<number>(performance.now());
 
-  // Force correct font by reading resolved value from <html> after hydration
+  // Force correct font — read resolved value from <body> where font-family is actually set
   useEffect(() => {
-    const htmlFont = getComputedStyle(document.documentElement).fontFamily;
+    const bodyFont = getComputedStyle(document.body).fontFamily;
     if (sectionRef.current) {
-      sectionRef.current.style.fontFamily = htmlFont;
+      sectionRef.current.style.fontFamily = bodyFont;
     }
   }, []);
 
