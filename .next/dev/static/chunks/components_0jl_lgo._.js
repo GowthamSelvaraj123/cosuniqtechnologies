@@ -1047,72 +1047,49 @@ var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.sign
 ;
 ;
 ;
-// 3D Simplex Noise from Ashima Arts (MIT License)
 const snoiseGLSL = `
 vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
 vec4 mod289(vec4 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
 vec4 permute(vec4 x) { return mod289(((x*34.0)+1.0)*x); }
 vec4 taylorInvSqrt(vec4 r) { return 1.79284291400159 - 0.85373472095314 * r; }
-
 float snoise(vec3 v) { 
-  const vec2  C = vec2(1.0/6.0, 1.0/3.0) ;
-  const vec4  D = vec4(0.0, 0.5, 1.0, 2.0);
-
-  vec3 i  = floor(v + dot(v, C.yyy) );
-  vec3 x0 = v - i + dot(i, C.xxx) ;
-
+  const vec2 C = vec2(1.0/6.0, 1.0/3.0);
+  const vec4 D = vec4(0.0, 0.5, 1.0, 2.0);
+  vec3 i  = floor(v + dot(v, C.yyy));
+  vec3 x0 = v - i + dot(i, C.xxx);
   vec3 g = step(x0.yzx, x0.xyz);
   vec3 l = 1.0 - g;
-  vec3 i1 = min( g.xyz, l.zxy );
-  vec3 i2 = max( g.xyz, l.zxy );
-
+  vec3 i1 = min(g.xyz, l.zxy);
+  vec3 i2 = max(g.xyz, l.zxy);
   vec3 x1 = x0 - i1 + C.xxx;
   vec3 x2 = x0 - i2 + C.yyy; 
   vec3 x3 = x0 - D.yyy;      
-
   i = mod289(i); 
-  vec4 p = permute( permute( permute( 
-             i.z + vec4(0.0, i1.z, i2.z, 1.0 ))
-           + i.y + vec4(0.0, i1.y, i2.y, 1.0 )) 
-           + i.x + vec4(0.0, i1.x, i2.x, 1.0 ));
-
+  vec4 p = permute(permute(permute(i.z + vec4(0.0, i1.z, i2.z, 1.0)) + i.y + vec4(0.0, i1.y, i2.y, 1.0)) + i.x + vec4(0.0, i1.x, i2.x, 1.0));
   float n_ = 0.142857142857;
-  vec3  ns = n_ * D.wyz - D.xzx;
-
+  vec3 ns = n_ * D.wyz - D.xzx;
   vec4 j = p - 49.0 * floor(p * ns.z * ns.z);
-
   vec4 x_ = floor(j * ns.z);
-  vec4 y_ = floor(j - 7.0 * x_ );
-
+  vec4 y_ = floor(j - 7.0 * x_);
   vec4 x = x_ *ns.x + ns.yyyy;
   vec4 y = y_ *ns.x + ns.yyyy;
   vec4 h = 1.0 - abs(x) - abs(y);
-
-  vec4 b0 = vec4( x.xy, y.xy );
-  vec4 b1 = vec4( x.zw, y.zw );
-
+  vec4 b0 = vec4(x.xy, y.xy);
+  vec4 b1 = vec4(x.zw, y.zw);
   vec4 s0 = floor(b0)*2.0 + 1.0;
   vec4 s1 = floor(b1)*2.0 + 1.0;
   vec4 sh = -step(h, vec4(0.0));
-
-  vec4 a0 = b0.xzyw + s0.xzyw*sh.xxyy ;
-  vec4 a1 = b1.xzyw + s1.xzyw*sh.zzww ;
-
+  vec4 a0 = b0.xzyw + s0.xzyw*sh.xxyy;
+  vec4 a1 = b1.xzyw + s1.xzyw*sh.zzww;
   vec3 p0 = vec3(a0.xy,h.x);
   vec3 p1 = vec3(a0.zw,h.y);
   vec3 p2 = vec3(a1.xy,h.z);
   vec3 p3 = vec3(a1.zw,h.w);
-
   vec4 norm = taylorInvSqrt(vec4(dot(p0,p0), dot(p1,p1), dot(p2, p2), dot(p3,p3)));
-  p0 *= norm.x;
-  p1 *= norm.y;
-  p2 *= norm.z;
-  p3 *= norm.w;
-
+  p0 *= norm.x; p1 *= norm.y; p2 *= norm.z; p3 *= norm.w;
   vec4 m = max(0.6 - vec4(dot(x0,x0), dot(x1,x1), dot(x2,x2), dot(x3,x3)), 0.0);
   m = m * m;
-  return 42.0 * dot( m*m, vec4( dot(p0,x0), dot(p1,x1), 
-                                dot(p2,x2), dot(p3,x3) ) );
+  return 42.0 * dot(m*m, vec4(dot(p0,x0), dot(p1,x1), dot(p2,x2), dot(p3,x3)));
 }
 `;
 const vertexShader = `
@@ -1124,71 +1101,46 @@ const vertexShader = `
   uniform float uTextTransition;
   uniform float uHoveringCTA;
   
-  attribute float size;
-  attribute float randomOffset;
+  attribute float aSize;
+  attribute float aPhase;
+  attribute vec3 aColor;
   
+  varying vec3 vColor;
   varying float vAlpha;
-  varying float vDepth;
   varying float vProtection;
   
   void main() {
-    // Continuous lifecycle based on uTime and random offset
-    // Speed of cycle
-    float cycleSpeed = 0.05; 
-    float life = fract(uTime * cycleSpeed + randomOffset);
+    vColor = aColor;
+    vec3 pos = position;
     
-    // Seed parameters from position
-    // position.x = base radius scalar, position.y = base angle, position.z = base depth
-    float baseAngle = position.y;
-    float baseRadiusScalar = position.x;
+    // Core physics: flow -> attract -> orbit -> distort -> reform (from MagneticCore)
+    float r = length(pos.xy);
+    float angle = atan(pos.y, pos.x);
     
-    vec3 pos = vec3(0.0);
-    float currentRadius = 0.0;
+    // Vortex orbit: outer particles move slower, inner move faster
+    float orbitSpeed = 1.5 / (r + 0.5);
+    angle += uTime * orbitSpeed + aPhase;
     
-    // 1. Central Magnetic Core Lifecycle
-    // Phases: 
-    // 0.0 - 0.4: Float & Attract (from edges to core)
-    // 0.4 - 0.8: Magnetic Core (dense orbiting ring)
-    // 0.8 - 1.0: Disperse (shoot outward)
+    // Add magnetic pull (breathing effect)
+    float pull = sin(uTime * 0.8 + aPhase) * 0.15;
+    r *= (1.0 + pull);
     
-    if (life < 0.4) {
-      // Attract from far edges (radius 1000 to 200)
-      float t = life / 0.4;
-      currentRadius = mix(1200.0, 200.0, t) + (baseRadiusScalar * 100.0);
-      baseAngle += t * 2.5; // Tangential spiraling inward
-    } else if (life < 0.8) {
-      // Magnetic Core Orbit (Tight vortex ring)
-      float t = (life - 0.4) / 0.4;
-      currentRadius = 200.0 + sin(t * 3.14159) * 30.0 + (baseRadiusScalar * 40.0);
-      baseAngle += 1.0 + t * 6.0; // Fast vortex orbit
-    } else {
-      // Release & Disperse
-      float t = (life - 0.8) / 0.2;
-      currentRadius = mix(200.0, 1500.0, t) + (baseRadiusScalar * 150.0);
-      baseAngle += 7.0 + t * 1.5; 
-    }
+    pos.x = cos(angle) * r;
+    pos.y = sin(angle) * r;
     
-    pos.x = cos(baseAngle) * currentRadius;
-    pos.y = sin(baseAngle) * currentRadius;
-    pos.z = position.z + snoise(vec3(pos.x * 0.02, pos.y * 0.02, uTime * 0.2)) * 30.0;
+    // Abstract 3D noise distortion
+    float noise = snoise(vec3(pos.x * 0.5, pos.y * 0.5, uTime * 0.3));
+    pos.z += noise * 2.0;
     
-    // Add organic noise displacement
-    pos.x += snoise(vec3(pos.y * 0.01, pos.z * 0.01, uTime * 0.1 + randomOffset)) * 20.0;
-    pos.y += snoise(vec3(pos.x * 0.01, pos.z * 0.01, uTime * 0.1 + randomOffset)) * 20.0;
-
-    // 2. Cursor Influence (Secondary Force ~ 20%)
-    vec2 mouseWorld = uMouse * vec2(200.0, 120.0); 
+    // 2. Cursor Influence
+    vec2 mouseWorld = uMouse * 8.0; 
     float distToMouse = distance(pos.xy, mouseWorld);
     
-    if (distToMouse < 150.0) {
-      float magForce = smoothstep(150.0, 0.0, distToMouse);
-      // Gentle curve toward cursor (only 20% influence)
-      vec2 dirToMouse = normalize(mouseWorld - pos.xy);
-      vec2 orbitalDir = vec2(-dirToMouse.y, dirToMouse.x); 
-      
-      pos.xy += orbitalDir * magForce * 8.0; // Tangential bend (reduced influence)
-      pos.xy = mix(pos.xy, mouseWorld, magForce * 0.08); // Slight pull
-      pos.z += magForce * 12.0; // Slight lift
+    if (distToMouse < 4.0) {
+      float repel = (4.0 - distToMouse) * 0.5;
+      float ripple = sin(distToMouse * 5.0 - uTime * 5.0) * 0.3;
+      pos.z += ripple * repel;
+      pos.xy += normalize(pos.xy - mouseWorld) * repel * 0.2;
     }
     
     // 3. Text Synchronization (Massive Compression -> Expansion)
@@ -1197,85 +1149,57 @@ const vertexShader = `
       float distToCenter = distance(pos.xy, vec2(0.0));
       
       if (t < 0.3) {
-        // Sudden massive convergence
         float compress = smoothstep(0.0, 0.3, t);
-        pos.xy = mix(pos.xy, vec2(0.0), compress * 0.6 * smoothstep(800.0, 0.0, distToCenter));
-        pos.z = mix(pos.z, -50.0, compress);
+        pos.xy = mix(pos.xy, vec2(0.0), compress * 0.6 * smoothstep(12.0, 0.0, distToCenter));
+        pos.z = mix(pos.z, -8.0, compress);
       } else {
-        // Explosive expansion
         float exp = smoothstep(0.3, 1.0, t);
-        pos.xy += normalize(pos.xy) * exp * 150.0;
-        pos.z += sin(distToCenter * 0.05 - uTime * 5.0) * exp * 40.0;
+        pos.xy += normalize(pos.xy) * exp * 25.0;
+        pos.z += sin(distToCenter * 0.05 - uTime * 5.0) * exp * 6.0;
       }
     }
     
     // 4. CTA Hover Interaction (Flow from Center to CTA)
-    vec2 ctaPos = vec2(120.0, -80.0); 
+    vec2 ctaPos = vec2(10.0, -6.5); // Scaled down for camera z=15
     if (uHoveringCTA > 0.0) {
       float distToCTA = distance(pos.xy, ctaPos);
-      float ctaPull = smoothstep(300.0, 0.0, distToCTA) * uHoveringCTA;
-      
+      float ctaPull = smoothstep(20.0, 0.0, distToCTA) * uHoveringCTA;
       vec2 dirToCTA = normalize(ctaPos - pos.xy);
-      pos.xy += dirToCTA * ctaPull * 40.0;
-      pos.z += ctaPull * 20.0;
+      pos.xy += dirToCTA * ctaPull * 8.0;
+      pos.z += ctaPull * 4.0;
     }
     
     // 5. Cinematic Click Transition (Accelerating Singularity)
     if (uTransition > 0.0) {
-      float distToCTA = distance(pos.xy, ctaPos);
-      
       if (uTransition < 0.5) {
-        // Rapid acceleration into a dense core at the CTA
-        float pull = smoothstep(0.0, 0.5, uTransition);
+        float pullT = smoothstep(0.0, 0.5, uTransition);
         vec2 dirToCTA = normalize(ctaPos - pos.xy);
         vec2 orbitDir = vec2(-dirToCTA.y, dirToCTA.x);
-        
-        pos.xy += orbitDir * pull * 150.0; // Massive spiral
-        pos.xy = mix(pos.xy, ctaPos, pull * 0.95);
-        pos.z = mix(pos.z, -200.0, pull);
+        pos.xy += orbitDir * pullT * 25.0; // Massive spiral
+        pos.xy = mix(pos.xy, ctaPos, pullT * 0.95);
+        pos.z = mix(pos.z, -30.0, pullT);
       } else {
-        // Universal Explosion
-        float exp = smoothstep(0.5, 1.0, uTransition);
+        float expT = smoothstep(0.5, 1.0, uTransition);
         vec2 fullyPulledXY = mix(pos.xy, ctaPos, 0.95);
-        float fullyPulledZ = -200.0;
-        
-        pos.xy = fullyPulledXY + normalize(fullyPulledXY - ctaPos) * exp * 600.0;
-        pos.z = fullyPulledZ + exp * 300.0;
+        pos.xy = fullyPulledXY + normalize(fullyPulledXY - ctaPos) * expT * 100.0;
+        pos.z = -30.0 + expT * 50.0;
       }
     }
     
-    // 6. Text Protection Zone (CRITICAL: 45-55% Width Halo)
-    // Create a very wide elliptical zone that covers the typography completely
+    // 6. Text Protection Zone
     float ellipseDist = length(vec2(pos.x * 0.25, pos.y * 1.2)); 
-    float protectionRadius = 45.0; 
-    
-    // Smooth transition for the halo effect
-    float inZone = smoothstep(protectionRadius + 40.0, protectionRadius, ellipseDist);
-    
-    // Curve particles radially and tangentially around the text area
+    float protectionRadius = 4.0; 
+    float inZone = smoothstep(protectionRadius + 4.0, protectionRadius, ellipseDist);
     vec2 awayFromCenter = normalize(pos.xy);
     vec2 tangentialFlow = vec2(-awayFromCenter.y, awayFromCenter.x);
-    pos.xy += (awayFromCenter * 50.0 + tangentialFlow * 40.0) * inZone; 
-    
-    // Push deeply behind the text so they don't cross in front
-    pos.z -= inZone * 120.0; 
-    
-    // Send protection strength to fragment for near-zero opacity in the center
+    pos.xy += (awayFromCenter * 8.0 + tangentialFlow * 6.0) * inZone; 
+    pos.z -= inZone * 20.0; 
     vProtection = inZone;
 
     vec4 mvPosition = modelViewMatrix * vec4(pos, 1.0);
-    vDepth = pos.z;
-
-    // Dynamic sizing (significantly larger)
-    gl_PointSize = size * (400.0 / -mvPosition.z);
-    gl_PointSize = clamp(gl_PointSize, 2.0, 15.0);
+    gl_PointSize = aSize * (15.0 / -mvPosition.z);
     
-    // Smooth lifecycle fade in/out
-    float lifeFade = smoothstep(0.0, 0.1, life) * (1.0 - smoothstep(0.9, 1.0, life));
-    
-    // Base depth alpha (much higher base opacity)
-    vAlpha = (smoothstep(-120.0, 20.0, pos.z) * 0.8 + 0.4) * lifeFade;
-    
+    vAlpha = (smoothstep(-20.0, 5.0, pos.z) * 0.8 + 0.4);
     if (uTransition > 0.7) {
       vAlpha *= 1.0 - smoothstep(0.7, 1.0, uTransition);
     }
@@ -1284,70 +1208,63 @@ const vertexShader = `
   }
 `;
 const fragmentShader = `
+  varying vec3 vColor;
   varying float vAlpha;
-  varying float vDepth;
   varying float vProtection;
   
   void main() {
-    vec2 xy = gl_PointCoord.xy - vec2(0.5);
-    float ll = length(xy);
-    if (ll > 0.5) discard;
+    vec2 cxy = 2.0 * gl_PointCoord - 1.0;
+    float r = dot(cxy, cxy);
+    if (r > 1.0) discard;
     
-    // Sharper, more visible particle edge
-    float baseAlpha = smoothstep(0.5, 0.2, ll) * vAlpha;
+    float alpha = (1.0 - smoothstep(0.5, 1.0, r)) * vAlpha;
+    float a = alpha * (1.0 - (vProtection * 0.99));
     
-    // Text Protection Halo: Particles passing behind text fade almost entirely
-    float a = baseAlpha * (1.0 - (vProtection * 0.99));
-    
-    // Magnetic Palette: Exact requested colors
-    // #722A00 (darkest) to #D95400 (lightest)
-    vec3 colorBack = vec3(0.447, 0.165, 0.0); // #722A00
-    vec3 colorMid = vec3(0.588, 0.220, 0.0);  // #963800
-    vec3 colorFront = vec3(0.851, 0.329, 0.0); // #D95400
-    
-    // Z depth mapping
-    float depthMix = smoothstep(-50.0, 30.0, vDepth);
-    
-    vec3 finalColor;
-    if (depthMix < 0.5) {
-      finalColor = mix(colorBack, colorMid, depthMix * 2.0);
-    } else {
-      finalColor = mix(colorMid, colorFront, (depthMix - 0.5) * 2.0);
-    }
-    
-    gl_FragColor = vec4(finalColor, a);
+    gl_FragColor = vec4(vColor, a * 0.85);
   }
 `;
 function Particles({ transitionProgress, textTransitionProgress, isHoveringCTA, mousePos }) {
     _s();
-    const { size, camera } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$three$2f$fiber$2f$dist$2f$events$2d$156d8d12$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__C__as__useThree$3e$__["useThree"])();
+    const { camera } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$three$2f$fiber$2f$dist$2f$events$2d$156d8d12$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__C__as__useThree$3e$__["useThree"])();
     const materialRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     const timeRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(0);
-    // Fixed particle count to avoid WebGL buffer resizing bugs on initial load
-    const particleCount = 3500;
-    const [positions, sizes, randoms] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+    const count = 12000;
+    const [positions, colors, sizes, phases] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
         "Particles.useMemo": ()=>{
-            const positions = new Float32Array(particleCount * 3);
-            const sizes = new Float32Array(particleCount);
-            const randoms = new Float32Array(particleCount);
-            for(let i = 0; i < particleCount; i++){
-                // X = base radius random scalar (-1 to 1)
-                // Y = base angle (0 to 2PI)
-                // Z = base depth (-100 to 10)
-                positions[i * 3] = (Math.random() - 0.5) * 2.0;
-                positions[i * 3 + 1] = Math.random() * Math.PI * 2.0;
-                positions[i * 3 + 2] = (Math.random() - 0.5) * 110 - 45;
-                // Dramatically increase particle size
-                sizes[i] = Math.random() * 5.0 + 3.0;
-                randoms[i] = Math.random(); // 0 to 1 for lifecycle offset
+            const pos = new Float32Array(count * 3);
+            const col = new Float32Array(count * 3);
+            const sz = new Float32Array(count);
+            const ph = new Float32Array(count);
+            const colorPalette = [
+                new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$three$2f$build$2f$three$2e$core$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Color"]("#D95400"),
+                new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$three$2f$build$2f$three$2e$core$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Color"]("#B94700"),
+                new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$three$2f$build$2f$three$2e$core$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Color"]("#963800"),
+                new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$three$2f$build$2f$three$2e$core$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Color"]("#722A00")
+            ];
+            for(let i = 0; i < count; i++){
+                const radius = Math.random() * Math.random() * 8 + 0.5;
+                const theta = Math.random() * Math.PI * 2;
+                const height = (Math.random() - 0.5) * 4 * (1 - radius / 8);
+                pos[i * 3] = Math.cos(theta) * radius;
+                pos[i * 3 + 1] = Math.sin(theta) * radius;
+                pos[i * 3 + 2] = height;
+                const baseColor = colorPalette[Math.floor(Math.random() * colorPalette.length)];
+                col[i * 3] = baseColor.r;
+                col[i * 3 + 1] = baseColor.g;
+                col[i * 3 + 2] = baseColor.b;
+                sz[i] = Math.random() * 5.0 + 2.0; // Slightly larger sizes
+                ph[i] = Math.random() * Math.PI * 2;
             }
             return [
-                positions,
-                sizes,
-                randoms
+                pos,
+                col,
+                sz,
+                ph
             ];
         }
-    }["Particles.useMemo"], []);
+    }["Particles.useMemo"], [
+        count
+    ]);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$three$2f$fiber$2f$dist$2f$events$2d$156d8d12$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__D__as__useFrame$3e$__["useFrame"])({
         "Particles.useFrame": (state, delta)=>{
             timeRef.current += delta;
@@ -1363,11 +1280,11 @@ function Particles({ transitionProgress, textTransitionProgress, isHoveringCTA, 
                 materialRef.current.uniforms.uTextTransition.value = textTransitionProgress;
             }
             if (transitionProgress === 0) {
-                const targetX = mousePos.current[0] * 5;
-                const targetY = mousePos.current[1] * 5;
-                camera.position.x += (targetX - camera.position.x) * 0.01;
-                camera.position.y += (targetY - camera.position.y) * 0.01;
-                camera.position.z = 90 + Math.sin(timeRef.current * 0.2) * 5.0;
+                const targetX = mousePos.current[0] * 1.5;
+                const targetY = mousePos.current[1] * 1.5;
+                camera.position.x += (targetX - camera.position.x) * 0.02;
+                camera.position.y += (targetY - camera.position.y) * 0.02;
+                camera.position.z = 15;
                 camera.lookAt(0, 0, 0);
             }
         }
@@ -1378,38 +1295,48 @@ function Particles({ transitionProgress, textTransitionProgress, isHoveringCTA, 
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("bufferAttribute", {
                         attach: "attributes-position",
-                        count: particleCount,
+                        count: count,
                         array: positions,
                         itemSize: 3
                     }, void 0, false, {
                         fileName: "[project]/components/ParticleField.tsx",
-                        lineNumber: 351,
+                        lineNumber: 268,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("bufferAttribute", {
-                        attach: "attributes-size",
-                        count: particleCount,
+                        attach: "attributes-aColor",
+                        count: count,
+                        array: colors,
+                        itemSize: 3
+                    }, void 0, false, {
+                        fileName: "[project]/components/ParticleField.tsx",
+                        lineNumber: 269,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("bufferAttribute", {
+                        attach: "attributes-aSize",
+                        count: count,
                         array: sizes,
                         itemSize: 1
                     }, void 0, false, {
                         fileName: "[project]/components/ParticleField.tsx",
-                        lineNumber: 352,
+                        lineNumber: 270,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("bufferAttribute", {
-                        attach: "attributes-randomOffset",
-                        count: particleCount,
-                        array: randoms,
+                        attach: "attributes-aPhase",
+                        count: count,
+                        array: phases,
                         itemSize: 1
                     }, void 0, false, {
                         fileName: "[project]/components/ParticleField.tsx",
-                        lineNumber: 353,
+                        lineNumber: 271,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/ParticleField.tsx",
-                lineNumber: 350,
+                lineNumber: 267,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("shaderMaterial", {
@@ -1418,6 +1345,7 @@ function Particles({ transitionProgress, textTransitionProgress, isHoveringCTA, 
                 fragmentShader: fragmentShader,
                 transparent: true,
                 depthWrite: false,
+                blending: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$three$2f$build$2f$three$2e$core$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AdditiveBlending"],
                 uniforms: {
                     uTime: {
                         value: 0
@@ -1437,17 +1365,17 @@ function Particles({ transitionProgress, textTransitionProgress, isHoveringCTA, 
                 }
             }, void 0, false, {
                 fileName: "[project]/components/ParticleField.tsx",
-                lineNumber: 355,
+                lineNumber: 273,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/ParticleField.tsx",
-        lineNumber: 349,
+        lineNumber: 266,
         columnNumber: 5
     }, this);
 }
-_s(Particles, "umL1Rufz/S5hJx7+Wtt2Swhdgag=", false, function() {
+_s(Particles, "/zsriL5ZbJnUbkAIe0FMkzYHSag=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$three$2f$fiber$2f$dist$2f$events$2d$156d8d12$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__C__as__useThree$3e$__["useThree"],
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$three$2f$fiber$2f$dist$2f$events$2d$156d8d12$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__D__as__useFrame$3e$__["useFrame"]
@@ -1518,7 +1446,7 @@ function ParticleField({ transitionProgress, textTransitionProgress, isHoveringC
                 position: [
                     0,
                     0,
-                    90
+                    15
                 ],
                 fov: 45
             },
@@ -1533,17 +1461,17 @@ function ParticleField({ transitionProgress, textTransitionProgress, isHoveringC
                 mousePos: targetMouse
             }, void 0, false, {
                 fileName: "[project]/components/ParticleField.tsx",
-                lineNumber: 423,
+                lineNumber: 342,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/components/ParticleField.tsx",
-            lineNumber: 422,
+            lineNumber: 341,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/ParticleField.tsx",
-        lineNumber: 421,
+        lineNumber: 340,
         columnNumber: 5
     }, this);
 }
