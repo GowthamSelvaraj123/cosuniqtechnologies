@@ -188,8 +188,9 @@
   }
 
   .LivingBrandHero-module__qTCAXq__headline {
+    white-space: nowrap;
     margin-bottom: .75rem;
-    font-size: clamp(2.4rem, 9vw, 3.2rem);
+    font-size: clamp(2rem, 8.5vw, 3.2rem);
   }
 
   .LivingBrandHero-module__qTCAXq__description {

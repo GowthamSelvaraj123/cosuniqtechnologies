@@ -192,7 +192,8 @@
   
   .headline {
     margin-bottom: 0.75rem;
-    font-size: clamp(2.4rem, 9vw, 3.2rem);
+    font-size: clamp(2rem, 8.5vw, 3.2rem); /* Slightly smaller to prevent wrapping long words */
+    white-space: nowrap; /* Force the headline to not wrap awkwardly on small screens if possible, or we just rely on smaller font */
   }
   
   .description {
