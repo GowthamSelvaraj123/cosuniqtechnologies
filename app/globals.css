@@ -839,11 +839,17 @@ body.has-cursor .cursor-dot {
   gap: 1rem;
 }
 
+.lifecycle-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
 .process-card {
   padding: 1.75rem;
   border-radius: var(--radius);
-  background: var(--cream);
-  border: 1px solid var(--line);
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   transition: transform 0.25s, border-color 0.25s;
 }
 
@@ -1837,6 +1843,7 @@ textarea.field {
 
   .hero-creative__grid,
   .process-grid,
+  .lifecycle-grid,
   .service-bento,
   .results-grid,
   .paths-grid,
@@ -1881,6 +1888,7 @@ textarea.field {
 
   .hero-creative__grid,
   .process-grid,
+  .lifecycle-grid,
   .service-bento,
   .results-grid,
   .paths-grid,

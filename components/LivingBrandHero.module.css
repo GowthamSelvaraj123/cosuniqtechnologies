@@ -30,14 +30,8 @@
   pointer-events: none; /* Let canvas capture mouse if needed, except buttons */
 }
 
-.eyebrow {
-  font-family: var(--font-plus-jakarta), sans-serif !important;
-  font-size: 0.85rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
+.eyebrowWrap {
   margin-bottom: 1.5rem;
-  color: rgba(255, 255, 255, 0.8);
 }
 
 .headline {

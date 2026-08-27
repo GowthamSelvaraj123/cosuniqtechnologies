@@ -18,16 +18,8 @@
   display: flex;
 }
 
-.CapabilitiesUniverse-module__Zv_uza__eyebrow {
-  text-transform: uppercase;
-  letter-spacing: .18em;
-  color: #ff6b00;
-  align-items: center;
-  gap: .5rem;
+.CapabilitiesUniverse-module__Zv_uza__eyebrowWrap {
   margin-bottom: 1.1rem;
-  font-size: .68rem;
-  font-weight: 600;
-  display: inline-flex;
 }
 
 .CapabilitiesUniverse-module__Zv_uza__headline {
@@ -51,8 +43,8 @@
 
 .CapabilitiesUniverse-module__Zv_uza__card {
   cursor: pointer;
-  background: #fafafa;
-  border: 1px solid #eee;
+  background: none;
+  border: 1px solid #0000001a;
   border-radius: 18px;
   flex-direction: column;
   gap: 1.5rem;
@@ -63,14 +55,14 @@
 }
 
 .CapabilitiesUniverse-module__Zv_uza__card:hover, .CapabilitiesUniverse-module__Zv_uza__cardActive {
-  background: #fff8f4;
-  border-color: #ff6b0040;
+  background: none;
+  border-color: #ff6b00;
   transform: translateY(-4px);
   box-shadow: 0 4px 16px #ff6b0012, 0 16px 36px #ff6b001a;
 }
 
 .CapabilitiesUniverse-module__Zv_uza__icon {
-  color: #ff6b00;
+  color: #111;
   flex-shrink: 0;
   justify-content: center;
   align-items: center;
@@ -90,10 +82,6 @@
   margin: 0 0 .7rem;
   font-size: 1rem;
   font-weight: 800;
-}
-
-.CapabilitiesUniverse-module__Zv_uza__cardName:first-letter {
-  color: #ff6b00;
 }
 
 .CapabilitiesUniverse-module__Zv_uza__cardDesc {

@@ -750,10 +750,16 @@ body.has-cursor .cursor, body.has-cursor .cursor-dot {
   display: grid;
 }
 
+.lifecycle-grid {
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  display: grid;
+}
+
 .process-card {
   border-radius: var(--radius);
-  background: var(--cream);
-  border: 1px solid var(--line);
+  background: none;
+  border: 1px solid #0000001a;
   padding: 1.75rem;
   transition: transform .25s, border-color .25s;
 }
@@ -1703,7 +1709,7 @@ textarea.field {
 }
 
 @media (max-width: 960px) {
-  .hero-creative__grid, .process-grid, .service-bento, .results-grid, .paths-grid, .about-grid, .service-detail-grid, .contact-layout, .faq-layout, .bento {
+  .hero-creative__grid, .process-grid, .lifecycle-grid, .service-bento, .results-grid, .paths-grid, .about-grid, .service-detail-grid, .contact-layout, .faq-layout, .bento {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -1730,7 +1736,7 @@ textarea.field {
     display: inline-flex;
   }
 
-  .hero-creative__grid, .process-grid, .service-bento, .results-grid, .paths-grid, .bento, .services-grid, .portfolio-grid, .team-grid, .form-row, .footer-grid, .about-grid, .service-detail-grid, .contact-layout, .faq-layout {
+  .hero-creative__grid, .process-grid, .lifecycle-grid, .service-bento, .results-grid, .paths-grid, .bento, .services-grid, .portfolio-grid, .team-grid, .form-row, .footer-grid, .about-grid, .service-detail-grid, .contact-layout, .faq-layout {
     grid-template-columns: 1fr;
   }
 

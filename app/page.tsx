@@ -5,6 +5,7 @@ import CapabilitiesUniverse from "../components/CapabilitiesUniverse";
 import WorkSlider from "../components/WorkSlider";
 import QuoteSlider from "../components/QuoteSlider";
 import InitReveal from "../components/InitReveal";
+import WorkLifecycle from "../components/WorkLifecycle";
 
 export default function Home() {
   return (
@@ -15,46 +16,7 @@ export default function Home() {
       <LivingBrandHero />
       <CapabilitiesUniverse />
 
-      {/* Scroll starts here — Section A */}
-      <section className="band band--cream" id="section-a">
-        <div className="container manifesto reveal">
-          <p className="mega-line">
-            Meaningful digital is made through
-            <span className="line-accent"><span className="spark spark--inline"></span> software with purpose</span>
-            <span className="line-accent"><span className="spark spark--inline"></span> design that performs</span>
-            <span className="line-accent"><span className="spark spark--inline"></span> brand that connects</span>
-            <span className="line-accent"><span className="spark spark--inline"></span> video that impresses</span>
-          </p>
-        </div>
-      </section>
-
-      {/* PROCESS — KOTA numbered clarity */}
-      <section className="band band--white" id="process">
-        <div className="container">
-          <div className="section-intro reveal">
-            <span className="eyebrow"><span className="spark spark--inline"></span> Our framework</span>
-            <h2>Strategy first. Always.</h2>
-            <p>There are moments of change for every brand. That’s where our work begins.</p>
-          </div>
-          <div className="process-grid reveal">
-            <article className="process-card">
-              <span className="process-num">01</span>
-              <h3>Brand Clarity</h3>
-              <p>Decisions that help brands re-position and commit.</p>
-            </article>
-            <article className="process-card">
-              <span className="process-num">02</span>
-              <h3>Creative Craft</h3>
-              <p>Visually confident design built to stand out.</p>
-            </article>
-            <article className="process-card">
-              <span className="process-num">03</span>
-              <h3>Commercial Momentum</h3>
-              <p>Scalable systems with growth in mind.</p>
-            </article>
-          </div>
-        </div>
-      </section>
+      <WorkLifecycle />
 
       {/* Services are now handled by CapabilitiesUniverse */}
 

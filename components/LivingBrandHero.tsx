@@ -49,7 +49,10 @@ export default function LivingBrandHero() {
           className={styles.leftContent}
           style={{ y: headlineY, opacity }}
         >
-          <span className={styles.eyebrow}>Creative Technology + Branding</span>
+          <span className={`eyebrow ${styles.eyebrowWrap}`}>
+            <span className="spark spark--inline" />
+            Creative Technology + Branding
+          </span>
           
           <h1 className={styles.headline}>
             We build brands<br />

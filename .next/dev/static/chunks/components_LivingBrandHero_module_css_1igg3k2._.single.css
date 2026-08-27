@@ -31,14 +31,8 @@
   display: flex;
 }
 
-.LivingBrandHero-module__qTCAXq__eyebrow {
-  text-transform: uppercase;
-  letter-spacing: .2em;
-  color: #fffc;
+.LivingBrandHero-module__qTCAXq__eyebrowWrap {
   margin-bottom: 1.5rem;
-  font-size: .85rem;
-  font-weight: 700;
-  font-family: var(--font-plus-jakarta), sans-serif !important;
 }
 
 .LivingBrandHero-module__qTCAXq__headline {

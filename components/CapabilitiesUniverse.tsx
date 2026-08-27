@@ -35,9 +35,9 @@ const BrandingIcon = () => (
     />
     <line x1="7" y1="17" x2="17" y2="17" stroke="currentColor" strokeWidth="1.2" />
     {/* Small elegant dots */}
-    <circle cx="8.5"  cy="8"    r="0.8" fill="currentColor" />
-    <circle cx="12"   cy="11.5" r="0.8" fill="currentColor" />
-    <circle cx="15.5" cy="8"    r="0.8" fill="currentColor" />
+    <circle cx="8.5"  cy="8"    r="0.8" fill="#FF6B00" />
+    <circle cx="12"   cy="11.5" r="0.8" fill="#FF6B00" />
+    <circle cx="15.5" cy="8"    r="0.8" fill="#FF6B00" />
   </svg>
 );
 
@@ -46,7 +46,7 @@ const StrategyIcon = () => (
     <Dots />
     {/* Bullseye centered at (14, 10) */}
     <circle cx="14" cy="10" r="3"   stroke="currentColor" strokeWidth="1.2" />
-    <circle cx="14" cy="10" r="0.8" fill="currentColor" />
+    <circle cx="14" cy="10" r="0.8" fill="#FF6B00" />
     
     {/* Dart entering from bottom-left — using lines instead of heavy filled polygons */}
     <line x1="7" y1="17" x2="11.5" y2="12.5" stroke="currentColor" strokeWidth="1.2" />
@@ -71,7 +71,7 @@ const AIIcon = () => (
     
     {/* Center node, small fill */}
     <circle cx="12" cy="12" r="1.2" fill="rgba(255,107,0,0.1)" stroke="currentColor" strokeWidth="1.2" />
-    <circle cx="12" cy="12" r="0.5" fill="currentColor" />
+    <circle cx="12" cy="12" r="0.5" fill="#FF6B00" />
   </svg>
 );
 
@@ -80,7 +80,7 @@ const WebAppsIcon = () => (
     <Dots />
     <polyline points="10,8 7,12 10,16"  stroke="currentColor" strokeWidth="1.2" />
     <polyline points="14,8 17,12 14,16" stroke="currentColor" strokeWidth="1.2" />
-    <line x1="13" y1="7" x2="11" y2="17" stroke="currentColor" strokeWidth="1.2" />
+    <line x1="13" y1="7" x2="11" y2="17" stroke="#FF6B00" strokeWidth="1.2" />
   </svg>
 );
 
@@ -91,6 +91,7 @@ const MobileIcon = () => (
     <line x1="11" y1="15" x2="13" y2="15" stroke="currentColor" strokeWidth="1.2" />
     <path d="M7.5,10 C6.5,11 6.5,13 7.5,14"   stroke="currentColor" strokeWidth="1.2" />
     <path d="M16.5,10 C17.5,11 17.5,13 16.5,14" stroke="currentColor" strokeWidth="1.2" />
+    <circle cx="15.5" cy="6.5" r="1.5" fill="#FF6B00" />
   </svg>
 );
 
@@ -100,8 +101,8 @@ const UIUXIcon = () => (
     {/* Bezier strictly from 7 to 17 */}
     <line x1="7"  y1="17" x2="7"  y2="10" stroke="currentColor" strokeWidth="1.2" strokeDasharray="1.5 1.5" />
     <line x1="17" y1="7"  x2="17" y2="14" stroke="currentColor" strokeWidth="1.2" strokeDasharray="1.5 1.5" />
-    <circle cx="7"  cy="10" r="0.8" fill="currentColor" />
-    <circle cx="17" cy="14" r="0.8" fill="currentColor" />
+    <circle cx="7"  cy="10" r="0.8" fill="#FF6B00" />
+    <circle cx="17" cy="14" r="0.8" fill="#FF6B00" />
     
     <path d="M7,17 C7,10 17,14 17,7" stroke="currentColor" strokeWidth="1.2" fill="none" />
     
@@ -115,7 +116,7 @@ const WebsitesIcon = () => (
     <Dots />
     <rect x="7" y="8" width="10" height="8" rx="1.2" stroke="currentColor" strokeWidth="1.2" />
     <line x1="7" y1="11.5" x2="17" y2="11.5" stroke="currentColor" strokeWidth="1.2" />
-    <circle cx="8.5" cy="9.8" r="0.6" fill="currentColor" />
+    <circle cx="8.5" cy="9.8" r="0.6" fill="#FF6B00" />
     <circle cx="10.2" cy="9.8" r="0.6" fill="rgba(255,107,0,0.5)" />
     <circle cx="11.9" cy="9.8" r="0.6" fill="rgba(255,107,0,0.2)" />
     <line x1="9"  y1="13.5" x2="15" y2="13.5" stroke="currentColor" strokeWidth="1.2" />
@@ -128,6 +129,7 @@ const EcommerceIcon = () => (
     <path d="M10.5,10 C10.5,8 13.5,8 13.5,10" stroke="currentColor" strokeWidth="1.2" />
     <path d="M9,10 L8,17 L16,17 L15,10 Z" fill="rgba(255,107,0,0.1)" stroke="currentColor" strokeWidth="1.2" />
     <polyline points="10,14 11.5,15.5 14,12.5" stroke="currentColor" strokeWidth="1.2" />
+    <circle cx="12" cy="14" r="1.2" fill="rgba(255,107,0,0.1)" stroke="#FF6B00" strokeWidth="0.8" />
   </svg>
 );
 
@@ -151,7 +153,7 @@ export default function CapabilitiesUniverse() {
 
         <div className={styles.header}>
           <div>
-            <span className={styles.eyebrow}>
+            <span className={`eyebrow ${styles.eyebrowWrap}`}>
               <span className="spark spark--inline" />
               Our capabilities
             </span>
