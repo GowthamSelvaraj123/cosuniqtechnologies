@@ -2,7 +2,8 @@
 .CapabilitiesUniverse-module__Zv_uza__section {
   font-family: var(--font-plus-jakarta), sans-serif;
   background: #fff;
-  padding: 7rem 0 6rem;
+  border-bottom: none;
+  padding: 10rem 0;
 }
 
 .CapabilitiesUniverse-module__Zv_uza__container {
@@ -11,8 +12,10 @@
 }
 
 .CapabilitiesUniverse-module__Zv_uza__header {
-  text-align: left;
-  margin-bottom: 4rem;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+  display: flex;
 }
 
 .CapabilitiesUniverse-module__Zv_uza__eyebrow {
@@ -22,8 +25,8 @@
   align-items: center;
   gap: .5rem;
   margin-bottom: 1.1rem;
-  font-size: .72rem;
-  font-weight: 700;
+  font-size: .68rem;
+  font-weight: 600;
   display: inline-flex;
 }
 
@@ -31,20 +34,13 @@
   letter-spacing: -.03em;
   color: #111;
   margin: 0 0 1rem;
-  font-size: clamp(2.2rem, 4vw, 3.6rem);
-  font-weight: 800;
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  font-weight: 700;
   line-height: 1.08;
 }
 
 .CapabilitiesUniverse-module__Zv_uza__dot {
   color: #ff6b00;
-}
-
-.CapabilitiesUniverse-module__Zv_uza__sub {
-  color: #888;
-  max-width: 520px;
-  font-size: 1rem;
-  line-height: 1.65;
 }
 
 .CapabilitiesUniverse-module__Zv_uza__grid {
@@ -54,12 +50,12 @@
 }
 
 .CapabilitiesUniverse-module__Zv_uza__card {
-  cursor: default;
+  cursor: pointer;
   background: #fafafa;
   border: 1px solid #eee;
   border-radius: 18px;
   flex-direction: column;
-  gap: .75rem;
+  gap: 1.5rem;
   padding: 1.75rem 1.5rem 1.5rem;
   transition: background .25s, border-color .25s, transform .25s cubic-bezier(.25, 1, .5, 1), box-shadow .25s, opacity .25s;
   display: flex;
@@ -89,40 +85,35 @@
 }
 
 .CapabilitiesUniverse-module__Zv_uza__cardName {
-  text-transform: uppercase;
-  letter-spacing: .08em;
+  text-transform: capitalize;
   color: #111;
-  margin: 0 0 .25rem;
-  font-size: .78rem;
-  font-weight: 700;
+  margin: 0 0 .7rem;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.CapabilitiesUniverse-module__Zv_uza__cardName:first-letter {
+  color: #ff6b00;
 }
 
 .CapabilitiesUniverse-module__Zv_uza__cardDesc {
-  color: #888;
+  color: #666;
   margin: 0;
-  font-size: .83rem;
-  line-height: 1.5;
+  font-size: .8rem;
+  line-height: 1.8;
 }
 
 .CapabilitiesUniverse-module__Zv_uza__cardArrow {
-  color: #ff6b00;
-  opacity: 0;
-  font-size: .9rem;
-  transition: opacity .2s, transform .2s;
+  color: #ddd;
+  transition: color .25s, transform .25s cubic-bezier(.25, 1, .5, 1);
   position: absolute;
-  bottom: 1.25rem;
-  right: 1.25rem;
-  transform: translate(-4px, 4px);
+  top: 1.75rem;
+  right: 1.5rem;
 }
 
 .CapabilitiesUniverse-module__Zv_uza__card:hover .CapabilitiesUniverse-module__Zv_uza__cardArrow, .CapabilitiesUniverse-module__Zv_uza__cardActive .CapabilitiesUniverse-module__Zv_uza__cardArrow {
-  opacity: 1;
-  transform: translate(0);
-}
-
-.CapabilitiesUniverse-module__Zv_uza__ctaRow {
-  text-align: center;
-  margin-top: 3rem;
+  color: #ff6b00;
+  transform: translate(3px, -3px);
 }
 
 .CapabilitiesUniverse-module__Zv_uza__cta {
@@ -158,12 +149,19 @@
     padding: 5rem 0 4rem;
   }
 
+  .CapabilitiesUniverse-module__Zv_uza__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
   .CapabilitiesUniverse-module__Zv_uza__grid {
     grid-template-columns: 1fr;
     gap: .75rem;
   }
 
   .CapabilitiesUniverse-module__Zv_uza__headline {
+    margin: 0;
     font-size: clamp(1.8rem, 8vw, 2.6rem);
   }
 }

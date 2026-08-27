@@ -467,8 +467,8 @@ body.has-cursor .cursor-dot {
   padding: 2rem;
   border-radius: 20px;
   background: var(--white);
-  border: 1px solid rgba(0,0,0,0.07);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
@@ -515,16 +515,16 @@ body.has-cursor .cursor-dot {
 .result {
   padding: 2rem 1.5rem;
   border-radius: 20px;
-  border: 1px solid rgba(0,0,0,0.07);
+  border: 1px solid rgba(0, 0, 0, 0.07);
   background: var(--white);
   text-align: center;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .result:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(255,107,0,0.1);
+  box-shadow: 0 12px 32px rgba(255, 107, 0, 0.1);
 }
 
 .result strong {
@@ -554,29 +554,29 @@ body.has-cursor .cursor-dot {
 .path-card {
   padding: 2rem;
   border-radius: 20px;
-  border: 1px solid rgba(0,0,0,0.07);
+  border: 1px solid rgba(0, 0, 0, 0.07);
   background: var(--white);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .path-card:hover {
   transform: translateY(-5px);
   border-color: var(--brand);
-  box-shadow: 0 12px 36px rgba(255,107,0,0.12);
+  box-shadow: 0 12px 36px rgba(255, 107, 0, 0.12);
 }
 
 .path-card--hot {
   background: var(--brand);
   border-color: var(--brand);
   color: var(--white);
-  box-shadow: 0 8px 32px rgba(255,107,0,0.3);
+  box-shadow: 0 8px 32px rgba(255, 107, 0, 0.3);
 }
 
 .path-card--hot:hover {
   background: #e65c00;
   border-color: #e65c00;
-  box-shadow: 0 16px 48px rgba(255,107,0,0.4);
+  box-shadow: 0 16px 48px rgba(255, 107, 0, 0.4);
 }
 
 .path-card--hot p,
@@ -612,7 +612,9 @@ body.has-cursor .cursor-dot {
   transition: gap 0.2s ease;
 }
 
-.path-card a:hover { gap: 0.6rem; }
+.path-card a:hover {
+  gap: 0.6rem;
+}
 
 /* ---------- CTA blob ---------- */
 .cta-blob {
@@ -628,9 +630,12 @@ body.has-cursor .cursor-dot {
 .cta-blob::before {
   content: '';
   position: absolute;
-  top: -60px; left: 50%; transform: translateX(-50%);
-  width: 400px; height: 200px;
-  background: radial-gradient(ellipse, rgba(255,107,0,0.12) 0%, transparent 70%);
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 200px;
+  background: radial-gradient(ellipse, rgba(255, 107, 0, 0.12) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -1289,12 +1294,12 @@ body.has-cursor .cursor-dot {
   font-size: 1.05rem;
 }
 
-main > section:not(.hero-creative):not(.band):not(.page-hero):not(.cta-band) {
-  padding: 2.25rem 0;
+main>section:not(.hero-creative):not(.band):not(.page-hero):not(.cta-band) {
+  padding: 3.6rem 0;
   border-bottom: 1px solid var(--line);
 }
 
-main > section:not(.hero-creative):not(.band):not(.page-hero):not(.cta-band):nth-of-type(even) {
+main>section:not(.hero-creative):not(.band):not(.page-hero):not(.cta-band):nth-of-type(even) {
   background: var(--cream);
 }
 
@@ -1392,7 +1397,7 @@ main > section:not(.hero-creative):not(.band):not(.page-hero):not(.cta-band):nth
   gap: 0.65rem;
 }
 
-main > section:nth-of-type(odd) .feature-list li {
+main>section:nth-of-type(odd) .feature-list li {
   background: var(--cream);
 }
 
@@ -1522,7 +1527,7 @@ main > section:nth-of-type(odd) .feature-list li {
   margin-bottom: 0.65rem;
 }
 
-.contact-info > p,
+.contact-info>p,
 .info-item p,
 .info-item a {
   color: var(--muted);
@@ -1777,11 +1782,13 @@ textarea.field {
 }
 
 @keyframes twinkle {
+
   0%,
   100% {
     transform: scale(1) rotate(0deg);
     opacity: 1;
   }
+
   50% {
     transform: scale(1.25) rotate(20deg);
     opacity: 0.7;
@@ -1793,6 +1800,7 @@ textarea.field {
     opacity: 0;
     transform: translateY(16px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1826,6 +1834,7 @@ textarea.field {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 960px) {
+
   .hero-creative__grid,
   .process-grid,
   .service-bento,
@@ -1860,6 +1869,7 @@ textarea.field {
 }
 
 @media (max-width: 720px) {
+
   .nav-links,
   .nav-cta {
     display: none;
@@ -1940,7 +1950,9 @@ textarea.field {
     font-size: clamp(1.6rem, 5vw, 2rem);
   }
 
-  .process-card, .result, .path-card {
+  .process-card,
+  .result,
+  .path-card {
     padding: 1.5rem;
   }
 
@@ -1950,6 +1962,7 @@ textarea.field {
 }
 
 @media (hover: none) {
+
   .cursor,
   .cursor-dot {
     display: none !important;
@@ -2053,7 +2066,7 @@ summary:focus-visible {
 
 section.band--cream .service-tile,
 section.band--cream .about-block,
-.page-hero + section .about-block {
+.page-hero+section .about-block {
   background: var(--white);
 }
 
@@ -2261,11 +2274,15 @@ body {
 }
 
 @media (max-width: 720px) {
-  body { font-size: 16px; }
+  body {
+    font-size: 16px;
+  }
+
   .hero-creative h1 {
     font-size: clamp(2.15rem, 9.5vw, 2.85rem) !important;
   }
 }
+
 /* ============================================
    Fullscreen hero slider ï¿½ Stellar Souls style
    + Designpluz messaging clarity
@@ -2716,8 +2733,15 @@ body {
 }
 
 @keyframes scroll-a-bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(8px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(8px);
+  }
 }
 
 #section-a {
@@ -2737,4 +2761,3 @@ body {
     height: 56px;
   }
 }
-
