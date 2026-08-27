@@ -12,8 +12,8 @@ export default function WorkSlider() {
   };
 
   return (
-    <section className="band band--black" id="work">
-      <div className="container">
+    <section className="band" id="work" style={{ backgroundColor: '#FFF6F0', position: 'relative', overflow: 'hidden' }}>
+      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div className="slider-head reveal">
           <div>
             <span className="eyebrow"><span className="spark spark--inline"></span> Featured work</span>
