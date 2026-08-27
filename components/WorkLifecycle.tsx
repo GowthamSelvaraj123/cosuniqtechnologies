@@ -6,18 +6,26 @@ import Link from "next/link";
 export default function WorkLifecycle() {
   return (
     <section className="band band--white" id="work-lifecycle">
-      <div style={{ width: 'min(1200px, 92vw)', margin: '0 auto 3rem auto', textAlign: 'left' }}>
+      <div style={{ width: "min(1200px, 92vw)", margin: "3rem auto 0 auto", position: 'relative' }}>
         
-        <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '1.25rem', flexWrap: 'wrap' }}>
-          
+        {/* Top Right: Hi, I am gowtham */}
+        <div style={{
+          position: 'absolute',
+          top: '-40px',
+          right: '15px',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.75rem',
+          zIndex: 10
+        }}>
           <div style={{
             position: 'relative',
             display: 'inline-flex',
             background: '#FF6B00',
             color: '#ffffff',
             fontWeight: 800,
-            fontSize: '1.2rem',
-            padding: '0.6rem 1.4rem',
+            fontSize: '1rem',
+            padding: '0.4rem 1rem',
             borderRadius: '30px',
             boxShadow: '0 4px 12px rgba(255, 107, 0, 0.25)'
           }}>
@@ -25,30 +33,38 @@ export default function WorkLifecycle() {
             <div style={{
               position: 'absolute',
               bottom: '-8px',
-              left: '27px',
+              left: '17px',
               width: 0,
               height: 0,
-              borderLeft: '8px solid transparent',
-              borderRight: '8px solid transparent',
-              borderTop: '8px solid #FF6B00'
+              borderLeft: '10px solid transparent',
+              borderRight: '10px solid transparent',
+              borderTop: '10px solid #FF6B00'
             }} />
           </div>
-
-          <h1 style={{ 
-            fontSize: 'clamp(1.6rem, 2.8vw, 2.4rem)', 
-            color: '#111111', 
-            margin: 0, 
-            fontWeight: 700, 
-            letterSpacing: '-0.03em', 
-            lineHeight: 1.08 
-          }}>
-            I am gowtham, we <svg width="1em" height="1em" viewBox="0 0 24 24" fill="#FF6B00" style={{ display: 'inline-block', verticalAlign: 'middle', margin: '0 0.1rem', transform: 'translateY(-2px)' }}><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> support your business.
-          </h1>
-          
+          <span style={{ fontSize: '1.6rem', fontWeight: 700, color: '#111', letterSpacing: '-0.03em' }}>
+            I am gowtham,
+          </span>
         </div>
-      </div>
 
-      <div style={{ width: "min(1200px, 92vw)", margin: "0 auto" }}>
+        {/* Right Vertical: we love support your business */}
+        <div style={{
+          position: 'absolute',
+          left: 'calc(100% + 1px)',
+          top: '7px',
+          writingMode: 'vertical-rl',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.5rem',
+          fontSize: '1.6rem',
+          fontWeight: 700,
+          color: '#111',
+          letterSpacing: '-0.03em',
+          whiteSpace: 'nowrap',
+          zIndex: 10
+        }}>
+          we <svg width="1em" height="1em" viewBox="0 0 24 24" fill="#FF6B00" style={{ transform: 'rotate(90deg)' }}><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> support your business.
+        </div>
+
         <div className="lifecycle-grid reveal">
           <div className="section-intro process-card" style={{ background: '#FF6B00', borderColor: '#FF6B00', justifyContent: 'center', borderRadius: '12px' }}>
             <span className="eyebrow" style={{ marginBottom: '1.5rem', color: 'rgba(255,255,255,0.9)', background: 'rgba(255,255,255,0.2)', alignSelf: 'flex-start' }}>

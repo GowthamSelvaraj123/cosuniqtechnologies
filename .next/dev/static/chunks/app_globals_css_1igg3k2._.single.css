@@ -840,14 +840,15 @@ body.has-cursor .cursor, body.has-cursor .cursor-dot {
 }
 
 .process-num {
-  font-family: var(--display);
+  letter-spacing: .12em;
+  text-transform: uppercase;
   color: var(--brand);
-  background: none;
-  margin: 0;
-  padding: 0;
-  font-size: 1.2rem;
+  background: #ff6b001a;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: .72rem;
   font-weight: 800;
-  display: block;
+  display: inline-block;
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;

@@ -2307,20 +2307,22 @@ function WorkLifecycle() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         className: "band band--white",
         id: "work-lifecycle",
-        children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                style: {
-                    width: 'min(1200px, 92vw)',
-                    margin: '0 auto 3rem auto',
-                    textAlign: 'left'
-                },
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            style: {
+                width: "min(1200px, 92vw)",
+                margin: "3rem auto 0 auto",
+                position: 'relative'
+            },
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     style: {
+                        position: 'absolute',
+                        top: '-40px',
+                        right: '15px',
                         display: 'flex',
-                        flexDirection: 'row',
                         alignItems: 'center',
-                        gap: '1.25rem',
-                        flexWrap: 'wrap'
+                        gap: '0.75rem',
+                        zIndex: 10
                     },
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2330,8 +2332,8 @@ function WorkLifecycle() {
                                 background: '#FF6B00',
                                 color: '#ffffff',
                                 fontWeight: 800,
-                                fontSize: '1.2rem',
-                                padding: '0.6rem 1.4rem',
+                                fontSize: '1rem',
+                                padding: '0.4rem 1rem',
                                 borderRadius: '30px',
                                 boxShadow: '0 4px 12px rgba(255, 107, 0, 0.25)'
                             },
@@ -2341,82 +2343,89 @@ function WorkLifecycle() {
                                     style: {
                                         position: 'absolute',
                                         bottom: '-8px',
-                                        left: '27px',
+                                        left: '17px',
                                         width: 0,
                                         height: 0,
-                                        borderLeft: '8px solid transparent',
-                                        borderRight: '8px solid transparent',
-                                        borderTop: '8px solid #FF6B00'
+                                        borderLeft: '10px solid transparent',
+                                        borderRight: '10px solid transparent',
+                                        borderTop: '10px solid #FF6B00'
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/components/WorkLifecycle.tsx",
-                                    lineNumber: 25,
+                                    lineNumber: 33,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/WorkLifecycle.tsx",
-                            lineNumber: 13,
+                            lineNumber: 21,
                             columnNumber: 11
                         }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                             style: {
-                                fontSize: 'clamp(1.6rem, 2.8vw, 2.4rem)',
-                                color: '#111111',
-                                margin: 0,
+                                fontSize: '1.6rem',
                                 fontWeight: 700,
-                                letterSpacing: '-0.03em',
-                                lineHeight: 1.08
+                                color: '#111',
+                                letterSpacing: '-0.03em'
                             },
-                            children: [
-                                "I am gowtham, we ",
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                    width: "1em",
-                                    height: "1em",
-                                    viewBox: "0 0 24 24",
-                                    fill: "#FF6B00",
-                                    style: {
-                                        display: 'inline-block',
-                                        verticalAlign: 'middle',
-                                        margin: '0 0.1rem',
-                                        transform: 'translateY(-2px)'
-                                    },
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                        d: "M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/WorkLifecycle.tsx",
-                                        lineNumber: 45,
-                                        columnNumber: 207
-                                    }, this)
-                                }, void 0, false, {
-                                    fileName: "[project]/components/WorkLifecycle.tsx",
-                                    lineNumber: 45,
-                                    columnNumber: 30
-                                }, this),
-                                " support your business."
-                            ]
-                        }, void 0, true, {
+                            children: "I am gowtham,"
+                        }, void 0, false, {
                             fileName: "[project]/components/WorkLifecycle.tsx",
-                            lineNumber: 37,
+                            lineNumber: 44,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/WorkLifecycle.tsx",
-                    lineNumber: 11,
+                    lineNumber: 12,
                     columnNumber: 9
-                }, this)
-            }, void 0, false, {
-                fileName: "[project]/components/WorkLifecycle.tsx",
-                lineNumber: 9,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                style: {
-                    width: "min(1200px, 92vw)",
-                    margin: "0 auto"
-                },
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    style: {
+                        position: 'absolute',
+                        left: 'calc(100% + 1px)',
+                        top: '7px',
+                        writingMode: 'vertical-rl',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.5rem',
+                        fontSize: '1.6rem',
+                        fontWeight: 700,
+                        color: '#111',
+                        letterSpacing: '-0.03em',
+                        whiteSpace: 'nowrap',
+                        zIndex: 10
+                    },
+                    children: [
+                        "we ",
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                            width: "1em",
+                            height: "1em",
+                            viewBox: "0 0 24 24",
+                            fill: "#FF6B00",
+                            style: {
+                                transform: 'rotate(90deg)'
+                            },
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                d: "M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                            }, void 0, false, {
+                                fileName: "[project]/components/WorkLifecycle.tsx",
+                                lineNumber: 65,
+                                columnNumber: 118
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/components/WorkLifecycle.tsx",
+                            lineNumber: 65,
+                            columnNumber: 14
+                        }, this),
+                        " support your business."
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/components/WorkLifecycle.tsx",
+                    lineNumber: 50,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "lifecycle-grid reveal",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2444,14 +2453,14 @@ function WorkLifecycle() {
                                             }
                                         }, void 0, false, {
                                             fileName: "[project]/components/WorkLifecycle.tsx",
-                                            lineNumber: 55,
+                                            lineNumber: 71,
                                             columnNumber: 15
                                         }, this),
                                         "Our Work Lifecycle"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/WorkLifecycle.tsx",
-                                    lineNumber: 54,
+                                    lineNumber: 70,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -2465,13 +2474,13 @@ function WorkLifecycle() {
                                     children: "Digital Metamorphosis."
                                 }, void 0, false, {
                                     fileName: "[project]/components/WorkLifecycle.tsx",
-                                    lineNumber: 58,
+                                    lineNumber: 74,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/WorkLifecycle.tsx",
-                            lineNumber: 53,
+                            lineNumber: 69,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("article", {
@@ -2482,7 +2491,7 @@ function WorkLifecycle() {
                                     children: "01"
                                 }, void 0, false, {
                                     fileName: "[project]/components/WorkLifecycle.tsx",
-                                    lineNumber: 64,
+                                    lineNumber: 80,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2503,7 +2512,7 @@ function WorkLifecycle() {
                                                 d: "M2 14 C 8 10 16 14 22 10"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/WorkLifecycle.tsx",
-                                                lineNumber: 67,
+                                                lineNumber: 83,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -2511,7 +2520,7 @@ function WorkLifecycle() {
                                                 fill: "rgba(255,107,0,0.1)"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/WorkLifecycle.tsx",
-                                                lineNumber: 68,
+                                                lineNumber: 84,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ellipse", {
@@ -2522,18 +2531,18 @@ function WorkLifecycle() {
                                                 fill: "#ffffff"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/WorkLifecycle.tsx",
-                                                lineNumber: 69,
+                                                lineNumber: 85,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/WorkLifecycle.tsx",
-                                        lineNumber: 66,
+                                        lineNumber: 82,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/WorkLifecycle.tsx",
-                                    lineNumber: 65,
+                                    lineNumber: 81,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -2544,7 +2553,7 @@ function WorkLifecycle() {
                                     children: "Origin"
                                 }, void 0, false, {
                                     fileName: "[project]/components/WorkLifecycle.tsx",
-                                    lineNumber: 72,
+                                    lineNumber: 88,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2555,13 +2564,13 @@ function WorkLifecycle() {
                                     children: "Strategy, planning, and aligning on goals before the work begins."
                                 }, void 0, false, {
                                     fileName: "[project]/components/WorkLifecycle.tsx",
-                                    lineNumber: 73,
+                                    lineNumber: 89,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/WorkLifecycle.tsx",
-                            lineNumber: 63,
+                            lineNumber: 79,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("article", {
@@ -2572,7 +2581,7 @@ function WorkLifecycle() {
                                     children: "02"
                                 }, void 0, false, {
                                     fileName: "[project]/components/WorkLifecycle.tsx",
-                                    lineNumber: 77,
+                                    lineNumber: 93,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2593,7 +2602,7 @@ function WorkLifecycle() {
                                                 d: "M2 18 L 22 18"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/WorkLifecycle.tsx",
-                                                lineNumber: 80,
+                                                lineNumber: 96,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -2601,7 +2610,7 @@ function WorkLifecycle() {
                                                 fill: "rgba(255,107,0,0.1)"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/WorkLifecycle.tsx",
-                                                lineNumber: 81,
+                                                lineNumber: 97,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -2612,21 +2621,21 @@ function WorkLifecycle() {
                                                 stroke: "none"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/WorkLifecycle.tsx",
-                                                lineNumber: 82,
+                                                lineNumber: 98,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                                                 d: "M20 13 Q 21 10 23 11"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/WorkLifecycle.tsx",
-                                                lineNumber: 83,
+                                                lineNumber: 99,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                                                 d: "M19 13 Q 18 10 17 10"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/WorkLifecycle.tsx",
-                                                lineNumber: 84,
+                                                lineNumber: 100,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -2636,7 +2645,7 @@ function WorkLifecycle() {
                                                 y2: "18"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/WorkLifecycle.tsx",
-                                                lineNumber: 85,
+                                                lineNumber: 101,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -2646,7 +2655,7 @@ function WorkLifecycle() {
                                                 y2: "18"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/WorkLifecycle.tsx",
-                                                lineNumber: 86,
+                                                lineNumber: 102,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -2656,7 +2665,7 @@ function WorkLifecycle() {
                                                 y2: "18"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/WorkLifecycle.tsx",
-                                                lineNumber: 87,
+                                                lineNumber: 103,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -2666,18 +2675,18 @@ function WorkLifecycle() {
                                                 y2: "18"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/WorkLifecycle.tsx",
-                                                lineNumber: 88,
+                                                lineNumber: 104,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/WorkLifecycle.tsx",
-                                        lineNumber: 79,
+                                        lineNumber: 95,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/WorkLifecycle.tsx",
-                                    lineNumber: 78,
+                                    lineNumber: 94,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -2688,7 +2697,7 @@ function WorkLifecycle() {
                                     children: "Form"
                                 }, void 0, false, {
                                     fileName: "[project]/components/WorkLifecycle.tsx",
-                                    lineNumber: 91,
+                                    lineNumber: 107,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2699,13 +2708,13 @@ function WorkLifecycle() {
                                     children: "Gathering ideas, laying the strategic foundation, and core design."
                                 }, void 0, false, {
                                     fileName: "[project]/components/WorkLifecycle.tsx",
-                                    lineNumber: 92,
+                                    lineNumber: 108,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/WorkLifecycle.tsx",
-                            lineNumber: 76,
+                            lineNumber: 92,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("article", {
@@ -2716,7 +2725,7 @@ function WorkLifecycle() {
                                     children: "03"
                                 }, void 0, false, {
                                     fileName: "[project]/components/WorkLifecycle.tsx",
-                                    lineNumber: 96,
+                                    lineNumber: 112,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2737,7 +2746,7 @@ function WorkLifecycle() {
                                                 d: "M4 4 L 20 4"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/WorkLifecycle.tsx",
-                                                lineNumber: 99,
+                                                lineNumber: 115,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -2747,7 +2756,7 @@ function WorkLifecycle() {
                                                 y2: "7"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/WorkLifecycle.tsx",
-                                                lineNumber: 100,
+                                                lineNumber: 116,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -2755,39 +2764,39 @@ function WorkLifecycle() {
                                                 fill: "rgba(255,107,0,0.1)"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/WorkLifecycle.tsx",
-                                                lineNumber: 101,
+                                                lineNumber: 117,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                                                 d: "M9.5 11 L 14.5 11"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/WorkLifecycle.tsx",
-                                                lineNumber: 102,
+                                                lineNumber: 118,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                                                 d: "M9.2 15 L 14.8 15"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/WorkLifecycle.tsx",
-                                                lineNumber: 103,
+                                                lineNumber: 119,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                                                 d: "M10.5 18 L 13.5 18"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/WorkLifecycle.tsx",
-                                                lineNumber: 104,
+                                                lineNumber: 120,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/WorkLifecycle.tsx",
-                                        lineNumber: 98,
+                                        lineNumber: 114,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/WorkLifecycle.tsx",
-                                    lineNumber: 97,
+                                    lineNumber: 113,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -2798,7 +2807,7 @@ function WorkLifecycle() {
                                     children: "Metamorphosis"
                                 }, void 0, false, {
                                     fileName: "[project]/components/WorkLifecycle.tsx",
-                                    lineNumber: 107,
+                                    lineNumber: 123,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2809,13 +2818,13 @@ function WorkLifecycle() {
                                     children: "Intense transformation—building systems and primary development."
                                 }, void 0, false, {
                                     fileName: "[project]/components/WorkLifecycle.tsx",
-                                    lineNumber: 108,
+                                    lineNumber: 124,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/WorkLifecycle.tsx",
-                            lineNumber: 95,
+                            lineNumber: 111,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("article", {
@@ -2826,7 +2835,7 @@ function WorkLifecycle() {
                                     children: "04"
                                 }, void 0, false, {
                                     fileName: "[project]/components/WorkLifecycle.tsx",
-                                    lineNumber: 112,
+                                    lineNumber: 128,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2851,21 +2860,21 @@ function WorkLifecycle() {
                                                 strokeWidth: "2"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/WorkLifecycle.tsx",
-                                                lineNumber: 115,
+                                                lineNumber: 131,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                                                 d: "M12 7 Q 9 3 7 5"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/WorkLifecycle.tsx",
-                                                lineNumber: 116,
+                                                lineNumber: 132,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                                                 d: "M12 7 Q 15 3 17 5"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/WorkLifecycle.tsx",
-                                                lineNumber: 117,
+                                                lineNumber: 133,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -2873,7 +2882,7 @@ function WorkLifecycle() {
                                                 fill: "rgba(255,107,0,0.1)"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/WorkLifecycle.tsx",
-                                                lineNumber: 118,
+                                                lineNumber: 134,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -2881,18 +2890,18 @@ function WorkLifecycle() {
                                                 fill: "rgba(255,107,0,0.1)"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/WorkLifecycle.tsx",
-                                                lineNumber: 119,
+                                                lineNumber: 135,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/WorkLifecycle.tsx",
-                                        lineNumber: 114,
+                                        lineNumber: 130,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/WorkLifecycle.tsx",
-                                    lineNumber: 113,
+                                    lineNumber: 129,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -2903,7 +2912,7 @@ function WorkLifecycle() {
                                     children: "Emergence"
                                 }, void 0, false, {
                                     fileName: "[project]/components/WorkLifecycle.tsx",
-                                    lineNumber: 122,
+                                    lineNumber: 138,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2914,13 +2923,13 @@ function WorkLifecycle() {
                                     children: "Emergence through refinement, rigorous testing, and final polish."
                                 }, void 0, false, {
                                     fileName: "[project]/components/WorkLifecycle.tsx",
-                                    lineNumber: 123,
+                                    lineNumber: 139,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/WorkLifecycle.tsx",
-                            lineNumber: 111,
+                            lineNumber: 127,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("article", {
@@ -2931,7 +2940,7 @@ function WorkLifecycle() {
                                     children: "05"
                                 }, void 0, false, {
                                     fileName: "[project]/components/WorkLifecycle.tsx",
-                                    lineNumber: 127,
+                                    lineNumber: 143,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2953,7 +2962,7 @@ function WorkLifecycle() {
                                                 strokeDasharray: "2 3"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/WorkLifecycle.tsx",
-                                                lineNumber: 130,
+                                                lineNumber: 146,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
@@ -2967,21 +2976,21 @@ function WorkLifecycle() {
                                                         strokeWidth: "2"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/WorkLifecycle.tsx",
-                                                        lineNumber: 132,
+                                                        lineNumber: 148,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                                                         d: "M12 7 Q 9 3 7 5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/WorkLifecycle.tsx",
-                                                        lineNumber: 133,
+                                                        lineNumber: 149,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                                                         d: "M12 7 Q 15 3 17 5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/WorkLifecycle.tsx",
-                                                        lineNumber: 134,
+                                                        lineNumber: 150,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -2989,7 +2998,7 @@ function WorkLifecycle() {
                                                         fill: "rgba(255,107,0,0.1)"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/WorkLifecycle.tsx",
-                                                        lineNumber: 135,
+                                                        lineNumber: 151,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -2997,24 +3006,24 @@ function WorkLifecycle() {
                                                         fill: "rgba(255,107,0,0.1)"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/WorkLifecycle.tsx",
-                                                        lineNumber: 136,
+                                                        lineNumber: 152,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/WorkLifecycle.tsx",
-                                                lineNumber: 131,
+                                                lineNumber: 147,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/WorkLifecycle.tsx",
-                                        lineNumber: 129,
+                                        lineNumber: 145,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/WorkLifecycle.tsx",
-                                    lineNumber: 128,
+                                    lineNumber: 144,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -3025,7 +3034,7 @@ function WorkLifecycle() {
                                     children: "Flight"
                                 }, void 0, false, {
                                     fileName: "[project]/components/WorkLifecycle.tsx",
-                                    lineNumber: 140,
+                                    lineNumber: 156,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3036,28 +3045,28 @@ function WorkLifecycle() {
                                     children: "Launch, scalable commercial momentum, and ongoing growth."
                                 }, void 0, false, {
                                     fileName: "[project]/components/WorkLifecycle.tsx",
-                                    lineNumber: 141,
+                                    lineNumber: 157,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/WorkLifecycle.tsx",
-                            lineNumber: 126,
+                            lineNumber: 142,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/WorkLifecycle.tsx",
-                    lineNumber: 52,
+                    lineNumber: 68,
                     columnNumber: 9
                 }, this)
-            }, void 0, false, {
-                fileName: "[project]/components/WorkLifecycle.tsx",
-                lineNumber: 51,
-                columnNumber: 7
-            }, this)
-        ]
-    }, void 0, true, {
+            ]
+        }, void 0, true, {
+            fileName: "[project]/components/WorkLifecycle.tsx",
+            lineNumber: 9,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
         fileName: "[project]/components/WorkLifecycle.tsx",
         lineNumber: 8,
         columnNumber: 5

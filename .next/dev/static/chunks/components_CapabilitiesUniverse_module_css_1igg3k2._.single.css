@@ -43,6 +43,9 @@
 
 .CapabilitiesUniverse-module__Zv_uza__card {
   cursor: pointer;
+  --card-y: 0px;
+  --card-rot: 0deg;
+  transform: translateY(var(--card-y)) rotate(var(--card-rot));
   background: none;
   border: 1px solid #0000001a;
   border-radius: 18px;
@@ -55,10 +58,57 @@
 }
 
 .CapabilitiesUniverse-module__Zv_uza__card:hover, .CapabilitiesUniverse-module__Zv_uza__cardActive {
+  transform: translateY(calc(var(--card-y) - 6px)) rotate(var(--card-rot)) scale(1.02);
   background: none;
   border-color: #ff6b00;
-  transform: translateY(-4px);
   box-shadow: 0 4px 16px #ff6b0012, 0 16px 36px #ff6b001a;
+}
+
+@media (min-width: 1024px) {
+  .CapabilitiesUniverse-module__Zv_uza__grid {
+    gap: 1.75rem;
+    padding-bottom: 4rem;
+  }
+
+  .CapabilitiesUniverse-module__Zv_uza__card:first-child {
+    --card-y: 0rem;
+    --card-rot: -2deg;
+  }
+
+  .CapabilitiesUniverse-module__Zv_uza__card:nth-child(5) {
+    --card-y: 0rem;
+    --card-rot: 1.5deg;
+  }
+
+  .CapabilitiesUniverse-module__Zv_uza__card:nth-child(2) {
+    --card-y: 2.5rem;
+    --card-rot: 1.5deg;
+  }
+
+  .CapabilitiesUniverse-module__Zv_uza__card:nth-child(6) {
+    --card-y: 2.5rem;
+    --card-rot: -1deg;
+  }
+
+  .CapabilitiesUniverse-module__Zv_uza__card:nth-child(3) {
+    --card-y: .5rem;
+    --card-rot: -1.5deg;
+  }
+
+  .CapabilitiesUniverse-module__Zv_uza__card:nth-child(7) {
+    --card-y: .5rem;
+    --card-rot: 2deg;
+  }
+
+  .CapabilitiesUniverse-module__Zv_uza__card:nth-child(4) {
+    --card-y: 3rem;
+    --card-rot: 2.5deg;
+  }
+
+  .CapabilitiesUniverse-module__Zv_uza__card:nth-child(8) {
+    --card-y: 3rem;
+    --card-rot: -1.5deg;
+  }
 }
 
 .CapabilitiesUniverse-module__Zv_uza__icon {

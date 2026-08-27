@@ -59,6 +59,10 @@
   flex-direction: column;
   gap: 1.5rem;
   cursor: pointer;
+  /* Setup base transform variables */
+  --card-y: 0px;
+  --card-rot: 0deg;
+  transform: translateY(var(--card-y)) rotate(var(--card-rot));
   transition:
     background 0.25s ease,
     border-color 0.25s ease,
@@ -71,10 +75,40 @@
 .cardActive {
   background: transparent;
   border-color: #FF6B00;
-  transform: translateY(-4px);
+  /* Lift up by 6px from current position and scale slightly for emphasis */
+  transform: translateY(calc(var(--card-y) - 6px)) rotate(var(--card-rot)) scale(1.02);
   box-shadow:
     0 4px 16px rgba(255, 107, 0, 0.07),
     0 16px 36px rgba(255, 107, 0, 0.1);
+}
+
+/* ── Scatter Column Effect (Organic Layout) ──────────── */
+@media (min-width: 1024px) {
+  .grid {
+    gap: 1.75rem; /* Increase gap to prevent rotated corners from touching */
+    padding-bottom: 4rem; /* padding to account for the shifted cards */
+  }
+  
+  /* 
+     Give each card a unique slight rotation.
+     Cards in the same column MUST have the same --card-y to prevent vertical overlapping! 
+  */
+  
+  /* Column 1 (Cards 1, 5) - No shift */
+  .card:nth-child(1) { --card-y: 0rem;   --card-rot: -2deg; }
+  .card:nth-child(5) { --card-y: 0rem;   --card-rot: 1.5deg; }
+
+  /* Column 2 (Cards 2, 6) - Shifted down */
+  .card:nth-child(2) { --card-y: 2.5rem; --card-rot: 1.5deg; }
+  .card:nth-child(6) { --card-y: 2.5rem; --card-rot: -1deg; }
+
+  /* Column 3 (Cards 3, 7) - Slight shift down */
+  .card:nth-child(3) { --card-y: 0.5rem; --card-rot: -1.5deg; }
+  .card:nth-child(7) { --card-y: 0.5rem; --card-rot: 2deg; }
+
+  /* Column 4 (Cards 4, 8) - Shifted down */
+  .card:nth-child(4) { --card-y: 3rem;   --card-rot: 2.5deg; }
+  .card:nth-child(8) { --card-y: 3rem;   --card-rot: -1.5deg; }
 }
 
 /* dimming removed — no opacity penalty on non-hovered cards */
