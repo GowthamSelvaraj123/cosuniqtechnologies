@@ -9,23 +9,29 @@ import FullscreenMenu from "./FullscreenMenu";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const { scrollY } = useScroll();
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize(); // Check initial size
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Scroll progress: 0 = top, 1 = scrolled (after 80px)
   const scrollProgress = useTransform(scrollY, [0, 80], [0, 1], { clamp: true });
   const spring = useSpring(scrollProgress, { stiffness: 90, damping: 22, mass: 0.6 });
 
   // Animate from pill (0) to full-width (1) — all values spring-interpolated
-  // Pill: left: 5vw (centering 90vw pill), width: 90vw, radius: 100px, top: 24px
-  // Full: left: 0,   width: 100%,          radius: 0,     top: 0
-  const top          = useTransform(spring, [0, 1], [24, 0]);
-  const left         = useTransform(spring, [0, 1], ["5vw", "0vw"]);
-  const width        = useTransform(spring, [0, 1], ["90vw", "100vw"]);
+  const top          = useTransform(spring, [0, 1], [isMobile ? 16 : 24, 0]);
+  const left         = useTransform(spring, [0, 1], [isMobile ? "2.5vw" : "5vw", "0vw"]);
+  const width        = useTransform(spring, [0, 1], [isMobile ? "95vw" : "90vw", "100vw"]);
   const borderRadius = useTransform(spring, [0, 1], [100, 0]);
-  const paddingTop   = useTransform(spring, [0, 1], [12, 14]);
-  const paddingBot   = useTransform(spring, [0, 1], [12, 14]);
-  const paddingLeft  = useTransform(spring, [0, 1], [24, 48]);
-  const paddingRight = useTransform(spring, [0, 1], [16, 48]);
+  const paddingTop   = useTransform(spring, [0, 1], [isMobile ? 10 : 12, isMobile ? 12 : 14]);
+  const paddingBot   = useTransform(spring, [0, 1], [isMobile ? 10 : 12, isMobile ? 12 : 14]);
+  const paddingLeft  = useTransform(spring, [0, 1], [isMobile ? 16 : 24, isMobile ? 24 : 48]);
+  const paddingRight = useTransform(spring, [0, 1], [isMobile ? 12 : 16, isMobile ? 24 : 48]);
   const bgOpacity    = useTransform(spring, [0, 1], [1.0, 1.0]);
   const boxShadow    = useTransform(
     spring,

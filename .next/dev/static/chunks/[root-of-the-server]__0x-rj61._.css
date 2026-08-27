@@ -2102,6 +2102,7 @@ img {
   .slider-head {
     flex-direction: column;
     align-items: flex-start;
+    margin: 0;
   }
 
   .work-slide {
@@ -2796,17 +2797,6 @@ body {
   display: flex;
   position: fixed;
   overflow: hidden;
-}
-
-@media (max-width: 768px) {
-  .Header-module__Af2_WG__headerRoot {
-    background: #ffffffd9 !important;
-    border-radius: 100px !important;
-    width: 95vw !important;
-    padding: .75rem 1rem !important;
-    top: 1rem !important;
-    left: 2.5vw !important;
-  }
 }
 
 .Header-module__Af2_WG__brand {

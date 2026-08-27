@@ -10,16 +10,7 @@
   overflow: hidden;
 }
 
-@media (max-width: 768px) {
-  .headerRoot {
-    width: 95vw !important;
-    top: 1rem !important;
-    left: 2.5vw !important;
-    border-radius: 100px !important;
-    padding: 0.75rem 1rem !important;
-    background: rgba(255,255,255,0.85) !important;
-  }
-}
+
 
 .brand {
   pointer-events: auto;
