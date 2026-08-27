@@ -4,155 +4,127 @@ import React, { useState } from "react";
 import Link from "next/link";
 import styles from "./CapabilitiesUniverse.module.css";
 
-// ── Custom illustrated icons ──────────────────────────────────────────────────
-// Pattern: scattered black outlined circles (the market) + 
-//          one central orange shape (the standout concept)
+/* ═══════════════════════════════════════════════════════════════════════════
+   ICON SYSTEM (STRICT CONSISTENCY)
+   ─ Background Dots: Fixed at exactly the same absolute edges for every card.
+   ─ Central Icons:   Constrained to a strict 10x10 bounding box in the center
+                      (x: 7-17, y: 7-17). This guarantees EQUAL space between
+                      the icon and the dots, making every card feel identical.
+   ─ Strokes:         Orange is 1.25px. Dots are 0.85px.
+═══════════════════════════════════════════════════════════════════════════ */
+
+// Identical ring of 8 dots (radius ~10 from center) to prevent stroke clipping at the edges
+const Dots = () => (
+  <>
+    <circle cx="5"   cy="5"    r="1" stroke="#ccc" strokeWidth="0.85" fill="none" />
+    <circle cx="12"  cy="2"    r="1" stroke="#ccc" strokeWidth="0.85" fill="none" />
+    <circle cx="19"  cy="5"    r="1" stroke="#ccc" strokeWidth="0.85" fill="none" />
+    <circle cx="22"  cy="12"   r="1" stroke="#ccc" strokeWidth="0.85" fill="none" />
+    <circle cx="19"  cy="19"   r="1" stroke="#ccc" strokeWidth="0.85" fill="none" />
+    <circle cx="12"  cy="22"   r="1" stroke="#ccc" strokeWidth="0.85" fill="none" />
+    <circle cx="5"   cy="19"   r="1" stroke="#ccc" strokeWidth="0.85" fill="none" />
+    <circle cx="2"   cy="12"   r="1" stroke="#ccc" strokeWidth="0.85" fill="none" />
+  </>
+);
 
 const BrandingIcon = () => (
-  // Concept: scattered circles (everyone else) + orange star (YOUR brand stands out)
-  <svg viewBox="0 0 24 24" fill="none" strokeLinecap="round">
-    <circle cx="3.5"  cy="4.5"  r="1.2" stroke="#111" strokeWidth="0.85" />
-    <circle cx="20.5" cy="4"    r="0.9" stroke="#111" strokeWidth="0.85" />
-    <circle cx="2"    cy="13"   r="1.4" stroke="#111" strokeWidth="0.85" />
-    <circle cx="22"   cy="14.5" r="1.0" stroke="#111" strokeWidth="0.85" />
-    <circle cx="6"    cy="21"   r="1.1" stroke="#111" strokeWidth="0.85" />
-    <circle cx="18.5" cy="21.5" r="1.3" stroke="#111" strokeWidth="0.85" />
-    <circle cx="7.5"  cy="7"    r="1.0" stroke="#111" strokeWidth="0.85" />
-    <circle cx="17"   cy="7"    r="0.9" stroke="#111" strokeWidth="0.85" />
-    <circle cx="4.5"  cy="18"   r="0.9" stroke="#111" strokeWidth="0.85" />
-    <circle cx="19.5" cy="17.5" r="1.0" stroke="#111" strokeWidth="0.85" />
-    <circle cx="11"   cy="3.5"  r="0.8" stroke="#111" strokeWidth="0.85" />
-    <circle cx="15"   cy="20.5" r="0.9" stroke="#111" strokeWidth="0.85" />
-    <polygon
-      points="12,7.5 13.06,10.54 15.80,10.76 13.71,12.56 14.35,15.24 12,13.8 9.65,15.24 10.29,12.56 8.20,10.76 10.94,10.54"
-      fill="currentColor" stroke="none"
+  <svg viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round">
+    <Dots />
+    {/* Crown bounded tightly inside (7,7) to (17,17) */}
+    <polygon points="7,16 8.5,8 12,11.5 15.5,8 17,16"
+      fill="rgba(255,107,0,0.1)" stroke="currentColor" strokeWidth="1.25"
     />
+    <line x1="7" y1="17" x2="17" y2="17" stroke="currentColor" strokeWidth="1.25" />
+    <circle cx="8.5"  cy="8"    r="1" fill="currentColor" />
+    <circle cx="12"   cy="11.5" r="1" fill="currentColor" />
+    <circle cx="15.5" cy="8"    r="1" fill="currentColor" />
   </svg>
 );
 
 const StrategyIcon = () => (
-  // Concept: scattered circles (distractions) + bullseye (laser-focused strategy)
-  <svg viewBox="0 0 24 24" fill="none" strokeLinecap="round">
-    <circle cx="3"    cy="4"    r="1.0" stroke="#111" strokeWidth="0.85" />
-    <circle cx="21"   cy="5"    r="0.9" stroke="#111" strokeWidth="0.85" />
-    <circle cx="2"    cy="14"   r="1.3" stroke="#111" strokeWidth="0.85" />
-    <circle cx="22"   cy="13"   r="1.0" stroke="#111" strokeWidth="0.85" />
-    <circle cx="5"    cy="21"   r="1.1" stroke="#111" strokeWidth="0.85" />
-    <circle cx="19"   cy="21"   r="1.2" stroke="#111" strokeWidth="0.85" />
-    <circle cx="7"    cy="7"    r="1.0" stroke="#111" strokeWidth="0.85" />
-    <circle cx="18"   cy="7"    r="0.9" stroke="#111" strokeWidth="0.85" />
-    <circle cx="20"   cy="18"   r="0.8" stroke="#111" strokeWidth="0.85" />
-    {/* Bullseye — outer, mid, filled center */}
-    <circle cx="12" cy="12" r="4.8" stroke="currentColor" strokeWidth="1.2" />
-    <circle cx="12" cy="12" r="2.8" stroke="currentColor" strokeWidth="1.2" />
-    <circle cx="12" cy="12" r="1.1" fill="currentColor" stroke="none" />
+  <svg viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round">
+    <Dots />
+    {/* Dart entering from bottom-left to top-right bullseye */}
+    <line x1="7" y1="17" x2="11.5" y2="12.5" stroke="currentColor" strokeWidth="1.25" />
+    <polygon points="7,17 9,17 7,15" fill="currentColor" />
+    {/* Bullseye centered at (14, 10) */}
+    <circle cx="14" cy="10" r="3"   stroke="currentColor" strokeWidth="1.25" />
+    <circle cx="14" cy="10" r="1"   fill="currentColor" />
   </svg>
 );
 
 const AIIcon = () => (
-  // Concept: scattered circles (data noise) + neural nodes connected to a core (intelligence)
-  <svg viewBox="0 0 24 24" fill="none" strokeLinecap="round">
-    <circle cx="3.5"  cy="3.5"  r="1.0" stroke="#111" strokeWidth="0.85" />
-    <circle cx="21"   cy="4"    r="0.9" stroke="#111" strokeWidth="0.85" />
-    <circle cx="2"    cy="15"   r="1.2" stroke="#111" strokeWidth="0.85" />
-    <circle cx="22"   cy="15"   r="1.0" stroke="#111" strokeWidth="0.85" />
-    <circle cx="5"    cy="21.5" r="1.1" stroke="#111" strokeWidth="0.85" />
-    <circle cx="19"   cy="21"   r="1.2" stroke="#111" strokeWidth="0.85" />
-    <circle cx="19"   cy="7.5"  r="0.8" stroke="#111" strokeWidth="0.85" />
-    {/* Neural network — filled core + connected outer nodes */}
-    <circle cx="12" cy="12"   r="1.6" fill="currentColor" stroke="none" />
-    <circle cx="12" cy="7.5"  r="1.0" stroke="currentColor" strokeWidth="1.1" />
-    <circle cx="16" cy="14.5" r="1.0" stroke="currentColor" strokeWidth="1.1" />
-    <circle cx="8"  cy="14.5" r="1.0" stroke="currentColor" strokeWidth="1.1" />
-    <line x1="12" y1="8.5"  x2="12" y2="10.4" stroke="currentColor" strokeWidth="1" />
-    <line x1="15.1" y1="13.8" x2="13.4" y2="12.8" stroke="currentColor" strokeWidth="1" />
-    <line x1="8.9"  y1="13.8" x2="10.6" y2="12.8" stroke="currentColor" strokeWidth="1" />
+  <svg viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round">
+    <Dots />
+    {/* Neural nodes filling a strict cross shape (7 to 17) */}
+    <line x1="12" y1="12" x2="12" y2="8"  stroke="currentColor" strokeWidth="1.15" />
+    <line x1="12" y1="12" x2="16" y2="12" stroke="currentColor" strokeWidth="1.15" />
+    <line x1="12" y1="12" x2="12" y2="16" stroke="currentColor" strokeWidth="1.15" />
+    <line x1="12" y1="12" x2="8"  y2="12" stroke="currentColor" strokeWidth="1.15" />
+    <circle cx="12" cy="7.5"  r="1.2" stroke="currentColor" strokeWidth="1.25" />
+    <circle cx="16.5" cy="12" r="1.2" stroke="currentColor" strokeWidth="1.25" />
+    <circle cx="12" cy="16.5" r="1.2" stroke="currentColor" strokeWidth="1.25" />
+    <circle cx="7.5" cy="12"  r="1.2" stroke="currentColor" strokeWidth="1.25" />
+    <circle cx="12" cy="12"   r="1.8" fill="currentColor" />
   </svg>
 );
 
 const WebAppsIcon = () => (
-  // Concept: scattered circles (static content) + code brackets (powerful logic)
   <svg viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="3.5"  cy="4"    r="1.0" stroke="#111" strokeWidth="0.85" />
-    <circle cx="21"   cy="3.5"  r="0.9" stroke="#111" strokeWidth="0.85" />
-    <circle cx="2"    cy="13.5" r="1.3" stroke="#111" strokeWidth="0.85" />
-    <circle cx="22"   cy="14"   r="1.0" stroke="#111" strokeWidth="0.85" />
-    <circle cx="5"    cy="20.5" r="1.1" stroke="#111" strokeWidth="0.85" />
-    <circle cx="19"   cy="20.5" r="1.2" stroke="#111" strokeWidth="0.85" />
-    <circle cx="7"    cy="7.5"  r="0.9" stroke="#111" strokeWidth="0.85" />
-    <circle cx="17.5" cy="7.5"  r="0.9" stroke="#111" strokeWidth="0.85" />
-    {/* Code brackets + slash */}
-    <polyline points="9.5,9 7,12 9.5,15"  stroke="currentColor" strokeWidth="1.5" />
-    <polyline points="14.5,9 17,12 14.5,15" stroke="currentColor" strokeWidth="1.5" />
-    <line x1="13.2" y1="8.5" x2="10.8" y2="15.5" stroke="currentColor" strokeWidth="1.2" />
+    <Dots />
+    {/* Code brackets < / > fitting strictly inside 7 to 17 */}
+    <polyline points="10,8 7,12 10,16"  stroke="currentColor" strokeWidth="1.25" />
+    <polyline points="14,8 17,12 14,16" stroke="currentColor" strokeWidth="1.25" />
+    <line x1="13" y1="7" x2="11" y2="17" stroke="currentColor" strokeWidth="1.25" />
   </svg>
 );
 
 const MobileIcon = () => (
-  // Concept: scattered circles (desktop web) + phone shape (mobile-first)
   <svg viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="3"  cy="4"    r="1.1" stroke="#111" strokeWidth="0.85" />
-    <circle cx="21" cy="5"    r="0.9" stroke="#111" strokeWidth="0.85" />
-    <circle cx="2"  cy="14"   r="1.3" stroke="#111" strokeWidth="0.85" />
-    <circle cx="22" cy="14"   r="1.0" stroke="#111" strokeWidth="0.85" />
-    <circle cx="4"  cy="21"   r="1.1" stroke="#111" strokeWidth="0.85" />
-    <circle cx="20" cy="21"   r="1.2" stroke="#111" strokeWidth="0.85" />
-    <circle cx="18" cy="8"    r="0.9" stroke="#111" strokeWidth="0.85" />
-    {/* Phone body */}
-    <rect x="9" y="5.5" width="6" height="13" rx="1.5" stroke="currentColor" strokeWidth="1.3" />
-    <line x1="11" y1="16.5" x2="13" y2="16.5" stroke="currentColor" strokeWidth="1.3" />
-    <line x1="11.5" y1="7.5" x2="12.5" y2="7.5" stroke="currentColor" strokeWidth="1" />
+    <Dots />
+    {/* Phone is 6x10 at center */}
+    <rect x="9" y="7" width="6" height="10" rx="1.2" stroke="currentColor" strokeWidth="1.25" />
+    <line x1="11" y1="15" x2="13" y2="15" stroke="currentColor" strokeWidth="1.1" />
+    {/* Signal arcs touching x=6 and x=18 boundaries */}
+    <path d="M7.5,10 C6.5,11 6.5,13 7.5,14"   stroke="currentColor" strokeWidth="1.2" />
+    <path d="M16.5,10 C17.5,11 17.5,13 16.5,14" stroke="currentColor" strokeWidth="1.2" />
   </svg>
 );
 
 const UIUXIcon = () => (
-  // Concept: scattered circles (random elements) + stacked layers (intentional design)
   <svg viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="3.5"  cy="3.5"  r="1.0" stroke="#111" strokeWidth="0.85" />
-    <circle cx="21"   cy="4"    r="0.9" stroke="#111" strokeWidth="0.85" />
-    <circle cx="2"    cy="13"   r="1.2" stroke="#111" strokeWidth="0.85" />
-    <circle cx="22"   cy="14"   r="1.0" stroke="#111" strokeWidth="0.85" />
-    <circle cx="5"    cy="21"   r="1.1" stroke="#111" strokeWidth="0.85" />
-    <circle cx="19"   cy="21.5" r="1.2" stroke="#111" strokeWidth="0.85" />
-    <circle cx="18.5" cy="7.5"  r="0.9" stroke="#111" strokeWidth="0.85" />
-    {/* Three stacked diamond layers */}
-    <polygon points="12,7.5 16.5,10 12,12.5 7.5,10"   stroke="currentColor" strokeWidth="1.2" />
-    <polygon points="12,10  16.5,12.5 12,15 7.5,12.5" stroke="currentColor" strokeWidth="1.2" />
-    <polygon points="12,12.5 16.5,15 12,17.5 7.5,15"  stroke="currentColor" strokeWidth="1.2" />
+    <Dots />
+    {/* Bezier strictly from 7 to 17 */}
+    <line x1="7"  y1="17" x2="7"  y2="10" stroke="currentColor" strokeWidth="1" strokeDasharray="1.5 1.2" />
+    <line x1="17" y1="7"  x2="17" y2="14" stroke="currentColor" strokeWidth="1" strokeDasharray="1.5 1.2" />
+    <circle cx="7"  cy="10" r="1.2" stroke="currentColor" strokeWidth="1.15" />
+    <circle cx="17" cy="14" r="1.2" stroke="currentColor" strokeWidth="1.15" />
+    <path d="M7,17 C7,10 17,14 17,7" stroke="currentColor" strokeWidth="1.25" fill="none" />
+    <circle cx="7"  cy="17" r="1.5" stroke="currentColor" strokeWidth="1.25" />
+    <circle cx="17" cy="7"  r="1.5" fill="currentColor" />
   </svg>
 );
 
 const WebsitesIcon = () => (
-  // Concept: scattered circles (local presence) + globe (worldwide digital reach)
   <svg viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="3"    cy="4"    r="1.0" stroke="#111" strokeWidth="0.85" />
-    <circle cx="21"   cy="4.5"  r="0.9" stroke="#111" strokeWidth="0.85" />
-    <circle cx="2"    cy="14"   r="1.3" stroke="#111" strokeWidth="0.85" />
-    <circle cx="22"   cy="13.5" r="1.0" stroke="#111" strokeWidth="0.85" />
-    <circle cx="4.5"  cy="21"   r="1.1" stroke="#111" strokeWidth="0.85" />
-    <circle cx="19.5" cy="21"   r="1.2" stroke="#111" strokeWidth="0.85" />
-    <circle cx="18"   cy="7.5"  r="0.8" stroke="#111" strokeWidth="0.85" />
-    {/* Globe */}
-    <circle cx="12" cy="12" r="5" stroke="currentColor" strokeWidth="1.3" />
-    <line x1="7" y1="12" x2="17" y2="12" stroke="currentColor" strokeWidth="1" />
-    <path d="M12,7 C10,9 10,15 12,17 C14,15 14,9 12,7" stroke="currentColor" strokeWidth="1" />
+    <Dots />
+    {/* Browser constrained to 10x8 box */}
+    <rect x="7" y="8" width="10" height="8" rx="1.2" stroke="currentColor" strokeWidth="1.25" />
+    <line x1="7" y1="11.5" x2="17" y2="11.5" stroke="currentColor" strokeWidth="1.25" />
+    <circle cx="8.5" cy="9.8" r="0.7" fill="currentColor" />
+    <circle cx="10.2" cy="9.8" r="0.7" fill="rgba(255,107,0,0.5)" />
+    <circle cx="11.9" cy="9.8" r="0.7" fill="rgba(255,107,0,0.2)" />
+    <line x1="9"  y1="13.5" x2="15" y2="13.5" stroke="currentColor" strokeWidth="1.1" />
   </svg>
 );
 
 const EcommerceIcon = () => (
-  // Concept: scattered circles (browsers/visitors) + shopping bag (the conversion)
   <svg viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="3.5"  cy="4.5"  r="1.0" stroke="#111" strokeWidth="0.85" />
-    <circle cx="21"   cy="4"    r="0.9" stroke="#111" strokeWidth="0.85" />
-    <circle cx="2"    cy="14"   r="1.3" stroke="#111" strokeWidth="0.85" />
-    <circle cx="22"   cy="15"   r="1.0" stroke="#111" strokeWidth="0.85" />
-    <circle cx="5"    cy="21.5" r="1.1" stroke="#111" strokeWidth="0.85" />
-    <circle cx="19"   cy="21"   r="1.2" stroke="#111" strokeWidth="0.85" />
-    <circle cx="7"    cy="6.5"  r="0.9" stroke="#111" strokeWidth="0.85" />
-    <circle cx="19"   cy="8"    r="0.8" stroke="#111" strokeWidth="0.85" />
-    {/* Shopping bag */}
-    <path d="M8.5,10 L7.5,18 L16.5,18 L15.5,10 Z" stroke="currentColor" strokeWidth="1.3" />
-    <path d="M10,10 C10,7.5 14,7.5 14,10" stroke="currentColor" strokeWidth="1.3" />
+    <Dots />
+    {/* Bag constrained to x=8-16, y=7-17 */}
+    <path d="M10.5,10 C10.5,8 13.5,8 13.5,10" stroke="currentColor" strokeWidth="1.25" />
+    <path d="M9,10 L8,17 L16,17 L15,10 Z" fill="rgba(255,107,0,0.1)" stroke="currentColor" strokeWidth="1.25" />
+    <polyline points="10,14 11.5,15.5 14,12.5" stroke="currentColor" strokeWidth="1.25" />
   </svg>
 );
 
