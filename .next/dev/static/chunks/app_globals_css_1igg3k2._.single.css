@@ -805,15 +805,54 @@ body.has-cursor .cursor, body.has-cursor .cursor-dot {
 
 .process-card {
   border-radius: var(--radius);
+  --card-y: 0px;
+  --card-rot: 0deg;
+  height: 100%;
+  min-height: 240px;
+  transform: translateY(var(--card-y)) rotate(var(--card-rot));
   background: none;
   border: 1px solid #0000;
   flex-direction: column;
-  height: 100%;
-  min-height: 240px;
   padding: 2.5rem;
   transition: transform .25s, border-color .25s;
   display: flex;
   position: relative;
+}
+
+@media (min-width: 1024px) {
+  .lifecycle-grid {
+    row-gap: 2rem;
+  }
+
+  .lifecycle-grid .process-card:first-child {
+    --card-y: 2px;
+    --card-rot: -1deg;
+  }
+
+  .lifecycle-grid .process-card:nth-child(2) {
+    --card-y: -2px;
+    --card-rot: 1.5deg;
+  }
+
+  .lifecycle-grid .process-card:nth-child(3) {
+    --card-y: 4px;
+    --card-rot: -1.5deg;
+  }
+
+  .lifecycle-grid .process-card:nth-child(4) {
+    --card-y: -4px;
+    --card-rot: 2deg;
+  }
+
+  .lifecycle-grid .process-card:nth-child(5) {
+    --card-y: 2px;
+    --card-rot: -2deg;
+  }
+
+  .lifecycle-grid .process-card:nth-child(6) {
+    --card-y: -2px;
+    --card-rot: 1deg;
+  }
 }
 
 .process-card:not(:nth-child(3n)):after {

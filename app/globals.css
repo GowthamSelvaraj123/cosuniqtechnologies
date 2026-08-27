@@ -906,6 +906,23 @@ body.has-cursor .cursor-dot {
   background: transparent;
   border: 1px solid transparent;
   transition: transform 0.25s, border-color 0.25s;
+  
+  --card-y: 0px;
+  --card-rot: 0deg;
+  transform: translateY(var(--card-y)) rotate(var(--card-rot));
+}
+
+@media (min-width: 1024px) {
+  .lifecycle-grid {
+    row-gap: 2rem; /* a little extra space for rotated corners */
+  }
+  /* Organic tilt for each card (keeping Y translation very small so connecting threads still align) */
+  .lifecycle-grid .process-card:nth-child(1) { --card-y:  2px;  --card-rot: -1deg; }
+  .lifecycle-grid .process-card:nth-child(2) { --card-y: -2px;  --card-rot:  1.5deg; }
+  .lifecycle-grid .process-card:nth-child(3) { --card-y:  4px;  --card-rot: -1.5deg; }
+  .lifecycle-grid .process-card:nth-child(4) { --card-y: -4px;  --card-rot:  2deg; }
+  .lifecycle-grid .process-card:nth-child(5) { --card-y:  2px;  --card-rot: -2deg; }
+  .lifecycle-grid .process-card:nth-child(6) { --card-y: -2px;  --card-rot:  1deg; }
 }
 
 /* Connect the lifecycle cards with an organic thread arrow */
