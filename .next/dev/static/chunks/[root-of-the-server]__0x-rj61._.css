@@ -388,6 +388,44 @@ body.has-cursor .cursor, body.has-cursor .cursor-dot {
   background: var(--cream);
 }
 
+.band--black {
+  color: #fff;
+  background: #111;
+}
+
+.band--black h1, .band--black h2, .band--black h3, .band--black h4, .band--black p {
+  color: #fff;
+}
+
+.band--black .eyebrow {
+  color: #ffffffb3;
+  background: #ffffff1a;
+}
+
+.band--black .work-slide {
+  background: #1a1a1a;
+  border-color: #333;
+}
+
+.band--black .work-slide__meta h3 {
+  color: #fff;
+}
+
+.band--black .work-slide__meta p {
+  color: #a0a0a0;
+}
+
+.band--black .slider-btn {
+  color: #fff;
+  border-color: #fff3;
+}
+
+.band--black .slider-btn:hover {
+  color: #fff;
+  background: #ff6b00;
+  border-color: #ff6b00;
+}
+
 .section-intro h2 {
   letter-spacing: -.03em;
   color: #111;
@@ -751,9 +789,19 @@ body.has-cursor .cursor, body.has-cursor .cursor-dot {
 }
 
 .lifecycle-grid {
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.25rem;
   display: grid;
+}
+
+@media (min-width: 961px) {
+  .lifecycle-grid > :first-child, .lifecycle-grid > :nth-child(2), .lifecycle-grid > :nth-child(3) {
+    grid-column: span 2;
+  }
+
+  .lifecycle-grid > :nth-child(4), .lifecycle-grid > :nth-child(5) {
+    grid-column: span 3;
+  }
 }
 
 .process-card {

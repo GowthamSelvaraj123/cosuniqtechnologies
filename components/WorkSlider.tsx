@@ -12,7 +12,7 @@ export default function WorkSlider() {
   };
 
   return (
-    <section className="band band--white" id="work">
+    <section className="band band--black" id="work">
       <div className="container">
         <div className="slider-head reveal">
           <div>
