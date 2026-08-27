@@ -176,7 +176,7 @@
 
 @media (max-width: 768px) {
   .OurDifference-module__xznh0W__section {
-    padding: 6rem 0;
+    padding: 6rem 0 !important;
   }
 
   .OurDifference-module__xznh0W__header {

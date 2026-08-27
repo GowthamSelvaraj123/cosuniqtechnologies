@@ -129,10 +129,10 @@
   .grid {
     grid-template-columns: 1fr 1fr;
   }
-  .card1, .card4 {
+  .card1, .card4, .card5 {
     grid-column: span 2;
   }
-  .card2, .card3 {
+  .card2, .card3, .card6 {
     grid-column: span 1;
   }
 }
@@ -141,8 +141,8 @@
   .grid {
     grid-template-columns: 1fr;
   }
-  .card1, .card2, .card3, .card4 {
-    grid-column: span 1;
+  .card1, .card2, .card3, .card4, .card5, .card6 {
+    grid-column: 1 / -1;
   }
   .card {
     padding: 2rem;

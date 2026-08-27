@@ -178,7 +178,7 @@
 
 @media (max-width: 768px) {
   .BrandPhilosophy-module__S67S7a__section {
-    padding: 6rem 0;
+    padding: 6rem 0 !important;
   }
 
   .BrandPhilosophy-module__S67S7a__headline {

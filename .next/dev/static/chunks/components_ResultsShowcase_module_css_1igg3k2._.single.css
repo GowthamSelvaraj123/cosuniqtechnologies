@@ -125,11 +125,11 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  .ResultsShowcase-module__lD6eOa__card1, .ResultsShowcase-module__lD6eOa__card4 {
+  .ResultsShowcase-module__lD6eOa__card1, .ResultsShowcase-module__lD6eOa__card4, .ResultsShowcase-module__lD6eOa__card5 {
     grid-column: span 2;
   }
 
-  .ResultsShowcase-module__lD6eOa__card2, .ResultsShowcase-module__lD6eOa__card3 {
+  .ResultsShowcase-module__lD6eOa__card2, .ResultsShowcase-module__lD6eOa__card3, .ResultsShowcase-module__lD6eOa__card6 {
     grid-column: span 1;
   }
 }
@@ -139,8 +139,8 @@
     grid-template-columns: 1fr;
   }
 
-  .ResultsShowcase-module__lD6eOa__card1, .ResultsShowcase-module__lD6eOa__card2, .ResultsShowcase-module__lD6eOa__card3, .ResultsShowcase-module__lD6eOa__card4 {
-    grid-column: span 1;
+  .ResultsShowcase-module__lD6eOa__card1, .ResultsShowcase-module__lD6eOa__card2, .ResultsShowcase-module__lD6eOa__card3, .ResultsShowcase-module__lD6eOa__card4, .ResultsShowcase-module__lD6eOa__card5, .ResultsShowcase-module__lD6eOa__card6 {
+    grid-column: 1 / -1;
   }
 
   .ResultsShowcase-module__lD6eOa__card {
