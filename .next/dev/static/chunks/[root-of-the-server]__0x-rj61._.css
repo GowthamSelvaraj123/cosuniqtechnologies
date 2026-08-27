@@ -41,8 +41,12 @@ body {
   overflow-x: hidden;
 }
 
-body.has-cursor, body.has-cursor a, body.has-cursor button {
+body.has-cursor {
   cursor: none;
+}
+
+body.has-cursor * {
+  cursor: none !important;
 }
 
 img {

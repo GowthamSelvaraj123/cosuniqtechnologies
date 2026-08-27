@@ -51,9 +51,8 @@ body.has-cursor {
   cursor: none;
 }
 
-body.has-cursor a,
-body.has-cursor button {
-  cursor: none;
+body.has-cursor * {
+  cursor: none !important;
 }
 
 img {

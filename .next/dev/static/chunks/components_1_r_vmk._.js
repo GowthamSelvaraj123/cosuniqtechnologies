@@ -17,23 +17,32 @@ function CustomCursor() {
     const [canHover, setCanHover] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "CustomCursor.useEffect": ()=>{
-            const isHoverable = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+            // Basic check for non-touch devices
+            const isHoverable = window.matchMedia("(hover: hover) and (pointer: fine)").matches || window.innerWidth > 768;
             setCanHover(isHoverable);
             if (isHoverable) {
                 document.body.classList.add("has-cursor");
                 const cursor = document.getElementById("cursor");
                 const cursorDot = document.getElementById("cursor-dot");
                 if (cursor && cursorDot) {
-                    let x = 0;
-                    let y = 0;
-                    let dx = 0;
-                    let dy = 0;
+                    let x = window.innerWidth / 2;
+                    let y = window.innerHeight / 2;
+                    let dx = x;
+                    let dy = y;
                     const onMouseMove = {
                         "CustomCursor.useEffect.onMouseMove": (e)=>{
                             x = e.clientX;
                             y = e.clientY;
                             cursorDot.style.left = x + "px";
                             cursorDot.style.top = y + "px";
+                            // Dynamically check if hovering a clickable element
+                            const target = e.target;
+                            const isClickable = target.closest('a, button, summary, [role="button"]') || window.getComputedStyle(target).cursor === 'pointer';
+                            if (isClickable) {
+                                cursor.classList.add("is-hover");
+                            } else {
+                                cursor.classList.remove("is-hover");
+                            }
                         }
                     }["CustomCursor.useEffect.onMouseMove"];
                     document.addEventListener("mousemove", onMouseMove, {
@@ -50,41 +59,11 @@ function CustomCursor() {
                         }
                     }["CustomCursor.useEffect.loop"];
                     loop();
-                    const addHover = {
-                        "CustomCursor.useEffect.addHover": ()=>cursor.classList.add("is-hover")
-                    }["CustomCursor.useEffect.addHover"];
-                    const removeHover = {
-                        "CustomCursor.useEffect.removeHover": ()=>cursor.classList.remove("is-hover")
-                    }["CustomCursor.useEffect.removeHover"];
-                    const setupHoverElements = {
-                        "CustomCursor.useEffect.setupHoverElements": ()=>{
-                            document.querySelectorAll("a, button, summary, .filter-btn, .slider-btn").forEach({
-                                "CustomCursor.useEffect.setupHoverElements": (el)=>{
-                                    el.addEventListener("mouseenter", addHover);
-                                    el.addEventListener("mouseleave", removeHover);
-                                }
-                            }["CustomCursor.useEffect.setupHoverElements"]);
-                        }
-                    }["CustomCursor.useEffect.setupHoverElements"];
-                    setupHoverElements();
-                    // Setup observer for dynamically added elements
-                    const observer = new MutationObserver(setupHoverElements);
-                    observer.observe(document.body, {
-                        childList: true,
-                        subtree: true
-                    });
                     return ({
                         "CustomCursor.useEffect": ()=>{
                             document.removeEventListener("mousemove", onMouseMove);
                             cancelAnimationFrame(animationFrameId);
                             document.body.classList.remove("has-cursor");
-                            observer.disconnect();
-                            document.querySelectorAll("a, button, summary, .filter-btn, .slider-btn").forEach({
-                                "CustomCursor.useEffect": (el)=>{
-                                    el.removeEventListener("mouseenter", addHover);
-                                    el.removeEventListener("mouseleave", removeHover);
-                                }
-                            }["CustomCursor.useEffect"]);
                         }
                     })["CustomCursor.useEffect"];
                 }
@@ -100,7 +79,7 @@ function CustomCursor() {
                 "aria-hidden": "true"
             }, void 0, false, {
                 fileName: "[project]/components/CustomCursor.tsx",
-                lineNumber: 76,
+                lineNumber: 66,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -109,13 +88,13 @@ function CustomCursor() {
                 "aria-hidden": "true"
             }, void 0, false, {
                 fileName: "[project]/components/CustomCursor.tsx",
-                lineNumber: 77,
+                lineNumber: 67,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/CustomCursor.tsx",
-        lineNumber: 75,
+        lineNumber: 65,
         columnNumber: 5
     }, this);
 }
