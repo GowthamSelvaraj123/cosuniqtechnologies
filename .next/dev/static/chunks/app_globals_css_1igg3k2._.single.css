@@ -11,7 +11,7 @@
   --white: #fff;
   --radius: 1.5rem;
   --radius-lg: 2rem;
-  --max: 1160px;
+  --max: 1200px;
   --nav-h: 74px;
   --font: var(--font-plus-jakarta), "Plus Jakarta Sans", "Helvetica Neue", Arial, sans-serif;
   --display: var(--font-plus-jakarta), "Plus Jakarta Sans", "Helvetica Neue", Arial, sans-serif;
@@ -368,8 +368,6 @@ body.has-cursor .cursor, body.has-cursor .cursor-dot {
 .container {
   width: 100%;
   max-width: var(--max);
-  padding-left: max(1.5rem, calc((100vw - var(--max)) / 2));
-  padding-right: max(1.5rem, calc((100vw - var(--max)) / 2));
   margin-left: auto;
   margin-right: auto;
 }
@@ -421,6 +419,7 @@ body.has-cursor .cursor, body.has-cursor .cursor-dot {
 
 .band--black .slider-btn {
   color: #fff;
+  background: none;
   border-color: #fff3;
 }
 
@@ -971,9 +970,12 @@ body.has-cursor .cursor, body.has-cursor .cursor-dot {
   height: 48px;
   color: var(--brand);
   border-radius: 50%;
+  justify-content: center;
+  align-items: center;
   font-size: 1.15rem;
   font-weight: 700;
   transition: background .2s, color .2s, transform .2s;
+  display: flex;
 }
 
 .slider-btn:hover {
@@ -993,9 +995,8 @@ body.has-cursor .cursor, body.has-cursor .cursor-dot {
   -ms-overflow-style: none;
   scrollbar-width: none;
   gap: 1.5rem;
-  padding-top: 2rem;
-  padding-bottom: 2.5rem;
-  padding-right: 1.25rem;
+  margin-left: -2rem;
+  padding: 2rem 1.25rem 2.5rem 2rem;
   display: flex;
   overflow-x: auto;
 }

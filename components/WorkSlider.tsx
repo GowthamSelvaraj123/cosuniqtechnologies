@@ -12,7 +12,7 @@ export default function WorkSlider() {
   };
 
   return (
-    <section className="band" id="work" style={{ backgroundColor: '#FFF6F0', position: 'relative', overflow: 'hidden' }}>
+    <section className="band band--black" id="work" style={{ position: 'relative', overflow: 'hidden' }}>
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div className="slider-head reveal">
           <div>
@@ -21,10 +21,16 @@ export default function WorkSlider() {
           </div>
           <div className="slider-controls">
             <button type="button" className="slider-btn" aria-label="Previous" onClick={() => slideBy(-1)}>
-              ←
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
             </button>
             <button type="button" className="slider-btn" aria-label="Next" onClick={() => slideBy(1)}>
-              →
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
             </button>
           </div>
         </div>
@@ -34,35 +40,35 @@ export default function WorkSlider() {
         <div className="work-slider" ref={sliderRef}>
           <article className="work-slide">
             <div className="work-slide__img">
-              <img src="/assets/images/dashboard.jpg" alt="OpsCloud SaaS dashboard" />
-              <div className="stat-badge">80+ <small>projects</small></div>
+              <img src="/assets/images/dashboard.jpg" alt="Freelance Experience" />
+              <div className="stat-badge">100+ <small>websites</small></div>
             </div>
             <div className="work-slide__meta">
-              <h3>OpsCloud</h3>
-              <p>Multi-tenant SaaS for operations teams.</p>
-              <div className="tags"><span>Software</span><span>UX</span><span>Web</span></div>
+              <h3>Freelance Experience</h3>
+              <p>Designed and built across 100+ different categories.</p>
+              <div className="tags"><span>Freelance</span><span>Design</span><span>Web</span></div>
             </div>
           </article>
           <article className="work-slide">
             <div className="work-slide__img">
-              <img src="/assets/images/laptop.jpg" alt="NovaMart ecommerce" />
+              <img src="/assets/images/orangebabe_mockup.jpg" alt="Orangebabe kids ecommerce" />
               <div className="stat-badge">+32% <small>conversion</small></div>
             </div>
             <div className="work-slide__meta">
-              <h3>NovaMart</h3>
-              <p>Commerce experience built to convert.</p>
+              <h3>Orangebabe</h3>
+              <p>Playful e-commerce experience for kids.</p>
               <div className="tags"><span>E-com</span><span>Brand</span></div>
             </div>
           </article>
           <article className="work-slide">
             <div className="work-slide__img">
-              <img src="/assets/images/strategy.jpg" alt="PipeCRM strategy" />
-              <div className="stat-badge">2× <small>pipeline</small></div>
+              <img src="/assets/images/strategy.jpg" alt="CRM and ERP cross integrations" />
+              <div className="stat-badge">100% <small>sync</small></div>
             </div>
             <div className="work-slide__meta">
-              <h3>PipeCRM</h3>
-              <p>Sales CRM with smart follow-ups.</p>
-              <div className="tags"><span>CRM</span><span>Automation</span></div>
+              <h3>Own Product: CRM & ERP</h3>
+              <p>Seamless cross integrations for our internal product.</p>
+              <div className="tags"><span>CRM</span><span>ERP</span><span>Integration</span></div>
             </div>
           </article>
           <article className="work-slide">

@@ -15,7 +15,7 @@
   --white: #ffffff;
   --radius: 1.5rem;
   --radius-lg: 2rem;
-  --max: 1160px;
+  --max: 1200px;
   --nav-h: 74px;
   --font: var(--font-plus-jakarta), "Plus Jakarta Sans", "Helvetica Neue", Arial, sans-serif;
   --display: var(--font-plus-jakarta), "Plus Jakarta Sans", "Helvetica Neue", Arial, sans-serif;
@@ -397,8 +397,6 @@ body.has-cursor .cursor-dot {
   max-width: var(--max);
   margin-left: auto;
   margin-right: auto;
-  padding-left: max(1.5rem, calc((100vw - var(--max)) / 2));
-  padding-right: max(1.5rem, calc((100vw - var(--max)) / 2));
 }
 
 /* ---------- Bands ---------- */
@@ -452,6 +450,7 @@ body.has-cursor .cursor-dot {
 }
 
 .band--black .slider-btn {
+  background: transparent;
   border-color: rgba(255, 255, 255, 0.2);
   color: #ffffff;
 }
@@ -906,7 +905,7 @@ body.has-cursor .cursor-dot {
   background: transparent;
   border: 1px solid transparent;
   transition: transform 0.25s, border-color 0.25s;
-  
+
   --card-y: 0px;
   --card-rot: 0deg;
   transform: translateY(var(--card-y)) rotate(var(--card-rot));
@@ -929,15 +928,40 @@ body.has-cursor .cursor-dot {
 
 @media (min-width: 1024px) {
   .lifecycle-grid {
-    row-gap: 2rem; /* a little extra space for rotated corners */
+    row-gap: 2rem;
+    /* a little extra space for rotated corners */
   }
+
   /* Organic tilt for each card (keeping Y translation very small so connecting threads still align) */
-  .lifecycle-grid .process-card:nth-child(1) { --card-y:  2px;  --card-rot: -1deg; }
-  .lifecycle-grid .process-card:nth-child(2) { --card-y: -2px;  --card-rot:  1.5deg; }
-  .lifecycle-grid .process-card:nth-child(3) { --card-y:  4px;  --card-rot: -1.5deg; }
-  .lifecycle-grid .process-card:nth-child(4) { --card-y: -4px;  --card-rot:  2deg; }
-  .lifecycle-grid .process-card:nth-child(5) { --card-y:  2px;  --card-rot: -2deg; }
-  .lifecycle-grid .process-card:nth-child(6) { --card-y: -2px;  --card-rot:  1deg; }
+  .lifecycle-grid .process-card:nth-child(1) {
+    --card-y: 2px;
+    --card-rot: -1deg;
+  }
+
+  .lifecycle-grid .process-card:nth-child(2) {
+    --card-y: -2px;
+    --card-rot: 1.5deg;
+  }
+
+  .lifecycle-grid .process-card:nth-child(3) {
+    --card-y: 4px;
+    --card-rot: -1.5deg;
+  }
+
+  .lifecycle-grid .process-card:nth-child(4) {
+    --card-y: -4px;
+    --card-rot: 2deg;
+  }
+
+  .lifecycle-grid .process-card:nth-child(5) {
+    --card-y: 2px;
+    --card-rot: -2deg;
+  }
+
+  .lifecycle-grid .process-card:nth-child(6) {
+    --card-y: -2px;
+    --card-rot: 1deg;
+  }
 }
 
 /* Connect the lifecycle cards with an organic thread arrow */
@@ -1053,6 +1077,9 @@ body.has-cursor .cursor-dot {
   color: var(--brand);
   font-size: 1.15rem;
   font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: background 0.2s, color 0.2s, transform 0.2s;
 }
 
@@ -1076,6 +1103,8 @@ body.has-cursor .cursor-dot {
   padding-top: 2rem;
   padding-bottom: 2.5rem;
   padding-right: 1.25rem;
+  padding-left: 2rem;
+  margin-left: -2rem;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -1088,7 +1117,8 @@ body.has-cursor .cursor-dot {
   flex: 0 0 min(78vw, 360px);
   scroll-snap-align: start;
   border-radius: var(--radius-lg);
-  overflow: visible; /* changed from hidden to show pins/shadows */
+  overflow: visible;
+  /* changed from hidden to show pins/shadows */
   background: var(--white);
   border: 1px solid var(--line);
   transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease, border-color 0.3s ease;
@@ -1101,17 +1131,37 @@ body.has-cursor .cursor-dot {
 }
 
 /* Organic Scatter Variations for Grid (Top Aligned) */
-.work-slide:nth-child(1) { --card-y: 0rem; --card-rot: -2deg; }
-.work-slide:nth-child(2) { --card-y: 0rem; --card-rot: 1.5deg; }
-.work-slide:nth-child(3) { --card-y: 0rem; --card-rot: -1.5deg; }
-.work-slide:nth-child(4) { --card-y: 0rem; --card-rot: 2.5deg; }
-.work-slide:nth-child(5) { --card-y: 0rem; --card-rot: -1deg; }
+.work-slide:nth-child(1) {
+  --card-y: 0rem;
+  --card-rot: -2deg;
+}
+
+.work-slide:nth-child(2) {
+  --card-y: 0rem;
+  --card-rot: 1.5deg;
+}
+
+.work-slide:nth-child(3) {
+  --card-y: 0rem;
+  --card-rot: -1.5deg;
+}
+
+.work-slide:nth-child(4) {
+  --card-y: 0rem;
+  --card-rot: 2.5deg;
+}
+
+.work-slide:nth-child(5) {
+  --card-y: 0rem;
+  --card-rot: -1deg;
+}
 
 /* RED Push pin on Work Grid Cards */
 .work-slide::before {
   content: '';
   position: absolute;
-  top: -6px; /* slightly outside so it overlaps the border nicely */
+  top: -6px;
+  /* slightly outside so it overlaps the border nicely */
   left: 50%;
   transform: translateX(-50%);
   width: 14px;
