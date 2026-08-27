@@ -1069,7 +1069,7 @@ body.has-cursor .cursor-dot {
 
 .work-slider {
   display: flex;
-  gap: 1.5rem; /* increased slightly for rotation */
+  gap: 1.5rem;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
@@ -1100,14 +1100,14 @@ body.has-cursor .cursor-dot {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
-/* Organic Scatter Variations for Slider */
-.work-slide:nth-child(1) { --card-y: 1.5rem; --card-rot: -2deg; }
-.work-slide:nth-child(2) { --card-y: -0.5rem; --card-rot: 1.5deg; }
-.work-slide:nth-child(3) { --card-y: 1rem; --card-rot: -1.5deg; }
-.work-slide:nth-child(4) { --card-y: -1rem; --card-rot: 2.5deg; }
-.work-slide:nth-child(5) { --card-y: 0.5rem; --card-rot: -1deg; }
+/* Organic Scatter Variations for Grid (Top Aligned) */
+.work-slide:nth-child(1) { --card-y: 0rem; --card-rot: -2deg; }
+.work-slide:nth-child(2) { --card-y: 0rem; --card-rot: 1.5deg; }
+.work-slide:nth-child(3) { --card-y: 0rem; --card-rot: -1.5deg; }
+.work-slide:nth-child(4) { --card-y: 0rem; --card-rot: 2.5deg; }
+.work-slide:nth-child(5) { --card-y: 0rem; --card-rot: -1deg; }
 
-/* Push pin on Work Slider Cards */
+/* RED Push pin on Work Grid Cards */
 .work-slide::before {
   content: '';
   position: absolute;
@@ -1117,8 +1117,8 @@ body.has-cursor .cursor-dot {
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #d4d4d4 40%, #888888 100%);
-  box-shadow: -2px 4px 6px rgba(0,0,0,0.15), inset -1px -2px 4px rgba(0,0,0,0.2);
+  background: radial-gradient(circle at 35% 35%, #ff8888 0%, #e60000 40%, #990000 100%);
+  box-shadow: -2px 6px 14px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0.7), inset -1px -2px 4px rgba(0, 0, 0, 0.4);
   z-index: 20;
 }
 
@@ -1143,35 +1143,41 @@ body.has-cursor .cursor-dot {
 }
 
 .work-slide__meta {
-  padding: 1.2rem 1.25rem 1.4rem;
+  padding: 1.5rem;
+  text-align: left;
 }
 
 .work-slide__meta h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.35rem;
+  font-family: var(--font-plus-jakarta), sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
 }
 
 .work-slide__meta p {
-  color: var(--muted);
+  color: #666;
+  line-height: 1.6;
   font-size: 0.92rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
 }
 
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: 0.5rem;
 }
 
 .tags span {
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--brand);
-  background: var(--brand-dim);
-  padding: 0.25rem 0.6rem;
-  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  border-radius: 20px;
+  background: #FFF0E5;
+  color: #FF6B00;
 }
 
 /* Orange circular badges (RSNL) */
