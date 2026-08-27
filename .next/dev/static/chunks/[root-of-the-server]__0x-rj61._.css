@@ -819,10 +819,10 @@ body.has-cursor .cursor, body.has-cursor .cursor-dot {
   position: relative;
 }
 
-.process-card:before {
+.process-card.section-intro:before {
   content: "";
   z-index: 20;
-  background: radial-gradient(circle at 35% 35%, #fff 0%, #d4d4d4 40%, #888 100%);
+  background: radial-gradient(circle at 35% 35%, #f88 0%, #e60000 40%, #900 100%);
   border-radius: 50%;
   width: 14px;
   height: 14px;
@@ -830,7 +830,7 @@ body.has-cursor .cursor, body.has-cursor .cursor-dot {
   top: 16px;
   left: 50%;
   transform: translateX(-50%);
-  box-shadow: -2px 4px 6px #00000026, inset -1px -2px 4px #0003;
+  box-shadow: -2px 6px 14px #fff, 0 0 20px #ffffffb3, inset -1px -2px 4px #0006;
 }
 
 @media (min-width: 1024px) {

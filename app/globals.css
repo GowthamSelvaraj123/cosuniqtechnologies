@@ -912,8 +912,8 @@ body.has-cursor .cursor-dot {
   transform: translateY(var(--card-y)) rotate(var(--card-rot));
 }
 
-/* Realistic push pin at the top center of each scattered card */
-.process-card::before {
+/* Realistic RED push pin ONLY on the intro card */
+.process-card.section-intro::before {
   content: '';
   position: absolute;
   top: 16px;
@@ -922,8 +922,8 @@ body.has-cursor .cursor-dot {
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #d4d4d4 40%, #888888 100%);
-  box-shadow: -2px 4px 6px rgba(0,0,0,0.15), inset -1px -2px 4px rgba(0,0,0,0.2);
+  background: radial-gradient(circle at 35% 35%, #ff8888 0%, #e60000 40%, #990000 100%);
+  box-shadow: -2px 6px 14px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0.7), inset -1px -2px 4px rgba(0, 0, 0, 0.4);
   z-index: 20;
 }
 

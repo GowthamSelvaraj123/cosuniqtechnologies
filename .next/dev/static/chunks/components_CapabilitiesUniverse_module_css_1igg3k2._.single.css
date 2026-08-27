@@ -64,20 +64,6 @@
   box-shadow: 0 4px 16px #ff6b0012, 0 16px 36px #ff6b001a;
 }
 
-.CapabilitiesUniverse-module__Zv_uza__card:before {
-  content: "";
-  z-index: 20;
-  background: radial-gradient(circle at 35% 35%, #fff 0%, #d4d4d4 40%, #888 100%);
-  border-radius: 50%;
-  width: 14px;
-  height: 14px;
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  box-shadow: -2px 4px 6px #00000026, inset -1px -2px 4px #0003;
-}
-
 @media (min-width: 1024px) {
   .CapabilitiesUniverse-module__Zv_uza__grid {
     gap: 1.75rem;
