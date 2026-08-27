@@ -2317,12 +2317,13 @@ __turbopack_context__.v({
   "card2": "ResultsShowcase-module__lD6eOa__card2",
   "card3": "ResultsShowcase-module__lD6eOa__card3",
   "card4": "ResultsShowcase-module__lD6eOa__card4",
+  "card5": "ResultsShowcase-module__lD6eOa__card5",
+  "card6": "ResultsShowcase-module__lD6eOa__card6",
   "container": "ResultsShowcase-module__lD6eOa__container",
   "glow": "ResultsShowcase-module__lD6eOa__glow",
   "glowBottomLeft": "ResultsShowcase-module__lD6eOa__glowBottomLeft",
   "glowTopRight": "ResultsShowcase-module__lD6eOa__glowTopRight",
   "grid": "ResultsShowcase-module__lD6eOa__grid",
-  "header": "ResultsShowcase-module__lD6eOa__header",
   "label": "ResultsShowcase-module__lD6eOa__label",
   "section": "ResultsShowcase-module__lD6eOa__section",
   "value": "ResultsShowcase-module__lD6eOa__value",
@@ -2365,7 +2366,7 @@ function ResultsShowcase() {
             className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ResultsShowcase$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].container,
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ResultsShowcase$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].header,
+                    className: "section-intro",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                             className: "eyebrow",
@@ -2380,7 +2381,7 @@ function ResultsShowcase() {
                                     lineNumber: 22,
                                     columnNumber: 13
                                 }, this),
-                                "Results"
+                                "Our Standard"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/ResultsShowcase.tsx",
@@ -2388,8 +2389,20 @@ function ResultsShowcase() {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                            children: "Numbers that mean something."
-                        }, void 0, false, {
+                            children: [
+                                "Numbers we stand by",
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    style: {
+                                        color: '#FF6B00'
+                                    },
+                                    children: "."
+                                }, void 0, false, {
+                                    fileName: "[project]/components/ResultsShowcase.tsx",
+                                    lineNumber: 25,
+                                    columnNumber: 34
+                                }, this)
+                            ]
+                        }, void 0, true, {
                             fileName: "[project]/components/ResultsShowcase.tsx",
                             lineNumber: 25,
                             columnNumber: 11
@@ -2431,7 +2444,7 @@ function ResultsShowcase() {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ResultsShowcase$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].value,
-                                            children: "67%"
+                                            children: "100%"
                                         }, void 0, false, {
                                             fileName: "[project]/components/ResultsShowcase.tsx",
                                             lineNumber: 41,
@@ -2439,7 +2452,7 @@ function ResultsShowcase() {
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ResultsShowcase$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].label,
-                                            children: "Average user engagement lift measured across our recent e-commerce and SaaS launches."
+                                            children: "Dedicated in-house team. No outsourcing, ensuring consistent premium quality and direct communication."
                                         }, void 0, false, {
                                             fileName: "[project]/components/ResultsShowcase.tsx",
                                             lineNumber: 42,
@@ -2464,7 +2477,7 @@ function ResultsShowcase() {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ResultsShowcase$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].value,
-                                        children: "2×"
+                                        children: "0"
                                     }, void 0, false, {
                                         fileName: "[project]/components/ResultsShowcase.tsx",
                                         lineNumber: 49,
@@ -2472,7 +2485,7 @@ function ResultsShowcase() {
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ResultsShowcase$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].label,
-                                        children: "Faster delivery cycles with our streamlined, agile design sprints."
+                                        children: "Hidden fees or surprise costs. We operate with complete transparency from the start."
                                     }, void 0, false, {
                                         fileName: "[project]/components/ResultsShowcase.tsx",
                                         lineNumber: 50,
@@ -2496,7 +2509,7 @@ function ResultsShowcase() {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ResultsShowcase$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].value,
-                                        children: "80+"
+                                        children: "1:1"
                                     }, void 0, false, {
                                         fileName: "[project]/components/ResultsShowcase.tsx",
                                         lineNumber: 57,
@@ -2504,7 +2517,7 @@ function ResultsShowcase() {
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ResultsShowcase$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].label,
-                                        children: "Unique projects shipped and counting."
+                                        children: "Direct collaboration with our core engineering and design experts."
                                     }, void 0, false, {
                                         fileName: "[project]/components/ResultsShowcase.tsx",
                                         lineNumber: 58,
@@ -2536,7 +2549,7 @@ function ResultsShowcase() {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ResultsShowcase$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].value,
-                                            children: "100%"
+                                            children: "2×"
                                         }, void 0, false, {
                                             fileName: "[project]/components/ResultsShowcase.tsx",
                                             lineNumber: 66,
@@ -2544,7 +2557,7 @@ function ResultsShowcase() {
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ResultsShowcase$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].label,
-                                            children: "Dedicated creative and technical partnership from day one."
+                                            children: "Faster iteration cycles through our streamlined, modern agile workflow."
                                         }, void 0, false, {
                                             fileName: "[project]/components/ResultsShowcase.tsx",
                                             lineNumber: 67,
@@ -2560,6 +2573,97 @@ function ResultsShowcase() {
                         }, void 0, true, {
                             fileName: "[project]/components/ResultsShowcase.tsx",
                             lineNumber: 63,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                            className: `${__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ResultsShowcase$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].card} ${__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ResultsShowcase$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].card5}`,
+                            variants: cardVariants,
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: `${__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ResultsShowcase$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].glow} ${__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ResultsShowcase$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].glowTopRight}`,
+                                    style: {
+                                        bottom: '-100px',
+                                        top: 'auto',
+                                        right: '-50px'
+                                    }
+                                }, void 0, false, {
+                                    fileName: "[project]/components/ResultsShowcase.tsx",
+                                    lineNumber: 73,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ResultsShowcase$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].value,
+                                            children: "24/7"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/ResultsShowcase.tsx",
+                                            lineNumber: 75,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                            className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ResultsShowcase$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].label,
+                                            children: "Proactive support and monitoring to ensure your digital assets are always live and performing."
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/ResultsShowcase.tsx",
+                                            lineNumber: 76,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/components/ResultsShowcase.tsx",
+                                    lineNumber: 74,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/components/ResultsShowcase.tsx",
+                            lineNumber: 72,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                            className: `${__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ResultsShowcase$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].card} ${__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ResultsShowcase$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].card6}`,
+                            variants: cardVariants,
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ResultsShowcase$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].value,
+                                        children: [
+                                            "1",
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                style: {
+                                                    fontSize: '0.6em',
+                                                    verticalAlign: 'super'
+                                                },
+                                                children: "st"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/ResultsShowcase.tsx",
+                                                lineNumber: 83,
+                                                columnNumber: 47
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/components/ResultsShowcase.tsx",
+                                        lineNumber: 83,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ResultsShowcase$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].label,
+                                        children: "Your vision comes first. We build tailor-made solutions, not cookie-cutter templates."
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/ResultsShowcase.tsx",
+                                        lineNumber: 84,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/components/ResultsShowcase.tsx",
+                                lineNumber: 82,
+                                columnNumber: 13
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/components/ResultsShowcase.tsx",
+                            lineNumber: 81,
                             columnNumber: 11
                         }, this)
                     ]

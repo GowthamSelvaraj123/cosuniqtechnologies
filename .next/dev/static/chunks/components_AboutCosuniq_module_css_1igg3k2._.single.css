@@ -1,0 +1,248 @@
+/* [project]/components/AboutCosuniq.module.css [app-client] (css) */
+.AboutCosuniq-module___JEIDa__section {
+  color: #17202a;
+  border-top: 1px solid #17202a0d;
+  position: relative;
+  overflow: hidden;
+  background-color: #fff !important;
+  padding: 10rem 0 !important;
+}
+
+.AboutCosuniq-module___JEIDa__container {
+  width: min(1400px, 92vw);
+  margin: 0 auto;
+}
+
+.AboutCosuniq-module___JEIDa__grid {
+  grid-template-columns: 5fr 7fr;
+  align-items: start;
+  gap: 6rem;
+  display: grid;
+}
+
+.AboutCosuniq-module___JEIDa__leftCol {
+  flex-direction: column;
+  display: flex;
+  position: sticky;
+  top: 10rem;
+}
+
+.AboutCosuniq-module___JEIDa__eyebrow {
+  font-family: var(--mono, monospace);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #ff7800;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: 2rem;
+  font-size: .75rem;
+  font-weight: 600;
+  display: flex;
+}
+
+.AboutCosuniq-module___JEIDa__spark {
+  background-color: #ff7800;
+  border-radius: 50%;
+  width: 6px;
+  height: 6px;
+  display: inline-block;
+}
+
+.AboutCosuniq-module___JEIDa__headline {
+  font-family: var(--display, sans-serif);
+  letter-spacing: -.04em;
+  color: #17202a;
+  margin: 0 0 3rem;
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.AboutCosuniq-module___JEIDa__rightCol {
+  flex-direction: column;
+  display: flex;
+}
+
+.AboutCosuniq-module___JEIDa__introText {
+  letter-spacing: -.02em;
+  color: #17202a;
+  max-width: 800px;
+  margin: 0 0 5rem;
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.AboutCosuniq-module___JEIDa__philosophyWrapper {
+  border-top: 1px solid #17202a1a;
+  margin-bottom: 4rem;
+  padding-top: 3rem;
+}
+
+.AboutCosuniq-module___JEIDa__philosophyTitle {
+  font-family: var(--mono, monospace);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: #17202a80;
+  margin-bottom: 2.5rem;
+  font-size: .85rem;
+  font-weight: 600;
+}
+
+.AboutCosuniq-module___JEIDa__philosophyList {
+  flex-direction: column;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+.AboutCosuniq-module___JEIDa__philosophyList li {
+  grid-template-columns: 180px 1fr;
+  align-items: baseline;
+  gap: 2rem;
+  display: grid;
+}
+
+.AboutCosuniq-module___JEIDa__principleNumber {
+  font-family: var(--mono, monospace);
+  color: #ff7800;
+  letter-spacing: .05em;
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.AboutCosuniq-module___JEIDa__principleDesc {
+  color: #17202acc;
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+.AboutCosuniq-module___JEIDa__visualContainerDesktop {
+  width: 100%;
+  max-width: 320px;
+  margin-top: 3rem;
+  display: block;
+}
+
+.AboutCosuniq-module___JEIDa__visualContainerMobile {
+  display: none;
+}
+
+.AboutCosuniq-module___JEIDa__visualWrapper {
+  aspect-ratio: 1;
+  width: 100%;
+  position: relative;
+}
+
+.AboutCosuniq-module___JEIDa__abstractGraphic {
+  width: 100%;
+  height: 100%;
+}
+
+.AboutCosuniq-module___JEIDa__group1 {
+  transform-origin: 120px 90px;
+  animation: 40s linear infinite AboutCosuniq-module___JEIDa__rotateSlow;
+}
+
+.AboutCosuniq-module___JEIDa__group2 {
+  transform-origin: 85px 150px;
+  animation: 45s linear infinite reverse AboutCosuniq-module___JEIDa__rotateSlow;
+}
+
+.AboutCosuniq-module___JEIDa__group3 {
+  transform-origin: 155px 150px;
+  animation: 35s linear infinite AboutCosuniq-module___JEIDa__rotateSlow;
+}
+
+@keyframes AboutCosuniq-module___JEIDa__slowBreathe {
+  0% {
+    opacity: .8;
+    transform: scale(.95);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes AboutCosuniq-module___JEIDa__rotateSlow {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.AboutCosuniq-module___JEIDa__ctaWrapper {
+  margin-top: 1rem;
+}
+
+.AboutCosuniq-module___JEIDa__ctaLink {
+  color: #17202a;
+  border-bottom: 2px solid #0000;
+  align-items: center;
+  gap: .75rem;
+  padding-bottom: .25rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color .3s, gap .3s;
+  display: inline-flex;
+}
+
+.AboutCosuniq-module___JEIDa__ctaLink:hover {
+  border-color: #ff7800;
+  gap: 1.25rem;
+}
+
+.AboutCosuniq-module___JEIDa__arrow {
+  color: #ff7800;
+  font-size: 1.25rem;
+  transition: transform .3s;
+}
+
+.AboutCosuniq-module___JEIDa__ctaLink:hover .AboutCosuniq-module___JEIDa__arrow {
+  transform: translateX(4px);
+}
+
+@media (max-width: 1024px) {
+  .AboutCosuniq-module___JEIDa__grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .AboutCosuniq-module___JEIDa__leftCol {
+    position: relative;
+    top: 0;
+  }
+
+  .AboutCosuniq-module___JEIDa__visualContainerDesktop {
+    display: none;
+  }
+
+  .AboutCosuniq-module___JEIDa__visualContainerMobile {
+    width: 100%;
+    max-width: 250px;
+    margin: 4rem auto;
+    display: block;
+  }
+
+  .AboutCosuniq-module___JEIDa__philosophyList li {
+    grid-template-columns: 1fr;
+    gap: .5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .AboutCosuniq-module___JEIDa__section {
+    padding: 6rem 0;
+  }
+}
+
+/*# sourceMappingURL=components_AboutCosuniq_module_css_1igg3k2._.single.css.map*/

@@ -1,9 +1,12 @@
 import Link from "next/link";
 import CinematicHero from "../components/CinematicHero";
 import LivingBrandHero from "../components/LivingBrandHero";
+import OurDifference from "../components/OurDifference";
+import AboutCosuniq from "../components/AboutCosuniq";
+import BrandPhilosophy from "../components/BrandPhilosophy";
+import FinalCta from "../components/FinalCta";
 import CapabilitiesUniverse from "../components/CapabilitiesUniverse";
 import WorkSlider from "../components/WorkSlider";
-import QuoteSlider from "../components/QuoteSlider";
 import InitReveal from "../components/InitReveal";
 import WorkLifecycle from "../components/WorkLifecycle";
 import ResultsShowcase from "../components/ResultsShowcase";
@@ -25,10 +28,11 @@ export default function Home() {
 
       {/* RESULTS — Innovative Bento Showcase */}
       <ResultsShowcase />
-
-      <QuoteSlider />
-
-
+      
+      <OurDifference />
+      <AboutCosuniq />
+      <BrandPhilosophy />
+      <FinalCta />
 
     </>
   );

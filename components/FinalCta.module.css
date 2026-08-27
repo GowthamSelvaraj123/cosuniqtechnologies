@@ -1,0 +1,168 @@
+.section {
+  padding: 12rem 0 !important;
+  background-color: #17202A !important;
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Background Animation System */
+.visualBackground {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vw;
+  max-width: 1200px;
+  max-height: 1200px;
+  z-index: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.abstractGraphic {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+@keyframes pulseGlow {
+  0% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(255, 120, 0, 0.3)); }
+  50% { transform: scale(1.2); filter: drop-shadow(0 0 30px rgba(255, 120, 0, 0.6)); }
+  100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(255, 120, 0, 0.3)); }
+}
+
+@keyframes expandRing {
+  0% { transform: scale(0.1); opacity: 0; stroke-width: 8px; }
+  50% { opacity: 0.3; }
+  100% { transform: scale(3); opacity: 0; stroke-width: 1px; }
+}
+
+.coreIdea {
+  animation: pulseGlow 4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.ripple1 { animation: expandRing 8s linear infinite; transform-origin: center; }
+.ripple2 { animation: expandRing 8s linear infinite 2.6s; transform-origin: center; }
+.ripple3 { animation: expandRing 8s linear infinite 5.3s; transform-origin: center; }
+
+
+/* Foreground Content */
+.container {
+  width: min(1200px, 92vw);
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.eyebrow {
+  font-family: var(--mono, monospace);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #FF7800;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.spark {
+  width: 8px;
+  height: 8px;
+  background-color: #FF7800;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.headlineWrapper {
+  margin-bottom: 4rem;
+  max-width: 900px;
+}
+
+.headline {
+  font-family: var(--display, sans-serif);
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.highlightOrange {
+  color: #FF7800;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: #FFFFFF;
+  color: #17202A;
+  font-family: var(--font, sans-serif);
+  font-size: 1.125rem;
+  font-weight: 700;
+  padding: 1.25rem 3rem;
+  border-radius: 4rem; /* Pill shape */
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid transparent;
+  margin-bottom: 2.5rem;
+}
+
+.ctaButton:hover {
+  background-color: #FF7800;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 120, 0, 0.3);
+}
+
+.arrow {
+  font-size: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+.ctaButton:hover .arrow {
+  transform: translateX(4px);
+}
+
+.subtext {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 400px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .section {
+    padding: 8rem 0 !important;
+  }
+  
+  .headline {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+  }
+  
+  .ctaButton {
+    padding: 1rem 2rem;
+    width: 100%;
+  }
+}
