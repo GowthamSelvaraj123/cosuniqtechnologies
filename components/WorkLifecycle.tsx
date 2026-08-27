@@ -3,46 +3,34 @@
 import React from "react";
 import Link from "next/link";
 
-const PlusButton = () => (
-  <div style={{ position: 'absolute', bottom: '1.5rem', right: '1.5rem', width: '36px', height: '36px', borderRadius: '50%', background: '#FF6B00', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ffffff', cursor: 'pointer', transition: 'transform 0.2s', boxShadow: '0 4px 12px rgba(255,107,0,0.3)' }}
-       onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
-       onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}>
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <line x1="12" y1="5" x2="12" y2="19"></line>
-      <line x1="5" y1="12" x2="19" y2="12"></line>
-    </svg>
-  </div>
-);
-
 export default function WorkLifecycle() {
   return (
     <section className="band band--white" id="work-lifecycle">
       <div style={{ width: 'min(1200px, 92vw)', margin: '0 auto 3rem auto', textAlign: 'left' }}>
         
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '0.25rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '1.25rem', flexWrap: 'wrap' }}>
           
           <div style={{
             position: 'relative',
             display: 'inline-flex',
-            background: '#4a72d4',
+            background: '#FF6B00',
             color: '#ffffff',
             fontWeight: 800,
             fontSize: '1.2rem',
             padding: '0.6rem 1.4rem',
             borderRadius: '30px',
-            boxShadow: '0 4px 12px rgba(74, 114, 212, 0.2)'
+            boxShadow: '0 4px 12px rgba(255, 107, 0, 0.25)'
           }}>
             Hi,
             <div style={{
               position: 'absolute',
-              bottom: '-10px',
-              left: '16px',
+              bottom: '-8px',
+              left: '27px',
               width: 0,
               height: 0,
-              borderLeft: '10px solid transparent',
-              borderRight: '10px solid transparent',
-              borderTop: '12px solid #4a72d4',
-              transform: 'rotate(20deg)'
+              borderLeft: '8px solid transparent',
+              borderRight: '8px solid transparent',
+              borderTop: '8px solid #FF6B00'
             }} />
           </div>
 
@@ -54,7 +42,7 @@ export default function WorkLifecycle() {
             letterSpacing: '-0.03em', 
             lineHeight: 1.08 
           }}>
-            I am gowtham, we <svg width="1em" height="1em" viewBox="0 0 24 24" fill="#FF6B00" style={{ display: 'inline-block', verticalAlign: 'middle', margin: '0 0.1rem', transform: 'translateY(-2px)' }}><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> branding.
+            I am gowtham, we <svg width="1em" height="1em" viewBox="0 0 24 24" fill="#FF6B00" style={{ display: 'inline-block', verticalAlign: 'middle', margin: '0 0.1rem', transform: 'translateY(-2px)' }}><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> support your business.
           </h1>
           
         </div>
@@ -83,7 +71,6 @@ export default function WorkLifecycle() {
             </div>
             <h3 style={{ fontSize: '1.4rem', marginBottom: '0.75rem' }}>Origin</h3>
             <p style={{ margin: 0, maxWidth: '85%' }}>Strategy, planning, and aligning on goals before the work begins.</p>
-            <PlusButton />
           </article>
           
           <article className="process-card">
@@ -103,7 +90,6 @@ export default function WorkLifecycle() {
             </div>
             <h3 style={{ fontSize: '1.4rem', marginBottom: '0.75rem' }}>Form</h3>
             <p style={{ margin: 0, maxWidth: '85%' }}>Gathering ideas, laying the strategic foundation, and core design.</p>
-            <PlusButton />
           </article>
           
           <article className="process-card">
@@ -120,7 +106,6 @@ export default function WorkLifecycle() {
             </div>
             <h3 style={{ fontSize: '1.4rem', marginBottom: '0.75rem' }}>Metamorphosis</h3>
             <p style={{ margin: 0, maxWidth: '85%' }}>Intense transformation—building systems and primary development.</p>
-            <PlusButton />
           </article>
           
           <article className="process-card">
@@ -136,7 +121,6 @@ export default function WorkLifecycle() {
             </div>
             <h3 style={{ fontSize: '1.4rem', marginBottom: '0.75rem' }}>Emergence</h3>
             <p style={{ margin: 0, maxWidth: '85%' }}>Emergence through refinement, rigorous testing, and final polish.</p>
-            <PlusButton />
           </article>
           
           <article className="process-card">
@@ -155,7 +139,6 @@ export default function WorkLifecycle() {
             </div>
             <h3 style={{ fontSize: '1.4rem', marginBottom: '0.75rem' }}>Flight</h3>
             <p style={{ margin: 0, maxWidth: '85%' }}>Launch, scalable commercial momentum, and ongoing growth.</p>
-            <PlusButton />
           </article>
         </div>
       </div>

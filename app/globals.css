@@ -885,6 +885,9 @@ body.has-cursor .cursor-dot {
   grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
   grid-auto-rows: 1fr;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: calc(var(--radius) + 0.5rem);
+  padding: 1.25rem;
 }
 
 /* Remove media query spans, grid handles 3 columns natively */
@@ -904,13 +907,8 @@ body.has-cursor .cursor-dot {
   padding: 2.5rem;
   border-radius: var(--radius);
   background: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid transparent;
   transition: transform 0.25s, border-color 0.25s;
-}
-
-.process-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--brand);
 }
 
 .process-num {

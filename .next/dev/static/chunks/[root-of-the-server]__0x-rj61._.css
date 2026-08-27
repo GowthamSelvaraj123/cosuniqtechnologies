@@ -793,9 +793,12 @@ body.has-cursor .cursor, body.has-cursor .cursor-dot {
 }
 
 .lifecycle-grid {
+  border-radius: calc(var(--radius) + .5rem);
+  border: 1px solid #0000001a;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 1fr;
   gap: 1.25rem;
+  padding: 1.25rem;
   display: grid;
 }
 
@@ -809,18 +812,13 @@ body.has-cursor .cursor, body.has-cursor .cursor-dot {
 .process-card {
   border-radius: var(--radius);
   background: none;
-  border: 1px solid #0000001a;
+  border: 1px solid #0000;
   flex-direction: column;
   min-height: 240px;
   padding: 2.5rem;
   transition: transform .25s, border-color .25s;
   display: flex;
   position: relative;
-}
-
-.process-card:hover {
-  border-color: var(--brand);
-  transform: translateY(-6px);
 }
 
 .process-num {
