@@ -2,26 +2,22 @@
 "[project]/components/CapabilitiesUniverse.module.css [app-client] (css module)", ((__turbopack_context__) => {
 
 __turbopack_context__.v({
-  "arrowIcon": "CapabilitiesUniverse-module__Zv_uza__arrowIcon",
-  "bottomCtaWrapper": "CapabilitiesUniverse-module__Zv_uza__bottomCtaWrapper",
-  "bottomText": "CapabilitiesUniverse-module__Zv_uza__bottomText",
-  "canvasWrapper": "CapabilitiesUniverse-module__Zv_uza__canvasWrapper",
   "card": "CapabilitiesUniverse-module__Zv_uza__card",
+  "cardActive": "CapabilitiesUniverse-module__Zv_uza__cardActive",
+  "cardArrow": "CapabilitiesUniverse-module__Zv_uza__cardArrow",
   "cardDesc": "CapabilitiesUniverse-module__Zv_uza__cardDesc",
-  "cardFloat": "CapabilitiesUniverse-module__Zv_uza__cardFloat",
-  "cardOrbit": "CapabilitiesUniverse-module__Zv_uza__cardOrbit",
-  "cardTitle": "CapabilitiesUniverse-module__Zv_uza__cardTitle",
-  "centerContent": "CapabilitiesUniverse-module__Zv_uza__centerContent",
-  "centerGlow": "CapabilitiesUniverse-module__Zv_uza__centerGlow",
-  "ctaArrow": "CapabilitiesUniverse-module__Zv_uza__ctaArrow",
-  "exploreCta": "CapabilitiesUniverse-module__Zv_uza__exploreCta",
+  "cardName": "CapabilitiesUniverse-module__Zv_uza__cardName",
+  "container": "CapabilitiesUniverse-module__Zv_uza__container",
+  "cta": "CapabilitiesUniverse-module__Zv_uza__cta",
+  "ctaRow": "CapabilitiesUniverse-module__Zv_uza__ctaRow",
+  "dot": "CapabilitiesUniverse-module__Zv_uza__dot",
+  "eyebrow": "CapabilitiesUniverse-module__Zv_uza__eyebrow",
+  "grid": "CapabilitiesUniverse-module__Zv_uza__grid",
+  "header": "CapabilitiesUniverse-module__Zv_uza__header",
   "headline": "CapabilitiesUniverse-module__Zv_uza__headline",
-  "headlineDot": "CapabilitiesUniverse-module__Zv_uza__headlineDot",
-  "num": "CapabilitiesUniverse-module__Zv_uza__num",
-  "scatterLayer": "CapabilitiesUniverse-module__Zv_uza__scatterLayer",
-  "sectionLabel": "CapabilitiesUniverse-module__Zv_uza__sectionLabel",
-  "subheadline": "CapabilitiesUniverse-module__Zv_uza__subheadline",
-  "universeSection": "CapabilitiesUniverse-module__Zv_uza__universeSection",
+  "icon": "CapabilitiesUniverse-module__Zv_uza__icon",
+  "section": "CapabilitiesUniverse-module__Zv_uza__section",
+  "sub": "CapabilitiesUniverse-module__Zv_uza__sub",
 });
 }),
 "[project]/components/CapabilitiesUniverse.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
@@ -33,563 +29,1288 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$value$2f$use$2d$spring$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/value/use-spring.mjs [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$value$2f$use$2d$motion$2d$value$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/value/use-motion-value.mjs [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$three$2f$fiber$2f$dist$2f$react$2d$three$2d$fiber$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/@react-three/fiber/dist/react-three-fiber.esm.js [app-client] (ecmascript) <locals>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$three$2f$fiber$2f$dist$2f$events$2d$156d8d12$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__D__as__useFrame$3e$__ = __turbopack_context__.i("[project]/node_modules/@react-three/fiber/dist/events-156d8d12.esm.js [app-client] (ecmascript) <export D as useFrame>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$three$2f$build$2f$three$2e$core$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/three/build/three.core.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CapabilitiesUniverse$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__ = __turbopack_context__.i("[project]/components/CapabilitiesUniverse.module.css [app-client] (css module)");
 ;
-var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.signature(), _s2 = __turbopack_context__.k.signature();
+var _s = __turbopack_context__.k.signature();
 "use client";
 ;
 ;
 ;
-;
-;
-;
-// ─────────────────────────────────────────────────────────────────────────────
-// DATA — Cards orbit the protected central zone (approx. 25–75% x, 30–70% y)
-// Positions follow the spec exactly: top/bottom + left/right % values
-// ─────────────────────────────────────────────────────────────────────────────
+// ── Custom illustrated icons ──────────────────────────────────────────────────
+// Pattern: scattered black outlined circles (the market) + 
+//          one central orange shape (the standout concept)
+const BrandingIcon = ()=>// Concept: scattered circles (everyone else) + orange star (YOUR brand stands out)
+    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+        viewBox: "0 0 24 24",
+        fill: "none",
+        strokeLinecap: "round",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "3.5",
+                cy: "4.5",
+                r: "1.2",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 14,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "20.5",
+                cy: "4",
+                r: "0.9",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 15,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "2",
+                cy: "13",
+                r: "1.4",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 16,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "22",
+                cy: "14.5",
+                r: "1.0",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 17,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "6",
+                cy: "21",
+                r: "1.1",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 18,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "18.5",
+                cy: "21.5",
+                r: "1.3",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 19,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "7.5",
+                cy: "7",
+                r: "1.0",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 20,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "17",
+                cy: "7",
+                r: "0.9",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 21,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "4.5",
+                cy: "18",
+                r: "0.9",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 22,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "19.5",
+                cy: "17.5",
+                r: "1.0",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 23,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "11",
+                cy: "3.5",
+                r: "0.8",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 24,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "15",
+                cy: "20.5",
+                r: "0.9",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 25,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("polygon", {
+                points: "12,7.5 13.06,10.54 15.80,10.76 13.71,12.56 14.35,15.24 12,13.8 9.65,15.24 10.29,12.56 8.20,10.76 10.94,10.54",
+                fill: "currentColor",
+                stroke: "none"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 26,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0))
+        ]
+    }, void 0, true, {
+        fileName: "[project]/components/CapabilitiesUniverse.tsx",
+        lineNumber: 13,
+        columnNumber: 3
+    }, ("TURBOPACK compile-time value", void 0));
+_c = BrandingIcon;
+const StrategyIcon = ()=>// Concept: scattered circles (distractions) + bullseye (laser-focused strategy)
+    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+        viewBox: "0 0 24 24",
+        fill: "none",
+        strokeLinecap: "round",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "3",
+                cy: "4",
+                r: "1.0",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 36,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "21",
+                cy: "5",
+                r: "0.9",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 37,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "2",
+                cy: "14",
+                r: "1.3",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 38,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "22",
+                cy: "13",
+                r: "1.0",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 39,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "5",
+                cy: "21",
+                r: "1.1",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 40,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "19",
+                cy: "21",
+                r: "1.2",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 41,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "7",
+                cy: "7",
+                r: "1.0",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 42,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "18",
+                cy: "7",
+                r: "0.9",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 43,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "20",
+                cy: "18",
+                r: "0.8",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 44,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "12",
+                cy: "12",
+                r: "4.8",
+                stroke: "currentColor",
+                strokeWidth: "1.2"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 46,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "12",
+                cy: "12",
+                r: "2.8",
+                stroke: "currentColor",
+                strokeWidth: "1.2"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 47,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "12",
+                cy: "12",
+                r: "1.1",
+                fill: "currentColor",
+                stroke: "none"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 48,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0))
+        ]
+    }, void 0, true, {
+        fileName: "[project]/components/CapabilitiesUniverse.tsx",
+        lineNumber: 35,
+        columnNumber: 3
+    }, ("TURBOPACK compile-time value", void 0));
+_c1 = StrategyIcon;
+const AIIcon = ()=>// Concept: scattered circles (data noise) + neural nodes connected to a core (intelligence)
+    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+        viewBox: "0 0 24 24",
+        fill: "none",
+        strokeLinecap: "round",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "3.5",
+                cy: "3.5",
+                r: "1.0",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 55,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "21",
+                cy: "4",
+                r: "0.9",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 56,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "2",
+                cy: "15",
+                r: "1.2",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 57,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "22",
+                cy: "15",
+                r: "1.0",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 58,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "5",
+                cy: "21.5",
+                r: "1.1",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 59,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "19",
+                cy: "21",
+                r: "1.2",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 60,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "19",
+                cy: "7.5",
+                r: "0.8",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 61,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "12",
+                cy: "12",
+                r: "1.6",
+                fill: "currentColor",
+                stroke: "none"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 63,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "12",
+                cy: "7.5",
+                r: "1.0",
+                stroke: "currentColor",
+                strokeWidth: "1.1"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 64,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "16",
+                cy: "14.5",
+                r: "1.0",
+                stroke: "currentColor",
+                strokeWidth: "1.1"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 65,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "8",
+                cy: "14.5",
+                r: "1.0",
+                stroke: "currentColor",
+                strokeWidth: "1.1"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 66,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                x1: "12",
+                y1: "8.5",
+                x2: "12",
+                y2: "10.4",
+                stroke: "currentColor",
+                strokeWidth: "1"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 67,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                x1: "15.1",
+                y1: "13.8",
+                x2: "13.4",
+                y2: "12.8",
+                stroke: "currentColor",
+                strokeWidth: "1"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 68,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                x1: "8.9",
+                y1: "13.8",
+                x2: "10.6",
+                y2: "12.8",
+                stroke: "currentColor",
+                strokeWidth: "1"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 69,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0))
+        ]
+    }, void 0, true, {
+        fileName: "[project]/components/CapabilitiesUniverse.tsx",
+        lineNumber: 54,
+        columnNumber: 3
+    }, ("TURBOPACK compile-time value", void 0));
+_c2 = AIIcon;
+const WebAppsIcon = ()=>// Concept: scattered circles (static content) + code brackets (powerful logic)
+    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+        viewBox: "0 0 24 24",
+        fill: "none",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "3.5",
+                cy: "4",
+                r: "1.0",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 76,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "21",
+                cy: "3.5",
+                r: "0.9",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 77,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "2",
+                cy: "13.5",
+                r: "1.3",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 78,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "22",
+                cy: "14",
+                r: "1.0",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 79,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "5",
+                cy: "20.5",
+                r: "1.1",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 80,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "19",
+                cy: "20.5",
+                r: "1.2",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 81,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "7",
+                cy: "7.5",
+                r: "0.9",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 82,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "17.5",
+                cy: "7.5",
+                r: "0.9",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 83,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("polyline", {
+                points: "9.5,9 7,12 9.5,15",
+                stroke: "currentColor",
+                strokeWidth: "1.5"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 85,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("polyline", {
+                points: "14.5,9 17,12 14.5,15",
+                stroke: "currentColor",
+                strokeWidth: "1.5"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 86,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                x1: "13.2",
+                y1: "8.5",
+                x2: "10.8",
+                y2: "15.5",
+                stroke: "currentColor",
+                strokeWidth: "1.2"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 87,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0))
+        ]
+    }, void 0, true, {
+        fileName: "[project]/components/CapabilitiesUniverse.tsx",
+        lineNumber: 75,
+        columnNumber: 3
+    }, ("TURBOPACK compile-time value", void 0));
+_c3 = WebAppsIcon;
+const MobileIcon = ()=>// Concept: scattered circles (desktop web) + phone shape (mobile-first)
+    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+        viewBox: "0 0 24 24",
+        fill: "none",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "3",
+                cy: "4",
+                r: "1.1",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 94,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "21",
+                cy: "5",
+                r: "0.9",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 95,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "2",
+                cy: "14",
+                r: "1.3",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 96,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "22",
+                cy: "14",
+                r: "1.0",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 97,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "4",
+                cy: "21",
+                r: "1.1",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 98,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "20",
+                cy: "21",
+                r: "1.2",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 99,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "18",
+                cy: "8",
+                r: "0.9",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 100,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                x: "9",
+                y: "5.5",
+                width: "6",
+                height: "13",
+                rx: "1.5",
+                stroke: "currentColor",
+                strokeWidth: "1.3"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 102,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                x1: "11",
+                y1: "16.5",
+                x2: "13",
+                y2: "16.5",
+                stroke: "currentColor",
+                strokeWidth: "1.3"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 103,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                x1: "11.5",
+                y1: "7.5",
+                x2: "12.5",
+                y2: "7.5",
+                stroke: "currentColor",
+                strokeWidth: "1"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 104,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0))
+        ]
+    }, void 0, true, {
+        fileName: "[project]/components/CapabilitiesUniverse.tsx",
+        lineNumber: 93,
+        columnNumber: 3
+    }, ("TURBOPACK compile-time value", void 0));
+_c4 = MobileIcon;
+const UIUXIcon = ()=>// Concept: scattered circles (random elements) + stacked layers (intentional design)
+    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+        viewBox: "0 0 24 24",
+        fill: "none",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "3.5",
+                cy: "3.5",
+                r: "1.0",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 111,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "21",
+                cy: "4",
+                r: "0.9",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 112,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "2",
+                cy: "13",
+                r: "1.2",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 113,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "22",
+                cy: "14",
+                r: "1.0",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 114,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "5",
+                cy: "21",
+                r: "1.1",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 115,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "19",
+                cy: "21.5",
+                r: "1.2",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 116,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "18.5",
+                cy: "7.5",
+                r: "0.9",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 117,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("polygon", {
+                points: "12,7.5 16.5,10 12,12.5 7.5,10",
+                stroke: "currentColor",
+                strokeWidth: "1.2"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 119,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("polygon", {
+                points: "12,10  16.5,12.5 12,15 7.5,12.5",
+                stroke: "currentColor",
+                strokeWidth: "1.2"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 120,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("polygon", {
+                points: "12,12.5 16.5,15 12,17.5 7.5,15",
+                stroke: "currentColor",
+                strokeWidth: "1.2"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 121,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0))
+        ]
+    }, void 0, true, {
+        fileName: "[project]/components/CapabilitiesUniverse.tsx",
+        lineNumber: 110,
+        columnNumber: 3
+    }, ("TURBOPACK compile-time value", void 0));
+_c5 = UIUXIcon;
+const WebsitesIcon = ()=>// Concept: scattered circles (local presence) + globe (worldwide digital reach)
+    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+        viewBox: "0 0 24 24",
+        fill: "none",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "3",
+                cy: "4",
+                r: "1.0",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 128,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "21",
+                cy: "4.5",
+                r: "0.9",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 129,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "2",
+                cy: "14",
+                r: "1.3",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 130,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "22",
+                cy: "13.5",
+                r: "1.0",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 131,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "4.5",
+                cy: "21",
+                r: "1.1",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 132,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "19.5",
+                cy: "21",
+                r: "1.2",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 133,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "18",
+                cy: "7.5",
+                r: "0.8",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 134,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "12",
+                cy: "12",
+                r: "5",
+                stroke: "currentColor",
+                strokeWidth: "1.3"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 136,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                x1: "7",
+                y1: "12",
+                x2: "17",
+                y2: "12",
+                stroke: "currentColor",
+                strokeWidth: "1"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 137,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                d: "M12,7 C10,9 10,15 12,17 C14,15 14,9 12,7",
+                stroke: "currentColor",
+                strokeWidth: "1"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 138,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0))
+        ]
+    }, void 0, true, {
+        fileName: "[project]/components/CapabilitiesUniverse.tsx",
+        lineNumber: 127,
+        columnNumber: 3
+    }, ("TURBOPACK compile-time value", void 0));
+_c6 = WebsitesIcon;
+const EcommerceIcon = ()=>// Concept: scattered circles (browsers/visitors) + shopping bag (the conversion)
+    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+        viewBox: "0 0 24 24",
+        fill: "none",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "3.5",
+                cy: "4.5",
+                r: "1.0",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 145,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "21",
+                cy: "4",
+                r: "0.9",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 146,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "2",
+                cy: "14",
+                r: "1.3",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 147,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "22",
+                cy: "15",
+                r: "1.0",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 148,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "5",
+                cy: "21.5",
+                r: "1.1",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 149,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "19",
+                cy: "21",
+                r: "1.2",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 150,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "7",
+                cy: "6.5",
+                r: "0.9",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 151,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "19",
+                cy: "8",
+                r: "0.8",
+                stroke: "#111",
+                strokeWidth: "0.85"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 152,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                d: "M8.5,10 L7.5,18 L16.5,18 L15.5,10 Z",
+                stroke: "currentColor",
+                strokeWidth: "1.3"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 154,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                d: "M10,10 C10,7.5 14,7.5 14,10",
+                stroke: "currentColor",
+                strokeWidth: "1.3"
+            }, void 0, false, {
+                fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                lineNumber: 155,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0))
+        ]
+    }, void 0, true, {
+        fileName: "[project]/components/CapabilitiesUniverse.tsx",
+        lineNumber: 144,
+        columnNumber: 3
+    }, ("TURBOPACK compile-time value", void 0));
+_c7 = EcommerceIcon;
 const services = [
     {
         id: "branding",
-        name: "BRANDING",
+        name: "Branding",
         desc: "Make your brand memorable.",
-        pos: {
-            top: "20%",
-            left: "6%"
-        },
-        rot: -4,
-        width: 210,
-        floatDur: 5.2,
-        floatDelay: 0.0,
-        related: [
-            "websites",
-            "uiux"
-        ]
+        Icon: BrandingIcon
     },
     {
         id: "strategy",
-        name: "STRATEGY",
+        name: "Strategy",
         desc: "Clear pathways for growth.",
-        pos: {
-            top: "14%",
-            left: "40%"
-        },
-        rot: 2,
-        width: 220,
-        floatDur: 6.4,
-        floatDelay: 0.8,
-        related: [
-            "branding",
-            "ai"
-        ]
+        Icon: StrategyIcon
     },
     {
         id: "ai",
-        name: "AI SOLUTIONS",
+        name: "AI Solutions",
         desc: "Build with intelligence.",
-        pos: {
-            top: "19%",
-            right: "6%"
-        },
-        rot: 4,
-        width: 210,
-        floatDur: 4.8,
-        floatDelay: 1.6,
-        related: [
-            "webapps",
-            "strategy"
-        ]
+        Icon: AIIcon
     },
     {
         id: "webapps",
-        name: "WEB APPS",
+        name: "Web Apps",
         desc: "Powerful tools for your business.",
-        pos: {
-            top: "44%",
-            left: "3%"
-        },
-        rot: -2,
-        width: 220,
-        floatDur: 5.7,
-        floatDelay: 0.4,
-        related: [
-            "ai",
-            "strategy"
-        ]
+        Icon: WebAppsIcon
     },
     {
         id: "mobile",
-        name: "MOBILE APPS",
+        name: "Mobile Apps",
         desc: "Your business in their hands.",
-        pos: {
-            top: "44%",
-            right: "3%"
-        },
-        rot: 3,
-        width: 215,
-        floatDur: 6.1,
-        floatDelay: 1.2,
-        related: [
-            "uiux",
-            "webapps"
-        ]
+        Icon: MobileIcon
     },
     {
         id: "uiux",
         name: "UI / UX",
         desc: "Design that performs.",
-        pos: {
-            top: "68%",
-            left: "7%"
-        },
-        rot: -3,
-        width: 200,
-        floatDur: 4.9,
-        floatDelay: 2.0,
-        related: [
-            "websites",
-            "branding",
-            "mobile"
-        ]
+        Icon: UIUXIcon
     },
     {
         id: "websites",
-        name: "WEBSITES",
+        name: "Websites",
         desc: "Digital experiences that stand out.",
-        pos: {
-            top: "71%",
-            left: "38%"
-        },
-        rot: 2,
-        width: 230,
-        floatDur: 5.8,
-        floatDelay: 0.6,
-        related: [
-            "branding",
-            "uiux"
-        ]
+        Icon: WebsitesIcon
     },
     {
         id: "ecommerce",
-        name: "E-COMMERCE",
+        name: "E-Commerce",
         desc: "Stores built to convert.",
-        pos: {
-            top: "68%",
-            right: "6%"
-        },
-        rot: -3,
-        width: 215,
-        floatDur: 6.6,
-        floatDelay: 1.4,
-        related: [
-            "websites",
-            "branding"
-        ]
+        Icon: EcommerceIcon
     }
 ];
-// ─────────────────────────────────────────────────────────────────────────────
-// THREE.JS PARTICLE FIELD
-// ─────────────────────────────────────────────────────────────────────────────
-const particleVert = `
-  uniform float uTime;
-  attribute float aScale;
-  varying float vAlpha;
-  void main() {
-    vec3 p = position;
-    float r = length(p.xy);
-    float a = atan(p.y, p.x) + uTime * (0.04 / (r + 1.0));
-    r += sin(uTime * 0.25 + p.x * 1.2) * 0.2;
-    p.x = cos(a) * r;
-    p.y = sin(a) * r;
-    vec4 mv = modelViewMatrix * vec4(p, 1.0);
-    gl_PointSize = aScale * (5.5 / -mv.z);
-    gl_Position  = projectionMatrix * mv;
-    vAlpha = smoothstep(14.0, 3.0, r) * 0.18;
-  }
-`;
-const particleFrag = `
-  varying float vAlpha;
-  void main() {
-    vec2 uv = 2.0 * gl_PointCoord - 1.0;
-    if (dot(uv, uv) > 1.0) discard;
-    float a = (1.0 - smoothstep(0.4, 1.0, dot(uv, uv))) * vAlpha;
-    gl_FragColor = vec4(0.85, 0.28, 0.0, a);
-  }
-`;
-function OrbitalParticles() {
-    _s();
-    const mesh = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
-    const mat = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
-    const N = 1600;
-    const [pos, sc] = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].useMemo({
-        "OrbitalParticles.useMemo": ()=>{
-            const p = new Float32Array(N * 3);
-            const s = new Float32Array(N);
-            for(let i = 0; i < N; i++){
-                const theta = Math.random() * Math.PI * 2;
-                const r = 4 + Math.random() * 12;
-                p[i * 3] = Math.cos(theta) * r;
-                p[i * 3 + 1] = Math.sin(theta) * r;
-                p[i * 3 + 2] = (Math.random() - 0.5) * 3;
-                s[i] = Math.random() + 0.4;
-            }
-            return [
-                p,
-                s
-            ];
-        }
-    }["OrbitalParticles.useMemo"], []);
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$three$2f$fiber$2f$dist$2f$events$2d$156d8d12$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__D__as__useFrame$3e$__["useFrame"])({
-        "OrbitalParticles.useFrame": ({ clock })=>{
-            if (mat.current) mat.current.uniforms.uTime.value = clock.elapsedTime;
-            if (mesh.current) mesh.current.rotation.z = clock.elapsedTime * 0.01;
-        }
-    }["OrbitalParticles.useFrame"]);
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("points", {
-        ref: mesh,
-        children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("bufferGeometry", {
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("bufferAttribute", {
-                        attach: "attributes-position",
-                        count: N,
-                        array: pos,
-                        itemSize: 3
-                    }, void 0, false, {
-                        fileName: "[project]/components/CapabilitiesUniverse.tsx",
-                        lineNumber: 150,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("bufferAttribute", {
-                        attach: "attributes-aScale",
-                        count: N,
-                        array: sc,
-                        itemSize: 1
-                    }, void 0, false, {
-                        fileName: "[project]/components/CapabilitiesUniverse.tsx",
-                        lineNumber: 151,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/components/CapabilitiesUniverse.tsx",
-                lineNumber: 149,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("shaderMaterial", {
-                ref: mat,
-                vertexShader: particleVert,
-                fragmentShader: particleFrag,
-                uniforms: {
-                    uTime: {
-                        value: 0
-                    }
-                },
-                transparent: true,
-                depthWrite: false,
-                blending: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$three$2f$build$2f$three$2e$core$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["NormalBlending"]
-            }, void 0, false, {
-                fileName: "[project]/components/CapabilitiesUniverse.tsx",
-                lineNumber: 153,
-                columnNumber: 7
-            }, this)
-        ]
-    }, void 0, true, {
-        fileName: "[project]/components/CapabilitiesUniverse.tsx",
-        lineNumber: 148,
-        columnNumber: 5
-    }, this);
-}
-_s(OrbitalParticles, "d0ja9IDGuthYcAu9xxQ6SPUZ+Fo=", false, function() {
-    return [
-        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$three$2f$fiber$2f$dist$2f$events$2d$156d8d12$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__D__as__useFrame$3e$__["useFrame"]
-    ];
-});
-_c = OrbitalParticles;
-// ─────────────────────────────────────────────────────────────────────────────
-// CARD — three-layer animation separation:
-//  1. cardOrbit (motion.div)  → entrance fade-in + absolute position
-//  2. cardFloat (plain div)   → CSS keyframe float (no Framer conflict)
-//  3. card (motion.div)       → spring magnetic x/y + hover scale
-// ─────────────────────────────────────────────────────────────────────────────
-function ScatterCard({ service, index, activeService, setActiveService }) {
-    _s1();
-    const cardRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
-    const mX = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$value$2f$use$2d$motion$2d$value$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMotionValue"])(0);
-    const mY = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$value$2f$use$2d$motion$2d$value$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMotionValue"])(0);
-    const sX = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$value$2f$use$2d$spring$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSpring"])(mX, {
-        stiffness: 65,
-        damping: 15
-    });
-    const sY = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$value$2f$use$2d$spring$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSpring"])(mY, {
-        stiffness: 65,
-        damping: 15
-    });
-    const sScale = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$value$2f$use$2d$spring$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSpring"])(1, {
-        stiffness: 180,
-        damping: 20
-    });
-    // Magnetic pull toward cursor
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
-        "ScatterCard.useEffect": ()=>{
-            const onMove = {
-                "ScatterCard.useEffect.onMove": (e)=>{
-                    if (!cardRef.current) return;
-                    const r = cardRef.current.getBoundingClientRect();
-                    const cx = r.left + r.width / 2;
-                    const cy = r.top + r.height / 2;
-                    const dx = e.clientX - cx;
-                    const dy = e.clientY - cy;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-                    const RADIUS = 280;
-                    if (dist < RADIUS) {
-                        const strength = (1 - dist / RADIUS) * 0.11;
-                        mX.set(dx * strength);
-                        mY.set(dy * strength);
-                    } else {
-                        mX.set(0);
-                        mY.set(0);
-                    }
-                }
-            }["ScatterCard.useEffect.onMove"];
-            window.addEventListener("mousemove", onMove);
-            return ({
-                "ScatterCard.useEffect": ()=>window.removeEventListener("mousemove", onMove)
-            })["ScatterCard.useEffect"];
-        }
-    }["ScatterCard.useEffect"], [
-        mX,
-        mY
-    ]);
-    const isHovered = activeService === service.id;
-    const isRelated = !!activeService && service.related.includes(activeService);
-    const isUnrelated = !!activeService && !isHovered && !isRelated;
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
-        "ScatterCard.useEffect": ()=>{
-            sScale.set(isHovered ? 1.04 : isUnrelated ? 0.96 : 1);
-        }
-    }["ScatterCard.useEffect"], [
-        isHovered,
-        isUnrelated,
-        sScale
-    ]);
-    const orbitStyle = {
-        ...service.pos,
-        transform: `rotate(${service.rot}deg)`
-    };
-    const floatStyle = {
-        animationDuration: `${service.floatDur}s`,
-        animationDelay: `-${service.floatDelay}s`
-    };
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-        className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CapabilitiesUniverse$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].cardOrbit,
-        style: orbitStyle,
-        initial: {
-            opacity: 0,
-            y: 16,
-            scale: 0.88
-        },
-        whileInView: {
-            opacity: isUnrelated ? 0.38 : 1,
-            y: 0,
-            scale: 1
-        },
-        viewport: {
-            once: true,
-            margin: "-30px"
-        },
-        transition: {
-            duration: 0.55,
-            delay: 0.25 + index * 0.07,
-            type: "spring",
-            stiffness: 80,
-            damping: 16
-        },
-        animate: {
-            opacity: isUnrelated ? 0.38 : 1
-        },
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CapabilitiesUniverse$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].cardFloat,
-            style: floatStyle,
-            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-                ref: cardRef,
-                className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CapabilitiesUniverse$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].card,
-                style: {
-                    x: sX,
-                    y: sY,
-                    scale: sScale,
-                    width: service.width
-                },
-                onMouseEnter: ()=>setActiveService(service.id),
-                onMouseLeave: ()=>setActiveService(null),
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CapabilitiesUniverse$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].cardTitle,
-                        children: [
-                            service.name,
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CapabilitiesUniverse$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].arrowIcon,
-                                viewBox: "0 0 24 24",
-                                fill: "none",
-                                stroke: "currentColor",
-                                strokeWidth: "2.5",
-                                strokeLinecap: "round",
-                                strokeLinejoin: "round",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
-                                        x1: "5",
-                                        y1: "12",
-                                        x2: "19",
-                                        y2: "12"
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/CapabilitiesUniverse.tsx",
-                                        lineNumber: 266,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("polyline", {
-                                        points: "12 5 19 12 12 19"
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/CapabilitiesUniverse.tsx",
-                                        lineNumber: 267,
-                                        columnNumber: 15
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/components/CapabilitiesUniverse.tsx",
-                                lineNumber: 260,
-                                columnNumber: 13
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/components/CapabilitiesUniverse.tsx",
-                        lineNumber: 258,
-                        columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CapabilitiesUniverse$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].cardDesc,
-                        children: service.desc
-                    }, void 0, false, {
-                        fileName: "[project]/components/CapabilitiesUniverse.tsx",
-                        lineNumber: 270,
-                        columnNumber: 11
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/components/CapabilitiesUniverse.tsx",
-                lineNumber: 251,
-                columnNumber: 9
-            }, this)
-        }, void 0, false, {
-            fileName: "[project]/components/CapabilitiesUniverse.tsx",
-            lineNumber: 248,
-            columnNumber: 7
-        }, this)
-    }, void 0, false, {
-        fileName: "[project]/components/CapabilitiesUniverse.tsx",
-        lineNumber: 232,
-        columnNumber: 5
-    }, this);
-}
-_s1(ScatterCard, "qKPWebtGYFVF+vqWGHiIX1sIrV8=", false, function() {
-    return [
-        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$value$2f$use$2d$motion$2d$value$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMotionValue"],
-        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$value$2f$use$2d$motion$2d$value$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMotionValue"],
-        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$value$2f$use$2d$spring$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSpring"],
-        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$value$2f$use$2d$spring$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSpring"],
-        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$value$2f$use$2d$spring$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSpring"]
-    ];
-});
-_c1 = ScatterCard;
 function CapabilitiesUniverse() {
-    _s2();
-    const [activeService, setActiveService] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    _s();
+    const [hovered, setHovered] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-        className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CapabilitiesUniverse$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].universeSection,
-        children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CapabilitiesUniverse$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].centerGlow
-            }, void 0, false, {
-                fileName: "[project]/components/CapabilitiesUniverse.tsx",
-                lineNumber: 287,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CapabilitiesUniverse$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].canvasWrapper,
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$three$2f$fiber$2f$dist$2f$react$2d$three$2d$fiber$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["Canvas"], {
-                    camera: {
-                        position: [
-                            0,
-                            0,
-                            15
-                        ],
-                        fov: 44
-                    },
-                    dpr: [
-                        1,
-                        1.5
-                    ],
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(OrbitalParticles, {}, void 0, false, {
-                        fileName: "[project]/components/CapabilitiesUniverse.tsx",
-                        lineNumber: 290,
-                        columnNumber: 11
-                    }, this)
+        className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CapabilitiesUniverse$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].section,
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CapabilitiesUniverse$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].container,
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CapabilitiesUniverse$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].header,
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                            className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CapabilitiesUniverse$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].eyebrow,
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "spark spark--inline"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                                    lineNumber: 179,
+                                    columnNumber: 13
+                                }, this),
+                                "Our capabilities"
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                            lineNumber: 178,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                            className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CapabilitiesUniverse$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].headline,
+                            children: [
+                                "Everything your brand needs",
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CapabilitiesUniverse$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].dot,
+                                    children: "."
+                                }, void 0, false, {
+                                    fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                                    lineNumber: 183,
+                                    columnNumber: 40
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                            lineNumber: 182,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CapabilitiesUniverse$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].sub,
+                            children: "From strategy to shipping — one studio, every discipline."
+                        }, void 0, false, {
+                            fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                            lineNumber: 185,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                    lineNumber: 177,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CapabilitiesUniverse$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].grid,
+                    children: services.map((s)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("article", {
+                            className: `${__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CapabilitiesUniverse$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].card} ${hovered === s.id ? __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CapabilitiesUniverse$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].cardActive : ""}`,
+                            onMouseEnter: ()=>setHovered(s.id),
+                            onMouseLeave: ()=>setHovered(null),
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CapabilitiesUniverse$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].icon,
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(s.Icon, {}, void 0, false, {
+                                        fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                                        lineNumber: 198,
+                                        columnNumber: 45
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                                    lineNumber: 198,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                            className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CapabilitiesUniverse$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].cardName,
+                                            children: s.name
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                                            lineNumber: 200,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                            className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CapabilitiesUniverse$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].cardDesc,
+                                            children: s.desc
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                                            lineNumber: 201,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                                    lineNumber: 199,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CapabilitiesUniverse$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].cardArrow,
+                                    "aria-hidden": "true",
+                                    children: "→"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                                    lineNumber: 203,
+                                    columnNumber: 15
+                                }, this)
+                            ]
+                        }, s.id, true, {
+                            fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                            lineNumber: 192,
+                            columnNumber: 13
+                        }, this))
                 }, void 0, false, {
                     fileName: "[project]/components/CapabilitiesUniverse.tsx",
-                    lineNumber: 289,
+                    lineNumber: 190,
                     columnNumber: 9
-                }, this)
-            }, void 0, false, {
-                fileName: "[project]/components/CapabilitiesUniverse.tsx",
-                lineNumber: 288,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-                className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CapabilitiesUniverse$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].centerContent,
-                initial: {
-                    opacity: 0
-                },
-                whileInView: {
-                    opacity: 1
-                },
-                viewport: {
-                    once: true
-                },
-                transition: {
-                    duration: 0.7,
-                    delay: 0.1
-                },
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                        className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CapabilitiesUniverse$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].headline,
-                        children: [
-                            "Everything your brand needs",
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CapabilitiesUniverse$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].headlineDot,
-                                children: "."
-                            }, void 0, false, {
-                                fileName: "[project]/components/CapabilitiesUniverse.tsx",
-                                lineNumber: 304,
-                                columnNumber: 38
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/components/CapabilitiesUniverse.tsx",
-                        lineNumber: 303,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CapabilitiesUniverse$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].ctaRow,
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                         href: "/services",
-                        className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CapabilitiesUniverse$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].exploreCta,
+                        className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CapabilitiesUniverse$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].cta,
                         children: [
                             "Explore What We Do",
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CapabilitiesUniverse$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].ctaArrow,
                                 width: "14",
                                 height: "14",
                                 viewBox: "0 0 24 24",
@@ -598,6 +1319,7 @@ function CapabilitiesUniverse() {
                                 strokeWidth: "2.5",
                                 strokeLinecap: "round",
                                 strokeLinejoin: "round",
+                                "aria-hidden": "true",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
                                         x1: "5",
@@ -606,64 +1328,57 @@ function CapabilitiesUniverse() {
                                         y2: "12"
                                     }, void 0, false, {
                                         fileName: "[project]/components/CapabilitiesUniverse.tsx",
-                                        lineNumber: 315,
-                                        columnNumber: 13
+                                        lineNumber: 212,
+                                        columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("polyline", {
                                         points: "12 5 19 12 12 19"
                                     }, void 0, false, {
                                         fileName: "[project]/components/CapabilitiesUniverse.tsx",
-                                        lineNumber: 316,
-                                        columnNumber: 13
+                                        lineNumber: 212,
+                                        columnNumber: 54
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/CapabilitiesUniverse.tsx",
-                                lineNumber: 308,
-                                columnNumber: 11
+                                lineNumber: 211,
+                                columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/CapabilitiesUniverse.tsx",
-                        lineNumber: 306,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/components/CapabilitiesUniverse.tsx",
-                lineNumber: 296,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$CapabilitiesUniverse$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].scatterLayer,
-                children: services.map((service, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ScatterCard, {
-                        service: service,
-                        index: i,
-                        activeService: activeService,
-                        setActiveService: setActiveService
-                    }, service.id, false, {
-                        fileName: "[project]/components/CapabilitiesUniverse.tsx",
-                        lineNumber: 324,
+                        lineNumber: 209,
                         columnNumber: 11
-                    }, this))
-            }, void 0, false, {
-                fileName: "[project]/components/CapabilitiesUniverse.tsx",
-                lineNumber: 322,
-                columnNumber: 7
-            }, this)
-        ]
-    }, void 0, true, {
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/components/CapabilitiesUniverse.tsx",
+                    lineNumber: 208,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/components/CapabilitiesUniverse.tsx",
+            lineNumber: 175,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
         fileName: "[project]/components/CapabilitiesUniverse.tsx",
-        lineNumber: 284,
+        lineNumber: 174,
         columnNumber: 5
     }, this);
 }
-_s2(CapabilitiesUniverse, "WZy3WZ84d+qIQrZk4I0g2pdVtAg=");
-_c2 = CapabilitiesUniverse;
-var _c, _c1, _c2;
-__turbopack_context__.k.register(_c, "OrbitalParticles");
-__turbopack_context__.k.register(_c1, "ScatterCard");
-__turbopack_context__.k.register(_c2, "CapabilitiesUniverse");
+_s(CapabilitiesUniverse, "mEhKvegbaT+HE5gyL2KiZdVDWeQ=");
+_c8 = CapabilitiesUniverse;
+var _c, _c1, _c2, _c3, _c4, _c5, _c6, _c7, _c8;
+__turbopack_context__.k.register(_c, "BrandingIcon");
+__turbopack_context__.k.register(_c1, "StrategyIcon");
+__turbopack_context__.k.register(_c2, "AIIcon");
+__turbopack_context__.k.register(_c3, "WebAppsIcon");
+__turbopack_context__.k.register(_c4, "MobileIcon");
+__turbopack_context__.k.register(_c5, "UIUXIcon");
+__turbopack_context__.k.register(_c6, "WebsitesIcon");
+__turbopack_context__.k.register(_c7, "EcommerceIcon");
+__turbopack_context__.k.register(_c8, "CapabilitiesUniverse");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }

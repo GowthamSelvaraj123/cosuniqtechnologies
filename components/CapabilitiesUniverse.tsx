@@ -1,336 +1,220 @@
 "use client";
 
-import React, { useRef, useState, useEffect, CSSProperties } from "react";
-import { motion, useSpring, useMotionValue } from "framer-motion";
-import { Canvas, useFrame } from "@react-three/fiber";
-import * as THREE from "three";
+import React, { useState } from "react";
 import Link from "next/link";
 import styles from "./CapabilitiesUniverse.module.css";
 
-// ─────────────────────────────────────────────────────────────────────────────
-// DATA — Cards orbit the protected central zone (approx. 25–75% x, 30–70% y)
-// Positions follow the spec exactly: top/bottom + left/right % values
-// ─────────────────────────────────────────────────────────────────────────────
-const services: ServiceItem[] = [
-  {
-    id: "branding",
-    name: "BRANDING",
-    desc: "Make your brand memorable.",
-    pos: { top: "20%", left: "6%" },
-    rot: -4, width: 210, floatDur: 5.2, floatDelay: 0.0,
-    related: ["websites", "uiux"],
-  },
-  {
-    id: "strategy",
-    name: "STRATEGY",
-    desc: "Clear pathways for growth.",
-    pos: { top: "14%", left: "40%" },
-    rot: 2, width: 220, floatDur: 6.4, floatDelay: 0.8,
-    related: ["branding", "ai"],
-  },
-  {
-    id: "ai",
-    name: "AI SOLUTIONS",
-    desc: "Build with intelligence.",
-    pos: { top: "19%", right: "6%" },
-    rot: 4, width: 210, floatDur: 4.8, floatDelay: 1.6,
-    related: ["webapps", "strategy"],
-  },
-  {
-    id: "webapps",
-    name: "WEB APPS",
-    desc: "Powerful tools for your business.",
-    pos: { top: "44%", left: "3%" },
-    rot: -2, width: 220, floatDur: 5.7, floatDelay: 0.4,
-    related: ["ai", "strategy"],
-  },
-  {
-    id: "mobile",
-    name: "MOBILE APPS",
-    desc: "Your business in their hands.",
-    pos: { top: "44%", right: "3%" },
-    rot: 3, width: 215, floatDur: 6.1, floatDelay: 1.2,
-    related: ["uiux", "webapps"],
-  },
-  {
-    id: "uiux",
-    name: "UI / UX",
-    desc: "Design that performs.",
-    pos: { top: "68%", left: "7%" },
-    rot: -3, width: 200, floatDur: 4.9, floatDelay: 2.0,
-    related: ["websites", "branding", "mobile"],
-  },
-  {
-    id: "websites",
-    name: "WEBSITES",
-    desc: "Digital experiences that stand out.",
-    pos: { top: "71%", left: "38%" },
-    rot: 2, width: 230, floatDur: 5.8, floatDelay: 0.6,
-    related: ["branding", "uiux"],
-  },
-  {
-    id: "ecommerce",
-    name: "E-COMMERCE",
-    desc: "Stores built to convert.",
-    pos: { top: "68%", right: "6%" },
-    rot: -3, width: 215, floatDur: 6.6, floatDelay: 1.4,
-    related: ["websites", "branding"],
-  },
+// ── Custom illustrated icons ──────────────────────────────────────────────────
+// Pattern: scattered black outlined circles (the market) + 
+//          one central orange shape (the standout concept)
+
+const BrandingIcon = () => (
+  // Concept: scattered circles (everyone else) + orange star (YOUR brand stands out)
+  <svg viewBox="0 0 24 24" fill="none" strokeLinecap="round">
+    <circle cx="3.5"  cy="4.5"  r="1.2" stroke="#111" strokeWidth="0.85" />
+    <circle cx="20.5" cy="4"    r="0.9" stroke="#111" strokeWidth="0.85" />
+    <circle cx="2"    cy="13"   r="1.4" stroke="#111" strokeWidth="0.85" />
+    <circle cx="22"   cy="14.5" r="1.0" stroke="#111" strokeWidth="0.85" />
+    <circle cx="6"    cy="21"   r="1.1" stroke="#111" strokeWidth="0.85" />
+    <circle cx="18.5" cy="21.5" r="1.3" stroke="#111" strokeWidth="0.85" />
+    <circle cx="7.5"  cy="7"    r="1.0" stroke="#111" strokeWidth="0.85" />
+    <circle cx="17"   cy="7"    r="0.9" stroke="#111" strokeWidth="0.85" />
+    <circle cx="4.5"  cy="18"   r="0.9" stroke="#111" strokeWidth="0.85" />
+    <circle cx="19.5" cy="17.5" r="1.0" stroke="#111" strokeWidth="0.85" />
+    <circle cx="11"   cy="3.5"  r="0.8" stroke="#111" strokeWidth="0.85" />
+    <circle cx="15"   cy="20.5" r="0.9" stroke="#111" strokeWidth="0.85" />
+    <polygon
+      points="12,7.5 13.06,10.54 15.80,10.76 13.71,12.56 14.35,15.24 12,13.8 9.65,15.24 10.29,12.56 8.20,10.76 10.94,10.54"
+      fill="currentColor" stroke="none"
+    />
+  </svg>
+);
+
+const StrategyIcon = () => (
+  // Concept: scattered circles (distractions) + bullseye (laser-focused strategy)
+  <svg viewBox="0 0 24 24" fill="none" strokeLinecap="round">
+    <circle cx="3"    cy="4"    r="1.0" stroke="#111" strokeWidth="0.85" />
+    <circle cx="21"   cy="5"    r="0.9" stroke="#111" strokeWidth="0.85" />
+    <circle cx="2"    cy="14"   r="1.3" stroke="#111" strokeWidth="0.85" />
+    <circle cx="22"   cy="13"   r="1.0" stroke="#111" strokeWidth="0.85" />
+    <circle cx="5"    cy="21"   r="1.1" stroke="#111" strokeWidth="0.85" />
+    <circle cx="19"   cy="21"   r="1.2" stroke="#111" strokeWidth="0.85" />
+    <circle cx="7"    cy="7"    r="1.0" stroke="#111" strokeWidth="0.85" />
+    <circle cx="18"   cy="7"    r="0.9" stroke="#111" strokeWidth="0.85" />
+    <circle cx="20"   cy="18"   r="0.8" stroke="#111" strokeWidth="0.85" />
+    {/* Bullseye — outer, mid, filled center */}
+    <circle cx="12" cy="12" r="4.8" stroke="currentColor" strokeWidth="1.2" />
+    <circle cx="12" cy="12" r="2.8" stroke="currentColor" strokeWidth="1.2" />
+    <circle cx="12" cy="12" r="1.1" fill="currentColor" stroke="none" />
+  </svg>
+);
+
+const AIIcon = () => (
+  // Concept: scattered circles (data noise) + neural nodes connected to a core (intelligence)
+  <svg viewBox="0 0 24 24" fill="none" strokeLinecap="round">
+    <circle cx="3.5"  cy="3.5"  r="1.0" stroke="#111" strokeWidth="0.85" />
+    <circle cx="21"   cy="4"    r="0.9" stroke="#111" strokeWidth="0.85" />
+    <circle cx="2"    cy="15"   r="1.2" stroke="#111" strokeWidth="0.85" />
+    <circle cx="22"   cy="15"   r="1.0" stroke="#111" strokeWidth="0.85" />
+    <circle cx="5"    cy="21.5" r="1.1" stroke="#111" strokeWidth="0.85" />
+    <circle cx="19"   cy="21"   r="1.2" stroke="#111" strokeWidth="0.85" />
+    <circle cx="19"   cy="7.5"  r="0.8" stroke="#111" strokeWidth="0.85" />
+    {/* Neural network — filled core + connected outer nodes */}
+    <circle cx="12" cy="12"   r="1.6" fill="currentColor" stroke="none" />
+    <circle cx="12" cy="7.5"  r="1.0" stroke="currentColor" strokeWidth="1.1" />
+    <circle cx="16" cy="14.5" r="1.0" stroke="currentColor" strokeWidth="1.1" />
+    <circle cx="8"  cy="14.5" r="1.0" stroke="currentColor" strokeWidth="1.1" />
+    <line x1="12" y1="8.5"  x2="12" y2="10.4" stroke="currentColor" strokeWidth="1" />
+    <line x1="15.1" y1="13.8" x2="13.4" y2="12.8" stroke="currentColor" strokeWidth="1" />
+    <line x1="8.9"  y1="13.8" x2="10.6" y2="12.8" stroke="currentColor" strokeWidth="1" />
+  </svg>
+);
+
+const WebAppsIcon = () => (
+  // Concept: scattered circles (static content) + code brackets (powerful logic)
+  <svg viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="3.5"  cy="4"    r="1.0" stroke="#111" strokeWidth="0.85" />
+    <circle cx="21"   cy="3.5"  r="0.9" stroke="#111" strokeWidth="0.85" />
+    <circle cx="2"    cy="13.5" r="1.3" stroke="#111" strokeWidth="0.85" />
+    <circle cx="22"   cy="14"   r="1.0" stroke="#111" strokeWidth="0.85" />
+    <circle cx="5"    cy="20.5" r="1.1" stroke="#111" strokeWidth="0.85" />
+    <circle cx="19"   cy="20.5" r="1.2" stroke="#111" strokeWidth="0.85" />
+    <circle cx="7"    cy="7.5"  r="0.9" stroke="#111" strokeWidth="0.85" />
+    <circle cx="17.5" cy="7.5"  r="0.9" stroke="#111" strokeWidth="0.85" />
+    {/* Code brackets + slash */}
+    <polyline points="9.5,9 7,12 9.5,15"  stroke="currentColor" strokeWidth="1.5" />
+    <polyline points="14.5,9 17,12 14.5,15" stroke="currentColor" strokeWidth="1.5" />
+    <line x1="13.2" y1="8.5" x2="10.8" y2="15.5" stroke="currentColor" strokeWidth="1.2" />
+  </svg>
+);
+
+const MobileIcon = () => (
+  // Concept: scattered circles (desktop web) + phone shape (mobile-first)
+  <svg viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="3"  cy="4"    r="1.1" stroke="#111" strokeWidth="0.85" />
+    <circle cx="21" cy="5"    r="0.9" stroke="#111" strokeWidth="0.85" />
+    <circle cx="2"  cy="14"   r="1.3" stroke="#111" strokeWidth="0.85" />
+    <circle cx="22" cy="14"   r="1.0" stroke="#111" strokeWidth="0.85" />
+    <circle cx="4"  cy="21"   r="1.1" stroke="#111" strokeWidth="0.85" />
+    <circle cx="20" cy="21"   r="1.2" stroke="#111" strokeWidth="0.85" />
+    <circle cx="18" cy="8"    r="0.9" stroke="#111" strokeWidth="0.85" />
+    {/* Phone body */}
+    <rect x="9" y="5.5" width="6" height="13" rx="1.5" stroke="currentColor" strokeWidth="1.3" />
+    <line x1="11" y1="16.5" x2="13" y2="16.5" stroke="currentColor" strokeWidth="1.3" />
+    <line x1="11.5" y1="7.5" x2="12.5" y2="7.5" stroke="currentColor" strokeWidth="1" />
+  </svg>
+);
+
+const UIUXIcon = () => (
+  // Concept: scattered circles (random elements) + stacked layers (intentional design)
+  <svg viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="3.5"  cy="3.5"  r="1.0" stroke="#111" strokeWidth="0.85" />
+    <circle cx="21"   cy="4"    r="0.9" stroke="#111" strokeWidth="0.85" />
+    <circle cx="2"    cy="13"   r="1.2" stroke="#111" strokeWidth="0.85" />
+    <circle cx="22"   cy="14"   r="1.0" stroke="#111" strokeWidth="0.85" />
+    <circle cx="5"    cy="21"   r="1.1" stroke="#111" strokeWidth="0.85" />
+    <circle cx="19"   cy="21.5" r="1.2" stroke="#111" strokeWidth="0.85" />
+    <circle cx="18.5" cy="7.5"  r="0.9" stroke="#111" strokeWidth="0.85" />
+    {/* Three stacked diamond layers */}
+    <polygon points="12,7.5 16.5,10 12,12.5 7.5,10"   stroke="currentColor" strokeWidth="1.2" />
+    <polygon points="12,10  16.5,12.5 12,15 7.5,12.5" stroke="currentColor" strokeWidth="1.2" />
+    <polygon points="12,12.5 16.5,15 12,17.5 7.5,15"  stroke="currentColor" strokeWidth="1.2" />
+  </svg>
+);
+
+const WebsitesIcon = () => (
+  // Concept: scattered circles (local presence) + globe (worldwide digital reach)
+  <svg viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="3"    cy="4"    r="1.0" stroke="#111" strokeWidth="0.85" />
+    <circle cx="21"   cy="4.5"  r="0.9" stroke="#111" strokeWidth="0.85" />
+    <circle cx="2"    cy="14"   r="1.3" stroke="#111" strokeWidth="0.85" />
+    <circle cx="22"   cy="13.5" r="1.0" stroke="#111" strokeWidth="0.85" />
+    <circle cx="4.5"  cy="21"   r="1.1" stroke="#111" strokeWidth="0.85" />
+    <circle cx="19.5" cy="21"   r="1.2" stroke="#111" strokeWidth="0.85" />
+    <circle cx="18"   cy="7.5"  r="0.8" stroke="#111" strokeWidth="0.85" />
+    {/* Globe */}
+    <circle cx="12" cy="12" r="5" stroke="currentColor" strokeWidth="1.3" />
+    <line x1="7" y1="12" x2="17" y2="12" stroke="currentColor" strokeWidth="1" />
+    <path d="M12,7 C10,9 10,15 12,17 C14,15 14,9 12,7" stroke="currentColor" strokeWidth="1" />
+  </svg>
+);
+
+const EcommerceIcon = () => (
+  // Concept: scattered circles (browsers/visitors) + shopping bag (the conversion)
+  <svg viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="3.5"  cy="4.5"  r="1.0" stroke="#111" strokeWidth="0.85" />
+    <circle cx="21"   cy="4"    r="0.9" stroke="#111" strokeWidth="0.85" />
+    <circle cx="2"    cy="14"   r="1.3" stroke="#111" strokeWidth="0.85" />
+    <circle cx="22"   cy="15"   r="1.0" stroke="#111" strokeWidth="0.85" />
+    <circle cx="5"    cy="21.5" r="1.1" stroke="#111" strokeWidth="0.85" />
+    <circle cx="19"   cy="21"   r="1.2" stroke="#111" strokeWidth="0.85" />
+    <circle cx="7"    cy="6.5"  r="0.9" stroke="#111" strokeWidth="0.85" />
+    <circle cx="19"   cy="8"    r="0.8" stroke="#111" strokeWidth="0.85" />
+    {/* Shopping bag */}
+    <path d="M8.5,10 L7.5,18 L16.5,18 L15.5,10 Z" stroke="currentColor" strokeWidth="1.3" />
+    <path d="M10,10 C10,7.5 14,7.5 14,10" stroke="currentColor" strokeWidth="1.3" />
+  </svg>
+);
+
+const services = [
+  { id: "branding",  name: "Branding",     desc: "Make your brand memorable.",          Icon: BrandingIcon  },
+  { id: "strategy",  name: "Strategy",     desc: "Clear pathways for growth.",          Icon: StrategyIcon  },
+  { id: "ai",        name: "AI Solutions", desc: "Build with intelligence.",            Icon: AIIcon        },
+  { id: "webapps",   name: "Web Apps",     desc: "Powerful tools for your business.",   Icon: WebAppsIcon   },
+  { id: "mobile",    name: "Mobile Apps",  desc: "Your business in their hands.",       Icon: MobileIcon    },
+  { id: "uiux",      name: "UI / UX",      desc: "Design that performs.",               Icon: UIUXIcon      },
+  { id: "websites",  name: "Websites",     desc: "Digital experiences that stand out.", Icon: WebsitesIcon  },
+  { id: "ecommerce", name: "E-Commerce",   desc: "Stores built to convert.",            Icon: EcommerceIcon },
 ];
 
-type ServiceItem = {
-  id: string;
-  name: string;
-  desc: string;
-  pos: { top?: string; bottom?: string; left?: string; right?: string };
-  rot: number;
-  width: number;
-  floatDur: number;
-  floatDelay: number;
-  related: string[];
-};
-
-// ─────────────────────────────────────────────────────────────────────────────
-// THREE.JS PARTICLE FIELD
-// ─────────────────────────────────────────────────────────────────────────────
-const particleVert = `
-  uniform float uTime;
-  attribute float aScale;
-  varying float vAlpha;
-  void main() {
-    vec3 p = position;
-    float r = length(p.xy);
-    float a = atan(p.y, p.x) + uTime * (0.04 / (r + 1.0));
-    r += sin(uTime * 0.25 + p.x * 1.2) * 0.2;
-    p.x = cos(a) * r;
-    p.y = sin(a) * r;
-    vec4 mv = modelViewMatrix * vec4(p, 1.0);
-    gl_PointSize = aScale * (5.5 / -mv.z);
-    gl_Position  = projectionMatrix * mv;
-    vAlpha = smoothstep(14.0, 3.0, r) * 0.18;
-  }
-`;
-const particleFrag = `
-  varying float vAlpha;
-  void main() {
-    vec2 uv = 2.0 * gl_PointCoord - 1.0;
-    if (dot(uv, uv) > 1.0) discard;
-    float a = (1.0 - smoothstep(0.4, 1.0, dot(uv, uv))) * vAlpha;
-    gl_FragColor = vec4(0.85, 0.28, 0.0, a);
-  }
-`;
-
-function OrbitalParticles() {
-  const mesh = useRef<THREE.Points>(null);
-  const mat  = useRef<THREE.ShaderMaterial>(null);
-  const N = 1600;
-
-  const [pos, sc] = React.useMemo(() => {
-    const p = new Float32Array(N * 3);
-    const s = new Float32Array(N);
-    for (let i = 0; i < N; i++) {
-      const theta = Math.random() * Math.PI * 2;
-      const r = 4 + Math.random() * 12;
-      p[i * 3]     = Math.cos(theta) * r;
-      p[i * 3 + 1] = Math.sin(theta) * r;
-      p[i * 3 + 2] = (Math.random() - 0.5) * 3;
-      s[i] = Math.random() + 0.4;
-    }
-    return [p, s];
-  }, []);
-
-  useFrame(({ clock }) => {
-    if (mat.current)  mat.current.uniforms.uTime.value = clock.elapsedTime;
-    if (mesh.current) mesh.current.rotation.z = clock.elapsedTime * 0.01;
-  });
-
-  return (
-    <points ref={mesh}>
-      <bufferGeometry>
-        <bufferAttribute attach="attributes-position" count={N} array={pos} itemSize={3} />
-        <bufferAttribute attach="attributes-aScale"   count={N} array={sc}  itemSize={1} />
-      </bufferGeometry>
-      <shaderMaterial
-        ref={mat}
-        vertexShader={particleVert}
-        fragmentShader={particleFrag}
-        uniforms={{ uTime: { value: 0 } }}
-        transparent depthWrite={false}
-        blending={THREE.NormalBlending}
-      />
-    </points>
-  );
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// CARD — three-layer animation separation:
-//  1. cardOrbit (motion.div)  → entrance fade-in + absolute position
-//  2. cardFloat (plain div)   → CSS keyframe float (no Framer conflict)
-//  3. card (motion.div)       → spring magnetic x/y + hover scale
-// ─────────────────────────────────────────────────────────────────────────────
-function ScatterCard({
-  service,
-  index,
-  activeService,
-  setActiveService,
-}: {
-  service: ServiceItem;
-  index: number;
-  activeService: string | null;
-  setActiveService: (id: string | null) => void;
-}) {
-  const cardRef = useRef<HTMLDivElement>(null);
-  const mX = useMotionValue(0);
-  const mY = useMotionValue(0);
-  const sX = useSpring(mX, { stiffness: 65, damping: 15 });
-  const sY = useSpring(mY, { stiffness: 65, damping: 15 });
-  const sScale = useSpring(1, { stiffness: 180, damping: 20 });
-
-  // Magnetic pull toward cursor
-  useEffect(() => {
-    const onMove = (e: MouseEvent) => {
-      if (!cardRef.current) return;
-      const r  = cardRef.current.getBoundingClientRect();
-      const cx = r.left + r.width  / 2;
-      const cy = r.top  + r.height / 2;
-      const dx = e.clientX - cx;
-      const dy = e.clientY - cy;
-      const dist = Math.sqrt(dx * dx + dy * dy);
-      const RADIUS = 280;
-      if (dist < RADIUS) {
-        const strength = (1 - dist / RADIUS) * 0.11;
-        mX.set(dx * strength);
-        mY.set(dy * strength);
-      } else {
-        mX.set(0);
-        mY.set(0);
-      }
-    };
-    window.addEventListener("mousemove", onMove);
-    return () => window.removeEventListener("mousemove", onMove);
-  }, [mX, mY]);
-
-  const isHovered   = activeService === service.id;
-  const isRelated   = !!activeService && service.related.includes(activeService);
-  const isUnrelated = !!activeService && !isHovered && !isRelated;
-
-  useEffect(() => {
-    sScale.set(isHovered ? 1.04 : isUnrelated ? 0.96 : 1);
-  }, [isHovered, isUnrelated, sScale]);
-
-  const orbitStyle: CSSProperties = {
-    ...service.pos,
-    transform: `rotate(${service.rot}deg)`,
-  };
-
-  const floatStyle: CSSProperties = {
-    animationDuration:  `${service.floatDur}s`,
-    animationDelay:     `-${service.floatDelay}s`, // negative delay = phase offset
-  };
-
-  return (
-    <motion.div
-      className={styles.cardOrbit}
-      style={orbitStyle}
-      initial={{ opacity: 0, y: 16, scale: 0.88 }}
-      whileInView={{ opacity: isUnrelated ? 0.38 : 1, y: 0, scale: 1 }}
-      viewport={{ once: true, margin: "-30px" }}
-      transition={{
-        duration: 0.55,
-        delay: 0.25 + index * 0.07,
-        type: "spring",
-        stiffness: 80,
-        damping: 16,
-      }}
-      animate={{ opacity: isUnrelated ? 0.38 : 1 }}
-    >
-      {/* Float animation — pure CSS, no Framer conflict */}
-      <div className={styles.cardFloat} style={floatStyle}>
-
-        {/* Magnetic / hover interaction */}
-        <motion.div
-          ref={cardRef}
-          className={styles.card}
-          style={{ x: sX, y: sY, scale: sScale, width: service.width }}
-          onMouseEnter={() => setActiveService(service.id)}
-          onMouseLeave={() => setActiveService(null)}
-        >
-          <div className={styles.cardTitle}>
-            {service.name}
-            <svg
-              className={styles.arrowIcon}
-              viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" strokeWidth="2.5"
-              strokeLinecap="round" strokeLinejoin="round"
-            >
-              <line x1="5" y1="12" x2="19" y2="12" />
-              <polyline points="12 5 19 12 12 19" />
-            </svg>
-          </div>
-          <p className={styles.cardDesc}>{service.desc}</p>
-        </motion.div>
-      </div>
-    </motion.div>
-  );
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// MAIN COMPONENT
-// ─────────────────────────────────────────────────────────────────────────────
 export default function CapabilitiesUniverse() {
-  const [activeService, setActiveService] = useState<string | null>(null);
+  const [hovered, setHovered] = useState<string | null>(null);
 
   return (
-    <section className={styles.universeSection}>
+    <section className={styles.section}>
+      <div className={styles.container}>
 
-      {/* Layer 1 — atmospheric glow + particles */}
-      <div className={styles.centerGlow} />
-      <div className={styles.canvasWrapper}>
-        <Canvas camera={{ position: [0, 0, 15], fov: 44 }} dpr={[1, 1.5]}>
-          <OrbitalParticles />
-        </Canvas>
+        <div className={styles.header}>
+          <span className={styles.eyebrow}>
+            <span className="spark spark--inline" />
+            Our capabilities
+          </span>
+          <h2 className={styles.headline}>
+            Everything your brand needs<span className={styles.dot}>.</span>
+          </h2>
+          <p className={styles.sub}>
+            From strategy to shipping — one studio, every discipline.
+          </p>
+        </div>
+
+        <div className={styles.grid}>
+          {services.map((s) => (
+            <article
+              key={s.id}
+              className={`${styles.card} ${hovered === s.id ? styles.cardActive : ""}`}
+              onMouseEnter={() => setHovered(s.id)}
+              onMouseLeave={() => setHovered(null)}
+            >
+              <span className={styles.icon}><s.Icon /></span>
+              <div>
+                <h3 className={styles.cardName}>{s.name}</h3>
+                <p className={styles.cardDesc}>{s.desc}</p>
+              </div>
+              <span className={styles.cardArrow} aria-hidden="true">→</span>
+            </article>
+          ))}
+        </div>
+
+        <div className={styles.ctaRow}>
+          <Link href="/services" className={styles.cta}>
+            Explore What We Do
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
+            </svg>
+          </Link>
+        </div>
+
       </div>
-
-
-      {/* Layer 3 — Central typography */}
-      <motion.div
-        className={styles.centerContent}
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7, delay: 0.1 }}
-      >
-        <h2 className={styles.headline}>
-          Everything your brand needs<span className={styles.headlineDot}>.</span>
-        </h2>
-        <Link href="/services" className={styles.exploreCta}>
-          Explore What We Do
-          <svg
-            className={styles.ctaArrow}
-            width="14" height="14"
-            viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" strokeWidth="2.5"
-            strokeLinecap="round" strokeLinejoin="round"
-          >
-            <line x1="5" y1="12" x2="19" y2="12" />
-            <polyline points="12 5 19 12 12 19" />
-          </svg>
-        </Link>
-      </motion.div>
-
-      {/* Layer 2 — Orbiting service cards */}
-      <div className={styles.scatterLayer}>
-        {services.map((service, i) => (
-          <ScatterCard
-            key={service.id}
-            service={service}
-            index={i}
-            activeService={activeService}
-            setActiveService={setActiveService}
-          />
-        ))}
-      </div>
-
     </section>
   );
 }
