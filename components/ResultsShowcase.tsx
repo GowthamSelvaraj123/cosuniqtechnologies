@@ -14,7 +14,7 @@ const cardVariants: Variants = {
 
 export default function ResultsShowcase() {
   return (
-    <section className={`band band--black ${styles.section}`} id="results">
+    <section className={`band ${styles.section}`} id="results">
       <div className={styles.container}>
         
         <div className={styles.header}>

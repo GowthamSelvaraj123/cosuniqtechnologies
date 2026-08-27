@@ -2,6 +2,7 @@
   position: relative;
   overflow: hidden;
   padding: 8rem 0;
+  background-color: #FFF2E6; /* Light orange */
 }
 
 .container {
@@ -23,7 +24,7 @@
   font-weight: 800;
   letter-spacing: -0.03em;
   margin: 0;
-  color: var(--white);
+  color: #111;
   line-height: 1.1;
   max-width: 600px;
 }
@@ -36,8 +37,8 @@
 }
 
 .card {
-  background: #111;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--white);
+  border: 1px solid rgba(255, 107, 0, 0.2);
   border-radius: 24px;
   padding: 3rem;
   position: relative;
@@ -45,17 +46,19 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s, box-shadow 0.4s;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
 }
 
 .card:hover {
   transform: translateY(-4px);
-  border-color: rgba(255, 107, 0, 0.3);
+  border-color: rgba(255, 107, 0, 0.5);
+  box-shadow: 0 12px 30px rgba(255, 107, 0, 0.08);
 }
 
 .card1 {
   grid-column: span 2;
-  background: radial-gradient(circle at 100% 0%, rgba(255, 107, 0, 0.1) 0%, transparent 50%), #111;
+  background: radial-gradient(circle at 100% 0%, rgba(255, 107, 0, 0.1) 0%, transparent 50%), var(--white);
 }
 
 .card2 {
@@ -68,7 +71,7 @@
 
 .card4 {
   grid-column: span 2;
-  background: radial-gradient(circle at 0% 100%, rgba(255, 107, 0, 0.08) 0%, transparent 60%), #111;
+  background: radial-gradient(circle at 0% 100%, rgba(255, 107, 0, 0.08) 0%, transparent 60%), var(--white);
 }
 
 .value {
@@ -77,7 +80,7 @@
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.04em;
-  color: var(--white);
+  color: #111;
   margin-bottom: 1rem;
   display: block;
 }
@@ -94,7 +97,7 @@
 
 .label {
   font-size: 1.15rem;
-  color: #999;
+  color: #555;
   line-height: 1.5;
   max-width: 300px;
 }
