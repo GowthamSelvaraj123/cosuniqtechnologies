@@ -1003,7 +1003,7 @@ function CapabilitiesUniverse() {
                                                 lineNumber: 184,
                                                 columnNumber: 15
                                             }, this),
-                                            "Our capabilities"
+                                            "Our Services"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/CapabilitiesUniverse.tsx",
@@ -2474,7 +2474,7 @@ function WorkLifecycle() {
                                             lineNumber: 73,
                                             columnNumber: 15
                                         }, this),
-                                        "Our Work Lifecycle"
+                                        "Our Approach"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/WorkLifecycle.tsx",

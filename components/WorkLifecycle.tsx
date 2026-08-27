@@ -71,7 +71,7 @@ export default function WorkLifecycle() {
           <div className="section-intro process-card" style={{ background: '#FF6B00', borderColor: '#FF6B00', justifyContent: 'center', borderRadius: '12px' }}>
             <span className="eyebrow" style={{ marginBottom: '1.5rem', color: 'rgba(255,255,255,0.9)', background: 'rgba(255,255,255,0.2)', alignSelf: 'flex-start' }}>
               <span className="spark spark--inline" style={{ background: '#fff' }} />
-              Our Work Lifecycle
+              Our Approach
             </span>
             <h2 style={{ fontSize: 'clamp(1.6rem, 2.8vw, 2.4rem)', color: '#fff', margin: 0, fontWeight: 700, letterSpacing: '-0.03em' }}>
               Digital Metamorphosis.

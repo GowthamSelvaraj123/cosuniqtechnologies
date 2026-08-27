@@ -182,7 +182,7 @@ export default function CapabilitiesUniverse() {
           <div>
             <span className={`eyebrow ${styles.eyebrowWrap}`}>
               <span className="spark spark--inline" />
-              Our capabilities
+              Our Services
             </span>
             <h2 className={styles.headline}>
               Everything your brand needs<span className={styles.dot}>.</span>

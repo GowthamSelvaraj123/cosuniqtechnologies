@@ -81,8 +81,9 @@ export default function Header() {
         </Link>
 
         <nav className={styles.desktopNav}>
+          <Link href="/"          className={styles.navItem}>Home</Link>
           <Link href="/services"  className={styles.navItem}>Services</Link>
-          <Link href="/portfolio" className={styles.navItem}>Work</Link>
+          <Link href="/portfolio" className={styles.navItem}>Case Study</Link>
           <Link href="/about"     className={styles.navItem}>About</Link>
           <Link href="/contact"   className={styles.navItem}>Contact</Link>
         </nav>

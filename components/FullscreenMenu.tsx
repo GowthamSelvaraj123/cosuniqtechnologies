@@ -11,10 +11,10 @@ interface FullscreenMenuProps {
 }
 
 const navLinks = [
-  { name: "Work", href: "/portfolio" },
+  { name: "Home", href: "/" },
   { name: "Services", href: "/services" },
+  { name: "Case Study", href: "/portfolio" },
   { name: "About", href: "/about" },
-  { name: "Process", href: "/#process" },
   { name: "Contact", href: "/contact" }
 ];
 
