@@ -1,0 +1,149 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  padding: 8rem 0;
+}
+
+.container {
+  width: min(1200px, 92vw);
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.header {
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.header h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0;
+  color: var(--white);
+  line-height: 1.1;
+  max-width: 600px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(280px, auto);
+  gap: 1.5rem;
+}
+
+.card {
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 107, 0, 0.3);
+}
+
+.card1 {
+  grid-column: span 2;
+  background: radial-gradient(circle at 100% 0%, rgba(255, 107, 0, 0.1) 0%, transparent 50%), #111;
+}
+
+.card2 {
+  grid-column: span 1;
+}
+
+.card3 {
+  grid-column: span 1;
+}
+
+.card4 {
+  grid-column: span 2;
+  background: radial-gradient(circle at 0% 100%, rgba(255, 107, 0, 0.08) 0%, transparent 60%), #111;
+}
+
+.value {
+  font-family: var(--display);
+  font-size: clamp(4rem, 8vw, 7.5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--white);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.card1 .value {
+  background: linear-gradient(135deg, #FF6B00 0%, #FFA86B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card3 .value {
+  color: #FF6B00;
+}
+
+.label {
+  font-size: 1.15rem;
+  color: #999;
+  line-height: 1.5;
+  max-width: 300px;
+}
+
+.card2 .label, .card3 .label {
+  font-size: 1.05rem;
+}
+
+.glow {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: #FF6B00;
+  filter: blur(120px);
+  opacity: 0.15;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.glowTopRight {
+  top: -100px;
+  right: -100px;
+}
+
+.glowBottomLeft {
+  bottom: -100px;
+  left: -100px;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .card1, .card4 {
+    grid-column: span 2;
+  }
+  .card2, .card3 {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .card1, .card2, .card3, .card4 {
+    grid-column: span 1;
+  }
+  .card {
+    padding: 2rem;
+  }
+}
