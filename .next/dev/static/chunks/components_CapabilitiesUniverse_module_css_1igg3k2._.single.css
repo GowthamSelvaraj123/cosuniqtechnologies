@@ -1,14 +1,66 @@
 /* [project]/components/CapabilitiesUniverse.module.css [app-client] (css) */
 .CapabilitiesUniverse-module__Zv_uza__section {
   font-family: var(--font-plus-jakarta), sans-serif;
-  background: #fff;
+  background-color: #fff6f0;
   border-bottom: none;
-  padding: 10rem 0;
+  padding: 8rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.CapabilitiesUniverse-module__Zv_uza__bgIcons {
+  pointer-events: none;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.CapabilitiesUniverse-module__Zv_uza__bgIcon {
+  color: #ff6b00;
+  opacity: .02;
+  position: absolute;
+}
+
+.CapabilitiesUniverse-module__Zv_uza__bgIcon1 {
+  width: 250px;
+  height: 250px;
+  top: 0;
+  left: -50px;
+  transform: rotate(-15deg);
+}
+
+.CapabilitiesUniverse-module__Zv_uza__bgIcon2 {
+  width: 200px;
+  height: 200px;
+  top: 30%;
+  right: -50px;
+  transform: rotate(20deg);
+}
+
+.CapabilitiesUniverse-module__Zv_uza__bgIcon3 {
+  width: 180px;
+  height: 180px;
+  bottom: 80px;
+  left: 10%;
+  transform: rotate(-10deg);
+}
+
+.CapabilitiesUniverse-module__Zv_uza__bgIcon4 {
+  width: 220px;
+  height: 220px;
+  bottom: -20px;
+  right: 15%;
+  transform: rotate(15deg);
 }
 
 .CapabilitiesUniverse-module__Zv_uza__container {
+  z-index: 1;
   width: min(1200px, 92vw);
   margin: 0 auto;
+  position: relative;
 }
 
 .CapabilitiesUniverse-module__Zv_uza__header {
