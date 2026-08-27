@@ -15,7 +15,6 @@ export default function Home() {
       <CinematicHero />
       <LivingBrandHero />
       <CapabilitiesUniverse />
-
       <WorkLifecycle />
 
       {/* Services are now handled by CapabilitiesUniverse */}

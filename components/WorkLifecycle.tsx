@@ -1,39 +1,96 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
+
+const PlusButton = () => (
+  <div style={{ position: 'absolute', bottom: '1.5rem', right: '1.5rem', width: '36px', height: '36px', borderRadius: '50%', background: '#FF6B00', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ffffff', cursor: 'pointer', transition: 'transform 0.2s', boxShadow: '0 4px 12px rgba(255,107,0,0.3)' }}
+       onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
+       onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <line x1="12" y1="5" x2="12" y2="19"></line>
+      <line x1="5" y1="12" x2="19" y2="12"></line>
+    </svg>
+  </div>
+);
 
 export default function WorkLifecycle() {
   return (
     <section className="band band--white" id="work-lifecycle">
-      <div style={{ width: "min(1200px, 92vw)", margin: "0 auto" }}>
-        <div className="section-intro reveal" style={{ maxWidth: "600px" }}>
-          <span className="eyebrow">
-            <span className="spark spark--inline" />
-            Our Work Lifecycle
-          </span>
-          <h2>Digital Metamorphosis.</h2>
-          <p>
-            From raw concept to digital flight—our five-step process.
-          </p>
-        </div>
+        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
+        
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
+          
+          <div style={{
+            position: 'relative',
+            display: 'inline-flex',
+            background: '#4a72d4',
+            color: '#ffffff',
+            fontWeight: 800,
+            fontSize: '1.2rem',
+            padding: '0.6rem 1.4rem',
+            borderRadius: '30px',
+            boxShadow: '0 4px 12px rgba(74, 114, 212, 0.2)'
+          }}>
+            Hi,
+            <div style={{
+              position: 'absolute',
+              bottom: '-10px',
+              left: '16px',
+              width: 0,
+              height: 0,
+              borderLeft: '10px solid transparent',
+              borderRight: '10px solid transparent',
+              borderTop: '12px solid #4a72d4',
+              transform: 'rotate(20deg)'
+            }} />
+          </div>
 
+          <h1 style={{ 
+            fontSize: 'clamp(1.6rem, 2.8vw, 2.4rem)', 
+            color: '#111111', 
+            margin: 0, 
+            fontWeight: 700, 
+            letterSpacing: '-0.03em', 
+            lineHeight: 1.08 
+          }}>
+            I am gowtham, <br/>
+            we <svg width="1em" height="1em" viewBox="0 0 24 24" fill="#FF6B00" style={{ display: 'inline-block', verticalAlign: 'middle', margin: '0 0.1rem', transform: 'translateY(-2px)' }}><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> branding.
+          </h1>
+          
+        </div>
+      </div>
+
+      <div style={{ width: "min(1200px, 92vw)", margin: "0 auto" }}>
         <div className="lifecycle-grid reveal">
+          <div className="section-intro process-card" style={{ background: '#FF6B00', borderColor: '#FF6B00', justifyContent: 'center' }}>
+            <span className="eyebrow" style={{ marginBottom: '1.5rem', color: 'rgba(255,255,255,0.9)', background: 'rgba(255,255,255,0.2)', alignSelf: 'flex-start' }}>
+              <span className="spark spark--inline" style={{ background: '#fff' }} />
+              Our Work Lifecycle
+            </span>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.8vw, 2.4rem)', color: '#fff', margin: 0, fontWeight: 700, letterSpacing: '-0.03em' }}>
+              Digital Metamorphosis.
+            </h2>
+          </div>
+
           <article className="process-card">
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '1.5rem' }}>
-              <span className="process-num" style={{ margin: 0, fontSize: '1.5rem' }}>01</span>
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#FF6B00" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+            <span className="process-num">01</span>
+            <div style={{ marginBottom: '2rem' }}>
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FF6B00" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M2 14 C 8 10 16 14 22 10" />
                 <path d="M10 12 C 10 12 12 4 18 6 C 18 6 20 14 10 12 Z" fill="rgba(255,107,0,0.1)" />
                 <ellipse cx="14" cy="9.5" rx="2" ry="2.5" fill="#ffffff" />
               </svg>
             </div>
-            <h3>Origin</h3>
-            <p>Strategy, planning, and aligning on goals before the work begins.</p>
+            <h3 style={{ fontSize: '1.4rem', marginBottom: '0.75rem' }}>Origin</h3>
+            <p style={{ margin: 0, maxWidth: '85%' }}>Strategy, planning, and aligning on goals before the work begins.</p>
+            <PlusButton />
           </article>
           
           <article className="process-card">
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '1.5rem' }}>
-              <span className="process-num" style={{ margin: 0, fontSize: '1.5rem' }}>02</span>
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#FF6B00" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+            <span className="process-num">02</span>
+            <div style={{ marginBottom: '2rem' }}>
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FF6B00" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M2 18 L 22 18" />
                 <path d="M5 16 A 3 3 0 0 1 11 16 A 3 3 0 0 1 17 16 A 2.5 2.5 0 0 1 21 16" fill="rgba(255,107,0,0.1)" />
                 <circle cx="21" cy="14.5" r="0.5" fill="#FF6B00" stroke="none" />
@@ -45,14 +102,15 @@ export default function WorkLifecycle() {
                 <line x1="14" y1="16" x2="14" y2="18" />
               </svg>
             </div>
-            <h3>Form</h3>
-            <p>Gathering ideas, laying the strategic foundation, and core design.</p>
+            <h3 style={{ fontSize: '1.4rem', marginBottom: '0.75rem' }}>Form</h3>
+            <p style={{ margin: 0, maxWidth: '85%' }}>Gathering ideas, laying the strategic foundation, and core design.</p>
+            <PlusButton />
           </article>
           
           <article className="process-card">
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '1.5rem' }}>
-              <span className="process-num" style={{ margin: 0, fontSize: '1.5rem' }}>03</span>
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#FF6B00" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+            <span className="process-num">03</span>
+            <div style={{ marginBottom: '2rem' }}>
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FF6B00" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M4 4 L 20 4" />
                 <line x1="12" y1="4" x2="12" y2="7" />
                 <path d="M10 7 L 14 7 C 16 11 15 17 12 22 C 9 17 8 11 10 7 Z" fill="rgba(255,107,0,0.1)" />
@@ -61,14 +119,15 @@ export default function WorkLifecycle() {
                 <path d="M10.5 18 L 13.5 18" />
               </svg>
             </div>
-            <h3>Metamorphosis</h3>
-            <p>Intense transformation—building systems and primary development.</p>
+            <h3 style={{ fontSize: '1.4rem', marginBottom: '0.75rem' }}>Metamorphosis</h3>
+            <p style={{ margin: 0, maxWidth: '85%' }}>Intense transformation—building systems and primary development.</p>
+            <PlusButton />
           </article>
           
           <article className="process-card">
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '1.5rem' }}>
-              <span className="process-num" style={{ margin: 0, fontSize: '1.5rem' }}>04</span>
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#FF6B00" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+            <span className="process-num">04</span>
+            <div style={{ marginBottom: '2rem' }}>
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FF6B00" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="12" y1="7" x2="12" y2="17" strokeWidth="2" />
                 <path d="M12 7 Q 9 3 7 5" />
                 <path d="M12 7 Q 15 3 17 5" />
@@ -76,14 +135,15 @@ export default function WorkLifecycle() {
                 <path d="M13 9 C 21 4 22 12 13 14 C 19 16 17 21 13 18 Z" fill="rgba(255,107,0,0.1)" />
               </svg>
             </div>
-            <h3>Emergence</h3>
-            <p>Emergence through refinement, rigorous testing, and final polish.</p>
+            <h3 style={{ fontSize: '1.4rem', marginBottom: '0.75rem' }}>Emergence</h3>
+            <p style={{ margin: 0, maxWidth: '85%' }}>Emergence through refinement, rigorous testing, and final polish.</p>
+            <PlusButton />
           </article>
           
           <article className="process-card">
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '1.5rem' }}>
-              <span className="process-num" style={{ margin: 0, fontSize: '1.5rem' }}>05</span>
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#FF6B00" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+            <span className="process-num">05</span>
+            <div style={{ marginBottom: '2rem' }}>
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FF6B00" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M3 21 C 6 19 8 19 10 17 C 12 15 11 12 13 10" strokeDasharray="2 3" />
                 <g transform="translate(4, -6) scale(0.85)">
                   <line x1="12" y1="7" x2="12" y2="17" strokeWidth="2" />
@@ -94,8 +154,9 @@ export default function WorkLifecycle() {
                 </g>
               </svg>
             </div>
-            <h3>Flight</h3>
-            <p>Launch, scalable commercial momentum, and ongoing growth.</p>
+            <h3 style={{ fontSize: '1.4rem', marginBottom: '0.75rem' }}>Flight</h3>
+            <p style={{ margin: 0, maxWidth: '85%' }}>Launch, scalable commercial momentum, and ongoing growth.</p>
+            <PlusButton />
           </article>
         </div>
       </div>
