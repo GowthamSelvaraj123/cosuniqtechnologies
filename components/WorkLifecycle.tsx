@@ -50,7 +50,7 @@ export default function WorkLifecycle() {
 
       <div style={{ width: "min(1200px, 92vw)", margin: "0 auto" }}>
         <div className="lifecycle-grid reveal">
-          <div className="section-intro process-card" style={{ background: '#FF6B00', borderColor: '#FF6B00', justifyContent: 'center' }}>
+          <div className="section-intro process-card" style={{ background: '#FF6B00', borderColor: '#FF6B00', justifyContent: 'center', borderRadius: '12px' }}>
             <span className="eyebrow" style={{ marginBottom: '1.5rem', color: 'rgba(255,255,255,0.9)', background: 'rgba(255,255,255,0.2)', alignSelf: 'flex-start' }}>
               <span className="spark spark--inline" style={{ background: '#fff' }} />
               Our Work Lifecycle
