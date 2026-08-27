@@ -2668,4 +2668,107 @@ body {
   }
 }
 
+@media (max-width: 960px) {
+  .process-card:after {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .work-slider {
+    margin-left: 0 !important;
+    padding-left: 1rem !important;
+  }
+}
+
+.lifecycle-gowtham-text {
+  z-index: 10;
+  align-items: center;
+  gap: .75rem;
+  display: flex;
+  position: absolute;
+  top: -40px;
+  right: 15px;
+  transform: rotate(3deg);
+}
+
+.lifecycle-support-text {
+  writing-mode: vertical-rl;
+  color: #111;
+  letter-spacing: -.03em;
+  white-space: nowrap;
+  z-index: 10;
+  align-items: center;
+  gap: .5rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  display: flex;
+  position: absolute;
+  top: 7px;
+  left: calc(100% + 1px);
+  transform: rotate(-2deg);
+}
+
+.lifecycle-heart {
+  transform: rotate(90deg);
+}
+
+@media (max-width: 960px) {
+  .lifecycle-gowtham-text {
+    justify-content: flex-start;
+    margin-top: 1.5rem;
+    margin-bottom: .5rem;
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+  }
+
+  .lifecycle-support-text {
+    writing-mode: horizontal-tb;
+    justify-content: flex-start;
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+  }
+
+  .lifecycle-heart {
+    transform: rotate(0);
+  }
+
+  .lifecycle-grid {
+    border: none;
+    gap: 2.5rem;
+    padding: 0;
+  }
+
+  .process-card:not(:last-child):after {
+    width: 20px;
+    height: 35px;
+    inset: auto auto -45px 50%;
+    transform: translateX(-50%);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 35' fill='none'%3E%3Cpath d='M10 0 L10 30' stroke='%23FF6B00' stroke-width='2' stroke-linecap='round' stroke-dasharray='4 5'/%3E%3Cpolygon points='5,25 10,35 15,25' fill='%23FF6B00'/%3E%3C/svg%3E") !important;
+    display: block !important;
+  }
+}
+
+.lifecycle-container {
+  width: min(1200px, 92vw);
+  margin: 3rem auto 0;
+  position: relative;
+}
+
+@media (max-width: 960px) {
+  .lifecycle-container {
+    margin-top: 0;
+  }
+
+  #work-lifecycle {
+    padding-top: 1.5rem;
+  }
+}
+
 /*# sourceMappingURL=app_globals_css_1igg3k2._.single.css.map*/

@@ -296,8 +296,42 @@
   }
 
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
+    padding-bottom: 2.5rem;
+  }
+  
+  .card {
+    padding: 1.25rem 1rem 1rem;
+    gap: 1rem;
+  }
+  
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .icon svg {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .cardName {
+    font-size: 0.9rem;
+  }
+  
+  .cardDesc {
+    font-size: 0.75rem;
+  }
+
+  /* Scattered effect for mobile 2-column */
+  .card:nth-child(odd) {
+    --card-y: 0rem;
+    --card-rot: -1.5deg;
+  }
+  .card:nth-child(even) {
+    --card-y: 1.5rem;
+    --card-rot: 1.5deg;
   }
 
   .headline {
