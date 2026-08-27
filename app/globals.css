@@ -912,6 +912,21 @@ body.has-cursor .cursor-dot {
   transform: translateY(var(--card-y)) rotate(var(--card-rot));
 }
 
+/* Realistic push pin at the top center of each scattered card */
+.process-card::before {
+  content: '';
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #d4d4d4 40%, #888888 100%);
+  box-shadow: -2px 4px 6px rgba(0,0,0,0.15), inset -1px -2px 4px rgba(0,0,0,0.2);
+  z-index: 20;
+}
+
 @media (min-width: 1024px) {
   .lifecycle-grid {
     row-gap: 2rem; /* a little extra space for rotated corners */
