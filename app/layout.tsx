@@ -2,6 +2,7 @@ import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import CustomCursor from "../components/CustomCursor";
+import GsapAnimations from "../components/GsapAnimations";
 
 import type { Metadata } from "next";
 import { plusJakartaSans } from "./fonts";
@@ -26,7 +27,7 @@ export default function RootLayout({
       </head>
       <body>
         <CustomCursor />
-
+        <GsapAnimations />
         <Header />
         <main>{children}</main>
         <Footer />

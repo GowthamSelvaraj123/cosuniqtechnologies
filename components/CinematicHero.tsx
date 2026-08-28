@@ -135,6 +135,7 @@ export default function CinematicHero() {
 
   return (
     <section
+      id="cinematic-hero-root"
       ref={sectionRef}
       className={`${styles.heroRoot} ${isExiting ? styles.exiting : ""}`}
       onClick={handleClick}

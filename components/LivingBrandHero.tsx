@@ -42,7 +42,7 @@ export default function LivingBrandHero() {
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
-    <section className={styles.heroSection} ref={containerRef}>
+    <section className={styles.heroSection} id="hero-main" ref={containerRef}>
       <div className={styles.container}>
         {/* Left Column: Typography & CTA */}
         <motion.div 
