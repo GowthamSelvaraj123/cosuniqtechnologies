@@ -1,6 +1,6 @@
-/* ═══════════════════════════════════════════════════
-   OurDifference — Split Layout with Vertical Text
-═══════════════════════════════════════════════════ */
+/* ==========================================================================
+   OurDifference - 3-Column Scattered Layout
+   ========================================================================== */
 
 .section {
   position: relative;
@@ -11,110 +11,147 @@
   border-bottom: none;
 }
 
-
-/* ── Split Layout ────────────────────────────────────── */
-.splitLayout {
+/* --- 3-Column Layout --- */
+.threeColLayout {
   display: grid;
-  grid-template-columns: 6fr 4fr;
-  gap: 4rem;
-  align-items: center;
+  grid-template-columns: 2fr 4fr 4fr;
+  gap: 3rem;
+  align-items: flex-start;
 }
 
-/* ── Left Column (Vertical Text + Image) ────────────── */
+/* --- Column 1: Vertical Scattered Text --- */
 .leftColumn {
-  display: flex;
-  gap: 1.5rem;
   position: sticky;
   top: 4rem;
-  /* Sticky scrolling effect on desktop */
-}
-
-/* Vertical Text */
-.verticalHeaderWrap {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
   display: flex;
-  align-items: flex-end;
-  /* In vertical rotated text, this pushes it to the "top" of the container visually */
-  gap: 0.5rem;
-  padding-bottom: 0;
+  justify-content: center;
 }
 
-.eyebrowWrap {
-  margin-bottom: 0;
-  margin-top: 1rem;
+.scatterTextWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 1rem;
 }
 
-.verticalHeadline {
-  font-size: clamp(2.5rem, 4vw, 4.5rem);
-  font-weight: 800;
-  letter-spacing: -0.04em;
+.wordBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.scatterLetter {
+  font-family: var(--display, sans-serif);
+  font-size: clamp(3rem, 4vw, 4.5rem);
+  font-weight: 900;
   line-height: 1;
   color: #111111;
-  margin: 0;
-  white-space: nowrap;
+  text-transform: uppercase;
 }
 
 .dot {
   color: #FF6B00;
 }
 
-/* Image & Button */
-.imageAndButtonWrap {
+/* Hardcoded Staggering / Scattering Offsets */
+.letterW1 { transform: translateX(-10px); }
+.letterW2 { transform: translateX(5px); }
+.letterW3 { transform: translateX(-5px) translateY(-5px); }
+
+.letterC1 { transform: translateX(8px); }
+.letterC2 { transform: translateX(-12px); }
+.letterC3 { transform: translateX(15px); }
+.letterC4 { transform: translateX(-5px); }
+.letterC5 { transform: translateX(10px); }
+.letterC6 { transform: translateX(-15px); }
+.letterC7 { transform: translateX(5px); }
+.letterC8 { transform: translateX(12px) rotate(15deg); }
+
+
+/* --- Column 2: Image & Round Button --- */
+.middleColumn {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.imageContainer {
+  position: relative;
   width: 100%;
 }
 
-.imageAndButtonWrap img {
+.imageWrap {
   width: 100%;
-  max-width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+}
+
+.imageWrap img {
+  width: 100%;
+  height: auto;
   max-height: 60vh;
   object-fit: contain;
-  object-position: left center;
 }
 
-.cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
+/* Round Button */
+.buttonWrap {
+  position: absolute;
+  bottom: 2rem;
+  right: -2rem;
+  z-index: 2;
+}
+
+.roundCta {
+  width: 130px;
+  height: 130px;
   background: #FF6B00;
   color: white;
-  padding: 1rem 2rem;
-  border-radius: 30px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   text-decoration: none;
   transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-  width: fit-content;
+  box-shadow: 0 10px 20px rgba(255, 107, 0, 0.2);
 }
 
-.cta:hover {
+.roundCtaText {
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.roundCta:hover {
   background: #E65A00;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(255, 107, 0, 0.25);
+  transform: scale(1.05) rotate(-5deg);
+  box-shadow: 0 15px 30px rgba(255, 107, 0, 0.3);
 }
 
-.cta svg {
+.roundCta svg {
   transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.cta:hover svg {
-  transform: translateX(4px);
+.roundCta:hover svg {
+  transform: translateX(4px) translateY(-4px);
 }
 
-/* ── Right Column (Stacked Cards) ────────────────────── */
+
+/* --- Column 3: Stacked Cards --- */
 .rightColumn {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  padding-top: 0;
 }
 
-/* ── Card Styles ──────────────────────────────────────── */
 .card {
   position: relative;
   background: transparent;
@@ -145,25 +182,25 @@
   z-index: 10;
 }
 
-/* ── Scatter Column Effect ──────────── */
+/* --- Scatter Column Effect --- */
 @media (min-width: 1024px) {
   .card1 {
     --card-x: -30px;
     --card-rot: -1.5deg;
   }
-
+  
   .card2 {
     --card-x: 40px;
     --card-rot: 1.5deg;
   }
-
+  
   .card3 {
     --card-x: 10px;
     --card-rot: -1deg;
   }
 }
 
-/* ── Icon ──────────────────────────────────────── */
+/* --- Icon --- */
 .icon {
   width: 52px;
   height: 52px;
@@ -179,7 +216,7 @@
   height: 52px;
 }
 
-/* ── Card text ─────────────────────────────────── */
+/* --- Card text --- */
 .cardTag {
   font-size: 0.75rem;
   font-weight: 800;
@@ -193,7 +230,7 @@
   font-size: 1.25rem;
   font-weight: 800;
   color: #111111;
-  margin: 0 0 0.7rem;
+  margin: 0 0 0.5rem;
 }
 
 .cardDesc {
@@ -203,7 +240,7 @@
   margin: 0;
 }
 
-/* ── Arrow ──────────────────────────────────────── */
+/* --- Arrow --- */
 .cardArrow {
   position: absolute;
   top: 1.5rem;
@@ -217,40 +254,32 @@
   transform: translate(3px, -3px);
 }
 
-/* ── Responsive ────────────────────────────────── */
+/* --- Responsive --- */
 @media (max-width: 1024px) {
-  .splitLayout {
+  .threeColLayout {
     grid-template-columns: 1fr;
     gap: 4rem;
   }
-
+  
   .leftColumn {
     position: static;
-    flex-direction: column;
+  }
+
+  .scatterTextWrap {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1.5rem;
   }
 
-  .verticalHeaderWrap {
-    writing-mode: horizontal-tb;
-    transform: none;
-    align-items: flex-start;
-    padding-bottom: 0;
-    gap: 0.5rem;
-    flex-direction: column-reverse;
+  .wordBlock {
+    flex-direction: row;
+    gap: 0;
   }
 
-  .eyebrowWrap {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-  }
-
-  .imageWrap {
-    height: 400px;
-    max-width: 100%;
-  }
-
-  .rightColumn {
-    padding-top: 0;
+  /* Reset letter offsets on mobile for readability */
+  .scatterLetter {
+    transform: none !important;
   }
 }
 
@@ -258,12 +287,8 @@
   .section {
     padding: 5rem 0;
   }
-
-  .verticalHeadline {
-    font-size: 2.5rem;
-  }
-
-  .imageWrap {
+  
+  .imageWrap img {
     height: 300px;
   }
 }
