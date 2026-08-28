@@ -45,6 +45,10 @@ export default function ResultsShowcase() {
 
           {/* Card 3: Collaboration */}
           <div className={`${styles.card} ${styles.card3}`}>
+            <div className={styles.showcaseImg} style={{width:"165px"}}>
+              {/* Replace src with your transparent PNG */}
+              <img src="/assets/images/cash-flow.png" alt="Celebrating success" />
+            </div>
             <div className={styles.textContent}>
               <span className={styles.value}>1:1</span>
               <p className={styles.label}>Direct collaboration with our core engineering and design experts.</p>

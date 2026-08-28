@@ -131,6 +131,12 @@
   max-width: 55%;
 }
 
+/* Move text to the right side for the second row */
+.card3 .textContent,
+.card4 .textContent {
+  align-self: flex-end;
+}
+
 .showcaseImg {
   position: absolute;
   right: 0px;
