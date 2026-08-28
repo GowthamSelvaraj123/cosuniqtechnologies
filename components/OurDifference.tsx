@@ -28,8 +28,8 @@ const NumberIcon = ({ num }: { num: string }) => (
 );
 
 export default function OurDifference() {
-  const lettersWhy = ["W", "H", "Y"];
-  const lettersCosuniq = ["C", "O", "S", "U", "N", "I", "Q", "?"];
+  const lettersWhy = ["W", "h", "y"];
+  const lettersCosuniq = ["C", "o", "s", "u", "n", "i", "q", "?"];
 
   return (
     <section className={styles.section} id="difference">
@@ -64,11 +64,33 @@ export default function OurDifference() {
           <div className={styles.middleColumn}>
             
             <div className={styles.imageContainer}>
-              {/* Floating Decorative Elements */}
-              <div className={`${styles.floatingShape} ${styles.shape1}`}></div>
-              <div className={`${styles.floatingShape} ${styles.shape2}`}></div>
-              <div className={`${styles.floatingShape} ${styles.shape3}`}></div>
-              <div className={`${styles.floatingShape} ${styles.shape4}`}></div>
+              {/* Splash / Power Elements */}
+              <div className={`${styles.powerElement} ${styles.power1}`}>
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M50 0L55 40L95 50L55 60L50 100L45 60L5 50L45 40L50 0Z" fill="#FF6B00"/>
+                </svg>
+              </div>
+              <div className={`${styles.powerElement} ${styles.power2}`}>
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="50" cy="50" r="48" stroke="#FF6B00" strokeWidth="4" strokeDasharray="15 15"/>
+                </svg>
+              </div>
+              <div className={`${styles.powerElement} ${styles.power3}`}>
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 20L80 80M80 20L20 80M50 10V90M10 50H90" stroke="#111111" strokeWidth="8" strokeLinecap="round"/>
+                </svg>
+              </div>
+              <div className={`${styles.powerElement} ${styles.power4}`}>
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M50 0L55 40L95 50L55 60L50 100L45 60L5 50L45 40L50 0Z" fill="#111111"/>
+                </svg>
+              </div>
+              <div className={`${styles.powerElement} ${styles.power5}`}>
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="50" cy="50" r="40" fill="none" stroke="#FF6B00" strokeWidth="2" />
+                  <circle cx="50" cy="50" r="20" fill="#FF6B00" />
+                </svg>
+              </div>
 
               <div className={styles.imageWrap}>
                 <img src="/assets/images/enjoy.png" alt="Why COSUNIQ" />
