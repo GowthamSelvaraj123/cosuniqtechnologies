@@ -1,3 +1,0 @@
-module.exports=[80493,a=>{"use strict";var b=a.i(72131),c=a.i(50944);a.s(["default",0,function(){let a=(0,c.usePathname)();return(0,b.useEffect)(()=>{let a=document.querySelectorAll(".reveal");if(a.length&&"IntersectionObserver"in window){let b=new IntersectionObserver(function(a){a.forEach(function(a){a.isIntersecting&&(a.target.classList.add("visible"),b.unobserve(a.target))})},{threshold:.12,rootMargin:"0px 0px -30px 0px"});return a.forEach(function(a){a.classList.remove("visible"),b.observe(a)}),()=>{b.disconnect()}}a.forEach(function(a){a.classList.add("visible")})},[a]),null}])}];
-
-//# sourceMappingURL=components_InitReveal_tsx_0lckm6c._.js.map
