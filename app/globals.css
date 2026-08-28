@@ -1211,8 +1211,8 @@ body.has-cursor .cursor-dot {
   text-transform: uppercase;
   padding: 0.35rem 0.8rem;
   border-radius: 20px;
-  background: #FFF0E5;
-  color: #FF6B00;
+  background: #FF6B00;
+  color: #FFFFFF;
 }
 
 /* Orange circular badges (RSNL) */

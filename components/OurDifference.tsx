@@ -30,9 +30,9 @@ const UnifiedVisual = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <circle cx="200" cy="100" r="45" stroke="#17202A" strokeWidth="1" strokeDasharray="4 4" />
+          <circle cx="200" cy="100" r="45" stroke="rgba(255,255,255,0.2)" strokeWidth="1" strokeDasharray="4 4" />
           <circle cx="200" cy="100" r="25" stroke="#FF7800" strokeWidth="1.5" />
-          <circle cx="200" cy="100" r="4" fill="#17202A" />
+          <circle cx="200" cy="100" r="4" fill="#ffffff" />
         </motion.g>
 
         {/* Node 2: Design (Creating) - Intersecting forms */}
@@ -43,8 +43,8 @@ const UnifiedVisual = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <circle cx="580" cy="100" r="35" stroke="#17202A" strokeWidth="1" />
-          <circle cx="620" cy="100" r="35" stroke="#17202A" strokeWidth="1.5" />
+          <circle cx="580" cy="100" r="35" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
+          <circle cx="620" cy="100" r="35" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" />
           <circle cx="600" cy="100" r="4" fill="#FF7800" />
         </motion.g>
 
@@ -56,9 +56,9 @@ const UnifiedVisual = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 1.0 }}
         >
-          <rect x="960" y="60" width="80" height="80" stroke="#17202A" strokeWidth="1" transform="rotate(45 1000 100)" />
+          <rect x="960" y="60" width="80" height="80" stroke="rgba(255,255,255,0.2)" strokeWidth="1" transform="rotate(45 1000 100)" />
           <circle cx="1000" cy="100" r="28" stroke="#FF7800" strokeWidth="1.5" />
-          <circle cx="1000" cy="100" r="4" fill="#17202A" />
+          <circle cx="1000" cy="100" r="4" fill="#ffffff" />
         </motion.g>
 
       </svg>

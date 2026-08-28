@@ -12,11 +12,36 @@ export default function WorkSlider() {
   };
 
   return (
-    <section className="band band--black" id="work" style={{ position: 'relative', overflow: 'hidden', backgroundColor: '#FF6B00' }}>
+    <section 
+      className="band band--black" 
+      id="work" 
+      style={{ 
+        position: 'relative', 
+        overflow: 'hidden', 
+        backgroundColor: 'rgb(68 27 0)', /* Darker burnt orange */
+        backgroundImage: 'url(/assets/images/office.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+        backgroundBlendMode: 'multiply'
+      }}
+    >
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div className="slider-head reveal">
           <div>
-            <span className="eyebrow"><span className="spark spark--inline"></span> Featured work</span>
+            <span className="eyebrow" style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              background: 'rgba(0, 0, 0, 0.4)',
+              color: '#ffffff',
+              padding: '0.4rem 1rem',
+              borderRadius: '30px',
+              fontSize: '0.75rem',
+              fontWeight: 800,
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+              marginBottom: '1rem'
+            }}><span className="spark spark--inline"></span> Featured work</span>
             <h2>Work that’s worked.</h2>
           </div>
           <div className="slider-controls">
