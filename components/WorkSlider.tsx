@@ -12,7 +12,7 @@ export default function WorkSlider() {
   };
 
   return (
-    <section className="band band--black" id="work" style={{ position: 'relative', overflow: 'hidden' }}>
+    <section className="band band--black" id="work" style={{ position: 'relative', overflow: 'hidden', backgroundColor: '#FF6B00' }}>
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div className="slider-head reveal">
           <div>

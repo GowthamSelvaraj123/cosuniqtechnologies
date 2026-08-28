@@ -430,16 +430,8 @@ body.has-cursor .cursor-dot {
 }
 
 .band--black .work-slide {
-  background: #1a1a1a;
-  border-color: #333;
-}
-
-.band--black .work-slide__meta h3 {
-  color: #ffffff;
-}
-
-.band--black .work-slide__meta p {
-  color: #a0a0a0;
+  background: #FFF5EC;
+  border-color: #FFE6CC;
 }
 
 .band--black .slider-btn {
