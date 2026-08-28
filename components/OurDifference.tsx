@@ -64,6 +64,12 @@ export default function OurDifference() {
           <div className={styles.middleColumn}>
             
             <div className={styles.imageContainer}>
+              {/* Floating Decorative Elements */}
+              <div className={`${styles.floatingShape} ${styles.shape1}`}></div>
+              <div className={`${styles.floatingShape} ${styles.shape2}`}></div>
+              <div className={`${styles.floatingShape} ${styles.shape3}`}></div>
+              <div className={`${styles.floatingShape} ${styles.shape4}`}></div>
+
               <div className={styles.imageWrap}>
                 <img src="/assets/images/enjoy.png" alt="Why COSUNIQ" />
               </div>
@@ -86,7 +92,7 @@ export default function OurDifference() {
             {/* Card 1 */}
             <article className={`${styles.card} ${styles.card1}`}>
               <span className={styles.icon}><NumberIcon num="01" /></span>
-              <div>
+              <div className={styles.cardContent}>
                 <span className={styles.cardTag}>01 &mdash; THINK</span>
                 <h3 className={styles.cardName}>Strategy with clarity.</h3>
                 <p className={styles.cardDesc}>We understand the business before we touch the design.</p>
@@ -102,7 +108,7 @@ export default function OurDifference() {
             {/* Card 2 */}
             <article className={`${styles.card} ${styles.card2}`}>
               <span className={styles.icon}><NumberIcon num="02" /></span>
-              <div>
+              <div className={styles.cardContent}>
                 <span className={styles.cardTag}>02 &mdash; CREATE</span>
                 <h3 className={styles.cardName}>Design with purpose.</h3>
                 <p className={styles.cardDesc}>We create identities and experiences people remember.</p>
@@ -118,7 +124,7 @@ export default function OurDifference() {
             {/* Card 3 */}
             <article className={`${styles.card} ${styles.card3}`}>
               <span className={styles.icon}><NumberIcon num="03" /></span>
-              <div>
+              <div className={styles.cardContent}>
                 <span className={styles.cardTag}>03 &mdash; BUILD</span>
                 <h3 className={styles.cardName}>Technology that performs.</h3>
                 <p className={styles.cardDesc}>We turn creative ideas into fast, scalable digital products.</p>
