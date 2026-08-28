@@ -36,8 +36,8 @@ export default function ResultsShowcase() {
               <span className={styles.value}>0</span>
               <p className={styles.label}>Hidden fees or surprise costs. We operate with complete transparency from the start.</p>
             </div>
-                        {/* The right-side overlapping image */}
-            <div className={styles.showcaseImg} style={{width:"165px"}}>
+            {/* The right-side overlapping image */}
+            <div className={styles.showcaseImg} style={{width:"160px"}}>
               {/* Replace src with your transparent PNG */}
               <img src="/assets/images/cash-flow.png" alt="Celebrating success" />
             </div>
@@ -45,9 +45,9 @@ export default function ResultsShowcase() {
 
           {/* Card 3: Collaboration */}
           <div className={`${styles.card} ${styles.card3}`}>
-            <div className={styles.showcaseImg} style={{width:"165px"}}>
+            <div className={styles.showcaseImg}>
               {/* Replace src with your transparent PNG */}
-              <img src="/assets/images/cash-flow.png" alt="Celebrating success" />
+              <img src="/assets/images/colloboaration.png" alt="Celebrating success" />
             </div>
             <div className={styles.textContent}>
               <span className={styles.value}>1:1</span>

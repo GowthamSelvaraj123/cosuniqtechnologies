@@ -127,8 +127,8 @@
 
 .textContent {
   position: relative;
-  z-index: 1;
-  max-width: 55%;
+  z-index: 3;
+  max-width: 45%;
 }
 
 /* Move text to the right side for the second row */
@@ -156,6 +156,22 @@
   height: 100%;
   object-fit: cover;
   object-position: center right;
+}
+
+/* Move images to the left side for the second row */
+.card3 .showcaseImg,
+.card4 .showcaseImg {
+  right: auto;
+  left: 0px;
+  border-radius: 0 0 0 18px;
+  /* Mask fades the RIGHT edge now */
+  -webkit-mask-image: linear-gradient(to left, transparent 0%, black 15%);
+  mask-image: linear-gradient(to left, transparent 0%, black 15%);
+}
+
+.card3 .showcaseImg img,
+.card4 .showcaseImg img {
+  object-position: center left;
 }
 
 .label {
