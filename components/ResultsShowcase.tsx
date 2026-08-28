@@ -17,7 +17,7 @@ export default function ResultsShowcase() {
     <section className={`band ${styles.section}`} id="results">
       <div className={styles.container}>
         
-        <div className="section-intro">
+        <div className={`section-intro ${styles.darkHeader}`}>
           <span className="eyebrow">
             <span className="spark spark--inline" style={{ background: '#FF6B00' }}></span> 
             Our Standard

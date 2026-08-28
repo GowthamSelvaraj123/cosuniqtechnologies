@@ -3856,6 +3856,7 @@ __turbopack_context__.v({
   "card5": "ResultsShowcase-module__lD6eOa__card5",
   "card6": "ResultsShowcase-module__lD6eOa__card6",
   "container": "ResultsShowcase-module__lD6eOa__container",
+  "darkHeader": "ResultsShowcase-module__lD6eOa__darkHeader",
   "glow": "ResultsShowcase-module__lD6eOa__glow",
   "glowBottomLeft": "ResultsShowcase-module__lD6eOa__glowBottomLeft",
   "glowTopRight": "ResultsShowcase-module__lD6eOa__glowTopRight",
@@ -3902,7 +3903,7 @@ function ResultsShowcase() {
             className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ResultsShowcase$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].container,
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "section-intro",
+                    className: `section-intro ${__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ResultsShowcase$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].darkHeader}`,
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                             className: "eyebrow",
