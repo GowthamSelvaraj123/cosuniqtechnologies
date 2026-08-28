@@ -57,7 +57,10 @@ export default function ResultsShowcase() {
 
           {/* Card 4: Workflow */}
           <div className={`${styles.card} ${styles.card4}`}>
-            <div className={`${styles.glow} ${styles.glowBottomLeft}`}></div>
+                        <div className={styles.showcaseImg}>
+              {/* Replace src with your transparent PNG */}
+              <img src="/assets/images/speed.png" alt="Celebrating success" />
+            </div>
             <div className={styles.textContent}>
               <span className={styles.value}>2&times;</span>
               <p className={styles.label}>Faster iteration cycles through our streamlined, modern agile workflow.</p>

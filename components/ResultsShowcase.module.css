@@ -142,10 +142,12 @@
   right: 0px;
   bottom: 0px;
   width: 50%;
-  height: 120%; /* Overflow the top */
+  height: 120%;
+  /* Overflow the top */
   z-index: 2;
   pointer-events: none;
-  border-radius: 0 0 18px 0; /* Match card corner only at bottom right */
+  border-radius: 0 0 18px 0;
+  /* Match card corner only at bottom right */
   /* Very tight fade on the edge only */
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%);
   mask-image: linear-gradient(to right, transparent 0%, black 15%);
@@ -169,7 +171,11 @@
   mask-image: linear-gradient(to left, transparent 0%, black 15%);
 }
 
-.card3 .showcaseImg img,
+.card3 .showcaseImg img {
+  /* You can change this to top left, bottom left, or exact percentages like 10% 50% */
+  object-position: top left; 
+}
+
 .card4 .showcaseImg img {
   object-position: center left;
 }
