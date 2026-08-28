@@ -296,10 +296,45 @@
   }
 
   .card {
-    padding: 2rem;
+    padding: 1.5rem;
   }
 
   .value {
-    font-size: 3.5rem;
+    font-size: 3rem;
+  }
+
+  .textContent {
+    max-width: 100%;
+  }
+
+  .card3 .textContent,
+  .card4 .textContent {
+    align-self: flex-start;
+  }
+
+  .showcaseImg {
+    position: relative;
+    width: 100% !important;
+    height: 220px !important;
+    margin: 1rem 0;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+    border-radius: 12px !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+  }
+
+  .card3 .showcaseImg,
+  .card4 .showcaseImg {
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+    border-radius: 12px !important;
+  }
+
+  .showcaseImg img {
+    object-position: center !important;
+    object-fit: contain !important;
   }
 }
