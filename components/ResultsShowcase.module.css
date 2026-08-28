@@ -1,13 +1,13 @@
 .section {
   position: relative;
   overflow: hidden;
-  padding: 6rem 0;
-  min-height: 100svh;
+  padding: 3rem 0;
+  height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #050505;
-  color: #ffffff;
+  background-color: #FFF3E8;
+  color: #1a1a1a;
 }
 
 .section::before {
@@ -31,25 +31,25 @@
 }
 
 .darkHeader {
-  margin-bottom: 4rem;
+  margin-bottom: 1.25rem;
 }
 
 .darkHeader h2 {
-  color: #FFFFFF !important;
+  color: #1a1a1a !important;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: minmax(220px, auto);
-  gap: 1.5rem;
+  grid-auto-rows: minmax(0, 1fr);
+  gap: 0.85rem;
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 24px;
-  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 107, 0, 0.15);
+  border-radius: 18px;
+  padding: 1.4rem 1.6rem;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -58,7 +58,7 @@
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.5s, box-shadow 0.5s, background 0.5s;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.01), 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 24px -4px rgba(255, 107, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
 }
 
 .card::before {
@@ -73,9 +73,9 @@
 
 .card:hover {
   transform: translateY(-6px) scale(1.01);
-  background: rgba(255, 255, 255, 0.03);
-  border-color: rgba(255, 107, 0, 0.4);
-  box-shadow: 0 20px 50px -10px rgba(255, 107, 0, 0.15), inset 0 0 0 1px rgba(255, 107, 0, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 107, 0, 0.5);
+  box-shadow: 0 20px 50px -10px rgba(255, 107, 0, 0.2), 0 4px 16px rgba(255, 107, 0, 0.1);
 }
 
 .card:hover::before {
@@ -108,12 +108,12 @@
 
 .value {
   font-family: var(--display);
-  font-size: clamp(4rem, 8vw, 6.5rem);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.04em;
-  color: #FFFFFF;
-  margin-bottom: 1rem;
+  color: #1a1a1a;
+  margin-bottom: 0.4rem;
   display: block;
 }
 
@@ -134,15 +134,15 @@
 }
 
 .label {
-  font-size: 1.15rem;
-  color: #A0A0A0;
-  line-height: 1.6;
+  font-size: 0.82rem;
+  color: #5a5a5a;
+  line-height: 1.45;
   max-width: 340px;
   font-weight: 400;
 }
 
 .card2 .label, .card3 .label, .card6 .label {
-  font-size: 1.05rem;
+  font-size: 0.78rem;
 }
 
 .glow {
