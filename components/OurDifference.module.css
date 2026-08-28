@@ -4,34 +4,29 @@
 
 .section {
   position: relative;
-  padding: 8rem 0;
+  padding: 4rem 0;
   background-color: #FFFFFF !important;
   overflow: hidden;
   font-family: var(--font-plus-jakarta), sans-serif;
   border-bottom: none;
 }
 
-.container {
-  position: relative;
-  z-index: 1;
-  width: min(1300px, 92vw);
-  margin: 0 auto;
-}
 
 /* ── Split Layout ────────────────────────────────────── */
 .splitLayout {
   display: grid;
-  grid-template-columns: 4fr 5fr;
-  gap: 5rem;
-  align-items: flex-start;
+  grid-template-columns: 6fr 4fr;
+  gap: 4rem;
+  align-items: center;
 }
 
 /* ── Left Column (Vertical Text + Image) ────────────── */
 .leftColumn {
   display: flex;
-  gap: 2.5rem;
+  gap: 1.5rem;
   position: sticky;
-  top: 6rem; /* Sticky scrolling effect on desktop */
+  top: 4rem;
+  /* Sticky scrolling effect on desktop */
 }
 
 /* Vertical Text */
@@ -39,9 +34,10 @@
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   display: flex;
-  align-items: flex-end; /* In vertical rotated text, this pushes it to the "top" of the container visually */
-  gap: 1.5rem;
-  padding-bottom: 2rem;
+  align-items: flex-end;
+  /* In vertical rotated text, this pushes it to the "top" of the container visually */
+  gap: 0.5rem;
+  padding-bottom: 0;
 }
 
 .eyebrowWrap {
@@ -50,7 +46,7 @@
 }
 
 .verticalHeadline {
-  font-size: clamp(3rem, 4.5vw, 5rem);
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
   font-weight: 800;
   letter-spacing: -0.04em;
   line-height: 1;
@@ -67,23 +63,16 @@
 .imageAndButtonWrap {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
   width: 100%;
 }
 
-.imageWrap {
+.imageAndButtonWrap img {
   width: 100%;
-  max-width: 480px;
-  height: 600px;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
-}
-
-.imageWrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+  object-position: left center;
 }
 
 .cta {
@@ -121,8 +110,8 @@
 .rightColumn {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding-top: 2rem;
+  gap: 1.5rem;
+  padding-top: 0;
 }
 
 /* ── Card Styles ──────────────────────────────────────── */
@@ -131,10 +120,10 @@
   background: transparent;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 18px;
-  padding: 2.5rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
   cursor: pointer;
   --card-x: 0px;
   --card-rot: 0deg;
@@ -162,12 +151,12 @@
     --card-x: -30px;
     --card-rot: -1.5deg;
   }
-  
+
   .card2 {
     --card-x: 40px;
     --card-rot: 1.5deg;
   }
-  
+
   .card3 {
     --card-x: 10px;
     --card-rot: -1deg;
@@ -217,8 +206,8 @@
 /* ── Arrow ──────────────────────────────────────── */
 .cardArrow {
   position: absolute;
-  top: 2rem;
-  right: 2rem;
+  top: 1.5rem;
+  right: 1.5rem;
   color: #dddddd;
   transition: color 0.25s ease, transform 0.25s cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -234,7 +223,7 @@
     grid-template-columns: 1fr;
     gap: 4rem;
   }
-  
+
   .leftColumn {
     position: static;
     flex-direction: column;
@@ -269,11 +258,11 @@
   .section {
     padding: 5rem 0;
   }
-  
+
   .verticalHeadline {
     font-size: 2.5rem;
   }
-  
+
   .imageWrap {
     height: 300px;
   }

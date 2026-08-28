@@ -31,7 +31,7 @@ export default function OurDifference() {
   return (
     <section className={styles.section} id="difference">
       
-      <div className={styles.container}>
+      <div className="container">
 
         <div className={styles.splitLayout}>
           
