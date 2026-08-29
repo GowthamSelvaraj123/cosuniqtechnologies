@@ -63,61 +63,17 @@ const faqItems = [
 function OverviewSection() {
   const cards = [
     {
-      num: "01", name: "Web Development", href: "#web-dev",
-      desc: "Building fast, responsive websites and powerful web applications.",
+      num: "01", name: "Strategy & Consulting", href: "#",
+      desc: "Addressing your core brand strategy to connect directly with people.",
       icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
         </svg>
       ),
+      featured: true,
     },
     {
-      num: "02", name: "UI/UX Design", href: "#design",
-      desc: "Designing interfaces that perform, delight users, and drive conversions.",
-      icon: (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
-        </svg>
-      ),
-    },
-    {
-      num: "03", name: "E-Commerce", href: "#ecommerce",
-      desc: "Creating digital experiences that stand out and capture your audience.",
-      icon: (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
-        </svg>
-      ),
-    },
-    {
-      num: "04", name: "Custom Software", href: "#software",
-      desc: "Driving your brand&apos;s sales directly to the market with built-to-convert solutions.",
-      icon: (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
-        </svg>
-      ),
-    },
-    {
-      num: "05", name: "Mobile Apps", href: "#mobile",
-      desc: "Putting your business directly in their hands with engaging experiences.",
-      icon: (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
-        </svg>
-      ),
-    },
-    {
-      num: "06", name: "Cloud & DevOps", href: "#cloud",
-      desc: "Reliable infrastructure and deployment pipelines behind every product.",
-      icon: (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
-        </svg>
-      ),
-    },
-    {
-      num: "07", name: "Brand Identity", href: "#",
+      num: "02", name: "Brand Identity", href: "#",
       desc: "Positioning your brand to be exactly what people need it to be.",
       icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -126,14 +82,58 @@ function OverviewSection() {
       ),
     },
     {
-      num: "08", name: "Strategy", href: "#",
-      desc: "Addressing your core brand strategy to connect directly with people.",
+      num: "03", name: "UI / UX Design", href: "#design",
+      desc: "Designing interfaces that perform, delight users, and drive conversions.",
       icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          <circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
         </svg>
       ),
-      featured: true,
+    },
+    {
+      num: "04", name: "Web Development", href: "#web-dev",
+      desc: "Building fast, responsive websites and powerful web applications.",
+      icon: (
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+        </svg>
+      ),
+    },
+    {
+      num: "05", name: "Mobile App Development", href: "#mobile",
+      desc: "Putting your business directly in their hands with engaging experiences.",
+      icon: (
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+        </svg>
+      ),
+    },
+    {
+      num: "06", name: "E-Commerce Solutions", href: "#ecommerce",
+      desc: "Creating digital experiences that stand out and capture your audience.",
+      icon: (
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+      ),
+    },
+    {
+      num: "07", name: "AI & Custom Software", href: "#software",
+      desc: "Driving your brand&apos;s sales directly to the market with built-to-convert solutions.",
+      icon: (
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+        </svg>
+      ),
+    },
+    {
+      num: "08", name: "Cloud & DevOps", href: "#cloud",
+      desc: "Reliable infrastructure and deployment pipelines behind every product.",
+      icon: (
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
+        </svg>
+      ),
     },
   ];
 

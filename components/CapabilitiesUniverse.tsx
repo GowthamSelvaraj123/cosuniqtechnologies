@@ -133,15 +133,24 @@ const EcommerceIcon = () => (
   </svg>
 );
 
+const CloudIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round">
+    <Dots />
+    <path d="M16 16h-1.26A6 6 0 1 0 8 20h8a4 4 0 0 0 0-8z" stroke="currentColor" strokeWidth="1.2" />
+    <circle cx="12" cy="14" r="1.5" fill="#FF6B00" />
+    <circle cx="14" cy="14" r="2.5" fill="rgba(255,107,0,0.1)" />
+  </svg>
+);
+
 const services = [
-  { id: "branding",  name: "Branding",     desc: "Positioning your brand to be exactly what people need it to be.",          Icon: BrandingIcon  },
-  { id: "strategy",  name: "Strategy",     desc: "Addressing your core brand strategy to connect directly with people.",          Icon: StrategyIcon  },
-  { id: "ai",        name: "AI Solutions", desc: "Supporting your brand with intelligent AI tools and automated workflows.",            Icon: AIIcon        },
-  { id: "webapps",   name: "Web Apps",     desc: "Building powerful digital tools that streamline your daily operations.",   Icon: WebAppsIcon   },
-  { id: "mobile",    name: "Mobile Apps",  desc: "Putting your business directly in their hands with engaging experiences.",       Icon: MobileIcon    },
-  { id: "uiux",      name: "UI / UX",      desc: "Designing interfaces that perform, delight users, and drive conversions.",               Icon: UIUXIcon      },
-  { id: "websites",  name: "Websites",     desc: "Creating digital experiences that stand out and capture your audience.", Icon: WebsitesIcon  },
-  { id: "ecommerce", name: "E-Commerce",   desc: "Driving your brand's sales directly to the market with built-to-convert stores.",            Icon: EcommerceIcon },
+  { id: "strategy",  name: "Strategy & Consulting",  desc: "Addressing your core brand strategy to connect directly with people.",          Icon: StrategyIcon  },
+  { id: "branding",  name: "Brand Identity",         desc: "Positioning your brand to be exactly what people need it to be.",          Icon: BrandingIcon  },
+  { id: "uiux",      name: "UI / UX Design",         desc: "Designing interfaces that perform, delight users, and drive conversions.",               Icon: UIUXIcon      },
+  { id: "webdev",    name: "Web Development",        desc: "Creating digital experiences that stand out and capture your audience.", Icon: WebsitesIcon  },
+  { id: "mobile",    name: "Mobile App Development", desc: "Putting your business directly in their hands with engaging experiences.",       Icon: MobileIcon    },
+  { id: "ecommerce", name: "E-Commerce Solutions",   desc: "Driving your brand's sales directly to the market with built-to-convert stores.",            Icon: EcommerceIcon },
+  { id: "ai",        name: "AI & Custom Software",   desc: "Building powerful digital tools that streamline your daily operations.",            Icon: AIIcon        },
+  { id: "cloud",     name: "Cloud & DevOps",         desc: "Reliable infrastructure and deployment pipelines behind every product.",   Icon: CloudIcon   },
 ];
 
 export default function CapabilitiesUniverse() {
