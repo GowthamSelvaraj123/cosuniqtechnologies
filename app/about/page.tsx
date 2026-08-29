@@ -1,5 +1,6 @@
 import Link from "next/link";
 import InitReveal from "../../components/InitReveal";
+import InnerBanner from "../../components/InnerBanner";
 
 export const metadata = {
   title: "About | Cosuniq Technologies",
@@ -10,16 +11,10 @@ export default function About() {
   return (
     <>
       <InitReveal />
-      <section className="page-hero bg-mesh">
-        <div className="container">
-          <span className="eyebrow">About us</span>
-          <h1>Intelligence meets craft</h1>
-          <p>
-            Cosuniq Technologies is a digital solutions company blending software engineering with brand
-            and media — so your product, presence, and story stay aligned.
-          </p>
-        </div>
-      </section>
+      <InnerBanner 
+        title="Intelligence meets craft"
+        description="Cosuniq Technologies is a digital solutions company blending software engineering with brand and media — so your product, presence, and story stay aligned."
+      />
 
       <section>
         <div className="container about-grid">

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import InitReveal from "../../components/InitReveal";
+import InnerBanner from "../../components/InnerBanner";
 
 export const metadata = {
   title: "Services | Cosuniq Technologies",
@@ -10,16 +11,10 @@ export default function Services() {
   return (
     <>
       <InitReveal />
-      <section className="page-hero bg-mesh">
-        <div className="container">
-          <span className="eyebrow">Services</span>
-          <h1>Everything you need to launch &amp; scale</h1>
-          <p>
-            Six focused capabilities — engineering, commerce, design, and media — delivered with clear
-            scope and measurable outcomes.
-          </p>
-        </div>
-      </section>
+      <InnerBanner 
+        title="Everything you need to launch & scale"
+        description="Six focused capabilities — engineering, commerce, design, and media — delivered with clear scope and measurable outcomes."
+      />
 
       <section id="software">
         <div className="container service-detail-grid">

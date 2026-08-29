@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import InitReveal from "../../components/InitReveal";
+import InnerBanner from "../../components/InnerBanner";
 
 export default function Portfolio() {
   const [filter, setFilter] = useState("all");
@@ -17,13 +18,10 @@ export default function Portfolio() {
       <title>Work / Portfolio | Cosuniq Technologies</title>
       <meta name="description" content="Selected Cosuniq projects across software, e-commerce, branding, and video." />
 
-      <section className="page-hero bg-mesh">
-        <div className="container">
-          <span className="eyebrow">Portfolio</span>
-          <h1>Selected work</h1>
-          <p>A snapshot of software, commerce, brand, and video projects we’ve shipped.</p>
-        </div>
-      </section>
+      <InnerBanner 
+        title="Selected work"
+        description="A snapshot of software, commerce, brand, and video projects we’ve shipped."
+      />
 
       <section>
         <div className="container">

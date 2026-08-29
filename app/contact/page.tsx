@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import InitReveal from "../../components/InitReveal";
+import InnerBanner from "../../components/InnerBanner";
 
 export default function Contact() {
   const [successMessage, setSuccessMessage] = useState("");
@@ -26,16 +27,13 @@ export default function Contact() {
   return (
     <>
       <InitReveal />
-      <title>Contact | Cosuniq Technologies</title>
-      <meta name="description" content="Contact Cosuniq Technologies in Udumalpet / Coimbatore. Request a quote for software, CRM, e-commerce, web, branding, or video." />
 
-      <section className="page-hero bg-mesh">
-        <div className="container">
-          <span className="eyebrow">Contact</span>
-          <h1>Let’s talk about your next build</h1>
-          <p>Share a short brief — we’ll reply with next steps and a rough timeline.</p>
-        </div>
-      </section>
+
+      <InnerBanner 
+        eyebrow="Contact Us"
+        title="Connect. Collaborate. Build."
+        description="Share a short brief — we’ll reply with next steps and a rough timeline."
+      />
 
       <section>
         <div className="container contact-layout">
