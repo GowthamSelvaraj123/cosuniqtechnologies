@@ -607,15 +607,24 @@
 
 
 /* ── 04: VISION + MISSION ──────────────────────────── */
+.visionMissionWrapper {
+  background-color: #F7F7F7;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+}
+
 .visionMission {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 80vh;
-  margin: 4rem auto 8rem auto;
-  max-width: 1400px;
   width: 92%;
+  max-width: 1400px;
   border-radius: 32px;
   overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
 }
 
 .vmBlock {

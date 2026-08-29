@@ -195,38 +195,40 @@ export default function AboutContent() {
       </section>
 
       {/* 04 — VISION + MISSION */}
-      <section className={styles.visionMission}>
-        <motion.div 
-          className={`${styles.vmBlock} ${styles.visionBlock}`}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className={`eyebrow ${styles.eyebrowWrap} ${styles.visionEyebrow}`} style={{ marginBottom: '3rem', display: 'inline-flex', alignSelf: 'flex-start' }}>
-            <span className="spark spark--inline" />
-            Vision
-          </div>
-          <div className={styles.vmText}>
-            To become the trusted creative technology partner for ambitious businesses shaping what comes next<span className={styles.visionDot}>.</span>
-          </div>
-        </motion.div>
+      <section className={styles.visionMissionWrapper}>
+        <div className={styles.visionMission}>
+          <motion.div 
+            className={`${styles.vmBlock} ${styles.visionBlock}`}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className={`eyebrow ${styles.eyebrowWrap} ${styles.visionEyebrow}`} style={{ marginBottom: '3rem', display: 'inline-flex', alignSelf: 'flex-start' }}>
+              <span className="spark spark--inline" />
+              Vision
+            </div>
+            <div className={styles.vmText}>
+              To become the trusted creative technology partner for ambitious businesses shaping what comes next<span className={styles.visionDot}>.</span>
+            </div>
+          </motion.div>
 
-        <motion.div 
-          className={`${styles.vmBlock} ${styles.missionBlock}`}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <div className={`eyebrow ${styles.eyebrowWrap}`} style={{ marginBottom: '3rem', display: 'inline-flex', alignSelf: 'flex-start' }}>
-            <span className="spark spark--inline" />
-            Mission
-          </div>
-          <div className={styles.vmText}>
-            To transform ideas into purposeful brands and high-performing digital experiences that create lasting impact<span className={styles.dot}>.</span>
-          </div>
-        </motion.div>
+          <motion.div 
+            className={`${styles.vmBlock} ${styles.missionBlock}`}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <div className={`eyebrow ${styles.eyebrowWrap}`} style={{ marginBottom: '3rem', display: 'inline-flex', alignSelf: 'flex-start' }}>
+              <span className="spark spark--inline" />
+              Mission
+            </div>
+            <div className={styles.vmText}>
+              To transform ideas into purposeful brands and high-performing digital experiences that create lasting impact<span className={styles.dot}>.</span>
+            </div>
+          </motion.div>
+        </div>
       </section>
 
       {/* 05 — WHAT WE BELIEVE */}
