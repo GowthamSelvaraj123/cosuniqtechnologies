@@ -63,7 +63,6 @@
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 20px;
-  padding: 2rem 1.75rem;
   display: flex;
   flex-direction: column;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02);
@@ -76,6 +75,15 @@
     border-color 0.25s ease,
     transform 0.25s cubic-bezier(0.25, 1, 0.5, 1),
     box-shadow 0.25s ease;
+}
+
+.scatterCard {
+  padding: 2rem 1.75rem;
+}
+
+.formCard {
+  padding: 0.25rem 0.75rem;
+  border-radius: 14px;
 }
 
 .scatterCard:hover, 
@@ -91,17 +99,22 @@
 
 /* ── Contact Info Cards ──────────────────────────── */
 .infoCards {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
+}
+@media (max-width: 768px) {
+  .infoCards {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Staggering */
-@media (min-width: 600px) {
-  .scatterCard:nth-child(1) { --card-y: 0rem; --card-rot: -2deg; margin-right: 2rem;}
-  .scatterCard:nth-child(2) { --card-y: 1.5rem; --card-rot: 1.5deg; margin-left: 2rem;}
-  .scatterCard:nth-child(3) { --card-y: 0.5rem; --card-rot: -1.5deg; margin-right: 2rem;}
-  .scatterCard:nth-child(4) { --card-y: 2rem; --card-rot: 2deg; margin-left: 2rem;}
+@media (min-width: 768px) {
+  .scatterCard:nth-child(1) { --card-y: 0rem; --card-rot: -1.5deg; }
+  .scatterCard:nth-child(2) { --card-y: 1.5rem; --card-rot: 1deg; }
+  .scatterCard:nth-child(3) { --card-y: 0.5rem; --card-rot: 1.5deg; }
+  .scatterCard:nth-child(4) { --card-y: 2rem; --card-rot: -1deg; }
 }
 
 /* Dot pattern inside cards */
@@ -183,63 +196,67 @@
 
 /* ── Form Cards ──────────────────────────────────── */
 .formContainer {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
 }
 
+@media (max-width: 768px) {
+  .formContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
+.formCardFull {
+  grid-column: 1 / -1;
+}
+
 /* Staggering form fields */
-@media (min-width: 600px) {
-  .formCard:nth-child(1) { --card-y: 0rem; --card-rot: 1.5deg; margin-left: 1rem;}
-  .formCard:nth-child(2) { --card-y: 1.5rem; --card-rot: -1deg; margin-right: 1.5rem;}
-  .formCard:nth-child(3) { --card-y: 0.5rem; --card-rot: 2deg; margin-left: 1.5rem;}
-  .formCard:nth-child(4) { --card-y: 2rem; --card-rot: -1.5deg; margin-right: 1rem;}
-  .formCard:nth-child(5) { --card-y: 1rem; --card-rot: 1deg; margin-left: 0.5rem;}
+@media (min-width: 768px) {
+  .formCard:nth-child(1) { --card-y: 0rem; --card-rot: -1deg; }
+  .formCard:nth-child(2) { --card-y: 0.5rem; --card-rot: 1deg; }
+  .formCard:nth-child(3) { --card-y: 0.25rem; --card-rot: 1.5deg; }
+  .formCard:nth-child(4) { --card-y: -0.25rem; --card-rot: -1deg; }
+  .formCard:nth-child(5) { --card-y: 0rem; --card-rot: 0.5deg; }
 }
 
 .formGroup {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-}
-
-.formGroup label {
-  font-family: var(--display, sans-serif);
-  font-weight: 800;
-  font-size: 1.15rem;
-  color: #111;
 }
 
 .formGroup input,
-.formGroup select,
 .formGroup textarea {
   border: none;
   background: transparent;
   font-family: inherit;
   font-size: 1.05rem;
   color: #333;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  border-radius: 0;
-  transition: border-color 0.3s;
+  padding: 1rem 0.5rem;
+  width: 100%;
+}
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+  color: #777;
 }
 
 .formGroup input:focus,
-.formGroup select:focus,
 .formGroup textarea:focus {
   outline: none;
-  border-bottom-color: #ff6a00;
 }
 
 .formGroup textarea {
-  min-height: 120px;
+  min-height: 160px;
   resize: vertical;
 }
 
 .errorText {
   color: #e53e3e;
   font-size: 0.85rem;
-  margin-top: 0.5rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -259,11 +276,12 @@
 }
 
 .submitWrapper {
-  margin-top: 2rem;
+  margin-top: 0.5rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
   gap: 1rem;
+  grid-column: 1 / -1;
 }
 
 /* Borrow CTA style from CapabilitiesUniverse */
@@ -298,4 +316,25 @@
 }
 .ctaBtn:hover svg {
   transform: translateX(4px);
+}
+
+/* Social Icons */
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.1);
+  color: #111;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+.socialIcon:hover {
+  background: #ff6a00;
+  color: #fff;
+  border-color: #ff6a00;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(255, 107, 0, 0.2);
 }
