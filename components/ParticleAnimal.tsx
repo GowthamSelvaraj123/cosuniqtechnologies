@@ -15,8 +15,11 @@ export default function ParticleAnimal({ animal = '🦋' }: ParticleAnimalProps)
     const ctx = canvas.getContext('2d', { willReadFrequently: true });
     if (!ctx) return;
 
-    let width = 350;
-    let height = 350;
+    let width = canvas.parentElement?.clientWidth || 350;
+    let height = canvas.parentElement?.clientHeight || 350;
+    if (width < 100) width = 350;
+    if (height < 100) height = 350;
+    
     canvas.width = width;
     canvas.height = height;
 
@@ -25,6 +28,28 @@ export default function ParticleAnimal({ animal = '🦋' }: ParticleAnimalProps)
     let currentState: 'FORMING' | 'FORMED' | 'DISSOLVING' | 'SCATTERED' = 'FORMING';
     let lastTime = performance.now();
     let stateTimer = 0;
+    
+    // Resize Observer to handle dynamic screen sizes
+    const resizeObserver = new ResizeObserver((entries) => {
+      for (let entry of entries) {
+        if (entry.target === canvas.parentElement) {
+          const newWidth = entry.contentRect.width;
+          const newHeight = entry.contentRect.height;
+          if (newWidth > 0 && newHeight > 0) {
+            // Only update bounds for scattering, don't re-init to avoid popping
+            width = newWidth;
+            height = newHeight;
+            canvas.width = width;
+            canvas.height = height;
+            // Need to re-init so the butterfly centers correctly when resized
+            init();
+          }
+        }
+      }
+    });
+    if (canvas.parentElement) {
+      resizeObserver.observe(canvas.parentElement);
+    }
 
     class Particle {
       x: number;
@@ -201,6 +226,7 @@ export default function ParticleAnimal({ animal = '🦋' }: ParticleAnimalProps)
       cancelAnimationFrame(animationFrameId);
       canvas.removeEventListener('mousemove', handleMouseMove);
       canvas.removeEventListener('mouseleave', handleMouseLeave);
+      resizeObserver.disconnect();
     };
   }, [animal]);
 

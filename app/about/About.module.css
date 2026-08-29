@@ -93,6 +93,8 @@
   line-height: 1.08;
   color: #111111;
   margin: 0 0 1.5rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .dot {
