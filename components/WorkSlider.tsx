@@ -35,8 +35,11 @@ export default function WorkSlider() {
             <span className="eyebrow" style={{
               display: 'inline-flex',
               alignItems: 'center',
-              background: 'rgba(0, 0, 0, 0.4)',
-              color: '#ffffff',
+              gap: '0.6rem',
+              background: 'rgba(255, 255, 255, 0.05)',
+              backdropFilter: 'blur(10px)',
+              border: '1px solid rgba(255, 255, 255, 0.15)',
+              color: 'rgba(255, 255, 255, 0.9)',
               padding: '0.4rem 1rem',
               borderRadius: '30px',
               fontSize: '0.75rem',
@@ -44,7 +47,7 @@ export default function WorkSlider() {
               letterSpacing: '0.12em',
               textTransform: 'uppercase',
               marginBottom: '1rem'
-            }}><span className="spark spark--inline"></span> Featured work</span>
+            }}><span className="spark spark--inline"></span>Featured work</span>
             <h2>Work that’s worked.</h2>
           </div>
           <div className="slider-controls">

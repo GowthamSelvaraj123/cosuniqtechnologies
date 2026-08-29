@@ -150,7 +150,7 @@
   font-family: var(--font-plus-jakarta), sans-serif;
   font-size: clamp(1rem, 1.4vw, 1.15rem);
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.85);
+  color: #ffffff;
   margin: 0 0 3rem;
   font-weight: 400;
   width: 100%;
@@ -170,10 +170,10 @@
   background: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 18px;
-  padding: 1.5rem;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  flex-direction: row;
+  overflow: hidden;
   cursor: pointer;
   --card-x: 0px;
   --card-rot: 0deg;
@@ -191,34 +191,47 @@
     0 24px 48px rgba(0, 0, 0, 0.1);
 }
 
-/* Top row: icon + header + arrow */
-.cardTop {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 1rem;
-  width: 100%;
-}
-
-/* Header: tag + title stacked */
-.cardHeader {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-
 /* Scatter — horizontal offsets for 2 cards */
 .card:nth-child(1) { --card-x: -24px; --card-rot: -1deg;   }
 .card:nth-child(2) { --card-x:  36px; --card-rot:  1.2deg; }
 
-/* cardBody */
-.cardBody {
+/* Reverse layout for 2nd card */
+.card:nth-child(2) {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 900px) {
+  .card, .card:nth-child(2) {
+    flex-direction: column;
+  }
+}
+
+/* Flex items */
+.cardBrand {
+  flex: 0 0 35%;
+  background: #FFF5EC; /* Light orange */
+  padding: 2.5rem 2rem;
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.cardContent {
   flex: 1;
+  background: #ffffff;
+  padding: 2.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
 }
 
 /* ── Icon ────────────────────────────────── */
@@ -259,8 +272,9 @@
 
 /* ── Arrow ────────────────────────────────── */
 .cardArrow {
-  flex-shrink: 0;
-  align-self: flex-start;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
   color: #dddddd;
   transition: color 0.25s ease, transform 0.25s cubic-bezier(0.25, 1, 0.5, 1);
 }

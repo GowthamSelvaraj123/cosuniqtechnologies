@@ -124,21 +124,24 @@ export default function AboutCosuniq() {
               onMouseEnter={() => setHovered(card.id)}
               onMouseLeave={() => setHovered(null)}
             >
-              {/* Top row: icon + tag + title + arrow */}
-              <div className={styles.cardTop}>
+              {/* Brand side: Icon + Title */}
+              <div className={styles.cardBrand}>
                 <span className={styles.icon}><card.Icon /></span>
                 <div className={styles.cardHeader}>
                   <span className={styles.cardTag}>{card.tag}</span>
                   <h3 className={styles.cardName}>{card.name}</h3>
                 </div>
+              </div>
+              
+              {/* Description side */}
+              <div className={styles.cardContent}>
                 <span className={styles.cardArrow} aria-hidden="true">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" />
                   </svg>
                 </span>
+                <p className={styles.cardDesc}>{card.desc}</p>
               </div>
-              {/* Description full width below */}
-              <p className={styles.cardDesc}>{card.desc}</p>
             </article>
           ))}
         </div>
