@@ -365,9 +365,27 @@
   top: 15px;
   left: calc(-50vw + 50%);
   right: calc(-50vw + 50%);
-  height: 1px;
-  background: rgba(17, 17, 17, 0.1);
+  height: 2px;
+  background: rgba(17, 17, 17, 0.05);
   z-index: 0;
+}
+
+.timelineLaser {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, #FF6B00 50%, transparent 100%);
+  background-size: 150px 100%;
+  background-repeat: no-repeat;
+  animation: scanLaser 6s linear infinite;
+  z-index: 1;
+}
+
+@keyframes scanLaser {
+  0% { background-position: -150px 0; }
+  100% { background-position: calc(100% + 150px) 0; }
 }
 
 .timelineProgress {
@@ -406,9 +424,10 @@
   left: -5px;
   right: -5px;
   bottom: -5px;
-  border: 1.5px solid rgba(255, 107, 0, 0.6);
+  border: 1.5px solid rgba(255, 107, 0, 0.8);
   border-radius: 50%;
-  animation: pulseDot 2.5s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+  animation: pulseDot 6s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+  animation-delay: var(--dot-delay, 0s);
 }
 
 .timelineStep:hover .timelineDot {
@@ -421,9 +440,12 @@
     transform: scale(0.8);
     opacity: 1;
   }
-
+  15% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
   100% {
-    transform: scale(2.4);
+    transform: scale(2.6);
     opacity: 0;
   }
 }

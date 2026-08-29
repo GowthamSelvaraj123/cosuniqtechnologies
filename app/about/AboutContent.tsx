@@ -107,7 +107,7 @@ export default function AboutContent() {
 
           <div className={styles.timeline}>
             <div className={styles.timelineLine}></div>
-            <motion.div className={styles.timelineProgress} style={{ scaleX: lineScale }}></motion.div>
+            <div className={styles.timelineLaser}></div>
 
             {[
               { title: "Survival", desc: "A primal instinct to bridge the gap between creative vision and execution." },
@@ -125,7 +125,10 @@ export default function AboutContent() {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: index * 0.15 }}
               >
-                <div className={styles.timelineDot}></div>
+                <div 
+                  className={styles.timelineDot}
+                  style={{ "--dot-delay": `${index * 1}s` } as React.CSSProperties}
+                ></div>
                 <h3>{step.title}</h3>
                 <p>{step.desc}</p>
               </motion.div>
