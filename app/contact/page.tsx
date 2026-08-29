@@ -211,21 +211,6 @@ export default function Contact() {
             </form>
 
             <div className={styles.funAnimationContainer}>
-              <div className={styles.rotatingBadge}>
-                <svg viewBox="0 0 100 100" width="150" height="150" className={styles.badgeText}>
-                  <path id="circlePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="transparent" />
-                  <text>
-                    <textPath href="#circlePath" fill="#111" fontSize="11" fontWeight="800" letterSpacing="1px">
-                      LET'S BUILD SOMETHING GREAT • LET'S BUILD SOMETHING GREAT • 
-                    </textPath>
-                  </text>
-                </svg>
-                <div className={styles.badgeStar}>
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="#FF6B00">
-                    <path d="M12 0l3.5 8.5L24 12l-8.5 3.5L12 24l-3.5-8.5L0 12l8.5-3.5L12 0z"/>
-                  </svg>
-                </div>
-              </div>
               <div className={styles.floatingShape1}></div>
               <div className={styles.floatingShape2}></div>
             </div>
