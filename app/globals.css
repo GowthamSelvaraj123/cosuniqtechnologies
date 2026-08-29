@@ -429,9 +429,6 @@ body.has-cursor .cursor-dot {
   background: rgba(255, 255, 255, 0.1);
 }
 
-.band--black .work-slide {
-  border-color: #FFE6CC;
-}
 
 .band--black .slider-btn {
   background: transparent;
@@ -1073,11 +1070,6 @@ body.has-cursor .cursor-dot {
   transform: scale(1.05);
 }
 
-.work-slider-wrap {
-  overflow: hidden;
-  padding-left: max(1.25rem, calc((100vw - var(--max)) / 2));
-}
-
 .work-slider {
   display: flex;
   gap: 1.5rem;
@@ -1086,9 +1078,10 @@ body.has-cursor .cursor-dot {
   scroll-behavior: smooth;
   padding-top: 2rem;
   padding-bottom: 2.5rem;
-  padding-right: 1.25rem;
-  padding-left: 2rem;
-  margin-left: -2rem;
+  padding-left: 1.5rem;
+  margin-left: -1.5rem;
+  margin-right: calc(-50vw + 50%);
+  padding-right: calc(50vw - 50% + 1rem);
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -1103,10 +1096,10 @@ body.has-cursor .cursor-dot {
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 12px;
-  padding: 1.75rem 1.5rem 1.5rem;
+  padding: 1rem 1rem 1rem;
   position: relative;
   overflow: visible;
 
@@ -1129,14 +1122,17 @@ body.has-cursor .cursor-dot {
     --card-y: 0rem;
     --card-rot: -1.5deg;
   }
+
   .work-slide:nth-child(4n + 2) {
     --card-y: -1rem;
     --card-rot: 1deg;
   }
+
   .work-slide:nth-child(4n + 3) {
     --card-y: 0.5rem;
     --card-rot: -1deg;
   }
+
   .work-slide:nth-child(4n + 4) {
     --card-y: -0.5rem;
     --card-rot: 1.5deg;
@@ -1158,7 +1154,7 @@ body.has-cursor .cursor-dot {
 .work-slide__img {
   position: relative;
   width: 100%;
-  aspect-ratio: 3/4;
+  aspect-ratio: 4/3;
   border-radius: 12px;
   overflow: hidden;
   background-color: #FAFAFA;
@@ -1179,7 +1175,7 @@ body.has-cursor .cursor-dot {
   font-family: var(--font-plus-jakarta), sans-serif;
   font-size: 1.15rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #111;
   margin-bottom: 0.5rem;
   letter-spacing: -0.04em;
   white-space: nowrap;
@@ -1188,7 +1184,7 @@ body.has-cursor .cursor-dot {
 }
 
 .work-slide__meta p {
-  color: rgba(255, 255, 255, 0.7);
+  color: #666;
   line-height: 1.6;
   font-size: 0.92rem;
   margin-bottom: 1.25rem;
@@ -1207,7 +1203,8 @@ body.has-cursor .cursor-dot {
   text-transform: uppercase;
   padding: 0.35rem 0.8rem;
   border-radius: 20px;
-  background: #FFFFFF;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   color: #111111;
 }
 

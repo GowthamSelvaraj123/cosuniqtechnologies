@@ -18,11 +18,10 @@ export default function WorkSlider() {
       style={{ 
         position: 'relative', 
         overflow: 'hidden',
-        minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        backgroundColor: 'rgb(68 27 0)', /* Darker burnt orange */
+        backgroundColor: '#000000db', /* Darker burnt orange */
         backgroundImage: 'url(/assets/images/office.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -63,9 +62,7 @@ export default function WorkSlider() {
             </button>
           </div>
         </div>
-      </div>
 
-      <div className="work-slider-wrap">
         <div className="work-slider" ref={sliderRef}>
           <article className="work-slide">
             <div className="work-slide__img">
@@ -73,7 +70,7 @@ export default function WorkSlider() {
             </div>
             <div className="work-slide__meta">
               <h3>Freelance Experience</h3>
-              <p>Designed and built across 100+ different categories.</p>
+              <p>Designed and engineered tailored digital experiences across more than 100 diverse industry categories.</p>
               <div className="tags"><span>Freelance</span><span>Design</span></div>
             </div>
           </article>
@@ -83,7 +80,7 @@ export default function WorkSlider() {
             </div>
             <div className="work-slide__meta">
               <h3>Orangebabe</h3>
-              <p>Playful e-commerce experience for kids.</p>
+              <p>Developed a vibrant, playful e-commerce platform for children that significantly boosted customer engagement.</p>
               <div className="tags"><span>E-com</span><span>Brand</span></div>
             </div>
           </article>
@@ -93,7 +90,7 @@ export default function WorkSlider() {
             </div>
             <div className="work-slide__meta">
               <h3>Own Product: CRM & ERP</h3>
-              <p>Seamless cross integrations for our internal product.</p>
+              <p>Engineered seamless, real-time cross integrations between our internal CRM and ERP software products.</p>
               <div className="tags"><span>CRM</span><span>ERP</span></div>
             </div>
           </article>
@@ -103,7 +100,7 @@ export default function WorkSlider() {
             </div>
             <div className="work-slide__meta">
               <h3>Lumen Brand</h3>
-              <p>Identity system for a growing fintech.</p>
+              <p>Crafted a comprehensive, scalable identity system and digital presence for a growing fintech.</p>
               <div className="tags"><span>Brand</span><span>Design</span></div>
             </div>
           </article>
@@ -113,7 +110,7 @@ export default function WorkSlider() {
             </div>
             <div className="work-slide__meta">
               <h3>Launch Reels</h3>
-              <p>Product film series for social.</p>
+              <p>Produced high-impact, engaging product film series designed specifically for social media marketing campaigns.</p>
               <div className="tags"><span>Video</span><span>Motion</span></div>
             </div>
           </article>
