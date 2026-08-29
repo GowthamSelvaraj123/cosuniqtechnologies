@@ -116,7 +116,7 @@
 }
 
 /* ── OVERVIEW ── */
-.overview { padding: 5rem 0 6rem; background: #ffffff; position: relative; }
+.overview { padding: 5rem 0 6rem; background: #ffffff !important; position: relative; }
 
 .overviewHeader {
   display: flex;
@@ -148,23 +148,40 @@
 }
 
 .servicesGrid {
-  display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem;
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 1.25rem;
+  padding: 1rem 0.5rem;
 }
 
 .serviceCard {
   padding: 1.75rem; border-radius: 16px;
-  background: #faf9f8;
-  border: 1.5px solid rgba(0,0,0,0.06);
+  background: #FFF5EC;
+  border: 1.5px solid rgba(255,106,0,0.12);
   cursor: pointer; position: relative; overflow: hidden;
   text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 0.75rem;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s cubic-bezier(0.25,1,0.5,1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.4s cubic-bezier(0.25,1,0.5,1);
+  /* Scatter base */
+  transform: rotate(var(--rot, 0deg)) translate(var(--tx, 0px), var(--ty, 0px));
+  will-change: transform;
 }
+/* Per-card scatter offsets */
+.serviceCard:nth-child(1)  { --rot: -1.2deg; --tx: -3px; --ty:  2px; }
+.serviceCard:nth-child(2)  { --rot:  0.8deg; --tx:  2px; --ty: -3px; }
+.serviceCard:nth-child(3)  { --rot: -0.6deg; --tx: -1px; --ty:  4px; }
+.serviceCard:nth-child(4)  { --rot:  1.4deg; --tx:  3px; --ty:  1px; }
+.serviceCard:nth-child(5)  { --rot:  0.9deg; --tx: -2px; --ty: -2px; }
+.serviceCard:nth-child(6)  { --rot: -1.1deg; --tx:  4px; --ty:  3px; }
+.serviceCard:nth-child(7)  { --rot:  0.5deg; --tx: -3px; --ty:  1px; }
+.serviceCard:nth-child(8)  { --rot: -1.5deg; --tx:  2px; --ty: -4px; }
+
 .serviceCard:hover {
-  border-color: #ff6a00; box-shadow: 0 8px 32px rgba(255,106,0,0.1); transform: translateY(-3px);
+  --rot: 0deg; --tx: 0px; --ty: -6px;
+  border-color: #ff6a00;
+  box-shadow: 0 12px 40px rgba(255,106,0,0.15);
 }
 .serviceCardFeatured {
   border-color: #ff6a00 !important;
-  background: #fff7f2;
+  background: #FFE8D0;
+  box-shadow: 0 4px 20px rgba(255,106,0,0.12);
 }
 
 .serviceCardTop {

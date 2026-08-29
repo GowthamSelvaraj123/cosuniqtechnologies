@@ -148,7 +148,7 @@ function OverviewSection() {
               OUR SERVICES
             </span>
             <h2 className={styles.overviewHeadline}>
-              Everything your brand needs<span className={styles.overviewDot}>.</span>
+              Everything your product needs<span className={styles.overviewDot}>.</span>
             </h2>
           </div>
           <a href="/contact" className={styles.overviewCta}>
@@ -667,8 +667,8 @@ export default function ServicesPage() {
   return (
     <>
       <InnerBanner
-        title="Everything you need to launch & scale"
-        description="From strategy and design to development and deployment — six capabilities, one team, measurable outcomes."
+        title="We Build. We Design. We Deliver."
+        description="Web development, UI/UX design, e-commerce, custom software, mobile apps & cloud — end-to-end digital services for ambitious businesses."
         bgImage="/assets/images/office.jpg"
       />
       <OverviewSection />

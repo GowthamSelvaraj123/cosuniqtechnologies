@@ -185,7 +185,7 @@ export default function CapabilitiesUniverse() {
               Our Services
             </span>
             <h2 className={styles.headline}>
-              Everything your brand needs<span className={styles.dot}>.</span>
+              Everything your product needs<span className={styles.dot}>.</span>
             </h2>
           </div>
           <Link href="/services" className={styles.cta}>
