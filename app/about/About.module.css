@@ -742,7 +742,7 @@
   /* Buffer for hover animations on left and bottom */
   padding-left: 1rem;
   padding-bottom: 4rem;
-  padding-top: 1rem;
+  padding-top: 2rem;
   margin-left: -1rem;
   margin-top: -1rem;
 
@@ -794,22 +794,22 @@
 @media (min-width: 768px) {
   .teamCard:nth-child(4n + 1) {
     --card-y: 0rem;
-    --card-rot: -2deg;
+    --card-rot: -1.5deg;
   }
 
   .teamCard:nth-child(4n + 2) {
-    --card-y: 2.5rem;
-    --card-rot: 1.5deg;
+    --card-y: -1rem;
+    --card-rot: 1deg;
   }
 
   .teamCard:nth-child(4n + 3) {
     --card-y: 0.5rem;
-    --card-rot: -1.5deg;
+    --card-rot: -1deg;
   }
 
   .teamCard:nth-child(4n + 4) {
-    --card-y: 3rem;
-    --card-rot: 2.5deg;
+    --card-y: -0.5rem;
+    --card-rot: 1.5deg;
   }
 }
 
