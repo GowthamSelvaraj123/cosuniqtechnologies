@@ -82,6 +82,7 @@
 }
 
 .formCard {
+  background: #FFF2E8; /* light orange */
   padding: 0.25rem 0.75rem;
   border-radius: 14px;
 }
@@ -200,6 +201,26 @@
 
 
 /* ── Form Cards ──────────────────────────────────── */
+.formWrapper {
+  background: #ffffff;
+  padding: 2.5rem 2rem;
+  border-radius: 32px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transform: rotate(1.5deg) translateY(-10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.formWrapper:hover {
+  transform: rotate(0deg) translateY(-15px);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 600px) {
+  .formWrapper {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
 .formContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;

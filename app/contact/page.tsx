@@ -15,32 +15,38 @@ interface FormErrors {
 export default function Contact() {
   const [successMessage, setSuccessMessage] = useState("");
   const [errors, setErrors] = useState<FormErrors>({});
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    const name = formData.get("name") as string;
-    const email = formData.get("email") as string;
-    const message = formData.get("message") as string;
-    
+    const firstName = formData.get("firstName") as string | null;
+    const email = formData.get("email") as string | null;
+    const message = formData.get("message") as string | null;
+
     const newErrors: FormErrors = {};
-    if (!name.trim()) newErrors.name = "Name is required.";
-    if (!email.trim()) {
+    if (!firstName?.trim()) newErrors.name = "First name is required.";
+    if (!email?.trim()) {
       newErrors.email = "Email is required.";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      newErrors.email = "Please enter a valid email address.";
+      newErrors.email = "Please enter a valid email.";
     }
-    if (!message.trim()) newErrors.message = "Project details are required.";
+    if (!message?.trim()) newErrors.message = "Please tell us about your project.";
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
-      setSuccessMessage("");
-      return;
+    } else {
+      setErrors({});
+      setSubmitted(true);
+      const nameStr = firstName ? firstName.trim().split(" ")[0] : "there";
+      setSuccessMessage(`Thanks ${nameStr}! We'll get back to you soon.`);
+      e.currentTarget.reset();
+      
+      setTimeout(() => {
+        setSubmitted(false);
+        setSuccessMessage("");
+      }, 5000);
     }
-
-    setErrors({});
-    setSuccessMessage(`Thanks ${name.trim().split(" ")[0]}! We'll get back to you soon.`);
-    e.currentTarget.reset();
   };
 
   return (
@@ -147,7 +153,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <form className="reveal" id="contact-form" noValidate onSubmit={handleSubmit}>
+          <form className={`reveal ${styles.formWrapper}`} id="contact-form" noValidate onSubmit={handleSubmit}>
             <div className={styles.formContainer}>
               <div className={styles.formCard}>
                 <div className={styles.formGroup}>
