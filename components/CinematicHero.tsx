@@ -16,6 +16,29 @@ const sequence = [
 const TOTAL_MS = sequence.length * 500;
 
 export default function CinematicHero() {
+  const [show, setShow] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    const visited = sessionStorage.getItem("cosuniq_visited");
+    if (visited) {
+      setShow(false);
+    } else {
+      sessionStorage.setItem("cosuniq_visited", "true");
+      setShow(true);
+    }
+  }, []);
+
+  // Prevent hydration flash by showing a solid background until session is checked
+  if (show === null) {
+    return <div style={{ position: "fixed", inset: 0, backgroundColor: "#f4f4f4", zIndex: 999999 }} />;
+  }
+
+  if (!show) return null;
+
+  return <CinematicHeroInner />;
+}
+
+function CinematicHeroInner() {
   const [currentIndex, setCurrentIndex]                   = useState(0);
   const [isExiting, setIsExiting]                         = useState(false);
   const [isEntered, setIsEntered]                         = useState(false);

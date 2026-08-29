@@ -3,7 +3,6 @@ import CinematicHero from "../components/CinematicHero";
 import LivingBrandHero from "../components/LivingBrandHero";
 import OurDifference from "../components/OurDifference";
 import AboutCosuniq from "../components/AboutCosuniq";
-import BrandPhilosophy from "../components/BrandPhilosophy";
 import FinalCta from "../components/FinalCta";
 import CapabilitiesUniverse from "../components/CapabilitiesUniverse";
 import WorkSlider from "../components/WorkSlider";
@@ -31,7 +30,6 @@ export default function Home() {
       
       <OurDifference />
       <AboutCosuniq />
-      <BrandPhilosophy />
       <FinalCta />
 
     </>

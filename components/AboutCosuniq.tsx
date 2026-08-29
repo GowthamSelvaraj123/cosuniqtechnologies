@@ -56,22 +56,15 @@ const cards = [
     id: "vision",
     tag: "OUR VISION",
     name: "See what comes next.",
-    desc: "To become the trusted creative technology partner for ambitious businesses shaping what comes next.",
+    desc: "We envision a world where every ambitious business — regardless of size — has access to world-class creative and technology expertise. To become the most trusted creative technology partner for forward-thinking brands, helping them not just keep up with change, but lead it. We see beyond trends and build for what endures.",
     Icon: VisionIcon,
   },
   {
     id: "mission",
     tag: "OUR MISSION",
     name: "Build what matters.",
-    desc: "To transform ideas into purposeful brands and high-performing digital experiences that create lasting impact.",
+    desc: "Our mission is to transform bold ideas into purposeful brands and high-performing digital experiences that create lasting impact. We bring strategy, design, and technology together under one roof — working closely with our clients to deliver solutions that are not just beautiful, but measurably effective. Every project we take on is a commitment to excellence.",
     Icon: MissionIcon,
-  },
-  {
-    id: "approach",
-    tag: "OUR APPROACH",
-    name: "Think. Create. Build.",
-    desc: "Three words. One process. Every project starts with deep thinking, fuelled by creativity, and delivered with engineering precision.",
-    Icon: ThinkIcon,
   },
 ];
 
@@ -102,7 +95,7 @@ export default function AboutCosuniq() {
         <div className={styles.header}>
           <div>
             <span className={styles.eyebrowWrap}>
-              <span className={styles.spark} />
+              <span className={styles.spark}>✦</span>
               About Cosuniq
             </span>
             <h2 className={styles.headline}>
@@ -131,17 +124,21 @@ export default function AboutCosuniq() {
               onMouseEnter={() => setHovered(card.id)}
               onMouseLeave={() => setHovered(null)}
             >
-              <span className={styles.icon}><card.Icon /></span>
-              <div className={styles.cardBody}>
-                <span className={styles.cardTag}>{card.tag}</span>
-                <h3 className={styles.cardName}>{card.name}</h3>
-                <p className={styles.cardDesc}>{card.desc}</p>
+              {/* Top row: icon + tag + title + arrow */}
+              <div className={styles.cardTop}>
+                <span className={styles.icon}><card.Icon /></span>
+                <div className={styles.cardHeader}>
+                  <span className={styles.cardTag}>{card.tag}</span>
+                  <h3 className={styles.cardName}>{card.name}</h3>
+                </div>
+                <span className={styles.cardArrow} aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" />
+                  </svg>
+                </span>
               </div>
-              <span className={styles.cardArrow} aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" />
-                </svg>
-              </span>
+              {/* Description full width below */}
+              <p className={styles.cardDesc}>{card.desc}</p>
             </article>
           ))}
         </div>
