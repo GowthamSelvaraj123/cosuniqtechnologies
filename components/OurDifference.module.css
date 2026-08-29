@@ -27,11 +27,20 @@
   justify-content: center;
 }
 
+/* --- Column 1: Straight Text --- */
+.straightTextWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding-top: 1rem;
+}
+
 .scatterTextWrap {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
   padding-top: 1rem;
 }
 
@@ -39,7 +48,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.2rem;
+  gap: 0.1rem;
+}
+
+/* Orange rectangle wrapping the entire "Why" block — scattered tilt */
+.wordBlock:first-child {
+  background: #FF6B00;
+  border-radius: 10px;
+  padding: 0.5rem 0.7rem;
+  transform: rotate(-8deg) translateX(-6px);
+  transform-origin: center center;
+  box-shadow: 4px 6px 18px rgba(255, 107, 0, 0.35);
+}
+
+.wordBlock:first-child .scatterLetter {
+  color: #ffffff;
 }
 
 .scatterLetter {
@@ -48,40 +71,40 @@
   font-weight: 700;
   line-height: 1;
   color: #111111;
-
-  /* Animation & Transform defaults */
-  --x: 0px;
-  --y: 0px;
-  --rot: 0deg;
-  --delay: 0s;
-  
-  transform: translateX(var(--x)) translateY(var(--y)) rotate(var(--rot));
-  animation: letterWave 4s ease-in-out infinite;
-  animation-delay: var(--delay);
+  /* No scatter — perfectly straight */
 }
 
-@keyframes letterWave {
-  0%, 100% { transform: translateX(var(--x)) translateY(var(--y)) rotate(var(--rot)); }
-  50% { transform: translateX(var(--x)) translateY(calc(var(--y) - 6px)) rotate(calc(var(--rot) + 1deg)); }
+/* Remove per-letter background — no longer needed */
+.whyLetter {
+  /* intentionally empty */
 }
 
 .dot {
   color: #FF6B00;
 }
 
-/* Hardcoded Staggering / Scattering Offsets */
-.letterW1 { --x: -6px; --delay: 0.0s; }
-.letterW2 { --x: 4px; --delay: 0.1s; }
-.letterW3 { --x: -4px; --y: -3px; --delay: 0.2s; }
+.whyBadge {
+  font-family: var(--display, sans-serif);
+  font-size: clamp(1.6rem, 2.5vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1;
+  color: #ffffff;
+  background: #FF6B00;
+  padding: 0.25em 0.55em;
+  border-radius: 10px;
+  display: inline-block;
+  letter-spacing: -0.02em;
+}
 
-.letterC1 { --x: 6px; --delay: 0.4s; }
-.letterC2 { --x: -7px; --delay: 0.5s; }
-.letterC3 { --x: 8px; --delay: 0.6s; }
-.letterC4 { --x: -4px; --delay: 0.7s; }
-.letterC5 { --x: 7px; --delay: 0.8s; }
-.letterC6 { --x: -8px; --delay: 0.9s; }
-.letterC7 { --x: 4px; --delay: 1.0s; }
-.letterC8 { --x: 6px; --rot: 8deg; --delay: 1.1s; }
+.cosuniqLabel {
+  font-family: var(--display, sans-serif);
+  font-size: clamp(1.6rem, 2.5vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1;
+  color: #111111;
+  letter-spacing: -0.03em;
+  display: inline-block;
+}
 
 
 /* --- Column 2: Image & Round Button --- */
@@ -237,9 +260,8 @@
   border-radius: 18px;
   padding: 1.5rem;
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 1.5rem;
+  flex-direction: column;
+  gap: 0.75rem;
   cursor: pointer;
   --card-x: 0px;
   --card-rot: 0deg;
@@ -296,6 +318,22 @@
 }
 
 /* --- Card text --- */
+.cardTop {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 100%;
+}
+
+.cardHeader {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
 .cardContent {
   flex: 1;
   min-width: 0;
@@ -307,28 +345,27 @@
   letter-spacing: 0.05em;
   color: #FF6B00;
   display: block;
-  margin-bottom: 0.75rem;
 }
 
 .cardName {
   font-size: 1.25rem;
   font-weight: 800;
   color: #111111;
-  margin: 0 0 0.5rem;
+  margin: 0;
 }
 
 .cardDesc {
   font-size: 1rem;
   color: #666666;
   line-height: 1.7;
-  margin: 0;
+  margin: 0.75rem 0 0;
+  width: 100%;
 }
 
 /* --- Arrow --- */
 .cardArrow {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
+  flex-shrink: 0;
+  margin-left: auto;
   color: #dddddd;
   transition: color 0.25s ease, transform 0.25s cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -376,20 +413,6 @@
   .power3 { width: 35px; height: 35px; top: 0%; right: -5%; }
   .power4 { width: 20px; height: 20px; bottom: 25%; right: 0%; }
   .power5 { width: 35px; height: 35px; bottom: 5%; left: 5%; }
-
-  /* Make scatter more pronounced on mobile so it's clearly visible */
-  .letterW1 { --x: -12px; }
-  .letterW2 { --x: 10px; }
-  .letterW3 { --x: -8px; --y: -5px; }
-  
-  .letterC1 { --x: 12px; }
-  .letterC2 { --x: -14px; }
-  .letterC3 { --x: 15px; }
-  .letterC4 { --x: -10px; }
-  .letterC5 { --x: 12px; }
-  .letterC6 { --x: -15px; }
-  .letterC7 { --x: 10px; }
-  .letterC8 { --x: 12px; --rot: 15deg; }
   
   .card {
     flex-direction: column;

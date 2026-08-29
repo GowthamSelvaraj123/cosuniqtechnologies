@@ -37,13 +37,13 @@ export default function OurDifference() {
 
         <div className={styles.threeColLayout}>
           
-          {/* Column 1: Vertical Scattered Text */}
+          {/* Column 1: Vertical Straight Text */}
           <div className={styles.leftColumn}>
             <div className={styles.scatterTextWrap}>
-              
+
               <div className={styles.wordBlock}>
                 {lettersWhy.map((l, i) => (
-                  <span key={i} className={`${styles.scatterLetter} ${styles[`letterW${i+1}`]}`}>
+                  <span key={i} className={`${styles.scatterLetter} ${styles.whyLetter}`}>
                     {l}
                   </span>
                 ))}
@@ -51,7 +51,7 @@ export default function OurDifference() {
 
               <div className={styles.wordBlock}>
                 {lettersCosuniq.map((l, i) => (
-                  <span key={i} className={`${styles.scatterLetter} ${styles[`letterC${i+1}`]} ${l === "?" ? styles.dot : ""}`}>
+                  <span key={i} className={`${styles.scatterLetter} ${l === "?" ? styles.dot : ""}`}>
                     {l}
                   </span>
                 ))}
@@ -113,50 +113,53 @@ export default function OurDifference() {
             
             {/* Card 1 */}
             <article className={`${styles.card} ${styles.card1}`}>
-              <span className={styles.icon}><NumberIcon num="01" /></span>
-              <div className={styles.cardContent}>
-                <span className={styles.cardTag}>01 &mdash; THINK</span>
-                <h3 className={styles.cardName}>Strategy with clarity.</h3>
-                <p className={styles.cardDesc}>We understand the business before we touch the design.</p>
+              <div className={styles.cardTop}>
+                <span className={styles.icon}><NumberIcon num="01" /></span>
+                <div className={styles.cardHeader}>
+                  <span className={styles.cardTag}>01 &mdash; THINK</span>
+                  <h3 className={styles.cardName}>Strategy with clarity.</h3>
+                </div>
+                <span className={styles.cardArrow} aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" />
+                  </svg>
+                </span>
               </div>
-              <span className={styles.cardArrow} aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7" />
-                  <polyline points="7 7 17 7 17 17" />
-                </svg>
-              </span>
+              <p className={styles.cardDesc}>We understand the business before we touch the design.</p>
             </article>
 
             {/* Card 2 */}
             <article className={`${styles.card} ${styles.card2}`}>
-              <span className={styles.icon}><NumberIcon num="02" /></span>
-              <div className={styles.cardContent}>
-                <span className={styles.cardTag}>02 &mdash; CREATE</span>
-                <h3 className={styles.cardName}>Design with purpose.</h3>
-                <p className={styles.cardDesc}>We create identities and experiences people remember.</p>
+              <div className={styles.cardTop}>
+                <span className={styles.icon}><NumberIcon num="02" /></span>
+                <div className={styles.cardHeader}>
+                  <span className={styles.cardTag}>02 &mdash; CREATE</span>
+                  <h3 className={styles.cardName}>Design with purpose.</h3>
+                </div>
+                <span className={styles.cardArrow} aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" />
+                  </svg>
+                </span>
               </div>
-              <span className={styles.cardArrow} aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7" />
-                  <polyline points="7 7 17 7 17 17" />
-                </svg>
-              </span>
+              <p className={styles.cardDesc}>We create identities and experiences people remember.</p>
             </article>
 
             {/* Card 3 */}
             <article className={`${styles.card} ${styles.card3}`}>
-              <span className={styles.icon}><NumberIcon num="03" /></span>
-              <div className={styles.cardContent}>
-                <span className={styles.cardTag}>03 &mdash; BUILD</span>
-                <h3 className={styles.cardName}>Technology that performs.</h3>
-                <p className={styles.cardDesc}>We turn creative ideas into fast, scalable digital products.</p>
+              <div className={styles.cardTop}>
+                <span className={styles.icon}><NumberIcon num="03" /></span>
+                <div className={styles.cardHeader}>
+                  <span className={styles.cardTag}>03 &mdash; BUILD</span>
+                  <h3 className={styles.cardName}>Technology that performs.</h3>
+                </div>
+                <span className={styles.cardArrow} aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" />
+                  </svg>
+                </span>
               </div>
-              <span className={styles.cardArrow} aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7" />
-                  <polyline points="7 7 17 7 17 17" />
-                </svg>
-              </span>
+              <p className={styles.cardDesc}>We turn creative ideas into fast, scalable digital products.</p>
             </article>
 
           </div>
