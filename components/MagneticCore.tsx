@@ -128,10 +128,10 @@ const particleVertexShader = `
     float pow_term = pow(abs(sin_t_12), 5.0) * sign(sin_t_12); // Safe pow for negative bases
     float e_val = exp(cos(bt)) - 2.0 * cos(4.0 * bt) - pow_term;
     
-    // The mathematical target shape (scaled to 1.25 to show full butterfly)
+    // The mathematical target shape (scaled to 1.35 to show full butterfly, perfectly centered)
     vec3 target = vec3(
-      sin(bt) * e_val * 1.25, 
-      (cos(bt) * e_val * 1.25) + 1.8, // Add +1.8 for bottom spacing
+      sin(bt) * e_val * 1.35, 
+      cos(bt) * e_val * 1.35,
       (fract(aPhase * 7.0) - 0.5) * 1.0
     );
     
