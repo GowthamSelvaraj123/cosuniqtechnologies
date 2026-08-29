@@ -6,8 +6,8 @@ import styles from "./InnerBanner.module.css";
 
 interface InnerBannerProps {
   eyebrow?: string;
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   bgImage?: string;
 }
 
@@ -72,23 +72,27 @@ export default function InnerBanner({ eyebrow, title, description, bgImage }: In
             {eyebrow}
           </motion.span>
         )}
-        <motion.h1 
-          className={styles.title}
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-        >
-          {title}
-        </motion.h1>
+        {title && (
+          <motion.h1 
+            className={styles.title}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
+            {title}
+          </motion.h1>
+        )}
 
-        <motion.p 
-          className={styles.description}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-        >
-          {description}
-        </motion.p>
+        {description && (
+          <motion.p 
+            className={styles.description}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            {description}
+          </motion.p>
+        )}
       </div>
     </section>
   );

@@ -1,0 +1,301 @@
+.contactSection {
+  background-color: #FFF6F0;
+  padding: 8rem 0;
+  overflow: hidden;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+@media (max-width: 900px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+/* ── Header ────────────────────────────────────── */
+.eyebrowWrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 107, 0, 0.1);
+  color: #FF6B00;
+  padding: 0.5rem 1rem;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+}
+
+.headline {
+  font-family: var(--display, sans-serif);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  color: #111111;
+  margin: 0 0 1.5rem 0;
+}
+
+.dot {
+  color: #FF6B00;
+}
+
+.introText {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  max-width: 90%;
+}
+
+
+/* ── Shared Card Style ───────────────────────────── */
+.scatterCard, .formCard {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02);
+  
+  --card-y: 0px;
+  --card-rot: 0deg;
+  transform: translateY(var(--card-y)) rotate(var(--card-rot));
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.25s ease;
+}
+
+.scatterCard:hover, 
+.formCard:focus-within, 
+.formCard:hover {
+  background: #ffffff;
+  border-color: #FF6B00;
+  transform: translateY(calc(var(--card-y) - 6px)) rotate(var(--card-rot)) scale(1.02);
+  box-shadow:
+    0 4px 16px rgba(255, 107, 0, 0.07),
+    0 16px 36px rgba(255, 107, 0, 0.1);
+}
+
+/* ── Contact Info Cards ──────────────────────────── */
+.infoCards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Staggering */
+@media (min-width: 600px) {
+  .scatterCard:nth-child(1) { --card-y: 0rem; --card-rot: -2deg; margin-right: 2rem;}
+  .scatterCard:nth-child(2) { --card-y: 1.5rem; --card-rot: 1.5deg; margin-left: 2rem;}
+  .scatterCard:nth-child(3) { --card-y: 0.5rem; --card-rot: -1.5deg; margin-right: 2rem;}
+  .scatterCard:nth-child(4) { --card-y: 2rem; --card-rot: 2deg; margin-left: 2rem;}
+}
+
+/* Dot pattern inside cards */
+.scatterCard::before {
+  content: '';
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  width: 48px;
+  height: 48px;
+  background-image: radial-gradient(#ccc 1.5px, transparent 1.5px);
+  background-size: 16px 16px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.cardNumber {
+  font-family: var(--display, sans-serif);
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111;
+  line-height: 1;
+  background: #fff;
+  padding: 0 0.5rem;
+  margin-left: -0.5rem;
+}
+
+.cardLabel {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: #ff6a00;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.cardLabel::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #ff6a00;
+}
+
+.scatterCard h3 {
+  font-family: var(--display, sans-serif);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.scatterCard p, .scatterCard a {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-decoration: none;
+}
+
+.scatterCard a {
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.scatterCard a:hover {
+  color: #ff6a00;
+}
+
+
+/* ── Form Cards ──────────────────────────────────── */
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Staggering form fields */
+@media (min-width: 600px) {
+  .formCard:nth-child(1) { --card-y: 0rem; --card-rot: 1.5deg; margin-left: 1rem;}
+  .formCard:nth-child(2) { --card-y: 1.5rem; --card-rot: -1deg; margin-right: 1.5rem;}
+  .formCard:nth-child(3) { --card-y: 0.5rem; --card-rot: 2deg; margin-left: 1.5rem;}
+  .formCard:nth-child(4) { --card-y: 2rem; --card-rot: -1.5deg; margin-right: 1rem;}
+  .formCard:nth-child(5) { --card-y: 1rem; --card-rot: 1deg; margin-left: 0.5rem;}
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.formGroup label {
+  font-family: var(--display, sans-serif);
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: #111;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 1.05rem;
+  color: #333;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  border-radius: 0;
+  transition: border-color 0.3s;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-bottom-color: #ff6a00;
+}
+
+.formGroup textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.errorText {
+  color: #e53e3e;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.errorText::before {
+  content: "!";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  background: #e53e3e;
+  color: white;
+  border-radius: 50%;
+  font-size: 0.7rem;
+}
+
+.submitWrapper {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* Borrow CTA style from CapabilitiesUniverse */
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: #FF6B00;
+  color: #ffffff;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.8rem;
+  padding: 16px 36px;
+  border-radius: 99px;
+  border: none;
+  cursor: pointer;
+  transition:
+    background 0.3s ease,
+    transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.3s ease;
+}
+
+.ctaBtn:hover {
+  background: #e65c00;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(255, 107, 0, 0.35);
+}
+
+.ctaBtn svg {
+  transition: transform 0.3s ease;
+}
+.ctaBtn:hover svg {
+  transform: translateX(4px);
+}
