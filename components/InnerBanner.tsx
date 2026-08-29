@@ -1,18 +1,32 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import styles from "./InnerBanner.module.css";
 
 interface InnerBannerProps {
   eyebrow?: string;
   title: string;
   description: string;
+  bgImage?: string;
 }
 
-export default function InnerBanner({ eyebrow, title, description }: InnerBannerProps) {
+export default function InnerBanner({ eyebrow, title, description, bgImage }: InnerBannerProps) {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+
   return (
-    <section className={styles.banner}>
+    <section ref={ref} className={styles.banner}>
+      {bgImage && (
+        <motion.div
+          className={styles.parallaxBg}
+          style={{ y, backgroundImage: `url(${bgImage})` }}
+        />
+      )}
       <div className={styles.decorationRight}>
         <motion.div
           className={styles.blob1}
@@ -25,6 +39,11 @@ export default function InnerBanner({ eyebrow, title, description }: InnerBanner
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
+          className={styles.blob3}
+          animate={{ x: [0, 40, 0], scale: [0.9, 1.1, 0.9] }}
+          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
           className={styles.spark1}
           animate={{ rotate: [0, 360], scale: [0.8, 1.2, 0.8] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -33,6 +52,11 @@ export default function InnerBanner({ eyebrow, title, description }: InnerBanner
           className={styles.spark2}
           animate={{ rotate: [360, 0], scale: [1, 0.5, 1], y: [0, 20, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className={styles.spark3}
+          animate={{ rotate: [0, -360], scale: [0.7, 1.3, 0.7], x: [0, -15, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         />
       </div>
 

@@ -33,6 +33,7 @@ export default function Contact() {
         eyebrow="Contact Us"
         title="Connect. Collaborate. Build."
         description="Share a short brief — we’ll reply with next steps and a rough timeline."
+        bgImage="/assets/images/contact-us.png"
       />
 
       <section>
