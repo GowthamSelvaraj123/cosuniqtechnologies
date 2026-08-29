@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import InitReveal from "../../components/InitReveal";
 import InnerBanner from "../../components/InnerBanner";
@@ -81,6 +82,24 @@ export default function AboutContent() {
             <h2 className={styles.whoHeadline}>
               The Evolution of COSUNIQ<span className={styles.dot}>.</span>
             </h2>
+          </motion.div>
+
+          <motion.div 
+            className={styles.evolutionImageWrapper}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <Image 
+              src="/assets/images/evolution-new.png" 
+              alt="The Evolution of Cosuniq" 
+              width={1920} 
+              height={1080} 
+              className={styles.evolutionImage}
+              quality={90}
+              unoptimized
+            />
           </motion.div>
 
           <div className={styles.timeline}>
