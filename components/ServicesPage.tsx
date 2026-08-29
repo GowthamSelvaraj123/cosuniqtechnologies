@@ -61,7 +61,7 @@ const faqItems = [
 // HeroSection replaced by InnerBanner
 
 function OverviewSection() {
-  const cards = [
+  const cards: { num: string; name: string; href: string; desc: string; icon: React.ReactNode; featured?: boolean }[] = [
     {
       num: "01", name: "Strategy & Consulting", href: "#",
       desc: "Addressing your core brand strategy to connect directly with people.",
@@ -70,7 +70,6 @@ function OverviewSection() {
           <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
         </svg>
       ),
-      featured: true,
     },
     {
       num: "02", name: "Brand Identity", href: "#",
