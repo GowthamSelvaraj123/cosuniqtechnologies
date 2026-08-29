@@ -256,7 +256,7 @@ export default function AboutContent() {
                 <span className="spark spark--inline" />
                 OUR TEAM
               </div>
-              <h2 className={styles.displayMedium}>The minds behind<br/>the magic<span className={styles.dot}>.</span></h2>
+              <h2 className={styles.teamHeadline}>The minds behind<br/>the magic<span className={styles.dot}>.</span></h2>
             </motion.div>
             
             <motion.div className={styles.sliderControls} {...fadeUpParams}>

@@ -681,12 +681,21 @@
 /* ── 05: OUR TEAM ──────────────────────────────────── */
 .teamSection {
   background-color: #fff;
-  padding: 8rem 0;
+  padding: 4rem 0;
 }
 
 .teamHeader {
   margin-bottom: 0;
   text-align: left;
+}
+
+.teamHeadline {
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  color: #111111;
+  margin: 0 0 1rem;
 }
 
 .sliderHeader {
@@ -723,11 +732,11 @@
 
 .teamGrid {
   display: flex;
-  gap: 2rem;
+  gap: 1.75rem;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  padding-bottom: 2rem;
+  padding-bottom: 4rem; /* padding to account for shifted cards */
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
@@ -743,12 +752,42 @@
   flex-direction: column;
   gap: 1.5rem;
   cursor: pointer;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 18px;
+  padding: 1.75rem 1.5rem 1.5rem;
+  
+  --card-y: 0px;
+  --card-rot: 0deg;
+  transform: translateY(var(--card-y)) rotate(var(--card-rot));
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.teamCard:hover {
+  border-color: #FF6B00;
+  transform: translateY(calc(var(--card-y) - 6px)) rotate(var(--card-rot)) scale(1.02);
+  box-shadow:
+    0 4px 16px rgba(255, 107, 0, 0.07),
+    0 16px 36px rgba(255, 107, 0, 0.1);
+}
+
+/* Staggered positions for slider */
+@media (min-width: 768px) {
+  .teamCard:nth-child(4n + 1) { --card-y: 0rem; --card-rot: -2deg; }
+  .teamCard:nth-child(4n + 2) { --card-y: 2.5rem; --card-rot: 1.5deg; }
+  .teamCard:nth-child(4n + 3) { --card-y: 0.5rem; --card-rot: -1.5deg; }
+  .teamCard:nth-child(4n + 4) { --card-y: 3rem; --card-rot: 2.5deg; }
 }
 
 .teamImageWrapper {
   width: 100%;
   aspect-ratio: 3/4;
-  border-radius: 24px;
+  border-radius: 12px;
   overflow: hidden;
   position: relative;
   background-color: #FAFAFA;
@@ -769,10 +808,10 @@
 
 .teamInfo h3 {
   font-family: var(--display, sans-serif);
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1rem;
+  font-weight: 800;
   color: #111;
-  margin: 0 0 0.25rem 0;
+  margin: 0 0 0.7rem 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -791,9 +830,9 @@
 }
 
 .teamInfo p {
-  font-size: 1rem;
-  color: #FF6B00;
-  font-weight: 500;
+  font-size: 0.8rem;
+  color: #555;
+  line-height: 1.4;
   margin: 0;
 }
 
