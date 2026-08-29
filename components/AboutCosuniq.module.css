@@ -4,7 +4,7 @@
 
 .section {
   position: relative;
-  padding: 8rem 0;
+  padding: 5rem 0;
   background-color: #FF6B00;
   overflow: hidden;
   font-family: var(--font-plus-jakarta), sans-serif;
@@ -151,7 +151,7 @@
   font-size: clamp(1rem, 1.4vw, 1.15rem);
   line-height: 1.8;
   color: #ffffff;
-  margin: 0 0 3rem;
+  margin: 0 0 2rem;
   font-weight: 400;
   width: 100%;
 }
@@ -160,8 +160,7 @@
 .grid {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding-bottom: 3rem;
+  gap: 1.25rem;
 }
 
 /* ── Card ────────────────────────────────── */
@@ -210,18 +209,18 @@
 .cardBrand {
   flex: 0 0 35%;
   background: #FFF5EC; /* Light orange */
-  padding: 2.5rem 2rem;
+  padding: 1.5rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .cardContent {
   flex: 1;
   background: #ffffff;
-  padding: 2.5rem 3rem;
+  padding: 1.5rem 2.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -273,8 +272,8 @@
 /* ── Arrow ────────────────────────────────── */
 .cardArrow {
   position: absolute;
-  top: 2rem;
-  right: 2rem;
+  top: 1.5rem;
+  right: 1.5rem;
   color: #dddddd;
   transition: color 0.25s ease, transform 0.25s cubic-bezier(0.25, 1, 0.5, 1);
 }
