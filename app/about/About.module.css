@@ -302,6 +302,7 @@
   color: #111;
   position: relative;
   overflow: hidden;
+  padding-top: 5rem;
 }
 
 .floatingIconContainer {
@@ -324,7 +325,7 @@
   align-items: flex-end;
   justify-content: space-between;
   gap: 3rem;
-  margin-bottom: 1rem;
+  margin-bottom: 4rem;
 }
 
 .storyHeader {
@@ -399,8 +400,13 @@
 }
 
 @keyframes scanLaser {
-  0% { background-position: -150px 0; }
-  100% { background-position: calc(100% + 150px) 0; }
+  0% {
+    background-position: -150px 0;
+  }
+
+  100% {
+    background-position: calc(100% + 150px) 0;
+  }
 }
 
 .timelineProgress {
@@ -418,17 +424,75 @@
   position: relative;
   z-index: 2;
   padding-top: 3rem;
+  text-align: left;
+  /* setup scatter effect */
+  --step-y: 0px;
+  --step-rot: 0deg;
+  transform: translateY(var(--step-y)) rotate(var(--step-rot));
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.timelineCard {
+  background-color: #FFF6F0;
+  /* light orange */
+  border: 1px solid rgba(255, 107, 0, 0.15);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.timelineStep:hover .timelineCard {
+  border-color: #FF6B00;
+  box-shadow: 0 10px 30px rgba(255, 107, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+/* scatter logic for timeline steps on desktop */
+@media (min-width: 960px) {
+  .timelineStep:nth-child(1) {
+    --step-y: 0rem;
+    --step-rot: -1.5deg;
+  }
+
+  .timelineStep:nth-child(2) {
+    --step-y: 1.5rem;
+    --step-rot: 1deg;
+  }
+
+  .timelineStep:nth-child(3) {
+    --step-y: -0.5rem;
+    --step-rot: -1deg;
+  }
+
+  .timelineStep:nth-child(4) {
+    --step-y: 2rem;
+    --step-rot: 1.5deg;
+  }
+
+  .timelineStep:nth-child(5) {
+    --step-y: 0.5rem;
+    --step-rot: -1.5deg;
+  }
+
+  .timelineStep:nth-child(6) {
+    --step-y: -1rem;
+    --step-rot: 1deg;
+  }
 }
 
 .timelineDot {
   position: absolute;
   top: 10px;
-  left: -1px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   width: 11px;
   height: 11px;
   background: #FF6B00;
   border-radius: 50%;
   box-shadow: 0 0 8px rgba(255, 107, 0, 0.4);
+  /* cancel out the rotation on the step so the dot stays upright */
+  transform: rotate(calc(var(--step-rot) * -1));
   transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
 }
 
@@ -446,7 +510,7 @@
 }
 
 .timelineStep:hover .timelineDot {
-  transform: scale(1.4);
+  transform: rotate(calc(var(--step-rot) * -1)) scale(1.4);
   box-shadow: 0 0 15px rgba(255, 107, 0, 0.7);
 }
 
@@ -455,10 +519,12 @@
     transform: scale(0.8);
     opacity: 1;
   }
+
   15% {
     transform: scale(2.6);
     opacity: 0;
   }
+
   100% {
     transform: scale(2.6);
     opacity: 0;
@@ -466,9 +532,9 @@
 }
 
 .timelineStep h3 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin: 0 0 0.5rem 0;
   color: #111;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -476,8 +542,9 @@
 
 .timelineStep p {
   color: #666;
-  font-size: 1rem;
+  font-size: 0.95rem;
   line-height: 1.6;
+  margin: 0;
 }
 
 @media (max-width: 960px) {
@@ -502,11 +569,14 @@
   .timelineDot {
     top: 0;
     left: 11px;
+    right: auto;
+    margin: 0;
   }
 
   .timelineStep {
     padding-top: 0;
     padding-left: 3rem;
+    text-align: left;
   }
 }
 

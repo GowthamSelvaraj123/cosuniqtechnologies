@@ -160,7 +160,7 @@ export default function AboutContent() {
                 className={styles.evolutionImage}
                 quality={90}
                 unoptimized
-                style={{marginBottom: "-38px"}}
+                style={{transform: "scale(-1)", top: "-109px", position:"absolute", width:"400px", right:"0px"}}
               />
             </motion.div>
           </div>
@@ -189,8 +189,10 @@ export default function AboutContent() {
                   className={styles.timelineDot}
                   style={{ "--dot-delay": `${index * 1}s` } as React.CSSProperties}
                 ></div>
-                <h3>{step.title}</h3>
-                <p>{step.desc}</p>
+                <div className={styles.timelineCard}>
+                  <h3>{step.title}</h3>
+                  <p>{step.desc}</p>
+                </div>
               </motion.div>
             ))}
           </div>
