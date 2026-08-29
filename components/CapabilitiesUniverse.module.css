@@ -32,12 +32,22 @@
   opacity: 0.02;
 }
 
+@keyframes spinRight {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spinLeft {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
 .bgIcon1 {
   width: 250px;
   height: 250px;
   top: 0px;
   left: -50px;
-  transform: rotate(-15deg);
+  animation: spinRight 60s linear infinite;
 }
 
 .bgIcon2 {
@@ -45,7 +55,7 @@
   height: 200px;
   top: 30%;
   right: -50px;
-  transform: rotate(20deg);
+  animation: spinLeft 75s linear infinite;
 }
 
 .bgIcon3 {
@@ -53,7 +63,7 @@
   height: 180px;
   bottom: 80px;
   left: 10%;
-  transform: rotate(-10deg);
+  animation: spinLeft 80s linear infinite;
 }
 
 .bgIcon4 {
@@ -61,7 +71,7 @@
   height: 220px;
   bottom: -20px;
   right: 15%;
-  transform: rotate(15deg);
+  animation: spinRight 70s linear infinite;
 }
 
 .container {
@@ -201,6 +211,14 @@
 
 /* dimming removed — no opacity penalty on non-hovered cards */
 
+/* ── Top row ─────────────────────────────────────── */
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
 /* ── Icon ──────────────────────────────────────── */
 .icon {
   width: 52px;
@@ -237,11 +255,11 @@
 
 /* ── Arrow (always visible in top right) ─────────── */
 .cardArrow {
-  position: absolute;
-  top: 1.75rem;
-  right: 1.5rem;
+  flex-shrink: 0;
   color: #dddddd;
   transition: color 0.25s ease, transform 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  margin-top: 0.25rem;
+  margin-right: 0.25rem;
 }
 
 .card:hover .cardArrow,

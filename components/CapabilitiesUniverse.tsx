@@ -204,17 +204,22 @@ export default function CapabilitiesUniverse() {
               onMouseEnter={() => setHovered(s.id)}
               onMouseLeave={() => setHovered(null)}
             >
-              <span className={styles.icon}><s.Icon /></span>
+              {/* Top row with Icon and Arrow */}
+              <div className={styles.cardTop}>
+                <span className={styles.icon}><s.Icon /></span>
+                <span className={styles.cardArrow} aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7" />
+                    <polyline points="7 7 17 7 17 17" />
+                  </svg>
+                </span>
+              </div>
+              {/* Content below */}
               <div>
                 <h3 className={styles.cardName}>{s.name}</h3>
                 <p className={styles.cardDesc}>{s.desc}</p>
               </div>
-              <span className={styles.cardArrow} aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7" />
-                  <polyline points="7 7 17 7 17 17" />
-                </svg>
-              </span>
+
             </article>
           ))}
         </div>

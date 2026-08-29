@@ -129,40 +129,40 @@
 }
 
 .power1 {
-  width: 45px;
-  height: 45px;
+  width: 30px;
+  height: 30px;
   top: 15%;
   left: -10%;
   animation: pulseScale 3s ease-in-out infinite, spin 12s linear infinite;
 }
 
 .power2 {
-  width: 90px;
-  height: 90px;
+  width: 60px;
+  height: 60px;
   top: 50%;
   left: -15%;
   animation: spin 15s linear infinite;
 }
 
 .power3 {
-  width: 55px;
-  height: 55px;
+  width: 35px;
+  height: 35px;
   top: 8%;
   right: -5%;
   animation: burst 4s ease-in-out infinite;
 }
 
 .power4 {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   bottom: 10%;
   right: 12%;
   animation: pulseScale 2.5s ease-in-out infinite reverse, spin 8s linear infinite reverse;
 }
 
 .power5 {
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
   bottom: 5%;
   left: 5%;
   animation: pulseScale 4s ease-in-out infinite;
