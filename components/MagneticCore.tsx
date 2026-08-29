@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useMemo, useEffect } from "react";
+import { useRef, useMemo, useEffect, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
@@ -10,10 +10,13 @@ const particleVertexShader = `
   uniform float uTime;
   uniform vec2 uMouse;
   uniform float uScrollProgress;
+  uniform float uMetamorphosisProgress;
+  uniform float uDissolve;
   
   attribute float aSize;
   attribute float aPhase;
   attribute vec3 aColor;
+  attribute vec3 aButterflyPos;
   
   varying vec3 vColor;
   
@@ -90,27 +93,67 @@ const particleVertexShader = `
     pos.z += noise * 2.0;
     
     // Cursor Interaction (subtle ripple and bend)
-    // Convert NDC mouse (-1 to 1) to world space roughly
     vec2 mouseWorld = uMouse * 8.0; 
     float distToMouse = distance(pos.xy, mouseWorld);
     
     if (distToMouse < 4.0) {
       float repel = (4.0 - distToMouse) * 0.5;
-      // Bend away from cursor slightly, but create a ripple
       float ripple = sin(distToMouse * 5.0 - uTime * 5.0) * 0.3;
       pos.z += ripple * repel;
       pos.xy += normalize(pos.xy - mouseWorld) * repel * 0.2;
     }
     
     // Scroll Interaction (stretch and flow)
-    // As uScrollProgress increases, particles stretch along Y and twist
     pos.y -= uScrollProgress * 8.0;
     pos.z += sin(pos.y * 0.5) * uScrollProgress * 4.0;
     pos.x += cos(pos.y * 0.5) * uScrollProgress * 2.0;
     
+    // BUTTERFLY METAMORPHOSIS (Branchless GPU State Machine)
+    // 11 second cycle completely driven by the GPU to bypass React syncing issues
+    float cycle = mod(uTime, 11.0);
+    
+    // Form phase (0-3s), scatter phase (9-11s)
+    float formPhase = clamp(cycle / 3.0, 0.0, 1.0);
+    float scatterPhase = clamp((cycle - 9.0) / 2.0, 0.0, 1.0);
+    float metaProgress = clamp(formPhase - scatterPhase, 0.0, 1.0);
+    
+    // Dissolve phase (6-9s)
+    float breakPhase = clamp((cycle - 6.0) / 3.0, 0.0, 1.0);
+    float metaDissolve = clamp(breakPhase - scatterPhase, 0.0, 1.0);
+    
+    // FORCEFUL GPU MATHEMATICAL BUTTERFLY (Temple's Curve)
+    // Bypasses all JS, Canvas, and Buffer attribute issues.
+    float bt = aPhase * 200.0; // Random sample along the curve based on particle phase
+    float sin_t_12 = sin(bt / 12.0);
+    float pow_term = pow(abs(sin_t_12), 5.0) * sign(sin_t_12); // Safe pow for negative bases
+    float e_val = exp(cos(bt)) - 2.0 * cos(4.0 * bt) - pow_term;
+    
+    // The mathematical target shape (scaled to 2.2 to match vortex size)
+    vec3 target = vec3(
+      sin(bt) * e_val * 2.2, 
+      cos(bt) * e_val * 2.2, 
+      (fract(aPhase * 7.0) - 0.5) * 1.0
+    );
+    
+    // Add subtle breathing to the butterfly
+    target.z += sin(uTime * 2.0 + aPhase) * 0.4;
+    target.xy += vec2(cos(uTime + aPhase), sin(uTime + aPhase)) * 0.1;
+    
+    // Organic Dissolution Turbulence
+    float randAngle = aPhase * 20.0;
+    float speed = 25.0;
+    vec3 scatterVec = vec3(
+      cos(randAngle) + snoise(vec3(target.x, target.y, uTime * 0.2)),
+      sin(randAngle) + snoise(vec3(target.y, target.x, uTime * 0.2)),
+      snoise(vec3(target.z, target.x, uTime * 0.2)) * 3.0
+    );
+    target += scatterVec * smoothstep(0.0, 1.0, metaDissolve) * speed;
+    
+    // Interpolate from current chaotic orbit to locked butterfly position
+    pos = mix(pos, target, smoothstep(0.0, 1.0, metaProgress));
+
     vec4 mvPosition = modelViewMatrix * vec4(pos, 1.0);
     
-    // Perspective scaling for point size
     gl_PointSize = aSize * (15.0 / -mvPosition.z);
     gl_Position = projectionMatrix * mvPosition;
   }
@@ -142,21 +185,71 @@ function MagneticParticles({ scrollProgressRef }: { scrollProgressRef: React.Mut
   const materialRef = useRef<THREE.ShaderMaterial>(null);
   const targetMouse = useRef([0, 0]);
   const currentMouse = useRef([0, 0]);
+  const [mounted, setMounted] = useState(false);
+
+  // Stable uniforms reference
+  const uniforms = useMemo(() => ({
+    uTime: { value: 0 },
+    uMouse: { value: new THREE.Vector2(0, 0) },
+    uScrollProgress: { value: 0 }
+  }), []);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Generate particle attributes
-  const [positions, colors, sizes, phases] = useMemo(() => {
+  const [positions, colors, sizes, phases, butterflyPositions] = useMemo(() => {
     const pos = new Float32Array(count * 3);
     const col = new Float32Array(count * 3);
     const sz = new Float32Array(count);
     const ph = new Float32Array(count);
+    const bpos = new Float32Array(count * 3);
     
-    // Palette: #D95400, #B94700, #963800, #722A00
     const colorPalette = [
       new THREE.Color("#D95400"),
       new THREE.Color("#B94700"),
       new THREE.Color("#963800"),
       new THREE.Color("#722A00"),
     ];
+
+    let validPixels: {x: number, y: number}[] = [];
+    if (typeof document !== 'undefined') {
+      const canvas = document.createElement('canvas');
+      canvas.width = 120;
+      canvas.height = 120;
+      const ctx = canvas.getContext('2d', { willReadFrequently: true });
+      if (ctx) {
+        ctx.fillStyle = 'white';
+        // Explicitly use emoji fonts to prevent Windows canvas rendering bugs
+        ctx.font = '100px "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('🦋', 60, 60);
+        const imgData = ctx.getImageData(0, 0, 120, 120);
+        for (let y = 0; y < 120; y++) {
+          for (let x = 0; x < 120; x++) {
+            if (imgData.data[(y * 120 + x) * 4 + 3] > 128) {
+              validPixels.push({ x: (x - 60) / 4.5, y: -(y - 60) / 4.5 }); 
+            }
+          }
+        }
+      }
+    }
+
+    // If canvas extraction failed or yielded too few pixels (e.g. missing font)
+    if (validPixels.length < 500) {
+      validPixels = [];
+      // Fallback mathematical butterfly curve
+      for (let j = 0; j < 2000; j++) {
+        const t = Math.random() * Math.PI * 2;
+        const e = Math.exp(Math.cos(t)) - 2 * Math.cos(4 * t) - Math.pow(Math.sin(t / 12), 5);
+        validPixels.push({
+          x: Math.sin(t) * e * 2.2, // Scaled up to perfectly match vortex
+          y: Math.cos(t) * e * 2.2
+        });
+      }
+    }
 
     for (let i = 0; i < count; i++) {
       const isCore = Math.random() > 0.5; // 50% core, 50% disk
@@ -185,7 +278,6 @@ function MagneticParticles({ scrollProgressRef }: { scrollProgressRef: React.Mut
       }
 
       // Assign color based on distance from center to create depth
-      const colorBlend = Math.random();
       const baseColor = colorPalette[Math.floor(Math.random() * colorPalette.length)];
       col[i * 3] = baseColor.r;
       col[i * 3 + 1] = baseColor.g;
@@ -196,10 +288,18 @@ function MagneticParticles({ scrollProgressRef }: { scrollProgressRef: React.Mut
       
       // Phase for organic breathing
       ph[i] = Math.random() * Math.PI * 2;
+
+      // Assign Butterfly Target Position
+      if (validPixels.length > 0) {
+        const pixel = validPixels[i % validPixels.length];
+        bpos[i * 3] = pixel.x + (Math.random() - 0.5) * 0.2; 
+        bpos[i * 3 + 1] = pixel.y + (Math.random() - 0.5) * 0.2;
+        bpos[i * 3 + 2] = (Math.random() - 0.5) * 1.0; 
+      }
     }
 
-    return [pos, col, sz, ph];
-  }, [count]);
+    return [pos, col, sz, ph, bpos];
+  }, [count, mounted]);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -216,7 +316,7 @@ function MagneticParticles({ scrollProgressRef }: { scrollProgressRef: React.Mut
     
     const scrollProgress = scrollProgressRef.current;
     
-    // Smooth scroll interpolation (Stage 2: Core rotate is handled by rotating the mesh)
+    // Smooth scroll interpolation
     const currentRot = meshRef.current.rotation.y;
     meshRef.current.rotation.y += (scrollProgress * 1.5 - currentRot) * 0.1;
     meshRef.current.rotation.x = scrollProgress * 0.5; // Slight tilt on scroll
@@ -225,7 +325,7 @@ function MagneticParticles({ scrollProgressRef }: { scrollProgressRef: React.Mut
     currentMouse.current[0] += (targetMouse.current[0] - currentMouse.current[0]) * 0.1;
     currentMouse.current[1] += (targetMouse.current[1] - currentMouse.current[1]) * 0.1;
 
-    // Update uniforms
+    // Update base uniforms (Directly on the material to bypass R3F cloning)
     materialRef.current.uniforms.uTime.value = state.clock.elapsedTime;
     materialRef.current.uniforms.uMouse.value.set(currentMouse.current[0], currentMouse.current[1]);
     materialRef.current.uniforms.uScrollProgress.value += (scrollProgress - materialRef.current.uniforms.uScrollProgress.value) * 0.05;
@@ -238,16 +338,14 @@ function MagneticParticles({ scrollProgressRef }: { scrollProgressRef: React.Mut
         <bufferAttribute attach="attributes-aColor" count={count} array={colors} itemSize={3} />
         <bufferAttribute attach="attributes-aSize" count={count} array={sizes} itemSize={1} />
         <bufferAttribute attach="attributes-aPhase" count={count} array={phases} itemSize={1} />
+        <bufferAttribute attach="attributes-aButterflyPos" count={count} array={butterflyPositions} itemSize={3} />
       </bufferGeometry>
       <shaderMaterial
+        key="metamorphosis-shader-v3"
         ref={materialRef}
         vertexShader={particleVertexShader}
         fragmentShader={particleFragmentShader}
-        uniforms={{
-          uTime: { value: 0 },
-          uMouse: { value: new THREE.Vector2(0, 0) },
-          uScrollProgress: { value: 0 }
-        }}
+        uniforms={uniforms}
         transparent={true}
         depthWrite={false}
         blending={THREE.NormalBlending}
