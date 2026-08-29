@@ -685,17 +685,60 @@
 }
 
 .teamHeader {
-  margin-bottom: 5rem;
+  margin-bottom: 0;
   text-align: left;
 }
 
+.sliderHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 5rem;
+}
+
+.sliderControls {
+  display: flex;
+  gap: 1rem;
+}
+
+.controlBtn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #111;
+}
+
+.controlBtn:hover {
+  background: #FF6B00;
+  color: #fff;
+  border-color: #FF6B00;
+}
+
 .teamGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
   gap: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: 2rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.teamGrid::-webkit-scrollbar {
+  display: none;
 }
 
 .teamCard {
+  flex: 0 0 calc(25% - 1.5rem);
+  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -730,6 +773,21 @@
   font-weight: 700;
   color: #111;
   margin: 0 0 0.25rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.teamArrow {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.4s ease;
+  color: #FF6B00;
+}
+
+.teamCard:hover .teamArrow {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .teamInfo p {
@@ -739,15 +797,26 @@
   margin: 0;
 }
 
-@media (max-width: 960px) {
-  .teamGrid {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 1024px) {
+  .teamCard {
+    flex: 0 0 calc(33.333% - 1.333rem);
   }
 }
 
-@media (max-width: 600px) {
-  .teamGrid {
-    grid-template-columns: 1fr;
+@media (max-width: 768px) {
+  .teamCard {
+    flex: 0 0 calc(50% - 1rem);
+  }
+  .sliderHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .teamCard {
+    flex: 0 0 85%;
   }
 }
 

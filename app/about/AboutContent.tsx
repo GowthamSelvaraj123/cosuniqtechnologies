@@ -27,6 +27,22 @@ const staggerContainer = {
 };
 
 export default function AboutContent() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const teamSliderRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
+
+  const slideTeam = (direction: 'left' | 'right') => {
+    if (teamSliderRef.current) {
+      const scrollAmount = direction === 'left' ? -350 : 350;
+      teamSliderRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
   const storyRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress: storyProgress } = useScroll({
     target: storyRef,
@@ -36,7 +52,7 @@ export default function AboutContent() {
   const lineScale = useTransform(storyProgress, [0, 1], [0, 1]);
 
   return (
-    <div className={styles.pageWrapper}>
+    <div className={styles.pageWrapper} ref={containerRef}>
       <InitReveal />
       
       {/* 01 — BANNER (Existing) */}
@@ -234,26 +250,40 @@ export default function AboutContent() {
       {/* 05 — OUR TEAM */}
       <section className={styles.teamSection}>
         <div className="container">
-          <motion.div className={styles.teamHeader} {...fadeUpParams}>
-            <div className={`eyebrow ${styles.eyebrowWrap}`} style={{ marginBottom: '2rem', display: 'inline-flex' }}>
-              <span className="spark spark--inline" />
-              OUR TEAM
-            </div>
-            <h2 className={styles.displayMedium}>The minds behind<br/>the magic<span className={styles.dot}>.</span></h2>
-          </motion.div>
+          <div className={styles.sliderHeader}>
+            <motion.div className={styles.teamHeader} {...fadeUpParams}>
+              <div className={`eyebrow ${styles.eyebrowWrap}`} style={{ marginBottom: '2rem', display: 'inline-flex' }}>
+                <span className="spark spark--inline" />
+                OUR TEAM
+              </div>
+              <h2 className={styles.displayMedium}>The minds behind<br/>the magic<span className={styles.dot}>.</span></h2>
+            </motion.div>
+            
+            <motion.div className={styles.sliderControls} {...fadeUpParams}>
+              <button onClick={() => slideTeam('left')} className={styles.controlBtn} aria-label="Previous">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+              </button>
+              <button onClick={() => slideTeam('right')} className={styles.controlBtn} aria-label="Next">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
+            </motion.div>
+          </div>
           
           <motion.div 
             className={styles.teamGrid}
+            ref={teamSliderRef}
             variants={staggerContainer}
             initial="initial"
             whileInView="whileInView"
             viewport={{ once: true, margin: "-100px" }}
           >
             {[
-              { name: "Eleanor Vance", role: "Creative Director", img: "/assets/images/person-woman-phone.jpg" },
-              { name: "Marcus Chen", role: "Lead Technologist", img: "/assets/images/person-businessman.jpg" },
-              { name: "Sarah Jenkins", role: "Brand Strategist", img: "/assets/images/person-celebrate.jpg" },
-              { name: "David Osei", role: "Head of Operations", img: "/assets/images/team.jpg" }
+              { name: "Gowtham", role: "Founder / CEO", img: "/assets/images/person-businessman.jpg" },
+              { name: "Kowsalya", role: "Business Advisor", img: "/assets/images/person-woman-phone.jpg" },
+              { name: "Dinesh babu.", role: "Investor", img: "/assets/images/team.jpg" },
+              { name: "Manikandan", role: "Fullstack Designer and Developer", img: "/assets/images/person-celebrate.jpg" },
+              { name: "Sumathi", role: "Fullstack developer", img: "/assets/images/person-woman-phone.jpg" },
+              { name: "Srilekha", role: "Fullstack developer", img: "/assets/images/person-celebrate.jpg" }
             ].map((member, index) => (
               <motion.div 
                 key={index} 
@@ -267,7 +297,13 @@ export default function AboutContent() {
                   <img src={member.img} alt={member.name} className={styles.teamImage} />
                 </div>
                 <div className={styles.teamInfo}>
-                  <h3>{member.name}</h3>
+                  <h3>
+                    {member.name}
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.teamArrow}>
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </h3>
                   <p>{member.role}</p>
                 </div>
               </motion.div>
