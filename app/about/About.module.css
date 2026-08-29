@@ -304,6 +304,21 @@
   overflow: hidden;
 }
 
+.floatingIconContainer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.floatingIcon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .storyTopRow {
   display: flex;
   align-items: flex-end;
