@@ -54,7 +54,7 @@ export default function AboutContent() {
               Who We Are
             </span>
             <h2 className={styles.whoHeadline}>
-              Strategy. Design. Technology<span className={styles.dot}>.</span>
+              Dream<span className={styles.dot}>.</span> Design<span className={styles.dot}>.</span> Deliver<span className={styles.dot}>.</span>
             </h2>
             <p className={styles.whoDescription}>We are a creative technology team bringing strategy, design, and development together to turn ideas into meaningful digital experiences.</p>
           </motion.div>
