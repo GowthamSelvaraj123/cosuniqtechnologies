@@ -231,7 +231,50 @@ export default function AboutContent() {
         </div>
       </section>
 
-
+      {/* 05 — OUR TEAM */}
+      <section className={styles.teamSection}>
+        <div className="container">
+          <motion.div className={styles.teamHeader} {...fadeUpParams}>
+            <div className={`eyebrow ${styles.eyebrowWrap}`} style={{ marginBottom: '2rem', display: 'inline-flex' }}>
+              <span className="spark spark--inline" />
+              OUR TEAM
+            </div>
+            <h2 className={styles.displayMedium}>The minds behind<br/>the magic<span className={styles.dot}>.</span></h2>
+          </motion.div>
+          
+          <motion.div 
+            className={styles.teamGrid}
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            {[
+              { name: "Eleanor Vance", role: "Creative Director", img: "/assets/images/person-woman-phone.jpg" },
+              { name: "Marcus Chen", role: "Lead Technologist", img: "/assets/images/person-businessman.jpg" },
+              { name: "Sarah Jenkins", role: "Brand Strategist", img: "/assets/images/person-celebrate.jpg" },
+              { name: "David Osei", role: "Head of Operations", img: "/assets/images/team.jpg" }
+            ].map((member, index) => (
+              <motion.div 
+                key={index} 
+                className={styles.teamCard}
+                variants={{
+                  initial: { opacity: 0, y: 30 },
+                  whileInView: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }
+                }}
+              >
+                <div className={styles.teamImageWrapper}>
+                  <img src={member.img} alt={member.name} className={styles.teamImage} />
+                </div>
+                <div className={styles.teamInfo}>
+                  <h3>{member.name}</h3>
+                  <p>{member.role}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
 
       {/* 06 — FINAL CTA */}
       <FinalCta />
