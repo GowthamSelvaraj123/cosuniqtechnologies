@@ -614,15 +614,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4rem 0;
+  padding: 0;
 }
 
 .visionMission {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  width: 92%;
-  max-width: 1400px;
-  border-radius: 32px;
+  width: 100%;
+  max-width: none;
+  border-radius: 0;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
 }
@@ -680,8 +680,13 @@
 }
 /* ── 05: OUR TEAM ──────────────────────────────────── */
 .teamSection {
-  background-color: #fff;
   padding: 4rem 0;
+}
+
+.containerFluid {
+  width: 100%;
+  padding: 0 4vw;
+  margin: 0 auto;
 }
 
 .teamHeader {

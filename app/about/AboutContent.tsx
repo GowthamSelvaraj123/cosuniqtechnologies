@@ -249,7 +249,7 @@ export default function AboutContent() {
 
       {/* 05 — OUR TEAM */}
       <section className={styles.teamSection}>
-        <div className="container">
+        <div className={styles.containerFluid}>
           <div className={styles.sliderHeader}>
             <motion.div className={styles.teamHeader} {...fadeUpParams}>
               <div className={`eyebrow ${styles.eyebrowWrap}`} style={{ marginBottom: '2rem', display: 'inline-flex' }}>
