@@ -74,43 +74,48 @@ export default function AboutContent() {
       {/* 03 — OUR STORY */}
       <section className={`${styles.storySection} ${styles.sectionPadding}`} ref={storyRef}>
         <div className="container">
-          <motion.div className={styles.storyHeader} {...fadeUpParams}>
-            <span className={`eyebrow ${styles.eyebrowWrap}`}>
-              <span className="spark spark--inline" />
-              Our Story
-            </span>
-            <h2 className={styles.whoHeadline}>
-              The Evolution of COSUNIQ<span className={styles.dot}>.</span>
-            </h2>
-          </motion.div>
+          <div className={styles.storyTopRow}>
+            <motion.div className={styles.storyHeader} {...fadeUpParams}>
+              <span className={`eyebrow ${styles.eyebrowWrap}`}>
+                <span className="spark spark--inline" />
+                Our Story
+              </span>
+              <h2 className={styles.whoHeadline}>
+                The Evolution of COSUNIQ<span className={styles.dot}>.</span>
+              </h2>
+            </motion.div>
 
-          <motion.div 
-            className={styles.evolutionImageWrapper}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <Image 
-              src="/assets/images/evolution-new.png" 
-              alt="The Evolution of Cosuniq" 
-              width={1920} 
-              height={1080} 
-              className={styles.evolutionImage}
-              quality={90}
-              unoptimized
-            />
-          </motion.div>
+            <motion.div 
+              className={styles.evolutionImageWrapper}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <Image 
+                src="/assets/images/evolution-new.png" 
+                alt="The Evolution of Cosuniq" 
+                width={1920} 
+                height={1080} 
+                className={styles.evolutionImage}
+                quality={90}
+                unoptimized
+                style={{marginBottom: "-38px"}}
+              />
+            </motion.div>
+          </div>
 
           <div className={styles.timeline}>
             <div className={styles.timelineLine}></div>
             <motion.div className={styles.timelineProgress} style={{ scaleX: lineScale }}></motion.div>
 
             {[
-              { title: "Idea", desc: "A singular thought: to bridge the gap between creative vision and technical execution." },
-              { title: "Foundation", desc: "Establishing our core principles of strategy, design, and reliable engineering." },
-              { title: "Evolution", desc: "Expanding our capabilities to include immersive branding and media production." },
-              { title: "COSUNIQ", desc: "Today, we operate as a unified creative technology partner for ambitious global brands." }
+              { title: "Survival", desc: "A primal instinct to bridge the gap between creative vision and execution." },
+              { title: "Foundation", desc: "Establishing our core principles of strategy, design, and raw engineering." },
+              { title: "Knowledge", desc: "Gathering insights and refining our technical capabilities for the modern web." },
+              { title: "Evolution", desc: "Expanding into a full-service creative agency with immersive media production." },
+              { title: "Innovation", desc: "Pushing boundaries with cutting-edge architectures and futuristic design." },
+              { title: "Vision", desc: "Today, we operate as a unified creative technology partner for global brands." }
             ].map((step, index) => (
               <motion.div 
                 key={index} 
