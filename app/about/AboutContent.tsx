@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import InitReveal from "../../components/InitReveal";
 import InnerBanner from "../../components/InnerBanner";
+import ParticleAnimal from "../../components/ParticleAnimal";
 import styles from "./About.module.css";
 
 const fadeUpParams = {
@@ -64,18 +65,7 @@ export default function AboutContent() {
             viewport={{ once: true }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className={styles.vennContainer}>
-              <div className={styles.vennCenter}></div>
-              <div className={`${styles.vennCircle} ${styles.vennStrategy}`}>
-                <span>Strategy</span>
-              </div>
-              <div className={`${styles.vennCircle} ${styles.vennDesign}`}>
-                <span>Design</span>
-              </div>
-              <div className={`${styles.vennCircle} ${styles.vennTechnology}`}>
-                <span>Technology</span>
-              </div>
-            </div>
+            <ParticleAnimal animal="🦋" />
           </motion.div>
         </div>
       </section>
