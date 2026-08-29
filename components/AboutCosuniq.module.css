@@ -160,7 +160,7 @@
 .grid {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 2.5rem;
 }
 
 /* ── Card ────────────────────────────────── */
@@ -292,10 +292,6 @@
   line-height: 1.75;
   margin: 0;
   width: 100%;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
 /* ── Responsive ────────────────────────────── */
