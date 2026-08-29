@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import styles from "./InnerBanner.module.css";
 
 interface InnerBannerProps {
-  eyebrow?: string;
+  eyebrow?: React.ReactNode;
   title?: string;
   description?: string;
   bgImage?: string;

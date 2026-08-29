@@ -38,18 +38,24 @@ export default function AboutContent() {
       
       {/* 01 — BANNER (Existing) */}
       <InnerBanner 
-        eyebrow="About Us"
-        title="Intelligence meets craft"
+        eyebrow={<><span className="spark spark--inline" style={{ backgroundColor: '#ffffff' }} />About Us</>}
+        title="We. Build. Uniq."
         description="Cosuniq Technologies is a digital solutions company blending software engineering with brand and media — so your product, presence, and story stay aligned."
         bgImage="/assets/images/team.png"
       />
 
       {/* 02 — WHO WE ARE */}
-      <section className={`${styles.whoWeAre} ${styles.sectionPadding}`}>
+      <section className={styles.whoWeAre}>
         <div className={`container ${styles.whoGrid}`}>
           <motion.div className={styles.whoText} {...fadeUpParams}>
-            <h2 className={styles.displayMedium}>Where creative thinking meets technology.</h2>
-            <p>We are a creative technology team bringing strategy, design, and development together to turn ideas into meaningful digital experiences.</p>
+            <span className={`eyebrow ${styles.eyebrowWrap}`}>
+              <span className="spark spark--inline" />
+              Who We Are
+            </span>
+            <h2 className={styles.whoHeadline}>
+              Strategy. Design. Technology<span className={styles.dot}>.</span>
+            </h2>
+            <p className={styles.whoDescription}>We are a creative technology team bringing strategy, design, and development together to turn ideas into meaningful digital experiences.</p>
           </motion.div>
           <motion.div 
             className={styles.whoVisual}
@@ -58,8 +64,18 @@ export default function AboutContent() {
             viewport={{ once: true }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className={styles.abstractOrb}></div>
-            <div className={styles.metallicObject}></div>
+            <div className={styles.vennContainer}>
+              <div className={styles.vennCenter}></div>
+              <div className={`${styles.vennCircle} ${styles.vennStrategy}`}>
+                <span>Strategy</span>
+              </div>
+              <div className={`${styles.vennCircle} ${styles.vennDesign}`}>
+                <span>Design</span>
+              </div>
+              <div className={`${styles.vennCircle} ${styles.vennTechnology}`}>
+                <span>Technology</span>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
