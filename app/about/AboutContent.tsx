@@ -91,14 +91,6 @@ export default function AboutContent() {
             { path: "M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6z M12 16v4 M8 20h8", size: 36, top: "15%", left: "45%", color: "#aaa", opacity: 0.7, delay: 1.2 },
             // 8. Internet (High Center-Right)
             { path: "M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z M2 12h20 M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z", size: 40, top: "5%", left: "55%", color: "#aaa", opacity: 0.75, delay: 1.4 },
-            // 9. Mobile (Mid Right)
-            { path: "M5 4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4z M12 18h.01", size: 28, top: "25%", left: "58%", color: "#FF6B00", opacity: 0.8, delay: 1.6 },
-            // 10. AI Brain (Far Right)
-            { path: "M9.5 2A2.5 2.5 0 0112 4.5v15a2.5 2.5 0 01-4.96.44 2.5 2.5 0 01-2.96-3.08 3 3 0 01-.34-5.58 2.5 2.5 0 011.32-4.24 2.5 2.5 0 014.44-3.11z M14.5 2A2.5 2.5 0 0012 4.5v15a2.5 2.5 0 004.96.44 2.5 2.5 0 002.96-3.08 3 3 0 00.34-5.58 2.5 2.5 0 00-1.32-4.24 2.5 2.5 0 00-4.44-3.11z", size: 40, top: "12%", left: "70%", color: "#FF6B00", opacity: 0.85, delay: 1.8 },
-            // 11. Robotics (Far Right, High)
-            { path: "M14 6v8 M10 6v8 M8 14h8 M12 2v4 M8 22h8 M6 18h12v-4H6v4z", size: 36, top: "28%", right: "15%", color: "#FF6B00", opacity: 0.95, delay: 2.0 },
-            // 12. Future Tech (Far Right, Corner)
-            { path: "M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z M3.27 6.96L12 12.01 M20.73 6.96L12 12.01 M12 22.08V12", size: 48, top: "8%", right: "5%", color: "#FF6B00", opacity: 1, delay: 2.2, glow: true }
           ].map((icon: any, idx) => (
             <motion.div
               key={idx}
