@@ -17,7 +17,11 @@ export default function WorkSlider() {
       id="work" 
       style={{ 
         position: 'relative', 
-        overflow: 'hidden', 
+        overflow: 'hidden',
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
         backgroundColor: 'rgb(68 27 0)', /* Darker burnt orange */
         backgroundImage: 'url(/assets/images/office.jpg)',
         backgroundSize: 'cover',
@@ -66,18 +70,16 @@ export default function WorkSlider() {
           <article className="work-slide">
             <div className="work-slide__img">
               <img src="/assets/images/dashboard.jpg" alt="Freelance Experience" />
-              <div className="stat-badge">100+ <small>websites</small></div>
             </div>
             <div className="work-slide__meta">
               <h3>Freelance Experience</h3>
               <p>Designed and built across 100+ different categories.</p>
-              <div className="tags"><span>Freelance</span><span>Design</span><span>Web</span></div>
+              <div className="tags"><span>Freelance</span><span>Design</span></div>
             </div>
           </article>
           <article className="work-slide">
             <div className="work-slide__img">
               <img src="/assets/images/orangebabe_mockup.jpg" alt="Orangebabe kids ecommerce" />
-              <div className="stat-badge">+32% <small>conversion</small></div>
             </div>
             <div className="work-slide__meta">
               <h3>Orangebabe</h3>
@@ -88,18 +90,16 @@ export default function WorkSlider() {
           <article className="work-slide">
             <div className="work-slide__img">
               <img src="/assets/images/strategy.jpg" alt="CRM and ERP cross integrations" />
-              <div className="stat-badge">100% <small>sync</small></div>
             </div>
             <div className="work-slide__meta">
               <h3>Own Product: CRM & ERP</h3>
               <p>Seamless cross integrations for our internal product.</p>
-              <div className="tags"><span>CRM</span><span>ERP</span><span>Integration</span></div>
+              <div className="tags"><span>CRM</span><span>ERP</span></div>
             </div>
           </article>
           <article className="work-slide">
             <div className="work-slide__img">
               <img src="/assets/images/workshop.jpg" alt="Brand workshop" />
-              <div className="stat-badge">Full <small>identity</small></div>
             </div>
             <div className="work-slide__meta">
               <h3>Lumen Brand</h3>
@@ -110,7 +110,6 @@ export default function WorkSlider() {
           <article className="work-slide">
             <div className="work-slide__img">
               <img src="/assets/images/collab.jpg" alt="Video production collab" />
-              <div className="stat-badge">16k+ <small>views</small></div>
             </div>
             <div className="work-slide__meta">
               <h3>Launch Reels</h3>

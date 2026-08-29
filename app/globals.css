@@ -430,7 +430,6 @@ body.has-cursor .cursor-dot {
 }
 
 .band--black .work-slide {
-  background: #FFF5EC;
   border-color: #FFE6CC;
 }
 
@@ -1099,62 +1098,23 @@ body.has-cursor .cursor-dot {
 }
 
 .work-slide {
-  flex: 0 0 min(78vw, 360px);
+  flex: 0 0 calc((min(100vw - 2.5rem, var(--max)) - 4.5rem) / 4);
   scroll-snap-align: start;
-  border-radius: var(--radius-lg);
-  overflow: visible;
-  /* changed from hidden to show pins/shadows */
-  background: var(--white);
-  border: 1px solid var(--line);
-  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 1.75rem 1.5rem 1.5rem;
   position: relative;
-  /* Base scatter properties */
-  --card-rot: 0deg;
+  overflow: visible;
+
   --card-y: 0px;
+  --card-rot: 0deg;
   transform: translateY(var(--card-y)) rotate(var(--card-rot));
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-}
-
-/* Organic Scatter Variations for Grid (Top Aligned) */
-.work-slide:nth-child(1) {
-  --card-y: 0rem;
-  --card-rot: -2deg;
-}
-
-.work-slide:nth-child(2) {
-  --card-y: 0rem;
-  --card-rot: 1.5deg;
-}
-
-.work-slide:nth-child(3) {
-  --card-y: 0rem;
-  --card-rot: -1.5deg;
-}
-
-.work-slide:nth-child(4) {
-  --card-y: 0rem;
-  --card-rot: 2.5deg;
-}
-
-.work-slide:nth-child(5) {
-  --card-y: 0rem;
-  --card-rot: -1deg;
-}
-
-/* RED Push pin on Work Grid Cards */
-.work-slide::before {
-  content: '';
-  position: absolute;
-  top: -6px;
-  /* slightly outside so it overlaps the border nicely */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #ff8888 0%, #e60000 40%, #990000 100%);
-  box-shadow: -2px 6px 14px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0.7), inset -1px -2px 4px rgba(0, 0, 0, 0.4);
-  z-index: 20;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .work-slide:hover {
@@ -1163,12 +1123,46 @@ body.has-cursor .cursor-dot {
   border-color: #FF6B00;
 }
 
+/* Scattered columns effect */
+@media (min-width: 768px) {
+  .work-slide:nth-child(4n + 1) {
+    --card-y: 0rem;
+    --card-rot: -1.5deg;
+  }
+  .work-slide:nth-child(4n + 2) {
+    --card-y: -1rem;
+    --card-rot: 1deg;
+  }
+  .work-slide:nth-child(4n + 3) {
+    --card-y: 0.5rem;
+    --card-rot: -1deg;
+  }
+  .work-slide:nth-child(4n + 4) {
+    --card-y: -0.5rem;
+    --card-rot: 1.5deg;
+  }
+}
+
+@media (max-width: 1024px) {
+  .work-slide {
+    flex: 0 0 calc((100vw - 2.5rem - 3rem) / 3);
+  }
+}
+
+@media (max-width: 768px) {
+  .work-slide {
+    flex: 0 0 calc((100vw - 2.5rem - 1.5rem) / 2);
+  }
+}
+
 .work-slide__img {
   position: relative;
-  aspect-ratio: 4 / 3;
+  width: 100%;
+  aspect-ratio: 3/4;
+  border-radius: 12px;
   overflow: hidden;
-  border-top-left-radius: var(--radius-lg);
-  border-top-right-radius: var(--radius-lg);
+  background-color: #FAFAFA;
+  margin-bottom: 1.5rem;
 }
 
 .work-slide__img img {
@@ -1178,21 +1172,23 @@ body.has-cursor .cursor-dot {
 }
 
 .work-slide__meta {
-  padding: 1.5rem;
   text-align: left;
 }
 
 .work-slide__meta h3 {
   font-family: var(--font-plus-jakarta), sans-serif;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 700;
-  color: #111;
+  color: #ffffff;
   margin-bottom: 0.5rem;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .work-slide__meta p {
-  color: #666;
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1.6;
   font-size: 0.92rem;
   margin-bottom: 1.25rem;
@@ -1211,8 +1207,8 @@ body.has-cursor .cursor-dot {
   text-transform: uppercase;
   padding: 0.35rem 0.8rem;
   border-radius: 20px;
-  background: #FF6B00;
-  color: #FFFFFF;
+  background: #FFFFFF;
+  color: #111111;
 }
 
 /* Orange circular badges (RSNL) */
