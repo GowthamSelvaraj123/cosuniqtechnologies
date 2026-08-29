@@ -425,57 +425,78 @@
   z-index: 2;
   padding-top: 3rem;
   text-align: left;
-  /* setup scatter effect */
-  --step-y: 0px;
-  --step-rot: 0deg;
-  transform: translateY(var(--step-y)) rotate(var(--step-rot));
-  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  /* variables used by timelineCard and timelineDot thread */
+  --card-y: 0px;
+  --card-rot: 0deg;
 }
 
 .timelineCard {
-  background-color: transparent;
-  border: none;
+  position: relative;
+  background-color: #FFF6F0; /* light orange */
+  border: 1px solid rgba(255, 107, 0, 0.15);
   border-radius: 16px;
   padding: 1.5rem;
-  transition: transform 0.3s ease;
+  transform: translateY(var(--card-y)) rotate(var(--card-rot));
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .timelineStep:hover .timelineCard {
+  border-color: #FF6B00;
   box-shadow: 0 10px 30px rgba(255, 107, 0, 0.1);
-  transform: translateY(-4px);
+  transform: translateY(calc(var(--card-y) - 4px)) rotate(var(--card-rot)) scale(1.02);
 }
 
 /* scatter logic for timeline steps on desktop */
 @media (min-width: 960px) {
   .timelineStep:nth-child(3) {
-    --step-y: 0rem;
-    --step-rot: -1.5deg;
+    --card-y: 0rem;
+    --card-rot: -1.5deg;
   }
 
   .timelineStep:nth-child(4) {
-    --step-y: 1.5rem;
-    --step-rot: 1deg;
+    --card-y: 1.5rem;
+    --card-rot: 1deg;
   }
 
   .timelineStep:nth-child(5) {
-    --step-y: -0.5rem;
-    --step-rot: -1deg;
+    --card-y: -0.5rem;
+    --card-rot: -1deg;
   }
 
   .timelineStep:nth-child(6) {
-    --step-y: 2rem;
-    --step-rot: 1.5deg;
+    --card-y: 2rem;
+    --card-rot: 1.5deg;
   }
 
   .timelineStep:nth-child(7) {
-    --step-y: 0.5rem;
-    --step-rot: -1.5deg;
+    --card-y: 0.5rem;
+    --card-rot: -1.5deg;
   }
 
   .timelineStep:nth-child(8) {
-    --step-y: -1rem;
-    --step-rot: 1deg;
+    --card-y: -1rem;
+    --card-rot: 1deg;
   }
+}
+
+/* Connective thread from dot to card */
+.timelineStep::before {
+  content: '';
+  position: absolute;
+  top: 21px; /* 10px (dot top) + 11px (dot height) */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  /* 48px (padding-top) - 21px = 27px base height. Add var(--card-y) */
+  height: calc(27px + var(--card-y, 0px));
+  background: #FF6B00;
+  transition: height 0.3s ease;
+  z-index: 1;
+}
+
+/* Shrink the thread when the card moves up on hover */
+.timelineStep:hover::before {
+  height: calc(27px + var(--card-y, 0px) - 4px);
 }
 
 .timelineDot {
@@ -489,10 +510,10 @@
   background: #FF6B00;
   border-radius: 50%;
   box-shadow: 0 0 8px rgba(255, 107, 0, 0.4);
-  /* cancel out the rotation on the step so the dot stays upright */
-  transform: rotate(calc(var(--step-rot) * -1));
   transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
 }
+
+/* Thread removed from here */
 
 .timelineDot::after {
   content: '';
@@ -508,9 +529,11 @@
 }
 
 .timelineStep:hover .timelineDot {
-  transform: rotate(calc(var(--step-rot) * -1)) scale(1.4);
+  transform: scale(1.4);
   box-shadow: 0 0 15px rgba(255, 107, 0, 0.7);
 }
+
+
 
 @keyframes pulseDot {
   0% {
@@ -575,6 +598,10 @@
     padding-top: 0;
     padding-left: 3rem;
     text-align: left;
+  }
+  
+  .timelineStep::before {
+    display: none;
   }
 }
 
