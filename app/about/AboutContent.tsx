@@ -98,7 +98,7 @@ export default function AboutContent() {
             // 11. Robotics (Far Right, High)
             { path: "M14 6v8 M10 6v8 M8 14h8 M12 2v4 M8 22h8 M6 18h12v-4H6v4z", size: 36, top: "28%", right: "15%", color: "#FF6B00", opacity: 0.95, delay: 2.0 },
             // 12. Future Tech (Far Right, Corner)
-            { path: "M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6 M12 12m-3 0a3 3 0 1 0 6 0 3 3 0 1 0 -6 0", size: 48, top: "8%", right: "5%", color: "#FF6B00", opacity: 1, delay: 2.2, glow: true }
+            { path: "M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z M3.27 6.96L12 12.01 M20.73 6.96L12 12.01 M12 22.08V12", size: 48, top: "8%", right: "5%", color: "#FF6B00", opacity: 1, delay: 2.2, glow: true }
           ].map((icon: any, idx) => (
             <motion.div
               key={idx}
