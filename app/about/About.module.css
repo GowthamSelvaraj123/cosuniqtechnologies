@@ -1,0 +1,530 @@
+/* ==========================================================================
+   ABOUT PAGE — COSUNIQ 
+   Premium, Editorial, Minimal, Technology-driven
+   ========================================================================== */
+
+.pageWrapper {
+  background-color: #FAFAFA;
+  color: #111;
+  overflow-x: hidden;
+}
+
+/* Typography Overrides */
+.displayLarge {
+  font-family: var(--display, sans-serif);
+  font-size: clamp(3.5rem, 8vw, 8rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+.displayMedium {
+  font-family: var(--display, sans-serif);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.displaySmall {
+  font-family: var(--display, sans-serif);
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.bodyText {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  line-height: 1.5;
+  color: #444;
+  max-width: 600px;
+}
+
+.sectionPadding {
+  padding: 10rem 0;
+}
+
+@media (max-width: 768px) {
+  .sectionPadding {
+    padding: 6rem 0;
+  }
+}
+
+/* ── 02: WHO WE ARE ────────────────────────────────── */
+.whoWeAre {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: #FAFAFA;
+}
+
+.whoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (max-width: 960px) {
+  .whoGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+.whoText h2 {
+  margin-bottom: 2rem;
+  color: #111;
+}
+
+.whoText p {
+  color: #555;
+  font-size: clamp(1.2rem, 2.5vw, 1.75rem);
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.whoVisual {
+  position: relative;
+  height: 100%;
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.abstractOrb {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FF6B00 0%, transparent 100%);
+  filter: blur(80px);
+  opacity: 0.15;
+  animation: floatOrb 10s ease-in-out infinite;
+}
+
+.metallicObject {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  border: 2px solid rgba(17, 17, 17, 0.1);
+  backdrop-filter: blur(10px);
+  animation: morphRotate 20s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.metallicObject::before {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  border: 1px solid #FF6B00;
+  opacity: 0.5;
+  animation: morphRotate 15s linear infinite reverse;
+}
+
+@keyframes floatOrb {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(-30px, 30px) scale(1.1);
+  }
+}
+
+@keyframes morphRotate {
+  0% {
+    transform: rotate(0deg) scale(1);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+
+  25% {
+    border-radius: 50% 50% 30% 70% / 70% 30% 70% 30%;
+  }
+
+  50% {
+    transform: rotate(180deg) scale(1.05);
+    border-radius: 70% 30% 50% 50% / 30% 70% 30% 70%;
+  }
+
+  75% {
+    border-radius: 30% 70% 70% 30% / 70% 30% 70% 30%;
+  }
+
+  100% {
+    transform: rotate(360deg) scale(1);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+}
+
+
+/* ── 03: OUR STORY ─────────────────────────────────── */
+.storySection {
+  background-color: #111;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.storyHeader {
+  margin-bottom: 6rem;
+}
+
+.storyHeader h2 {
+  color: #fff;
+}
+
+.storyHeader .eyebrow {
+  color: #FF6B00;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  position: relative;
+}
+
+.timelineLine {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 0;
+}
+
+.timelineProgress {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  height: 1px;
+  background: #FF6B00;
+  z-index: 1;
+  transform-origin: left;
+}
+
+.timelineStep {
+  position: relative;
+  z-index: 2;
+  padding-top: 3rem;
+}
+
+.timelineDot {
+  position: absolute;
+  top: 11px;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  background: #111;
+  border: 1px solid #FF6B00;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.timelineStep h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.timelineStep p {
+  color: #888;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 960px) {
+  .timeline {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .timelineLine,
+  .timelineProgress {
+    top: 0;
+    left: 15px;
+    width: 1px;
+    height: 100%;
+    right: auto;
+  }
+
+  .timelineProgress {
+    transform-origin: top;
+  }
+
+  .timelineDot {
+    top: 0;
+    left: 11px;
+  }
+
+  .timelineStep {
+    padding-top: 0;
+    padding-left: 3rem;
+  }
+}
+
+
+/* ── 04: VISION + MISSION ──────────────────────────── */
+.visionMission {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+.vmBlock {
+  padding: 8rem 4vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.visionBlock {
+  background-color: #FAFAFA;
+  color: #111;
+}
+
+.missionBlock {
+  background-color: #111;
+  color: #fff;
+}
+
+.vmLabel {
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  font-size: 0.9rem;
+  margin-bottom: 3rem;
+  color: #FF6B00;
+}
+
+.vmText {
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 960px) {
+  .visionMission {
+    grid-template-columns: 1fr;
+  }
+
+  .vmBlock {
+    padding: 6rem 5vw;
+    min-height: 60vh;
+  }
+}
+
+
+/* ── 05: WHAT WE BELIEVE ───────────────────────────── */
+.principlesSection {
+  background-color: #fff;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.principlesHeader {
+  margin-bottom: 6rem;
+}
+
+.principleItem {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  align-items: baseline;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 3rem 0;
+  transition: all 0.4s ease;
+}
+
+.principleItem:hover {
+  background-color: #FAFAFA;
+  padding-left: 2rem;
+}
+
+.pNumber {
+  font-family: var(--display, sans-serif);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #FF6B00;
+}
+
+.pText {
+  font-family: var(--display, sans-serif);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #111;
+}
+
+@media (max-width: 768px) {
+  .principleItem {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 2rem 0;
+  }
+
+  .principleItem:hover {
+    padding-left: 1rem;
+  }
+}
+
+
+/* ── 06: THE COSUNIQ DIFFERENCE ────────────────────── */
+.differenceSection {
+  background-color: #FFF6F0;
+  position: relative;
+  overflow: hidden;
+}
+
+.diffHeader {
+  margin-bottom: 6rem;
+  text-align: center;
+}
+
+.diffGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.diffColumn {
+  padding: 3rem;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.diffColumn:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05);
+  border-color: #FF6B00;
+}
+
+.diffTitle {
+  font-family: var(--display, sans-serif);
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: #111;
+}
+
+.diffDesc {
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 960px) {
+  .diffGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ── 07: FINAL CTA ─────────────────────────────────── */
+.finalCta {
+  background-color: #0A0A0A;
+  color: #ffffff;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaBgElement {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle, rgba(255, 107, 0, 0.08) 0%, rgba(10, 10, 10, 0) 70%);
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.ctaContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.ctaHeadline {
+  color: #fff;
+  margin: 0;
+}
+
+.ctaSub {
+  color: #888;
+}
+
+.magneticBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #FF6B00;
+  color: #ffffff;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 1rem;
+  padding: 20px 48px;
+  border-radius: 99px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.magneticBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  mix-blend-mode: overlay;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.magneticBtn:hover::before {
+  opacity: 0.2;
+}
+
+.magneticBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(255, 107, 0, 0.4);
+}
