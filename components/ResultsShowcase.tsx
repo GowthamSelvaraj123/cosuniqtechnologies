@@ -74,6 +74,11 @@ export default function ResultsShowcase() {
               <span className={styles.value}>24/7</span>
               <p className={styles.label}>Proactive support and monitoring to ensure your digital assets are always live and performing.</p>
             </div>
+                        {/* The right-side overlapping image */}
+            <div className={styles.showcaseImg}>
+              {/* Replace src with your transparent PNG */}
+              <img src="/assets/images/24-by-7-support.png"  style={{"objectFit": "contain", "width": "206px"}} alt="Celebrating success" />
+            </div>
           </div>
 
           {/* Card 6: Custom */}

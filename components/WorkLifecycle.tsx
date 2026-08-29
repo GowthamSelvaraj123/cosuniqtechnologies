@@ -8,7 +8,7 @@ export default function WorkLifecycle() {
     <section className="band band--white" id="work-lifecycle">
       <div className="lifecycle-container">
         
-        {/* Top Right: Hi, I am gowtham */}
+        {/* Top Right: Hi, We are Cosuniq */}
         <div className="lifecycle-gowtham-text">
           <div style={{
             position: 'relative',
@@ -34,7 +34,7 @@ export default function WorkLifecycle() {
             }} />
           </div>
           <span style={{ fontSize: '1.6rem', fontWeight: 700, color: '#111', letterSpacing: '-0.03em' }}>
-            I am gowtham,
+            We are Cosuniq,
           </span>
         </div>
 

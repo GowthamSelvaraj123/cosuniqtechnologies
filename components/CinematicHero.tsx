@@ -12,8 +12,8 @@ const sequence = [
   "Branding people remember.",
 ];
 
-// 1.2s per item × 11 items = ~13.2s total
-const TOTAL_MS = sequence.length * 1200;
+// 0.5s per item × 5 items = ~2.5s total
+const TOTAL_MS = sequence.length * 500;
 
 export default function CinematicHero() {
   const [currentIndex, setCurrentIndex]                   = useState(0);
@@ -68,7 +68,7 @@ export default function CinematicHero() {
   // Advance text every 3.5s
   useEffect(() => {
     if (currentIndex < sequence.length - 1) {
-      const t = setTimeout(() => setCurrentIndex(i => i + 1), 1200);
+      const t = setTimeout(() => setCurrentIndex(i => i + 1), 500);
       return () => clearTimeout(t);
     }
   }, [currentIndex]);
