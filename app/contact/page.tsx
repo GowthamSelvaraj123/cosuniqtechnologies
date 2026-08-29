@@ -154,6 +154,7 @@ export default function Contact() {
           </div>
 
           <form className={`reveal ${styles.formWrapper}`} id="contact-form" noValidate onSubmit={handleSubmit}>
+            <h2 className={styles.formTitle}>Get in touch<span style={{ color: '#111' }}>.</span></h2>
             <div className={styles.formContainer}>
               <div className={styles.formCard}>
                 <div className={styles.formGroup}>
