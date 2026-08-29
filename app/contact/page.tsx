@@ -153,61 +153,83 @@ export default function Contact() {
             </div>
           </div>
 
-          <form className={`reveal ${styles.formWrapper}`} id="contact-form" noValidate onSubmit={handleSubmit}>
-            <h2 className={styles.formTitle}>Get in touch<span style={{ color: '#111' }}>.</span></h2>
-            <div className={styles.formContainer}>
-              <div className={styles.formCard}>
-                <div className={styles.formGroup}>
-                  <input type="text" id="firstName" name="firstName" placeholder="First name" />
-                  {errors.name && <span className={styles.errorText}>{errors.name}</span>}
-                </div>
-              </div>
-
-              <div className={styles.formCard}>
-                <div className={styles.formGroup}>
-                  <input type="text" id="lastName" name="lastName" placeholder="Last name" />
-                </div>
-              </div>
-
-              <div className={styles.formCard}>
-                <div className={styles.formGroup}>
-                  <input type="email" id="email" name="email" placeholder="Email address" />
-                  {errors.email && <span className={styles.errorText}>{errors.email}</span>}
-                </div>
-              </div>
-
-              <div className={styles.formCard}>
-                <div className={styles.formGroup}>
-                  <input type="tel" id="phone" name="phone" placeholder="Phone (e.g. +91 73586 965)" />
-                </div>
-              </div>
-
-              <div className={`${styles.formCard} ${styles.formCardFull}`}>
-                <div className={styles.formGroup}>
-                  <textarea
-                    id="message"
-                    name="message"
-                    placeholder="How can we help you? Tell us about your project..."
-                  ></textarea>
-                  {errors.message && <span className={styles.errorText}>{errors.message}</span>}
-                </div>
-              </div>
-
-              <div className={`${styles.submitWrapper} ${styles.formCardFull}`}>
-                <button className={styles.ctaBtn} type="submit">
-                  START A PROJECT
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
-                  </svg>
-                </button>
-                {successMessage && (
-                  <div className="form-success show" role="status">
-                    {successMessage}
+          <div className={`reveal ${styles.rightColumn}`}>
+            <form className={styles.formWrapper} id="contact-form" noValidate onSubmit={handleSubmit}>
+              <h2 className={styles.formTitle}>Get in touch<span style={{ color: '#111' }}>.</span></h2>
+              <div className={styles.formContainer}>
+                <div className={styles.formCard}>
+                  <div className={styles.formGroup}>
+                    <input type="text" id="firstName" name="firstName" placeholder="First name" />
+                    {errors.name && <span className={styles.errorText}>{errors.name}</span>}
                   </div>
-                )}
+                </div>
+
+                <div className={styles.formCard}>
+                  <div className={styles.formGroup}>
+                    <input type="text" id="lastName" name="lastName" placeholder="Last name" />
+                  </div>
+                </div>
+
+                <div className={styles.formCard}>
+                  <div className={styles.formGroup}>
+                    <input type="email" id="email" name="email" placeholder="Email address" />
+                    {errors.email && <span className={styles.errorText}>{errors.email}</span>}
+                  </div>
+                </div>
+
+                <div className={styles.formCard}>
+                  <div className={styles.formGroup}>
+                    <input type="tel" id="phone" name="phone" placeholder="Phone (e.g. +91 73586 965)" />
+                  </div>
+                </div>
+
+                <div className={`${styles.formCard} ${styles.formCardFull}`}>
+                  <div className={styles.formGroup}>
+                    <textarea
+                      id="message"
+                      name="message"
+                      placeholder="How can we help you? Tell us about your project..."
+                    ></textarea>
+                    {errors.message && <span className={styles.errorText}>{errors.message}</span>}
+                  </div>
+                </div>
+
+                <div className={`${styles.submitWrapper} ${styles.formCardFull}`}>
+                  <button className={styles.ctaBtn} type="submit">
+                    START A PROJECT
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
+                    </svg>
+                  </button>
+                  {successMessage && (
+                    <div className="form-success show" role="status">
+                      {successMessage}
+                    </div>
+                  )}
+                </div>
               </div>
+            </form>
+
+            <div className={styles.funAnimationContainer}>
+              <div className={styles.rotatingBadge}>
+                <svg viewBox="0 0 100 100" width="150" height="150" className={styles.badgeText}>
+                  <path id="circlePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="transparent" />
+                  <text>
+                    <textPath href="#circlePath" fill="#111" fontSize="11" fontWeight="800" letterSpacing="1px">
+                      LET'S BUILD SOMETHING GREAT • LET'S BUILD SOMETHING GREAT • 
+                    </textPath>
+                  </text>
+                </svg>
+                <div className={styles.badgeStar}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="#FF6B00">
+                    <path d="M12 0l3.5 8.5L24 12l-8.5 3.5L12 24l-3.5-8.5L0 12l8.5-3.5L12 0z"/>
+                  </svg>
+                </div>
+              </div>
+              <div className={styles.floatingShape1}></div>
+              <div className={styles.floatingShape2}></div>
             </div>
-          </form>
+          </div>
         </div>
       </section>
     </>

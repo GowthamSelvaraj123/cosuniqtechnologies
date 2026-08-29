@@ -376,3 +376,77 @@
   transform: translateY(-3px);
   box-shadow: 0 8px 24px rgba(255, 107, 0, 0.2);
 }
+
+/* ── Right Column Animations ─────────────────────── */
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.funAnimationContainer {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 200px;
+  margin-top: 2rem;
+}
+
+.rotatingBadge {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badgeText {
+  animation: badgeSpin 15s linear infinite;
+}
+
+.badgeStar {
+  position: absolute;
+  animation: badgePulse 4s ease-in-out infinite;
+}
+
+.floatingShape1 {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #111;
+  border-radius: 4px;
+  top: 10%;
+  left: 20%;
+  animation: shapeFloat 6s ease-in-out infinite;
+  transform: rotate(15deg);
+}
+
+.floatingShape2 {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: 3px solid #FF6B00;
+  border-radius: 50%;
+  bottom: 10%;
+  right: 25%;
+  animation: shapeFloat 8s ease-in-out infinite reverse;
+}
+
+@keyframes badgeSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes badgePulse {
+  0% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.15) rotate(18deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+@keyframes shapeFloat {
+  0% { transform: translateY(0px) rotate(15deg); }
+  50% { transform: translateY(-15px) rotate(25deg); }
+  100% { transform: translateY(0px) rotate(15deg); }
+}
