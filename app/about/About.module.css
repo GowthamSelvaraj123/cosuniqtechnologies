@@ -678,16 +678,13 @@
     min-height: 60vh;
   }
 }
+
 /* ── 05: OUR TEAM ──────────────────────────────────── */
 .teamSection {
   padding: 4rem 0;
 }
 
-.containerFluid {
-  width: 100%;
-  padding: 0 4vw;
-  margin: 0 auto;
-}
+
 
 .teamHeader {
   margin-bottom: 0;
@@ -707,7 +704,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 5rem;
+  margin-bottom: 0rem;
 }
 
 .sliderControls {
@@ -741,7 +738,8 @@
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  padding-bottom: 4rem; /* padding to account for shifted cards */
+  padding: 1rem 1.5rem 4rem 1.5rem;
+  margin: -1rem -1.5rem 0 -1.5rem;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
@@ -759,12 +757,12 @@
   cursor: pointer;
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 18px;
+  border-radius: 12px;
   padding: 1.75rem 1.5rem 1.5rem;
-  
+
   --card-y: 0px;
   --card-rot: 0deg;
-  transform: translateY(var(--card-y)) rotate(var(--card-rot));
+  transform: translateY(var(--card-y)) rotate(var(--card-rot)) !important;
   transition:
     background 0.25s ease,
     border-color 0.25s ease,
@@ -775,7 +773,6 @@
 
 .teamCard:hover {
   border-color: #FF6B00;
-  transform: translateY(calc(var(--card-y) - 6px)) rotate(var(--card-rot)) scale(1.02);
   box-shadow:
     0 4px 16px rgba(255, 107, 0, 0.07),
     0 16px 36px rgba(255, 107, 0, 0.1);
@@ -783,10 +780,25 @@
 
 /* Staggered positions for slider */
 @media (min-width: 768px) {
-  .teamCard:nth-child(4n + 1) { --card-y: 0rem; --card-rot: -2deg; }
-  .teamCard:nth-child(4n + 2) { --card-y: 2.5rem; --card-rot: 1.5deg; }
-  .teamCard:nth-child(4n + 3) { --card-y: 0.5rem; --card-rot: -1.5deg; }
-  .teamCard:nth-child(4n + 4) { --card-y: 3rem; --card-rot: 2.5deg; }
+  .teamCard:nth-child(4n + 1) {
+    --card-y: 0rem;
+    --card-rot: -2deg;
+  }
+
+  .teamCard:nth-child(4n + 2) {
+    --card-y: 2.5rem;
+    --card-rot: 1.5deg;
+  }
+
+  .teamCard:nth-child(4n + 3) {
+    --card-y: 0.5rem;
+    --card-rot: -1.5deg;
+  }
+
+  .teamCard:nth-child(4n + 4) {
+    --card-y: 3rem;
+    --card-rot: 2.5deg;
+  }
 }
 
 .teamImageWrapper {
@@ -851,6 +863,7 @@
   .teamCard {
     flex: 0 0 calc(50% - 1rem);
   }
+
   .sliderHeader {
     flex-direction: column;
     align-items: flex-start;

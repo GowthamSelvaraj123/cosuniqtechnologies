@@ -249,14 +249,14 @@ export default function AboutContent() {
 
       {/* 05 — OUR TEAM */}
       <section className={styles.teamSection}>
-        <div className={styles.containerFluid}>
+        <div className="container">
           <div className={styles.sliderHeader}>
             <motion.div className={styles.teamHeader} {...fadeUpParams}>
               <div className={`eyebrow ${styles.eyebrowWrap}`} style={{ marginBottom: '2rem', display: 'inline-flex' }}>
                 <span className="spark spark--inline" />
                 OUR TEAM
               </div>
-              <h2 className={styles.teamHeadline}>The minds behind<br/>the magic<span className={styles.dot}>.</span></h2>
+              <h2 className={styles.teamHeadline}>The minds behind the magic<span className={styles.dot}>.</span></h2>
             </motion.div>
             
             <motion.div className={styles.sliderControls} {...fadeUpParams}>
@@ -289,8 +289,8 @@ export default function AboutContent() {
                 key={index} 
                 className={styles.teamCard}
                 variants={{
-                  initial: { opacity: 0, y: 30 },
-                  whileInView: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }
+                  initial: { opacity: 0 },
+                  whileInView: { opacity: 1, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }
                 }}
               >
                 <div className={styles.teamImageWrapper}>
