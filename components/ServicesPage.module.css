@@ -216,7 +216,64 @@
   padding: 8rem 0; position: relative; overflow: hidden;
 }
 .serviceSection + .serviceSection { border-top: 1px solid #f0e2d6; }
-.serviceSection:nth-child(even) { background: #fafafa; }
+
+/* Service Backgrounds */
+.bgLightOrange { background: #fff5ec !important; }
+.bgWhite { background: #ffffff !important; }
+.bgDarkOrange { background: #ff6a00 !important; }
+
+/* Dark Orange Inversions */
+.bgDarkOrange .serviceHeadline, 
+.bgDarkOrange .serviceDescription, 
+.bgDarkOrange .capabilitiesList li,
+.bgDarkOrange .metaItem,
+.bgDarkOrange .metaValue {
+  color: #ffffff !important;
+}
+.bgDarkOrange .serviceEyebrow,
+.bgDarkOrange .metaLabel {
+  color: #ffffff !important;
+  opacity: 0.9;
+}
+.bgDarkOrange .capabilitiesList li::before {
+  background: #ffffff !important;
+}
+.bgDarkOrange .serviceMeta {
+  border-top-color: rgba(255,255,255,0.2) !important;
+}
+.bgDarkOrange .moreDetailsBtn {
+  color: #ffffff !important;
+  border-color: rgba(255,255,255,0.3) !important;
+}
+.bgDarkOrange .moreDetailsBtn:hover {
+  background: #ffffff !important;
+  color: #ff6a00 !important;
+}
+
+/* Meta details */
+.serviceMeta {
+  display: flex; gap: 2rem; flex-wrap: wrap; margin: 1.5rem 0 2rem;
+  padding-top: 1.5rem; border-top: 1px solid rgba(0,0,0,0.06);
+}
+.metaItem {
+  font-size: 0.85rem; color: #111111; display: flex; flex-direction: column; gap: 0.3rem;
+}
+.metaLabel {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #ff6a00;
+}
+.metaValue {
+  font-weight: 700; font-size: 0.95rem;
+}
+.moreDetailsBtn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: transparent; color: #111111; font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; padding: 14px 28px;
+  border-radius: 999px; border: 1.5px solid rgba(0,0,0,0.15);
+  text-decoration: none; transition: all 0.3s ease;
+}
+.moreDetailsBtn:hover {
+  background: #ff6a00; border-color: #ff6a00; color: #ffffff;
+}
 
 .serviceSectionInner {
   display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;

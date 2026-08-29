@@ -63,7 +63,7 @@ const faqItems = [
 function OverviewSection() {
   const cards: { num: string; name: string; href: string; desc: string; icon: React.ReactNode; featured?: boolean }[] = [
     {
-      num: "01", name: "Strategy & Consulting", href: "#",
+      num: "01", name: "Strategy & Consulting", href: "#strategy",
       desc: "Addressing your core brand strategy to connect directly with people.",
       icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -72,7 +72,7 @@ function OverviewSection() {
       ),
     },
     {
-      num: "02", name: "Brand Identity", href: "#",
+      num: "02", name: "Brand Identity", href: "#brand",
       desc: "Positioning your brand to be exactly what people need it to be.",
       icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -179,13 +179,89 @@ function OverviewSection() {
 }
 
 
-function WebDevSection() {
+function StrategySection() {
   return (
-    <section className={styles.serviceSection} id="web-dev">
+    <section className={`${styles.serviceSection} ${styles.bgLightOrange}`} id="strategy">
       <div className={styles.container}>
         <div className={styles.serviceSectionInner}>
           <div className={styles.serviceContent}>
-            <span className={styles.serviceEyebrow}>01 / WEB DEVELOPMENT</span>
+            <span className={styles.serviceEyebrow}>01 / STRATEGY & CONSULTING</span>
+            <h2 className={styles.serviceHeadline}>Addressing your core brand strategy to connect directly with people.</h2>
+            <p className={styles.serviceDescription}>
+              We help define your product vision, map out the customer journey, and create a roadmap for success before a single line of code is written.
+            </p>
+            <ul className={styles.capabilitiesList}>
+              {["Product Strategy", "Market Research", "Digital Transformation", "Business Analysis", "Go-To-Market", "Roadmapping"].map(c => <li key={c}>{c}</li>)}
+            </ul>
+            <div className={styles.serviceMeta}>
+              <div className={styles.metaItem}>
+                <span className={styles.metaLabel}>Approx. Price</span>
+                <span className={styles.metaValue}>$4,000 - $12,000</span>
+              </div>
+              <div className={styles.metaItem}>
+                <span className={styles.metaLabel}>Timeline</span>
+                <span className={styles.metaValue}>2 - 4 Weeks</span>
+              </div>
+            </div>
+            <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
+          </div>
+
+          <div className={styles.serviceVisual}>
+             <div style={{ background: '#ffffff', borderRadius: '16px', height: '340px', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 24px 80px rgba(0,0,0,0.14), 0 4px 16px rgba(0,0,0,0.06)', padding: '2rem', textAlign: 'center', color: '#ff6a00', fontWeight: 'bold', fontSize: '1rem', letterSpacing: '0.1em', border: '1px solid rgba(0,0,0,0.08)' }}>
+               STRATEGY WORKSHOP
+             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function BrandSection() {
+  return (
+    <section className={`${styles.serviceSection} ${styles.bgWhite}`} id="brand">
+      <div className={styles.container}>
+        <div className={`${styles.serviceSectionInner} ${styles.reverse}`}>
+          <div className={styles.serviceContent}>
+            <span className={styles.serviceEyebrow}>02 / BRAND IDENTITY</span>
+            <h2 className={styles.serviceHeadline}>Positioning your brand to be exactly what people need it to be.</h2>
+            <p className={styles.serviceDescription}>
+              We craft compelling brand identities, messaging, and visual systems that resonate with your target audience and stand out in the market.
+            </p>
+            <ul className={styles.capabilitiesList}>
+              {["Logo Design", "Brand Guidelines", "Typography & Color", "Messaging Framework", "Brand Strategy", "Visual Assets"].map(c => <li key={c}>{c}</li>)}
+            </ul>
+            <div className={styles.serviceMeta}>
+              <div className={styles.metaItem}>
+                <span className={styles.metaLabel}>Approx. Price</span>
+                <span className={styles.metaValue}>$5,000 - $15,000</span>
+              </div>
+              <div className={styles.metaItem}>
+                <span className={styles.metaLabel}>Timeline</span>
+                <span className={styles.metaValue}>3 - 6 Weeks</span>
+              </div>
+            </div>
+            <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
+          </div>
+
+          <div className={styles.serviceVisual}>
+             <div style={{ background: '#111111', borderRadius: '16px', height: '340px', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 24px 80px rgba(0,0,0,0.12)', padding: '2rem', textAlign: 'center', color: '#ffffff', fontWeight: 'bold', letterSpacing: '0.2em', border: '1px solid rgba(0,0,0,0.07)' }}>
+               BRAND BOOK
+             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function WebDevSection() {
+  return (
+    <section className={`${styles.serviceSection} ${styles.bgLightOrange}`} id="web-dev">
+      <div className={styles.container}>
+        <div className={`${styles.serviceSectionInner} ${styles.reverse}`}>
+          <div className={styles.serviceContent}>
+            <span className={styles.serviceEyebrow}>04 / WEB DEVELOPMENT</span>
             <h2 className={styles.serviceHeadline}>Websites built for performance, scale and impact.</h2>
             <p className={styles.serviceDescription}>
               We design and engineer fast, responsive digital experiences that combine strong visual design with reliable technology.
@@ -196,6 +272,17 @@ function WebDevSection() {
             <div className={styles.techTags}>
               {["React", "Next.js", "Node.js", "PHP", "Laravel", "JavaScript"].map(t => <span key={t} className={styles.techTag}>{t}</span>)}
             </div>
+            <div className={styles.serviceMeta}>
+              <div className={styles.metaItem}>
+                <span className={styles.metaLabel}>Approx. Price</span>
+                <span className={styles.metaValue}>$3,000 - $10,000</span>
+              </div>
+              <div className={styles.metaItem}>
+                <span className={styles.metaLabel}>Timeline</span>
+                <span className={styles.metaValue}>3 - 6 Weeks</span>
+              </div>
+            </div>
+            <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
           <div className={styles.serviceVisual}>
@@ -230,11 +317,11 @@ function WebDevSection() {
 
 function DesignSection() {
   return (
-    <section className={styles.serviceSection} id="design">
+    <section className={`${styles.serviceSection} ${styles.bgDarkOrange}`} id="design">
       <div className={styles.container}>
-        <div className={`${styles.serviceSectionInner} ${styles.reverse}`}>
+        <div className={`${styles.serviceSectionInner}`}>
           <div className={styles.serviceContent}>
-            <span className={styles.serviceEyebrow}>02 / UI/UX & PRODUCT DESIGN</span>
+            <span className={styles.serviceEyebrow}>03 / UI/UX & PRODUCT DESIGN</span>
             <h2 className={styles.serviceHeadline}>Design that makes complex products feel simple.</h2>
             <p className={styles.serviceDescription}>
               From early concepts to polished interfaces, we design intuitive digital experiences that users understand and businesses can scale.
@@ -242,6 +329,17 @@ function DesignSection() {
             <ul className={styles.capabilitiesList}>
               {["UX Research", "Wireframing", "UI Design", "Design Systems", "Prototyping", "Interaction Design", "Website Redesign"].map(c => <li key={c}>{c}</li>)}
             </ul>
+            <div className={styles.serviceMeta}>
+              <div className={styles.metaItem}>
+                <span className={styles.metaLabel}>Approx. Price</span>
+                <span className={styles.metaValue}>$2,000 - $6,000</span>
+              </div>
+              <div className={styles.metaItem}>
+                <span className={styles.metaLabel}>Timeline</span>
+                <span className={styles.metaValue}>2 - 4 Weeks</span>
+              </div>
+            </div>
+            <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
           <div className={styles.serviceVisual}>
@@ -274,11 +372,11 @@ function DesignSection() {
 
 function EcommerceSection() {
   return (
-    <section className={styles.serviceSection} id="ecommerce">
+    <section className={`${styles.serviceSection} ${styles.bgDarkOrange}`} id="ecommerce">
       <div className={styles.container}>
-        <div className={styles.serviceSectionInner}>
+        <div className={`${styles.serviceSectionInner} ${styles.reverse}`}>
           <div className={styles.serviceContent}>
-            <span className={styles.serviceEyebrow}>03 / E-COMMERCE</span>
+            <span className={styles.serviceEyebrow}>06 / E-COMMERCE</span>
             <h2 className={styles.serviceHeadline}>Commerce experiences designed to convert.</h2>
             <p className={styles.serviceDescription}>
               We build high-performance e-commerce experiences that make products easier to discover, understand, and purchase.
@@ -286,6 +384,17 @@ function EcommerceSection() {
             <ul className={styles.capabilitiesList}>
               {["Shopify Development", "WooCommerce", "Custom E-Commerce", "Payment Integration", "Product Management", "API Integration", "E-Commerce Automation"].map(c => <li key={c}>{c}</li>)}
             </ul>
+            <div className={styles.serviceMeta}>
+              <div className={styles.metaItem}>
+                <span className={styles.metaLabel}>Approx. Price</span>
+                <span className={styles.metaValue}>$5,000 - $15,000</span>
+              </div>
+              <div className={styles.metaItem}>
+                <span className={styles.metaLabel}>Timeline</span>
+                <span className={styles.metaValue}>4 - 8 Weeks</span>
+              </div>
+            </div>
+            <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
           <div className={styles.serviceVisual}>
@@ -328,11 +437,11 @@ function EcommerceSection() {
 
 function SoftwareSection() {
   return (
-    <section className={styles.serviceSection} id="software">
+    <section className={`${styles.serviceSection} ${styles.bgLightOrange}`} id="software">
       <div className={styles.container}>
-        <div className={`${styles.serviceSectionInner} ${styles.reverse}`}>
+        <div className={styles.serviceSectionInner}>
           <div className={styles.serviceContent}>
-            <span className={styles.serviceEyebrow}>04 / CUSTOM SOFTWARE</span>
+            <span className={styles.serviceEyebrow}>07 / AI & CUSTOM SOFTWARE</span>
             <h2 className={styles.serviceHeadline}>Software built around the way your business works.</h2>
             <p className={styles.serviceDescription}>
               We develop custom digital platforms that solve real operational problems and connect teams, customers, data, and workflows.
@@ -340,6 +449,17 @@ function SoftwareSection() {
             <ul className={styles.capabilitiesList}>
               {["CRM", "ERP", "SaaS Platforms", "Business Dashboards", "Booking Systems", "Real-time Apps", "Business Automation", "API-driven Platforms"].map(c => <li key={c}>{c}</li>)}
             </ul>
+            <div className={styles.serviceMeta}>
+              <div className={styles.metaItem}>
+                <span className={styles.metaLabel}>Approx. Price</span>
+                <span className={styles.metaValue}>$10,000+</span>
+              </div>
+              <div className={styles.metaItem}>
+                <span className={styles.metaLabel}>Timeline</span>
+                <span className={styles.metaValue}>8 - 16 Weeks</span>
+              </div>
+            </div>
+            <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
           <div className={styles.serviceVisual}>
@@ -387,7 +507,7 @@ function SoftwareSection() {
 
 function MobileSection() {
   return (
-    <section className={styles.serviceSection} id="mobile">
+    <section className={`${styles.serviceSection} ${styles.bgWhite}`} id="mobile">
       <div className={styles.container}>
         <div className={styles.serviceSectionInner}>
           <div className={styles.serviceContent}>
@@ -399,6 +519,17 @@ function MobileSection() {
             <ul className={styles.capabilitiesList}>
               {["React Native", "Flutter", "Android & iOS", "API Integration", "Push Notifications", "Real-time Features"].map(c => <li key={c}>{c}</li>)}
             </ul>
+            <div className={styles.serviceMeta}>
+              <div className={styles.metaItem}>
+                <span className={styles.metaLabel}>Approx. Price</span>
+                <span className={styles.metaValue}>$8,000 - $20,000</span>
+              </div>
+              <div className={styles.metaItem}>
+                <span className={styles.metaLabel}>Timeline</span>
+                <span className={styles.metaValue}>6 - 12 Weeks</span>
+              </div>
+            </div>
+            <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
           <div className={styles.serviceVisual}>
@@ -458,11 +589,11 @@ function MobileSection() {
 
 function CloudSection() {
   return (
-    <section className={styles.serviceSection} id="cloud">
+    <section className={`${styles.serviceSection} ${styles.bgWhite}`} id="cloud">
       <div className={styles.container}>
         <div className={`${styles.serviceSectionInner} ${styles.reverse}`}>
           <div className={styles.serviceContent}>
-            <span className={styles.serviceEyebrow}>06 / CLOUD & DEVOPS</span>
+            <span className={styles.serviceEyebrow}>08 / CLOUD & DEVOPS</span>
             <h2 className={styles.serviceHeadline}>Reliable infrastructure behind every great product.</h2>
             <p className={styles.serviceDescription}>
               We architect and manage the infrastructure that keeps your product fast, secure, and available at any scale.
@@ -470,6 +601,17 @@ function CloudSection() {
             <ul className={styles.capabilitiesList}>
               {["Cloud Deployment", "AWS", "Linux Server Management", "CI/CD", "SSL & Security", "Performance Optimisation", "Monitoring", "App Maintenance"].map(c => <li key={c}>{c}</li>)}
             </ul>
+            <div className={styles.serviceMeta}>
+              <div className={styles.metaItem}>
+                <span className={styles.metaLabel}>Approx. Price</span>
+                <span className={styles.metaValue}>Custom</span>
+              </div>
+              <div className={styles.metaItem}>
+                <span className={styles.metaLabel}>Timeline</span>
+                <span className={styles.metaValue}>Ongoing</span>
+              </div>
+            </div>
+            <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
           <div className={styles.serviceVisual}>
@@ -671,11 +813,13 @@ export default function ServicesPage() {
         bgImage="/assets/images/office.jpg"
       />
       <OverviewSection />
-      <WebDevSection />
+      <StrategySection />
+      <BrandSection />
       <DesignSection />
+      <WebDevSection />
+      <MobileSection />
       <EcommerceSection />
       <SoftwareSection />
-      <MobileSection />
       <CloudSection />
       <ProcessSection />
       <TechStackSection />
