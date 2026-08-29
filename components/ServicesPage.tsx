@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import styles from "./ServicesPage.module.css";
 import InnerBanner from "./InnerBanner";
+import FinalCta from "./FinalCta";
 
 /* ─────────── DATA ─────────── */
 const overviewServices = [
@@ -196,7 +197,7 @@ function StrategySection() {
             <div className={styles.serviceMeta}>
               <div className={styles.metaItem}>
                 <span className={styles.metaLabel}>Approx. Price</span>
-                <span className={styles.metaValue}>$4,000 - $12,000</span>
+                <span className={styles.metaValue}>₹50,000 - ₹2,00,000</span>
               </div>
               <div className={styles.metaItem}>
                 <span className={styles.metaLabel}>Timeline</span>
@@ -234,7 +235,7 @@ function BrandSection() {
             <div className={styles.serviceMeta}>
               <div className={styles.metaItem}>
                 <span className={styles.metaLabel}>Approx. Price</span>
-                <span className={styles.metaValue}>$5,000 - $15,000</span>
+                <span className={styles.metaValue}>₹80,000 - ₹3,00,000</span>
               </div>
               <div className={styles.metaItem}>
                 <span className={styles.metaLabel}>Timeline</span>
@@ -275,7 +276,7 @@ function WebDevSection() {
             <div className={styles.serviceMeta}>
               <div className={styles.metaItem}>
                 <span className={styles.metaLabel}>Approx. Price</span>
-                <span className={styles.metaValue}>$3,000 - $10,000</span>
+                <span className={styles.metaValue}>₹60,000 - ₹2,50,000</span>
               </div>
               <div className={styles.metaItem}>
                 <span className={styles.metaLabel}>Timeline</span>
@@ -332,7 +333,7 @@ function DesignSection() {
             <div className={styles.serviceMeta}>
               <div className={styles.metaItem}>
                 <span className={styles.metaLabel}>Approx. Price</span>
-                <span className={styles.metaValue}>$2,000 - $6,000</span>
+                <span className={styles.metaValue}>₹40,000 - ₹1,50,000</span>
               </div>
               <div className={styles.metaItem}>
                 <span className={styles.metaLabel}>Timeline</span>
@@ -387,7 +388,7 @@ function EcommerceSection() {
             <div className={styles.serviceMeta}>
               <div className={styles.metaItem}>
                 <span className={styles.metaLabel}>Approx. Price</span>
-                <span className={styles.metaValue}>$5,000 - $15,000</span>
+                <span className={styles.metaValue}>₹80,000 - ₹3,00,000</span>
               </div>
               <div className={styles.metaItem}>
                 <span className={styles.metaLabel}>Timeline</span>
@@ -452,7 +453,7 @@ function SoftwareSection() {
             <div className={styles.serviceMeta}>
               <div className={styles.metaItem}>
                 <span className={styles.metaLabel}>Approx. Price</span>
-                <span className={styles.metaValue}>$10,000+</span>
+                <span className={styles.metaValue}>₹2,50,000+</span>
               </div>
               <div className={styles.metaItem}>
                 <span className={styles.metaLabel}>Timeline</span>
@@ -522,7 +523,7 @@ function MobileSection() {
             <div className={styles.serviceMeta}>
               <div className={styles.metaItem}>
                 <span className={styles.metaLabel}>Approx. Price</span>
-                <span className={styles.metaValue}>$8,000 - $20,000</span>
+                <span className={styles.metaValue}>₹1,50,000 - ₹4,00,000</span>
               </div>
               <div className={styles.metaItem}>
                 <span className={styles.metaLabel}>Timeline</span>
@@ -776,33 +777,6 @@ function FaqSection() {
   );
 }
 
-function ClosingCtaSection() {
-  return (
-    <section className={styles.closingCta} id="closing-cta">
-      <div className={styles.closingGlow} />
-      <div className={styles.container}>
-        <div className={styles.closingEyebrow}>
-          <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#ff6a00", display: "inline-block" }} />
-          READY TO BUILD?
-        </div>
-        <h2 className={styles.closingHeadline}>Have an idea worth building?</h2>
-        <p className={styles.closingHeadline2}>Let&apos;s make it real.</p>
-        <p className={styles.closingSub}>
-          Tell us what you&apos;re building, what you&apos;re solving, or where you want to go next.
-        </p>
-        <div className={styles.closingCtas}>
-          <Link href="/contact" className={styles.heroCtaPrimary}>
-            Start a Project →
-          </Link>
-          <Link href="/contact" className={styles.heroCtaSecondary}>
-            Let&apos;s Talk →
-          </Link>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ─────────── MAIN EXPORT ─────────── */
 export default function ServicesPage() {
   return (
@@ -826,7 +800,7 @@ export default function ServicesPage() {
       <WhyUsSection />
       <WorkSection />
       <FaqSection />
-      <ClosingCtaSection />
+      <FinalCta />
     </>
   );
 }
