@@ -738,8 +738,18 @@
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  padding: 1rem 1.5rem 4rem 1.5rem;
-  margin: -1rem -1.5rem 0 -1.5rem;
+  
+  /* Buffer for hover animations on left and bottom */
+  padding-left: 1rem;
+  padding-bottom: 4rem;
+  padding-top: 1rem;
+  margin-left: -1rem;
+  margin-top: -1rem;
+  
+  /* Bleed to the right edge of the screen while keeping left side aligned inside .container */
+  margin-right: calc(-50vw + 50%);
+  padding-right: calc(50vw - 50% + 1rem); /* 1rem is buffer for hover scale */
+  
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
@@ -749,7 +759,8 @@
 }
 
 .teamCard {
-  flex: 0 0 calc(25% - 1.5rem);
+  /* Size cards so exactly 4 fit inside the 1200px container max-width */
+  flex: 0 0 calc((min(100vw - 2.5rem, 1200px) - 5.25rem) / 4);
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
@@ -855,13 +866,15 @@
 
 @media (max-width: 1024px) {
   .teamCard {
-    flex: 0 0 calc(33.333% - 1.333rem);
+    /* Size cards so exactly 3 fit inside the visual container bounds */
+    flex: 0 0 calc((100vw - 2.5rem - 3.5rem) / 3);
   }
 }
 
 @media (max-width: 768px) {
   .teamCard {
-    flex: 0 0 calc(50% - 1rem);
+    /* Size cards so exactly 2 fit inside the visual container bounds */
+    flex: 0 0 calc((100vw - 2.5rem - 1.75rem) / 2);
   }
 
   .sliderHeader {
