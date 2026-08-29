@@ -325,7 +325,7 @@
   align-items: flex-end;
   justify-content: space-between;
   gap: 3rem;
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
 }
 
 .storyHeader {
@@ -433,48 +433,46 @@
 }
 
 .timelineCard {
-  background-color: #FFF6F0;
-  /* light orange */
-  border: 1px solid rgba(255, 107, 0, 0.15);
+  background-color: transparent;
+  border: none;
   border-radius: 16px;
   padding: 1.5rem;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .timelineStep:hover .timelineCard {
-  border-color: #FF6B00;
   box-shadow: 0 10px 30px rgba(255, 107, 0, 0.1);
   transform: translateY(-4px);
 }
 
 /* scatter logic for timeline steps on desktop */
 @media (min-width: 960px) {
-  .timelineStep:nth-child(1) {
+  .timelineStep:nth-child(3) {
     --step-y: 0rem;
     --step-rot: -1.5deg;
   }
 
-  .timelineStep:nth-child(2) {
+  .timelineStep:nth-child(4) {
     --step-y: 1.5rem;
     --step-rot: 1deg;
   }
 
-  .timelineStep:nth-child(3) {
+  .timelineStep:nth-child(5) {
     --step-y: -0.5rem;
     --step-rot: -1deg;
   }
 
-  .timelineStep:nth-child(4) {
+  .timelineStep:nth-child(6) {
     --step-y: 2rem;
     --step-rot: 1.5deg;
   }
 
-  .timelineStep:nth-child(5) {
+  .timelineStep:nth-child(7) {
     --step-y: 0.5rem;
     --step-rot: -1.5deg;
   }
 
-  .timelineStep:nth-child(6) {
+  .timelineStep:nth-child(8) {
     --step-y: -1rem;
     --step-rot: 1deg;
   }
