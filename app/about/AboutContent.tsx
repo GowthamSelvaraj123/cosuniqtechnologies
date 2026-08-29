@@ -74,8 +74,13 @@ export default function AboutContent() {
       <section className={`${styles.storySection} ${styles.sectionPadding}`} ref={storyRef}>
         <div className="container">
           <motion.div className={styles.storyHeader} {...fadeUpParams}>
-            <span className={styles.eyebrow}>Our Story</span>
-            <h2 className={styles.displayMedium}>The Evolution of COSUNIQ</h2>
+            <span className={`eyebrow ${styles.eyebrowWrap}`}>
+              <span className="spark spark--inline" />
+              Our Story
+            </span>
+            <h2 className={styles.whoHeadline}>
+              The Evolution of COSUNIQ<span className={styles.dot}>.</span>
+            </h2>
           </motion.div>
 
           <div className={styles.timeline}>
