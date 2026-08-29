@@ -432,7 +432,8 @@
 
 .timelineCard {
   position: relative;
-  background-color: #FFF6F0; /* light orange */
+  background-color: #FFF6F0;
+  /* light orange */
   border: 1px solid rgba(255, 107, 0, 0.15);
   border-radius: 16px;
   padding: 1.5rem;
@@ -483,7 +484,8 @@
 .timelineStep::before {
   content: '';
   position: absolute;
-  top: 21px; /* 10px (dot top) + 11px (dot height) */
+  top: 21px;
+  /* 10px (dot top) + 11px (dot height) */
   left: 50%;
   transform: translateX(-50%);
   width: 1px;
@@ -599,7 +601,7 @@
     padding-left: 3rem;
     text-align: left;
   }
-  
+
   .timelineStep::before {
     display: none;
   }
@@ -609,7 +611,6 @@
 /* ── 04: VISION + MISSION ──────────────────────────── */
 .visionMissionWrapper {
   background-color: #F7F7F7;
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -619,7 +620,6 @@
 .visionMission {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 80vh;
   width: 92%;
   max-width: 1400px;
   border-radius: 32px;
@@ -628,7 +628,7 @@
 }
 
 .vmBlock {
-  padding: 8rem 4vw;
+  padding: 5rem 4vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -645,6 +645,11 @@
   color: #FF6B00 !important;
 }
 
+.missionEyebrow {
+  background-color: rgba(255, 107, 0, 0.3) !important;
+  color: #FF6B00 !important;
+}
+
 .visionDot {
   color: #fff;
 }
@@ -657,7 +662,7 @@
 
 
 .vmText {
-  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.02em;

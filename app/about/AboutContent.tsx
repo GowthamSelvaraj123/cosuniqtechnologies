@@ -220,7 +220,7 @@ export default function AboutContent() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className={`eyebrow ${styles.eyebrowWrap}`} style={{ marginBottom: '3rem', display: 'inline-flex', alignSelf: 'flex-start' }}>
+            <div className={`eyebrow ${styles.eyebrowWrap} ${styles.missionEyebrow}`} style={{ marginBottom: '3rem', display: 'inline-flex', alignSelf: 'flex-start' }}>
               <span className="spark spark--inline" />
               Mission
             </div>
