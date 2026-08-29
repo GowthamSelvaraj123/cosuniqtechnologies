@@ -231,76 +231,7 @@ export default function AboutContent() {
         </div>
       </section>
 
-      {/* 05 — WHAT WE BELIEVE */}
-      <section className={`${styles.principlesSection} ${styles.sectionPadding}`}>
-        <div className="container">
-          <motion.div className={styles.principlesHeader} {...fadeUpParams}>
-            <h2 className={styles.displayMedium}>What we believe.</h2>
-          </motion.div>
 
-          <motion.div 
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="whileInView"
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            {[
-              "Strategy before execution.",
-              "Design with purpose.",
-              "Technology that performs.",
-              "Collaboration over handoffs.",
-              "Quality without compromise."
-            ].map((principle, index) => (
-              <motion.div 
-                key={index} 
-                className={styles.principleItem}
-                variants={{
-                  initial: { opacity: 0, y: 30 },
-                  whileInView: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }
-                }}
-              >
-                <div className={styles.pNumber}>0{index + 1}</div>
-                <div className={styles.pText}>{principle}</div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* 06 — THE COSUNIQ DIFFERENCE */}
-      <section className={`${styles.differenceSection} ${styles.sectionPadding}`}>
-        <div className="container">
-          <motion.div className={styles.diffHeader} {...fadeUpParams}>
-            <h2 className={styles.displayLarge}>Think.<br/>Create.<br/>Build.</h2>
-          </motion.div>
-
-          <motion.div 
-            className={styles.diffGrid}
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="whileInView"
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            {[
-              { title: "THINK", desc: "Strategic thinking that creates clarity before execution. We define the 'why' before we build the 'what'." },
-              { title: "CREATE", desc: "Purposeful creativity that makes brands distinctive and memorable across every digital touchpoint." },
-              { title: "BUILD", desc: "Reliable technology that turns ideas into scalable, high-performing digital experiences." }
-            ].map((col, index) => (
-              <motion.div 
-                key={index} 
-                className={styles.diffColumn}
-                variants={{
-                  initial: { opacity: 0, y: 40 },
-                  whileInView: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
-                }}
-              >
-                <h3 className={styles.diffTitle}>{col.title}</h3>
-                <p className={styles.diffDesc}>{col.desc}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
 
       {/* 06 — FINAL CTA */}
       <FinalCta />
