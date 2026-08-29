@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import FinalCta from "../../components/FinalCta";
 import { useState } from "react";
 import InitReveal from "../../components/InitReveal";
 import InnerBanner from "../../components/InnerBanner";
@@ -105,15 +106,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <section className="cta-band">
-        <div className="container">
-          <div className="cta-inner reveal">
-            <h2>Want your project here next?</h2>
-            <p>Let’s scope your software, store, brand, or campaign.</p>
-            <Link className="btn btn-primary" href="/contact">Start a Project</Link>
-          </div>
-        </div>
-      </section>
+      <FinalCta />
     </>
   );
 }

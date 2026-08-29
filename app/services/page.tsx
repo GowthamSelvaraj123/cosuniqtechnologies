@@ -1,4 +1,6 @@
+import React from "react";
 import Link from "next/link";
+import FinalCta from "../../components/FinalCta";
 import InitReveal from "../../components/InitReveal";
 import InnerBanner from "../../components/InnerBanner";
 
@@ -155,15 +157,7 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="cta-band">
-        <div className="container">
-          <div className="cta-inner reveal">
-            <h2>Need a scoped proposal?</h2>
-            <p>Share your goals — we’ll recommend the right mix of services.</p>
-            <Link className="btn btn-primary" href="/contact">Talk to Cosuniq</Link>
-          </div>
-        </div>
-      </section>
+      <FinalCta />
     </>
   );
 }

@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import Link from "next/link";
+import FinalCta from "../../components/FinalCta";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import InitReveal from "../../components/InitReveal";
@@ -202,9 +203,12 @@ export default function AboutContent() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className={styles.vmLabel}>Vision</div>
+          <div className={`eyebrow ${styles.eyebrowWrap} ${styles.visionEyebrow}`} style={{ marginBottom: '3rem', display: 'inline-flex', alignSelf: 'flex-start' }}>
+            <span className="spark spark--inline" />
+            Vision
+          </div>
           <div className={styles.vmText}>
-            To become the trusted creative technology partner for ambitious businesses shaping what comes next.
+            To become the trusted creative technology partner for ambitious businesses shaping what comes next<span className={styles.visionDot}>.</span>
           </div>
         </motion.div>
 
@@ -215,9 +219,12 @@ export default function AboutContent() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div className={styles.vmLabel}>Mission</div>
+          <div className={`eyebrow ${styles.eyebrowWrap}`} style={{ marginBottom: '3rem', display: 'inline-flex', alignSelf: 'flex-start' }}>
+            <span className="spark spark--inline" />
+            Mission
+          </div>
           <div className={styles.vmText}>
-            To transform ideas into purposeful brands and high-performing digital experiences that create lasting impact.
+            To transform ideas into purposeful brands and high-performing digital experiences that create lasting impact<span className={styles.dot}>.</span>
           </div>
         </motion.div>
       </section>
@@ -293,46 +300,8 @@ export default function AboutContent() {
         </div>
       </section>
 
-      {/* 07 — FINAL CTA */}
-      <section className={styles.finalCta}>
-        <div className={styles.ctaBgElement}></div>
-        <div className={`container ${styles.ctaContent}`}>
-          <motion.h2 
-            className={styles.displayMedium}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            Have an idea worth building?
-          </motion.h2>
-          
-          <motion.p 
-            className={styles.displaySmall}
-            style={{ color: '#888' }}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-          >
-            Let's make it real.
-          </motion.p>
-          
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <Link href="/contact" className={styles.magneticBtn}>
-              Start a Project 
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
-              </svg>
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+      {/* 06 — FINAL CTA */}
+      <FinalCta />
     </div>
   );
 }

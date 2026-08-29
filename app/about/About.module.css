@@ -610,7 +610,12 @@
 .visionMission {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 100vh;
+  min-height: 80vh;
+  margin: 4rem auto 8rem auto;
+  max-width: 1400px;
+  width: 92%;
+  border-radius: 32px;
+  overflow: hidden;
 }
 
 .vmBlock {
@@ -622,8 +627,17 @@
 }
 
 .visionBlock {
-  background-color: #FAFAFA;
-  color: #111;
+  background-color: #FF6B00;
+  color: #fff;
+}
+
+.visionEyebrow {
+  background-color: #fff !important;
+  color: #FF6B00 !important;
+}
+
+.visionDot {
+  color: #fff;
 }
 
 .missionBlock {
@@ -631,14 +645,7 @@
   color: #fff;
 }
 
-.vmLabel {
-  text-transform: uppercase;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  font-size: 0.9rem;
-  margin-bottom: 3rem;
-  color: #FF6B00;
-}
+
 
 .vmText {
   font-size: clamp(2rem, 3.5vw, 3.5rem);
