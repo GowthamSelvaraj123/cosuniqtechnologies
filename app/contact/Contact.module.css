@@ -134,21 +134,26 @@
 .cardTop {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.25rem;
   margin-bottom: 1rem;
   position: relative;
   z-index: 2;
 }
 
-.cardNumber {
-  font-family: var(--display, sans-serif);
-  font-size: 2rem;
-  font-weight: 800;
+.cardIcon {
+  width: 48px;
+  height: 48px;
   color: #111;
-  line-height: 1;
-  background: #fff;
-  padding: 0 0.5rem;
-  margin-left: -0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #fff; /* cover the dot pattern */
+}
+
+.cardIcon svg {
+  width: 24px;
+  height: 24px;
 }
 
 .cardLabel {
