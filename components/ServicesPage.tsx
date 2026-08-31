@@ -6,6 +6,7 @@ import styles from "./ServicesPage.module.css";
 import InnerBanner from "./InnerBanner";
 import FinalCta from "./FinalCta";
 import TiltCard from "./TiltCard";
+
 import { 
   SiMiro, SiNotion, SiFigma, SiReact, SiNextdotjs, SiNodedotjs, 
   SiPhp, SiLaravel, SiFramer, SiSketch, SiShopify, SiStripe, SiGraphql, 
@@ -68,11 +69,92 @@ const processSteps = [
 ];
 
 const techCategories = [
-  { title: "Frontend", pills: ["React", "Next.js", "Vue", "HTML/CSS", "Tailwind"] },
-  { title: "Backend", pills: ["Node.js", "Laravel", "PHP", "Python"] },
-  { title: "Database", pills: ["MySQL", "MongoDB", "PostgreSQL", "SQL Server"] },
-  { title: "Cloud & Infra", pills: ["AWS", "Linux", "Docker", "Git / CI/CD"] },
-  { title: "E-Commerce", pills: ["Shopify", "WooCommerce"] },
+  {
+    title: "CMS & eCommerce",
+    techs: [
+      { name: "Magento", icon: "magento", color: "F26322" },
+      { name: "WordPress", icon: "wordpress", color: "21759B" },
+      { name: "Shopify", icon: "shopify", color: "7AB55C" },
+      { name: "Webflow", icon: "webflow", color: "4353FF" },
+      { name: "HubSpot", icon: "hubspot", color: "FF7A59" },
+      { name: "BigCommerce", icon: "bigcommerce", color: "121118" },
+      { name: "Drupal", icon: "drupal", color: "0678BE" },
+      { name: "Joomla!", icon: "joomla", color: "5091CD" },
+      { name: "WooCommerce", icon: "woocommerce", color: "96588A" },
+      { name: "NopCommerce", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dot-net/dot-net-original.svg", color: "4AB6E8" }
+    ]
+  },
+  {
+    title: "Frontend",
+    techs: [
+      { name: "HTML", icon: "html5", color: "E34F26" },
+      { name: "CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg", color: "1572B6" },
+      { name: "Javascript", icon: "javascript", color: "F7DF1E" },
+      { name: "Angular", icon: "angular", color: "DD0031" },
+      { name: "React", icon: "react", color: "61DAFB" },
+      { name: ".NET MVC", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dot-net/dot-net-original.svg", color: "512BD4" }
+    ]
+  },
+  {
+    title: "Backend",
+    techs: [
+      { name: "Microsoft .NET", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dot-net/dot-net-original.svg", color: "512BD4" },
+      { name: "C#", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg", color: "239120" },
+      { name: "REST API", icon: "https://www.google.com/s2/favicons?domain=swagger.io&sz=128", color: "009688" },
+      { name: "Microservices", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg", color: "326CE5" },
+      { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg", color: "2496ED" },
+      { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg", color: "3776AB" },
+      { name: "PHP", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg", color: "777BB4" },
+      { name: "Django", icon: "django", color: "092E20" }
+    ]
+  },
+  {
+    title: "Database",
+    techs: [
+      { name: "SQL Server", icon: "https://www.google.com/s2/favicons?domain=microsoft.com&sz=128", color: "CC292B" },
+      { name: "Power BI", icon: "https://www.google.com/s2/favicons?domain=powerbi.microsoft.com&sz=128", color: "F2C811" },
+      { name: "Azure Data Lake", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg", color: "0078D4" },
+      { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg", color: "4479A1" },
+      { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg", color: "4169E1" }
+    ]
+  },
+  {
+    title: "Cloud",
+    techs: [
+      { name: "Blob Storage", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg", color: "0078D4" },
+      { name: "Amazon S3", icon: "https://www.google.com/s2/favicons?domain=aws.amazon.com&sz=128", color: "569A31" },
+      { name: "Amazon SES", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg", color: "232F3E" },
+      { name: "SendGrid", icon: "https://www.google.com/s2/favicons?domain=sendgrid.com&sz=128", color: "F22F46" },
+      { name: "ClickSend", icon: "https://www.google.com/s2/favicons?domain=clicksend.com&sz=128", color: "2481D7" },
+      { name: "Firebase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-plain.svg", color: "FFCA28" },
+      { name: "Azure", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg", color: "008AD7" },
+      { name: "AWS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg", color: "232F3E" },
+      { name: "Google Cloud", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg", color: "4285F4" },
+      { name: "DevOps", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg", color: "0078D7" },
+      { name: "Power Platform", icon: "https://www.google.com/s2/favicons?domain=powerplatform.microsoft.com&sz=128", color: "00A4EF" }
+    ]
+  },
+  {
+    title: "Mobile",
+    techs: [
+      { name: "iOS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apple/apple-original.svg", color: "000000" },
+      { name: "Android", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/android/android-original.svg", color: "3DDC84" },
+      { name: "Flutter", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg", color: "02569B" },
+      { name: "React Native", icon: "react", color: "61DAFB" },
+      { name: "Swift", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swift/swift-original.svg", color: "F05138" },
+      { name: "Kotlin", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg", color: "7F52FF" }
+    ]
+  },
+  {
+    title: "UI / UX",
+    techs: [
+      { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg", color: "F24E1E" },
+      { name: "Sketch", icon: "sketch", color: "F7B500" },
+      { name: "Adobe XD", icon: "adobexd", color: "FF61F6" },
+      { name: "Miro", icon: "miro", color: "050038" },
+      { name: "Notion", icon: "notion", color: "000000" }
+    ]
+  }
 ];
 
 const whyItems = [
@@ -574,18 +656,6 @@ function TechStackSection() {
   return (
     <section className={styles.techStack} id="tech">
       <div className={styles.container}>
-        <div className={styles.overviewHeader}>
-          <div>
-            <span className={styles.sectionEyebrow}>
-              <span className={styles.sectionEyebrowDot} />
-              THE TECHNOLOGY BEHIND THE WORK
-            </span>
-            <h2 className={styles.overviewHeadline}>
-              The right technology for the right problem<span className={styles.overviewDot}>.</span>
-            </h2>
-          </div>
-        </div>
-        
         <div className={styles.techTabsContainer}>
           <div className={styles.techTabsHeader}>
             {techCategories.map((cat, idx) => (
@@ -600,8 +670,26 @@ function TechStackSection() {
           </div>
           
           <div className={styles.techTabContent}>
-            {techCategories[activeTab].pills.map(p => (
-              <div key={p} className={styles.techPill}>{p}</div>
+            {techCategories[activeTab].techs.map(tech => (
+              <div key={tech.name} className={styles.techCard}>
+                <div className={styles.techCardIcon}>
+                  <img 
+                  src={tech.icon.startsWith('http') ? tech.icon : `https://cdn.simpleicons.org/${tech.icon}/${tech.color}`} 
+                  alt={tech.name} 
+                  width="50" 
+                  height="50" 
+                  style={{ objectFit: 'contain' }}
+                  onError={(e) => {
+                    if (!e.currentTarget.src.includes('ui-avatars')) {
+                      e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(tech.name)}&background=f4f4f4&color=${tech.color}&font-size=0.4&rounded=true`;
+                    }
+                  }}
+                />
+                </div>
+                <div className={styles.techCardFooter}>
+                  {tech.name}
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -609,7 +697,6 @@ function TechStackSection() {
     </section>
   );
 }
-
 function WhyUsSection() {
   return (
     <section className={styles.whyUs} id="why-us">

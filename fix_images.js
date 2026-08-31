@@ -1,21 +1,32 @@
 const fs = require('fs');
-const path = 'd:\\fullstack\\cosuniqtechnologies\\components\\ServicesPage.tsx';
-let content = fs.readFileSync(path, 'utf8');
+const tsxPath = 'd:\\fullstack\\cosuniqtechnologies\\components\\ServicesPage.tsx';
+let content = fs.readFileSync(tsxPath, 'utf8');
 
-// A function to replace the visual block within a specific section id
-function updateSectionImage(id, imageName) {
-    const regex = new RegExp(`(<section[^>]+id="${id}"[^>]*>[\\s\\S]*?<div className=\\{styles\\.serviceVisual\\}>)(<img[^>]+>)(<\\/div>)`);
-    content = content.replace(regex, `$1<img src="/assets/services/${imageName}" alt="${id} Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} />$3`);
-}
+const imgRegex = /<img src=\{\`https:\/\/cdn\.simpleicons\.org\/\$\{tech\.icon\}\/\$\{tech\.color\}\`\} alt=\{tech\.name\} width="50" height="50" \/>/g;
+const newImg = `<img 
+                  src={\`https://cdn.simpleicons.org/\${tech.icon}/\${tech.color}\`} 
+                  alt={tech.name} 
+                  width="50" 
+                  height="50" 
+                  onError={(e) => {
+                    e.currentTarget.src = \`https://ui-avatars.com/api/?name=\${encodeURIComponent(tech.name)}&background=f4f4f4&color=\${tech.color}&font-size=0.4&rounded=true\`;
+                  }}
+                />`;
+content = content.replace(imgRegex, newImg);
 
-updateSectionImage('strategy', 'strategy_story.png');
-updateSectionImage('brand', 'brand_story.png');
-updateSectionImage('web-dev', 'webdev_story.png');
-updateSectionImage('design', 'design_story.jpg');
-updateSectionImage('ecommerce', 'ecommerce_story.jpg');
-updateSectionImage('software', 'software_story.png');
-updateSectionImage('mobile', 'mobile_story.png');
-updateSectionImage('cloud', 'cloud_story.png');
+// Fix CSS slug
+content = content.replace(/icon: "css3"/g, 'icon: "css"');
+// Fix Javascript slug
+content = content.replace(/icon: "javascript"/g, 'icon: "javascript"');
+// Fix Azure
+content = content.replace(/icon: "microsoftazure"/g, 'icon: "azure"');
+// Fix AWS
+content = content.replace(/icon: "amazonwebservices"/g, 'icon: "amazonaws"');
+content = content.replace(/icon: "amazons3"/g, 'icon: "amazons3"'); // wait, s3 is amazonaws
+// Fix Power BI
+content = content.replace(/icon: "powerbi"/g, 'icon: "powerbi"'); 
+// Fix SQL Server
+content = content.replace(/icon: "microsoftsqlserver"/g, 'icon: "microsoftsqlserver"');
 
-fs.writeFileSync(path, content);
-console.log("Updated images perfectly mapped to their sections!");
+fs.writeFileSync(tsxPath, content);
+console.log("Added onError fallback to ui-avatars");
