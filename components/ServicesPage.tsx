@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { FiShoppingCart, FiMonitor, FiServer, FiDatabase, FiCloud, FiSmartphone, FiPenTool, FiImage, FiCpu } from "react-icons/fi";
+import { FiShoppingCart, FiMonitor, FiServer, FiDatabase, FiCloud, FiSmartphone, FiPenTool, FiImage, FiCpu, FiArrowRight } from "react-icons/fi";
 import Link from "next/link";
 import styles from "./ServicesPage.module.css";
 import InnerBanner from "./InnerBanner";
@@ -451,7 +451,7 @@ function StrategySection() {
                 <span className={styles.metaValue}>2 - 4 Weeks</span>
               </div>
             </div>
-            <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
+            <Link href="/contact" className={styles.moreDetailsBtn}>Start now <FiArrowRight style={{ marginLeft: '6px' }} /></Link>
           </div>
 
           <div className={styles.serviceVisual}><img src="/assets/services/strategy_story.png" alt="strategy Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
@@ -487,7 +487,7 @@ function BrandSection() {
                 <span className={styles.metaValue}>3 - 6 Weeks</span>
               </div>
             </div>
-            <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
+            <Link href="/contact" className={styles.moreDetailsBtn}>Start now <FiArrowRight style={{ marginLeft: '6px' }} /></Link>
           </div>
 
           <div className={styles.serviceVisual}><img src="/assets/services/brand_story.png" alt="brand Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
@@ -523,7 +523,7 @@ function WebDevSection() {
                 <span className={styles.metaValue}>3 - 6 Weeks</span>
               </div>
             </div>
-            <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
+            <Link href="/contact" className={styles.moreDetailsBtn}>Start now <FiArrowRight style={{ marginLeft: '6px' }} /></Link>
           </div>
 
           <div className={styles.serviceVisual}><img src="/assets/services/webdev_story.png" alt="web-dev Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
@@ -559,7 +559,7 @@ function DesignSection() {
                 <span className={styles.metaValue}>2 - 4 Weeks</span>
               </div>
             </div>
-            <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
+            <Link href="/contact" className={styles.moreDetailsBtn}>Start now <FiArrowRight style={{ marginLeft: '6px' }} /></Link>
           </div>
 
           <div className={styles.serviceVisual}><img src="/assets/services/design_story.jpg" alt="design Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
@@ -595,7 +595,7 @@ function EcommerceSection() {
                 <span className={styles.metaValue}>4 - 8 Weeks</span>
               </div>
             </div>
-            <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
+            <Link href="/contact" className={styles.moreDetailsBtn}>Start now <FiArrowRight style={{ marginLeft: '6px' }} /></Link>
           </div>
 
           <div className={styles.serviceVisual}><img src="/assets/services/ecommerce_story.jpg" alt="ecommerce Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
@@ -631,7 +631,7 @@ function SoftwareSection() {
                 <span className={styles.metaValue}>8 - 16 Weeks</span>
               </div>
             </div>
-            <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
+            <Link href="/contact" className={styles.moreDetailsBtn}>Start now <FiArrowRight style={{ marginLeft: '6px' }} /></Link>
           </div>
 
           <div className={styles.serviceVisual}><img src="/assets/services/software_story.png" alt="software Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
@@ -667,7 +667,7 @@ function MobileSection() {
                 <span className={styles.metaValue}>6 - 12 Weeks</span>
               </div>
             </div>
-            <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
+            <Link href="/contact" className={styles.moreDetailsBtn}>Start now <FiArrowRight style={{ marginLeft: '6px' }} /></Link>
           </div>
 
           <div className={styles.serviceVisual}><img src="/assets/services/mobile_story.png" alt="mobile Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
@@ -703,7 +703,7 @@ function CloudSection() {
                 <span className={styles.metaValue}>Ongoing</span>
               </div>
             </div>
-            <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
+            <Link href="/contact" className={styles.moreDetailsBtn}>Start now <FiArrowRight style={{ marginLeft: '6px' }} /></Link>
           </div>
 
           <div className={styles.serviceVisual}><img src="/assets/services/cloud_story.png" alt="cloud Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
