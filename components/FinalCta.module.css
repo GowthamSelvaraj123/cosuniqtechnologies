@@ -110,6 +110,17 @@
   gap: 1.25rem;
 }
 
+/* Scattered Tilt Effect */
+.row .inputGroup:first-child .input,
+.row .inputGroup:first-child .select {
+  transform: rotate(-1.5deg);
+}
+
+.row .inputGroup:last-child .input,
+.row .inputGroup:last-child .select {
+  transform: rotate(1.5deg);
+}
+
 .inputGroup {
   display: flex;
   flex-direction: column;
@@ -127,6 +138,7 @@
   font-size: 0.9rem;
   color: #111111;
   transition: all 0.3s ease;
+  transform-origin: center;
 }
 
 .select {
@@ -302,5 +314,13 @@
 
   .row {
     grid-template-columns: 1fr;
+  }
+  
+  /* Reset tilt on mobile so it doesn't look messy in a single column */
+  .row .inputGroup:first-child .input,
+  .row .inputGroup:first-child .select,
+  .row .inputGroup:last-child .input,
+  .row .inputGroup:last-child .select {
+    transform: rotate(0);
   }
 }
