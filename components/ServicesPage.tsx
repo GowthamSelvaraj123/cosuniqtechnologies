@@ -63,10 +63,12 @@ const faqItems = [
 // HeroSection replaced by InnerBanner
 
 function OverviewSection() {
-  const cards: { num: string; name: string; href: string; desc: string; icon: React.ReactNode; featured?: boolean }[] = [
+  const cards: { num: string; name: string; href: string; desc: string; icon: React.ReactNode; featured?: boolean; image?: string; imagePos?: 'left'|'right'|'top' }[] = [
     {
       num: "01", name: "Strategy & Consulting", href: "#strategy",
       desc: "Addressing your core brand strategy to connect directly with people.",
+      image: "/assets/images/bento-strategy.jpg",
+      imagePos: "left",
       icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
@@ -85,6 +87,7 @@ function OverviewSection() {
     {
       num: "03", name: "UI / UX Design", href: "#design",
       desc: "Designing interfaces that perform, delight users, and drive conversions.",
+      image: "/assets/images/bento-ui-ux.jpg",
       icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
@@ -103,6 +106,8 @@ function OverviewSection() {
     {
       num: "05", name: "Mobile App Development", href: "#mobile",
       desc: "Putting your business directly in their hands with engaging experiences.",
+      image: "/assets/images/bento-mobile.jpg",
+      imagePos: "right",
       icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
@@ -121,6 +126,8 @@ function OverviewSection() {
     {
       num: "07", name: "AI & Custom Software", href: "#software",
       desc: "Driving your brand&apos;s sales directly to the market with built-to-convert solutions.",
+      image: "/assets/images/bento-ai.jpg",
+      imagePos: "left",
       icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
@@ -179,18 +186,25 @@ function OverviewSection() {
 
             return (
               <TiltCard key={s.num} intensity={12} className={bentoClass}>
-                <a href={s.href} className={`${styles.serviceCard} ${s.featured ? styles.serviceCardFeatured : ""}`} style={{ height: '100%', display: 'flex', flexDirection: 'column', '--rot': `${sc.rot}deg`, '--tx': `${sc.tx}px`, '--ty': `${sc.ty}px` } as React.CSSProperties}>
-                  {/* Top row: icon + arrow */}
-                  <div className={styles.serviceCardTop}>
-                    <span className={styles.serviceCardIcon}>{s.icon}</span>
-                    <span className={styles.serviceArrow}>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" />
-                      </svg>
-                    </span>
+                <a href={s.href} className={`${styles.serviceCard} ${s.featured ? styles.serviceCardFeatured : ""} ${s.imagePos === 'left' ? styles.cardImgLeft : s.imagePos === 'right' ? styles.cardImgRight : ""}`} style={{ height: '100%', '--rot': `${sc.rot}deg`, '--tx': `${sc.tx}px`, '--ty': `${sc.ty}px` } as React.CSSProperties}>
+                  {s.image && (
+                    <div className={styles.serviceCardImage}>
+                      <img src={s.image} alt={s.name} />
+                    </div>
+                  )}
+                  <div className={styles.serviceCardContent}>
+                    {/* Top row: icon + arrow */}
+                    <div className={styles.serviceCardTop}>
+                      <span className={styles.serviceCardIcon}>{s.icon}</span>
+                      <span className={styles.serviceArrow}>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" />
+                        </svg>
+                      </span>
+                    </div>
+                    <div className={styles.serviceName}>{s.name}</div>
+                    <p className={styles.serviceDesc} dangerouslySetInnerHTML={{ __html: s.desc }} />
                   </div>
-                  <div className={styles.serviceName}>{s.name}</div>
-                  <p className={styles.serviceDesc} dangerouslySetInnerHTML={{ __html: s.desc }} />
                 </a>
               </TiltCard>
             );
