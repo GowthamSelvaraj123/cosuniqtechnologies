@@ -7,6 +7,68 @@ import styles from "./FinalCta.module.css";
 import MagneticWrapper from "./MagneticWrapper";
 import HoverTextReveal from "./HoverTextReveal";
 
+const NewsletterAnimation = () => (
+  <div className={styles.newsletterAnimContainer}>
+    {/* Paper Airplane */}
+    <motion.div
+      className={styles.paperPlane}
+      animate={{ 
+        y: [0, -15, 0], 
+        rotate: [-5, 5, -5],
+      }}
+      transition={{ 
+        duration: 4, 
+        repeat: Infinity, 
+        ease: "easeInOut" 
+      }}
+    >
+      <svg width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="#FF6B00" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 2L11 13" />
+        <path d="M22 2L15 22L11 13L2 9L22 2Z" fill="rgba(255, 107, 0, 0.1)" />
+      </svg>
+    </motion.div>
+    
+    {/* Envelope / Letter */}
+    <motion.div
+      className={styles.envelope}
+      animate={{ 
+        y: [0, 20, 0], 
+        rotate: [10, 0, 10],
+      }}
+      transition={{ 
+        duration: 5, 
+        repeat: Infinity, 
+        ease: "easeInOut",
+        delay: 0.5
+      }}
+    >
+      <svg width="75" height="75" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="#ffffff" />
+        <polyline points="22,6 12,13 2,6" />
+      </svg>
+    </motion.div>
+
+    {/* Message Bubble */}
+    <motion.div
+      className={styles.chatBubble}
+      animate={{ 
+        scale: [1, 1.1, 1], 
+        y: [0, -10, 0],
+      }}
+      transition={{ 
+        duration: 4.5, 
+        repeat: Infinity, 
+        ease: "easeInOut",
+        delay: 1
+      }}
+    >
+      <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#bbbbbb" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" fill="#ffffff"/>
+      </svg>
+    </motion.div>
+  </div>
+);
+
 export default function FinalCta() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [errors, setErrors] = useState<{firstName?: string, email?: string}>({});
@@ -49,15 +111,7 @@ export default function FinalCta() {
         
         {/* Left Column: Text Content */}
         <div className={styles.leftColumn}>
-          <motion.div
-            className={styles.imageWrapper}
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <img src="/assets/images/contact-us.png" alt="Team Collaboration" className={styles.headerImage} style={{objectFit:"contain"}} />
-          </motion.div>
+
 
           <motion.div 
             className={`eyebrow ${styles.eyebrowWrap}`}
@@ -91,6 +145,8 @@ export default function FinalCta() {
           >
             Tell us what you&apos;re building, and let&apos;s create something meaningful together.
           </motion.p>
+
+          <NewsletterAnimation />
         </div>
 
         {/* Right Column: Form */}
@@ -109,8 +165,7 @@ export default function FinalCta() {
                   name="firstName"
                   id="firstName" 
                   className={`${styles.input} ${errors.firstName ? styles.inputError : ''}`} 
-                  placeholder="First name" 
-                  style={{ '--card-rot': '-1.5deg', '--card-y': '3px' } as React.CSSProperties}
+                  placeholder="First Name*" 
                 />
                 {errors.firstName && <span className={styles.fieldError}>{errors.firstName}</span>}
               </div>
@@ -120,8 +175,7 @@ export default function FinalCta() {
                   name="lastName"
                   id="lastName" 
                   className={styles.input} 
-                  placeholder="Last name" 
-                  style={{ '--card-rot': '1.2deg', '--card-y': '-2px' } as React.CSSProperties}
+                  placeholder="Last Name*" 
                 />
               </div>
             </div>
@@ -133,20 +187,40 @@ export default function FinalCta() {
                   name="email"
                   id="email" 
                   className={`${styles.input} ${errors.email ? styles.inputError : ''}`} 
-                  placeholder="Email address" 
-                  style={{ '--card-rot': '0.8deg', '--card-y': '2px' } as React.CSSProperties}
+                  placeholder="Email Address*" 
                 />
                 {errors.email && <span className={styles.fieldError}>{errors.email}</span>}
               </div>
               <div className={styles.inputGroup}>
                 <input 
-                  type="tel" 
-                  name="phone"
-                  id="phone" 
+                  type="text" 
+                  name="company"
+                  id="company" 
                   className={styles.input} 
-                  placeholder="Phone (e.g. +91 73586 96546)" 
-                  style={{ '--card-rot': '-1deg', '--card-y': '-1px' } as React.CSSProperties}
+                  placeholder="Company*" 
                 />
+              </div>
+            </div>
+
+            <div className={styles.row}>
+              <div className={styles.inputGroup}>
+                <input 
+                  type="text" 
+                  name="jobTitle"
+                  id="jobTitle" 
+                  className={styles.input} 
+                  placeholder="Job Title*" 
+                />
+              </div>
+              <div className={styles.inputGroup}>
+                <select name="country" id="country" className={styles.select} defaultValue="">
+                  <option value="" disabled>Country*</option>
+                  <option value="IN">India</option>
+                  <option value="US">United States</option>
+                  <option value="UK">United Kingdom</option>
+                  <option value="AU">Australia</option>
+                  <option value="OT">Other</option>
+                </select>
               </div>
             </div>
 
@@ -155,10 +229,28 @@ export default function FinalCta() {
                 name="details"
                 id="details" 
                 className={styles.textarea} 
-                placeholder="How can we help you? Tell us about your project..." 
-                rows={4} 
-                style={{ '--card-rot': '-0.5deg', '--card-y': '2px' } as React.CSSProperties}
+                placeholder="Let us know how we can help you*" 
+                rows={3} 
               ></textarea>
+            </div>
+
+            <div className={styles.checkboxRow}>
+              <input type="checkbox" id="consent1" name="consent1" className={styles.checkbox} />
+              <label htmlFor="consent1" className={styles.checkboxLabel}>
+                I agree to Cosuniq collecting and processing my personal data to respond to my request and provide related services. *
+              </label>
+            </div>
+
+            <div className={styles.checkboxRow}>
+              <input type="checkbox" id="consent2" name="consent2" className={styles.checkbox} />
+              <label htmlFor="consent2" className={styles.checkboxLabel}>
+                I agree to receive details about services, events and any marketing communication from Cosuniq.
+              </label>
+            </div>
+
+            <div className={styles.legalText}>
+              To learn more about how we protect your data, please refer to the <Link href="/privacy">Cosuniq privacy policy</Link>.<br/><br/>
+              This site is protected by reCAPTCHA.
             </div>
             
             {status === 'error' && (
@@ -177,7 +269,7 @@ export default function FinalCta() {
                   "Request Sent"
                 ) : (
                   <>
-                    <HoverTextReveal text="Start a Project" /> 
+                    Submit
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.arrow}>
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>
