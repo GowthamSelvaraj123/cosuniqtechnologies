@@ -283,7 +283,7 @@ function StrategySection() {
                 <span className={styles.metaValue}>2 - 4 Weeks</span>
               </div>
             </div>
-            <Link href="/contact" className={styles.heroCtaPrimary}>More details</Link>
+            <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
           <div className={styles.serviceVisual}>
@@ -323,7 +323,7 @@ function BrandSection() {
                 <span className={styles.metaValue}>3 - 6 Weeks</span>
               </div>
             </div>
-            <Link href="/contact" className={styles.heroCtaPrimary}>More details</Link>
+            <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
           <div className={styles.serviceVisual}>
@@ -363,7 +363,7 @@ function WebDevSection() {
                 <span className={styles.metaValue}>3 - 6 Weeks</span>
               </div>
             </div>
-            <Link href="/contact" className={styles.heroCtaPrimary}>More details</Link>
+            <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
           <div className={styles.serviceVisual}>
@@ -422,7 +422,7 @@ function DesignSection() {
                 <span className={styles.metaValue}>2 - 4 Weeks</span>
               </div>
             </div>
-            <Link href="/contact" className={styles.heroCtaPrimary}>More details</Link>
+            <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
           <div className={styles.serviceVisual}>
@@ -479,7 +479,7 @@ function EcommerceSection() {
                 <span className={styles.metaValue}>4 - 8 Weeks</span>
               </div>
             </div>
-            <Link href="/contact" className={styles.heroCtaPrimary}>More details</Link>
+            <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
           <div className={styles.serviceVisual}>
@@ -546,7 +546,7 @@ function SoftwareSection() {
                 <span className={styles.metaValue}>8 - 16 Weeks</span>
               </div>
             </div>
-            <Link href="/contact" className={styles.heroCtaPrimary}>More details</Link>
+            <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
           <div className={styles.serviceVisual}>
@@ -618,7 +618,7 @@ function MobileSection() {
                 <span className={styles.metaValue}>6 - 12 Weeks</span>
               </div>
             </div>
-            <Link href="/contact" className={styles.heroCtaPrimary}>More details</Link>
+            <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
           <div className={styles.serviceVisual}>
@@ -702,7 +702,7 @@ function CloudSection() {
                 <span className={styles.metaValue}>Ongoing</span>
               </div>
             </div>
-            <Link href="/contact" className={styles.heroCtaPrimary}>More details</Link>
+            <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
           <div className={styles.serviceVisual}>

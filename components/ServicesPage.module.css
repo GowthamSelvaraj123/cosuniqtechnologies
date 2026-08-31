@@ -337,30 +337,41 @@
 /* Dark Orange Inversions */
 .bgDarkOrange .serviceHeadline, 
 .bgDarkOrange .serviceDescription, 
-.bgDarkOrange .capabilitiesList li,
-.bgDarkOrange .metaItem,
-.bgDarkOrange .metaValue {
+.bgDarkOrange .capabilitiesList li {
   color: #ffffff !important;
 }
-.bgDarkOrange .serviceEyebrow,
-.bgDarkOrange .metaLabel {
-  color: #ffffff !important;
-  opacity: 0.9;
+.bgDarkOrange .sectionEyebrow {
+  background: #ffffff !important;
+  color: #ff6a00 !important;
+}
+.bgDarkOrange .sectionEyebrowDot {
+  color: #ff6a00 !important;
 }
 .bgDarkOrange .capabilitiesList li::before {
   background: #ffffff !important;
 }
 .bgDarkOrange .metaItem {
-  background: rgba(255,255,255,0.05) !important;
-  border-color: rgba(255,255,255,0.1) !important;
+  background: #ffffff !important;
+  border-color: rgba(0,0,0,0.04) !important;
+  color: #111111 !important;
+}
+.bgDarkOrange .metaValue {
+  color: #111111 !important;
+}
+.bgDarkOrange .metaLabel {
+  color: #ff6a00 !important;
+  opacity: 1;
 }
 .bgDarkOrange .moreDetailsBtn {
-  color: #ffffff !important;
-  border-color: rgba(255,255,255,0.3) !important;
-}
-.bgDarkOrange .moreDetailsBtn:hover {
   background: #ffffff !important;
   color: #ff6a00 !important;
+  border: none !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15) !important;
+}
+.bgDarkOrange .moreDetailsBtn:hover {
+  background: #fff5ec !important;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.2) !important;
 }
 
 /* Meta details */
@@ -373,6 +384,9 @@
   padding: 1.25rem 1.5rem; border-radius: 16px;
   font-size: 0.85rem; color: #111111; display: flex; flex-direction: column; gap: 0.4rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.bgWhite .metaItem {
+  background: #fff5ec;
 }
 .metaItem:hover {
   transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.05);
@@ -389,18 +403,21 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.03);
   color: #444; font-size: 0.8rem; font-weight: 600; transition: all 0.3s cubic-bezier(0.25,1,0.5,1);
 }
+.bgWhite .toolIcon {
+  background: #fff5ec;
+}
 .toolIcon svg {
   font-size: 1.1rem; color: #ff6a00;
 }
 .toolIcon:hover {
-  transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); color: #111; border-color: rgba(0,0,0,0.08);
+  transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); color: #111; border-color: rgba(0,0,0,0.08); background: #ffffff;
 }
 .bgDarkOrange .toolIcon {
-  background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: rgba(255,255,255,0.9);
+  background: #ffffff !important; border-color: rgba(0,0,0,0.04) !important; color: #444 !important;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 .bgDarkOrange .toolIcon:hover {
-  background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.2);
+  background: #fff5ec !important; color: #111 !important;
 }
 .metaLabel {
   font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #ff6a00;
@@ -409,14 +426,15 @@
   font-weight: 700; font-size: 0.95rem;
 }
 .moreDetailsBtn {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  background: transparent; color: #111111; font-size: 0.75rem; font-weight: 700;
-  letter-spacing: 0.1em; text-transform: uppercase; padding: 14px 28px;
-  border-radius: 999px; border: 1.5px solid rgba(0,0,0,0.15);
-  text-decoration: none; transition: all 0.3s ease;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: #ff6a00; color: #ffffff; font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; padding: 16px 36px;
+  border-radius: 999px; text-decoration: none; border: none;
+  box-shadow: 0 8px 24px rgba(255,106,0,0.3);
+  transition: all 0.3s cubic-bezier(0.25,1,0.5,1);
 }
 .moreDetailsBtn:hover {
-  background: #ff6a00; border-color: #ff6a00; color: #ffffff;
+  transform: translateY(-2px); box-shadow: 0 12px 32px rgba(255,106,0,0.4); background: #e65c00; color: #ffffff;
 }
 
 .serviceSectionInner {
@@ -431,7 +449,7 @@
   margin-bottom: 1.5rem;
 }
 .serviceHeadline {
-  font-family: var(--display, sans-serif); font-size: clamp(2rem,3vw,2.8rem);
+  font-family: var(--display, sans-serif); font-size: clamp(1.75rem,2.5vw,2.25rem);
   font-weight: 800; letter-spacing: -0.04em; line-height: 1.08; color: #111111;
   margin-bottom: 1.25rem;
 }
