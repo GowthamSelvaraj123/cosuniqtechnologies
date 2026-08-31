@@ -66,7 +66,7 @@ function OverviewSection() {
   const cards: { num: string; name: string; href: string; desc: string; icon: React.ReactNode; featured?: boolean; image?: string; imagePos?: 'left'|'right'|'top' }[] = [
     {
       num: "01", name: "Strategy & Consulting", href: "#strategy",
-      desc: "Addressing your core brand strategy to connect directly with people.",
+      desc: "Addressing your core brand strategy to connect directly with people. We dive deep into market research, user personas, and competitive analysis to build a strong foundation for scale.",
       image: "/assets/images/bento-strategy.jpg",
       imagePos: "left",
       icon: (
@@ -77,7 +77,7 @@ function OverviewSection() {
     },
     {
       num: "02", name: "Brand Identity", href: "#brand",
-      desc: "Positioning your brand to be exactly what people need it to be.",
+      desc: "Positioning your brand to be exactly what people need it to be. We craft compelling visual systems, memorable logos, and strategic messaging frameworks that truly resonate with your target audience.",
       icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
@@ -86,7 +86,7 @@ function OverviewSection() {
     },
     {
       num: "03", name: "UI / UX Design", href: "#design",
-      desc: "Designing interfaces that perform, delight users, and drive conversions.",
+      desc: "Designing interfaces that perform, delight users, and drive conversions. Our approach blends aesthetic excellence with cognitive psychology to create seamless user journeys.",
       image: "/assets/images/bento-ui-ux.jpg",
       icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -96,7 +96,7 @@ function OverviewSection() {
     },
     {
       num: "04", name: "Web Development", href: "#web-dev",
-      desc: "Building fast, responsive websites and powerful web applications.",
+      desc: "Building fast, responsive websites and powerful web applications. We engineer secure, scalable, and high-performance digital platforms using modern tech stacks to drive your business forward.",
       icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
@@ -105,7 +105,7 @@ function OverviewSection() {
     },
     {
       num: "05", name: "Mobile App Development", href: "#mobile",
-      desc: "Putting your business directly in their hands with engaging experiences.",
+      desc: "Putting your business directly in their hands with engaging experiences. We build high-performance applications for iOS and Android using modern frameworks.",
       image: "/assets/images/bento-mobile.jpg",
       imagePos: "right",
       icon: (
@@ -116,7 +116,7 @@ function OverviewSection() {
     },
     {
       num: "06", name: "E-Commerce Solutions", href: "#ecommerce",
-      desc: "Creating digital experiences that stand out and capture your audience.",
+      desc: "Creating digital experiences that stand out and capture your audience. We build high-conversion online stores with seamless payment integrations, intuitive product discovery, and robust inventory management.",
       icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
@@ -125,7 +125,7 @@ function OverviewSection() {
     },
     {
       num: "07", name: "AI & Custom Software", href: "#software",
-      desc: "Driving your brand&apos;s sales directly to the market with built-to-convert solutions.",
+      desc: "Driving your brand&apos;s sales directly to the market with built-to-convert solutions. We engineer robust software tailored exactly to your complex operational needs.",
       image: "/assets/images/bento-ai.jpg",
       imagePos: "left",
       icon: (
@@ -136,7 +136,7 @@ function OverviewSection() {
     },
     {
       num: "08", name: "Cloud & DevOps", href: "#cloud",
-      desc: "Reliable infrastructure and deployment pipelines behind every product.",
+      desc: "Reliable infrastructure and deployment pipelines behind every product. We architect secure, highly available cloud environments and automated CI/CD workflows to ensure your applications run flawlessly at any scale.",
       icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
