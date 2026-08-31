@@ -690,7 +690,7 @@
 .processStepDesc { font-size: 0.9rem; color: rgba(255,255,255,0.5); line-height: 1.65; }
 
 /* ── TECH STACK ── */
-.techStack { padding: 8rem 0; background: #ffffff; }
+.techStack { padding: 8rem 0; background: #ffffff !important; }
 .techHeader { max-width: 700px; margin-bottom: 5rem; }
 .techHeadline {
   font-family: var(--display, sans-serif); font-size: clamp(2rem,3.5vw,3rem);
@@ -883,4 +883,55 @@
 @media (max-width: 520px) {
   .servicesGrid { grid-template-columns: 1fr; }
   .bentoWide, .bentoTall { grid-column: span 1; grid-row: span 1; }
+}
+
+/* -- TECH TABS -- */
+.techTabsContainer {
+  margin-top: 4rem;
+}
+.techTabsHeader {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid #f0e2d6;
+  padding-bottom: 1rem;
+}
+.techTabBtn {
+  background: none;
+  border: none;
+  font-family: var(--font-plus-jakarta), sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #a0a0a0;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.techTabBtn:hover {
+  color: #ff6a00;
+}
+.techTabBtnActive {
+  color: #111111;
+}
+.techTabBtnActive::after {
+  content: '';
+  position: absolute;
+  bottom: -17px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #ff6a00;
+  border-radius: 3px 3px 0 0;
+}
+.techTabContent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  animation: fadeIn 0.4s ease forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }

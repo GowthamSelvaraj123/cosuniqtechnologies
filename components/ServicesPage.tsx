@@ -569,24 +569,41 @@ function ProcessSection() {
 }
 
 function TechStackSection() {
+  const [activeTab, setActiveTab] = useState(0);
+
   return (
     <section className={styles.techStack} id="tech">
       <div className={styles.container}>
-        <div className={styles.techHeader}>
-          <span className={styles.sectionEyebrow}>THE TECHNOLOGY BEHIND THE WORK</span>
-          <h2 className={styles.techHeadline}>The right technology for the right problem.</h2>
+        <div className={styles.overviewHeader}>
+          <div>
+            <span className={styles.sectionEyebrow}>
+              <span className={styles.sectionEyebrowDot} />
+              THE TECHNOLOGY BEHIND THE WORK
+            </span>
+            <h2 className={styles.overviewHeadline}>
+              The right technology for the right problem<span className={styles.overviewDot}>.</span>
+            </h2>
+          </div>
         </div>
-        <div className={styles.techCategories}>
-          {techCategories.map((cat) => (
-            <div key={cat.title} className={styles.techCategory}>
-              <div className={styles.techCatTitle}>{cat.title}</div>
-              <div className={styles.techPills}>
-                {cat.pills.map(p => (
-                  <div key={p} className={styles.techPill}>{p}</div>
-                ))}
-              </div>
-            </div>
-          ))}
+        
+        <div className={styles.techTabsContainer}>
+          <div className={styles.techTabsHeader}>
+            {techCategories.map((cat, idx) => (
+              <button 
+                key={cat.title} 
+                className={`${styles.techTabBtn} ${activeTab === idx ? styles.techTabBtnActive : ''}`}
+                onClick={() => setActiveTab(idx)}
+              >
+                {cat.title}
+              </button>
+            ))}
+          </div>
+          
+          <div className={styles.techTabContent}>
+            {techCategories[activeTab].pills.map(p => (
+              <div key={p} className={styles.techPill}>{p}</div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -708,9 +725,6 @@ export default function ServicesPage() {
       <CloudSection />
       <ProcessSection />
       <TechStackSection />
-      <WhyUsSection />
-      <WorkSection />
-      <FaqSection />
       <FinalCta />
     </>
   );
