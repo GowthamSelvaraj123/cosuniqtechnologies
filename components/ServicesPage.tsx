@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FiShoppingCart, FiMonitor, FiServer, FiDatabase, FiCloud, FiSmartphone, FiPenTool, FiImage, FiCpu } from "react-icons/fi";
 import Link from "next/link";
 import styles from "./ServicesPage.module.css";
@@ -86,7 +86,7 @@ const techCategories = [
       { name: "Ghost", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/ghost.svg", color: "15171A" },
       { name: "Squarespace", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/squarespace.svg", color: "000000" },
       { name: "PrestaShop", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/prestashop.svg", color: "DF0067" },
-      { name: "OpenCart", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/opencart.svg", color: "23AEDB" },
+      { name: "OpenCart", icon: "https://www.vectorlogo.zone/logos/opencart/opencart-icon.svg", color: "23AEDB" },
       { name: "HubSpot", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/hubspot.svg", color: "FF7A59" },
       { name: "NopCommerce", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dot-net/dot-net-original.svg", color: "4AB6E8" },
       { name: "Umbraco", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/umbraco.svg", color: "3544B1" },
@@ -238,7 +238,7 @@ const techCategories = [
       { name: "Keras", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/keras.svg", color: "D00000" },
       { name: "Scikit-Learn", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/scikitlearn.svg", color: "F7931E" },
       { name: "LangChain", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/langchain.svg", color: "1C3C3C" },
-      { name: "Midjourney", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/midjourney.svg", color: "000000" }
+      { name: "Midjourney", icon: "https://cdn.worldvectorlogo.com/logos/midjourney.svg", color: "000000" }
     ]
   }
 ];
@@ -753,6 +753,27 @@ const getTabIcon = (title: string) => {
 
 function TechStackSection() {
   const [activeTab, setActiveTab] = useState(0);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    // Start auto-advance timer
+    timerRef.current = setInterval(() => {
+      setActiveTab((prev) => (prev + 1) % techCategories.length);
+    }, 5000);
+
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, []);
+
+  const handleTabClick = (idx: number) => {
+    setActiveTab(idx);
+    // Reset timer on manual click
+    if (timerRef.current) clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => {
+      setActiveTab((prev) => (prev + 1) % techCategories.length);
+    }, 5000);
+  };
 
   return (
     <section className={styles.techStack} id="tech">
@@ -767,7 +788,7 @@ function TechStackSection() {
               <button 
                 key={cat.title} 
                 className={`${styles.techTabBtn} ${activeTab === idx ? styles.techTabBtnActive : ''}`}
-                onClick={() => setActiveTab(idx)}
+                onClick={() => handleTabClick(idx)}
               >
                 {getTabIcon(cat.title)}
                 <span>{cat.title}</span>
@@ -775,7 +796,7 @@ function TechStackSection() {
             ))}
           </div>
           
-          <div className={styles.techTabContent}>
+          <div key={activeTab} className={styles.techTabContent}>
             {techCategories[activeTab].techs.map(tech => (
               <div key={tech.name} className={styles.techCard}>
                 <div className={styles.techCardIcon}>

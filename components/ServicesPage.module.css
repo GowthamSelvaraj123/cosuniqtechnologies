@@ -893,17 +893,12 @@
 }
 .techTabsHeader {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   gap: 0.4rem;
   margin-bottom: 2rem;
   border-bottom: none;
   padding-bottom: 0.5rem;
-  overflow-x: auto;
-  -ms-overflow-style: none; /* IE/Edge */
-  scrollbar-width: none; /* Firefox */
-}
-.techTabsHeader::-webkit-scrollbar {
-  display: none; /* Chrome/Safari */
 }
 .techTabBtn {
   display: inline-flex;
@@ -926,14 +921,33 @@
   background: #e6e6e6;
   color: #111;
 }
+@keyframes fillTabProgress {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
 .techTabBtnActive {
-  background: #ff6a00;
-  color: #ffffff;
-  box-shadow: 0 4px 14px rgba(255,106,0,0.3);
+  background: #f2f2f2;
+  color: #ff6a00;
+  box-shadow: 0 4px 14px rgba(255,106,0,0.15);
+  overflow: hidden;
+  position: relative;
+}
+.techTabBtnActive::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; height: 100%;
+  background: rgba(255, 106, 0, 0.15); /* Light orange fill */
+  z-index: 0;
+  animation: fillTabProgress 5s linear forwards;
 }
 .techTabBtnActive:hover {
-  background: #e85d00;
-  color: #ffffff;
+  background: #f2f2f2;
+  color: #e85d00;
+}
+.techTabBtnActive > * {
+  position: relative;
+  z-index: 1;
 }
 .techTabContent {
   display: grid;
