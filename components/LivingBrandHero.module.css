@@ -2,12 +2,24 @@
   position: relative;
   width: 100vw;
   min-height: 100vh;
-  background-color: #FF6B00 !important;
-  /* Primary brand orange */
+  background-color: #FF6B00;
   display: flex;
   align-items: center;
   overflow: hidden;
   color: #ffffff;
+}
+
+.heroSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/images/hero-brand.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.05;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .container {
@@ -111,29 +123,37 @@
 }
 
 .secondaryCta {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 12px 28px;
+  background: transparent;
   color: #ffffff;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  border-radius: 999px;
+  border: 1.5px solid rgba(255, 255, 255, 0.8);
   text-decoration: none;
-  position: relative;
+  transition:
+    transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+    background 0.3s ease,
+    color 0.3s ease;
 }
 
-.secondaryCta::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 100%;
-  height: 2px;
+.secondaryCta:hover {
   background: #ffffff;
-  transform: scaleX(0);
-  transform-origin: right;
+  color: #FF6B00;
+  transform: translateY(-2px);
+}
+
+.ctaArrowSecondary {
   transition: transform 0.3s ease;
 }
 
-.secondaryCta:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
+.secondaryCta:hover .ctaArrowSecondary {
+  transform: translateX(4px);
 }
 
 .canvasWrapper {
