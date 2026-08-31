@@ -770,7 +770,16 @@
   background: rgba(255,107,0,0.08); padding: 5px 12px; border-radius: 999px; margin-bottom: 1.25rem;
 }
 .sectionEyebrowDot {
-  width: 6px; height: 6px; border-radius: 50%; background: #ff6a00; display: inline-block; flex-shrink: 0;
+  color: #ff6a00;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 0;
+}
+.sectionEyebrowDot::before {
+  content: "✦";
 }
 .sectionEyebrowDark {
   display: inline-flex; align-items: center; gap: 0.45rem; color: rgba(255,106,0,0.9);

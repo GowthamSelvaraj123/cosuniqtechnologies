@@ -222,8 +222,8 @@ function StrategySection() {
       <div className={styles.container}>
         <div className={styles.serviceSectionInner}>
           <div className={styles.serviceContent}>
-            <span className={styles.serviceEyebrow}>01 / STRATEGY & CONSULTING</span>
-            <h2 className={styles.serviceHeadline}>Addressing your core brand strategy to connect directly with people.</h2>
+            <span className={styles.sectionEyebrow}><span className={styles.sectionEyebrowDot} />01 / STRATEGY & CONSULTING</span>
+            <h2 className={styles.serviceHeadline}>Addressing your core brand strategy to connect directly with people<span className={styles.overviewDot}>.</span></h2>
             <p className={styles.serviceDescription}>
               We help define your product vision, map out the customer journey, and create a roadmap for success before a single line of code is written.
             </p>
@@ -260,8 +260,8 @@ function BrandSection() {
       <div className={styles.container}>
         <div className={`${styles.serviceSectionInner} ${styles.reverse}`}>
           <div className={styles.serviceContent}>
-            <span className={styles.serviceEyebrow}>02 / BRAND IDENTITY</span>
-            <h2 className={styles.serviceHeadline}>Positioning your brand to be exactly what people need it to be.</h2>
+            <span className={styles.sectionEyebrow}><span className={styles.sectionEyebrowDot} />02 / BRAND IDENTITY</span>
+            <h2 className={styles.serviceHeadline}>Positioning your brand to be exactly what people need it to be<span className={styles.overviewDot}>.</span></h2>
             <p className={styles.serviceDescription}>
               We craft compelling brand identities, messaging, and visual systems that resonate with your target audience and stand out in the market.
             </p>
@@ -298,8 +298,8 @@ function WebDevSection() {
       <div className={styles.container}>
         <div className={`${styles.serviceSectionInner} ${styles.reverse}`}>
           <div className={styles.serviceContent}>
-            <span className={styles.serviceEyebrow}>04 / WEB DEVELOPMENT</span>
-            <h2 className={styles.serviceHeadline}>Websites built for performance, scale and impact.</h2>
+            <span className={styles.sectionEyebrow}><span className={styles.sectionEyebrowDot} />04 / WEB DEVELOPMENT</span>
+            <h2 className={styles.serviceHeadline}>Websites built for performance, scale and impact<span className={styles.overviewDot}>.</span></h2>
             <p className={styles.serviceDescription}>
               We design and engineer fast, responsive digital experiences that combine strong visual design with reliable technology.
             </p>
@@ -358,8 +358,8 @@ function DesignSection() {
       <div className={styles.container}>
         <div className={`${styles.serviceSectionInner}`}>
           <div className={styles.serviceContent}>
-            <span className={styles.serviceEyebrow}>03 / UI/UX & PRODUCT DESIGN</span>
-            <h2 className={styles.serviceHeadline}>Design that makes complex products feel simple.</h2>
+            <span className={styles.sectionEyebrow}><span className={styles.sectionEyebrowDot} />03 / UI/UX & PRODUCT DESIGN</span>
+            <h2 className={styles.serviceHeadline}>Design that makes complex products feel simple<span className={styles.overviewDot}>.</span></h2>
             <p className={styles.serviceDescription}>
               From early concepts to polished interfaces, we design intuitive digital experiences that users understand and businesses can scale.
             </p>
@@ -413,8 +413,8 @@ function EcommerceSection() {
       <div className={styles.container}>
         <div className={`${styles.serviceSectionInner} ${styles.reverse}`}>
           <div className={styles.serviceContent}>
-            <span className={styles.serviceEyebrow}>06 / E-COMMERCE</span>
-            <h2 className={styles.serviceHeadline}>Commerce experiences designed to convert.</h2>
+            <span className={styles.sectionEyebrow}><span className={styles.sectionEyebrowDot} />06 / E-COMMERCE</span>
+            <h2 className={styles.serviceHeadline}>Commerce experiences designed to convert<span className={styles.overviewDot}>.</span></h2>
             <p className={styles.serviceDescription}>
               We build high-performance e-commerce experiences that make products easier to discover, understand, and purchase.
             </p>
@@ -478,8 +478,8 @@ function SoftwareSection() {
       <div className={styles.container}>
         <div className={styles.serviceSectionInner}>
           <div className={styles.serviceContent}>
-            <span className={styles.serviceEyebrow}>07 / AI & CUSTOM SOFTWARE</span>
-            <h2 className={styles.serviceHeadline}>Software built around the way your business works.</h2>
+            <span className={styles.sectionEyebrow}><span className={styles.sectionEyebrowDot} />07 / AI & CUSTOM SOFTWARE</span>
+            <h2 className={styles.serviceHeadline}>Software built around the way your business works<span className={styles.overviewDot}>.</span></h2>
             <p className={styles.serviceDescription}>
               We develop custom digital platforms that solve real operational problems and connect teams, customers, data, and workflows.
             </p>
@@ -548,8 +548,8 @@ function MobileSection() {
       <div className={styles.container}>
         <div className={styles.serviceSectionInner}>
           <div className={styles.serviceContent}>
-            <span className={styles.serviceEyebrow}>05 / MOBILE APPLICATIONS</span>
-            <h2 className={styles.serviceHeadline}>Digital products designed for people on the move.</h2>
+            <span className={styles.sectionEyebrow}><span className={styles.sectionEyebrowDot} />05 / MOBILE APPLICATIONS</span>
+            <h2 className={styles.serviceHeadline}>Digital products designed for people on the move<span className={styles.overviewDot}>.</span></h2>
             <p className={styles.serviceDescription}>
               We build polished, performant mobile applications for iOS and Android that users return to every day.
             </p>
@@ -630,8 +630,8 @@ function CloudSection() {
       <div className={styles.container}>
         <div className={`${styles.serviceSectionInner} ${styles.reverse}`}>
           <div className={styles.serviceContent}>
-            <span className={styles.serviceEyebrow}>08 / CLOUD & DEVOPS</span>
-            <h2 className={styles.serviceHeadline}>Reliable infrastructure behind every great product.</h2>
+            <span className={styles.sectionEyebrow}><span className={styles.sectionEyebrowDot} />08 / CLOUD & DEVOPS</span>
+            <h2 className={styles.serviceHeadline}>Reliable infrastructure behind every great product<span className={styles.overviewDot}>.</span></h2>
             <p className={styles.serviceDescription}>
               We architect and manage the infrastructure that keeps your product fast, secure, and available at any scale.
             </p>
