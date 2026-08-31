@@ -358,7 +358,7 @@ function WebDevSection() {
             <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
-          <div className={styles.serviceVisual}><img src="/assets/services/design_story.png" alt="Service Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
+          <div className={styles.serviceVisual}><img src="/assets/services/design_story.jpg" alt="Service Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
         </div>
       </div>
     </section>
@@ -466,7 +466,7 @@ function SoftwareSection() {
             <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
-          <div className={styles.serviceVisual}><img src="/assets/services/ecommerce_story.png" alt="Service Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
+          <div className={styles.serviceVisual}><img src="/assets/services/ecommerce_story.jpg" alt="Service Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
         </div>
       </div>
     </section>
