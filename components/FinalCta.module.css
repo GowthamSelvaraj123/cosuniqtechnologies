@@ -79,30 +79,30 @@
 .newsletterAnimContainer {
   position: relative;
   width: 100%;
-  height: 250px;
-  margin-top: 3rem;
+  height: 450px; /* Increased height to balance the tall form on the right */
+  margin-top: 2rem;
 }
 
 .paperPlane {
   position: absolute;
-  top: 10%;
-  left: 20%;
+  top: 15%;
+  left: 45%;
   filter: drop-shadow(0 15px 25px rgba(255, 107, 0, 0.2));
   z-index: 3;
 }
 
 .envelope {
   position: absolute;
-  top: 40%;
-  left: 55%;
+  top: 60%;
+  left: 35%;
   filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.08));
   z-index: 2;
 }
 
 .chatBubble {
   position: absolute;
-  top: 60%;
-  left: 10%;
+  top: 35%;
+  left: 15%;
   filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.05));
   z-index: 1;
 }

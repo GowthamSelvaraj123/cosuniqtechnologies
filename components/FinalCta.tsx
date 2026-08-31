@@ -22,7 +22,7 @@ const NewsletterAnimation = () => (
         ease: "easeInOut" 
       }}
     >
-      <svg width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="#FF6B00" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#FF6B00" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 2L11 13" />
         <path d="M22 2L15 22L11 13L2 9L22 2Z" fill="rgba(255, 107, 0, 0.1)" />
       </svg>
@@ -42,7 +42,7 @@ const NewsletterAnimation = () => (
         delay: 0.5
       }}
     >
-      <svg width="75" height="75" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="65" height="65" viewBox="0 0 24 24" fill="none" stroke="#888888" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="#ffffff" />
         <polyline points="22,6 12,13 2,6" />
       </svg>
@@ -62,7 +62,7 @@ const NewsletterAnimation = () => (
         delay: 1
       }}
     >
-      <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#bbbbbb" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#cccccc" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" fill="#ffffff"/>
       </svg>
     </motion.div>
