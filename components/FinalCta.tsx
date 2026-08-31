@@ -38,12 +38,18 @@ const ProcessFlow = () => (
         viewport={{ once: true }}
         transition={{ delay: 0, duration: 0.4 }}
       >
-        <circle cx="60" cy="50" r="30" fill="#ffffff" stroke="#FF6B00" strokeWidth="1.5" />
-        <svg x="48" y="38" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF6B00" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <motion.circle cx="60" cy="50" r="24" fill="none" stroke="#FF6B00" strokeWidth="2"
+          initial={{ scale: 1, opacity: 0 }}
+          whileInView={{ scale: [1, 1.8], opacity: [0.6, 0] }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5, duration: 0.6, ease: "easeOut" }}
+        />
+        <circle cx="60" cy="50" r="24" fill="#ffffff" stroke="#FF6B00" strokeWidth="1.5" />
+        <svg x="50" y="40" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF6B00" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M22 2L11 13" />
           <path d="M22 2L15 22L11 13L2 9L22 2Z" fill="rgba(255, 107, 0, 0.1)"/>
         </svg>
-        <text x="60" y="105" textAnchor="middle" fill="#111111" fontSize="13" fontWeight="700" fontFamily="var(--font-plus-jakarta), sans-serif">1. Request</text>
+        <text x="60" y="94" textAnchor="middle" fill="#111111" fontSize="13" fontWeight="700" fontFamily="var(--font-plus-jakarta), sans-serif">1. Request</text>
       </motion.g>
 
       {/* Node 2: Review */}
@@ -53,13 +59,19 @@ const ProcessFlow = () => (
         viewport={{ once: true }}
         transition={{ delay: 0.1, duration: 0.4 }}
       >
-        <motion.circle cx="260" cy="95" r="30" fill="#ffffff" 
+        <motion.circle cx="260" cy="95" r="24" fill="none" stroke="#FF6B00" strokeWidth="2"
+          initial={{ scale: 1, opacity: 0 }}
+          whileInView={{ scale: [1, 1.8], opacity: [0.6, 0] }}
+          viewport={{ once: true }}
+          transition={{ delay: 2.0, duration: 0.6, ease: "easeOut" }}
+        />
+        <motion.circle cx="260" cy="95" r="24" fill="#ffffff" 
           initial={{ stroke: "rgba(0, 0, 0, 0.1)", strokeWidth: 1 }} 
           whileInView={{ stroke: "#FF6B00", strokeWidth: 1.5 }}
           viewport={{ once: true }}
           transition={{ delay: 2.0, duration: 0.3 }}
         />
-        <motion.svg x="248" y="83" width="24" height="24" viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round"
+        <motion.svg x="250" y="85" width="20" height="20" viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round"
           initial={{ stroke: "#111111" }}
           whileInView={{ stroke: "#FF6B00" }}
           viewport={{ once: true }}
@@ -68,7 +80,7 @@ const ProcessFlow = () => (
            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" strokeWidth="1.5"></path>
            <circle cx="12" cy="12" r="3" strokeWidth="1.5"></circle>
         </motion.svg>
-        <text x="260" y="150" textAnchor="middle" fill="#555555" fontSize="13" fontWeight="600" fontFamily="var(--font-plus-jakarta), sans-serif">2. Review</text>
+        <text x="260" y="139" textAnchor="middle" fill="#555555" fontSize="13" fontWeight="600" fontFamily="var(--font-plus-jakarta), sans-serif">2. Review</text>
       </motion.g>
 
       {/* Node 3: Proposal */}
@@ -78,13 +90,19 @@ const ProcessFlow = () => (
         viewport={{ once: true }}
         transition={{ delay: 0.2, duration: 0.4 }}
       >
-        <motion.circle cx="120" cy="180" r="30" fill="#ffffff" 
+        <motion.circle cx="120" cy="180" r="24" fill="none" stroke="#FF6B00" strokeWidth="2"
+          initial={{ scale: 1, opacity: 0 }}
+          whileInView={{ scale: [1, 1.8], opacity: [0.6, 0] }}
+          viewport={{ once: true }}
+          transition={{ delay: 3.3, duration: 0.6, ease: "easeOut" }}
+        />
+        <motion.circle cx="120" cy="180" r="24" fill="#ffffff" 
           initial={{ stroke: "rgba(0, 0, 0, 0.1)", strokeWidth: 1 }} 
           whileInView={{ stroke: "#FF6B00", strokeWidth: 1.5 }}
           viewport={{ once: true }}
           transition={{ delay: 3.3, duration: 0.3 }}
         />
-        <motion.svg x="108" y="168" width="24" height="24" viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round"
+        <motion.svg x="110" y="170" width="20" height="20" viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round"
           initial={{ stroke: "#111111" }}
           whileInView={{ stroke: "#FF6B00" }}
           viewport={{ once: true }}
@@ -96,7 +114,7 @@ const ProcessFlow = () => (
           <line x1="16" y1="17" x2="8" y2="17" strokeWidth="1.5"></line>
           <polyline points="10 9 9 9 8 9" strokeWidth="1.5"></polyline>
         </motion.svg>
-        <text x="120" y="235" textAnchor="middle" fill="#555555" fontSize="13" fontWeight="600" fontFamily="var(--font-plus-jakarta), sans-serif">3. Proposal</text>
+        <text x="120" y="224" textAnchor="middle" fill="#555555" fontSize="13" fontWeight="600" fontFamily="var(--font-plus-jakarta), sans-serif">3. Proposal</text>
       </motion.g>
 
       {/* Node 4: Kickoff */}
@@ -106,13 +124,19 @@ const ProcessFlow = () => (
         viewport={{ once: true }}
         transition={{ delay: 0.3, duration: 0.4 }}
       >
-        <motion.circle cx="260" cy="250" r="30" fill="#ffffff" 
+        <motion.circle cx="260" cy="250" r="24" fill="none" stroke="#FF6B00" strokeWidth="2"
+          initial={{ scale: 1, opacity: 0 }}
+          whileInView={{ scale: [1, 1.8], opacity: [0.6, 0] }}
+          viewport={{ once: true }}
+          transition={{ delay: 4.5, duration: 0.6, ease: "easeOut" }}
+        />
+        <motion.circle cx="260" cy="250" r="24" fill="#ffffff" 
           initial={{ stroke: "rgba(0, 0, 0, 0.1)", strokeWidth: 1 }} 
           whileInView={{ stroke: "#FF6B00", strokeWidth: 1.5 }}
           viewport={{ once: true }}
           transition={{ delay: 4.5, duration: 0.3 }}
         />
-        <motion.svg x="248" y="238" width="24" height="24" viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round"
+        <motion.svg x="250" y="240" width="20" height="20" viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round"
           initial={{ stroke: "#111111" }}
           whileInView={{ stroke: "#FF6B00" }}
           viewport={{ once: true }}
@@ -120,7 +144,7 @@ const ProcessFlow = () => (
         >
           <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" strokeWidth="1.5"></path>
         </motion.svg>
-        <text x="260" y="305" textAnchor="middle" fill="#555555" fontSize="13" fontWeight="600" fontFamily="var(--font-plus-jakarta), sans-serif">4. Kickoff</text>
+        <text x="260" y="294" textAnchor="middle" fill="#555555" fontSize="13" fontWeight="600" fontFamily="var(--font-plus-jakarta), sans-serif">4. Kickoff</text>
       </motion.g>
     </svg>
   </div>
