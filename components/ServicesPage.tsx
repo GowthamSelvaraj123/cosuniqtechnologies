@@ -286,7 +286,7 @@ function StrategySection() {
             <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
-          <div className={styles.serviceVisual}><img src="/assets/services/strategy_3d_1788167908842.jpg" alt="Service Visual" style={{ width: '100%', height: 'auto', mixBlendMode: 'multiply', borderRadius: '16px' }} /></div>
+          <div className={styles.serviceVisual}><img src="/assets/services/strategy_story.jpg" alt="Service Story" style={{ width: '100%', height: 'auto', borderRadius: '16px', mixBlendMode: 'multiply' }} /></div>
         </div>
       </div>
     </section>
@@ -322,7 +322,7 @@ function BrandSection() {
             <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
-          <div className={styles.serviceVisual}><img src="/assets/services/brand_3d_1788167932968.jpg" alt="Service Visual" style={{ width: '100%', height: 'auto', mixBlendMode: 'multiply', borderRadius: '16px' }} /></div>
+          <div className={styles.serviceVisual}><img src="/assets/services/strategy_story.jpg" alt="Service Story" style={{ width: '100%', height: 'auto', borderRadius: '16px', mixBlendMode: 'multiply' }} /></div>
         </div>
       </div>
     </section>
@@ -358,7 +358,7 @@ function WebDevSection() {
             <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
-          <div className={styles.serviceVisual}><img src="/assets/services/design_3d_1788167958456.jpg" alt="Service Visual" style={{ width: '100%', height: 'auto', mixBlendMode: 'multiply', borderRadius: '16px' }} /></div>
+          <div className={styles.serviceVisual}><img src="/assets/services/strategy_story.jpg" alt="Service Story" style={{ width: '100%', height: 'auto', borderRadius: '16px', mixBlendMode: 'multiply' }} /></div>
         </div>
       </div>
     </section>
@@ -394,7 +394,7 @@ function DesignSection() {
             <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
-          <div className={styles.serviceVisual}><img src="/assets/services/webdev_3d_1788167980224.jpg" alt="Service Visual" style={{ width: '100%', height: 'auto', mixBlendMode: 'multiply', borderRadius: '16px' }} /></div>
+          <div className={styles.serviceVisual}><img src="/assets/services/strategy_story.jpg" alt="Service Story" style={{ width: '100%', height: 'auto', borderRadius: '16px', mixBlendMode: 'multiply' }} /></div>
         </div>
       </div>
     </section>
@@ -430,7 +430,7 @@ function EcommerceSection() {
             <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
-          <div className={styles.serviceVisual}><img src="/assets/services/mobile_3d_1788168005101.jpg" alt="Service Visual" style={{ width: '100%', height: 'auto', mixBlendMode: 'multiply', borderRadius: '16px' }} /></div>
+          <div className={styles.serviceVisual}><img src="/assets/services/strategy_story.jpg" alt="Service Story" style={{ width: '100%', height: 'auto', borderRadius: '16px', mixBlendMode: 'multiply' }} /></div>
         </div>
       </div>
     </section>
@@ -466,7 +466,7 @@ function SoftwareSection() {
             <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
-          <div className={styles.serviceVisual}><img src="/assets/services/ecommerce_3d_1788168030003.jpg" alt="Service Visual" style={{ width: '100%', height: 'auto', mixBlendMode: 'multiply', borderRadius: '16px' }} /></div>
+          <div className={styles.serviceVisual}><img src="/assets/services/strategy_story.jpg" alt="Service Story" style={{ width: '100%', height: 'auto', borderRadius: '16px', mixBlendMode: 'multiply' }} /></div>
         </div>
       </div>
     </section>
@@ -502,7 +502,7 @@ function MobileSection() {
             <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
-          <div className={styles.serviceVisual}><img src="/assets/services/software_3d_1788168058498.jpg" alt="Service Visual" style={{ width: '100%', height: 'auto', mixBlendMode: 'multiply', borderRadius: '16px' }} /></div>
+          <div className={styles.serviceVisual}><img src="/assets/services/strategy_story.jpg" alt="Service Story" style={{ width: '100%', height: 'auto', borderRadius: '16px', mixBlendMode: 'multiply' }} /></div>
         </div>
       </div>
     </section>
@@ -538,7 +538,7 @@ function CloudSection() {
             <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
-          <div className={styles.serviceVisual}><img src="/assets/services/cloud_3d_1788168087374.jpg" alt="Service Visual" style={{ width: '100%', height: 'auto', mixBlendMode: 'multiply', borderRadius: '16px' }} /></div>
+          <div className={styles.serviceVisual}><img src="/assets/services/strategy_story.jpg" alt="Service Story" style={{ width: '100%', height: 'auto', borderRadius: '16px', mixBlendMode: 'multiply' }} /></div>
         </div>
       </div>
     </section>
