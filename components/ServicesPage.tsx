@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { FiShoppingCart, FiMonitor, FiServer, FiDatabase, FiCloud, FiSmartphone, FiPenTool } from "react-icons/fi";
 import Link from "next/link";
 import styles from "./ServicesPage.module.css";
 import InnerBanner from "./InnerBanner";
@@ -650,6 +651,19 @@ function ProcessSection() {
   );
 }
 
+const getTabIcon = (title: string) => {
+  switch(title) {
+    case "CMS & eCommerce": return <FiShoppingCart style={{ fontSize: '1.1rem' }} />;
+    case "Frontend": return <FiMonitor style={{ fontSize: '1.1rem' }} />;
+    case "Backend": return <FiServer style={{ fontSize: '1.1rem' }} />;
+    case "Database": return <FiDatabase style={{ fontSize: '1.1rem' }} />;
+    case "Cloud": return <FiCloud style={{ fontSize: '1.1rem' }} />;
+    case "Mobile": return <FiSmartphone style={{ fontSize: '1.1rem' }} />;
+    case "UI / UX": return <FiPenTool style={{ fontSize: '1.1rem' }} />;
+    default: return null;
+  }
+};
+
 function TechStackSection() {
   const [activeTab, setActiveTab] = useState(0);
 
@@ -668,7 +682,8 @@ function TechStackSection() {
                 className={`${styles.techTabBtn} ${activeTab === idx ? styles.techTabBtnActive : ''}`}
                 onClick={() => setActiveTab(idx)}
               >
-                {cat.title}
+                {getTabIcon(cat.title)}
+                <span>{cat.title}</span>
               </button>
             ))}
           </div>
