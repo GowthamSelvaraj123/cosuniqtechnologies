@@ -6,6 +6,47 @@ import styles from "./ServicesPage.module.css";
 import InnerBanner from "./InnerBanner";
 import FinalCta from "./FinalCta";
 import TiltCard from "./TiltCard";
+import { 
+  SiMiro, SiNotion, SiFigma, SiReact, SiNextdotjs, SiNodedotjs, 
+  SiPhp, SiLaravel, SiFramer, SiSketch, SiShopify, SiStripe, SiGraphql, 
+  SiDocker, SiPostgresql, SiTypescript, SiFlutter, SiFirebase, SiSwift, 
+  SiGithubactions, SiLinux 
+} from "react-icons/si";
+import { FaAws, FaCubes, FaPalette, FaImage, FaVideo } from "react-icons/fa6";
+
+const getIcon = (name: string) => {
+  const icons: Record<string, React.ReactNode> = {
+    'Miro': <SiMiro />,
+    'Notion': <SiNotion />,
+    'Figma': <SiFigma />,
+    'Maze': <FaCubes />,
+    'Illustrator': <FaPalette />,
+    'Photoshop': <FaImage />,
+    'After Effects': <FaVideo />,
+    'React': <SiReact />,
+    'Next.js': <SiNextdotjs />,
+    'Node.js': <SiNodedotjs />,
+    'PHP': <SiPhp />,
+    'Laravel': <SiLaravel />,
+    'Framer': <SiFramer />,
+    'Sketch': <SiSketch />,
+    'Principle': <FaCubes />,
+    'Shopify': <SiShopify />,
+    'Stripe': <SiStripe />,
+    'GraphQL': <SiGraphql />,
+    'AWS': <FaAws />,
+    'Docker': <SiDocker />,
+    'PostgreSQL': <SiPostgresql />,
+    'TypeScript': <SiTypescript />,
+    'React Native': <SiReact />,
+    'Flutter': <SiFlutter />,
+    'Firebase': <SiFirebase />,
+    'Swift': <SiSwift />,
+    'GitHub Actions': <SiGithubactions />,
+    'Linux': <SiLinux />,
+  };
+  return icons[name] || <FaCubes />;
+};
 
 /* ─────────── DATA ─────────── */
 const overviewServices = [
@@ -223,16 +264,18 @@ function StrategySection() {
         <div className={styles.serviceSectionInner}>
           <div className={styles.serviceContent}>
             <span className={styles.sectionEyebrow}><span className={styles.sectionEyebrowDot} />01 / STRATEGY & CONSULTING</span>
-            <h2 className={styles.serviceHeadline}>Addressing your core brand strategy to connect directly with people<span className={styles.overviewDot}>.</span></h2>
-            <p className={styles.serviceDescription}>
-              We help define your product vision, map out the customer journey, and create a roadmap for success before a single line of code is written.
-            </p>
+            <h2 className={styles.serviceHeadline}>Vision. Planning. Scale<span className={styles.overviewDot}>.</span></h2>
             <ul className={styles.capabilitiesList}>
               {["Product Strategy", "Market Research", "Digital Transformation", "Business Analysis", "Go-To-Market", "Roadmapping"].map(c => <li key={c}>{c}</li>)}
             </ul>
+            <div className={styles.serviceTools}>
+              {["Miro", "Notion", "Figma", "Maze"].map(t => (
+                <span key={t} className={styles.toolIcon} title={t}>{getIcon(t)} {t}</span>
+              ))}
+            </div>
             <div className={styles.serviceMeta}>
               <div className={styles.metaItem}>
-                <span className={styles.metaLabel}>Approx. Price</span>
+                <span className={styles.metaLabel}>Investment</span>
                 <span className={styles.metaValue}>₹50,000 - ₹2,00,000</span>
               </div>
               <div className={styles.metaItem}>
@@ -240,7 +283,7 @@ function StrategySection() {
                 <span className={styles.metaValue}>2 - 4 Weeks</span>
               </div>
             </div>
-            <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
+            <Link href="/contact" className={styles.heroCtaPrimary}>More details</Link>
           </div>
 
           <div className={styles.serviceVisual}>
@@ -261,16 +304,18 @@ function BrandSection() {
         <div className={`${styles.serviceSectionInner} ${styles.reverse}`}>
           <div className={styles.serviceContent}>
             <span className={styles.sectionEyebrow}><span className={styles.sectionEyebrowDot} />02 / BRAND IDENTITY</span>
-            <h2 className={styles.serviceHeadline}>Positioning your brand to be exactly what people need it to be<span className={styles.overviewDot}>.</span></h2>
-            <p className={styles.serviceDescription}>
-              We craft compelling brand identities, messaging, and visual systems that resonate with your target audience and stand out in the market.
-            </p>
+            <h2 className={styles.serviceHeadline}>Identity. Voice. Presence<span className={styles.overviewDot}>.</span></h2>
             <ul className={styles.capabilitiesList}>
               {["Logo Design", "Brand Guidelines", "Typography & Color", "Messaging Framework", "Brand Strategy", "Visual Assets"].map(c => <li key={c}>{c}</li>)}
             </ul>
+            <div className={styles.serviceTools}>
+              {["Illustrator", "Photoshop", "Figma", "After Effects"].map(t => (
+                <span key={t} className={styles.toolIcon} title={t}>{getIcon(t)} {t}</span>
+              ))}
+            </div>
             <div className={styles.serviceMeta}>
               <div className={styles.metaItem}>
-                <span className={styles.metaLabel}>Approx. Price</span>
+                <span className={styles.metaLabel}>Investment</span>
                 <span className={styles.metaValue}>₹80,000 - ₹3,00,000</span>
               </div>
               <div className={styles.metaItem}>
@@ -278,7 +323,7 @@ function BrandSection() {
                 <span className={styles.metaValue}>3 - 6 Weeks</span>
               </div>
             </div>
-            <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
+            <Link href="/contact" className={styles.heroCtaPrimary}>More details</Link>
           </div>
 
           <div className={styles.serviceVisual}>
@@ -299,19 +344,18 @@ function WebDevSection() {
         <div className={`${styles.serviceSectionInner} ${styles.reverse}`}>
           <div className={styles.serviceContent}>
             <span className={styles.sectionEyebrow}><span className={styles.sectionEyebrowDot} />04 / WEB DEVELOPMENT</span>
-            <h2 className={styles.serviceHeadline}>Websites built for performance, scale and impact<span className={styles.overviewDot}>.</span></h2>
-            <p className={styles.serviceDescription}>
-              We design and engineer fast, responsive digital experiences that combine strong visual design with reliable technology.
-            </p>
+            <h2 className={styles.serviceHeadline}>Speed. Scale. Impact<span className={styles.overviewDot}>.</span></h2>
             <ul className={styles.capabilitiesList}>
               {["Corporate Websites", "Business Websites", "Web Applications", "CMS Development", "Custom Portals", "API Integration", "Performance Optimisation"].map(c => <li key={c}>{c}</li>)}
             </ul>
-            <div className={styles.techTags}>
-              {["React", "Next.js", "Node.js", "PHP", "Laravel", "JavaScript"].map(t => <span key={t} className={styles.techTag}>{t}</span>)}
+            <div className={styles.serviceTools}>
+              {["React", "Next.js", "Node.js", "PHP", "Laravel"].map(t => (
+                <span key={t} className={styles.toolIcon} title={t}>{getIcon(t)} {t}</span>
+              ))}
             </div>
             <div className={styles.serviceMeta}>
               <div className={styles.metaItem}>
-                <span className={styles.metaLabel}>Approx. Price</span>
+                <span className={styles.metaLabel}>Investment</span>
                 <span className={styles.metaValue}>₹60,000 - ₹2,50,000</span>
               </div>
               <div className={styles.metaItem}>
@@ -319,7 +363,7 @@ function WebDevSection() {
                 <span className={styles.metaValue}>3 - 6 Weeks</span>
               </div>
             </div>
-            <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
+            <Link href="/contact" className={styles.heroCtaPrimary}>More details</Link>
           </div>
 
           <div className={styles.serviceVisual}>
@@ -359,16 +403,18 @@ function DesignSection() {
         <div className={`${styles.serviceSectionInner}`}>
           <div className={styles.serviceContent}>
             <span className={styles.sectionEyebrow}><span className={styles.sectionEyebrowDot} />03 / UI/UX & PRODUCT DESIGN</span>
-            <h2 className={styles.serviceHeadline}>Design that makes complex products feel simple<span className={styles.overviewDot}>.</span></h2>
-            <p className={styles.serviceDescription}>
-              From early concepts to polished interfaces, we design intuitive digital experiences that users understand and businesses can scale.
-            </p>
+            <h2 className={styles.serviceHeadline}>Aesthetic. Usability. Delight<span className={styles.overviewDot}>.</span></h2>
             <ul className={styles.capabilitiesList}>
               {["UX Research", "Wireframing", "UI Design", "Design Systems", "Prototyping", "Interaction Design", "Website Redesign"].map(c => <li key={c}>{c}</li>)}
             </ul>
+            <div className={styles.serviceTools}>
+              {["Figma", "Framer", "Sketch", "Principle"].map(t => (
+                <span key={t} className={styles.toolIcon} title={t}>{getIcon(t)} {t}</span>
+              ))}
+            </div>
             <div className={styles.serviceMeta}>
               <div className={styles.metaItem}>
-                <span className={styles.metaLabel}>Approx. Price</span>
+                <span className={styles.metaLabel}>Investment</span>
                 <span className={styles.metaValue}>₹40,000 - ₹1,50,000</span>
               </div>
               <div className={styles.metaItem}>
@@ -376,7 +422,7 @@ function DesignSection() {
                 <span className={styles.metaValue}>2 - 4 Weeks</span>
               </div>
             </div>
-            <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
+            <Link href="/contact" className={styles.heroCtaPrimary}>More details</Link>
           </div>
 
           <div className={styles.serviceVisual}>
@@ -414,16 +460,18 @@ function EcommerceSection() {
         <div className={`${styles.serviceSectionInner} ${styles.reverse}`}>
           <div className={styles.serviceContent}>
             <span className={styles.sectionEyebrow}><span className={styles.sectionEyebrowDot} />06 / E-COMMERCE</span>
-            <h2 className={styles.serviceHeadline}>Commerce experiences designed to convert<span className={styles.overviewDot}>.</span></h2>
-            <p className={styles.serviceDescription}>
-              We build high-performance e-commerce experiences that make products easier to discover, understand, and purchase.
-            </p>
+            <h2 className={styles.serviceHeadline}>Conversion. Flow. Growth<span className={styles.overviewDot}>.</span></h2>
             <ul className={styles.capabilitiesList}>
               {["Shopify Development", "WooCommerce", "Custom E-Commerce", "Payment Integration", "Product Management", "API Integration", "E-Commerce Automation"].map(c => <li key={c}>{c}</li>)}
             </ul>
+            <div className={styles.serviceTools}>
+              {["Shopify", "Stripe", "Next.js", "GraphQL"].map(t => (
+                <span key={t} className={styles.toolIcon} title={t}>{getIcon(t)} {t}</span>
+              ))}
+            </div>
             <div className={styles.serviceMeta}>
               <div className={styles.metaItem}>
-                <span className={styles.metaLabel}>Approx. Price</span>
+                <span className={styles.metaLabel}>Investment</span>
                 <span className={styles.metaValue}>₹80,000 - ₹3,00,000</span>
               </div>
               <div className={styles.metaItem}>
@@ -431,7 +479,7 @@ function EcommerceSection() {
                 <span className={styles.metaValue}>4 - 8 Weeks</span>
               </div>
             </div>
-            <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
+            <Link href="/contact" className={styles.heroCtaPrimary}>More details</Link>
           </div>
 
           <div className={styles.serviceVisual}>
@@ -479,16 +527,18 @@ function SoftwareSection() {
         <div className={styles.serviceSectionInner}>
           <div className={styles.serviceContent}>
             <span className={styles.sectionEyebrow}><span className={styles.sectionEyebrowDot} />07 / AI & CUSTOM SOFTWARE</span>
-            <h2 className={styles.serviceHeadline}>Software built around the way your business works<span className={styles.overviewDot}>.</span></h2>
-            <p className={styles.serviceDescription}>
-              We develop custom digital platforms that solve real operational problems and connect teams, customers, data, and workflows.
-            </p>
+            <h2 className={styles.serviceHeadline}>Logic. Automation. Power<span className={styles.overviewDot}>.</span></h2>
             <ul className={styles.capabilitiesList}>
               {["CRM", "ERP", "SaaS Platforms", "Business Dashboards", "Booking Systems", "Real-time Apps", "Business Automation", "API-driven Platforms"].map(c => <li key={c}>{c}</li>)}
             </ul>
+            <div className={styles.serviceTools}>
+              {["AWS", "Docker", "PostgreSQL", "TypeScript"].map(t => (
+                <span key={t} className={styles.toolIcon} title={t}>{getIcon(t)} {t}</span>
+              ))}
+            </div>
             <div className={styles.serviceMeta}>
               <div className={styles.metaItem}>
-                <span className={styles.metaLabel}>Approx. Price</span>
+                <span className={styles.metaLabel}>Investment</span>
                 <span className={styles.metaValue}>₹2,50,000+</span>
               </div>
               <div className={styles.metaItem}>
@@ -496,7 +546,7 @@ function SoftwareSection() {
                 <span className={styles.metaValue}>8 - 16 Weeks</span>
               </div>
             </div>
-            <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
+            <Link href="/contact" className={styles.heroCtaPrimary}>More details</Link>
           </div>
 
           <div className={styles.serviceVisual}>
@@ -549,16 +599,18 @@ function MobileSection() {
         <div className={styles.serviceSectionInner}>
           <div className={styles.serviceContent}>
             <span className={styles.sectionEyebrow}><span className={styles.sectionEyebrowDot} />05 / MOBILE APPLICATIONS</span>
-            <h2 className={styles.serviceHeadline}>Digital products designed for people on the move<span className={styles.overviewDot}>.</span></h2>
-            <p className={styles.serviceDescription}>
-              We build polished, performant mobile applications for iOS and Android that users return to every day.
-            </p>
+            <h2 className={styles.serviceHeadline}>Native. Fluid. Engaging<span className={styles.overviewDot}>.</span></h2>
             <ul className={styles.capabilitiesList}>
               {["React Native", "Flutter", "Android & iOS", "API Integration", "Push Notifications", "Real-time Features"].map(c => <li key={c}>{c}</li>)}
             </ul>
+            <div className={styles.serviceTools}>
+              {["React Native", "Flutter", "Firebase", "Swift"].map(t => (
+                <span key={t} className={styles.toolIcon} title={t}>{getIcon(t)} {t}</span>
+              ))}
+            </div>
             <div className={styles.serviceMeta}>
               <div className={styles.metaItem}>
-                <span className={styles.metaLabel}>Approx. Price</span>
+                <span className={styles.metaLabel}>Investment</span>
                 <span className={styles.metaValue}>₹1,50,000 - ₹4,00,000</span>
               </div>
               <div className={styles.metaItem}>
@@ -566,7 +618,7 @@ function MobileSection() {
                 <span className={styles.metaValue}>6 - 12 Weeks</span>
               </div>
             </div>
-            <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
+            <Link href="/contact" className={styles.heroCtaPrimary}>More details</Link>
           </div>
 
           <div className={styles.serviceVisual}>
@@ -631,16 +683,18 @@ function CloudSection() {
         <div className={`${styles.serviceSectionInner} ${styles.reverse}`}>
           <div className={styles.serviceContent}>
             <span className={styles.sectionEyebrow}><span className={styles.sectionEyebrowDot} />08 / CLOUD & DEVOPS</span>
-            <h2 className={styles.serviceHeadline}>Reliable infrastructure behind every great product<span className={styles.overviewDot}>.</span></h2>
-            <p className={styles.serviceDescription}>
-              We architect and manage the infrastructure that keeps your product fast, secure, and available at any scale.
-            </p>
+            <h2 className={styles.serviceHeadline}>Reliable. Secure. Scalable<span className={styles.overviewDot}>.</span></h2>
             <ul className={styles.capabilitiesList}>
               {["Cloud Deployment", "AWS", "Linux Server Management", "CI/CD", "SSL & Security", "Performance Optimisation", "Monitoring", "App Maintenance"].map(c => <li key={c}>{c}</li>)}
             </ul>
+            <div className={styles.serviceTools}>
+              {["AWS", "GitHub Actions", "Docker", "Linux"].map(t => (
+                <span key={t} className={styles.toolIcon} title={t}>{getIcon(t)} {t}</span>
+              ))}
+            </div>
             <div className={styles.serviceMeta}>
               <div className={styles.metaItem}>
-                <span className={styles.metaLabel}>Approx. Price</span>
+                <span className={styles.metaLabel}>Investment</span>
                 <span className={styles.metaValue}>Custom</span>
               </div>
               <div className={styles.metaItem}>
@@ -648,7 +702,7 @@ function CloudSection() {
                 <span className={styles.metaValue}>Ongoing</span>
               </div>
             </div>
-            <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
+            <Link href="/contact" className={styles.heroCtaPrimary}>More details</Link>
           </div>
 
           <div className={styles.serviceVisual}>
