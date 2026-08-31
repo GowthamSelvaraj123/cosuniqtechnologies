@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import styles from "./FinalCta.module.css";
+import MagneticWrapper from "./MagneticWrapper";
+import HoverTextReveal from "./HoverTextReveal";
 
 export default function FinalCta() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -167,21 +169,23 @@ export default function FinalCta() {
               <p className={styles.successMessage}>Thank you! Your message has been sent.</p>
             )}
 
-            <button type="submit" className={styles.submitBtn} disabled={status === 'submitting' || status === 'success'}>
-              {status === 'submitting' ? (
-                "Sending..."
-              ) : status === 'success' ? (
-                "Request Sent"
-              ) : (
-                <>
-                  Start a Project 
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.arrow}>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </>
-              )}
-            </button>
+            <MagneticWrapper>
+              <button type="submit" className={styles.submitBtn} disabled={status === 'submitting' || status === 'success'}>
+                {status === 'submitting' ? (
+                  "Sending..."
+                ) : status === 'success' ? (
+                  "Request Sent"
+                ) : (
+                  <>
+                    <HoverTextReveal text="Start a Project" /> 
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.arrow}>
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </>
+                )}
+              </button>
+            </MagneticWrapper>
           </form>
         </motion.div>
 

@@ -5,6 +5,7 @@ import Link from "next/link";
 import styles from "./ServicesPage.module.css";
 import InnerBanner from "./InnerBanner";
 import FinalCta from "./FinalCta";
+import TiltCard from "./TiltCard";
 
 /* ─────────── DATA ─────────── */
 const overviewServices = [
@@ -159,19 +160,21 @@ function OverviewSection() {
         {/* 4-col card grid */}
         <div className={styles.servicesGrid}>
           {cards.map((s) => (
-            <a key={s.num} href={s.href} className={`${styles.serviceCard} ${s.featured ? styles.serviceCardFeatured : ""}`}>
-              {/* Top row: icon + arrow */}
-              <div className={styles.serviceCardTop}>
-                <span className={styles.serviceCardIcon}>{s.icon}</span>
-                <span className={styles.serviceArrow}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" />
-                  </svg>
-                </span>
-              </div>
-              <div className={styles.serviceName}>{s.name}</div>
-              <p className={styles.serviceDesc} dangerouslySetInnerHTML={{ __html: s.desc }} />
-            </a>
+            <TiltCard key={s.num} intensity={12}>
+              <a href={s.href} className={`${styles.serviceCard} ${s.featured ? styles.serviceCardFeatured : ""}`} style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+                {/* Top row: icon + arrow */}
+                <div className={styles.serviceCardTop}>
+                  <span className={styles.serviceCardIcon}>{s.icon}</span>
+                  <span className={styles.serviceArrow}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" />
+                    </svg>
+                  </span>
+                </div>
+                <div className={styles.serviceName}>{s.name}</div>
+                <p className={styles.serviceDesc} dangerouslySetInnerHTML={{ __html: s.desc }} />
+              </a>
+            </TiltCard>
           ))}
         </div>
       </div>
@@ -716,21 +719,23 @@ function WorkSection() {
         </div>
         <div className={styles.workGrid}>
           {workItems.map((w) => (
-            <div key={w.name} className={styles.workCard}>
-              <div className={styles.workCardImg}>
-                <div className={styles.workImgFallback} style={{ background: w.bg }} />
-              </div>
-              <div className={styles.workCardMeta}>
-                <div className={styles.workCardTags}>
-                  {w.tags.map(t => <span key={t} className={styles.workCardTag}>{t}</span>)}
+            <TiltCard key={w.name} intensity={8}>
+              <div className={styles.workCard} style={{ height: '100%' }}>
+                <div className={styles.workCardImg}>
+                  <div className={styles.workImgFallback} style={{ background: w.bg }} />
                 </div>
-                <h3 className={styles.workCardName}>{w.name}</h3>
-                <p className={styles.workCardDesc}>{w.desc}</p>
-                <Link href="/portfolio" className={styles.workCardLink}>
-                  View Case Study →
-                </Link>
+                <div className={styles.workCardMeta}>
+                  <div className={styles.workCardTags}>
+                    {w.tags.map(t => <span key={t} className={styles.workCardTag}>{t}</span>)}
+                  </div>
+                  <h3 className={styles.workCardName}>{w.name}</h3>
+                  <p className={styles.workCardDesc}>{w.desc}</p>
+                  <Link href="/portfolio" className={styles.workCardLink}>
+                    View Case Study →
+                  </Link>
+                </div>
               </div>
-            </div>
+            </TiltCard>
           ))}
         </div>
       </div>
