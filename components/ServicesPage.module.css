@@ -690,8 +690,8 @@
 .processStepDesc { font-size: 0.9rem; color: rgba(255,255,255,0.5); line-height: 1.65; }
 
 /* ── TECH STACK ── */
-.techStack { padding: 8rem 0; background-color: #ffffff !important; position: relative; overflow: hidden; }
-.techHeader { max-width: 700px; margin-bottom: 5rem; }
+.techStack { padding: 5rem 0 7rem; background-color: #ffffff !important; position: relative; overflow: hidden; }
+.techHeader { max-width: 700px; margin-bottom: 3rem; }
 .techHeadline {
   font-family: var(--display, sans-serif); font-size: clamp(2rem,3.5vw,3rem);
   font-weight: 800; letter-spacing: -0.04em; line-height: 1.1; color: #111111; margin-top: 1.25rem;
@@ -889,95 +889,121 @@
 
 /* -- TECH TABS -- */
 .techTabsContainer {
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 .techTabsHeader {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 3rem;
-  border-bottom: 1px solid #f0e2d6;
-  padding-bottom: 1rem;
+  gap: 0.75rem;
+  margin-bottom: 3.5rem;
+  border-bottom: none;
+  padding-bottom: 0;
 }
 .techTabBtn {
-  background: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #f2f2f2;
   border: none;
+  border-radius: 9999px;
   font-family: var(--font-plus-jakarta), sans-serif;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  color: #a0a0a0;
+  color: #555;
   cursor: pointer;
-  padding: 0.5rem 1rem;
-  transition: all 0.3s ease;
+  padding: 0.65rem 1.4rem;
+  transition: all 0.25s ease;
   position: relative;
+  white-space: nowrap;
 }
 .techTabBtn:hover {
-  color: #ff6a00;
+  background: #e6e6e6;
+  color: #111;
 }
 .techTabBtnActive {
-  color: #111111;
-}
-.techTabBtnActive::after {
-  content: '';
-  position: absolute;
-  bottom: -17px;
-  left: 0;
-  right: 0;
-  height: 3px;
   background: #ff6a00;
-  border-radius: 3px 3px 0 0;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(255,106,0,0.3);
+}
+.techTabBtnActive:hover {
+  background: #e85d00;
+  color: #ffffff;
 }
 .techTabContent {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(8, 1fr);
+  grid-auto-rows: 95px;
+  gap: 0.5rem;
   animation: fadeIn 0.4s ease forwards;
 }
+
+
+
 
 .techCard {
   background: #ffffff;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-  border: 1px solid rgba(0,0,0,0.04);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+  gap: 0.35rem;
+  padding: 0.6rem 0.5rem;
 }
 .techCard:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(255,106,0,0.1);
+  border-color: rgba(255,106,0,0.2);
 }
 
 .techCardIcon {
-  flex-grow: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem 1rem;
+  flex: 1;
 }
 
 .techCardIcon img {
   filter: brightness(0) saturate(100%) invert(47%) sepia(49%) saturate(3015%) hue-rotate(346deg) brightness(99%) contrast(92%);
-  opacity: 0.85;
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0.8;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   will-change: transform, filter;
+  max-width: 36px;
+  max-height: 36px;
+}
+
+.techCard:nth-child(5) .techCardIcon img,
+.techCard:nth-child(11) .techCardIcon img {
+  max-width: 64px;
+  max-height: 64px;
 }
 
 .techCard:hover .techCardIcon img {
   filter: none;
   opacity: 1;
-  transform: scale(1.15);
+  transform: scale(1.2);
 }
 
 .techCardFooter {
-  background: #f4f4f4;
-  padding: 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 700;
   text-align: center;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #555;
-  border-top: 1px solid rgba(0,0,0,0.04);
+  color: #888;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0;
+  border-top: none;
+  background: transparent;
+  transition: color 0.3s ease;
+}
+.techCard:hover .techCardFooter {
+  color: #ff6a00;
 }
 
 @keyframes fadeIn {

@@ -73,27 +73,53 @@ const techCategories = [
   {
     title: "CMS & eCommerce",
     techs: [
+      { name: "WordPress", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/wordpress.svg", color: "21759B" },
+      { name: "Shopify", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/shopify.svg", color: "7AB55C" },
       { name: "Magento", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/magento/magento-original.svg", color: "F26322" },
-      { name: "WordPress", icon: "wordpress", color: "21759B" },
-      { name: "Shopify", icon: "shopify", color: "7AB55C" },
-      { name: "Webflow", icon: "webflow", color: "4353FF" },
-      { name: "HubSpot", icon: "hubspot", color: "FF7A59" },
-      { name: "BigCommerce", icon: "bigcommerce", color: "121118" },
-      { name: "Drupal", icon: "drupal", color: "0678BE" },
-      { name: "Joomla!", icon: "joomla", color: "5091CD" },
-      { name: "WooCommerce", icon: "woocommerce", color: "96588A" },
-      { name: "NopCommerce", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dot-net/dot-net-original.svg", color: "4AB6E8" }
+      { name: "WooCommerce", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/woocommerce.svg", color: "96588A" },
+      { name: "BigCommerce", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/bigcommerce.svg", color: "121118" },
+      { name: "Drupal", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/drupal.svg", color: "0678BE" },
+      { name: "Joomla", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/joomla.svg", color: "5091CD" },
+      { name: "Webflow", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/webflow.svg", color: "4353FF" },
+      { name: "Contentful", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/contentful.svg", color: "2478CC" },
+      { name: "Strapi", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/strapi.svg", color: "4945FF" },
+      { name: "Ghost", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/ghost.svg", color: "15171A" },
+      { name: "Squarespace", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/squarespace.svg", color: "000000" },
+      { name: "PrestaShop", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/prestashop.svg", color: "DF0067" },
+      { name: "OpenCart", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/opencart.svg", color: "23AEDB" },
+      { name: "HubSpot", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/hubspot.svg", color: "FF7A59" },
+      { name: "NopCommerce", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dot-net/dot-net-original.svg", color: "4AB6E8" },
+      { name: "Umbraco", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/umbraco.svg", color: "3544B1" },
+      { name: "Craft CMS", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/craftcms.svg", color: "E5422B" },
+      { name: "Wix", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/wix.svg", color: "FAAD4D" },
+      { name: "Salesforce", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/salesforce.svg", color: "00A1E0" },
+      { name: "Adobe Commerce", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/adobe.svg", color: "FF0000" },
+      { name: "Sitecore", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/sitecore.svg", color: "FF1F38" }
     ]
   },
   {
     title: "Frontend",
     techs: [
-      { name: "HTML", icon: "html5", color: "E34F26" },
-      { name: "CSS", icon: "css3", color: "1572B6" },
-      { name: "Javascript", icon: "javascript", color: "F7DF1E" },
-      { name: "Angular", icon: "angular", color: "DD0031" },
-      { name: "React", icon: "react", color: "61DAFB" },
-      { name: ".NET MVC", icon: "dotnet", color: "512BD4" }
+      { name: "HTML5", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/html5.svg", color: "E34F26" },
+      { name: "CSS3", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/css3.svg", color: "1572B6" },
+      { name: "JavaScript", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/javascript.svg", color: "F7DF1E" },
+      { name: "TypeScript", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/typescript.svg", color: "3178C6" },
+      { name: "React", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/react.svg", color: "61DAFB" },
+      { name: "Vue.js", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/vuedotjs.svg", color: "4FC08D" },
+      { name: "Angular", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/angular.svg", color: "DD0031" },
+      { name: "Next.js", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/nextdotjs.svg", color: "000000" },
+      { name: "Nuxt.js", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/nuxtdotjs.svg", color: "00DC82" },
+      { name: "Sass", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/sass.svg", color: "CC6699" },
+      { name: "Less", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/less.svg", color: "1D365D" },
+      { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/tailwindcss.svg", color: "06B6D4" },
+      { name: "Bootstrap", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/bootstrap.svg", color: "7952B3" },
+      { name: "GSAP", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/greensock.svg", color: "88CE02" },
+      { name: "Three.js", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/threedotjs.svg", color: "000000" },
+      { name: "Vite", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/vite.svg", color: "646CFF" },
+      { name: "Webpack", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/webpack.svg", color: "8DD6F9" },
+      { name: "Redux", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/redux.svg", color: "764ABC" },
+      { name: "jQuery", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/jquery.svg", color: "0769AD" },
+      { name: "Storybook", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/storybook.svg", color: "FF4785" }
     ]
   },
   {
@@ -292,8 +318,6 @@ function OverviewSection() {
         <div className={styles.servicesGrid}>
           {cards.map((s, idx) => {
             let bentoClass = styles.bentoNormal;
-            if (idx === 0 || idx === 4 || idx === 6) bentoClass = styles.bentoWide;
-            if (idx === 2) bentoClass = styles.bentoTall;
 
             // Scatter offsets for each card
             const scatter = [
@@ -671,7 +695,7 @@ function TechStackSection() {
     <section className={styles.techStack} id="tech">
       <div className={styles.container}>
         <div className={styles.techHeader}>
-            <span className={styles.sectionEyebrow}>+ TECH STACK</span>
+            <span className={styles.sectionEyebrow}><span className={styles.sectionEyebrowDot} />TECH STACK</span>
             <h2 className={styles.techHeadline}>Technologies we master<span className={styles.overviewDot}>.</span></h2>
           </div>
           <div className={styles.techTabsContainer}>
