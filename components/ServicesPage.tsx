@@ -72,7 +72,7 @@ const techCategories = [
   {
     title: "CMS & eCommerce",
     techs: [
-      { name: "Magento", icon: "magento", color: "F26322" },
+      { name: "Magento", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/magento/magento-original.svg", color: "F26322" },
       { name: "WordPress", icon: "wordpress", color: "21759B" },
       { name: "Shopify", icon: "shopify", color: "7AB55C" },
       { name: "Webflow", icon: "webflow", color: "4353FF" },
@@ -88,67 +88,67 @@ const techCategories = [
     title: "Frontend",
     techs: [
       { name: "HTML", icon: "html5", color: "E34F26" },
-      { name: "CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg", color: "1572B6" },
+      { name: "CSS", icon: "css3", color: "1572B6" },
       { name: "Javascript", icon: "javascript", color: "F7DF1E" },
       { name: "Angular", icon: "angular", color: "DD0031" },
       { name: "React", icon: "react", color: "61DAFB" },
-      { name: ".NET MVC", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dot-net/dot-net-original.svg", color: "512BD4" }
+      { name: ".NET MVC", icon: "dotnet", color: "512BD4" }
     ]
   },
   {
     title: "Backend",
     techs: [
-      { name: "Microsoft .NET", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dot-net/dot-net-original.svg", color: "512BD4" },
-      { name: "C#", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg", color: "239120" },
-      { name: "REST API", icon: "https://www.google.com/s2/favicons?domain=swagger.io&sz=128", color: "009688" },
-      { name: "Microservices", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg", color: "326CE5" },
-      { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg", color: "2496ED" },
-      { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg", color: "3776AB" },
-      { name: "PHP", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg", color: "777BB4" },
+      { name: "Microsoft .NET", icon: "dotnet", color: "512BD4" },
+      { name: "C#", icon: "csharp", color: "239120" },
+      { name: "REST API", icon: "postman", color: "FF6C37" },
+      { name: "Microservices", icon: "kubernetes", color: "326CE5" },
+      { name: "Docker", icon: "docker", color: "2496ED" },
+      { name: "Python", icon: "python", color: "3776AB" },
+      { name: "PHP", icon: "php", color: "777BB4" },
       { name: "Django", icon: "django", color: "092E20" }
     ]
   },
   {
     title: "Database",
     techs: [
-      { name: "SQL Server", icon: "https://www.google.com/s2/favicons?domain=microsoft.com&sz=128", color: "CC292B" },
-      { name: "Power BI", icon: "https://www.google.com/s2/favicons?domain=powerbi.microsoft.com&sz=128", color: "F2C811" },
-      { name: "Azure Data Lake", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg", color: "0078D4" },
-      { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg", color: "4479A1" },
-      { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg", color: "4169E1" }
+      { name: "SQL Server", icon: "microsoftsqlserver", color: "CC292B" },
+      { name: "Power BI", icon: "powerbi", color: "F2C811" },
+      { name: "Azure Data Lake", icon: "microsoftazure", color: "0078D4" },
+      { name: "MySQL", icon: "mysql", color: "4479A1" },
+      { name: "PostgreSQL", icon: "postgresql", color: "4169E1" }
     ]
   },
   {
     title: "Cloud",
     techs: [
-      { name: "Blob Storage", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg", color: "0078D4" },
-      { name: "Amazon S3", icon: "https://www.google.com/s2/favicons?domain=aws.amazon.com&sz=128", color: "569A31" },
-      { name: "Amazon SES", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg", color: "232F3E" },
-      { name: "SendGrid", icon: "https://www.google.com/s2/favicons?domain=sendgrid.com&sz=128", color: "F22F46" },
-      { name: "ClickSend", icon: "https://www.google.com/s2/favicons?domain=clicksend.com&sz=128", color: "2481D7" },
-      { name: "Firebase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-plain.svg", color: "FFCA28" },
-      { name: "Azure", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg", color: "008AD7" },
-      { name: "AWS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg", color: "232F3E" },
-      { name: "Google Cloud", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg", color: "4285F4" },
-      { name: "DevOps", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg", color: "0078D7" },
-      { name: "Power Platform", icon: "https://www.google.com/s2/favicons?domain=powerplatform.microsoft.com&sz=128", color: "00A4EF" }
+      { name: "Blob Storage", icon: "microsoftazure", color: "0078D4" },
+      { name: "Amazon S3", icon: "amazons3", color: "569A31" },
+      { name: "Amazon SES", icon: "amazonwebservices", color: "232F3E" },
+      { name: "SendGrid", icon: "sendgrid", color: "009DD9" },
+      { name: "ClickSend", icon: "mailchimp", color: "FFE01B" },
+      { name: "Firebase", icon: "firebase", color: "FFCA28" },
+      { name: "Azure", icon: "microsoftazure", color: "008AD7" },
+      { name: "AWS", icon: "amazonwebservices", color: "232F3E" },
+      { name: "Google Cloud", icon: "googlecloud", color: "4285F4" },
+      { name: "DevOps", icon: "azuredevops", color: "0078D7" },
+      { name: "Power Platform", icon: "powerapps", color: "00A4EF" }
     ]
   },
   {
     title: "Mobile",
     techs: [
-      { name: "iOS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apple/apple-original.svg", color: "000000" },
-      { name: "Android", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/android/android-original.svg", color: "3DDC84" },
-      { name: "Flutter", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg", color: "02569B" },
+      { name: "iOS", icon: "apple", color: "000000" },
+      { name: "Android", icon: "android", color: "3DDC84" },
+      { name: "Flutter", icon: "flutter", color: "02569B" },
       { name: "React Native", icon: "react", color: "61DAFB" },
-      { name: "Swift", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swift/swift-original.svg", color: "F05138" },
-      { name: "Kotlin", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg", color: "7F52FF" }
+      { name: "Swift", icon: "swift", color: "F05138" },
+      { name: "Kotlin", icon: "kotlin", color: "7F52FF" }
     ]
   },
   {
     title: "UI / UX",
     techs: [
-      { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg", color: "F24E1E" },
+      { name: "Figma", icon: "figma", color: "F24E1E" },
       { name: "Sketch", icon: "sketch", color: "F7B500" },
       { name: "Adobe XD", icon: "adobexd", color: "FF61F6" },
       { name: "Miro", icon: "miro", color: "050038" },
@@ -656,7 +656,11 @@ function TechStackSection() {
   return (
     <section className={styles.techStack} id="tech">
       <div className={styles.container}>
-        <div className={styles.techTabsContainer}>
+        <div className={styles.techHeader}>
+            <span className={styles.sectionEyebrow}>+ TECH STACK</span>
+            <h2 className={styles.techHeadline}>Technologies we master<span className={styles.overviewDot}>.</span></h2>
+          </div>
+          <div className={styles.techTabsContainer}>
           <div className={styles.techTabsHeader}>
             {techCategories.map((cat, idx) => (
               <button 
