@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { FiShoppingCart, FiMonitor, FiServer, FiDatabase, FiCloud, FiSmartphone, FiPenTool } from "react-icons/fi";
+import { FiShoppingCart, FiMonitor, FiServer, FiDatabase, FiCloud, FiSmartphone, FiPenTool, FiImage, FiCpu } from "react-icons/fi";
 import Link from "next/link";
 import styles from "./ServicesPage.module.css";
 import InnerBanner from "./InnerBanner";
@@ -125,61 +125,120 @@ const techCategories = [
   {
     title: "Backend",
     techs: [
-      { name: "Microsoft .NET", icon: "dotnet", color: "512BD4" },
-      { name: "C#", icon: "csharp", color: "239120" },
-      { name: "REST API", icon: "postman", color: "FF6C37" },
-      { name: "Microservices", icon: "kubernetes", color: "326CE5" },
-      { name: "Docker", icon: "docker", color: "2496ED" },
-      { name: "Python", icon: "python", color: "3776AB" },
-      { name: "PHP", icon: "php", color: "777BB4" },
-      { name: "Django", icon: "django", color: "092E20" }
+      { name: "Node.js", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/nodedotjs.svg", color: "339933" },
+      { name: "Python", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/python.svg", color: "3776AB" },
+      { name: "PHP", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/php.svg", color: "777BB4" },
+      { name: "Microsoft .NET", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/dotnet.svg", color: "512BD4" },
+      { name: "C#", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/csharp.svg", color: "239120" },
+      { name: "Java", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/openjdk.svg", color: "ED8B00" },
+      { name: "Go", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/go.svg", color: "00ADD8" },
+      { name: "Django", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/django.svg", color: "092E20" },
+      { name: "Laravel", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/laravel.svg", color: "FF2D20" },
+      { name: "Express.js", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/express.svg", color: "000000" },
+      { name: "FastAPI", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/fastapi.svg", color: "009688" },
+      { name: "GraphQL", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/graphql.svg", color: "E10098" },
+      { name: "REST API", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/postman.svg", color: "FF6C37" },
+      { name: "Docker", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/docker.svg", color: "2496ED" },
+      { name: "Kubernetes", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/kubernetes.svg", color: "326CE5" },
+      { name: "Redis", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/redis.svg", color: "DC382D" },
+      { name: "RabbitMQ", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/rabbitmq.svg", color: "FF6600" },
+      { name: "Nginx", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/nginx.svg", color: "009639" },
+      { name: "Linux", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/linux.svg", color: "FCC624" },
+      { name: "GitHub Actions", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/githubactions.svg", color: "2088FF" }
     ]
   },
   {
     title: "Database",
     techs: [
-      { name: "SQL Server", icon: "microsoftsqlserver", color: "CC292B" },
-      { name: "Power BI", icon: "powerbi", color: "F2C811" },
-      { name: "Azure Data Lake", icon: "microsoftazure", color: "0078D4" },
-      { name: "MySQL", icon: "mysql", color: "4479A1" },
-      { name: "PostgreSQL", icon: "postgresql", color: "4169E1" }
+      { name: "MySQL", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/mysql.svg", color: "4479A1" },
+      { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/postgresql.svg", color: "4169E1" },
+      { name: "MongoDB", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/mongodb.svg", color: "47A248" },
+      { name: "SQL Server", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/microsoftsqlserver.svg", color: "CC292B" },
+      { name: "SQLite", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/sqlite.svg", color: "003B57" },
+      { name: "Redis", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/redis.svg", color: "DC382D" },
+      { name: "Elasticsearch", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/elasticsearch.svg", color: "005571" },
+      { name: "Oracle", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/oracle.svg", color: "F80000" },
+      { name: "MariaDB", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/mariadb.svg", color: "003545" },
+      { name: "Firebase", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/firebase.svg", color: "FFCA28" },
+      { name: "Supabase", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/supabase.svg", color: "3ECF8E" },
+      { name: "DynamoDB", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/amazondynamodb.svg", color: "4053D6" },
+      { name: "Power BI", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/powerbi.svg", color: "F2C811" },
+      { name: "Azure SQL", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/microsoftazure.svg", color: "0078D4" },
+      { name: "Cassandra", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/apachecassandra.svg", color: "1287B1" },
+      { name: "PrismaORM", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/prisma.svg", color: "2D3748" }
     ]
   },
   {
     title: "Cloud",
     techs: [
-      { name: "Blob Storage", icon: "microsoftazure", color: "0078D4" },
-      { name: "Amazon S3", icon: "amazons3", color: "569A31" },
-      { name: "Amazon SES", icon: "amazonwebservices", color: "232F3E" },
-      { name: "SendGrid", icon: "sendgrid", color: "009DD9" },
-      { name: "ClickSend", icon: "mailchimp", color: "FFE01B" },
-      { name: "Firebase", icon: "firebase", color: "FFCA28" },
-      { name: "Azure", icon: "microsoftazure", color: "008AD7" },
-      { name: "AWS", icon: "amazonwebservices", color: "232F3E" },
-      { name: "Google Cloud", icon: "googlecloud", color: "4285F4" },
-      { name: "DevOps", icon: "azuredevops", color: "0078D7" },
-      { name: "Power Platform", icon: "powerapps", color: "00A4EF" }
+      { name: "AWS", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/amazonwebservices.svg", color: "232F3E" },
+      { name: "Azure", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/microsoftazure.svg", color: "008AD7" },
+      { name: "Google Cloud", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/googlecloud.svg", color: "4285F4" },
+      { name: "DigitalOcean", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/digitalocean.svg", color: "0080FF" },
+      { name: "Vercel", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/vercel.svg", color: "000000" },
+      { name: "Netlify", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/netlify.svg", color: "00C7B7" },
+      { name: "Heroku", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/heroku.svg", color: "430098" },
+      { name: "Cloudflare", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/cloudflare.svg", color: "F38020" },
+      { name: "Amazon S3", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/amazons3.svg", color: "569A31" },
+      { name: "Blob Storage", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/microsoftazure.svg", color: "0078D4" },
+      { name: "Amazon SES", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/amazonwebservices.svg", color: "232F3E" },
+      { name: "SendGrid", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/twilio.svg", color: "F22F46" },
+      { name: "Mailchimp", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/mailchimp.svg", color: "FFE01B" },
+      { name: "Firebase", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/firebase.svg", color: "FFCA28" },
+      { name: "DevOps", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/azuredevops.svg", color: "0078D7" },
+      { name: "Terraform", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/terraform.svg", color: "844FBA" }
     ]
   },
   {
     title: "Mobile",
     techs: [
-      { name: "iOS", icon: "apple", color: "000000" },
-      { name: "Android", icon: "android", color: "3DDC84" },
-      { name: "Flutter", icon: "flutter", color: "02569B" },
-      { name: "React Native", icon: "react", color: "61DAFB" },
-      { name: "Swift", icon: "swift", color: "F05138" },
-      { name: "Kotlin", icon: "kotlin", color: "7F52FF" }
+      { name: "iOS", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/apple.svg", color: "000000" },
+      { name: "Android", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/android.svg", color: "3DDC84" },
+      { name: "React Native", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/react.svg", color: "61DAFB" },
+      { name: "Flutter", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/flutter.svg", color: "02569B" },
+      { name: "Swift", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/swift.svg", color: "F05138" },
+      { name: "Kotlin", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/kotlin.svg", color: "7F52FF" },
+      { name: "Ionic", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/ionic.svg", color: "3880FF" },
+      { name: "Xamarin", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/xamarin.svg", color: "3498DB" }
     ]
   },
   {
     title: "UI / UX",
     techs: [
-      { name: "Figma", icon: "figma", color: "F24E1E" },
-      { name: "Sketch", icon: "sketch", color: "F7B500" },
-      { name: "Adobe XD", icon: "adobexd", color: "FF61F6" },
-      { name: "Miro", icon: "miro", color: "050038" },
-      { name: "Notion", icon: "notion", color: "000000" }
+      { name: "Figma", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/figma.svg", color: "F24E1E" },
+      { name: "Sketch", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/sketch.svg", color: "F7B500" },
+      { name: "Adobe XD", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/adobexd.svg", color: "FF61F6" },
+      { name: "Miro", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/miro.svg", color: "050038" },
+      { name: "Notion", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/notion.svg", color: "000000" },
+      { name: "Framer", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/framer.svg", color: "0055FF" },
+      { name: "InVision", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/invision.svg", color: "FF3366" },
+      { name: "Zeplin", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/zeplin.svg", color: "FDB92C" }
+    ]
+  },
+  {
+    title: "Graphic Design",
+    techs: [
+      { name: "Photoshop", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/adobephotoshop.svg", color: "31A8FF" },
+      { name: "Illustrator", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/adobeillustrator.svg", color: "FF9A00" },
+      { name: "InDesign", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/adobeindesign.svg", color: "FF3366" },
+      { name: "After Effects", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/adobeaftereffects.svg", color: "9999FF" },
+      { name: "Premiere Pro", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/adobepremierepro.svg", color: "9999FF" },
+      { name: "Lightroom", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/adobelightroom.svg", color: "31A8FF" },
+      { name: "Canva", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/canva.svg", color: "00C4CC" },
+      { name: "CorelDRAW", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/coreldraw.svg", color: "333333" }
+    ]
+  },
+  {
+    title: "AI",
+    techs: [
+      { name: "OpenAI", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/openai.svg", color: "412991" },
+      { name: "TensorFlow", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/tensorflow.svg", color: "FF6F00" },
+      { name: "PyTorch", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/pytorch.svg", color: "EE4C2C" },
+      { name: "Hugging Face", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/huggingface.svg", color: "FFD21E" },
+      { name: "Keras", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/keras.svg", color: "D00000" },
+      { name: "Scikit-Learn", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/scikitlearn.svg", color: "F7931E" },
+      { name: "LangChain", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/langchain.svg", color: "1C3C3C" },
+      { name: "Midjourney", icon: "https://cdn.jsdelivr.net/npm/simple-icons/icons/midjourney.svg", color: "000000" }
     ]
   }
 ];
@@ -318,6 +377,8 @@ function OverviewSection() {
         <div className={styles.servicesGrid}>
           {cards.map((s, idx) => {
             let bentoClass = styles.bentoNormal;
+            if (idx === 0 || idx === 4 || idx === 6) bentoClass = styles.bentoWide;
+            if (idx === 2) bentoClass = styles.bentoTall;
 
             // Scatter offsets for each card
             const scatter = [
@@ -677,13 +738,15 @@ function ProcessSection() {
 
 const getTabIcon = (title: string) => {
   switch(title) {
-    case "CMS & eCommerce": return <FiShoppingCart style={{ fontSize: '1.1rem' }} />;
-    case "Frontend": return <FiMonitor style={{ fontSize: '1.1rem' }} />;
-    case "Backend": return <FiServer style={{ fontSize: '1.1rem' }} />;
-    case "Database": return <FiDatabase style={{ fontSize: '1.1rem' }} />;
-    case "Cloud": return <FiCloud style={{ fontSize: '1.1rem' }} />;
-    case "Mobile": return <FiSmartphone style={{ fontSize: '1.1rem' }} />;
-    case "UI / UX": return <FiPenTool style={{ fontSize: '1.1rem' }} />;
+    case "CMS & eCommerce": return <FiShoppingCart style={{ fontSize: '0.95rem' }} />;
+    case "Frontend": return <FiMonitor style={{ fontSize: '0.95rem' }} />;
+    case "Backend": return <FiServer style={{ fontSize: '0.95rem' }} />;
+    case "Database": return <FiDatabase style={{ fontSize: '0.95rem' }} />;
+    case "Cloud": return <FiCloud style={{ fontSize: '0.95rem' }} />;
+    case "Mobile": return <FiSmartphone style={{ fontSize: '0.95rem' }} />;
+    case "UI / UX": return <FiPenTool style={{ fontSize: '0.95rem' }} />;
+    case "Graphic Design": return <FiImage style={{ fontSize: '0.95rem' }} />;
+    case "AI": return <FiCpu style={{ fontSize: '0.95rem' }} />;
     default: return null;
   }
 };

@@ -846,11 +846,11 @@
   
   .cardImgLeft, .cardImgRight { flex-direction: column; gap: 0.75rem; }
   .cardImgLeft .serviceCardImage, .cardImgRight .serviceCardImage { 
-    width: calc(100% + 3rem); 
-    height: 220px; 
+    width: 100%; 
+    height: auto;
     min-height: auto;
-    margin: -1.5rem -1.5rem 0.5rem -1.5rem; 
-    border-radius: 16px 16px 0 0;
+    margin: 0 0 1.5rem 0; 
+    border-radius: 16px;
   }
   .cardImgLeft .serviceCardContent, .cardImgRight .serviceCardContent {
     width: 100%;
@@ -893,25 +893,31 @@
 }
 .techTabsHeader {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-bottom: 3.5rem;
+  flex-wrap: nowrap;
+  gap: 0.4rem;
+  margin-bottom: 2rem;
   border-bottom: none;
-  padding-bottom: 0;
+  padding-bottom: 0.5rem;
+  overflow-x: auto;
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.techTabsHeader::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
 }
 .techTabBtn {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.35rem;
   background: #f2f2f2;
   border: none;
   border-radius: 9999px;
   font-family: var(--font-plus-jakarta), sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   font-weight: 700;
   color: #555;
   cursor: pointer;
-  padding: 0.65rem 1.4rem;
+  padding: 0.4rem 0.85rem;
   transition: all 0.25s ease;
   position: relative;
   white-space: nowrap;
@@ -932,7 +938,7 @@
 .techTabContent {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  grid-auto-rows: 95px;
+  grid-auto-rows: 75px;
   gap: 0.5rem;
   animation: fadeIn 0.4s ease forwards;
 }
@@ -974,14 +980,8 @@
   opacity: 0.8;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   will-change: transform, filter;
-  max-width: 36px;
-  max-height: 36px;
-}
-
-.techCard:nth-child(5) .techCardIcon img,
-.techCard:nth-child(11) .techCardIcon img {
-  max-width: 64px;
-  max-height: 64px;
+  max-width: 28px;
+  max-height: 28px;
 }
 
 .techCard:hover .techCardIcon img {
@@ -991,8 +991,8 @@
 }
 
 .techCardFooter {
-  font-size: 0.7rem;
-  font-weight: 700;
+  font-size: 0.55rem;
+  font-weight: 500;
   text-align: center;
   color: #888;
   letter-spacing: 0.04em;
