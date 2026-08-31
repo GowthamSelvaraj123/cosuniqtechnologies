@@ -286,11 +286,7 @@ function StrategySection() {
             <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
-          <div className={styles.serviceVisual}>
-             <div style={{ background: '#ffffff', borderRadius: '16px', height: '340px', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 24px 80px rgba(0,0,0,0.14), 0 4px 16px rgba(0,0,0,0.06)', padding: '2rem', textAlign: 'center', color: '#ff6a00', fontWeight: 'bold', fontSize: '1rem', letterSpacing: '0.1em', border: '1px solid rgba(0,0,0,0.08)' }}>
-               STRATEGY WORKSHOP
-             </div>
-          </div>
+          <div className={styles.serviceVisual}><img src="/assets/services/strategy_3d_1788167908842.jpg" alt="Service Visual" style={{ width: '100%', height: 'auto', mixBlendMode: 'multiply', borderRadius: '16px' }} /></div>
         </div>
       </div>
     </section>
@@ -326,11 +322,7 @@ function BrandSection() {
             <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
-          <div className={styles.serviceVisual}>
-             <div style={{ background: '#111111', borderRadius: '16px', height: '340px', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 24px 80px rgba(0,0,0,0.12)', padding: '2rem', textAlign: 'center', color: '#ffffff', fontWeight: 'bold', letterSpacing: '0.2em', border: '1px solid rgba(0,0,0,0.07)' }}>
-               BRAND BOOK
-             </div>
-          </div>
+          <div className={styles.serviceVisual}><img src="/assets/services/brand_3d_1788167932968.jpg" alt="Service Visual" style={{ width: '100%', height: 'auto', mixBlendMode: 'multiply', borderRadius: '16px' }} /></div>
         </div>
       </div>
     </section>
@@ -366,30 +358,7 @@ function WebDevSection() {
             <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
-          <div className={styles.serviceVisual}>
-            <div className={styles.browserMock}>
-              <div className={styles.browserBar}>
-                <div className={styles.browserDot} /><div className={styles.browserDot} /><div className={styles.browserDot} />
-                <div className={styles.browserUrl}>cosuniq.com</div>
-              </div>
-              <div className={styles.browserContent}>
-                <div className={styles.browserHero}>
-                  <div className={styles.bHeroLine1} />
-                  <div className={styles.bHeroLine2} />
-                  <div className={styles.bHeroBtn} />
-                </div>
-                <div className={styles.browserCards}>
-                  {[0,1,2].map(i => (
-                    <div key={i} className={styles.bCard}>
-                      <div className={styles.bCardImg} />
-                      <div className={styles.bCardLine} />
-                      <div className={styles.bCardLine} />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
+          <div className={styles.serviceVisual}><img src="/assets/services/design_3d_1788167958456.jpg" alt="Service Visual" style={{ width: '100%', height: 'auto', mixBlendMode: 'multiply', borderRadius: '16px' }} /></div>
         </div>
       </div>
     </section>
@@ -425,28 +394,7 @@ function DesignSection() {
             <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
-          <div className={styles.serviceVisual}>
-            <div className={styles.designLayers}>
-              <div className={`${styles.designLayer} ${styles.designLayer1}`}>
-                <div className={styles.dLayerContent}>
-                  <div className={styles.dImg} />
-                  <div className={styles.dLineDark} />
-                  <div className={styles.dLine} />
-                  <div className={styles.dLineSm} />
-                </div>
-              </div>
-              <div className={`${styles.designLayer} ${styles.designLayer2}`}>
-                <div className={styles.dLayerContent}>
-                  <div className={styles.dLineOrange} />
-                  <div className={styles.dLine} />
-                  <div className={styles.dLineSm} />
-                </div>
-              </div>
-              <div className={`${styles.designLayer} ${styles.designLayer3}`}>
-                DESIGN SYSTEM
-              </div>
-            </div>
-          </div>
+          <div className={styles.serviceVisual}><img src="/assets/services/webdev_3d_1788167980224.jpg" alt="Service Visual" style={{ width: '100%', height: 'auto', mixBlendMode: 'multiply', borderRadius: '16px' }} /></div>
         </div>
       </div>
     </section>
@@ -482,38 +430,7 @@ function EcommerceSection() {
             <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
-          <div className={styles.serviceVisual}>
-            <div className={styles.storeVisual}>
-              <div className={styles.storeHeader}>
-                <span className={styles.storeLogo}>STORE ✦</span>
-                <div className={styles.storeNavBar}>
-                  <span /><span /><span />
-                </div>
-              </div>
-              <div className={styles.storeBody}>
-                <div className={styles.storeHeroBanner}>
-                  <div className={styles.storeHeroText}>
-                    <div className={styles.shLine1} />
-                    <div className={styles.shLine2} />
-                    <div className={styles.shBtn} />
-                  </div>
-                  <div className={styles.storeHeroImg} />
-                </div>
-                <div className={styles.storeProducts}>
-                  {[0,1,2].map(i => (
-                    <div key={i} className={styles.sProd}>
-                      <div className={styles.sProdImg} />
-                      <div className={styles.sProdInfo}>
-                        <div className={styles.sPLine} />
-                        <div className={styles.sPLinePrice} />
-                        <div className={styles.sPBtn} />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
+          <div className={styles.serviceVisual}><img src="/assets/services/mobile_3d_1788168005101.jpg" alt="Service Visual" style={{ width: '100%', height: 'auto', mixBlendMode: 'multiply', borderRadius: '16px' }} /></div>
         </div>
       </div>
     </section>
@@ -549,43 +466,7 @@ function SoftwareSection() {
             <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
-          <div className={styles.serviceVisual}>
-            <div className={styles.dashVisual}>
-              <div className={styles.dashHeader}>
-                <span className={styles.dashLogo}>ANALYTICS</span>
-                <div className={styles.dashHeaderNav}><span /><span /><span /></div>
-              </div>
-              <div className={styles.dashBody}>
-                <div className={styles.dashSidebar}>
-                  {[false, true, false, false, false].map((active, i) => (
-                    <div key={i} className={active ? styles.dSideItemActive : styles.dSideItem}>
-                      <div className={active ? styles.dSideIconActive : styles.dSideIcon} />
-                      <div className={styles.dSideLabel} />
-                    </div>
-                  ))}
-                </div>
-                <div className={styles.dashMain}>
-                  <div className={styles.dashStats}>
-                    {[0,1,2].map(i => (
-                      <div key={i} className={styles.dStat}>
-                        <div className={styles.dStatNum} />
-                        <div className={styles.dStatLabel} />
-                      </div>
-                    ))}
-                  </div>
-                  <div className={styles.dashChart}>
-                    {[40,65,50,80,55,90,70,85,60,95,75,100].map((h, i) => (
-                      <div
-                        key={i}
-                        className={h > 75 ? styles.dashBarHi : styles.dashBar}
-                        style={{ height: `${h}%` }}
-                      />
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div className={styles.serviceVisual}><img src="/assets/services/ecommerce_3d_1788168030003.jpg" alt="Service Visual" style={{ width: '100%', height: 'auto', mixBlendMode: 'multiply', borderRadius: '16px' }} /></div>
         </div>
       </div>
     </section>
@@ -621,55 +502,7 @@ function MobileSection() {
             <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
-          <div className={styles.serviceVisual}>
-            <div className={styles.mobileVisuals}>
-              <div className={`${styles.phoneMock} ${styles.phoneMockSide}`}>
-                <div className={styles.phoneScreen}>
-                  <div className={styles.phoneNotch} />
-                  <div className={styles.phoneStatusLine} />
-                  <div className={styles.phoneCard}>
-                    <div className={styles.pCardImg} />
-                    <div className={styles.pLine} />
-                    <div className={styles.pLineSm} />
-                  </div>
-                </div>
-              </div>
-
-              <div className={`${styles.phoneMock} ${styles.phoneMockMain}`}>
-                <div className={styles.phoneScreen}>
-                  <div className={styles.phoneNotch} />
-                  <div className={styles.phoneStatusLine} />
-                  <div className={styles.phoneCard}>
-                    <div className={styles.pCardImg} />
-                    <div className={styles.pLine} />
-                    <div className={styles.pLineSm} />
-                    <div className={styles.pLineOrange} />
-                  </div>
-                  <div className={styles.phoneCard}>
-                    <div className={styles.pLine} />
-                    <div className={styles.pLineSm} />
-                  </div>
-                  <div className={styles.phoneNavBar}>
-                    <div className={styles.pNavItemActive} />
-                    <div className={styles.pNavItem} />
-                    <div className={styles.pNavItem} />
-                    <div className={styles.pNavItem} />
-                  </div>
-                </div>
-              </div>
-
-              <div className={`${styles.phoneMock} ${styles.phoneMockSide}`}>
-                <div className={styles.phoneScreen}>
-                  <div className={styles.phoneNotch} />
-                  <div className={styles.phoneStatusLine} />
-                  <div className={styles.phoneCard}>
-                    <div className={styles.pCardImg} />
-                    <div className={styles.pLine} />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div className={styles.serviceVisual}><img src="/assets/services/software_3d_1788168058498.jpg" alt="Service Visual" style={{ width: '100%', height: 'auto', mixBlendMode: 'multiply', borderRadius: '16px' }} /></div>
         </div>
       </div>
     </section>
@@ -705,21 +538,7 @@ function CloudSection() {
             <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
-          <div className={styles.serviceVisual}>
-            <div className={styles.cloudVisual}>
-              <div className={styles.cloudBg}>
-                <div className={styles.cloudGrid} />
-              </div>
-              <div className={styles.cloudNodes}>
-                <div className={`${styles.cloudNode} ${styles.cn1}`}>AWS EC2</div>
-                <div className={`${styles.cloudNode} ${styles.cn2}`}>CloudFront</div>
-                <div className={`${styles.cloudNode} ${styles.cn3}`}>⬡ LOAD BALANCER</div>
-                <div className={`${styles.cloudNode} ${styles.cn4}`}>PostgreSQL</div>
-                <div className={`${styles.cloudNode} ${styles.cn5}`}>CI/CD Pipeline</div>
-                <div className={`${styles.cloudNode} ${styles.cn6}`}>Monitoring</div>
-              </div>
-            </div>
-          </div>
+          <div className={styles.serviceVisual}><img src="/assets/services/cloud_3d_1788168087374.jpg" alt="Service Visual" style={{ width: '100%', height: 'auto', mixBlendMode: 'multiply', borderRadius: '16px' }} /></div>
         </div>
       </div>
     </section>
@@ -896,3 +715,6 @@ export default function ServicesPage() {
     </>
   );
 }
+
+// force reload
+// re-fetch
