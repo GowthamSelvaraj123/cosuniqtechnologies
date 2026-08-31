@@ -286,7 +286,7 @@ function StrategySection() {
             <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
-          <div className={styles.serviceVisual}><img src="/assets/services/strategy_story.png" alt="Service Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
+          <div className={styles.serviceVisual}><img src="/assets/services/strategy_story.png" alt="strategy Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
         </div>
       </div>
     </section>
@@ -322,7 +322,7 @@ function BrandSection() {
             <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
-          <div className={styles.serviceVisual}><img src="/assets/services/brand_story.png" alt="Service Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
+          <div className={styles.serviceVisual}><img src="/assets/services/brand_story.png" alt="brand Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
         </div>
       </div>
     </section>
@@ -358,7 +358,7 @@ function WebDevSection() {
             <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
-          <div className={styles.serviceVisual}><img src="/assets/services/design_story.jpg" alt="Service Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
+          <div className={styles.serviceVisual}><img src="/assets/services/webdev_story.png" alt="web-dev Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
         </div>
       </div>
     </section>
@@ -394,7 +394,7 @@ function DesignSection() {
             <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
-          <div className={styles.serviceVisual}><img src="/assets/services/webdev_story.png" alt="Service Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
+          <div className={styles.serviceVisual}><img src="/assets/services/design_story.jpg" alt="design Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
         </div>
       </div>
     </section>
@@ -430,7 +430,7 @@ function EcommerceSection() {
             <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
-          <div className={styles.serviceVisual}><img src="/assets/services/mobile_story.png" alt="Service Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
+          <div className={styles.serviceVisual}><img src="/assets/services/ecommerce_story.jpg" alt="ecommerce Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
         </div>
       </div>
     </section>
@@ -466,7 +466,7 @@ function SoftwareSection() {
             <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
-          <div className={styles.serviceVisual}><img src="/assets/services/ecommerce_story.jpg" alt="Service Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
+          <div className={styles.serviceVisual}><img src="/assets/services/software_story.png" alt="software Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
         </div>
       </div>
     </section>
@@ -502,7 +502,7 @@ function MobileSection() {
             <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
-          <div className={styles.serviceVisual}><img src="/assets/services/software_story.png" alt="Service Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
+          <div className={styles.serviceVisual}><img src="/assets/services/mobile_story.png" alt="mobile Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
         </div>
       </div>
     </section>
@@ -538,7 +538,7 @@ function CloudSection() {
             <Link href="/contact" className={styles.moreDetailsBtn}>More details</Link>
           </div>
 
-          <div className={styles.serviceVisual}><img src="/assets/services/cloud_story.png" alt="Service Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
+          <div className={styles.serviceVisual}><img src="/assets/services/cloud_story.png" alt="cloud Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
         </div>
       </div>
     </section>
