@@ -7,65 +7,122 @@ import styles from "./FinalCta.module.css";
 import MagneticWrapper from "./MagneticWrapper";
 import HoverTextReveal from "./HoverTextReveal";
 
-const NewsletterAnimation = () => (
-  <div className={styles.newsletterAnimContainer}>
-    {/* Paper Airplane */}
-    <motion.div
-      className={styles.paperPlane}
-      animate={{ 
-        y: [0, -15, 0], 
-        rotate: [-5, 5, -5],
-      }}
-      transition={{ 
-        duration: 4, 
-        repeat: Infinity, 
-        ease: "easeInOut" 
-      }}
-    >
-      <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#FF6B00" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M22 2L11 13" />
-        <path d="M22 2L15 22L11 13L2 9L22 2Z" fill="rgba(255, 107, 0, 0.1)" />
-      </svg>
-    </motion.div>
-    
-    {/* Envelope / Letter */}
-    <motion.div
-      className={styles.envelope}
-      animate={{ 
-        y: [0, 20, 0], 
-        rotate: [10, 0, 10],
-      }}
-      transition={{ 
-        duration: 5, 
-        repeat: Infinity, 
-        ease: "easeInOut",
-        delay: 0.5
-      }}
-    >
-      <svg width="65" height="65" viewBox="0 0 24 24" fill="none" stroke="#888888" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="#ffffff" />
-        <polyline points="22,6 12,13 2,6" />
-      </svg>
-    </motion.div>
+const ProcessFlow = () => (
+  <div className={styles.processContainer}>
+    <svg viewBox="0 0 350 320" className={styles.processSvg}>
+      {/* Base Path (Grey Dashed) */}
+      <path 
+        d="M 60 50 C 260 50, 320 120, 220 140 C 120 160, 60 220, 260 250"
+        fill="none" 
+        stroke="rgba(0, 0, 0, 0.1)" 
+        strokeWidth="1.5" 
+        strokeDasharray="6 6"
+      />
+      {/* Animated Path (Orange Dashed) */}
+      <motion.path 
+        d="M 60 50 C 260 50, 320 120, 220 140 C 120 160, 60 220, 260 250"
+        fill="none" 
+        stroke="#FF6B00" 
+        strokeWidth="2" 
+        strokeDasharray="6 6"
+        initial={{ pathLength: 0 }}
+        whileInView={{ pathLength: 1 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 4, ease: "linear", delay: 0.5 }}
+      />
+      
+      {/* Node 1: Request (Starts Orange) */}
+      <motion.g 
+        initial={{ opacity: 0, scale: 0.8 }} 
+        whileInView={{ opacity: 1, scale: 1 }} 
+        viewport={{ once: true }}
+        transition={{ delay: 0, duration: 0.4 }}
+      >
+        <circle cx="60" cy="50" r="30" fill="#ffffff" stroke="#FF6B00" strokeWidth="1.5" />
+        <svg x="48" y="38" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF6B00" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M22 2L11 13" />
+          <path d="M22 2L15 22L11 13L2 9L22 2Z" fill="rgba(255, 107, 0, 0.1)"/>
+        </svg>
+        <text x="60" y="105" textAnchor="middle" fill="#111111" fontSize="13" fontWeight="700" fontFamily="var(--font-plus-jakarta), sans-serif">1. Request</text>
+      </motion.g>
 
-    {/* Message Bubble */}
-    <motion.div
-      className={styles.chatBubble}
-      animate={{ 
-        scale: [1, 1.1, 1], 
-        y: [0, -10, 0],
-      }}
-      transition={{ 
-        duration: 4.5, 
-        repeat: Infinity, 
-        ease: "easeInOut",
-        delay: 1
-      }}
-    >
-      <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#cccccc" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" fill="#ffffff"/>
-      </svg>
-    </motion.div>
+      {/* Node 2: Review */}
+      <motion.g 
+        initial={{ opacity: 0, scale: 0.8 }} 
+        whileInView={{ opacity: 1, scale: 1 }} 
+        viewport={{ once: true }}
+        transition={{ delay: 0.1, duration: 0.4 }}
+      >
+        <motion.circle cx="260" cy="95" r="30" fill="#ffffff" 
+          initial={{ stroke: "rgba(0, 0, 0, 0.1)", strokeWidth: 1 }} 
+          whileInView={{ stroke: "#FF6B00", strokeWidth: 1.5 }}
+          viewport={{ once: true }}
+          transition={{ delay: 2.0, duration: 0.3 }}
+        />
+        <motion.svg x="248" y="83" width="24" height="24" viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round"
+          initial={{ stroke: "#111111" }}
+          whileInView={{ stroke: "#FF6B00" }}
+          viewport={{ once: true }}
+          transition={{ delay: 2.0, duration: 0.3 }}
+        >
+           <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" strokeWidth="1.5"></path>
+           <circle cx="12" cy="12" r="3" strokeWidth="1.5"></circle>
+        </motion.svg>
+        <text x="260" y="150" textAnchor="middle" fill="#555555" fontSize="13" fontWeight="600" fontFamily="var(--font-plus-jakarta), sans-serif">2. Review</text>
+      </motion.g>
+
+      {/* Node 3: Proposal */}
+      <motion.g 
+        initial={{ opacity: 0, scale: 0.8 }} 
+        whileInView={{ opacity: 1, scale: 1 }} 
+        viewport={{ once: true }}
+        transition={{ delay: 0.2, duration: 0.4 }}
+      >
+        <motion.circle cx="120" cy="180" r="30" fill="#ffffff" 
+          initial={{ stroke: "rgba(0, 0, 0, 0.1)", strokeWidth: 1 }} 
+          whileInView={{ stroke: "#FF6B00", strokeWidth: 1.5 }}
+          viewport={{ once: true }}
+          transition={{ delay: 3.3, duration: 0.3 }}
+        />
+        <motion.svg x="108" y="168" width="24" height="24" viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round"
+          initial={{ stroke: "#111111" }}
+          whileInView={{ stroke: "#FF6B00" }}
+          viewport={{ once: true }}
+          transition={{ delay: 3.3, duration: 0.3 }}
+        >
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" strokeWidth="1.5"></path>
+          <polyline points="14 2 14 8 20 8" strokeWidth="1.5"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13" strokeWidth="1.5"></line>
+          <line x1="16" y1="17" x2="8" y2="17" strokeWidth="1.5"></line>
+          <polyline points="10 9 9 9 8 9" strokeWidth="1.5"></polyline>
+        </motion.svg>
+        <text x="120" y="235" textAnchor="middle" fill="#555555" fontSize="13" fontWeight="600" fontFamily="var(--font-plus-jakarta), sans-serif">3. Proposal</text>
+      </motion.g>
+
+      {/* Node 4: Kickoff */}
+      <motion.g 
+        initial={{ opacity: 0, scale: 0.8 }} 
+        whileInView={{ opacity: 1, scale: 1 }} 
+        viewport={{ once: true }}
+        transition={{ delay: 0.3, duration: 0.4 }}
+      >
+        <motion.circle cx="260" cy="250" r="30" fill="#ffffff" 
+          initial={{ stroke: "rgba(0, 0, 0, 0.1)", strokeWidth: 1 }} 
+          whileInView={{ stroke: "#FF6B00", strokeWidth: 1.5 }}
+          viewport={{ once: true }}
+          transition={{ delay: 4.5, duration: 0.3 }}
+        />
+        <motion.svg x="248" y="238" width="24" height="24" viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round"
+          initial={{ stroke: "#111111" }}
+          whileInView={{ stroke: "#FF6B00" }}
+          viewport={{ once: true }}
+          transition={{ delay: 4.5, duration: 0.3 }}
+        >
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" strokeWidth="1.5"></path>
+        </motion.svg>
+        <text x="260" y="305" textAnchor="middle" fill="#555555" fontSize="13" fontWeight="600" fontFamily="var(--font-plus-jakarta), sans-serif">4. Kickoff</text>
+      </motion.g>
+    </svg>
   </div>
 );
 
@@ -146,7 +203,7 @@ export default function FinalCta() {
             Tell us what you&apos;re building, and let&apos;s create something meaningful together.
           </motion.p>
 
-          <NewsletterAnimation />
+          <ProcessFlow />
         </div>
 
         {/* Right Column: Form */}
