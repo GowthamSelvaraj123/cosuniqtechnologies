@@ -5,6 +5,8 @@
 import React from "react";
 import Link from "next/link";
 import styles from "./OurDifference.module.css";
+import MagneticWrapper from "./MagneticWrapper";
+import TiltCard from "./TiltCard";
 
 // Reusing the exact Dots component from CapabilitiesUniverse for the icon box
 const Dots = () => (
@@ -97,12 +99,14 @@ export default function OurDifference() {
               </div>
 
               <div className={styles.buttonWrap}>
-                <Link href="#contact" className={styles.roundCta}>
-                  <span className={styles.roundCtaText}>Start<br/>Project</span>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
-                  </svg>
-                </Link>
+                <MagneticWrapper intensity={0.4}>
+                  <Link href="#contact" className={styles.roundCta}>
+                    <span className={styles.roundCtaText}>Start<br/>Project</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
+                    </svg>
+                  </Link>
+                </MagneticWrapper>
               </div>
             </div>
 
@@ -112,55 +116,61 @@ export default function OurDifference() {
           <div className={styles.rightColumn}>
             
             {/* Card 1 */}
-            <article className={`${styles.card} ${styles.card1}`}>
-              <div className={styles.cardTop}>
-                <span className={styles.icon}><NumberIcon num="01" /></span>
-                <div className={styles.cardHeader}>
-                  <span className={styles.cardTag}>01 &mdash; THINK</span>
-                  <h3 className={styles.cardName}>Strategy with clarity.</h3>
+            <TiltCard intensity={8}>
+              <article className={`${styles.card} ${styles.card1}`}>
+                <div className={styles.cardTop}>
+                  <span className={styles.icon}><NumberIcon num="01" /></span>
+                  <div className={styles.cardHeader}>
+                    <span className={styles.cardTag}>01 &mdash; THINK</span>
+                    <h3 className={styles.cardName}>Strategy with clarity.</h3>
+                  </div>
+                  <span className={styles.cardArrow} aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" />
+                    </svg>
+                  </span>
                 </div>
-                <span className={styles.cardArrow} aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" />
-                  </svg>
-                </span>
-              </div>
-              <p className={styles.cardDesc}>We understand the business before we touch the design.</p>
-            </article>
+                <p className={styles.cardDesc}>We understand the business before we touch the design.</p>
+              </article>
+            </TiltCard>
 
             {/* Card 2 */}
-            <article className={`${styles.card} ${styles.card2}`}>
-              <div className={styles.cardTop}>
-                <span className={styles.icon}><NumberIcon num="02" /></span>
-                <div className={styles.cardHeader}>
-                  <span className={styles.cardTag}>02 &mdash; CREATE</span>
-                  <h3 className={styles.cardName}>Design with purpose.</h3>
+            <TiltCard intensity={8}>
+              <article className={`${styles.card} ${styles.card2}`}>
+                <div className={styles.cardTop}>
+                  <span className={styles.icon}><NumberIcon num="02" /></span>
+                  <div className={styles.cardHeader}>
+                    <span className={styles.cardTag}>02 &mdash; CREATE</span>
+                    <h3 className={styles.cardName}>Design with purpose.</h3>
+                  </div>
+                  <span className={styles.cardArrow} aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" />
+                    </svg>
+                  </span>
                 </div>
-                <span className={styles.cardArrow} aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" />
-                  </svg>
-                </span>
-              </div>
-              <p className={styles.cardDesc}>We create identities and experiences people remember.</p>
-            </article>
+                <p className={styles.cardDesc}>We create identities and experiences people remember.</p>
+              </article>
+            </TiltCard>
 
             {/* Card 3 */}
-            <article className={`${styles.card} ${styles.card3}`}>
-              <div className={styles.cardTop}>
-                <span className={styles.icon}><NumberIcon num="03" /></span>
-                <div className={styles.cardHeader}>
-                  <span className={styles.cardTag}>03 &mdash; BUILD</span>
-                  <h3 className={styles.cardName}>Technology that performs.</h3>
+            <TiltCard intensity={8}>
+              <article className={`${styles.card} ${styles.card3}`}>
+                <div className={styles.cardTop}>
+                  <span className={styles.icon}><NumberIcon num="03" /></span>
+                  <div className={styles.cardHeader}>
+                    <span className={styles.cardTag}>03 &mdash; BUILD</span>
+                    <h3 className={styles.cardName}>Technology that performs.</h3>
+                  </div>
+                  <span className={styles.cardArrow} aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" />
+                    </svg>
+                  </span>
                 </div>
-                <span className={styles.cardArrow} aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" />
-                  </svg>
-                </span>
-              </div>
-              <p className={styles.cardDesc}>We turn creative ideas into fast, scalable digital products.</p>
-            </article>
+                <p className={styles.cardDesc}>We turn creative ideas into fast, scalable digital products.</p>
+              </article>
+            </TiltCard>
 
           </div>
           
