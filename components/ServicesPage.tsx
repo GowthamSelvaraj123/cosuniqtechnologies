@@ -159,23 +159,29 @@ function OverviewSection() {
 
         {/* 4-col card grid */}
         <div className={styles.servicesGrid}>
-          {cards.map((s) => (
-            <TiltCard key={s.num} intensity={12}>
-              <a href={s.href} className={`${styles.serviceCard} ${s.featured ? styles.serviceCardFeatured : ""}`} style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                {/* Top row: icon + arrow */}
-                <div className={styles.serviceCardTop}>
-                  <span className={styles.serviceCardIcon}>{s.icon}</span>
-                  <span className={styles.serviceArrow}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" />
-                    </svg>
-                  </span>
-                </div>
-                <div className={styles.serviceName}>{s.name}</div>
-                <p className={styles.serviceDesc} dangerouslySetInnerHTML={{ __html: s.desc }} />
-              </a>
-            </TiltCard>
-          ))}
+          {cards.map((s, idx) => {
+            let bentoClass = styles.bentoNormal;
+            if (idx === 0 || idx === 4 || idx === 6) bentoClass = styles.bentoWide;
+            if (idx === 2) bentoClass = styles.bentoTall;
+
+            return (
+              <TiltCard key={s.num} intensity={12} className={bentoClass}>
+                <a href={s.href} className={`${styles.serviceCard} ${s.featured ? styles.serviceCardFeatured : ""}`} style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+                  {/* Top row: icon + arrow */}
+                  <div className={styles.serviceCardTop}>
+                    <span className={styles.serviceCardIcon}>{s.icon}</span>
+                    <span className={styles.serviceArrow}>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" />
+                      </svg>
+                    </span>
+                  </div>
+                  <div className={styles.serviceName}>{s.name}</div>
+                  <p className={styles.serviceDesc} dangerouslySetInnerHTML={{ __html: s.desc }} />
+                </a>
+              </TiltCard>
+            );
+          })}
         </div>
       </div>
     </section>
