@@ -164,9 +164,22 @@ function OverviewSection() {
             if (idx === 0 || idx === 4 || idx === 6) bentoClass = styles.bentoWide;
             if (idx === 2) bentoClass = styles.bentoTall;
 
+            // Scatter offsets for each card
+            const scatter = [
+              { rot: -1.2, tx: -3, ty: 2 },
+              { rot: 0.8, tx: 2, ty: -3 },
+              { rot: -0.6, tx: -1, ty: 4 },
+              { rot: 1.4, tx: 3, ty: 1 },
+              { rot: 0.9, tx: -2, ty: -2 },
+              { rot: -1.1, tx: 4, ty: 3 },
+              { rot: 0.5, tx: -3, ty: 1 },
+              { rot: -1.5, tx: 2, ty: -4 },
+            ];
+            const sc = scatter[idx] || { rot: 0, tx: 0, ty: 0 };
+
             return (
               <TiltCard key={s.num} intensity={12} className={bentoClass}>
-                <a href={s.href} className={`${styles.serviceCard} ${s.featured ? styles.serviceCardFeatured : ""}`} style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+                <a href={s.href} className={`${styles.serviceCard} ${s.featured ? styles.serviceCardFeatured : ""}`} style={{ height: '100%', display: 'flex', flexDirection: 'column', '--rot': `${sc.rot}deg`, '--tx': `${sc.tx}px`, '--ty': `${sc.ty}px` } as React.CSSProperties}>
                   {/* Top row: icon + arrow */}
                   <div className={styles.serviceCardTop}>
                     <span className={styles.serviceCardIcon}>{s.icon}</span>
