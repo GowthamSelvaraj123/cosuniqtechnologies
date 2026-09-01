@@ -15,7 +15,8 @@ const navLinks = [
   { name: "Services", href: "/services" },
   { name: "Case Study", href: "/portfolio" },
   { name: "About", href: "/about" },
-  { name: "Contact", href: "/contact" }
+  { name: "Contact", href: "/contact" },
+  { name: "Academy", href: "/academy" }
 ];
 
 // Stagger variants for the container

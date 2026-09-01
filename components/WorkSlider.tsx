@@ -69,12 +69,12 @@ export default function WorkSlider() {
         <div className="work-slider" ref={sliderRef}>
           <article className="work-slide">
             <div className="work-slide__img">
-              <img src="/assets/images/dashboard.jpg" alt="Freelance Experience" />
+              <img src="/assets/images/laptop.jpg" alt="Own Product: Sellgy" />
             </div>
             <div className="work-slide__meta">
-              <h3>Freelance Experience</h3>
-              <p>Designed and engineered tailored digital experiences across more than 100 diverse industry categories.</p>
-              <div className="tags"><span>Freelance</span><span>Design</span></div>
+              <h3>Own Product: Sellgy</h3>
+              <p>Our proprietary, scalable e-commerce application engineered for high-performance and seamless shopping experiences.</p>
+              <div className="tags"><span>Product</span><span>E-com</span></div>
             </div>
           </article>
           <article className="work-slide">
@@ -89,32 +89,12 @@ export default function WorkSlider() {
           </article>
           <article className="work-slide">
             <div className="work-slide__img">
-              <img src="/assets/images/strategy.jpg" alt="CRM and ERP cross integrations" />
+              <img src="/assets/images/hero-brand.jpg" alt="Cosuniq Technologies" />
             </div>
             <div className="work-slide__meta">
-              <h3>Own Product: CRM & ERP</h3>
-              <p>Engineered seamless, real-time cross integrations between our internal CRM and ERP software products.</p>
-              <div className="tags"><span>CRM</span><span>ERP</span></div>
-            </div>
-          </article>
-          <article className="work-slide">
-            <div className="work-slide__img">
-              <img src="/assets/images/workshop.jpg" alt="Brand workshop" />
-            </div>
-            <div className="work-slide__meta">
-              <h3>Lumen Brand</h3>
-              <p>Crafted a comprehensive, scalable identity system and digital presence for a growing fintech.</p>
-              <div className="tags"><span>Brand</span><span>Design</span></div>
-            </div>
-          </article>
-          <article className="work-slide">
-            <div className="work-slide__img">
-              <img src="/assets/images/collab.jpg" alt="Video production collab" />
-            </div>
-            <div className="work-slide__meta">
-              <h3>Launch Reels</h3>
-              <p>Produced high-impact, engaging product film series designed specifically for social media marketing campaigns.</p>
-              <div className="tags"><span>Video</span><span>Motion</span></div>
+              <h3>Cosuniq Technologies</h3>
+              <p>In-depth analysis and strategic framework for positioning modern brands in competitive digital markets.</p>
+              <div className="tags"><span>Research</span><span>Brand</span></div>
             </div>
           </article>
         </div>

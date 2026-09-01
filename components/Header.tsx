@@ -89,6 +89,7 @@ export default function Header() {
           <MagneticWrapper><Link href="/portfolio" className={styles.navItem}>Case Study</Link></MagneticWrapper>
           <MagneticWrapper><Link href="/about"     className={styles.navItem}>About</Link></MagneticWrapper>
           <MagneticWrapper><Link href="/contact"   className={styles.navItem}>Contact</Link></MagneticWrapper>
+          <MagneticWrapper><Link href="/academy"   className={styles.navItem}>Academy</Link></MagneticWrapper>
         </nav>
 
         <div className={styles.headerRight}>
