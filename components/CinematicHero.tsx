@@ -19,13 +19,7 @@ export default function CinematicHero() {
   const [show, setShow] = useState<boolean | null>(null);
 
   useEffect(() => {
-    const visited = sessionStorage.getItem("cosuniq_visited");
-    if (visited) {
-      setShow(false);
-    } else {
-      sessionStorage.setItem("cosuniq_visited", "true");
-      setShow(true);
-    }
+    setShow(true);
   }, []);
 
   // Prevent hydration flash by showing a solid background until session is checked

@@ -2,7 +2,7 @@
   position: relative;
   width: 100vw;
   min-height: 100vh;
-  background-color: #FF6B00;
+  background-color: #FF6B00 !important;
   display: flex;
   align-items: center;
   overflow: hidden;
