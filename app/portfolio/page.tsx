@@ -22,6 +22,17 @@ export default function Portfolio() {
           <div className="portfolio-grid">
             <article className="portfolio-item reveal" data-category="ecommerce">
               <div className="portfolio-thumb">
+                <img src="/assets/images/laptop.jpg" alt="Sellgy" />
+              </div>
+              <div className="portfolio-body">
+                <span className="tag">E-commerce</span>
+                <h3>Sellgy</h3>
+                <p>Built a scalable, high-performance e-commerce application optimized for seamless mobile and desktop shopping experiences.</p>
+              </div>
+            </article>
+
+            <article className="portfolio-item reveal" data-category="ecommerce">
+              <div className="portfolio-thumb">
                 <img src="/assets/images/orangebabe_mockup.jpg" alt="Orangebabe" />
               </div>
               <div className="portfolio-body">
@@ -33,23 +44,12 @@ export default function Portfolio() {
 
             <article className="portfolio-item reveal" data-category="branding">
               <div className="portfolio-thumb">
-                <img src="/assets/images/hero-brand.jpg" alt="Brand Research" />
+                <img src="/assets/images/hero-brand.jpg" alt="Cosuniq Technologies" />
               </div>
               <div className="portfolio-body">
                 <span className="tag">Branding</span>
-                <h3>Our Brand Research</h3>
+                <h3>Cosuniq Technologies</h3>
                 <p>In-depth analysis and strategic framework for positioning modern brands in competitive digital markets.</p>
-              </div>
-            </article>
-
-            <article className="portfolio-item reveal" data-category="ecommerce">
-              <div className="portfolio-thumb">
-                <img src="/assets/images/laptop.jpg" alt="Sellgy" />
-              </div>
-              <div className="portfolio-body">
-                <span className="tag">E-commerce</span>
-                <h3>Sellgy</h3>
-                <p>Built a scalable, high-performance e-commerce application optimized for seamless mobile and desktop shopping experiences.</p>
               </div>
             </article>
           </div>
