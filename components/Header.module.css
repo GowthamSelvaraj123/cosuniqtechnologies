@@ -23,11 +23,9 @@
 }
 
 .brand img {
-  width: 36px;
-  height: 36px;
+  height: 20px;
+  width: auto;
   object-fit: contain;
-  border-radius: 50%;
-  border: 1.5px solid var(--brand);
 }
 
 .brandText {

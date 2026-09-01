@@ -40,11 +40,7 @@ export default function Footer() {
         {/* MIDDLE SECTION */}
         <div className={styles.middleSection}>
           <Link href="/" className={styles.brand}>
-            <img src="/assets/logo.png" alt="Cosuniq Logo" className={styles.brandLogo} />
-            <div className={styles.brandText}>
-              <strong>COSUNIQ</strong>
-              <span>Technologies</span>
-            </div>
+            <img src="/assets/cosuniq-technologies.png" alt="Cosuniq Logo" className={styles.brandLogo} />
           </Link>
           
           <div className={styles.socialIcons}>

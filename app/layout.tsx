@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "Cosuniq Technologies | Creative Digital Solutions",
   description: "Cosuniq Technologies — creative software, SaaS, CRM, e-commerce, branding & video. Every brand has a story. We help you build it.",
   icons: {
-    icon: "/assets/logo.png",
+    icon: "/assets/favicon.png",
   },
 };
 

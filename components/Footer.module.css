@@ -70,11 +70,8 @@
 }
 
 .brandLogo {
-  width: 48px;
-  height: 48px;
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 4px;
+  height: 20px;
+  width: auto;
   object-fit: contain;
 }
 

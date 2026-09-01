@@ -80,11 +80,7 @@ export default function Header() {
         }}
       >
         <Link href="/" className={styles.brand} aria-label="Cosuniq home">
-          <img src="/assets/logo.png" alt="Cosuniq" />
-          <div className={styles.brandText}>
-            <strong>COSUNIQ</strong>
-            <span>Technologies</span>
-          </div>
+          <img src="/assets/cosuniq-technologies.png" alt="Cosuniq" />
         </Link>
 
         <nav className={styles.desktopNav}>
