@@ -22,12 +22,12 @@ export default function Portfolio() {
           <div className="portfolio-grid">
             <article className="portfolio-item reveal" data-category="ecommerce">
               <div className="portfolio-thumb">
-                <img src="/assets/images/laptop.jpg" alt="Sellgy" />
+                <img src="/assets/images/laptop.jpg" alt="Own Product: Sellgy" />
               </div>
               <div className="portfolio-body">
-                <span className="tag">E-commerce</span>
-                <h3>Sellgy</h3>
-                <p>Built a scalable, high-performance e-commerce application optimized for seamless mobile and desktop shopping experiences.</p>
+                <span className="tag">Product</span>
+                <h3>Own Product: Sellgy</h3>
+                <p>Our proprietary, scalable e-commerce application engineered for high-performance and seamless shopping experiences.</p>
               </div>
             </article>
 
