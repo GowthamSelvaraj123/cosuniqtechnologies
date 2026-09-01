@@ -1,0 +1,254 @@
+.heroSection {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #005aff !important;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+.heroSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/images/hero-brand.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.05;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  gap: 2rem;
+}
+
+.leftContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 10;
+  pointer-events: none;
+  /* Let canvas capture mouse if needed, except buttons */
+}
+
+.eyebrowWrap {
+  margin-bottom: 1.5rem;
+  align-self: flex-start;
+  width: fit-content;
+  background-color: #ffffff !important;
+  color: #005aff !important;
+  padding: 6px 16px;
+  border-radius: 999px;
+}
+
+.headline {
+  font-family: var(--font-plus-jakarta), sans-serif !important;
+  font-weight: 700;
+  font-size: clamp(2rem, 3.8vw, 3.5rem);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.5rem 0;
+  color: #ffffff;
+  will-change: transform;
+}
+
+.description {
+  font-family: var(--font-plus-jakarta), sans-serif !important;
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  line-height: 1.5;
+  max-width: 500px;
+  margin: 0 0 2rem 0;
+  color: #ffffff;
+}
+
+.services {
+  font-family: var(--font-plus-jakarta), sans-serif !important;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2.5rem;
+}
+
+.ctaGroup {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  pointer-events: auto;
+  /* Buttons must be clickable */
+}
+
+.primaryCta {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 13px 28px;
+  background: #111111;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  border-radius: 999px;
+  text-decoration: none;
+  transition:
+    transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.primaryCta:hover {
+  background: #222222;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
+.ctaArrow {
+  color: #005aff;
+  transition: transform 0.3s ease;
+}
+
+.primaryCta:hover .ctaArrow {
+  transform: translateX(4px);
+}
+
+.secondaryCta {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 12px 28px;
+  background: transparent;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: 999px;
+  border: 1.5px solid rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition:
+    transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.secondaryCta:hover {
+  background: #ffffff;
+  color: #005aff;
+  transform: translateY(-2px);
+}
+
+.ctaArrowSecondary {
+  transition: transform 0.3s ease;
+}
+
+.secondaryCta:hover .ctaArrowSecondary {
+  transform: translateX(4px);
+}
+
+.canvasWrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50vw;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: auto;
+  /* Fade out extreme edges to prevent hard square cropping of scattered particles */
+  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%);
+  mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%);
+}
+
+/* Scroll interaction wrappers */
+.scrollWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 992px) {
+  .heroSection {
+    height: 100svh;
+    min-height: 100svh;
+    padding-top: 0;
+    align-items: stretch;
+    overflow: hidden;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    height: 100%;
+    padding: 0 1.5rem 2.5rem 1.5rem;
+  }
+
+  .canvasWrapper {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    left: auto;
+    right: auto;
+    flex: 1 1 auto;
+    min-height: 0;
+    max-height: 100%;
+    opacity: 1;
+    transform: scale(1.1);
+    transform-origin: center center;
+  }
+
+  .leftContent {
+    position: relative;
+    width: 100%;
+    flex: 0 0 auto;
+    text-align: left;
+    z-index: 10;
+  }
+
+  .headline {
+    margin-bottom: 0.75rem;
+    font-size: clamp(2rem, 8.5vw, 3.2rem);
+    /* Slightly smaller to prevent wrapping long words */
+    white-space: nowrap;
+    /* Force the headline to not wrap awkwardly on small screens if possible, or we just rely on smaller font */
+  }
+
+  .description {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .ctaGroup {
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .primaryCta {
+    width: auto;
+    justify-content: center;
+    padding: 1.1rem 1.75rem;
+  }
+
+  .secondaryCta {
+    width: auto;
+    justify-content: center;
+  }
+}
