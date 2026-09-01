@@ -37,69 +37,36 @@ export default function Portfolio() {
           </div>
 
           <div className="portfolio-grid">
-            <article className={`portfolio-item reveal ${!isVisible("software") ? "hidden" : ""}`} data-category="software">
-              <div className="portfolio-thumb">
-                <img src="/assets/images/dashboard.jpg" alt="OpsCloud" />
-              </div>
-              <div className="portfolio-body">
-                <span className="tag">Software</span>
-                <h3>OpsCloud SaaS</h3>
-                <p>Multi-tenant operations dashboard with role-based access and live KPIs.</p>
-              </div>
-            </article>
-
             <article className={`portfolio-item reveal ${!isVisible("ecommerce") ? "hidden" : ""}`} data-category="ecommerce">
               <div className="portfolio-thumb">
-                <img src="/assets/images/laptop.jpg" alt="NovaMart" />
+                <img src="/assets/images/orangebabe_mockup.jpg" alt="Orangebabe" />
               </div>
               <div className="portfolio-body">
                 <span className="tag">E-commerce</span>
-                <h3>NovaMart Store</h3>
-                <p>Mobile-first storefront with Razorpay checkout and inventory sync.</p>
+                <h3>Orangebabe</h3>
+                <p>Developed a vibrant, playful e-commerce platform for children that significantly boosted customer engagement.</p>
               </div>
             </article>
 
             <article className={`portfolio-item reveal ${!isVisible("branding") ? "hidden" : ""}`} data-category="branding">
               <div className="portfolio-thumb">
-                <img src="/assets/images/workshop.jpg" alt="Lumen" />
+                <img src="/assets/images/hero-brand.jpg" alt="Brand Research" />
               </div>
               <div className="portfolio-body">
                 <span className="tag">Branding</span>
-                <h3>Lumen Identity</h3>
-                <p>Full brand system — mark, type, color, and social kit.</p>
+                <h3>Our Brand Research</h3>
+                <p>In-depth analysis and strategic framework for positioning modern brands in competitive digital markets.</p>
               </div>
             </article>
 
-            <article className={`portfolio-item reveal ${!isVisible("crm") ? "hidden" : ""}`} data-category="crm">
+            <article className={`portfolio-item reveal ${!isVisible("ecommerce") ? "hidden" : ""}`} data-category="ecommerce">
               <div className="portfolio-thumb">
-                <img src="/assets/images/strategy.jpg" alt="PipeCRM" />
+                <img src="/assets/images/laptop.jpg" alt="Sellgy" />
               </div>
               <div className="portfolio-body">
-                <span className="tag">CRM</span>
-                <h3>PipeCRM</h3>
-                <p>Custom sales CRM with automated follow-ups and WhatsApp alerts.</p>
-              </div>
-            </article>
-
-            <article className={`portfolio-item reveal ${!isVisible("web") ? "hidden" : ""}`} data-category="web">
-              <div className="portfolio-thumb">
-                <img src="/assets/images/meeting.jpg" alt="FinEdge" />
-              </div>
-              <div className="portfolio-body">
-                <span className="tag">Web</span>
-                <h3>FinEdge Corporate Site</h3>
-                <p>High-converting marketing site with lead capture and SEO setup.</p>
-              </div>
-            </article>
-
-            <article className={`portfolio-item reveal ${!isVisible("video") ? "hidden" : ""}`} data-category="video">
-              <div className="portfolio-thumb">
-                <img src="/assets/images/collab.jpg" alt="Reels" />
-              </div>
-              <div className="portfolio-body">
-                <span className="tag">Video</span>
-                <h3>Product Launch Reels</h3>
-                <p>Short-form launch series with motion graphics and captions.</p>
+                <span className="tag">E-commerce</span>
+                <h3>Sellgy</h3>
+                <p>Built a scalable, high-performance e-commerce application optimized for seamless mobile and desktop shopping experiences.</p>
               </div>
             </article>
           </div>
