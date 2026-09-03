@@ -7,6 +7,7 @@ import AcademyHero from "../../components/AcademyHero";
 import FinalCta from "../../components/FinalCta";
 import styles from "./Academy.module.css";
 import FAQItem from "./FAQItem";
+import { FiBox, FiUsers, FiCode, FiCpu, FiLayout, FiServer, FiSliders, FiTool, FiTrendingUp, FiActivity, FiStar, FiAward } from "react-icons/fi";
 
 export default function Academy() {
   const socialApps = [
@@ -339,7 +340,7 @@ export default function Academy() {
             {[
               { 
                 icon: (
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M2 14 C 8 10 16 14 22 10" />
                     <ellipse cx="14" cy="9.5" rx="1.5" ry="2" fill="none" />
                   </svg>
@@ -348,7 +349,7 @@ export default function Academy() {
               },
               { 
                 icon: (
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M2 14 C 8 10 16 14 22 10" />
                     <path d="M10 12 C 10 12 12 4 18 6 C 18 6 20 14 10 12 Z" fill="rgba(0,90,255,0.05)" />
                     <ellipse cx="14" cy="9.5" rx="2" ry="2.5" fill="#ffffff" />
@@ -358,7 +359,7 @@ export default function Academy() {
               },
               { 
                 icon: (
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M2 14 C 8 10 16 14 22 10" />
                     <path d="M10 12 C 10 12 12 4 18 6 C 18 6 20 14 10 12 Z" fill="rgba(0,90,255,0.05)" />
                     <ellipse cx="14" cy="9.5" rx="2" ry="2.5" fill="none" />
@@ -369,7 +370,7 @@ export default function Academy() {
               },
               { 
                 icon: (
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M2 18 L 22 18" />
                     <path d="M9 16 A 2 2 0 0 1 13 16 A 2 2 0 0 1 17 16" fill="rgba(0,90,255,0.05)" />
                     <circle cx="17" cy="15" r="0.5" fill="#005aff" stroke="none" />
@@ -381,7 +382,7 @@ export default function Academy() {
               },
               { 
                 icon: (
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M2 18 L 22 18" />
                     <path d="M7 16 A 2.5 2.5 0 0 1 12 16 A 2.5 2.5 0 0 1 17 16 A 2 2 0 0 1 20 16" fill="rgba(0,90,255,0.05)" />
                     <circle cx="20" cy="14.5" r="0.5" fill="#005aff" stroke="none" />
@@ -394,7 +395,7 @@ export default function Academy() {
               },
               { 
                 icon: (
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M2 18 L 22 18" />
                     <path d="M5 16 A 3 3 0 0 1 11 16 A 3 3 0 0 1 17 16 A 2.5 2.5 0 0 1 21 16" fill="rgba(0,90,255,0.1)" />
                     <circle cx="21" cy="14.5" r="0.5" fill="#005aff" stroke="none" />
@@ -410,7 +411,7 @@ export default function Academy() {
               },
               { 
                 icon: (
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M4 4 L 20 4" />
                     <line x1="12" y1="4" x2="12" y2="7" />
                     <path d="M11 7 L 13 7 C 14 9 14 13 12 17 C 10 13 10 9 11 7 Z" fill="rgba(0,90,255,0.05)" />
@@ -420,7 +421,7 @@ export default function Academy() {
               },
               { 
                 icon: (
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M4 4 L 20 4" />
                     <line x1="12" y1="4" x2="12" y2="7" />
                     <path d="M10 7 L 14 7 C 16 11 15 17 12 22 C 9 17 8 11 10 7 Z" fill="rgba(0,90,255,0.1)" />
@@ -433,7 +434,7 @@ export default function Academy() {
               },
               { 
                 icon: (
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M4 4 L 20 4" />
                     <line x1="12" y1="4" x2="12" y2="7" />
                     <path d="M10 7 L 14 7 C 16 11 15 17 12 22 C 9 17 8 11 10 7 Z" fill="none" />
@@ -444,7 +445,7 @@ export default function Academy() {
               },
               { 
                 icon: (
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="12" y1="9" x2="12" y2="19" strokeWidth="2" />
                     <path d="M12 9 Q 10 5 9 7" />
                     <path d="M12 9 Q 14 5 15 7" />
@@ -456,7 +457,7 @@ export default function Academy() {
               },
               { 
                 icon: (
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="12" y1="7" x2="12" y2="17" strokeWidth="2" />
                     <path d="M12 7 Q 9 3 7 5" />
                     <path d="M12 7 Q 15 3 17 5" />
@@ -468,7 +469,7 @@ export default function Academy() {
               },
               { 
                 icon: (
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M3 21 C 6 19 8 19 10 17 C 12 15 11 12 13 10" strokeDasharray="2 3" />
                     <g transform="translate(4, -6) scale(0.85)">
                       <line x1="12" y1="7" x2="12" y2="17" strokeWidth="2" />
@@ -484,7 +485,7 @@ export default function Academy() {
             ].map((week, index) => (
               <div key={index} className={styles.roadmapBentoCard}>
                 <div className={styles.bentoNum}>{String(index + 1).padStart(2, '0')}</div>
-                <div style={{ marginBottom: '1.5rem', background: 'rgba(0, 90, 255, 0.05)', display: 'inline-flex', padding: '1rem', borderRadius: '16px', alignSelf: 'flex-start' }}>
+                <div style={{ marginBottom: '1.5rem', display: 'inline-flex', alignSelf: 'flex-start' }}>
                   {week.icon}
                 </div>
                 <h3>{week.title}</h3>
