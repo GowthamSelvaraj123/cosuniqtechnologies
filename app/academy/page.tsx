@@ -9,6 +9,79 @@ import styles from "./Academy.module.css";
 import FAQItem from "./FAQItem";
 
 export default function Academy() {
+  const socialApps = [
+    {
+      title: "LifeDrop",
+      subtitle: "Emergency Blood & Platelet Connect",
+      desc: "Help connect emergency patients with nearby blood and platelet donors through smart matching and real-time alerts.",
+      tags: ["AI Matching", "GPS", "Emergency SOS"],
+      link: "Join LifeDrop →"
+    },
+    {
+      title: "MediShare",
+      subtitle: "Medicine Donation Platform",
+      desc: "Help connect eligible unused medicines with verified NGOs and community healthcare initiatives.",
+      tags: ["AI OCR", "Expiry Detection", "NGO Network"],
+      link: "Join MediShare →"
+    },
+    {
+      title: "TreeTag",
+      subtitle: "Digital Tree Tracker",
+      desc: "Track planted trees, volunteer activities and long-term survival — turning tree planting into measurable impact.",
+      tags: ["GPS Tagging", "AI Vision", "Impact Tracking"],
+      link: "Join TreeTag →"
+    },
+    {
+      title: "E-Waste Hero",
+      subtitle: "Digital E-Waste Collection",
+      desc: "Make responsible e-waste disposal easier by connecting people with certified recyclers and collection partners.",
+      tags: ["AI Identification", "Pickup Tracking", "Green Credits"],
+      link: "Join E-Waste Hero →"
+    },
+    {
+      title: "Annadata",
+      subtitle: "Excess Food Rescue",
+      desc: "Help redirect surplus food from events, restaurants and functions to organizations that need it.",
+      tags: ["Smart Matching", "Route Optimization", "Real-Time"],
+      link: "Join Annadata →"
+    },
+    {
+      title: "VidyaBridge",
+      subtitle: "Rural Digital Mentorship",
+      desc: "Connect college mentors with rural students for practical learning in English, mathematics, technology and more.",
+      tags: ["AI Learning", "Mentorship", "Low-Bandwidth"],
+      link: "Join VidyaBridge →"
+    },
+    {
+      title: "Drishti Voice",
+      subtitle: "AI Accessibility Assistant",
+      desc: "Help make everyday information more accessible through AI-powered vision, OCR, voice and text-to-speech.",
+      tags: ["Computer Vision", "Voice AI", "Accessibility"],
+      link: "Join Drishti Voice →"
+    },
+    {
+      title: "StrayCare",
+      subtitle: "Animal Rescue Coordination",
+      desc: "Help citizens report injured animals and connect them with nearby rescuers, volunteers and veterinary support.",
+      tags: ["AI Identification", "GPS", "Case Tracking"],
+      link: "Join StrayCare →"
+    },
+    {
+      title: "CivicFix",
+      subtitle: "Hyperlocal Civic Reporting",
+      desc: "Report potholes, garbage, broken streetlights and other local issues — and track them from report to resolution.",
+      tags: ["AI Detection", "Community", "Status Tracking"],
+      link: "Join CivicFix →"
+    },
+    {
+      title: "SeniorCompanion",
+      subtitle: "Digital Elderly Assistance Network",
+      desc: "Connect elderly users with verified volunteers for everyday non-medical assistance and emergency SOS.",
+      tags: ["Task Matching", "Risk Alerts", "Verification"],
+      link: "Join SeniorCompanion →"
+    }
+  ];
+
   return (
     <main className={styles.academyRoot}>
       <InitReveal />
@@ -128,47 +201,50 @@ export default function Academy() {
       {/* 6. WHAT WILL YOU BUILD? */}
       <section className={`${styles.section} ${styles.sectionBg}`}>
         <div className="container reveal">
-          <div className={styles.sectionHeader}>
-            <span className={styles.eyebrow}>PROOF OF OUTPUT</span>
-            <h2 className={styles.title}>Don't just finish a course. Build something worth showing.</h2>
-            <p className={styles.subtitle}>Every learning path is designed around tangible outcomes.</p>
+          <div className={`${styles.sectionHeader} ${styles.left}`}>
+            <span className={styles.eyebrow}>BUILD FOR IMPACT</span>
+            <h2 className={styles.title}>10 Missions. One Purpose.</h2>
+            <div className={styles.subtitle} style={{ marginBottom: '3rem' }}>
+              <p style={{ fontWeight: '800', fontSize: '1.5rem', color: '#ffffff', marginBottom: '1.5rem' }}>Build → Launch → Impact</p>
+              <p style={{ color: 'rgba(255, 255, 255, 0.8)', marginBottom: '0.5rem', fontSize: '1.2rem' }}>Join as a User · Volunteer · Contributor · Partner</p>
+              <p style={{ color: '#ffffff', fontWeight: 'bold', fontSize: '1.2rem' }}>Choose a project. Make an impact.</p>
+            </div>
           </div>
 
-          <div className={styles.proofGrid}>
-            <div className={styles.proofCard}>
-              <div className={styles.proofImage}>
-                <img src="/assets/images/bento-ui-ux.jpg" alt="AI Agent Application" />
+          <div className={styles.impactGrid}>
+            {socialApps.map((app, i) => (
+              <div key={i} className={styles.impactCard}>
+                <div className={styles.impactHeader}>
+                  <h3>{app.title}</h3>
+                </div>
+                <h4 className={styles.impactSubtitle}>{app.subtitle}</h4>
+                <p className={styles.impactDesc}>{app.desc}</p>
+                
+                <div className={styles.impactTags}>
+                  {app.tags.map((tag, j) => (
+                    <span key={j} className={styles.impactTag}>{tag}</span>
+                  ))}
+                </div>
+                
+                <Link href="#waitlist" style={{ marginTop: '1.5rem', color: '#ffffff', fontWeight: 'bold', textDecoration: 'none', display: 'inline-block' }}>
+                  {app.link}
+                </Link>
               </div>
-              <div className={styles.proofContent}>
-                <span className={styles.proofTags}>AI Agents · APIs · Full Stack</span>
-                <h3>AI Agent Application</h3>
-                <p>Build an AI-powered application using agents, APIs, automation and modern full-stack architecture.</p>
-                <Link href="#waitlist" className="tag" style={{alignSelf: 'flex-start', marginTop: '1rem', display: 'inline-block', border: '1px solid var(--brand)', padding: '0.4rem 1rem', borderRadius: '2rem'}}>View Project →</Link>
-              </div>
-            </div>
-
-            <div className={styles.proofCard}>
-              <div className={styles.proofImage}>
-                <img src="/assets/images/hero-brand.jpg" alt="Global Brand & Web Experience" />
-              </div>
-              <div className={styles.proofContent}>
-                <span className={styles.proofTags}>Branding · UI/UX · Web</span>
-                <h3>Global Brand & Web Experience</h3>
-                <p>Create a complete visual identity and premium website for a real-world product.</p>
-                <Link href="#waitlist" className="tag" style={{alignSelf: 'flex-start', marginTop: '1rem', display: 'inline-block', border: '1px solid var(--brand)', padding: '0.4rem 1rem', borderRadius: '2rem'}}>View Project →</Link>
-              </div>
-            </div>
-
-            <div className={styles.proofCard}>
-              <div className={styles.proofImage}>
-                <img src="/assets/images/laptop.jpg" alt="Startup MVP" />
-              </div>
-              <div className={styles.proofContent}>
-                <span className={styles.proofTags}>MVP · Product · GTM</span>
-                <h3>Startup MVP</h3>
-                <p>Turn an idea into a working MVP with product strategy, technology, branding and launch planning.</p>
-                <Link href="#waitlist" className="tag" style={{alignSelf: 'flex-start', marginTop: '1rem', display: 'inline-block', border: '1px solid var(--brand)', padding: '0.4rem 1rem', borderRadius: '2rem'}}>View Project →</Link>
-              </div>
+            ))}
+          </div>
+          
+          <div style={{ marginTop: '5rem', textAlign: 'center', background: 'rgba(255,255,255,0.03)', padding: '4rem 2rem', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.1)' }}>
+            <h2 className={styles.title} style={{ fontSize: '2.5rem' }}>Your Participation Can Make It Real</h2>
+            <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.8)', maxWidth: '700px', margin: '0 auto 2.5rem auto', lineHeight: 1.6 }}>
+              You don't have to be a student to be part of these projects.<br/><br/>
+              <strong style={{ color: '#ffffff' }}>Use it. Test it. Volunteer. Partner. Mentor. Contribute.</strong><br/><br/>
+              Whether you're a student, developer, designer, NGO, organization, volunteer or community member, you can help turn these ideas into real-world impact.
+            </p>
+            <h3 style={{ color: '#fff', fontSize: '1.5rem', marginBottom: '2rem' }}>Be part of the first 10.</h3>
+            
+            <div className={styles.heroBtns} style={{ justifyContent: 'center' }}>
+              <Link href="#waitlist" className="btn btn-primary" style={{ background: '#ffffff', color: '#005aff' }}>Join the Impact Network →</Link>
+              <Link href="#projects" className="btn btn-ghost" style={{ color: '#ffffff', borderColor: 'rgba(255,255,255,0.3)' }}>Explore All Projects →</Link>
             </div>
           </div>
         </div>
