@@ -7,7 +7,6 @@ import AcademyHero from "../../components/AcademyHero";
 import FinalCta from "../../components/FinalCta";
 import styles from "./Academy.module.css";
 import FAQItem from "./FAQItem";
-import { FiBox, FiUsers, FiCode, FiCpu, FiLayout, FiServer, FiSliders, FiTool, FiTrendingUp, FiActivity, FiStar, FiAward } from "react-icons/fi";
 
 export default function Academy() {
   const socialApps = [
@@ -338,18 +337,150 @@ export default function Academy() {
 
           <div className={styles.roadmapBentoGrid}>
             {[
-              { icon: <FiBox size={28} color="#005aff" strokeWidth={1.5} />, title: 'Foundation', desc: 'Setup environment, version control, and core web fundamentals.' },
-              { icon: <FiUsers size={28} color="#005aff" strokeWidth={1.5} />, title: 'Product Thinking', desc: 'User research, wireframing, and UI/UX design in Figma.' },
-              { icon: <FiCode size={28} color="#005aff" strokeWidth={1.5} />, title: 'Build', desc: 'Frontend development with React and Next.js.' },
-              { icon: <FiCpu size={28} color="#005aff" strokeWidth={1.5} />, title: 'AI & Automation', desc: 'Integrating LLMs, computer vision, and workflow automation.' },
-              { icon: <FiLayout size={28} color="#005aff" strokeWidth={1.5} />, title: 'Design & Experience', desc: 'Advanced CSS, animations, and responsive layouts.' },
-              { icon: <FiServer size={28} color="#005aff" strokeWidth={1.5} />, title: 'Deploy', desc: 'Backend APIs, databases, and authentication.' },
-              { icon: <FiSliders size={28} color="#005aff" strokeWidth={1.5} />, title: 'Polish', desc: 'Connecting frontend to backend and state management.' },
-              { icon: <FiTool size={28} color="#005aff" strokeWidth={1.5} />, title: 'Refinement', desc: 'Testing, debugging, and code quality.' },
-              { icon: <FiTrendingUp size={28} color="#005aff" strokeWidth={1.5} />, title: 'Advanced Topics', desc: 'Performance optimization and SEO.' },
-              { icon: <FiActivity size={28} color="#005aff" strokeWidth={1.5} />, title: 'Performance & Scaling', desc: 'Preparing for production and scaling.' },
-              { icon: <FiStar size={28} color="#005aff" strokeWidth={1.5} />, title: 'Final Polish', desc: 'Finalizing projects, fixing bugs, and polishing.' },
-              { icon: <FiAward size={28} color="#005aff" strokeWidth={1.5} />, title: 'Showcase & Launch', desc: 'Deploying to production, demo day, and portfolio building.' }
+              { 
+                icon: (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M2 14 C 8 10 16 14 22 10" />
+                    <ellipse cx="14" cy="9.5" rx="1.5" ry="2" fill="none" />
+                  </svg>
+                ), 
+                title: 'Foundation', desc: 'Setup environment, version control, and core web fundamentals.' 
+              },
+              { 
+                icon: (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M2 14 C 8 10 16 14 22 10" />
+                    <path d="M10 12 C 10 12 12 4 18 6 C 18 6 20 14 10 12 Z" fill="rgba(0,90,255,0.05)" />
+                    <ellipse cx="14" cy="9.5" rx="2" ry="2.5" fill="#ffffff" />
+                  </svg>
+                ), 
+                title: 'Product Thinking', desc: 'User research, wireframing, and UI/UX design in Figma.' 
+              },
+              { 
+                icon: (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M2 14 C 8 10 16 14 22 10" />
+                    <path d="M10 12 C 10 12 12 4 18 6 C 18 6 20 14 10 12 Z" fill="rgba(0,90,255,0.05)" />
+                    <ellipse cx="14" cy="9.5" rx="2" ry="2.5" fill="none" />
+                    <path d="M13 7 L 14 8 L 13 9" />
+                  </svg>
+                ), 
+                title: 'Build', desc: 'Frontend development with React and Next.js.' 
+              },
+              { 
+                icon: (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M2 18 L 22 18" />
+                    <path d="M9 16 A 2 2 0 0 1 13 16 A 2 2 0 0 1 17 16" fill="rgba(0,90,255,0.05)" />
+                    <circle cx="17" cy="15" r="0.5" fill="#005aff" stroke="none" />
+                    <line x1="11" y1="16" x2="11" y2="18" />
+                    <line x1="15" y1="16" x2="15" y2="18" />
+                  </svg>
+                ), 
+                title: 'AI & Automation', desc: 'Integrating LLMs, computer vision, and workflow automation.' 
+              },
+              { 
+                icon: (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M2 18 L 22 18" />
+                    <path d="M7 16 A 2.5 2.5 0 0 1 12 16 A 2.5 2.5 0 0 1 17 16 A 2 2 0 0 1 20 16" fill="rgba(0,90,255,0.05)" />
+                    <circle cx="20" cy="14.5" r="0.5" fill="#005aff" stroke="none" />
+                    <line x1="9" y1="16" x2="9" y2="18" />
+                    <line x1="14" y1="16" x2="14" y2="18" />
+                    <line x1="18" y1="16" x2="18" y2="18" />
+                  </svg>
+                ), 
+                title: 'Design & Experience', desc: 'Advanced CSS, animations, and responsive layouts.' 
+              },
+              { 
+                icon: (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M2 18 L 22 18" />
+                    <path d="M5 16 A 3 3 0 0 1 11 16 A 3 3 0 0 1 17 16 A 2.5 2.5 0 0 1 21 16" fill="rgba(0,90,255,0.1)" />
+                    <circle cx="21" cy="14.5" r="0.5" fill="#005aff" stroke="none" />
+                    <path d="M20 13 Q 21 10 23 11" />
+                    <path d="M19 13 Q 18 10 17 10" />
+                    <line x1="6" y1="16" x2="6" y2="18" />
+                    <line x1="8" y1="16" x2="8" y2="18" />
+                    <line x1="12" y1="16" x2="12" y2="18" />
+                    <line x1="14" y1="16" x2="14" y2="18" />
+                  </svg>
+                ), 
+                title: 'Deploy', desc: 'Backend APIs, databases, and authentication.' 
+              },
+              { 
+                icon: (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M4 4 L 20 4" />
+                    <line x1="12" y1="4" x2="12" y2="7" />
+                    <path d="M11 7 L 13 7 C 14 9 14 13 12 17 C 10 13 10 9 11 7 Z" fill="rgba(0,90,255,0.05)" />
+                  </svg>
+                ), 
+                title: 'Polish', desc: 'Connecting frontend to backend and state management.' 
+              },
+              { 
+                icon: (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M4 4 L 20 4" />
+                    <line x1="12" y1="4" x2="12" y2="7" />
+                    <path d="M10 7 L 14 7 C 16 11 15 17 12 22 C 9 17 8 11 10 7 Z" fill="rgba(0,90,255,0.1)" />
+                    <path d="M9.5 11 L 14.5 11" />
+                    <path d="M9.2 15 L 14.8 15" />
+                    <path d="M10.5 18 L 13.5 18" />
+                  </svg>
+                ), 
+                title: 'Refinement', desc: 'Testing, debugging, and code quality.' 
+              },
+              { 
+                icon: (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M4 4 L 20 4" />
+                    <line x1="12" y1="4" x2="12" y2="7" />
+                    <path d="M10 7 L 14 7 C 16 11 15 17 12 22 C 9 17 8 11 10 7 Z" fill="none" />
+                    <path d="M12 7 L 11 10 L 13 13 L 11 16" />
+                  </svg>
+                ), 
+                title: 'Advanced Topics', desc: 'Performance optimization and SEO.' 
+              },
+              { 
+                icon: (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="12" y1="9" x2="12" y2="19" strokeWidth="2" />
+                    <path d="M12 9 Q 10 5 9 7" />
+                    <path d="M12 9 Q 14 5 15 7" />
+                    <path d="M12 11 C 7 7 6 13 12 15 Z" fill="rgba(0,90,255,0.05)" />
+                    <path d="M12 11 C 17 7 18 13 12 15 Z" fill="rgba(0,90,255,0.05)" />
+                  </svg>
+                ), 
+                title: 'Performance & Scaling', desc: 'Preparing for production and scaling.' 
+              },
+              { 
+                icon: (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="12" y1="7" x2="12" y2="17" strokeWidth="2" />
+                    <path d="M12 7 Q 9 3 7 5" />
+                    <path d="M12 7 Q 15 3 17 5" />
+                    <path d="M11 9 C 3 4 2 12 11 14 C 5 16 7 21 11 18 Z" fill="rgba(0,90,255,0.1)" />
+                    <path d="M13 9 C 21 4 22 12 13 14 C 19 16 17 21 13 18 Z" fill="rgba(0,90,255,0.1)" />
+                  </svg>
+                ), 
+                title: 'Final Polish', desc: 'Finalizing projects, fixing bugs, and polishing.' 
+              },
+              { 
+                icon: (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#005aff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M3 21 C 6 19 8 19 10 17 C 12 15 11 12 13 10" strokeDasharray="2 3" />
+                    <g transform="translate(4, -6) scale(0.85)">
+                      <line x1="12" y1="7" x2="12" y2="17" strokeWidth="2" />
+                      <path d="M12 7 Q 9 3 7 5" />
+                      <path d="M12 7 Q 15 3 17 5" />
+                      <path d="M11 9 C 3 4 2 12 11 14 C 5 16 7 21 11 18 Z" fill="rgba(0,90,255,0.1)" />
+                      <path d="M13 9 C 21 4 22 12 13 14 C 19 16 17 21 13 18 Z" fill="rgba(0,90,255,0.1)" />
+                    </g>
+                  </svg>
+                ), 
+                title: 'Showcase & Launch', desc: 'Deploying to production, demo day, and portfolio building.' 
+              }
             ].map((week, index) => (
               <div key={index} className={styles.roadmapBentoCard}>
                 <div className={styles.bentoNum}>{String(index + 1).padStart(2, '0')}</div>
