@@ -4,9 +4,10 @@ import styles from './ParticleAnimal.module.css';
 
 interface ParticleAnimalProps {
   animal?: string;
+  colorTheme?: 'orange' | 'blue';
 }
 
-export default function ParticleAnimal({ animal = '🦋' }: ParticleAnimalProps) {
+export default function ParticleAnimal({ animal = '🦋', colorTheme = 'orange' }: ParticleAnimalProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -76,10 +77,18 @@ export default function ParticleAnimal({ animal = '🦋' }: ParticleAnimalProps)
         this.friction = 0.92;
         this.ease = Math.random() * 0.02 + 0.005; 
         
-        // Premium subtle glow colors (shades of orange/amber)
-        const r = 255;
-        const g = Math.floor(Math.random() * 80) + 100;
-        const b = Math.floor(Math.random() * 40);
+        let r, g, b;
+        if (colorTheme === 'blue') {
+          // Shades of Cosuniq blue (#005aff)
+          r = Math.floor(Math.random() * 20);
+          g = Math.floor(Math.random() * 40) + 80;
+          b = 255;
+        } else {
+          // Premium subtle glow colors (shades of orange/amber)
+          r = 255;
+          g = Math.floor(Math.random() * 80) + 100;
+          b = Math.floor(Math.random() * 40);
+        }
         this.color = `rgba(${r}, ${g}, ${b}, ${Math.random() * 0.4 + 0.2})`;
       }
 
@@ -228,7 +237,7 @@ export default function ParticleAnimal({ animal = '🦋' }: ParticleAnimalProps)
       canvas.removeEventListener('mouseleave', handleMouseLeave);
       resizeObserver.disconnect();
     };
-  }, [animal]);
+  }, [animal, colorTheme]);
 
   return (
     <div className={styles.container}>
