@@ -13,7 +13,7 @@ export default function Footer() {
         {/* TOP SECTION */}
         <div className={styles.topSection}>
           <div className={styles.slogan}>
-            Let's build<br />something<br />extraordinary.
+            Inspired by the Cosmos.<br />Defined by Uniqueness.
           </div>
           
           <div className={styles.linkColumns}>
@@ -33,26 +33,14 @@ export default function Footer() {
               <span style={{ fontSize: '0.85rem', color: '#888', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Contact</span>
               <a href="mailto:founder@cosuniq.in">founder@cosuniq.in</a>
               <a href="tel:+917358696546">+91 73586 96546</a>
+              
+              <div className={styles.socialIcons}>
+                <a href="#" className={styles.socialIcon} aria-label="LinkedIn"><FiLinkedin /></a>
+                <a href="#" className={styles.socialIcon} aria-label="YouTube"><FiYoutube /></a>
+                <a href="#" className={styles.socialIcon} aria-label="X"><SiX style={{ fontSize: '0.85rem' }} /></a>
+                <a href="#" className={styles.socialIcon} aria-label="Instagram"><FiInstagram /></a>
+              </div>
             </div>
-          </div>
-        </div>
-
-        {/* MIDDLE SECTION */}
-        <div className={styles.middleSection}>
-          {/* Availability Status */}
-          <div className={styles.availabilityBlock}>
-            <div className={styles.pulseDot}></div>
-            <div className={styles.availabilityText}>
-              <span className={styles.availabilityTitle}>Available for new projects</span>
-              <span className={styles.availabilityDesc}>Based in Udumalpet. Working globally.</span>
-            </div>
-          </div>
-          
-          <div className={styles.socialIcons}>
-            <a href="#" className={styles.socialIcon} aria-label="LinkedIn"><FiLinkedin /></a>
-            <a href="#" className={styles.socialIcon} aria-label="YouTube"><FiYoutube /></a>
-            <a href="#" className={styles.socialIcon} aria-label="X"><SiX style={{ fontSize: '0.85rem' }} /></a>
-            <a href="#" className={styles.socialIcon} aria-label="Instagram"><FiInstagram /></a>
           </div>
         </div>
 

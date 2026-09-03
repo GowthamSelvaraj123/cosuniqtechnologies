@@ -7,26 +7,26 @@
 .footerContainer {
   background: #ffffff;
   border-radius: 24px;
-  padding: 5rem 5rem 2rem;
+  padding: 3rem 4rem 1.5rem;
   display: flex;
   flex-direction: column;
 }
 
 /* TOP SECTION */
 .topSection {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
   gap: 2rem;
-  margin-bottom: 8rem;
+  margin-bottom: 4rem;
 }
 
 .slogan {
-  font-size: 4.5rem;
+  font-size: 3rem;
   font-weight: 600;
   line-height: 1.1;
   color: #111111;
   letter-spacing: -0.03em;
-  max-width: 400px;
+  max-width: 600px;
 }
 
 .linkColumns {
@@ -53,91 +53,10 @@
   color: #ff6a00;
 }
 
-/* MIDDLE SECTION */
-.middleSection {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  text-decoration: none;
-  color: #111111;
-}
-
-.brandLogo {
-  height: 35px;
-  width: auto;
-  object-fit: contain;
-}
-
-.availabilityBlock {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  background: #f9f9f9;
-  padding: 0.75rem 1.25rem;
-  border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.pulseDot {
-  width: 10px;
-  height: 10px;
-  background-color: #00ca51;
-  border-radius: 50%;
-  box-shadow: 0 0 0 rgba(0, 202, 81, 0.4);
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(0, 202, 81, 0.4); }
-  70% { box-shadow: 0 0 0 10px rgba(0, 202, 81, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(0, 202, 81, 0); }
-}
-
-.availabilityText {
-  display: flex;
-  flex-direction: column;
-}
-
-.availabilityTitle {
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: #111111;
-}
-
-.availabilityDesc {
-  font-size: 0.8rem;
-  color: #666666;
-  font-weight: 500;
-}
-
-.brandText {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
-
-.brandText strong {
-  font-size: 1.25rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-
-.brandText span {
-  font-size: 0.85rem;
-  font-weight: 500;
-  opacity: 0.9;
-}
-
 .socialIcons {
   display: flex;
   gap: 0.75rem;
+  margin-top: 1rem;
 }
 
 .socialIcon {
@@ -162,7 +81,7 @@
 /* BOTTOM SECTION */
 .bottomSection {
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(0,0,0,0.06);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
@@ -181,9 +100,17 @@
 }
 
 @media (max-width: 1024px) {
-  .footerContainer { padding: 4rem 3rem 2rem; }
-  .slogan { font-size: 3.5rem; }
-  .topSection { margin-bottom: 5rem; }
+  .footerContainer {
+    padding: 4rem 3rem 2rem;
+  }
+
+  .slogan {
+    font-size: 3.5rem;
+  }
+
+  .topSection {
+    margin-bottom: 5rem;
+  }
 }
 
 @media (max-width: 900px) {
@@ -191,15 +118,35 @@
     grid-template-columns: 1fr;
     gap: 4rem;
   }
-  .slogan { font-size: 3rem; max-width: 100%; }
+
+  .slogan {
+    font-size: 3rem;
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 600px) {
-  .footerContainer { padding: 3rem 1.5rem 1.5rem; }
-  .linkColumns { grid-template-columns: 1fr 1fr; }
-  .slogan { font-size: 2.5rem; }
-  .middleSection { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
-  .logo { font-size: 2.5rem; }
+  .footerContainer {
+    padding: 3rem 1.5rem 1.5rem;
+  }
+
+  .linkColumns {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .slogan {
+    font-size: 2.5rem;
+  }
+
+  .middleSection {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .logo {
+    font-size: 2.5rem;
+  }
 }
 
 /* HUGE BOTTOM LOGO */
@@ -218,7 +165,7 @@
   /* Make the logo white */
   filter: brightness(0) invert(1);
   /* Fade out at the bottom to mix with black without sharp edge */
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
   opacity: 0.9;
 }
