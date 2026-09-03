@@ -153,6 +153,50 @@ export default function Academy() {
               </div>
             </div>
 
+            <div className={styles.trustCard}>
+              <div className={styles.trustCardTop}>
+                <div className={styles.trustIcon}><ModernStackIcon /></div>
+                <div className={styles.trustCardArrow}><ArrowIcon /></div>
+              </div>
+              <div>
+                <h4>Modern Stack</h4>
+                <p>Learn React, Next.js, and TypeScript—tools used by top startups.</p>
+              </div>
+            </div>
+
+            <div className={styles.trustCard}>
+              <div className={styles.trustCardTop}>
+                <div className={styles.trustIcon}><CareerReadyIcon /></div>
+                <div className={styles.trustCardArrow}><ArrowIcon /></div>
+              </div>
+              <div>
+                <h4>Career Ready</h4>
+                <p>Mock interviews, resume building, and GitHub profile optimization.</p>
+              </div>
+            </div>
+
+            <div className={styles.trustCard}>
+              <div className={styles.trustCardTop}>
+                <div className={styles.trustIcon}><CommunityIcon /></div>
+                <div className={styles.trustCardArrow}><ArrowIcon /></div>
+              </div>
+              <div>
+                <h4>Global Community</h4>
+                <p>Connect with peers, alumni, and global builders for life.</p>
+              </div>
+            </div>
+
+            <div className={styles.trustCard}>
+              <div className={styles.trustCardTop}>
+                <div className={styles.trustIcon}><MissionsIcon /></div>
+                <div className={styles.trustCardArrow}><ArrowIcon /></div>
+              </div>
+              <div>
+                <h4>Real Missions</h4>
+                <p>Ship production-ready apps instead of building generic todo lists.</p>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -656,5 +700,47 @@ const ArrowIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
     <line x1="7" y1="17" x2="17" y2="7" />
     <polyline points="7 7 17 7 17 17" />
+  </svg>
+);
+
+const ModernStackIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round">
+    <Dots />
+    <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="1.2" />
+    <ellipse cx="12" cy="12" rx="7" ry="2" stroke="currentColor" strokeWidth="1.2" transform="rotate(45 12 12)" />
+    <ellipse cx="12" cy="12" rx="7" ry="2" stroke="currentColor" strokeWidth="1.2" transform="rotate(-45 12 12)" />
+    <circle cx="12" cy="12" r="1" fill="#005aff" />
+  </svg>
+);
+
+const CareerReadyIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round">
+    <Dots />
+    <rect x="6" y="9" width="12" height="9" rx="1" stroke="currentColor" strokeWidth="1.2" />
+    <path d="M9 9 V 7 C 9 6 10 6 12 6 C 14 6 15 6 15 7 V 9" stroke="currentColor" strokeWidth="1.2" />
+    <circle cx="12" cy="13.5" r="1" fill="#005aff" />
+  </svg>
+);
+
+const CommunityIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round">
+    <Dots />
+    <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1.2" />
+    <ellipse cx="12" cy="12" rx="3" ry="6" stroke="currentColor" strokeWidth="1.2" />
+    <line x1="6" y1="12" x2="18" y2="12" stroke="currentColor" strokeWidth="1.2" />
+    <circle cx="12" cy="12" r="1.5" fill="#005aff" stroke="currentColor" strokeWidth="1.2" />
+  </svg>
+);
+
+const MissionsIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round">
+    <Dots />
+    <circle cx="12" cy="12" r="5" stroke="currentColor" strokeWidth="1.2" />
+    <circle cx="12" cy="12" r="2" stroke="currentColor" strokeWidth="1.2" />
+    <line x1="12" y1="5" x2="12" y2="7" stroke="#005aff" strokeWidth="1.2" />
+    <line x1="12" y1="17" x2="12" y2="19" stroke="#005aff" strokeWidth="1.2" />
+    <line x1="5" y1="12" x2="7" y2="12" stroke="#005aff" strokeWidth="1.2" />
+    <line x1="17" y1="12" x2="19" y2="12" stroke="#005aff" strokeWidth="1.2" />
+    <circle cx="12" cy="12" r="1" fill="#005aff" />
   </svg>
 );
