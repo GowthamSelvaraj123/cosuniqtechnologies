@@ -67,7 +67,7 @@
 
 .description {
   font-family: var(--font-plus-jakarta), sans-serif !important;
-  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
   line-height: 1.5;
   max-width: 500px;
   margin: 0 0 2rem 0;
@@ -230,7 +230,7 @@
   }
 
   .description {
-    font-size: 1rem;
+    font-size: 0.9rem;
     max-width: 100%;
   }
 
