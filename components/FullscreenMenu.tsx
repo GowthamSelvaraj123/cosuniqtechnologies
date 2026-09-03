@@ -55,6 +55,12 @@ const linkVariants: Variants = {
 };
 
 export default function FullscreenMenu({ isOpen, onClose }: FullscreenMenuProps) {
+  const handleLinkClick = () => {
+    document.body.style.overflow = "";
+    document.documentElement.style.overflow = "";
+    onClose();
+  };
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -75,7 +81,7 @@ export default function FullscreenMenu({ isOpen, onClose }: FullscreenMenuProps)
           >
             {navLinks.map((link, i) => (
               <motion.div key={i} variants={linkVariants}>
-                <Link href={link.href} className={styles.navLink} onClick={onClose}>
+                <Link href={link.href} className={styles.navLink} onClick={handleLinkClick}>
                   <div className={styles.linkInner}>
                     <span>{link.name}</span>
                     <span className={styles.arrow}>
@@ -95,7 +101,7 @@ export default function FullscreenMenu({ isOpen, onClose }: FullscreenMenuProps)
             animate={{ opacity: 1, y: 0, transition: { delay: 0.8, duration: 0.5 } }}
             exit={{ opacity: 0, y: 20, transition: { duration: 0.3 } }}
           >
-            <Link href="/contact" className={styles.contactCTA} onClick={onClose}>
+            <Link href="/contact" className={styles.contactCTA} onClick={handleLinkClick}>
               Let's build something 
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

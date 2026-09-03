@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import InitReveal from "../../components/InitReveal";
 import AcademyHero from "../../components/AcademyHero";
+import FinalCta from "../../components/FinalCta";
 import styles from "./Academy.module.css";
 import FAQItem from "./FAQItem";
 
@@ -230,11 +231,11 @@ export default function Academy() {
       </section>
 
       {/* 8. 8-WEEK ROADMAP */}
-      <section className={`${styles.section} ${styles.sectionBg}`}>
+      <section className={`${styles.section} ${styles.roadmapSection}`}>
         <div className="container reveal">
           <div className={`${styles.sectionHeader} ${styles.left}`}>
             <span className={styles.eyebrow}>THE ROADMAP</span>
-            <h2 className={styles.title}>8 Weeks. One Real Outcome.</h2>
+            <h2 className={styles.title}>12 Weeks. One Real Outcome.</h2>
           </div>
 
           <div className={styles.roadmapWrapper}>
@@ -269,7 +270,23 @@ export default function Academy() {
               </div>
               <div className={styles.timelineItem}>
                 <div className={styles.timelineWeek}>Week 08</div>
-                <div className={styles.timelineTitle}>Launch</div>
+                <div className={styles.timelineTitle}>Refinement</div>
+              </div>
+              <div className={styles.timelineItem}>
+                <div className={styles.timelineWeek}>Week 09</div>
+                <div className={styles.timelineTitle}>Advanced Topics</div>
+              </div>
+              <div className={styles.timelineItem}>
+                <div className={styles.timelineWeek}>Week 10</div>
+                <div className={styles.timelineTitle}>Performance & Scaling</div>
+              </div>
+              <div className={styles.timelineItem}>
+                <div className={styles.timelineWeek}>Week 11</div>
+                <div className={styles.timelineTitle}>Final Polish</div>
+              </div>
+              <div className={styles.timelineItem}>
+                <div className={styles.timelineWeek}>Week 12</div>
+                <div className={styles.timelineTitle}>Showcase & Launch</div>
               </div>
             </div>
 
@@ -341,72 +358,7 @@ export default function Academy() {
         </div>
       </section>
 
-      {/* 11. SOCIAL PROOF / CASE STUDIES */}
-      <section className={styles.section}>
-        <div className="container reveal" style={{textAlign: 'center'}}>
-          <span className={styles.eyebrow}>PROOF OVER PROMISES</span>
-          <h2 className={styles.title}>Let the work speak for itself.</h2>
-          <div style={{display: 'inline-block', padding: '0.75rem 1.5rem', background: 'var(--cream)', borderRadius: '2rem', border: '1px solid var(--line)', marginTop: '2rem', fontWeight: 600, color: 'var(--brand)'}}>
-            Founding Cohort — Student projects coming soon
-          </div>
-        </div>
-      </section>
 
-      {/* 12. WAITLIST CTA */}
-      <section id="waitlist" className={`${styles.section} ${styles.sectionBg}`}>
-        <div className="container reveal">
-          <div className={styles.sectionHeader}>
-            <h2 className={styles.title}>Ready to become a builder?</h2>
-            <p className={styles.subtitle}>Join the founding cohort of Cosuniq Academy.</p>
-          </div>
-          
-          <div className={styles.waitlistCard}>
-            <form onSubmit={(e) => { e.preventDefault(); alert("You're on the list. 🚀 We'll reach out with the next steps."); }}>
-              <div className={styles.formGrid}>
-                <div className={styles.formGroup}>
-                  <label htmlFor="name">Name</label>
-                  <input type="text" id="name" className={styles.input} required />
-                </div>
-                <div className={styles.formGroup}>
-                  <label htmlFor="email">Email</label>
-                  <input type="email" id="email" className={styles.input} required />
-                </div>
-                <div className={styles.formGroup}>
-                  <label htmlFor="whatsapp">WhatsApp Number</label>
-                  <input type="tel" id="whatsapp" className={styles.input} required />
-                </div>
-                <div className={styles.formGroup}>
-                  <label htmlFor="role">College / Current Role</label>
-                  <input type="text" id="role" className={styles.input} required />
-                </div>
-                <div className={styles.formGroup}>
-                  <label htmlFor="track">Track Interested In</label>
-                  <select id="track" className={styles.input} required>
-                    <option value="">Select a track...</option>
-                    <option value="code">Cosuniq Code</option>
-                    <option value="design">Cosuniq Design</option>
-                    <option value="founder">Cosuniq Founder</option>
-                    <option value="unsure">Not Sure Yet</option>
-                  </select>
-                </div>
-                <div className={styles.formGroup}>
-                  <label htmlFor="exp">Experience Level</label>
-                  <select id="exp" className={styles.input} required>
-                    <option value="">Select level...</option>
-                    <option value="beginner">Beginner</option>
-                    <option value="intermediate">Intermediate</option>
-                    <option value="advanced">Advanced</option>
-                  </select>
-                </div>
-              </div>
-              <div className={styles.heroBtns} style={{justifyContent: 'center', marginTop: '3rem'}}>
-                <button type="submit" className="btn btn-primary" style={{padding: '1.2rem 3rem', fontSize: '1.1rem'}}>Join Waitlist →</button>
-                <Link href="/contact" className="btn btn-secondary" style={{padding: '1.2rem 3rem', fontSize: '1.1rem'}}>Talk to a Mentor</Link>
-              </div>
-            </form>
-          </div>
-        </div>
-      </section>
 
       {/* 13. FAQ */}
       <section className={styles.section}>
@@ -430,16 +382,7 @@ export default function Academy() {
       </section>
 
       {/* 14. FINAL CTA */}
-      <section className={styles.finalCta}>
-        <div className="container reveal">
-          <h2>Stop collecting tutorials. Start building proof.</h2>
-          <p>Build. Brand. Launch.</p>
-          <div className={styles.heroBtns} style={{justifyContent: 'center'}}>
-            <Link href="#waitlist" className="btn btn-primary" style={{padding: '1.2rem 3rem', fontSize: '1.1rem'}}>Join the Cosuniq Academy Waitlist →</Link>
-            <Link href="/contact" className="btn btn-secondary" style={{padding: '1.2rem 3rem', fontSize: '1.1rem', background: 'transparent', color: 'var(--white)', borderColor: 'var(--white)'}}>Talk to a Mentor</Link>
-          </div>
-        </div>
-      </section>
+      <FinalCta variant="academy" />
     </main>
   );
 }

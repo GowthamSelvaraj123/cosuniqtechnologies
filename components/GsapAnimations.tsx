@@ -13,6 +13,11 @@ export default function GsapAnimations() {
   const pathname = usePathname();
 
   useEffect(() => {
+    // ── Force scroll to top on route change before GSAP calculations ──
+    if (typeof window !== "undefined") {
+      window.scrollTo(0, 0);
+    }
+
     // ── Respect prefers-reduced-motion ──────────────────────────────────
     const prefersReduced =
       typeof window !== "undefined" &&

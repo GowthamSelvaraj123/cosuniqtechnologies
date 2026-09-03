@@ -7,7 +7,7 @@ import styles from "./FinalCta.module.css";
 import MagneticWrapper from "./MagneticWrapper";
 import HoverTextReveal from "./HoverTextReveal";
 
-const ProcessFlow = () => {
+const ProcessFlow = ({ accentColor = "#FF6B00", accentColorRgba = "rgba(255, 107, 0, 0.1)" }: { accentColor?: string, accentColorRgba?: string }) => {
   const [key, setKey] = useState(0);
 
   useEffect(() => {
@@ -34,7 +34,7 @@ const ProcessFlow = () => {
       <motion.path 
         d="M 50 40 C 250 10, 350 100, 280 110 C 150 120, 20 180, 70 210 C 150 240, 200 280, 280 280"
         fill="none" 
-        stroke="#FF6B00" 
+        stroke={accentColor}
         strokeWidth="2" 
         strokeDasharray="6 6"
         initial={{ pathLength: 0 }}
@@ -48,15 +48,15 @@ const ProcessFlow = () => {
         animate={{ opacity: 1, scale: 1 }} 
         transition={{ delay: 0, duration: 0.4 }}
       >
-        <motion.circle cx="50" cy="40" r="24" fill="none" stroke="#FF6B00" strokeWidth="2"
+        <motion.circle cx="50" cy="40" r="24" fill="none" stroke={accentColor} strokeWidth="2"
           initial={{ scale: 1, opacity: 0 }}
           animate={{ scale: [1, 1.8], opacity: [0.6, 0] }}
           transition={{ delay: 0.5, duration: 0.6, ease: "easeOut" }}
         />
-        <circle cx="50" cy="40" r="24" fill="#ffffff" stroke="#FF6B00" strokeWidth="1.5" />
-        <svg x="40" y="30" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF6B00" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="50" cy="40" r="24" fill="#ffffff" stroke={accentColor} strokeWidth="1.5" />
+        <svg x="40" y="30" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={accentColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M22 2L11 13" />
-          <path d="M22 2L15 22L11 13L2 9L22 2Z" fill="rgba(255, 107, 0, 0.1)"/>
+          <path d="M22 2L15 22L11 13L2 9L22 2Z" fill={accentColorRgba}/>
         </svg>
         <text x="50" y="85" textAnchor="middle" fill="#111111" fontSize="14" fontWeight="600" fontFamily="var(--font-plus-jakarta), sans-serif">Request</text>
       </motion.g>
@@ -67,19 +67,19 @@ const ProcessFlow = () => {
         animate={{ opacity: 1, scale: 1 }} 
         transition={{ delay: 0.1, duration: 0.4 }}
       >
-        <motion.circle cx="280" cy="110" r="24" fill="none" stroke="#FF6B00" strokeWidth="2"
+        <motion.circle cx="280" cy="110" r="24" fill="none" stroke={accentColor} strokeWidth="2"
           initial={{ scale: 1, opacity: 0 }}
           animate={{ scale: [1, 1.8], opacity: [0.6, 0] }}
           transition={{ delay: 1.8, duration: 0.6, ease: "easeOut" }}
         />
         <motion.circle cx="280" cy="110" r="24" fill="#ffffff" 
           initial={{ stroke: "rgba(0, 0, 0, 0.1)", strokeWidth: 1 }} 
-          animate={{ stroke: "#FF6B00", strokeWidth: 1.5 }}
+          animate={{ stroke: accentColor, strokeWidth: 1.5 }}
           transition={{ delay: 1.8, duration: 0.3 }}
         />
         <motion.svg x="270" y="100" width="20" height="20" viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round"
           initial={{ stroke: "#111111" }}
-          animate={{ stroke: "#FF6B00" }}
+          animate={{ stroke: accentColor }}
           transition={{ delay: 1.8, duration: 0.3 }}
         >
            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" strokeWidth="1.5"></path>
@@ -100,19 +100,19 @@ const ProcessFlow = () => {
         animate={{ opacity: 1, scale: 1 }} 
         transition={{ delay: 0.2, duration: 0.4 }}
       >
-        <motion.circle cx="70" cy="210" r="24" fill="none" stroke="#FF6B00" strokeWidth="2"
+        <motion.circle cx="70" cy="210" r="24" fill="none" stroke={accentColor} strokeWidth="2"
           initial={{ scale: 1, opacity: 0 }}
           animate={{ scale: [1, 1.8], opacity: [0.6, 0] }}
           transition={{ delay: 3.2, duration: 0.6, ease: "easeOut" }}
         />
         <motion.circle cx="70" cy="210" r="24" fill="#ffffff" 
           initial={{ stroke: "rgba(0, 0, 0, 0.1)", strokeWidth: 1 }} 
-          animate={{ stroke: "#FF6B00", strokeWidth: 1.5 }}
+          animate={{ stroke: accentColor, strokeWidth: 1.5 }}
           transition={{ delay: 3.2, duration: 0.3 }}
         />
         <motion.svg x="60" y="200" width="20" height="20" viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round"
           initial={{ stroke: "#111111" }}
-          animate={{ stroke: "#FF6B00" }}
+          animate={{ stroke: accentColor }}
           transition={{ delay: 3.2, duration: 0.3 }}
         >
           <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" strokeWidth="1.5"></path>
@@ -136,19 +136,19 @@ const ProcessFlow = () => {
         animate={{ opacity: 1, scale: 1 }} 
         transition={{ delay: 0.3, duration: 0.4 }}
       >
-        <motion.circle cx="280" cy="280" r="24" fill="none" stroke="#FF6B00" strokeWidth="2"
+        <motion.circle cx="280" cy="280" r="24" fill="none" stroke={accentColor} strokeWidth="2"
           initial={{ scale: 1, opacity: 0 }}
           animate={{ scale: [1, 1.8], opacity: [0.6, 0] }}
           transition={{ delay: 4.5, duration: 0.6, ease: "easeOut" }}
         />
         <motion.circle cx="280" cy="280" r="24" fill="#ffffff" 
           initial={{ stroke: "rgba(0, 0, 0, 0.1)", strokeWidth: 1 }} 
-          animate={{ stroke: "#FF6B00", strokeWidth: 1.5 }}
+          animate={{ stroke: accentColor, strokeWidth: 1.5 }}
           transition={{ delay: 4.5, duration: 0.3 }}
         />
         <motion.svg x="270" y="270" width="20" height="20" viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round"
           initial={{ stroke: "#111111" }}
-          animate={{ stroke: "#FF6B00" }}
+          animate={{ stroke: accentColor }}
           transition={{ delay: 4.5, duration: 0.3 }}
         >
           <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" strokeWidth="1.5"></path>
@@ -166,7 +166,7 @@ const ProcessFlow = () => {
   );
 };
 
-export default function FinalCta() {
+export default function FinalCta({ variant = 'default' }: { variant?: 'default' | 'academy' }) {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [errors, setErrors] = useState<{
     firstName?: string;
@@ -194,16 +194,25 @@ export default function FinalCta() {
     
     const newErrors: typeof errors = {};
     
-    if (!firstName || firstName.trim() === '') newErrors.firstName = 'First name is required';
-    if (!lastName || lastName.trim() === '') newErrors.lastName = 'Last name is required';
-    
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!email || !emailRegex.test(email.trim())) newErrors.email = 'Valid email is required';
-    
-    if (!company || company.trim() === '') newErrors.company = 'Company is required';
-    if (!jobTitle || jobTitle.trim() === '') newErrors.jobTitle = 'Job title is required';
-    if (!country || country === '') newErrors.country = 'Country is required';
-    if (!details || details.trim() === '') newErrors.details = 'Details are required';
+    if (variant === 'default') {
+      if (!firstName || firstName.trim() === '') newErrors.firstName = 'First name is required';
+      if (!lastName || lastName.trim() === '') newErrors.lastName = 'Last name is required';
+      
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email || !emailRegex.test(email.trim())) newErrors.email = 'Valid email is required';
+      
+      if (!company || company.trim() === '') newErrors.company = 'Company is required';
+      if (!jobTitle || jobTitle.trim() === '') newErrors.jobTitle = 'Job title is required';
+      if (!country || country === '') newErrors.country = 'Country is required';
+      if (!details || details.trim() === '') newErrors.details = 'Details are required';
+    } else {
+      const name = formData.get('name') as string;
+      const track = formData.get('track') as string;
+      if (!name || name.trim() === '') newErrors.firstName = 'Name is required';
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email || !emailRegex.test(email.trim())) newErrors.email = 'Valid email is required';
+      if (!track || track === '') newErrors.jobTitle = 'Track is required';
+    }
     
     if (!consent1) newErrors.consent1 = 'You must agree to the privacy policy';
     
@@ -227,7 +236,7 @@ export default function FinalCta() {
   };
 
   return (
-    <section className={styles.section} id="start">
+    <section className={`${styles.section} ${variant === 'academy' ? styles.academyBg : ''}`} id="start">
       <div className={styles.container}>
         
         {/* Left Column: Text Content */}
@@ -235,7 +244,7 @@ export default function FinalCta() {
 
 
           <motion.div 
-            className={`eyebrow ${styles.eyebrowWrap}`}
+            className={`eyebrow ${styles.eyebrowWrap} ${variant === 'academy' ? styles.academyEyebrow : ''}`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -253,7 +262,7 @@ export default function FinalCta() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: 0.1 }}
             >
-              Dream<span className={styles.dot}>.</span> Build<span className={styles.dot}>.</span> Launch<span className={styles.dot}>.</span>
+              Dream<span className={`${styles.dot} ${variant === 'academy' ? styles.academyText : ''}`}>.</span> Build<span className={`${styles.dot} ${variant === 'academy' ? styles.academyText : ''}`}>.</span> Launch<span className={`${styles.dot} ${variant === 'academy' ? styles.academyText : ''}`}>.</span>
             </motion.h2>
           </div>
 
@@ -267,7 +276,7 @@ export default function FinalCta() {
             Tell us what you&apos;re building, and let&apos;s create something meaningful together.
           </motion.p>
 
-          <ProcessFlow />
+          <ProcessFlow accentColor={variant === 'academy' ? '#005aff' : '#FF6B00'} accentColorRgba={variant === 'academy' ? 'rgba(0, 90, 255, 0.1)' : 'rgba(255, 107, 0, 0.1)'} />
         </div>
 
         {/* Right Column: Form */}
@@ -279,103 +288,150 @@ export default function FinalCta() {
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           <form className={styles.form} onSubmit={handleSubmit} noValidate>
-            <div className={styles.row}>
-              <div className={styles.inputGroup}>
-                <input 
-                  type="text" 
-                  name="firstName"
-                  id="firstName" 
-                  className={`${styles.input} ${errors.firstName ? styles.inputError : ''}`} 
-                  placeholder="First Name*" 
-                />
-                {errors.firstName && <span className={styles.fieldError}>{errors.firstName}</span>}
-              </div>
-              <div className={styles.inputGroup}>
-                <input 
-                  type="text" 
-                  name="lastName"
-                  id="lastName" 
-                  className={`${styles.input} ${errors.lastName ? styles.inputError : ''}`} 
-                  placeholder="Last Name*" 
-                />
-                {errors.lastName && <span className={styles.fieldError}>{errors.lastName}</span>}
-              </div>
-            </div>
-            
-            <div className={styles.row}>
-              <div className={styles.inputGroup}>
-                <input 
-                  type="email" 
-                  name="email"
-                  id="email" 
-                  className={`${styles.input} ${errors.email ? styles.inputError : ''}`} 
-                  placeholder="Email Address*" 
-                />
-                {errors.email && <span className={styles.fieldError}>{errors.email}</span>}
-              </div>
-              <div className={styles.inputGroup}>
-                <input 
-                  type="text" 
-                  name="company"
-                  id="company" 
-                  className={`${styles.input} ${errors.company ? styles.inputError : ''}`} 
-                  placeholder="Company*" 
-                />
-                {errors.company && <span className={styles.fieldError}>{errors.company}</span>}
-              </div>
-            </div>
+            {variant === 'default' ? (
+              <>
+                <div className={styles.row}>
+                  <div className={styles.inputGroup}>
+                    <input 
+                      type="text" 
+                      name="firstName"
+                      id="firstName" 
+                      className={`${styles.input} ${errors.firstName ? styles.inputError : ''}`} 
+                      placeholder="First Name*" 
+                    />
+                    {errors.firstName && <span className={styles.fieldError}>{errors.firstName}</span>}
+                  </div>
+                  <div className={styles.inputGroup}>
+                    <input 
+                      type="text" 
+                      name="lastName"
+                      id="lastName" 
+                      className={`${styles.input} ${errors.lastName ? styles.inputError : ''}`} 
+                      placeholder="Last Name*" 
+                    />
+                    {errors.lastName && <span className={styles.fieldError}>{errors.lastName}</span>}
+                  </div>
+                </div>
+                
+                <div className={styles.row}>
+                  <div className={styles.inputGroup}>
+                    <input 
+                      type="email" 
+                      name="email"
+                      id="email" 
+                      className={`${styles.input} ${errors.email ? styles.inputError : ''}`} 
+                      placeholder="Email Address*" 
+                    />
+                    {errors.email && <span className={styles.fieldError}>{errors.email}</span>}
+                  </div>
+                  <div className={styles.inputGroup}>
+                    <input 
+                      type="text" 
+                      name="company"
+                      id="company" 
+                      className={`${styles.input} ${errors.company ? styles.inputError : ''}`} 
+                      placeholder="Company*" 
+                    />
+                    {errors.company && <span className={styles.fieldError}>{errors.company}</span>}
+                  </div>
+                </div>
 
-            <div className={styles.row}>
-              <div className={styles.inputGroup}>
-                <input 
-                  type="text" 
-                  name="jobTitle"
-                  id="jobTitle" 
-                  className={`${styles.input} ${errors.jobTitle ? styles.inputError : ''}`} 
-                  placeholder="Job Title*" 
-                />
-                {errors.jobTitle && <span className={styles.fieldError}>{errors.jobTitle}</span>}
-              </div>
-              <div className={styles.inputGroup}>
-                <select name="country" id="country" className={`${styles.select} ${errors.country ? styles.inputError : ''}`} defaultValue="">
-                  <option value="" disabled>Country*</option>
-                  <option value="IN">India</option>
-                  <option value="US">United States</option>
-                  <option value="UK">United Kingdom</option>
-                  <option value="AU">Australia</option>
-                  <option value="OT">Other</option>
-                </select>
-                {errors.country && <span className={styles.fieldError}>{errors.country}</span>}
-              </div>
-            </div>
+                <div className={styles.row}>
+                  <div className={styles.inputGroup}>
+                    <input 
+                      type="text" 
+                      name="jobTitle"
+                      id="jobTitle" 
+                      className={`${styles.input} ${errors.jobTitle ? styles.inputError : ''}`} 
+                      placeholder="Job Title*" 
+                    />
+                    {errors.jobTitle && <span className={styles.fieldError}>{errors.jobTitle}</span>}
+                  </div>
+                  <div className={styles.inputGroup}>
+                    <select name="country" id="country" className={`${styles.select} ${errors.country ? styles.inputError : ''}`} defaultValue="">
+                      <option value="" disabled>Country*</option>
+                      <option value="IN">India</option>
+                      <option value="US">United States</option>
+                      <option value="UK">United Kingdom</option>
+                      <option value="AU">Australia</option>
+                      <option value="OT">Other</option>
+                    </select>
+                    {errors.country && <span className={styles.fieldError}>{errors.country}</span>}
+                  </div>
+                </div>
+              </>
+            ) : (
+              <>
+                <div className={styles.row}>
+                  <div className={styles.inputGroup}>
+                    <input type="text" name="name" className={`${styles.input} ${errors.firstName ? styles.inputError : ''}`} placeholder="Full Name*" />
+                    {errors.firstName && <span className={styles.fieldError}>{errors.firstName}</span>}
+                  </div>
+                  <div className={styles.inputGroup}>
+                    <input type="email" name="email" className={`${styles.input} ${errors.email ? styles.inputError : ''}`} placeholder="Email Address*" />
+                    {errors.email && <span className={styles.fieldError}>{errors.email}</span>}
+                  </div>
+                </div>
+                <div className={styles.row}>
+                  <div className={styles.inputGroup}>
+                    <input type="tel" name="whatsapp" className={styles.input} placeholder="WhatsApp Number*" required />
+                  </div>
+                  <div className={styles.inputGroup}>
+                    <input type="text" name="role" className={styles.input} placeholder="College / Current Role*" required />
+                  </div>
+                </div>
+                <div className={styles.row}>
+                  <div className={styles.inputGroup}>
+                    <select name="track" className={`${styles.select} ${errors.jobTitle ? styles.inputError : ''}`} defaultValue="">
+                      <option value="" disabled>Track Interested In*</option>
+                      <option value="code">Cosuniq Code</option>
+                      <option value="design">Cosuniq Design</option>
+                      <option value="founder">Cosuniq Founder</option>
+                      <option value="unsure">Not Sure Yet</option>
+                    </select>
+                    {errors.jobTitle && <span className={styles.fieldError}>{errors.jobTitle}</span>}
+                  </div>
+                  <div className={styles.inputGroup}>
+                    <select name="experience" className={styles.select} required defaultValue="">
+                      <option value="" disabled>Experience Level*</option>
+                      <option value="beginner">Beginner</option>
+                      <option value="intermediate">Intermediate</option>
+                      <option value="advanced">Advanced</option>
+                    </select>
+                  </div>
+                </div>
+              </>
+            )}
 
-            <div className={styles.inputGroup}>
-              <textarea 
-                name="details"
-                id="details" 
-                className={`${styles.textarea} ${errors.details ? styles.inputError : ''}`} 
-                placeholder="Let us know how we can help you*" 
-                rows={3} 
-              ></textarea>
-              {errors.details && <span className={styles.fieldError}>{errors.details}</span>}
-            </div>
+            {variant === 'default' && (
+              <div className={styles.inputGroup}>
+                <textarea 
+                  name="details"
+                  id="details" 
+                  className={`${styles.textarea} ${errors.details ? styles.inputError : ''}`} 
+                  placeholder="Let us know how we can help you*" 
+                  rows={3} 
+                ></textarea>
+                {errors.details && <span className={styles.fieldError}>{errors.details}</span>}
+              </div>
+            )}
 
             <div className={styles.checkboxRow}>
-              <input type="checkbox" id="consent1" name="consent1" className={styles.checkbox} />
+              <input type="checkbox" id="consent1" name="consent1" className={`${styles.checkbox} ${variant === 'academy' ? styles.academyCheckbox : ''}`} />
               <label htmlFor="consent1" className={`${styles.checkboxLabel} ${errors.consent1 ? styles.fieldError : ''}`}>
                 I agree to Cosuniq collecting and processing my personal data to respond to my request and provide related services. *
               </label>
             </div>
 
             <div className={styles.checkboxRow}>
-              <input type="checkbox" id="consent2" name="consent2" className={styles.checkbox} />
+              <input type="checkbox" id="consent2" name="consent2" className={`${styles.checkbox} ${variant === 'academy' ? styles.academyCheckbox : ''}`} />
               <label htmlFor="consent2" className={styles.checkboxLabel}>
                 I agree to receive details about services, events and any marketing communication from Cosuniq.
               </label>
             </div>
 
             <div className={styles.legalText}>
-              To learn more about how we protect your data, please refer to the <Link href="/privacy">Cosuniq privacy policy</Link>.<br/><br/>
+              To learn more about how we protect your data, please refer to the <Link href="/privacy" className={variant === 'academy' ? styles.academyLink : ''}>Cosuniq privacy policy</Link>.<br/><br/>
               This site is protected by reCAPTCHA.
             </div>
             
@@ -388,7 +444,7 @@ export default function FinalCta() {
             )}
 
             <MagneticWrapper>
-              <button type="submit" className={styles.submitBtn} disabled={status === 'submitting' || status === 'success'}>
+              <button type="submit" className={`${styles.submitBtn} ${variant === 'academy' ? styles.academyBtn : ''}`} disabled={status === 'submitting' || status === 'success'}>
                 {status === 'submitting' ? (
                   "Sending..."
                 ) : status === 'success' ? (

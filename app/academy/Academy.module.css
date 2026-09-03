@@ -621,6 +621,44 @@
 }
 
 /* Roadmap */
+.roadmapSection {
+  background-color: #ffffff !important;
+}
+
+.roadmapSection .eyebrow {
+  color: #005aff !important;
+  opacity: 1;
+}
+
+.roadmapSection .title {
+  color: #111111 !important;
+}
+
+.roadmapSection .timelineWeek {
+  color: #005aff;
+}
+
+.roadmapSection .timelineTitle {
+  color: #111111;
+}
+
+.roadmapSection .roadmapIncluded {
+  background: #f4f8ff;
+  border: 1px solid rgba(0, 90, 255, 0.1);
+}
+
+.roadmapSection .roadmapIncluded h4 {
+  color: #111111;
+}
+
+.roadmapSection .mentorList li {
+  color: #333333;
+}
+
+.roadmapSection .mentorList li::before {
+  color: #005aff;
+}
+
 .roadmapWrapper {
   display: flex;
   gap: 4rem;

@@ -6,6 +6,40 @@
   overflow: hidden;
 }
 
+.academyBg {
+  background-color: #eaf2ff !important;
+}
+
+.academyBtn {
+  background: #005aff !important;
+}
+.academyBtn:hover {
+  background: #0046cc !important;
+}
+
+.academyText {
+  color: #005aff !important;
+}
+.academyEyebrow {
+  color: #005aff !important;
+  background-color: #ffffff !important;
+}
+.academyEyebrow :global(.spark) {
+  background-color: #005aff !important;
+}
+.academyEyebrow :global(.spark::before), .academyEyebrow :global(.spark::after) {
+  background-color: #005aff !important;
+}
+
+.academyLink {
+  color: #005aff !important;
+}
+
+.academyCheckbox:checked {
+  background: #005aff !important;
+  border-color: #005aff !important;
+}
+
 .container {
   width: min(1200px, 92vw);
   margin: 0 auto;
