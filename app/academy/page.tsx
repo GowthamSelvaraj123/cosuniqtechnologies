@@ -578,7 +578,7 @@ export default function Academy() {
       {/* 9. HOW IT WORKS */}
       <section className={`${styles.section} ${styles.howItWorksSection}`}>
         <div className="container reveal">
-          <div className={styles.sectionHeader} style={{ marginBottom: '5rem' }}>
+          <div className={`${styles.sectionHeader} ${styles.left}`} style={{ marginBottom: '5rem' }}>
             <span className={styles.eyebrow}>THE PROCESS</span>
             <h2 className={styles.title}>How It Works.</h2>
           </div>
@@ -595,11 +595,11 @@ export default function Academy() {
               { num: '05', title: 'Refine',  desc: 'Polish and optimize your project.' },
               { num: '06', title: 'Launch',  desc: 'Deploy and turn it into portfolio proof.' },
             ].map((step, i) => (
-              <div key={i} className={`${styles.timelineStep} ${i % 2 === 0 ? styles.timelineStepHigh : styles.timelineStepLow}`}>
-                {/* Vertical stem */}
-                <div className={styles.timelineStem} />
-                {/* Dot on the line */}
+              <div key={i} className={`${styles.timelineStep} ${i % 2 === 0 ? styles.timelineStepLow : styles.timelineStepHigh}`}>
+                {/* Dot on line */}
                 <div className={styles.timelineDot} />
+                {/* Vertical stem going DOWN */}
+                <div className={styles.timelineStem} />
                 {/* Card */}
                 <div className={styles.timelineCard}>
                   <div className={styles.timelineNum}>{step.num}</div>

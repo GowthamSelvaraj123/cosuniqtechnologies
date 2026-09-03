@@ -322,19 +322,32 @@
 }
 
 .eyebrow {
-  font-size: 0.85rem;
-  letter-spacing: 0.15em;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #ffffff;
-  opacity: 0.9;
+  color: #005aff;
   font-weight: 700;
-  margin-bottom: 1rem;
-  display: inline-block;
+  margin-bottom: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+}
+
+.eyebrow::before {
+  content: "+";
+  font-size: 0.9rem;
+  font-weight: 800;
+  line-height: 1;
+  color: inherit;
 }
 
 .title {
   font-family: var(--display);
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
   line-height: 1.1;
   font-weight: 700;
   margin-bottom: 1rem;
@@ -354,8 +367,9 @@
 }
 
 .mentorSection .eyebrow {
-  color: #111111 !important;
-  opacity: 1;
+  color: #111111;
+  border-color: rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.04);
 }
 
 .mentorSection .title {
@@ -931,8 +945,9 @@
 }
 
 .roadmapSection .eyebrow {
-  color: #005aff !important;
-  opacity: 1;
+  color: #005aff;
+  border-color: rgba(0, 90, 255, 0.2);
+  background: rgba(0, 90, 255, 0.06);
 }
 
 .roadmapSection .title {
@@ -1149,6 +1164,7 @@
 .howItWorksSection {
   background: #005aff !important;
   padding-bottom: 6rem;
+  overflow: hidden;
 }
 
 .howItWorksSection .eyebrow {
@@ -1164,15 +1180,16 @@
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   position: relative;
-  align-items: flex-end; /* cards sit on top of the line from bottom */
+  align-items: flex-start;
 }
 
-/* The horizontal rule */
+/* The horizontal line — full screen width */
 .timelineLine {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  top: 6px;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
   height: 1.5px;
   background: rgba(255, 255, 255, 0.3);
   z-index: 0;
@@ -1182,98 +1199,87 @@
 .timelineStep {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   padding: 0 0.75rem;
   position: relative;
 }
 
-/* Even columns sit lower (shorter stem), odd higher (longer stem) */
-.timelineStepHigh {
-  padding-bottom: 3rem;
-}
-
-.timelineStepLow {
-  padding-bottom: 1.5rem;
-}
-
-/* Vertical stem connecting card to timeline */
-.timelineStem {
-  width: 1.5px;
-  background: rgba(255, 255, 255, 0.3);
-  flex-shrink: 0;
-  align-self: flex-start;
-  margin-left: 5px; /* center on dot */
-  height: 2rem;
-}
-
-.timelineStepHigh .timelineStem {
-  height: 3.5rem;
-}
-
-.timelineStepLow .timelineStem {
-  height: 1.5rem;
-}
-
-/* Dot on timeline */
+/* Dot sits at the top ON the line */
 .timelineDot {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   background: #ffffff;
   border: 2px solid rgba(255, 255, 255, 0.5);
   box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.15);
   flex-shrink: 0;
   position: relative;
-  z-index: 1;
+  z-index: 2;
   margin-bottom: 0;
 }
 
-/* The white card */
+/* Vertical stem going DOWN from dot to card */
+.timelineStem {
+  width: 1.5px;
+  background: rgba(255, 255, 255, 0.3);
+  flex-shrink: 0;
+}
+
+.timelineStepHigh .timelineStem {
+  height: 1rem;
+}
+
+.timelineStepLow .timelineStem {
+  height: 3rem;
+}
+
+/* The card — sits below the stem */
 .timelineCard {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
   border-radius: 16px;
   padding: 1.25rem;
   width: 100%;
-  backdrop-filter: blur(8px);
-  order: -1; /* card goes above stem */
-  margin-bottom: 0;
+  text-align: left;
 }
 
 .timelineNum {
   font-family: var(--display);
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(0, 90, 255, 0.4);
   line-height: 1;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
   letter-spacing: -0.02em;
+  text-align: left;
 }
 
 .timelineTitle {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
+  color: #111111;
+  margin-bottom: 0.4rem;
   white-space: nowrap;
+  text-align: left;
 }
 
 .timelineDesc {
-  font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
+  color: #555555;
   line-height: 1.5;
+  text-align: left;
 }
 
 @media (max-width: 991px) {
   .timelineWrapper {
     grid-template-columns: repeat(3, 1fr);
-    align-items: flex-start;
+    gap: 1.5rem;
   }
   .timelineLine { display: none; }
   .timelineStem { display: none; }
+  .timelineDot { display: none; }
   .timelineStepHigh,
   .timelineStepLow { padding-bottom: 0; }
-  .timelineCard { margin-bottom: 1.5rem; }
 }
 
 @media (max-width: 600px) {
