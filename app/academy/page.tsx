@@ -334,13 +334,13 @@ export default function Academy() {
       </section>
 
       {/* 10. PARENT TRUST SECTION */}
-      <section className={`${styles.section} ${styles.sectionBg}`}>
+      <section className={`${styles.section} ${styles.trustSection}`}>
         <div className={`container ${styles.parentGrid} reveal`}>
           <div>
-            <h2 className={styles.title} style={{fontSize: 'clamp(2rem, 3vw, 2.5rem)'}}>For Parents: Know What Your Student Is Getting.</h2>
-            <p className={styles.subtitle} style={{marginBottom: '2rem'}}>Clear learning. Real projects. Visible mentorship. No vague promises.</p>
+            <h2 className={styles.trustHeadline} style={{marginBottom: '1rem', fontSize: 'clamp(2rem, 3vw, 2.5rem)'}}>For Parents: Know What Your Student Is Getting.</h2>
+            <p className={styles.trustSubtitle}>Clear learning. Real projects. Visible mentorship. No vague promises.</p>
             
-            <ul className={styles.checkList}>
+            <ul className={styles.trustCheckList}>
               <li>Transparent curriculum</li>
               <li>Clear learning roadmap</li>
               <li>Mentor visibility</li>
@@ -361,7 +361,7 @@ export default function Academy() {
 
 
       {/* 13. FAQ */}
-      <section className={styles.section}>
+      <section className={`${styles.section} ${styles.faqSection}`}>
         <div className="container reveal">
           <div className={styles.sectionHeader}>
             <h2 className={styles.title}>Frequently Asked Questions</h2>

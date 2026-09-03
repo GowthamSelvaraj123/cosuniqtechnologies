@@ -131,12 +131,44 @@
   color: #005aff;
 }
 
+.trustSubtitle {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  color: #333333;
+  line-height: 1.6;
+}
+
+.trustCheckList {
+  list-style: none;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  padding: 0;
+}
+
+.trustCheckList li {
+  margin-bottom: 1rem;
+  position: relative;
+  padding-left: 2rem;
+  color: #111111;
+  font-weight: 500;
+}
+
+.trustCheckList li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #005aff;
+  font-weight: 800;
+}
+
 .trustGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.75rem;
   padding-bottom: 2rem;
 }
+
 
 .trustCard {
   position: relative;
@@ -854,13 +886,21 @@
 }
 
 /* FAQ */
+.faqSection {
+  background-color: #ffffff !important;
+}
+
+.faqSection .title {
+  color: #111111 !important;
+}
+
 .faqWrapper {
   max-width: 800px;
   margin: 0 auto;
 }
 
 .faqItem {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .faqQuestion {
@@ -871,7 +911,7 @@
   padding: 1.5rem 0;
   font-size: 1.25rem;
   font-weight: 600;
-  color: #ffffff;
+  color: #111111;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -879,7 +919,7 @@
 }
 
 .faqIcon {
-  color: #ffffff;
+  color: #005aff;
   font-size: 1.5rem;
   transition: transform 0.3s;
 }
@@ -894,7 +934,7 @@
 
 .faqAnswerInner {
   padding-bottom: 1.5rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: #555555;
   line-height: 1.6;
 }
 
