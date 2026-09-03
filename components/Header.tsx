@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import styles from "./Header.module.css";
@@ -11,6 +12,8 @@ import MagneticWrapper from "./MagneticWrapper";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const pathname = usePathname();
+  const isAcademy = pathname === '/academy';
   const { scrollY } = useScroll();
 
   useEffect(() => {
@@ -64,7 +67,7 @@ export default function Header() {
   return (
     <>
       <motion.header
-        className={styles.headerRoot}
+        className={`${styles.headerRoot} ${isAcademy ? styles.academyTheme : ''}`}
         style={{
           top,
           left,
@@ -80,7 +83,7 @@ export default function Header() {
         }}
       >
         <Link href="/" className={styles.brand} aria-label="Cosuniq home">
-          <img src="/assets/cosuniq-technologies.png" alt="Cosuniq" />
+          <img src={isAcademy ? "/assets/cosuniq-academy.png" : "/assets/cosuniq-technologies.png"} alt={isAcademy ? "Cosuniq Academy" : "Cosuniq"} />
         </Link>
 
         <nav className={styles.desktopNav}>

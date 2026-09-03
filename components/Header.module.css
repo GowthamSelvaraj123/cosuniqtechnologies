@@ -8,6 +8,13 @@
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   overflow: hidden;
+  --header-brand: #ff6a00;
+  --header-brand-hover: #e65a00;
+}
+
+.headerRoot.academyTheme {
+  --header-brand: #005aff;
+  --header-brand-hover: #0047cc;
 }
 
 
@@ -67,7 +74,7 @@
 }
 
 .navItem:hover {
-  color: var(--brand);
+  color: var(--header-brand);
 }
 
 .headerRight {
@@ -85,7 +92,7 @@
   justify-content: center;
   width: 44px;
   height: 44px;
-  background-color: var(--brand);
+  background-color: var(--header-brand);
   color: #ffffff;
   text-decoration: none;
   border-radius: 50%;
@@ -94,7 +101,7 @@
 
 .roundCallIcon:hover {
   transform: scale(1.08);
-  background-color: #e65a00;
+  background-color: var(--header-brand-hover);
 }
 
 .menuToggle {

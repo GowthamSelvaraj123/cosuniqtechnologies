@@ -1,13 +1,17 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { FiLinkedin, FiYoutube, FiInstagram } from "react-icons/fi";
 import { SiX } from "react-icons/si";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
+  const pathname = usePathname();
+  const isAcademy = pathname === '/academy';
+
   return (
-    <footer className={styles.footerWrapper}>
+    <footer className={`${styles.footerWrapper} ${isAcademy ? styles.academyTheme : ''}`}>
       <div className={styles.footerContainer}>
         
         {/* TOP SECTION */}
@@ -57,19 +61,19 @@ export default function Footer() {
           
           <div className={styles.linkColumns}>
             <div className={styles.linkCol}>
-              <span style={{ fontSize: '0.85rem', color: '#ff6a00', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Studio</span>
+              <span style={{ fontSize: '0.85rem', color: 'var(--footer-brand)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Studio</span>
               <Link href="/about">About</Link>
               <Link href="/portfolio">Work</Link>
               <Link href="/contact">Contact</Link>
             </div>
             <div className={styles.linkCol}>
-              <span style={{ fontSize: '0.85rem', color: '#ff6a00', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Services</span>
+              <span style={{ fontSize: '0.85rem', color: 'var(--footer-brand)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Services</span>
               <Link href="/services">What we do</Link>
               <Link href="/services#software">Software & Apps</Link>
               <Link href="/services#branding">Branding & Design</Link>
             </div>
             <div className={styles.linkCol}>
-              <span style={{ fontSize: '0.85rem', color: '#ff6a00', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Contact</span>
+              <span style={{ fontSize: '0.85rem', color: 'var(--footer-brand)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Contact</span>
               <a href="mailto:founder@cosuniq.in">founder@cosuniq.in</a>
               <a href="tel:+917358696546">+91 73586 96546</a>
               

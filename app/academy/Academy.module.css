@@ -1179,6 +1179,7 @@
 .timelineWrapper {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
+  gap: 1.5rem;
   position: relative;
   align-items: flex-start;
 }
@@ -1200,9 +1201,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 0.75rem;
   position: relative;
 }
+
+/* Forceful transform scatter for cards */
+.timelineStep:nth-child(1) .timelineCard { transform: rotate(-3deg) translateY(5px); }
+.timelineStep:nth-child(2) .timelineCard { transform: rotate(2deg) translateY(-5px); }
+.timelineStep:nth-child(3) .timelineCard { transform: rotate(-4deg) translateY(10px); }
+.timelineStep:nth-child(4) .timelineCard { transform: rotate(3deg) translateY(-8px); }
+.timelineStep:nth-child(5) .timelineCard { transform: rotate(-2deg) translateY(6px); }
+.timelineStep:nth-child(6) .timelineCard { transform: rotate(4deg) translateY(0px); }
 
 /* Dot sits at the top ON the line */
 .timelineDot {
@@ -1226,11 +1234,11 @@
 }
 
 .timelineStepHigh .timelineStem {
-  height: 1rem;
+  height: 1.5rem;
 }
 
 .timelineStepLow .timelineStem {
-  height: 3rem;
+  height: 3.5rem;
 }
 
 /* The card — sits below the stem */
@@ -1241,6 +1249,9 @@
   padding: 1.25rem;
   width: 100%;
   text-align: left;
+  margin-top: -12px; /* Pull up over the stem to ensure they touch perfectly */
+  position: relative;
+  z-index: 3;
 }
 
 .timelineNum {

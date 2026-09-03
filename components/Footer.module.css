@@ -2,6 +2,11 @@
   background: #000000;
   padding: 1rem 1rem 0 1rem;
   font-family: var(--font-plus-jakarta), sans-serif;
+  --footer-brand: #ff6a00;
+}
+
+.footerWrapper.academyTheme {
+  --footer-brand: #005aff;
 }
 
 .footerContainer {
@@ -40,7 +45,7 @@
 
 
 .orangeDot {
-  color: #ff6a00;
+  color: var(--footer-brand);
 }
 
 .linkColumns {
@@ -64,7 +69,7 @@
 }
 
 .linkCol a:hover {
-  color: #ff6a00;
+  color: var(--footer-brand);
 }
 
 .socialIcons {
