@@ -23,12 +23,18 @@
 }
 
 .slogan {
+  display: inline-flex;
+  flex-direction: column;
   font-size: 3rem;
   font-weight: 600;
   line-height: 1.25;
   color: #111111;
   letter-spacing: -0.03em;
   max-width: 600px;
+}
+
+.scatterLetters {
+  display: block;
 }
 
 .orangeDot {
@@ -121,7 +127,7 @@
 
 @media (max-width: 900px) {
   .topSection {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 4rem;
   }
 
@@ -137,7 +143,8 @@
   }
 
   .linkColumns {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 
   .slogan {

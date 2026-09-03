@@ -13,7 +13,46 @@ export default function Footer() {
         {/* TOP SECTION */}
         <div className={styles.topSection}>
           <div className={styles.slogan}>
-            Inspired by<br />the Universe<span className={styles.orangeDot}>.</span><br />Defined by Uniqueness<span className={styles.orangeDot}>.</span>
+            <div className={styles.scatterLetters}>
+              {"Inspired by".split("").map((char, index) => {
+                const rotations = [0, 8, -6, 10, -8, 5, -12, 6, -4, 12, 0];
+                const r = rotations[index % rotations.length];
+                return (
+                  <span 
+                    key={index} 
+                    style={{ 
+                      display: "inline-block", 
+                      transform: `rotate(${r}deg)`,
+                      transformOrigin: "bottom center",
+                      marginRight: char === " " ? "0.3em" : "0.05em"
+                    }}
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </span>
+                );
+              })}
+            </div>
+            <div>the Universe<span className={styles.orangeDot}>.</span></div>
+            <div className={styles.scatterLetters}>
+              {"Defined by".split("").map((char, index) => {
+                const rotations = [0, 8, -6, 10, -8, 5, -12, 6, -4, 12, 0];
+                const r = rotations[index % rotations.length];
+                return (
+                  <span 
+                    key={index} 
+                    style={{ 
+                      display: "inline-block", 
+                      transform: `rotate(${r}deg)`,
+                      transformOrigin: "bottom center",
+                      marginRight: char === " " ? "0.3em" : "0.05em"
+                    }}
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </span>
+                );
+              })}
+            </div>
+            <div>Uniqueness<span className={styles.orangeDot}>.</span></div>
           </div>
           
           <div className={styles.linkColumns}>
