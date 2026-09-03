@@ -498,43 +498,59 @@
   color: #ffffff;
 }
 
-/* Impact Projects Section */
 .impactGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: minmax(160px, auto);
   grid-auto-flow: dense;
   gap: 1.5rem;
   margin-top: 3rem;
 }
 
 @media (min-width: 1024px) {
-  /* Row 1 & 2 */
-  .impactCard:nth-child(1) { grid-column: span 2; grid-row: span 2; }
-  .impactCard:nth-child(2) { grid-column: span 1; grid-row: span 1; }
-  .impactCard:nth-child(3) { grid-column: span 1; grid-row: span 2; }
-  .impactCard:nth-child(4) { grid-column: span 1; grid-row: span 1; }
+  .impactCenterHeader {
+    grid-area: 2 / 2 / 3 / 4; /* Row 2, Col 2 & 3 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    z-index: 10;
+  }
   
-  /* Row 3 */
-  .impactCard:nth-child(5) { grid-column: span 2; grid-row: span 1; }
-  .impactCard:nth-child(6) { grid-column: span 1; grid-row: span 1; }
-  .impactCard:nth-child(7) { grid-column: span 1; grid-row: span 1; }
+  .impactCenterHeader .title {
+    font-size: clamp(2rem, 3vw, 3rem);
+    margin-bottom: 1rem;
+  }
+
+  /* 10 Floating Cards Mapping (Scattered effect) */
+  .impactCard:nth-of-type(1) { grid-column: span 1; transform: translateY(10px) rotate(-2deg); }
+  .impactCard:nth-of-type(2) { grid-column: span 1; transform: translateY(-10px) rotate(1deg); }
+  .impactCard:nth-of-type(3) { grid-column: span 1; transform: translateY(-15px) rotate(-1.5deg); }
+  .impactCard:nth-of-type(4) { grid-column: span 1; transform: translateY(15px) rotate(2deg); }
   
-  /* Row 4 & 5 */
-  .impactCard:nth-child(8) { grid-column: span 1; grid-row: span 2; }
-  .impactCard:nth-child(9) { grid-column: span 2; grid-row: span 2; }
-  .impactCard:nth-child(10) { grid-column: span 1; grid-row: span 2; }
+  /* Left and Right center orbit cards */
+  .impactCard:nth-of-type(5) { grid-column: span 1; transform: translateX(-10px) rotate(-3deg); }
+  .impactCard:nth-of-type(6) { grid-column: span 1; transform: translateX(10px) rotate(3deg); }
+  
+  /* Bottom row cards */
+  .impactCard:nth-of-type(7) { grid-column: span 1; transform: translateY(-10px) rotate(2deg); }
+  .impactCard:nth-of-type(8) { grid-column: span 1; transform: translateY(15px) rotate(-1deg); }
+  .impactCard:nth-of-type(9) { grid-column: span 1; transform: translateY(10px) rotate(1.5deg); }
+  .impactCard:nth-of-type(10) { grid-column: span 1; transform: translateY(-15px) rotate(-2deg); }
 }
 
 @media (max-width: 1023px) and (min-width: 768px) {
   .impactGrid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .impactCard:nth-child(3n) {
+  .impactCenterHeader {
     grid-column: span 2;
+    text-align: center;
+    margin-bottom: 2rem;
   }
-  .impactCard:nth-child(10) { 
-    grid-column: span 2; 
+  .impactCard:nth-of-type(3n) {
+    grid-column: span 2;
   }
 }
 
@@ -542,37 +558,48 @@
   .impactGrid {
     grid-template-columns: 1fr;
   }
+  .impactCenterHeader {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
 }
 
 .impactCard {
-  background: #E8F0FF;
+  background: #D4E5FF;
   border: 1px solid rgba(0, 90, 255, 0.1);
   border-radius: var(--radius-lg);
   padding: 2.5rem;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-}
-
-.impactCard:hover {
-  transform: translateY(-5px);
-  background: #ffffff;
-  border-color: rgba(0, 90, 255, 0.2);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
 .impactHeader {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: flex-start;
   margin-bottom: 1rem;
   gap: 1rem;
 }
 
+.impactIconWrapper {
+  width: 48px;
+  height: 48px;
+  background: rgba(0, 90, 255, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  color: #005aff;
+}
+
 .impactHeader h3 {
   font-size: 1.5rem;
-  font-weight: 800;
+  font-weight: 600;
   color: #005aff;
   margin: 0;
   line-height: 1.2;
@@ -593,33 +620,9 @@
 
 .impactSubtitle {
   font-size: 1.05rem;
-  font-weight: 700;
+  font-weight: 500;
   color: #111111;
-  margin-bottom: 1.5rem;
-}
-
-.impactDesc {
-  font-size: 0.95rem;
-  color: #333333;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-  flex-grow: 1;
-}
-
-.impactTags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.impactTag {
-  background: rgba(0, 90, 255, 0.08);
-  color: #005aff;
-  padding: 0.3rem 0.8rem;
-  border-radius: 2rem;
-  font-size: 0.75rem;
-  font-weight: 700;
-  border: 1px solid rgba(0, 90, 255, 0.2);
+  margin: 0;
 }
 
 /* Tracks */

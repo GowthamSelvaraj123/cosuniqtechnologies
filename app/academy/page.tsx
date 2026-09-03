@@ -7,7 +7,7 @@ import AcademyHero from "../../components/AcademyHero";
 import FinalCta from "../../components/FinalCta";
 import styles from "./Academy.module.css";
 import FAQItem from "./FAQItem";
-import { FiBox, FiUsers, FiCode, FiCpu, FiLayout, FiServer, FiSliders, FiTool, FiTrendingUp, FiActivity, FiStar, FiAward } from "react-icons/fi";
+import { FiBox, FiUsers, FiCode, FiCpu, FiLayout, FiServer, FiSliders, FiTool, FiTrendingUp, FiActivity, FiStar, FiAward, FiHeart, FiPackage, FiMapPin, FiCoffee, FiBookOpen, FiMic, FiAlertCircle, FiMap, FiUserCheck } from "react-icons/fi";
 
 export default function Academy() {
   const socialApps = [
@@ -16,70 +16,80 @@ export default function Academy() {
       subtitle: "Emergency Blood & Platelet Connect",
       desc: "Help connect emergency patients with nearby blood and platelet donors through smart matching and real-time alerts.",
       tags: ["AI Matching", "GPS", "Emergency SOS"],
-      link: "Join LifeDrop →"
+      link: "Join LifeDrop →",
+      icon: <FiHeart size={24} />
     },
     {
       title: "MediShare",
       subtitle: "Medicine Donation Platform",
       desc: "Help connect eligible unused medicines with verified NGOs and community healthcare initiatives.",
       tags: ["AI OCR", "Expiry Detection", "NGO Network"],
-      link: "Join MediShare →"
+      link: "Join MediShare →",
+      icon: <FiPackage size={24} />
     },
     {
       title: "TreeTag",
       subtitle: "Digital Tree Tracker",
       desc: "Track planted trees, volunteer activities and long-term survival — turning tree planting into measurable impact.",
       tags: ["GPS Tagging", "AI Vision", "Impact Tracking"],
-      link: "Join TreeTag →"
+      link: "Join TreeTag →",
+      icon: <FiMapPin size={24} />
     },
     {
       title: "E-Waste Hero",
       subtitle: "Digital E-Waste Collection",
       desc: "Make responsible e-waste disposal easier by connecting people with certified recyclers and collection partners.",
       tags: ["AI Identification", "Pickup Tracking", "Green Credits"],
-      link: "Join E-Waste Hero →"
+      link: "Join E-Waste Hero →",
+      icon: <FiCpu size={24} />
     },
     {
       title: "Annadata",
       subtitle: "Excess Food Rescue",
       desc: "Help redirect surplus food from events, restaurants and functions to organizations that need it.",
       tags: ["Smart Matching", "Route Optimization", "Real-Time"],
-      link: "Join Annadata →"
+      link: "Join Annadata →",
+      icon: <FiCoffee size={24} />
     },
     {
       title: "VidyaBridge",
       subtitle: "Rural Digital Mentorship",
       desc: "Connect college mentors with rural students for practical learning in English, mathematics, technology and more.",
       tags: ["AI Learning", "Mentorship", "Low-Bandwidth"],
-      link: "Join VidyaBridge →"
+      link: "Join VidyaBridge →",
+      icon: <FiBookOpen size={24} />
     },
     {
       title: "Drishti Voice",
       subtitle: "AI Accessibility Assistant",
       desc: "Help make everyday information more accessible through AI-powered vision, OCR, voice and text-to-speech.",
       tags: ["Computer Vision", "Voice AI", "Accessibility"],
-      link: "Join Drishti Voice →"
+      link: "Join Drishti Voice →",
+      icon: <FiMic size={24} />
     },
     {
       title: "StrayCare",
       subtitle: "Animal Rescue Coordination",
       desc: "Help citizens report injured animals and connect them with nearby rescuers, volunteers and veterinary support.",
       tags: ["AI Identification", "GPS", "Case Tracking"],
-      link: "Join StrayCare →"
+      link: "Join StrayCare →",
+      icon: <FiAlertCircle size={24} />
     },
     {
       title: "CivicFix",
       subtitle: "Hyperlocal Civic Reporting",
       desc: "Report potholes, garbage, broken streetlights and other local issues — and track them from report to resolution.",
       tags: ["AI Detection", "Community", "Status Tracking"],
-      link: "Join CivicFix →"
+      link: "Join CivicFix →",
+      icon: <FiMap size={24} />
     },
     {
       title: "SeniorCompanion",
       subtitle: "Digital Elderly Assistance Network",
       desc: "Connect elderly users with verified volunteers for everyday non-medical assistance and emergency SOS.",
       tags: ["Task Matching", "Risk Alerts", "Verification"],
-      link: "Join SeniorCompanion →"
+      link: "Join SeniorCompanion →",
+      icon: <FiUserCheck size={24} />
     }
   ];
 
@@ -246,28 +256,21 @@ export default function Academy() {
       {/* 6. WHAT WILL YOU BUILD? */}
       <section className={`${styles.section} ${styles.sectionBg}`}>
         <div className="container reveal">
-          <div className={`${styles.sectionHeader} ${styles.left}`}>
-            <span className={styles.eyebrow}>BUILD FOR IMPACT</span>
-            <h2 className={styles.title}>10 Missions. One Purpose.</h2>
-            <div className={styles.subtitle} style={{ marginBottom: '3rem' }}>
-              <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '1.2rem', marginBottom: '0.5rem' }}>Learn. Build. Launch. Make an Impact.</p>
-            </div>
-          </div>
-
           <div className={styles.impactGrid}>
+            <div className={styles.impactCenterHeader}>
+              <span className={styles.eyebrow}>BUILD FOR IMPACT</span>
+              <h2 className={styles.title}>10 Missions. One Purpose.</h2>
+              <div className={styles.subtitle}>
+                <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '1.2rem', margin: 0 }}>Learn. Build. Launch. Make an Impact.</p>
+              </div>
+            </div>
             {socialApps.map((app, i) => (
               <div key={i} className={styles.impactCard}>
                 <div className={styles.impactHeader}>
+                  <div className={styles.impactIconWrapper}>{app.icon}</div>
                   <h3>{app.title}</h3>
                 </div>
                 <h4 className={styles.impactSubtitle}>{app.subtitle}</h4>
-                <p className={styles.impactDesc}>{app.desc}</p>
-                
-                <div className={styles.impactTags}>
-                  {app.tags.map((tag, j) => (
-                    <span key={j} className={styles.impactTag}>{tag}</span>
-                  ))}
-                </div>
               </div>
             ))}
           </div>
