@@ -75,6 +75,48 @@
   object-fit: contain;
 }
 
+.availabilityBlock {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #f9f9f9;
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.pulseDot {
+  width: 10px;
+  height: 10px;
+  background-color: #00ca51;
+  border-radius: 50%;
+  box-shadow: 0 0 0 rgba(0, 202, 81, 0.4);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 202, 81, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(0, 202, 81, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 202, 81, 0); }
+}
+
+.availabilityText {
+  display: flex;
+  flex-direction: column;
+}
+
+.availabilityTitle {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #111111;
+}
+
+.availabilityDesc {
+  font-size: 0.8rem;
+  color: #666666;
+  font-weight: 500;
+}
+
 .brandText {
   display: flex;
   flex-direction: column;

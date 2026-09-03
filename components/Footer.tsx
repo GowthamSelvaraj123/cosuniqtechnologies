@@ -39,9 +39,14 @@ export default function Footer() {
 
         {/* MIDDLE SECTION */}
         <div className={styles.middleSection}>
-          <Link href="/" className={styles.brand}>
-            <img src="/assets/cosuniq-technologies.png" alt="Cosuniq Logo" className={styles.brandLogo} />
-          </Link>
+          {/* Availability Status */}
+          <div className={styles.availabilityBlock}>
+            <div className={styles.pulseDot}></div>
+            <div className={styles.availabilityText}>
+              <span className={styles.availabilityTitle}>Available for new projects</span>
+              <span className={styles.availabilityDesc}>Based in Udumalpet. Working globally.</span>
+            </div>
+          </div>
           
           <div className={styles.socialIcons}>
             <a href="#" className={styles.socialIcon} aria-label="LinkedIn"><FiLinkedin /></a>
