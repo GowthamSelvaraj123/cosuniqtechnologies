@@ -13,24 +13,24 @@ export default function Footer() {
         {/* TOP SECTION */}
         <div className={styles.topSection}>
           <div className={styles.slogan}>
-            Inspired by the Cosmos.<br />Defined by Uniqueness.
+            Inspired by the Cosmos<span className={styles.orangeDot}>.</span><br />Defined by Uniqueness<span className={styles.orangeDot}>.</span>
           </div>
           
           <div className={styles.linkColumns}>
             <div className={styles.linkCol}>
-              <span style={{ fontSize: '0.85rem', color: '#888', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Studio</span>
+              <span style={{ fontSize: '0.85rem', color: '#ff6a00', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Studio</span>
               <Link href="/about">About</Link>
               <Link href="/portfolio">Work</Link>
               <Link href="/contact">Contact</Link>
             </div>
             <div className={styles.linkCol}>
-              <span style={{ fontSize: '0.85rem', color: '#888', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Services</span>
+              <span style={{ fontSize: '0.85rem', color: '#ff6a00', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Services</span>
               <Link href="/services">What we do</Link>
               <Link href="/services#software">Software & Apps</Link>
               <Link href="/services#branding">Branding & Design</Link>
             </div>
             <div className={styles.linkCol}>
-              <span style={{ fontSize: '0.85rem', color: '#888', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Contact</span>
+              <span style={{ fontSize: '0.85rem', color: '#ff6a00', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Contact</span>
               <a href="mailto:founder@cosuniq.in">founder@cosuniq.in</a>
               <a href="tel:+917358696546">+91 73586 96546</a>
               
@@ -55,7 +55,7 @@ export default function Footer() {
 
       {/* HUGE BOTTOM LOGO */}
       <div className={styles.hugeLogoContainer}>
-        <img src="/assets/cosuniq-technologies.png" alt="Cosuniq Logo" className={styles.hugeLogoImg} />
+        <div className={styles.hugeLogoMask} />
       </div>
     </footer>
   );
