@@ -88,7 +88,7 @@ export default function Academy() {
         <div className={`container ${styles.mentorGrid} reveal`}>
           <div className={styles.mentorImageWrapper}>
             <div className={styles.mentorImage}>
-              <img src="/assets/images/person-businessman.jpg" alt="Mentor" />
+              <img src="/assets/images/tech_mentor_avatar.jpg" alt="Mentor" />
             </div>
             <div className={styles.mentorBadge}>
               <span className={styles.badgeNum}>10+</span>
@@ -117,8 +117,8 @@ export default function Academy() {
               </div>
               
               <div className={styles.heroBtns}>
-                <a href="#" className="btn btn-primary" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-                <a href="#" className="btn btn-ghost" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                <a href="#" className="btn btn-primary" style={{ background: '#ffffff', color: '#111111' }} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+                <a href="#" className="btn btn-ghost" style={{ color: '#ffffff', borderColor: 'rgba(255,255,255,0.3)' }} target="_blank" rel="noopener noreferrer">GitHub ↗</a>
               </div>
             </div>
           </div>

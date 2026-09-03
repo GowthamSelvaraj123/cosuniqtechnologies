@@ -414,20 +414,20 @@
 
 .mentorCard {
   margin-top: 2.5rem;
-  background: rgba(0, 0, 0, 0.02);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 24px;
-  padding: 2.5rem;
+  padding: 3rem;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.15);
 }
 
 .mentorHeader h3 {
   font-size: 2.25rem;
   font-weight: 800;
   margin-bottom: 1rem;
-  color: #111111;
+  color: #ffffff;
   letter-spacing: -0.02em;
 }
 
@@ -439,16 +439,16 @@
 }
 
 .mentorTag {
-  background: rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  color: #111111;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
   padding: 0.4rem 0.8rem;
   border-radius: 2rem;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 .mentorQuoteWrapper {
@@ -463,7 +463,7 @@
   font-size: 4rem;
   font-family: serif;
   font-weight: 900;
-  color: rgba(0, 0, 0, 0.06);
+  color: rgba(255, 255, 255, 0.08);
   line-height: 1;
   pointer-events: none;
 }
@@ -472,7 +472,7 @@
   font-size: 1.25rem;
   font-style: italic;
   font-weight: 400;
-  color: #333333;
+  color: rgba(255, 255, 255, 0.9);
   line-height: 1.6;
   position: relative;
   z-index: 1;
