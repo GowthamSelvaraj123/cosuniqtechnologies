@@ -7,6 +7,7 @@ import AcademyHero from "../../components/AcademyHero";
 import FinalCta from "../../components/FinalCta";
 import styles from "./Academy.module.css";
 import FAQItem from "./FAQItem";
+import { FiBox, FiUsers, FiCode, FiCpu, FiLayout, FiServer, FiSliders, FiTool, FiTrendingUp, FiActivity, FiStar, FiAward } from "react-icons/fi";
 
 export default function Academy() {
   const socialApps = [
@@ -101,7 +102,7 @@ export default function Academy() {
                 Why Cosuniq Academy
               </span>
               <h2 className={styles.trustHeadline}>
-                More than a course. A place to become a builder<span className={styles.trustDot}>.</span>
+                Learn. Build. Ship. 10 Missions. One Purpose<span className={styles.trustDot}>.</span>
               </h2>
             </div>
           </div>
@@ -205,9 +206,7 @@ export default function Academy() {
             <span className={styles.eyebrow}>BUILD FOR IMPACT</span>
             <h2 className={styles.title}>10 Missions. One Purpose.</h2>
             <div className={styles.subtitle} style={{ marginBottom: '3rem' }}>
-              <p style={{ fontWeight: '800', fontSize: '1.5rem', color: '#ffffff', marginBottom: '1.5rem' }}>Build → Launch → Impact</p>
-              <p style={{ color: 'rgba(255, 255, 255, 0.8)', marginBottom: '0.5rem', fontSize: '1.2rem' }}>Join as a User · Volunteer · Contributor · Partner</p>
-              <p style={{ color: '#ffffff', fontWeight: 'bold', fontSize: '1.2rem' }}>Choose a project. Make an impact.</p>
+              <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '1.2rem', marginBottom: '0.5rem' }}>Learn. Build. Launch. Make an Impact.</p>
             </div>
           </div>
 
@@ -225,28 +224,10 @@ export default function Academy() {
                     <span key={j} className={styles.impactTag}>{tag}</span>
                   ))}
                 </div>
-                
-                <Link href="#waitlist" style={{ marginTop: '1.5rem', color: '#ffffff', fontWeight: 'bold', textDecoration: 'none', display: 'inline-block' }}>
-                  {app.link}
-                </Link>
               </div>
             ))}
           </div>
           
-          <div style={{ marginTop: '5rem', textAlign: 'center', background: 'rgba(255,255,255,0.03)', padding: '4rem 2rem', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.1)' }}>
-            <h2 className={styles.title} style={{ fontSize: '2.5rem' }}>Your Participation Can Make It Real</h2>
-            <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.8)', maxWidth: '700px', margin: '0 auto 2.5rem auto', lineHeight: 1.6 }}>
-              You don't have to be a student to be part of these projects.<br/><br/>
-              <strong style={{ color: '#ffffff' }}>Use it. Test it. Volunteer. Partner. Mentor. Contribute.</strong><br/><br/>
-              Whether you're a student, developer, designer, NGO, organization, volunteer or community member, you can help turn these ideas into real-world impact.
-            </p>
-            <h3 style={{ color: '#fff', fontSize: '1.5rem', marginBottom: '2rem' }}>Be part of the first 10.</h3>
-            
-            <div className={styles.heroBtns} style={{ justifyContent: 'center' }}>
-              <Link href="#waitlist" className="btn btn-primary" style={{ background: '#ffffff', color: '#005aff' }}>Join the Impact Network →</Link>
-              <Link href="#projects" className="btn btn-ghost" style={{ color: '#ffffff', borderColor: 'rgba(255,255,255,0.3)' }}>Explore All Projects →</Link>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -260,7 +241,13 @@ export default function Academy() {
 
           <div className={styles.trackGrid}>
             <div className={styles.trackCard}>
-              <div className={styles.trackEyebrow}>Cosuniq Code</div>
+              <div className={styles.trackHeaderSpace}>
+                <div className={styles.trackEyebrow}>Cosuniq Code</div>
+                <div className={styles.trackPrice}>
+                  <span className={styles.strike}>₹49,999</span>
+                  <strong>₹19,999</strong>
+                </div>
+              </div>
               <h3>AI Agentic Fullstack Engineering</h3>
               <p>Build modern AI-powered applications using full-stack engineering, APIs, agents and production workflows.</p>
               <ul className={styles.trackTopics}>
@@ -270,26 +257,40 @@ export default function Academy() {
                 <li>Databases</li>
                 <li>Deployment</li>
                 <li>Architecture</li>
+                <li>Real Projects</li>
               </ul>
-              <Link href="#waitlist" className="btn btn-primary" style={{width: '100%', textAlign: 'center'}}>Explore Code →</Link>
+              <Link href="#waitlist" className="btn btn-primary" style={{width: '100%', textAlign: 'center'}}>Enroll in Code →</Link>
             </div>
 
             <div className={styles.trackCard}>
-              <div className={styles.trackEyebrow}>Cosuniq Design</div>
+              <div className={styles.trackHeaderSpace}>
+                <div className={styles.trackEyebrow}>Cosuniq Design</div>
+                <div className={styles.trackPrice}>
+                  <span className={styles.strike}>₹34,999</span>
+                  <strong>₹14,999</strong>
+                </div>
+              </div>
               <h3>Global Branding & Web Experience</h3>
               <p>Learn to create premium brands and digital experiences that communicate clearly and convert users.</p>
               <ul className={styles.trackTopics}>
-                <li>Brand Identity</li>
+                <li>Branding</li>
                 <li>UI/UX</li>
                 <li>Design Systems</li>
                 <li>Web Experience</li>
                 <li>Conversion</li>
+                <li>Portfolio</li>
               </ul>
-              <Link href="#waitlist" className="btn btn-primary" style={{width: '100%', textAlign: 'center'}}>Explore Design →</Link>
+              <Link href="#waitlist" className="btn btn-primary" style={{width: '100%', textAlign: 'center'}}>Enroll in Design →</Link>
             </div>
 
             <div className={styles.trackCard}>
-              <div className={styles.trackEyebrow}>Cosuniq Founder</div>
+              <div className={styles.trackHeaderSpace}>
+                <div className={styles.trackEyebrow}>Cosuniq Founder</div>
+                <div className={styles.trackPrice}>
+                  <span className={styles.strike}>₹49,999</span>
+                  <strong>₹19,999</strong>
+                </div>
+              </div>
               <h3>Startup Launchpad</h3>
               <p>Turn ideas into MVPs with product strategy, branding, technology and go-to-market thinking.</p>
               <ul className={styles.trackTopics}>
@@ -300,7 +301,28 @@ export default function Academy() {
                 <li>GTM</li>
                 <li>Pitching</li>
               </ul>
-              <Link href="#waitlist" className="btn btn-primary" style={{width: '100%', textAlign: 'center'}}>Explore Founder →</Link>
+              <Link href="#waitlist" className="btn btn-primary" style={{width: '100%', textAlign: 'center'}}>Enroll in Founder →</Link>
+            </div>
+
+            <div className={`${styles.trackCard} ${styles.completeTrackCard}`}>
+              <div>
+                <div className={styles.trackEyebrow}>Cosuniq Complete</div>
+                <h3>The Ultimate Builder Bundle</h3>
+                <p>Master Code, Design, and Founder tracks. Become a true technical founder.</p>
+                <div className={styles.impactTags} style={{ marginTop: '1.5rem', marginBottom: '1.5rem' }}>
+                  <span className={styles.impactTag} style={{ background: 'rgba(255,255,255,0.1)', color: '#fff', borderColor: 'rgba(255,255,255,0.2)' }}>Code</span>
+                  <span className={styles.impactTag} style={{ background: 'rgba(255,255,255,0.1)', color: '#fff', borderColor: 'rgba(255,255,255,0.2)' }}>Design</span>
+                  <span className={styles.impactTag} style={{ background: 'rgba(255,255,255,0.1)', color: '#fff', borderColor: 'rgba(255,255,255,0.2)' }}>Founder</span>
+                </div>
+              </div>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '1rem', minWidth: '200px' }}>
+                <div className={styles.trackPrice} style={{ alignItems: 'flex-end', flexDirection: 'column', gap: '0.2rem' }}>
+                  <span className={styles.strike} style={{ color: 'rgba(255,255,255,0.5)' }}>₹1,19,999</span>
+                  <strong>₹49,999</strong>
+                </div>
+                <Link href="#waitlist" className="btn btn-primary" style={{ background: '#ffffff', color: '#111111', width: '100%', textAlign: 'center', border: 'none' }}>Enroll in Complete →</Link>
+              </div>
             </div>
           </div>
         </div>
@@ -314,68 +336,41 @@ export default function Academy() {
             <h2 className={styles.title}>12 Weeks. One Real Outcome.</h2>
           </div>
 
-          <div className={styles.roadmapWrapper}>
-            <div className={styles.timeline}>
-              <div className={styles.timelineItem}>
-                <div className={styles.timelineWeek}>Week 01</div>
-                <div className={styles.timelineTitle}>Foundation</div>
+          <div className={styles.roadmapBentoGrid}>
+            {[
+              { icon: <FiBox size={28} color="#005aff" strokeWidth={1.5} />, title: 'Foundation', desc: 'Setup environment, version control, and core web fundamentals.' },
+              { icon: <FiUsers size={28} color="#005aff" strokeWidth={1.5} />, title: 'Product Thinking', desc: 'User research, wireframing, and UI/UX design in Figma.' },
+              { icon: <FiCode size={28} color="#005aff" strokeWidth={1.5} />, title: 'Build', desc: 'Frontend development with React and Next.js.' },
+              { icon: <FiCpu size={28} color="#005aff" strokeWidth={1.5} />, title: 'AI & Automation', desc: 'Integrating LLMs, computer vision, and workflow automation.' },
+              { icon: <FiLayout size={28} color="#005aff" strokeWidth={1.5} />, title: 'Design & Experience', desc: 'Advanced CSS, animations, and responsive layouts.' },
+              { icon: <FiServer size={28} color="#005aff" strokeWidth={1.5} />, title: 'Deploy', desc: 'Backend APIs, databases, and authentication.' },
+              { icon: <FiSliders size={28} color="#005aff" strokeWidth={1.5} />, title: 'Polish', desc: 'Connecting frontend to backend and state management.' },
+              { icon: <FiTool size={28} color="#005aff" strokeWidth={1.5} />, title: 'Refinement', desc: 'Testing, debugging, and code quality.' },
+              { icon: <FiTrendingUp size={28} color="#005aff" strokeWidth={1.5} />, title: 'Advanced Topics', desc: 'Performance optimization and SEO.' },
+              { icon: <FiActivity size={28} color="#005aff" strokeWidth={1.5} />, title: 'Performance & Scaling', desc: 'Preparing for production and scaling.' },
+              { icon: <FiStar size={28} color="#005aff" strokeWidth={1.5} />, title: 'Final Polish', desc: 'Finalizing projects, fixing bugs, and polishing.' },
+              { icon: <FiAward size={28} color="#005aff" strokeWidth={1.5} />, title: 'Showcase & Launch', desc: 'Deploying to production, demo day, and portfolio building.' }
+            ].map((week, index) => (
+              <div key={index} className={styles.roadmapBentoCard}>
+                <div className={styles.bentoNum}>{String(index + 1).padStart(2, '0')}</div>
+                <div style={{ marginBottom: '1.5rem', background: 'rgba(0, 90, 255, 0.05)', display: 'inline-flex', padding: '1rem', borderRadius: '16px', alignSelf: 'flex-start' }}>
+                  {week.icon}
+                </div>
+                <h3>{week.title}</h3>
+                <p>{week.desc}</p>
               </div>
-              <div className={styles.timelineItem}>
-                <div className={styles.timelineWeek}>Week 02</div>
-                <div className={styles.timelineTitle}>Product Thinking</div>
-              </div>
-              <div className={styles.timelineItem}>
-                <div className={styles.timelineWeek}>Week 03</div>
-                <div className={styles.timelineTitle}>Build</div>
-              </div>
-              <div className={styles.timelineItem}>
-                <div className={styles.timelineWeek}>Week 04</div>
-                <div className={styles.timelineTitle}>AI & Automation</div>
-              </div>
-              <div className={styles.timelineItem}>
-                <div className={styles.timelineWeek}>Week 05</div>
-                <div className={styles.timelineTitle}>Design & Experience</div>
-              </div>
-              <div className={styles.timelineItem}>
-                <div className={styles.timelineWeek}>Week 06</div>
-                <div className={styles.timelineTitle}>Deploy</div>
-              </div>
-              <div className={styles.timelineItem}>
-                <div className={styles.timelineWeek}>Week 07</div>
-                <div className={styles.timelineTitle}>Polish</div>
-              </div>
-              <div className={styles.timelineItem}>
-                <div className={styles.timelineWeek}>Week 08</div>
-                <div className={styles.timelineTitle}>Refinement</div>
-              </div>
-              <div className={styles.timelineItem}>
-                <div className={styles.timelineWeek}>Week 09</div>
-                <div className={styles.timelineTitle}>Advanced Topics</div>
-              </div>
-              <div className={styles.timelineItem}>
-                <div className={styles.timelineWeek}>Week 10</div>
-                <div className={styles.timelineTitle}>Performance & Scaling</div>
-              </div>
-              <div className={styles.timelineItem}>
-                <div className={styles.timelineWeek}>Week 11</div>
-                <div className={styles.timelineTitle}>Final Polish</div>
-              </div>
-              <div className={styles.timelineItem}>
-                <div className={styles.timelineWeek}>Week 12</div>
-                <div className={styles.timelineTitle}>Showcase & Launch</div>
-              </div>
-            </div>
+            ))}
+          </div>
 
-            <div className={styles.roadmapIncluded}>
-              <h4>Included</h4>
-              <ul className={styles.mentorList} style={{marginBottom: 0}}>
-                <li>Live Classes</li>
-                <li>Recordings</li>
-                <li>Doubt Sessions</li>
-                <li>Mentor Guidance</li>
-                <li>Community</li>
-                <li>Project Reviews</li>
-              </ul>
+          <div className={styles.roadmapIncludedBento}>
+            <h4>Included</h4>
+            <div className={styles.includedTags}>
+              <span>Live Classes</span>
+              <span>Recordings</span>
+              <span>Doubt Sessions</span>
+              <span>Mentor Guidance</span>
+              <span>Community</span>
+              <span>Project Reviews</span>
             </div>
           </div>
         </div>
