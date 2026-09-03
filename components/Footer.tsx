@@ -34,7 +34,7 @@ export default function Footer() {
               <a href="mailto:founder@cosuniq.in">founder@cosuniq.in</a>
               <a href="tel:+917358696546">+91 73586 96546</a>
               
-              <div className={styles.socialIcons}>
+              <div className={styles.socialIcons} style={{ marginTop: '0.5rem' }}>
                 <a href="#" className={styles.socialIcon} aria-label="LinkedIn"><FiLinkedin /></a>
                 <a href="#" className={styles.socialIcon} aria-label="YouTube"><FiYoutube /></a>
                 <a href="#" className={styles.socialIcon} aria-label="X"><SiX style={{ fontSize: '0.85rem' }} /></a>
