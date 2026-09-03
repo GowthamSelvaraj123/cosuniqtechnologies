@@ -159,3 +159,24 @@
   .middleSection { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
   .logo { font-size: 2.5rem; }
 }
+
+/* HUGE BOTTOM LOGO */
+.hugeLogoContainer {
+  margin-top: 1rem;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  padding-bottom: 0.5rem;
+}
+
+.hugeLogoImg {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  /* Make the logo white */
+  filter: brightness(0) invert(1);
+  /* Fade out at the bottom to mix with black without sharp edge */
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+  opacity: 0.9;
+}

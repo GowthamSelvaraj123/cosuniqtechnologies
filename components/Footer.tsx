@@ -58,12 +58,11 @@ export default function Footer() {
           <Link href="/terms" className={styles.legalLink}>Terms of Service</Link>
         </div>
 
-        </div>
+      </div>
 
-        {/* HUGE BOTTOM LOGO */}
-        <div className={styles.hugeLogoContainer}>
-          <h1 className={styles.hugeLogoText}>Cosuniq</h1>
-        </div>
+      {/* HUGE BOTTOM LOGO */}
+      <div className={styles.hugeLogoContainer}>
+        <img src="/assets/cosuniq-technologies.png" alt="Cosuniq Logo" className={styles.hugeLogoImg} />
       </div>
     </footer>
   );
