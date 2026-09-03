@@ -74,7 +74,7 @@ export default function Footer() {
             </div>
             <div className={styles.linkCol}>
               <span style={{ fontSize: '0.85rem', color: 'var(--footer-brand)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Contact</span>
-              <a href="mailto:founder@cosuniq.in">founder@cosuniq.in</a>
+              <a href="mailto:cosuniqtechnologies@gmail.com">cosuniqtechnologies@gmail.com</a>
               <a href="tel:+917358696546">+91 73586 96546</a>
               
               <div className={styles.socialIcons} style={{ marginTop: '0.5rem' }}>

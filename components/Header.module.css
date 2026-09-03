@@ -132,6 +132,10 @@
   overflow: hidden;
 }
 
+.menuOverlay.academyTheme {
+  background: #005aff;
+}
+
 .canvasWrapper {
   position: absolute;
   top: 0;

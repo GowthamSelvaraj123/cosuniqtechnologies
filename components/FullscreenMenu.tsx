@@ -8,6 +8,7 @@ import styles from "./Header.module.css";
 interface FullscreenMenuProps {
   isOpen: boolean;
   onClose: () => void;
+  isAcademy?: boolean;
 }
 
 const navLinks = [
@@ -54,7 +55,7 @@ const linkVariants: Variants = {
   }
 };
 
-export default function FullscreenMenu({ isOpen, onClose }: FullscreenMenuProps) {
+export default function FullscreenMenu({ isOpen, onClose, isAcademy }: FullscreenMenuProps) {
   const handleLinkClick = () => {
     document.body.style.overflow = "";
     document.documentElement.style.overflow = "";
@@ -65,7 +66,7 @@ export default function FullscreenMenu({ isOpen, onClose }: FullscreenMenuProps)
     <AnimatePresence>
       {isOpen && (
         <motion.div 
-          className={styles.menuOverlay}
+          className={`${styles.menuOverlay} ${isAcademy ? styles.academyTheme : ''}`}
           initial={{ clipPath: "circle(0% at 100% 0%)" }}
           animate={{ clipPath: "circle(150% at 100% 0%)" }}
           exit={{ clipPath: "circle(0% at 100% 0%)" }}
