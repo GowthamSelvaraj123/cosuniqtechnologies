@@ -458,7 +458,7 @@ export default function Academy() {
                     <line x1="18" y1="16" x2="18" y2="18" />
                   </svg>
                 ), 
-                title: 'Design & Experience', desc: 'Advanced CSS, animations, and responsive layouts.' 
+                title: 'Design & UX', desc: 'Advanced CSS, animations, and responsive layouts.' 
               },
               { 
                 icon: (
@@ -520,7 +520,7 @@ export default function Academy() {
                     <path d="M12 11 C 17 7 18 13 12 15 Z" fill="rgba(0,90,255,0.05)" />
                   </svg>
                 ), 
-                title: 'Performance & Scaling', desc: 'Preparing for production and scaling.' 
+                title: 'Perf & Scaling', desc: 'Preparing for production and scaling.' 
               },
               { 
                 icon: (
@@ -576,29 +576,38 @@ export default function Academy() {
       </section>
 
       {/* 9. HOW IT WORKS */}
-      <section className={styles.section}>
+      <section className={`${styles.section} ${styles.howItWorksSection}`}>
         <div className="container reveal">
-          <div className={styles.stepGrid}>
-            <div className={styles.stepCard}>
-              <div className={styles.stepNum}>01</div>
-              <h3>Learn</h3>
-              <p style={{color: 'var(--muted)'}}>Understand the concepts that actually matter.</p>
-            </div>
-            <div className={styles.stepCard}>
-              <div className={styles.stepNum}>02</div>
-              <h3>Build</h3>
-              <p style={{color: 'var(--muted)'}}>Apply them immediately to a real project.</p>
-            </div>
-            <div className={styles.stepCard}>
-              <div className={styles.stepNum}>03</div>
-              <h3>Review</h3>
-              <p style={{color: 'var(--muted)'}}>Get feedback and improve your work.</p>
-            </div>
-            <div className={styles.stepCard}>
-              <div className={styles.stepNum}>04</div>
-              <h3>Launch</h3>
-              <p style={{color: 'var(--muted)'}}>Deploy it, present it and turn it into portfolio proof.</p>
-            </div>
+          <div className={styles.sectionHeader} style={{ marginBottom: '5rem' }}>
+            <span className={styles.eyebrow}>THE PROCESS</span>
+            <h2 className={styles.title}>How It Works.</h2>
+          </div>
+
+          <div className={styles.timelineWrapper}>
+            {/* Horizontal line */}
+            <div className={styles.timelineLine} />
+
+            {[
+              { num: '01', title: 'Learn',   desc: 'Understand concepts that actually matter.' },
+              { num: '02', title: 'Practice', desc: 'Solve real problems with guidance.' },
+              { num: '03', title: 'Build',   desc: 'Apply skills to a live real-world project.' },
+              { num: '04', title: 'Review',  desc: 'Get feedback and improve your work.' },
+              { num: '05', title: 'Refine',  desc: 'Polish and optimize your project.' },
+              { num: '06', title: 'Launch',  desc: 'Deploy and turn it into portfolio proof.' },
+            ].map((step, i) => (
+              <div key={i} className={`${styles.timelineStep} ${i % 2 === 0 ? styles.timelineStepHigh : styles.timelineStepLow}`}>
+                {/* Vertical stem */}
+                <div className={styles.timelineStem} />
+                {/* Dot on the line */}
+                <div className={styles.timelineDot} />
+                {/* Card */}
+                <div className={styles.timelineCard}>
+                  <div className={styles.timelineNum}>{step.num}</div>
+                  <h3 className={styles.timelineTitle}>{step.title}</h3>
+                  <p className={styles.timelineDesc}>{step.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

@@ -1048,12 +1048,15 @@
 }
 
 .roadmapBentoCard h3 {
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   font-weight: 500;
   color: #111111;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
   line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Icon float animation */
@@ -1142,31 +1145,141 @@
   border: 1px solid rgba(0, 90, 255, 0.1);
 }
 
-/* Steps */
-.stepGrid {
+/* How It Works — 6-col staggered timeline */
+.howItWorksSection {
+  background: #005aff !important;
+  padding-bottom: 6rem;
+}
+
+.howItWorksSection .eyebrow {
+  color: rgba(255, 255, 255, 0.6) !important;
+  opacity: 1;
+}
+
+.howItWorksSection .title {
+  color: #ffffff !important;
+}
+
+.timelineWrapper {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(6, 1fr);
+  position: relative;
+  align-items: flex-end; /* cards sit on top of the line from bottom */
 }
 
-@media (max-width: 767px) {
-  .stepGrid {
-    grid-template-columns: 1fr;
-  }
+/* The horizontal rule */
+.timelineLine {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: rgba(255, 255, 255, 0.3);
+  z-index: 0;
 }
 
-.stepNum {
+/* Each column */
+.timelineStep {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 0.75rem;
+  position: relative;
+}
+
+/* Even columns sit lower (shorter stem), odd higher (longer stem) */
+.timelineStepHigh {
+  padding-bottom: 3rem;
+}
+
+.timelineStepLow {
+  padding-bottom: 1.5rem;
+}
+
+/* Vertical stem connecting card to timeline */
+.timelineStem {
+  width: 1.5px;
+  background: rgba(255, 255, 255, 0.3);
+  flex-shrink: 0;
+  align-self: flex-start;
+  margin-left: 5px; /* center on dot */
+  height: 2rem;
+}
+
+.timelineStepHigh .timelineStem {
+  height: 3.5rem;
+}
+
+.timelineStepLow .timelineStem {
+  height: 1.5rem;
+}
+
+/* Dot on timeline */
+.timelineDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.15);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0;
+}
+
+/* The white card */
+.timelineCard {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 1.25rem;
+  width: 100%;
+  backdrop-filter: blur(8px);
+  order: -1; /* card goes above stem */
+  margin-bottom: 0;
+}
+
+.timelineNum {
   font-family: var(--display);
-  font-size: 3rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.2);
-  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.3);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
 }
 
-.stepCard h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+.timelineTitle {
+  font-size: 1rem;
+  font-weight: 700;
   color: #ffffff;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+}
+
+.timelineDesc {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}
+
+@media (max-width: 991px) {
+  .timelineWrapper {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: flex-start;
+  }
+  .timelineLine { display: none; }
+  .timelineStem { display: none; }
+  .timelineStepHigh,
+  .timelineStepLow { padding-bottom: 0; }
+  .timelineCard { margin-bottom: 1.5rem; }
+}
+
+@media (max-width: 600px) {
+  .timelineWrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* Parent Trust */
