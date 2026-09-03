@@ -15,7 +15,7 @@ export default function FAQItem({ question, answer }: { question: string, answer
         aria-expanded={isOpen}
       >
         <span>{question}</span>
-        <span className={styles.faqIcon}>{isOpen ? '−' : '+'}</span>
+        <span className={styles.faqIcon}>+</span>
       </button>
       <AnimatePresence>
         {isOpen && (

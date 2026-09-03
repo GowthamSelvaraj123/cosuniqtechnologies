@@ -646,7 +646,7 @@ export default function Academy() {
       {/* 13. FAQ */}
       <section className={`${styles.section} ${styles.faqSection}`}>
         <div className="container reveal">
-          <div className={styles.sectionHeader}>
+          <div className={`${styles.sectionHeader} ${styles.left}`} style={{ marginBottom: '3rem' }}>
             <h2 className={styles.title}>Frequently Asked Questions</h2>
           </div>
           <div className={styles.faqWrapper}>
