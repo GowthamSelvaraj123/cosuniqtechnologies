@@ -552,7 +552,7 @@ export default function Academy() {
             ].map((week, index) => (
               <div key={index} className={styles.roadmapBentoCard}>
                 <div className={styles.bentoNum}>{String(index + 1).padStart(2, '0')}</div>
-                <div style={{ marginBottom: '1.5rem', display: 'inline-flex', alignSelf: 'flex-start' }}>
+                <div className={styles.bentoIconWrap}>
                   {week.icon}
                 </div>
                 <h3>{week.title}</h3>

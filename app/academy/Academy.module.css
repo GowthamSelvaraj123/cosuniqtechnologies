@@ -314,7 +314,7 @@
 
 .sectionHeader {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 .sectionHeader.left {
@@ -843,18 +843,19 @@
 
 .accordionContent {
   padding: 0 2.5rem 2.5rem 2.5rem;
-  padding-left: 5rem; /* Indent to match title (2.5rem padding + 24px icon + 1.5rem gap) */
+  padding-left: 5rem;
+  /* Indent to match title (2.5rem padding + 24px icon + 1.5rem gap) */
   animation: slideDown 0.3s ease-out forwards;
   text-align: left;
 }
 
 .accordionContentInner {
-  border-top: 1px dashed rgba(0,0,0,0.1);
+  border-top: 1px dashed rgba(0, 0, 0, 0.1);
   padding-top: 1.5rem;
 }
 
 .bundleAccordionItem .accordionContentInner {
-  border-top: 1px dashed rgba(255,255,255,0.2);
+  border-top: 1px dashed rgba(255, 255, 255, 0.2);
 }
 
 .accordionDesc {
@@ -866,7 +867,7 @@
 }
 
 .bundleAccordionItem .accordionDesc {
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .accordionTopics {
@@ -905,6 +906,7 @@
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -917,6 +919,7 @@
     align-items: flex-start;
     gap: 1rem;
   }
+
   .accordionContent {
     padding-left: 1rem;
   }
@@ -934,46 +937,102 @@
 
 .roadmapSection .title {
   color: #111111 !important;
+  font-size: clamp(1.75rem, 3vw, 2.5rem) !important;
 }
 
 .roadmapBentoGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
   background: #ffffff;
-  padding: 1.5rem;
-  border-radius: 32px;
-  border: 1px solid rgba(0, 90, 255, 0.1);
-  box-shadow: 0 10px 40px rgba(0, 90, 255, 0.05);
+  border-radius: 15px;
+  position: relative;
+  outline: 2px solid #005aff;
+  overflow: hidden;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1199px) {
   .roadmapBentoGrid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 600px) {
   .roadmapBentoGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 .roadmapBentoCard {
   background: #ffffff;
-  border-radius: 20px;
-  padding: 2rem;
-  border: 1px solid rgba(0, 90, 255, 0.05);
-  box-shadow: 0 4px 20px rgba(0, 90, 255, 0.03);
+  border-radius: 0;
+  padding: 2rem 1.5rem;
+  border: none;
   position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
 }
 
-.roadmapBentoCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 90, 255, 0.08);
+/* Row 1 — cards 1-6 */
+.roadmapBentoCard:nth-child(1),
+.roadmapBentoCard:nth-child(4) {
+  background: #ffffff;
+}
+
+.roadmapBentoCard:nth-child(2),
+.roadmapBentoCard:nth-child(5) {
+  background: #D4E5FF;
+}
+
+.roadmapBentoCard:nth-child(3),
+.roadmapBentoCard:nth-child(6) {
+  background: #005aff;
+}
+
+/* Row 2 — cards 7-12 (offset by 1 color) */
+.roadmapBentoCard:nth-child(7),
+.roadmapBentoCard:nth-child(10) {
+  background: #D4E5FF;
+}
+
+.roadmapBentoCard:nth-child(8),
+.roadmapBentoCard:nth-child(11) {
+  background: #005aff;
+}
+
+.roadmapBentoCard:nth-child(9),
+.roadmapBentoCard:nth-child(12) {
+  background: #ffffff;
+}
+
+/* Blue cards — white text/icon */
+.roadmapBentoCard:nth-child(3) h3,
+.roadmapBentoCard:nth-child(6) h3,
+.roadmapBentoCard:nth-child(8) h3,
+.roadmapBentoCard:nth-child(11) h3 {
+  color: #ffffff;
+}
+
+.roadmapBentoCard:nth-child(3) p,
+.roadmapBentoCard:nth-child(6) p,
+.roadmapBentoCard:nth-child(8) p,
+.roadmapBentoCard:nth-child(11) p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.roadmapBentoCard:nth-child(3) .bentoNum,
+.roadmapBentoCard:nth-child(6) .bentoNum,
+.roadmapBentoCard:nth-child(8) .bentoNum,
+.roadmapBentoCard:nth-child(11) .bentoNum {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.roadmapBentoCard:nth-child(3) svg,
+.roadmapBentoCard:nth-child(6) svg,
+.roadmapBentoCard:nth-child(8) svg,
+.roadmapBentoCard:nth-child(11) svg {
+  filter: brightness(0) invert(1);
 }
 
 .bentoNum {
@@ -989,18 +1048,55 @@
 }
 
 .roadmapBentoCard h3 {
-  font-size: 1.15rem;
-  font-weight: 800;
+  font-size: 1.05rem;
+  font-weight: 500;
   color: #111111;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
+  line-height: 1.3;
 }
 
+/* Icon float animation */
+@keyframes iconFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.roadmapBentoCard .bentoIconWrap {
+  display: inline-flex;
+  align-self: flex-start;
+  margin-bottom: 1rem;
+  animation: iconFloat 3s ease-in-out infinite;
+}
+
+.roadmapBentoCard:nth-child(1) .bentoIconWrap { animation-delay: 0s; }
+.roadmapBentoCard:nth-child(2) .bentoIconWrap { animation-delay: 0.25s; }
+.roadmapBentoCard:nth-child(3) .bentoIconWrap { animation-delay: 0.5s; }
+.roadmapBentoCard:nth-child(4) .bentoIconWrap { animation-delay: 0.75s; }
+.roadmapBentoCard:nth-child(5) .bentoIconWrap { animation-delay: 1s; }
+.roadmapBentoCard:nth-child(6) .bentoIconWrap { animation-delay: 1.25s; }
+.roadmapBentoCard:nth-child(7) .bentoIconWrap { animation-delay: 1.5s; }
+.roadmapBentoCard:nth-child(8) .bentoIconWrap { animation-delay: 1.75s; }
+.roadmapBentoCard:nth-child(9) .bentoIconWrap { animation-delay: 2s; }
+.roadmapBentoCard:nth-child(10) .bentoIconWrap { animation-delay: 2.25s; }
+.roadmapBentoCard:nth-child(11) .bentoIconWrap { animation-delay: 2.5s; }
+.roadmapBentoCard:nth-child(12) .bentoIconWrap { animation-delay: 2.75s; }
+
 .roadmapBentoCard p {
-  font-size: 0.9rem;
-  color: #555555;
-  line-height: 1.5;
+  font-size: 0.88rem;
+  color: #666666;
+  line-height: 1.6;
   flex-grow: 1;
+  min-height: 4.5rem;
+}
+
+.roadmapArrowConnector {
+  position: absolute;
+  right: -16px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  pointer-events: none;
 }
 
 .roadmapIncludedBento {
