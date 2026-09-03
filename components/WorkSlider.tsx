@@ -1,9 +1,40 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 export default function WorkSlider() {
   const sliderRef = useRef<HTMLDivElement>(null);
+  const [showArrows, setShowArrows] = useState(false);
+
+  useEffect(() => {
+    const checkOverflow = () => {
+      if (sliderRef.current) {
+        // scrollWidth > clientWidth detects if the container has scrollable overflow
+        const isOverflowing = sliderRef.current.scrollWidth > sliderRef.current.clientWidth + 5;
+        // fallback heuristic just in case scrollWidth is acting up in this layout
+        const hasManyChildren = sliderRef.current.children.length > 3;
+        setShowArrows(isOverflowing || hasManyChildren);
+      }
+    };
+    
+    checkOverflow();
+
+    // Use ResizeObserver for robust layout-shift detection
+    const observer = new ResizeObserver(() => checkOverflow());
+    if (sliderRef.current) {
+      observer.observe(sliderRef.current);
+      // Observe the first child as well, since its size dictates the scrollWidth
+      if (sliderRef.current.firstElementChild) {
+        observer.observe(sliderRef.current.firstElementChild);
+      }
+    }
+    
+    window.addEventListener("resize", checkOverflow);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", checkOverflow);
+    };
+  }, []);
 
   const slideBy = (dir: number) => {
     if (!sliderRef.current) return;
@@ -50,20 +81,22 @@ export default function WorkSlider() {
             }}><span className="spark spark--inline"></span>Featured work</span>
             <h2>Work that’s worked.</h2>
           </div>
-          <div className="slider-controls">
-            <button type="button" className="slider-btn" aria-label="Previous" onClick={() => slideBy(-1)}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="19" y1="12" x2="5" y2="12"></line>
-                <polyline points="12 19 5 12 12 5"></polyline>
-              </svg>
-            </button>
-            <button type="button" className="slider-btn" aria-label="Next" onClick={() => slideBy(1)}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </button>
-          </div>
+          {showArrows && (
+            <div className="slider-controls">
+              <button type="button" className="slider-btn" aria-label="Previous" onClick={() => slideBy(-1)}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="19" y1="12" x2="5" y2="12"></line>
+                  <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+              </button>
+              <button type="button" className="slider-btn" aria-label="Next" onClick={() => slideBy(1)}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          )}
         </div>
 
         <div className="work-slider" ref={sliderRef}>
@@ -77,6 +110,29 @@ export default function WorkSlider() {
               <div className="tags"><span>Product</span><span>E-com</span></div>
             </div>
           </article>
+
+          <article className="work-slide">
+            <div className="work-slide__img">
+              <img src="/assets/images/bento-mobile.jpg" alt="Classbell App" />
+            </div>
+            <div className="work-slide__meta">
+              <h3>Classbell</h3>
+              <p>An intuitive mobile application designed to seamlessly streamline communications and daily operations.</p>
+              <div className="tags"><span>Mobile App</span></div>
+            </div>
+          </article>
+
+          <article className="work-slide">
+            <div className="work-slide__img">
+              <img src="/assets/images/dashboard.png" alt="Shopify Inventory Sync 4" />
+            </div>
+            <div className="work-slide__meta">
+              <h3>Shopify Inventory Sync 4</h3>
+              <p>A robust inventory management system built to provide seamless, real-time synchronization with Shopify stores.</p>
+              <div className="tags"><span>Inventory</span><span>Shopify</span></div>
+            </div>
+          </article>
+
           <article className="work-slide">
             <div className="work-slide__img">
               <img src="/assets/images/orangebabe_mockup.jpg" alt="Orangebabe kids ecommerce" />

@@ -31,6 +31,28 @@ export default function Portfolio() {
               </div>
             </article>
 
+            <article className="portfolio-item reveal" data-category="mobile">
+              <div className="portfolio-thumb">
+                <img src="/assets/images/bento-mobile.jpg" alt="Classbell App" />
+              </div>
+              <div className="portfolio-body">
+                <span className="tag">Mobile App</span>
+                <h3>Classbell</h3>
+                <p>An intuitive mobile application designed to seamlessly streamline communications and daily operations.</p>
+              </div>
+            </article>
+
+            <article className="portfolio-item reveal" data-category="inventory">
+              <div className="portfolio-thumb">
+                <img src="/assets/images/dashboard.png" alt="Shopify Inventory Sync 4" />
+              </div>
+              <div className="portfolio-body">
+                <span className="tag">Shopify / Inventory</span>
+                <h3>Shopify Inventory Sync 4</h3>
+                <p>A robust inventory management system built to provide seamless, real-time synchronization with Shopify stores.</p>
+              </div>
+            </article>
+
             <article className="portfolio-item reveal" data-category="ecommerce">
               <div className="portfolio-thumb">
                 <img src="/assets/images/orangebabe_mockup.jpg" alt="Orangebabe" />

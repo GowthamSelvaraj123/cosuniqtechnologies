@@ -13,7 +13,7 @@ export default function Footer() {
         {/* TOP SECTION */}
         <div className={styles.topSection}>
           <div className={styles.slogan}>
-            Inspired by the Cosmos<span className={styles.orangeDot}>.</span><br />Defined by Uniqueness<span className={styles.orangeDot}>.</span>
+            Inspired by<br />the Universe<span className={styles.orangeDot}>.</span><br />Defined by Uniqueness<span className={styles.orangeDot}>.</span>
           </div>
           
           <div className={styles.linkColumns}>
