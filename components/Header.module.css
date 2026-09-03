@@ -146,31 +146,75 @@
   pointer-events: none;
 }
 
-.menuContent {
+.menuGrid {
   position: relative;
   z-index: 1;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  gap: 1.5rem;
+  width: 90vw;
+  max-width: 1400px;
+  margin-top: 60px; /* clear header */
+}
+
+.menuContent {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* Makes children span full width for the border */
+  width: 55%;
 }
 
 .navLink {
-  font-size: clamp(3rem, 7vw, 6rem);
+  width: 100%;
+  font-size: clamp(2rem, 3.5vw, 4rem); /* Reduced to fit viewport nicely */
   font-family: var(--font-plus-jakarta);
-  font-weight: 800;
+  font-weight: 500; /* Lighter weight for better white balance */
   color: #ffffff;
   text-decoration: none;
   text-transform: uppercase;
   line-height: 1;
   letter-spacing: -0.02em;
   position: relative;
-  display: inline-block;
-  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .navLink:hover {
-  color: rgba(255, 255, 255, 0.6);
+  transform: translateX(15px);
+}
+
+/* Remove the last border */
+.menuContent > div:last-child .navLink {
+  border-bottom: none;
+}
+
+.linkInner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+.navNumber {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: var(--display);
+  letter-spacing: 0.1em;
+  align-self: center;
+}
+
+.navText {
+  transition: all 0.4s ease;
+  flex-grow: 1;
+}
+
+.navLink:hover .navText {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8);
 }
 
 .linkInner {
@@ -182,8 +226,8 @@
 .arrow {
   color: #ffffff;
   opacity: 0;
-  transform: translateX(-20px);
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateX(-40px) scale(0.8);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .navLink:hover .arrow {
@@ -191,24 +235,83 @@
   transform: translateX(0);
 }
 
-.menuFooter {
-  position: absolute;
-  bottom: 3rem;
-  z-index: 1;
-  text-align: center;
+.menuRight {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  text-align: left;
+  width: 35%;
 }
 
-.contactCTA {
-  font-family: var(--display);
-  font-size: 1.25rem;
+.menuRightBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.menuRightBlock h4 {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.menuRightBlock a {
   color: #ffffff;
   text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: color 0.3s ease;
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  font-family: var(--display);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  transition: color 0.2s ease;
 }
 
-.contactCTA:hover {
+.menuRightBlock a:hover {
   color: rgba(255, 255, 255, 0.6);
+}
+
+.menuSocials {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.menuSocials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 1.4rem;
+  transition: all 0.3s ease;
+}
+
+.menuSocials a:hover {
+  background: #ffffff;
+  color: var(--brand); /* will use orange or blue based on theme */
+  transform: translateY(-4px) scale(1.05);
+  border-color: #ffffff;
+}
+
+@media (max-width: 900px) {
+  .menuGrid {
+    flex-direction: column;
+    align-items: stretch;
+    width: 90vw;
+    gap: 4rem;
+    overflow-y: auto;
+    max-height: 100vh;
+    padding: 120px 0 40px;
+    margin-top: 0;
+  }
+  
+  .menuRight {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3rem;
+  }
 }

@@ -2,6 +2,8 @@
 
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import Link from "next/link";
+import { FiLinkedin, FiYoutube, FiInstagram } from "react-icons/fi";
+import { SiX } from "react-icons/si";
 import styles from "./Header.module.css";
 
 
@@ -73,42 +75,54 @@ export default function FullscreenMenu({ isOpen, onClose, isAcademy }: Fullscree
           transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
         >
 
-          <motion.div 
-            className={styles.menuContent}
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-          >
-            {navLinks.map((link, i) => (
-              <motion.div key={i} variants={linkVariants}>
-                <Link href={link.href} className={styles.navLink} onClick={handleLinkClick}>
-                  <div className={styles.linkInner}>
-                    <span>{link.name}</span>
-                    <span className={styles.arrow}>
-                      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    </span>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </motion.div>
-          
-          <motion.div 
-            className={styles.menuFooter}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0, transition: { delay: 0.8, duration: 0.5 } }}
-            exit={{ opacity: 0, y: 20, transition: { duration: 0.3 } }}
-          >
-            <Link href="/contact" className={styles.contactCTA} onClick={handleLinkClick}>
-              Let's build something 
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </Link>
-          </motion.div>
+          <div className={styles.menuGrid}>
+            <motion.div 
+              className={styles.menuContent}
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+            >
+              {navLinks.map((link, i) => (
+                <motion.div key={i} variants={linkVariants}>
+                  <Link href={link.href} className={styles.navLink} onClick={handleLinkClick}>
+                    <div className={styles.linkInner}>
+                      <span className={styles.navNumber}>0{i + 1}</span>
+                      <span className={styles.navText}>{link.name}</span>
+                      <span className={styles.arrow}>
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </span>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </motion.div>
+            
+            <motion.div 
+              className={styles.menuRight}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0, transition: { delay: 0.6, duration: 0.5 } }}
+              exit={{ opacity: 0, x: 20, transition: { duration: 0.3 } }}
+            >
+              <div className={styles.menuRightBlock}>
+                <h4>Get in Touch</h4>
+                <a href="mailto:cosuniqtechnologies@gmail.com" onClick={handleLinkClick}>cosuniqtechnologies@gmail.com</a>
+                <a href="tel:+917358696546" onClick={handleLinkClick}>+91 73586 96546</a>
+              </div>
+              
+              <div className={styles.menuRightBlock}>
+                <h4>Follow Us</h4>
+                <div className={styles.menuSocials}>
+                  <a href="#" aria-label="LinkedIn"><FiLinkedin /></a>
+                  <a href="#" aria-label="YouTube"><FiYoutube /></a>
+                  <a href="#" aria-label="X"><SiX /></a>
+                  <a href="#" aria-label="Instagram"><FiInstagram /></a>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </motion.div>
       )}
     </AnimatePresence>
