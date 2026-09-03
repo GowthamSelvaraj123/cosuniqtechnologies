@@ -1,15 +1,67 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import InitReveal from "../../components/InitReveal";
 import AcademyHero from "../../components/AcademyHero";
 import FinalCta from "../../components/FinalCta";
 import styles from "./Academy.module.css";
 import FAQItem from "./FAQItem";
-import { FiBox, FiUsers, FiCode, FiCpu, FiLayout, FiServer, FiSliders, FiTool, FiTrendingUp, FiActivity, FiStar, FiAward, FiHeart, FiPackage, FiMapPin, FiCoffee, FiBookOpen, FiMic, FiAlertCircle, FiMap, FiUserCheck } from "react-icons/fi";
+import { FiBox, FiUsers, FiCode, FiCpu, FiLayout, FiServer, FiSliders, FiTool, FiTrendingUp, FiActivity, FiStar, FiAward, FiHeart, FiPackage, FiMapPin, FiCoffee, FiBookOpen, FiMic, FiAlertCircle, FiMap, FiUserCheck, FiChevronDown, FiChevronRight } from "react-icons/fi";
 
 export default function Academy() {
+  const [openTrack, setOpenTrack] = useState<number | null>(null);
+
+  const academyTracks = [
+    {
+      id: 0,
+      eyebrow: "Cosuniq Code",
+      title: "AI Agentic Fullstack Engineering",
+      desc: "Build modern AI-powered applications using full-stack engineering, APIs, agents and production workflows.",
+      strikePrice: "₹49,999",
+      price: "₹19,999",
+      topics: ["AI Agents", "Full Stack", "APIs", "Databases", "Deployment", "Architecture", "Real Projects"],
+      link: "#waitlist",
+      linkText: "Enroll in Code →",
+      isBundle: false
+    },
+    {
+      id: 1,
+      eyebrow: "Cosuniq Design",
+      title: "Global Branding & Web Experience",
+      desc: "Learn to create premium brands and digital experiences that communicate clearly and convert users.",
+      strikePrice: "₹34,999",
+      price: "₹14,999",
+      topics: ["Branding", "UI/UX", "Design Systems", "Web Experience", "Conversion", "Portfolio"],
+      link: "#waitlist",
+      linkText: "Enroll in Design →",
+      isBundle: false
+    },
+    {
+      id: 2,
+      eyebrow: "Cosuniq Founder",
+      title: "Startup Launchpad",
+      desc: "Turn ideas into MVPs with product strategy, branding, technology and go-to-market thinking.",
+      strikePrice: "₹49,999",
+      price: "₹19,999",
+      topics: ["Idea Validation", "Product Strategy", "MVP", "Branding", "GTM", "Pitching"],
+      link: "#waitlist",
+      linkText: "Enroll in Founder →",
+      isBundle: false
+    },
+    {
+      id: 3,
+      eyebrow: "Cosuniq Complete",
+      title: "The Ultimate Builder Bundle",
+      desc: "Master Code, Design, and Founder tracks. Become a true technical founder.",
+      strikePrice: "₹1,19,999",
+      price: "₹49,999",
+      topics: ["All Code Topics", "All Design Topics", "All Founder Topics", "Priority Support", "Lifetime Updates"],
+      link: "#waitlist",
+      linkText: "Enroll in Complete →",
+      isBundle: true
+    }
+  ];
   const socialApps = [
     {
       title: "LifeDrop",
@@ -254,7 +306,7 @@ export default function Academy() {
       </section>
 
       {/* 6. WHAT WILL YOU BUILD? */}
-      <section className={`${styles.section} ${styles.sectionBg}`}>
+      <section className={`${styles.section} ${styles.sectionBg} ${styles.impactSectionContainer}`}>
         <div className="container reveal">
           <div className={styles.impactGrid}>
             <div className={styles.impactCenterHeader}>
@@ -286,91 +338,59 @@ export default function Academy() {
             <h2 className={styles.title}>Choose Your Path. Build Your Future.</h2>
           </div>
 
-          <div className={styles.trackGrid}>
-            <div className={styles.trackCard}>
-              <div className={styles.trackHeaderSpace}>
-                <div className={styles.trackEyebrow}>Cosuniq Code</div>
-                <div className={styles.trackPrice}>
-                  <span className={styles.strike}>₹49,999</span>
-                  <strong>₹19,999</strong>
-                </div>
-              </div>
-              <h3>AI Agentic Fullstack Engineering</h3>
-              <p>Build modern AI-powered applications using full-stack engineering, APIs, agents and production workflows.</p>
-              <ul className={styles.trackTopics}>
-                <li>AI Agents</li>
-                <li>Full Stack</li>
-                <li>APIs</li>
-                <li>Databases</li>
-                <li>Deployment</li>
-                <li>Architecture</li>
-                <li>Real Projects</li>
-              </ul>
-              <Link href="#waitlist" className="btn btn-primary" style={{width: '100%', textAlign: 'center'}}>Enroll in Code →</Link>
-            </div>
-
-            <div className={styles.trackCard}>
-              <div className={styles.trackHeaderSpace}>
-                <div className={styles.trackEyebrow}>Cosuniq Design</div>
-                <div className={styles.trackPrice}>
-                  <span className={styles.strike}>₹34,999</span>
-                  <strong>₹14,999</strong>
-                </div>
-              </div>
-              <h3>Global Branding & Web Experience</h3>
-              <p>Learn to create premium brands and digital experiences that communicate clearly and convert users.</p>
-              <ul className={styles.trackTopics}>
-                <li>Branding</li>
-                <li>UI/UX</li>
-                <li>Design Systems</li>
-                <li>Web Experience</li>
-                <li>Conversion</li>
-                <li>Portfolio</li>
-              </ul>
-              <Link href="#waitlist" className="btn btn-primary" style={{width: '100%', textAlign: 'center'}}>Enroll in Design →</Link>
-            </div>
-
-            <div className={styles.trackCard}>
-              <div className={styles.trackHeaderSpace}>
-                <div className={styles.trackEyebrow}>Cosuniq Founder</div>
-                <div className={styles.trackPrice}>
-                  <span className={styles.strike}>₹49,999</span>
-                  <strong>₹19,999</strong>
-                </div>
-              </div>
-              <h3>Startup Launchpad</h3>
-              <p>Turn ideas into MVPs with product strategy, branding, technology and go-to-market thinking.</p>
-              <ul className={styles.trackTopics}>
-                <li>Idea Validation</li>
-                <li>Product Strategy</li>
-                <li>MVP</li>
-                <li>Branding</li>
-                <li>GTM</li>
-                <li>Pitching</li>
-              </ul>
-              <Link href="#waitlist" className="btn btn-primary" style={{width: '100%', textAlign: 'center'}}>Enroll in Founder →</Link>
-            </div>
-
-            <div className={`${styles.trackCard} ${styles.completeTrackCard}`}>
-              <div>
-                <div className={styles.trackEyebrow}>Cosuniq Complete</div>
-                <h3>The Ultimate Builder Bundle</h3>
-                <p>Master Code, Design, and Founder tracks. Become a true technical founder.</p>
-                <div className={styles.impactTags} style={{ marginTop: '1.5rem', marginBottom: '1.5rem' }}>
-                  <span className={styles.impactTag} style={{ background: 'rgba(255,255,255,0.1)', color: '#fff', borderColor: 'rgba(255,255,255,0.2)' }}>Code</span>
-                  <span className={styles.impactTag} style={{ background: 'rgba(255,255,255,0.1)', color: '#fff', borderColor: 'rgba(255,255,255,0.2)' }}>Design</span>
-                  <span className={styles.impactTag} style={{ background: 'rgba(255,255,255,0.1)', color: '#fff', borderColor: 'rgba(255,255,255,0.2)' }}>Founder</span>
-                </div>
-              </div>
+          <div className={styles.accordionList}>
+            {academyTracks.map((track) => {
+              const isOpen = openTrack === track.id;
               
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '1rem', minWidth: '200px' }}>
-                <div className={styles.trackPrice} style={{ alignItems: 'flex-end', flexDirection: 'column', gap: '0.2rem' }}>
-                  <span className={styles.strike} style={{ color: 'rgba(255,255,255,0.5)' }}>₹1,19,999</span>
-                  <strong>₹49,999</strong>
+              return (
+                <div 
+                  key={track.id} 
+                  className={`${styles.accordionItem} ${isOpen ? styles.accordionItemOpen : ''} ${track.isBundle ? styles.bundleAccordionItem : ''}`}
+                >
+                  <div 
+                    className={styles.accordionHeader} 
+                    onClick={() => setOpenTrack(isOpen ? null : track.id)}
+                  >
+                    <div className={styles.accordionHeaderLeft}>
+                      <div className={styles.accordionArrow}>
+                        {isOpen ? <FiChevronDown size={24} /> : <FiChevronRight size={24} />}
+                      </div>
+                      <div className={styles.accordionTitleBlock}>
+                        <span className={styles.accordionEyebrow}>{track.eyebrow}</span>
+                        <h3 className={styles.accordionTitle}>{track.title}</h3>
+                      </div>
+                    </div>
+                    
+                    <div className={styles.accordionHeaderRight}>
+                      <span className={styles.accordionStrike}>{track.strikePrice}</span>
+                      <strong className={styles.accordionPrice}>{track.price}</strong>
+                    </div>
+                  </div>
+                  
+                  {isOpen && (
+                    <div className={styles.accordionContent}>
+                      <div className={styles.accordionContentInner}>
+                        <p className={styles.accordionDesc}>{track.desc}</p>
+                        
+                        <ul className={styles.accordionTopics}>
+                          {track.topics.map((topic, index) => (
+                            <li key={index}>{topic}</li>
+                          ))}
+                        </ul>
+                        
+                        <Link 
+                          href={track.link} 
+                          className={`btn ${track.isBundle ? 'btn-primary' : 'btn-outline'}`}
+                          style={track.isBundle ? { background: '#ffffff', color: '#111111', border: 'none' } : {}}
+                        >
+                          {track.linkText}
+                        </Link>
+                      </div>
+                    </div>
+                  )}
                 </div>
-                <Link href="#waitlist" className="btn btn-primary" style={{ background: '#ffffff', color: '#111111', width: '100%', textAlign: 'center', border: 'none' }}>Enroll in Complete →</Link>
-              </div>
-            </div>
+              );
+            })}
           </div>
         </div>
       </section>
