@@ -613,27 +613,53 @@ export default function Academy() {
       </section>
 
       {/* 10. PARENT TRUST SECTION */}
-      <section className={`${styles.section} ${styles.trustSection}`}>
+      <section className={`${styles.section} ${styles.parentSection}`}>
         <div className={`container ${styles.parentGrid} reveal`}>
-          <div>
-            <h2 className={styles.trustHeadline} style={{marginBottom: '1rem', fontSize: 'clamp(2rem, 3vw, 2.5rem)'}}>For Parents: Know What Your Student Is Getting.</h2>
-            <p className={styles.trustSubtitle}>Clear learning. Real projects. Visible mentorship. No vague promises.</p>
-            
-            <ul className={styles.trustCheckList}>
+
+          {/* LEFT — Blue Butterfly SVG */}
+          <div className={styles.butterflyWrap}>
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className={styles.butterflySvg} aria-hidden="true">
+              {/* Body */}
+              <ellipse cx="100" cy="100" rx="5" ry="40" fill="#005aff" opacity="0.9"/>
+              {/* Antennae */}
+              <line x1="100" y1="62" x2="82" y2="44" stroke="#005aff" strokeWidth="2" strokeLinecap="round"/>
+              <circle cx="80" cy="42" r="3" fill="#005aff"/>
+              <line x1="100" y1="62" x2="118" y2="44" stroke="#005aff" strokeWidth="2" strokeLinecap="round"/>
+              <circle cx="120" cy="42" r="3" fill="#005aff"/>
+              {/* Upper left wing */}
+              <path d="M96 80 C 60 50 20 55 22 90 C 24 118 70 120 96 105 Z" fill="#005aff" opacity="0.85"/>
+              {/* Upper right wing */}
+              <path d="M104 80 C 140 50 180 55 178 90 C 176 118 130 120 104 105 Z" fill="#005aff" opacity="0.85"/>
+              {/* Lower left wing */}
+              <path d="M96 108 C 55 115 30 145 45 162 C 58 176 88 158 96 132 Z" fill="#005aff" opacity="0.7"/>
+              {/* Lower right wing */}
+              <path d="M104 108 C 145 115 170 145 155 162 C 142 176 112 158 104 132 Z" fill="#005aff" opacity="0.7"/>
+              {/* Wing dots / texture */}
+              <circle cx="65" cy="85" r="8" fill="rgba(255,255,255,0.2)"/>
+              <circle cx="50" cy="100" r="5" fill="rgba(255,255,255,0.15)"/>
+              <circle cx="135" cy="85" r="8" fill="rgba(255,255,255,0.2)"/>
+              <circle cx="150" cy="100" r="5" fill="rgba(255,255,255,0.15)"/>
+              <circle cx="60" cy="140" r="6" fill="rgba(255,255,255,0.15)"/>
+              <circle cx="140" cy="140" r="6" fill="rgba(255,255,255,0.15)"/>
+            </svg>
+          </div>
+
+          {/* RIGHT — Content */}
+          <div className={styles.parentContent}>
+            <span className={styles.eyebrow}>FOR PARENTS</span>
+            <h2 className={styles.parentTitle}>Built for trust. Designed for results.</h2>
+            <p className={styles.parentDesc}>Clear learning. Real projects. Visible mentorship. No vague promises.</p>
+            <ul className={styles.parentCheckList}>
               <li>Transparent curriculum</li>
               <li>Clear learning roadmap</li>
               <li>Mentor visibility</li>
               <li>Practical projects</li>
               <li>Direct support</li>
+              <li>Progress tracking</li>
             </ul>
+            <Link href="/contact" className={`btn btn-primary ${styles.parentBtn}`}>Talk to a Mentor →</Link>
           </div>
-          <div style={{background: 'var(--white)', padding: '3rem', borderRadius: 'var(--radius-lg)', border: '1px solid var(--line)', textAlign: 'center'}}>
-            <h3 style={{fontSize: '1.5rem', marginBottom: '1rem'}}>Have questions before joining?</h3>
-            <div className={styles.heroBtns} style={{justifyContent: 'center', flexDirection: 'column', gap: '1rem'}}>
-              <Link href="/contact" className="btn btn-primary" style={{width: '100%'}}>Talk to a Mentor</Link>
-              <a href="#" className="btn btn-secondary" style={{width: '100%'}}>WhatsApp Us</a>
-            </div>
-          </div>
+
         </div>
       </section>
 

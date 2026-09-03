@@ -1288,18 +1288,112 @@
   }
 }
 
-/* Parent Trust */
+/* Parent Trust — Butterfly Layout */
+.parentSection {
+  background: #EEF4FF !important;
+}
+
+.parentSection .eyebrow {
+  color: #005aff;
+  border-color: rgba(0, 90, 255, 0.2);
+  background: rgba(0, 90, 255, 0.07);
+}
+
 .parentGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 5rem;
   align-items: center;
 }
 
 @media (max-width: 991px) {
   .parentGrid {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
+}
+
+.butterflyWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.butterflySvg {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  filter: drop-shadow(0 20px 40px rgba(0, 90, 255, 0.2));
+  animation: butterflyFloat 4s ease-in-out infinite;
+}
+
+@keyframes butterflyFloat {
+  0%, 100% { transform: translateY(0px) rotate(-1deg); }
+  50% { transform: translateY(-12px) rotate(1deg); }
+}
+
+.parentContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.parentTitle {
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: #111111;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.parentDesc {
+  font-size: 1rem;
+  color: #555555;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  max-width: 480px;
+}
+
+.parentCheckList {
+  list-style: none;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem 1.5rem;
+  width: 100%;
+}
+
+.parentCheckList li {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.parentCheckList li::before {
+  content: "✓";
+  color: #005aff;
+  font-weight: 800;
+  font-size: 0.85rem;
+  width: 18px;
+  height: 18px;
+  background: rgba(0, 90, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 1;
+  padding-top: 1px;
+}
+
+.parentBtn {
+  margin-top: 0.5rem;
+  align-self: flex-start;
 }
 
 .checkList {
