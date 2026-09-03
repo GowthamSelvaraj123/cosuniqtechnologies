@@ -24,7 +24,7 @@ export default function Footer() {
                       display: "inline-block", 
                       transform: `rotate(${r}deg)`,
                       transformOrigin: "bottom center",
-                      marginRight: char === " " ? "0.3em" : "0.05em"
+                      marginRight: char === " " ? "0.5em" : "0.15em"
                     }}
                   >
                     {char === " " ? "\u00A0" : char}
@@ -39,12 +39,12 @@ export default function Footer() {
                 const r = rotations[index % rotations.length];
                 return (
                   <span 
-                    key={index} 
+                    key={index}
                     style={{ 
                       display: "inline-block", 
                       transform: `rotate(${r}deg)`,
                       transformOrigin: "bottom center",
-                      marginRight: char === " " ? "0.3em" : "0.05em"
+                      marginRight: char === " " ? "0.5em" : "0.15em"
                     }}
                   >
                     {char === " " ? "\u00A0" : char}

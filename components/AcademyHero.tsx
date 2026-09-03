@@ -12,10 +12,10 @@ export default function AcademyHero() {
   
   const [wordIndex, setWordIndex] = useState(0);
   const rotatingWords = [
-    "Launch.",
-    "Scale.",
-    "Succeed.",
-    "Grow.",
+    "Innovate.",
+    "Build.",
+    "Design.",
+    "Lead.",
   ];
 
   useEffect(() => {
@@ -53,9 +53,9 @@ export default function AcademyHero() {
             COSUNIQ ACADEMY
           </span>
           
-          <h1 className={styles.headline}>
-            Build. Brand.<br />
-            <span style={{ display: "inline-block", position: "relative", width: "100%", height: "1.25em" }}>
+          <h1 className={styles.headline} style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "0.2em" }}>
+            Learn to
+            <span style={{ display: "inline-block", position: "relative", width: "5em", height: "1.25em" }}>
               <AnimatePresence>
                 <motion.span
                   key={wordIndex}
@@ -72,7 +72,7 @@ export default function AcademyHero() {
           </h1>
           
           <p className={styles.description}>
-            Only 1000 students get this opportunity. Cosuniq Academy is a practical, mentor-led learning environment for the next generation of AI engineers, designers and startup builders.
+            Join 1,000 elite students in a highly practical, mentor-led environment. Fast-track your career and become the next generation of AI engineers, designers, and startup builders.
           </p>
           
           <div className={styles.services}>
@@ -112,7 +112,7 @@ export default function AcademyHero() {
 
         {/* Right Column: Magnetic 3D Visual */}
         <div className={styles.canvasWrapper}>
-          <MagneticCore scrollProgressRef={scrollRef} />
+          <MagneticCore scrollProgressRef={scrollRef} colorTheme="yellow" />
         </div>
       </div>
     </section>

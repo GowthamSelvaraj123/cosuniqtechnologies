@@ -179,7 +179,13 @@ const particleFragmentShader = `
 
 // --- COMPONENT ---
 
-function MagneticParticles({ scrollProgressRef }: { scrollProgressRef: React.MutableRefObject<number> }) {
+function MagneticParticles({ 
+  scrollProgressRef,
+  colorTheme = "orange"
+}: { 
+  scrollProgressRef: React.MutableRefObject<number>;
+  colorTheme?: "orange" | "yellow";
+}) {
   const count = 12000;
   const meshRef = useRef<THREE.Points>(null);
   const materialRef = useRef<THREE.ShaderMaterial>(null);
@@ -206,12 +212,19 @@ function MagneticParticles({ scrollProgressRef }: { scrollProgressRef: React.Mut
     const ph = new Float32Array(count);
     const bpos = new Float32Array(count * 3);
     
-    const colorPalette = [
-      new THREE.Color("#D95400"),
-      new THREE.Color("#B94700"),
-      new THREE.Color("#963800"),
-      new THREE.Color("#722A00"),
-    ];
+    const colorPalette = colorTheme === "yellow" 
+      ? [
+          new THREE.Color("#FFFFFF"), // White-hot core for better contrast
+          new THREE.Color("#FFFF00"), // Pure electric yellow
+          new THREE.Color("#FFE600"), // Deep yellow
+          new THREE.Color("#FFD700"), // Gold
+        ]
+      : [
+          new THREE.Color("#D95400"),
+          new THREE.Color("#B94700"),
+          new THREE.Color("#963800"),
+          new THREE.Color("#722A00"),
+        ];
 
     let validPixels: {x: number, y: number}[] = [];
     if (typeof document !== 'undefined') {
@@ -283,8 +296,8 @@ function MagneticParticles({ scrollProgressRef }: { scrollProgressRef: React.Mut
       col[i * 3 + 1] = baseColor.g;
       col[i * 3 + 2] = baseColor.b;
 
-      // Varying sizes
-      sz[i] = Math.random() * 4.0 + 1.0;
+      // Varying sizes - make yellow theme slightly larger for better visibility against blue
+      sz[i] = (Math.random() * 4.0 + 1.0) * (colorTheme === "yellow" ? 1.5 : 1.0);
       
       // Phase for organic breathing
       ph[i] = Math.random() * Math.PI * 2;
@@ -299,7 +312,7 @@ function MagneticParticles({ scrollProgressRef }: { scrollProgressRef: React.Mut
     }
 
     return [pos, col, sz, ph, bpos];
-  }, [count, mounted]);
+  }, [count, mounted, colorTheme]);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -354,14 +367,20 @@ function MagneticParticles({ scrollProgressRef }: { scrollProgressRef: React.Mut
   );
 }
 
-export default function MagneticCore({ scrollProgressRef }: { scrollProgressRef: React.MutableRefObject<number> }) {
+export default function MagneticCore({ 
+  scrollProgressRef,
+  colorTheme = "orange"
+}: { 
+  scrollProgressRef: React.MutableRefObject<number>;
+  colorTheme?: "orange" | "yellow";
+}) {
   return (
     <Canvas 
       camera={{ position: [0, 0, 15], fov: 45 }} 
       dpr={[1, 2]} 
       style={{ width: "100%", height: "100%" }}
     >
-      <MagneticParticles scrollProgressRef={scrollProgressRef} />
+      <MagneticParticles scrollProgressRef={scrollProgressRef} colorTheme={colorTheme} />
     </Canvas>
   );
 }
