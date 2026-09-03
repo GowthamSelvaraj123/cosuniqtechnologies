@@ -278,7 +278,7 @@ export default function Academy() {
           
           <div className={styles.mentorContent}>
             <span className={styles.eyebrow}>MEET YOUR MENTOR</span>
-            <h2 className={styles.title} style={{ fontSize: 'clamp(2.5rem, 4vw, 3.5rem)' }}>Learn. Build. Ship.</h2>
+            <h2 className={styles.title}>Learn. Build. Ship.</h2>
             
             <div className={styles.mentorCard}>
               <div className={styles.mentorHeader}>
@@ -333,7 +333,7 @@ export default function Academy() {
       {/* 7. THREE ACADEMY TRACKS */}
       <section className={`${styles.section} ${styles.trackSection}`}>
         <div className="container reveal">
-          <div className={styles.sectionHeader}>
+          <div className={`${styles.sectionHeader} ${styles.left}`}>
             <span className={styles.eyebrow}>ACADEMY TRACKS</span>
             <h2 className={styles.title}>Choose Your Path. Build Your Future.</h2>
           </div>
