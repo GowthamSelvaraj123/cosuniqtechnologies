@@ -898,6 +898,9 @@
   .teamSection {
     padding: 2.5rem 0;
   }
+  .teamGrid {
+    padding-bottom: 0px;
+  }
 }
 
 @media (max-width: 480px) {

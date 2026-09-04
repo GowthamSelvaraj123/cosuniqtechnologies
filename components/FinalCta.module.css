@@ -375,8 +375,7 @@
 
   .processContainer {
     max-width: 320px;
-    margin-left: -0.5rem;
-    margin-top: 1.5rem;
+    margin: 1.5rem auto 0;
   }
 
   /* Keep first/last name on same row on mobile */
