@@ -862,9 +862,32 @@
     width: 100%;
   }
 
-  .serviceSectionInner { grid-template-columns: 1fr; gap: 3rem; }
+  .serviceSectionInner { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 0; 
+    align-items: flex-start;
+  }
   .serviceSectionInner.reverse { direction: ltr; }
   .serviceSectionInner.reverse > * { direction: ltr; }
+  
+  .serviceContent {
+    display: contents;
+  }
+  
+  .serviceVisual {
+    order: 10;
+  }
+  
+  .moreDetailsBtn {
+    order: 11;
+    align-self: flex-start;
+    margin-top: 0.5rem;
+  }
+
+  .serviceSection {
+    padding: 4rem 0 !important;
+  }
   .techCategories { grid-template-columns: repeat(3,1fr); }
   .faqInner { grid-template-columns: 1fr; gap: 3rem; }
   .faqLeft { position: static; }
@@ -880,15 +903,28 @@
   .processSteps { grid-template-columns: 1fr; }
   .processStep { border-radius: 0 !important; }
   .phoneMockSide { display: none; }
-  .capabilitiesList { grid-template-columns: 1fr; }
+  .capabilitiesList { 
+    grid-template-columns: 1fr 1fr;
+    margin: 0 0 1.5rem;
+  }
+  .toolIcon {
+    height: 36px;
+    padding: 0 12px;
+    font-size: 0.7rem;
+  }
+  .toolIcon svg {
+    font-size: 0.9rem;
+  }
   .dashBody { grid-template-columns: 1fr; }
   .dashSidebar { display: none; }
   .whyItem { padding: 2.5rem; }
+  .techTabContent { grid-template-columns: repeat(4, 1fr); }
 }
 
 @media (max-width: 520px) {
   .servicesGrid { grid-template-columns: 1fr; }
   .bentoWide, .bentoTall { grid-column: span 1; grid-row: span 1; }
+  .techTabContent { grid-template-columns: repeat(3, 1fr); gap: 0.35rem; }
 }
 
 
@@ -1029,4 +1065,9 @@
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .serviceCardImage { display: none !important; }
+  .cardImgLeft .serviceCardContent, .cardImgRight .serviceCardContent { width: 100% !important; padding: 0 !important; }
 }

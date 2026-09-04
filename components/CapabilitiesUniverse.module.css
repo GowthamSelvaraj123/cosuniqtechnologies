@@ -306,7 +306,7 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .section {
     padding: 5rem 0 4rem;
   }
@@ -322,9 +322,9 @@
   }
 
   .ctaMobileOnly {
-    display: flex;
+    display: flex !important;
     width: max-content;
-    margin: 1rem auto 0;
+    margin: 1rem 0 0 0;
   }
 
   .grid {
