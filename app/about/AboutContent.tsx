@@ -251,7 +251,7 @@ export default function AboutContent() {
         <div className="container">
           <div className={styles.sliderHeader}>
             <motion.div className={styles.teamHeader} {...fadeUpParams}>
-              <div className={`eyebrow ${styles.eyebrowWrap}`} style={{ marginBottom: '2rem', display: 'inline-flex' }}>
+              <div className={`eyebrow ${styles.eyebrowWrap}`} style={{ marginBottom: '1rem', display: 'inline-flex' }}>
                 <span className="spark spark--inline" />
                 OUR TEAM
               </div>
