@@ -9,8 +9,6 @@ export default function Portfolio() {
   return (
     <>
       <InitReveal />
-      <title>Work / Portfolio | Cosuniq Technologies</title>
-      <meta name="description" content="Selected Cosuniq projects across software, e-commerce, branding, and video." />
 
       <InnerBanner 
         title="Selected work"
