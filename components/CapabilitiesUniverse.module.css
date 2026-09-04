@@ -331,11 +331,14 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
     padding-bottom: 2.5rem;
+    align-items: stretch;
   }
   
   .card {
     padding: 1.25rem 1rem 1rem;
     gap: 1rem;
+    height: 100%;
+    min-height: 0;
   }
   
   .icon {
@@ -356,13 +359,13 @@
     font-size: 0.75rem;
   }
 
-  /* Scattered effect for mobile 2-column */
+  /* Scattered effect for mobile 2-column — keep same card-y so heights stay even */
   .card:nth-child(odd) {
     --card-y: 0rem;
     --card-rot: -1.5deg;
   }
   .card:nth-child(even) {
-    --card-y: 1.5rem;
+    --card-y: 0rem;
     --card-rot: 1.5deg;
   }
 
