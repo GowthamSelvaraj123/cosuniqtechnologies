@@ -290,7 +290,7 @@ export default function FinalCta({ variant = 'default' }: { variant?: 'default' 
           <form className={styles.form} onSubmit={handleSubmit} noValidate>
             {variant === 'default' ? (
               <>
-                <div className={styles.row}>
+                <div className={`${styles.row} ${styles.row1}`}>
                   <div className={styles.inputGroup}>
                     <input 
                       type="text" 
@@ -313,7 +313,7 @@ export default function FinalCta({ variant = 'default' }: { variant?: 'default' 
                   </div>
                 </div>
                 
-                <div className={styles.row}>
+                <div className={`${styles.row} ${styles.row2}`}>
                   <div className={styles.inputGroup}>
                     <input 
                       type="email" 
@@ -336,7 +336,7 @@ export default function FinalCta({ variant = 'default' }: { variant?: 'default' 
                   </div>
                 </div>
 
-                <div className={styles.row}>
+                <div className={`${styles.row} ${styles.row3}`}>
                   <div className={styles.inputGroup}>
                     <input 
                       type="text" 

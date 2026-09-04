@@ -3,7 +3,7 @@
   background-color: #FFF6F0 !important;
   color: #111111;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .academyBg {
@@ -129,6 +129,7 @@
 .rightColumn {
   width: 100%;
   max-width: 600px;
+  overflow: visible;
 }
 
 .form {
@@ -136,6 +137,8 @@
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  overflow: visible;
+  padding: 0.5rem 1.5rem 0.5rem;
 }
 
 .row {
@@ -144,15 +147,39 @@
   gap: 1.25rem;
 }
 
-/* Scattered Tilt Effect */
+/* Scatter per row — whole row tilts */
+.row1 {
+  transform: rotate(-2deg) translateX(-8px);
+}
+
+.row2 {
+  transform: rotate(1.5deg) translateX(10px);
+}
+
+.row3 {
+  transform: rotate(-1deg) translateX(-5px);
+}
+
+/* Individual input tilt within rows */
 .row .inputGroup:first-child .input,
 .row .inputGroup:first-child .select {
-  transform: rotate(-1.5deg);
+  transform: rotate(-1.5deg) translateY(-2px);
 }
 
 .row .inputGroup:last-child .input,
 .row .inputGroup:last-child .select {
-  transform: rotate(1.5deg);
+  transform: rotate(1.5deg) translateY(2px);
+}
+
+/* Solo standalone fields */
+.form > .inputGroup:nth-child(odd) .input,
+.form > .inputGroup:nth-child(odd) .textarea {
+  transform: rotate(-1.5deg) translateX(-4px);
+}
+
+.form > .inputGroup:nth-child(even) .input,
+.form > .inputGroup:nth-child(even) .textarea {
+  transform: rotate(1.5deg) translateX(4px);
 }
 
 .inputGroup {
