@@ -28,21 +28,21 @@ export default function Header() {
   const spring = useSpring(scrollProgress, { stiffness: 90, damping: 22, mass: 0.6 });
 
   // Animate from pill (0) to full-width (1) — all values spring-interpolated
-  const top          = useTransform(spring, [0, 1], [isMobile ? 16 : 24, 0]);
-  const left         = useTransform(spring, [0, 1], [isMobile ? "2.5vw" : "5vw", "0vw"]);
-  const width        = useTransform(spring, [0, 1], [isMobile ? "95vw" : "90vw", "100vw"]);
-  const borderRadius = useTransform(spring, [0, 1], [100, 0]);
-  const paddingTop   = useTransform(spring, [0, 1], [isMobile ? 10 : 12, isMobile ? 12 : 14]);
-  const paddingBot   = useTransform(spring, [0, 1], [isMobile ? 10 : 12, isMobile ? 12 : 14]);
+  const top          = useTransform(spring, [0, 1], [isMobile ? 0 : 24, 0]);
+  const left         = useTransform(spring, [0, 1], [isMobile ? "0vw" : "5vw", "0vw"]);
+  const width        = useTransform(spring, [0, 1], [isMobile ? "100vw" : "90vw", "100vw"]);
+  const borderRadius = useTransform(spring, [0, 1], [isMobile ? 0 : 100, 0]);
+  const paddingTop   = useTransform(spring, [0, 1], [isMobile ? 12 : 12, isMobile ? 12 : 14]);
+  const paddingBot   = useTransform(spring, [0, 1], [isMobile ? 12 : 12, isMobile ? 12 : 14]);
   const paddingLeft  = useTransform(spring, [0, 1], [isMobile ? 16 : 24, isMobile ? 24 : 48]);
   const paddingRight = useTransform(spring, [0, 1], [isMobile ? 12 : 16, isMobile ? 24 : 48]);
   const bgOpacity    = useTransform(spring, [0, 1], [1.0, 1.0]);
   const boxShadow    = useTransform(
     spring,
     [0, 1],
-    ["0 10px 40px rgba(0,0,0,0.06)", "0 2px 20px rgba(0,0,0,0.07)"]
+    [isMobile ? "0 2px 20px rgba(0,0,0,0.07)" : "0 10px 40px rgba(0,0,0,0.06)", "0 2px 20px rgba(0,0,0,0.07)"]
   );
-  const borderOpacity  = useTransform(spring, [0, 1], [0.18, 0.09]);
+  const borderOpacity  = useTransform(spring, [0, 1], [isMobile ? 0 : 0.18, 0.09]);
   // Derived string values — must be top-level, NOT inside style={{}}
   const backgroundColor = useTransform(bgOpacity,     (v) => `rgba(255,255,255,${v})`);
   const borderStyle     = useTransform(borderOpacity, (v) => `1px solid rgba(0,0,0,${v})`);

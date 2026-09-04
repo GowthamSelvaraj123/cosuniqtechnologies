@@ -19,6 +19,9 @@ export default function MenuOrb({ onClick, isOpen }: MenuOrbProps) {
   const mouseY = useSpring(0, springConfig);
 
   useEffect(() => {
+    // Disable magnetic hover on mobile devices
+    if (window.innerWidth < 900) return;
+
     const handleMouseMove = (e: MouseEvent) => {
       if (!orbRef.current) return;
       
@@ -58,8 +61,8 @@ export default function MenuOrb({ onClick, isOpen }: MenuOrbProps) {
         style={{
           x: mouseX,
           y: mouseY,
-          width: 54,
-          height: 54,
+          width: "var(--orb-size, 54px)",
+          height: "var(--orb-size, 54px)",
           borderRadius: "50%",
           background: isOpen ? "var(--text)" : "var(--white)",
           border: isOpen ? "1px solid var(--text)" : "1px solid var(--line)",

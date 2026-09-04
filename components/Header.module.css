@@ -35,6 +35,12 @@
   object-fit: contain;
 }
 
+@media (max-width: 900px) {
+  .brand img {
+    height: 26px; /* smaller on mobile */
+  }
+}
+
 .brandText {
   display: flex;
   flex-direction: column;
@@ -99,6 +105,17 @@
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
+@media (max-width: 900px) {
+  .roundCallIcon {
+    width: 36px;
+    height: 36px;
+  }
+  .roundCallIcon svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
 .roundCallIcon:hover {
   transform: scale(1.08);
   background-color: var(--header-brand-hover);
@@ -108,6 +125,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  --orb-size: 54px;
+}
+
+@media (max-width: 900px) {
+  .menuToggle {
+    --orb-size: 40px;
+  }
 }
 
 @media (max-width: 900px) {
