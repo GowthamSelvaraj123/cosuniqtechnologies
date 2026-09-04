@@ -117,7 +117,7 @@
 .value {
   font-family: var(--display);
   font-size: clamp(2.2rem, 5vw, 3.8rem);
-  font-weight: 800;
+  font-weight: normal;
   line-height: 1;
   letter-spacing: -0.04em;
   color: #111111;
@@ -173,7 +173,7 @@
 
 .card3 .showcaseImg img {
   /* You can change this to top left, bottom left, or exact percentages like 10% 50% */
-  object-position: top left; 
+  object-position: top left;
 }
 
 .card4 .showcaseImg img {
@@ -299,6 +299,16 @@
 
   .card {
     padding: 1.5rem;
+  }
+
+  .card:nth-child(odd) {
+    --card-rot: -2deg;
+    transform: translateX(-4%) translateY(var(--card-y)) rotate(var(--card-rot));
+  }
+
+  .card:nth-child(even) {
+    --card-rot: 2deg;
+    transform: translateX(4%) translateY(var(--card-y)) rotate(var(--card-rot));
   }
 
   .value {
