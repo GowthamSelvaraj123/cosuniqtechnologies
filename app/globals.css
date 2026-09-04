@@ -3028,7 +3028,7 @@ body {
 
   .lifecycle-grid {
     grid-template-columns: 1fr !important;
-    gap: 2.5rem;
+    gap: 1.5rem;
     padding: 0;
     border: none;
     padding-bottom: 0;
@@ -3041,12 +3041,14 @@ body {
 
   .process-card:nth-child(odd) {
     --card-y: 0px;
-    --card-rot: -1.5deg;
+    --card-rot: -2deg;
+    transform: translateX(-4%) translateY(var(--card-y)) rotate(var(--card-rot));
   }
 
   .process-card:nth-child(even) {
     --card-y: 0px;
-    --card-rot: 1.5deg;
+    --card-rot: 2deg;
+    transform: translateX(4%) translateY(var(--card-y)) rotate(var(--card-rot));
   }
 
   .process-card::after {
@@ -3056,12 +3058,12 @@ body {
   .process-card:not(:last-child)::after {
     display: block !important;
     top: auto;
-    bottom: -38px;
+    bottom: -28px;
     right: auto;
     left: 50%;
     transform: translateX(-50%) rotate(90deg);
-    width: 50px;
-    height: 30px;
+    width: 35px;
+    height: 20px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
