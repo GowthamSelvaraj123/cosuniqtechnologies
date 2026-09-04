@@ -326,16 +326,81 @@
     flex-direction: column;
     align-items: stretch;
     width: 90vw;
-    gap: 4rem;
+    gap: 2rem;
     overflow-y: auto;
     max-height: 100vh;
-    padding: 120px 0 40px;
+    padding: 100px 0 40px;
     margin-top: 0;
   }
   
   .menuRight {
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 3rem;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .menuOverlay {
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0 1.5rem;
+    overflow-y: auto;
+  }
+
+  .menuGrid {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0;
+    padding: 90px 0 2rem;
+    max-height: none;
+    overflow-y: visible;
+  }
+
+  .menuContent {
+    width: 100%;
+  }
+
+  .navLink {
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
+    padding: 1rem 0;
+    white-space: nowrap;
+  }
+
+  .linkInner {
+    gap: 0.75rem;
+  }
+
+  .navNumber {
+    font-size: 0.9rem;
+    min-width: 2rem;
+  }
+
+  .arrow svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .menuRight {
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .menuRightBlock {
+    gap: 0.75rem;
+  }
+
+  .menuRightBlock a {
+    font-size: 1rem;
+  }
+
+  .menuSocials a {
+    width: 42px;
+    height: 42px;
+    font-size: 1.1rem;
   }
 }
