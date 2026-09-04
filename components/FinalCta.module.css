@@ -383,11 +383,5 @@
     gap: 0.5rem;
   }
   
-  /* Reset tilt on mobile so it doesn't look messy in a single column */
-  .row .inputGroup:first-child .input,
-  .row .inputGroup:first-child .select,
-  .row .inputGroup:last-child .input,
-  .row .inputGroup:last-child .select {
-    transform: rotate(0);
-  }
+  /* Forceful scatter enabled on mobile by removing tilt reset */
 }

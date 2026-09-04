@@ -271,32 +271,30 @@
   grid-column: 1 / -1;
 }
 
-/* Staggering form fields */
-@media (min-width: 768px) {
-  .formCard:nth-child(1) {
-    --card-y: 0rem;
-    --card-rot: -1deg;
-  }
+/* Staggering form fields globally */
+.formCard:nth-child(1) {
+  --card-y: 0rem;
+  --card-rot: -1deg;
+}
 
-  .formCard:nth-child(2) {
-    --card-y: 0.15rem;
-    --card-rot: 1deg;
-  }
+.formCard:nth-child(2) {
+  --card-y: 0.15rem;
+  --card-rot: 1deg;
+}
 
-  .formCard:nth-child(3) {
-    --card-y: 0.1rem;
-    --card-rot: 1.5deg;
-  }
+.formCard:nth-child(3) {
+  --card-y: 0.1rem;
+  --card-rot: 1.5deg;
+}
 
-  .formCard:nth-child(4) {
-    --card-y: -0.1rem;
-    --card-rot: -1deg;
-  }
+.formCard:nth-child(4) {
+  --card-y: -0.1rem;
+  --card-rot: -1deg;
+}
 
-  .formCard:nth-child(5) {
-    --card-y: 0rem;
-    --card-rot: 0.5deg;
-  }
+.formCard:nth-child(5) {
+  --card-y: 0rem;
+  --card-rot: 0.5deg;
 }
 
 .formGroup {
