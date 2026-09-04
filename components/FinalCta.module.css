@@ -346,8 +346,9 @@
     font-size: clamp(1.8rem, 8vw, 2.6rem);
   }
 
+  /* Keep first/last name on same row on mobile */
   .row {
-    grid-template-columns: 1fr;
+    gap: 0.5rem;
   }
   
   /* Reset tilt on mobile so it doesn't look messy in a single column */

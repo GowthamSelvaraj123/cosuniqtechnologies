@@ -146,16 +146,24 @@
 
 @media (max-width: 600px) {
   .footerContainer {
-    padding: 3rem 1.5rem 1.5rem;
+    padding: 2rem 1.25rem 1rem;
   }
 
   .linkColumns {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 1.5rem;
   }
 
   .slogan {
-    font-size: 2.5rem;
+    font-size: 2rem;
+  }
+
+  .topSection {
+    margin-bottom: 2rem;
+  }
+
+  .linkCol {
+    gap: 0.75rem;
   }
 
   .middleSection {
