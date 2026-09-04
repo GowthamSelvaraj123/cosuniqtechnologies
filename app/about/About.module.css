@@ -352,11 +352,25 @@
 }
 
 .evolutionImage {
-  width: 100%;
+  width: 400px;
+  max-width: 100%;
   height: auto;
   display: block;
   object-fit: contain;
   transition: transform 0.6s ease;
+  transform: scale(-1);
+  position: absolute;
+  top: -109px;
+  right: 0px;
+}
+@media (max-width: 960px) {
+  .evolutionImage {
+    position: relative;
+    top: 0;
+    width: 100%;
+    margin-top: 1rem;
+    transform: scale(-1);
+  }
 }
 
 .storyHeader .eyebrow {
@@ -674,8 +688,8 @@
   }
 
   .vmBlock {
-    padding: 6rem 5vw;
-    min-height: 60vh;
+    padding: 4rem 5vw;
+    min-height: auto;
   }
 }
 
@@ -791,26 +805,24 @@
 }
 
 /* Staggered positions for slider */
-@media (min-width: 768px) {
-  .teamCard:nth-child(4n + 1) {
-    --card-y: 0rem;
-    --card-rot: -1.5deg;
-  }
+.teamCard:nth-child(4n + 1) {
+  --card-y: 0rem;
+  --card-rot: -1.5deg;
+}
 
-  .teamCard:nth-child(4n + 2) {
-    --card-y: -1rem;
-    --card-rot: 1deg;
-  }
+.teamCard:nth-child(4n + 2) {
+  --card-y: -1rem;
+  --card-rot: 1deg;
+}
 
-  .teamCard:nth-child(4n + 3) {
-    --card-y: 0.5rem;
-    --card-rot: -1deg;
-  }
+.teamCard:nth-child(4n + 3) {
+  --card-y: 0.5rem;
+  --card-rot: -1deg;
+}
 
-  .teamCard:nth-child(4n + 4) {
-    --card-y: -0.5rem;
-    --card-rot: 1.5deg;
-  }
+.teamCard:nth-child(4n + 4) {
+  --card-y: -0.5rem;
+  --card-rot: 1.5deg;
 }
 
 .teamImageWrapper {
@@ -881,7 +893,10 @@
   .sliderHeader {
     flex-direction: column;
     align-items: flex-start;
-    gap: 2rem;
+    gap: 1rem;
+  }
+  .teamSection {
+    padding: 2.5rem 0;
   }
 }
 

@@ -351,12 +351,12 @@
   }
 
   .leftColumn {
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .subtext {
-    margin: 0 auto;
+    margin: 0;
   }
 
   .rightColumn {
@@ -371,6 +371,12 @@
 
   .headline {
     font-size: clamp(1.8rem, 8vw, 2.6rem);
+  }
+
+  .processContainer {
+    max-width: 320px;
+    margin-left: -0.5rem;
+    margin-top: 1.5rem;
   }
 
   /* Keep first/last name on same row on mobile */

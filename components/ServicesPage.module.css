@@ -918,8 +918,12 @@
   .dashBody { grid-template-columns: 1fr; }
   .dashSidebar { display: none; }
   .whyItem { padding: 2.5rem; }
+  .techHeader { margin-bottom: 1.5rem; }
+  .techHeadline { margin-top: 0.5rem; }
+  .sectionEyebrow { margin-bottom: 0.5rem; }
+  .techTabsContainer { margin-top: 1rem; }
   .techTabsHeader {
-    flex-wrap: nowrap;
+    flex-wrap: nowrap !important;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
@@ -929,8 +933,8 @@
     display: none;
   }
   .techTabContent {
-    display: flex;
-    flex-wrap: nowrap;
+    display: flex !important;
+    flex-wrap: nowrap !important;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
@@ -987,25 +991,11 @@
   background: #e6e6e6;
   color: #111;
 }
-@keyframes fillTabProgress {
-  0% { width: 0%; }
-  100% { width: 100%; }
-}
-
 .techTabBtnActive {
-  background: #f2f2f2;
+  background: rgba(255, 106, 0, 0.15); /* Light orange fill */
   color: #ff6a00;
   box-shadow: 0 4px 14px rgba(255,106,0,0.15);
-  overflow: hidden;
   position: relative;
-}
-.techTabBtnActive::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; height: 100%;
-  background: rgba(255, 106, 0, 0.15); /* Light orange fill */
-  z-index: 0;
-  animation: fillTabProgress 5s linear forwards;
 }
 .techTabBtnActive:hover {
   background: #f2f2f2;

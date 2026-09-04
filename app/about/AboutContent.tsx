@@ -171,7 +171,6 @@ export default function AboutContent() {
                 className={styles.evolutionImage}
                 quality={90}
                 unoptimized
-                style={{transform: "scale(-1)", top: "-109px", position:"absolute", width:"400px", right:"0px"}}
               />
             </motion.div>
           </div>

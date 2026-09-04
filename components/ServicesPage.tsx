@@ -754,6 +754,7 @@ const getTabIcon = (title: string) => {
 function TechStackSection() {
   const [activeTab, setActiveTab] = useState(0);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const tabsContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Start auto-advance timer
@@ -765,6 +766,20 @@ function TechStackSection() {
       if (timerRef.current) clearInterval(timerRef.current);
     };
   }, []);
+
+  useEffect(() => {
+    // Auto-scroll to the active tab smoothly
+    if (tabsContainerRef.current) {
+      const activeBtn = tabsContainerRef.current.children[activeTab] as HTMLElement;
+      if (activeBtn) {
+        const scrollLeft = activeBtn.offsetLeft - tabsContainerRef.current.offsetLeft - 16;
+        tabsContainerRef.current.scrollTo({
+          left: Math.max(0, scrollLeft),
+          behavior: 'smooth'
+        });
+      }
+    }
+  }, [activeTab]);
 
   const handleTabClick = (idx: number) => {
     setActiveTab(idx);
@@ -783,7 +798,7 @@ function TechStackSection() {
             <h2 className={styles.techHeadline}>Technologies we master<span className={styles.overviewDot}>.</span></h2>
           </div>
           <div className={styles.techTabsContainer}>
-          <div className={styles.techTabsHeader}>
+          <div className={styles.techTabsHeader} ref={tabsContainerRef}>
             {techCategories.map((cat, idx) => (
               <button 
                 key={cat.title} 
