@@ -87,6 +87,9 @@ export default function ResultsShowcase() {
               <span className={styles.value}>1<span style={{ fontSize: '0.6em', verticalAlign: 'super' }}>st</span></span>
               <p className={styles.label}>Your vision comes first. We build tailor-made solutions, not cookie-cutter templates.</p>
             </div>
+            <div className={styles.showcaseImg}>
+              <img src="/assets/images/custom-vision.png" alt="Custom tailored vision" />
+            </div>
           </div>
 
         </div>
