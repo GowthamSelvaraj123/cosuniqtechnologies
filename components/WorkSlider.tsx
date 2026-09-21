@@ -52,12 +52,7 @@ export default function WorkSlider() {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        backgroundColor: '#000000db', /* Darker burnt orange */
-        backgroundImage: 'url(/assets/images/office.jpg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
-        backgroundBlendMode: 'multiply'
+        backgroundColor: '#0a0a0a'
       }}
     >
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
@@ -101,56 +96,62 @@ export default function WorkSlider() {
 
         <div className="work-slider" ref={sliderRef}>
           <article className="work-slide">
-            <div className="work-slide__img">
-              <img src="/assets/images/laptop.jpg" alt="Own Product: Sellgy" />
-            </div>
-            <div className="work-slide__meta">
-              <h3>Own Product: Sellgy</h3>
-              <p>Our proprietary, scalable e-commerce application engineered for high-performance and seamless shopping experiences.</p>
+            <img className="work-slide__bg" src="/assets/images/sellgy_ui.jpg" alt="Own Product: Sellgy" />
+            <div className="work-slide__overlay"></div>
+            <div className="work-slide__content">
               <div className="tags"><span>Product</span><span>E-com</span></div>
+              <div className="work-slide__meta">
+                <h3>Own Product: Sellgy</h3>
+                <p>Our proprietary, scalable e-commerce application engineered for high-performance and seamless shopping experiences.</p>
+              </div>
             </div>
           </article>
 
           <article className="work-slide">
-            <div className="work-slide__img">
-              <img src="/assets/images/bento-mobile.jpg" alt="Classbell App" />
-            </div>
-            <div className="work-slide__meta">
-              <h3>Classbell</h3>
-              <p>An intuitive mobile application designed to seamlessly streamline communications and daily operations.</p>
+            <img className="work-slide__bg" src="/assets/images/classbell_ui.jpg" alt="Classbell App" />
+            <div className="work-slide__overlay"></div>
+            <div className="work-slide__content">
               <div className="tags"><span>Mobile App</span></div>
+              <div className="work-slide__meta">
+                <h3>Classbell</h3>
+                <p>An intuitive mobile application designed to seamlessly streamline communications and daily operations.</p>
+              </div>
             </div>
           </article>
 
           <article className="work-slide">
-            <div className="work-slide__img">
-              <img src="/assets/images/dashboard.png" alt="Shopify Inventory Sync 4" />
-            </div>
-            <div className="work-slide__meta">
-              <h3>Shopify Inventory Sync 4</h3>
-              <p>A robust inventory management system built to provide seamless, real-time synchronization with Shopify stores.</p>
+            <img className="work-slide__bg" src="/assets/images/shopify_sync_ui.jpg" alt="Shopify Inventory Sync 4" />
+            <div className="work-slide__overlay"></div>
+            <div className="work-slide__content">
               <div className="tags"><span>Inventory</span><span>Shopify</span></div>
+              <div className="work-slide__meta">
+                <h3>Shopify Inventory Sync 4</h3>
+                <p>A robust inventory management system built to provide seamless, real-time synchronization with Shopify stores.</p>
+              </div>
             </div>
           </article>
 
           <article className="work-slide">
-            <div className="work-slide__img">
-              <img src="/assets/images/orangebabe_mockup.jpg" alt="Orangebabe kids ecommerce" />
-            </div>
-            <div className="work-slide__meta">
-              <h3>Orangebabe</h3>
-              <p>Developed a vibrant, playful e-commerce platform for children that significantly boosted customer engagement.</p>
+            <img className="work-slide__bg" src="/assets/images/orangebabe_mockup.jpg" alt="Orangebabe kids ecommerce" />
+            <div className="work-slide__overlay"></div>
+            <div className="work-slide__content">
               <div className="tags"><span>E-com</span><span>Brand</span></div>
+              <div className="work-slide__meta">
+                <h3>Orangebabe</h3>
+                <p>Developed a vibrant, playful e-commerce platform for children that significantly boosted customer engagement.</p>
+              </div>
             </div>
           </article>
+
           <article className="work-slide">
-            <div className="work-slide__img">
-              <img src="/assets/images/hero-brand.jpg" alt="Cosuniq Technologies" />
-            </div>
-            <div className="work-slide__meta">
-              <h3>Cosuniq Technologies</h3>
-              <p>In-depth analysis and strategic framework for positioning modern brands in competitive digital markets.</p>
+            <img className="work-slide__bg" src="/assets/images/hero-brand.jpg" alt="Cosuniq Technologies" />
+            <div className="work-slide__overlay"></div>
+            <div className="work-slide__content">
               <div className="tags"><span>Research</span><span>Brand</span></div>
+              <div className="work-slide__meta">
+                <h3>Cosuniq Technologies</h3>
+                <p>In-depth analysis and strategic framework for positioning modern brands in competitive digital markets.</p>
+              </div>
             </div>
           </article>
         </div>
