@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function WorkLifecycle() {
   return (
@@ -57,11 +58,26 @@ export default function WorkLifecycle() {
           <article className="process-card">
             <span className="process-num">01</span>
             <div style={{ marginBottom: '2rem' }}>
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FF6B00" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M2 14 C 8 10 16 14 22 10" />
-                <path d="M10 12 C 10 12 12 4 18 6 C 18 6 20 14 10 12 Z" fill="rgba(255,107,0,0.1)" />
-                <ellipse cx="14" cy="9.5" rx="2" ry="2.5" fill="#ffffff" />
-              </svg>
+              <motion.svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FF6B00" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"
+                style={{ overflow: 'visible' }}
+                animate={{ y: [0, -3, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <motion.path d="M2 14 C 8 10 16 14 22 10" 
+                  initial={{ pathLength: 0 }}
+                  animate={{ pathLength: 1 }}
+                  transition={{ duration: 1.5, ease: "easeInOut" }}
+                />
+                <motion.path d="M10 12 C 10 12 12 4 18 6 C 18 6 20 14 10 12 Z" fill="rgba(255,107,0,0.1)" 
+                  initial={{ pathLength: 0, opacity: 0 }}
+                  animate={{ pathLength: 1, opacity: 1 }}
+                  transition={{ duration: 1.5, delay: 0.5, ease: "easeInOut" }}
+                />
+                <motion.ellipse cx="14" cy="9.5" rx="2" ry="2.5" fill="#ffffff" 
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                />
+              </motion.svg>
             </div>
             <h3 style={{ fontSize: '1.4rem', marginBottom: '0.75rem' }}>Origin</h3>
             <p style={{ margin: 0, maxWidth: '85%' }}>Strategy, planning, and aligning on goals before the work begins.</p>
@@ -70,17 +86,22 @@ export default function WorkLifecycle() {
           <article className="process-card">
             <span className="process-num">02</span>
             <div style={{ marginBottom: '2rem' }}>
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FF6B00" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+              <motion.svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FF6B00" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" style={{ overflow: 'visible' }}>
                 <path d="M2 18 L 22 18" />
-                <path d="M5 16 A 3 3 0 0 1 11 16 A 3 3 0 0 1 17 16 A 2.5 2.5 0 0 1 21 16" fill="rgba(255,107,0,0.1)" />
-                <circle cx="21" cy="14.5" r="0.5" fill="#FF6B00" stroke="none" />
-                <path d="M20 13 Q 21 10 23 11" />
-                <path d="M19 13 Q 18 10 17 10" />
-                <line x1="6" y1="16" x2="6" y2="18" />
-                <line x1="8" y1="16" x2="8" y2="18" />
-                <line x1="12" y1="16" x2="12" y2="18" />
-                <line x1="14" y1="16" x2="14" y2="18" />
-              </svg>
+                <motion.g
+                  animate={{ x: [0, 2, 0, -2, 0] }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <path d="M5 16 A 3 3 0 0 1 11 16 A 3 3 0 0 1 17 16 A 2.5 2.5 0 0 1 21 16" fill="rgba(255,107,0,0.1)" />
+                  <circle cx="21" cy="14.5" r="0.5" fill="#FF6B00" stroke="none" />
+                  <motion.path d="M20 13 Q 21 10 23 11" animate={{ rotate: [0, 10, 0] }} style={{ transformOrigin: "20px 13px" }} transition={{ duration: 2, repeat: Infinity }} />
+                  <motion.path d="M19 13 Q 18 10 17 10" animate={{ rotate: [0, -10, 0] }} style={{ transformOrigin: "19px 13px" }} transition={{ duration: 2, repeat: Infinity }} />
+                  <motion.line x1="6" y1="16" x2="6" y2="18" animate={{ y: [0, -1, 0] }} transition={{ duration: 1, repeat: Infinity, delay: 0 }} />
+                  <motion.line x1="8" y1="16" x2="8" y2="18" animate={{ y: [0, -1, 0] }} transition={{ duration: 1, repeat: Infinity, delay: 0.25 }} />
+                  <motion.line x1="12" y1="16" x2="12" y2="18" animate={{ y: [0, -1, 0] }} transition={{ duration: 1, repeat: Infinity, delay: 0.5 }} />
+                  <motion.line x1="14" y1="16" x2="14" y2="18" animate={{ y: [0, -1, 0] }} transition={{ duration: 1, repeat: Infinity, delay: 0.75 }} />
+                </motion.g>
+              </motion.svg>
             </div>
             <h3 style={{ fontSize: '1.4rem', marginBottom: '0.75rem' }}>Form</h3>
             <p style={{ margin: 0, maxWidth: '85%' }}>Gathering ideas, laying the strategic foundation, and core design.</p>
@@ -89,13 +110,19 @@ export default function WorkLifecycle() {
           <article className="process-card">
             <span className="process-num">03</span>
             <div style={{ marginBottom: '2rem' }}>
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FF6B00" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FF6B00" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" style={{ overflow: 'visible' }}>
                 <path d="M4 4 L 20 4" />
-                <line x1="12" y1="4" x2="12" y2="7" />
-                <path d="M10 7 L 14 7 C 16 11 15 17 12 22 C 9 17 8 11 10 7 Z" fill="rgba(255,107,0,0.1)" />
-                <path d="M9.5 11 L 14.5 11" />
-                <path d="M9.2 15 L 14.8 15" />
-                <path d="M10.5 18 L 13.5 18" />
+                <motion.g 
+                  style={{ transformOrigin: '12px 4px' }}
+                  animate={{ rotate: [-3, 3, -3] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <line x1="12" y1="4" x2="12" y2="7" />
+                  <path d="M10 7 L 14 7 C 16 11 15 17 12 22 C 9 17 8 11 10 7 Z" fill="rgba(255,107,0,0.1)" />
+                  <motion.path d="M9.5 11 L 14.5 11" animate={{ opacity: [0.3, 1, 0.3] }} transition={{ duration: 2, repeat: Infinity, delay: 0 }} />
+                  <motion.path d="M9.2 15 L 14.8 15" animate={{ opacity: [0.3, 1, 0.3] }} transition={{ duration: 2, repeat: Infinity, delay: 0.6 }} />
+                  <motion.path d="M10.5 18 L 13.5 18" animate={{ opacity: [0.3, 1, 0.3] }} transition={{ duration: 2, repeat: Infinity, delay: 1.2 }} />
+                </motion.g>
               </svg>
             </div>
             <h3 style={{ fontSize: '1.4rem', marginBottom: '0.75rem' }}>Metamorphosis</h3>
@@ -105,13 +132,19 @@ export default function WorkLifecycle() {
           <article className="process-card">
             <span className="process-num">04</span>
             <div style={{ marginBottom: '2rem' }}>
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FF6B00" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+              <motion.svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FF6B00" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"
+                style={{ overflow: 'visible' }}
+                animate={{ y: [0, -2, 0] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              >
                 <line x1="12" y1="7" x2="12" y2="17" strokeWidth="2" />
                 <path d="M12 7 Q 9 3 7 5" />
                 <path d="M12 7 Q 15 3 17 5" />
-                <path d="M11 9 C 3 4 2 12 11 14 C 5 16 7 21 11 18 Z" fill="rgba(255,107,0,0.1)" />
-                <path d="M13 9 C 21 4 22 12 13 14 C 19 16 17 21 13 18 Z" fill="rgba(255,107,0,0.1)" />
-              </svg>
+                <motion.g style={{ transformOrigin: '12px 14px' }} animate={{ scaleX: [1, 0.6, 1] }} transition={{ duration: 0.4, repeat: Infinity, ease: "easeInOut" }}>
+                  <path d="M11 9 C 3 4 2 12 11 14 C 5 16 7 21 11 18 Z" fill="rgba(255,107,0,0.1)" />
+                  <path d="M13 9 C 21 4 22 12 13 14 C 19 16 17 21 13 18 Z" fill="rgba(255,107,0,0.1)" />
+                </motion.g>
+              </motion.svg>
             </div>
             <h3 style={{ fontSize: '1.4rem', marginBottom: '0.75rem' }}>Emergence</h3>
             <p style={{ margin: 0, maxWidth: '85%' }}>Emergence through refinement, rigorous testing, and final polish.</p>
@@ -120,15 +153,26 @@ export default function WorkLifecycle() {
           <article className="process-card">
             <span className="process-num">05</span>
             <div style={{ marginBottom: '2rem' }}>
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FF6B00" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M3 21 C 6 19 8 19 10 17 C 12 15 11 12 13 10" strokeDasharray="2 3" />
-                <g transform="translate(4, -6) scale(0.85)">
-                  <line x1="12" y1="7" x2="12" y2="17" strokeWidth="2" />
-                  <path d="M12 7 Q 9 3 7 5" />
-                  <path d="M12 7 Q 15 3 17 5" />
-                  <path d="M11 9 C 3 4 2 12 11 14 C 5 16 7 21 11 18 Z" fill="rgba(255,107,0,0.1)" />
-                  <path d="M13 9 C 21 4 22 12 13 14 C 19 16 17 21 13 18 Z" fill="rgba(255,107,0,0.1)" />
-                </g>
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FF6B00" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" style={{ overflow: 'visible' }}>
+                <motion.path d="M3 21 C 6 19 8 19 10 17 C 12 15 11 12 13 10" strokeDasharray="2 3" 
+                  initial={{ pathLength: 0 }}
+                  animate={{ pathLength: 1 }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                />
+                <motion.g 
+                  animate={{ y: [0, -6, 0], x: [0, 4, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <g transform="translate(4, -6) scale(0.85)">
+                    <line x1="12" y1="7" x2="12" y2="17" strokeWidth="2" />
+                    <path d="M12 7 Q 9 3 7 5" />
+                    <path d="M12 7 Q 15 3 17 5" />
+                    <motion.g style={{ transformOrigin: '12px 14px' }} animate={{ scaleX: [1, 0.4, 1] }} transition={{ duration: 0.3, repeat: Infinity, ease: "easeInOut" }}>
+                      <path d="M11 9 C 3 4 2 12 11 14 C 5 16 7 21 11 18 Z" fill="rgba(255,107,0,0.1)" />
+                      <path d="M13 9 C 21 4 22 12 13 14 C 19 16 17 21 13 18 Z" fill="rgba(255,107,0,0.1)" />
+                    </motion.g>
+                  </g>
+                </motion.g>
               </svg>
             </div>
             <h3 style={{ fontSize: '1.4rem', marginBottom: '0.75rem' }}>Flight</h3>

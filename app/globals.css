@@ -891,20 +891,6 @@ body.has-cursor .cursor-dot {
   transform: translateY(var(--card-y)) rotate(var(--card-rot));
 }
 
-/* Realistic RED push pin ONLY on the intro card */
-.process-card.section-intro::before {
-  content: '';
-  position: absolute;
-  top: 16px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #ff8888 0%, #e60000 40%, #990000 100%);
-  box-shadow: -2px 6px 14px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0.7), inset -1px -2px 4px rgba(0, 0, 0, 0.4);
-  z-index: 20;
-}
 
 @media (min-width: 1024px) {
   .lifecycle-grid {
