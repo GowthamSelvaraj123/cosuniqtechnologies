@@ -5,6 +5,8 @@ import { useState } from "react";
 import InitReveal from "../../components/InitReveal";
 import InnerBanner from "../../components/InnerBanner";
 import styles from "./Contact.module.css";
+import emailjs from '@emailjs/browser';
+import ReCAPTCHA from "react-google-recaptcha";
 
 interface FormErrors {
   name?: string;
@@ -16,10 +18,13 @@ export default function Contact() {
   const [successMessage, setSuccessMessage] = useState("");
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     const firstName = formData.get("firstName") as string | null;
     const email = formData.get("email") as string | null;
     const message = formData.get("message") as string | null;
@@ -33,19 +38,51 @@ export default function Contact() {
     }
     if (!message?.trim()) newErrors.message = "Please tell us about your project.";
 
+    const recaptchaToken = formData.get("g-recaptcha-response");
+    if (!recaptchaToken) {
+      setErrorMessage("Please complete the reCAPTCHA.");
+      return;
+    }
+
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
     } else {
       setErrors({});
-      setSubmitted(true);
-      const nameStr = firstName ? firstName.trim().split(" ")[0] : "there";
-      setSuccessMessage(`Thanks ${nameStr}! We'll get back to you soon.`);
-      e.currentTarget.reset();
-      
-      setTimeout(() => {
-        setSubmitted(false);
-        setSuccessMessage("");
-      }, 5000);
+      setIsSubmitting(true);
+      setErrorMessage("");
+
+      try {
+        // Send main email
+        await emailjs.sendForm(
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
+          form,
+          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ''
+        );
+
+        // Send auto-reply email
+        await emailjs.sendForm(
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
+          process.env.NEXT_PUBLIC_EMAILJS_AUTO_REPLY_TEMPLATE_ID || '',
+          form,
+          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ''
+        );
+
+        setSubmitted(true);
+        const nameStr = firstName ? firstName.trim().split(" ")[0] : "there";
+        setSuccessMessage(`Thanks ${nameStr}! We'll get back to you soon.`);
+        form.reset();
+        
+        setTimeout(() => {
+          setSubmitted(false);
+          setSuccessMessage("");
+        }, 5000);
+      } catch (error) {
+        console.error("Failed to send email:", error);
+        setErrorMessage("Failed to send message. Please try again later.");
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -194,16 +231,27 @@ export default function Contact() {
                   </div>
                 </div>
 
+                <div className={`${styles.formCard} ${styles.formCardFull}`} style={{ display: 'flex', justifyContent: 'flex-start', marginTop: '1rem' }}>
+                  <ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""} />
+                </div>
+
                 <div className={`${styles.submitWrapper} ${styles.formCardFull}`}>
-                  <button className={styles.ctaBtn} type="submit">
-                    START A PROJECT
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
-                    </svg>
+                  <button className={styles.ctaBtn} type="submit" disabled={isSubmitting}>
+                    {isSubmitting ? "SENDING..." : "START A PROJECT"}
+                    {!isSubmitting && (
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
+                      </svg>
+                    )}
                   </button>
                   {successMessage && (
                     <div className="form-success show" role="status">
                       {successMessage}
+                    </div>
+                  )}
+                  {errorMessage && (
+                    <div className="form-error show" role="status" style={{ color: "red", marginTop: "1rem" }}>
+                      {errorMessage}
                     </div>
                   )}
                 </div>

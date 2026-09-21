@@ -6,6 +6,8 @@ import { motion } from "framer-motion";
 import styles from "./FinalCta.module.css";
 import MagneticWrapper from "./MagneticWrapper";
 import HoverTextReveal from "./HoverTextReveal";
+import emailjs from "@emailjs/browser";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const ProcessFlow = ({ accentColor = "#FF6B00", accentColorRgba = "rgba(255, 107, 0, 0.1)" }: { accentColor?: string, accentColorRgba?: string }) => {
   const [key, setKey] = useState(0);
@@ -179,10 +181,11 @@ export default function FinalCta({ variant = 'default' }: { variant?: 'default' 
     consent1?: string;
   }>({});
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
     
-    const formData = new FormData(e.currentTarget);
+    const formData = new FormData(form);
     const firstName = formData.get('firstName') as string;
     const lastName = formData.get('lastName') as string;
     const email = formData.get('email') as string;
@@ -191,6 +194,7 @@ export default function FinalCta({ variant = 'default' }: { variant?: 'default' 
     const country = formData.get('country') as string;
     const details = formData.get('details') as string;
     const consent1 = formData.get('consent1');
+    const recaptchaToken = formData.get("g-recaptcha-response");
     
     const newErrors: typeof errors = {};
     
@@ -215,6 +219,13 @@ export default function FinalCta({ variant = 'default' }: { variant?: 'default' 
     }
     
     if (!consent1) newErrors.consent1 = 'You must agree to the privacy policy';
+
+    if (!recaptchaToken) {
+      setStatus('error');
+      // Briefly show error if they try to submit without captcha
+      setTimeout(() => setStatus('idle'), 3000);
+      return;
+    }
     
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -224,15 +235,30 @@ export default function FinalCta({ variant = 'default' }: { variant?: 'default' 
     setErrors({});
     setStatus('submitting');
     
-    // Simulate successful API call
-    setTimeout(() => {
+    try {
+      // Send main email
+      await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
+        form,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ''
+      );
+
+      // Send auto-reply email
+      await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
+        process.env.NEXT_PUBLIC_EMAILJS_AUTO_REPLY_TEMPLATE_ID || '',
+        form,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ''
+      );
+
       setStatus('success');
-      // Reset form on success
-      (e.target as HTMLFormElement).reset();
-      
-      // Return to idle after 5 seconds so they can submit again if needed
+      form.reset();
       setTimeout(() => setStatus('idle'), 5000);
-    }, 1500);
+    } catch (error) {
+      console.error("Failed to send email:", error);
+      setStatus('error');
+    }
   };
 
   return (
@@ -434,9 +460,13 @@ export default function FinalCta({ variant = 'default' }: { variant?: 'default' 
               To learn more about how we protect your data, please refer to the <Link href="/privacy" className={variant === 'academy' ? styles.academyLink : ''}>Cosuniq privacy policy</Link>.<br/><br/>
               This site is protected by reCAPTCHA.
             </div>
+
+            <div style={{ marginTop: '1rem', marginBottom: '1.5rem', display: 'flex', justifyContent: 'flex-start' }}>
+              <ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""} />
+            </div>
             
             {status === 'error' && (
-              <p className={styles.errorMessage}>Oops! Something went wrong. Please try again.</p>
+              <p className={styles.errorMessage}>Oops! Something went wrong or you missed the reCAPTCHA. Please try again.</p>
             )}
             
             {status === 'success' && (
