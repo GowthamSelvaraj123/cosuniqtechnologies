@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "./CapabilitiesUniverse.module.css";
+import LiveMobileMockup from "./LiveMobileMockup";
 
 /* ═══════════════════════════════════════════════════════════════════════════
    ICON SYSTEM (STRICT CONSISTENCY)
@@ -155,6 +156,23 @@ const services = [
 
 export default function CapabilitiesUniverse() {
   const [hovered, setHovered] = useState<string | null>(null);
+  const [autoActiveIdx, setAutoActiveIdx] = useState<number>(0);
+
+  // Automatically cycle through features every 4 seconds
+  useEffect(() => {
+    if (hovered) return; // Pause auto-cycle if user is hovering
+    
+    const interval = setInterval(() => {
+      setAutoActiveIdx((prev) => (prev + 1) % services.length);
+    }, 4000);
+    
+    return () => clearInterval(interval);
+  }, [hovered]);
+
+  const activeFeatureId = hovered || services[autoActiveIdx].id;
+
+  const leftServices = services.slice(0, 4);
+  const rightServices = services.slice(4, 8);
 
   return (
     <section className={styles.section}>
@@ -205,32 +223,101 @@ export default function CapabilitiesUniverse() {
           </Link>
         </div>
 
-        <div className={styles.grid}>
-          {services.map((s) => (
-            <article
-              key={s.id}
-              className={`${styles.card} ${hovered === s.id ? styles.cardActive : ""}`}
-              onMouseEnter={() => setHovered(s.id)}
-              onMouseLeave={() => setHovered(null)}
-            >
-              {/* Top row with Icon and Arrow */}
-              <div className={styles.cardTop}>
-                <span className={styles.icon}><s.Icon /></span>
-                <span className={styles.cardArrow} aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7" />
-                    <polyline points="7 7 17 7 17 17" />
-                  </svg>
-                </span>
-              </div>
-              {/* Content below */}
-              <div>
-                <h3 className={styles.cardName}>{s.name}</h3>
-                <p className={styles.cardDesc}>{s.desc}</p>
-              </div>
+        <div className={styles.layoutWrapper}>
+          {/* Left Column (Desktop Only) */}
+          <div className={`${styles.column} ${styles.leftColumn}`}>
+            <div className={styles.scrollTrackLeft} style={{ animationPlayState: hovered ? 'paused' : 'running' }}>
+              {[...leftServices, ...leftServices].map((s, idx) => (
+                <article
+                  key={`left-${s.id}-${idx}`}
+                  className={`${styles.card} ${activeFeatureId === s.id ? styles.cardActive : ""}`}
+                  onMouseEnter={() => setHovered(s.id)}
+                  onMouseLeave={() => setHovered(null)}
+                >
+                  <div className={styles.cardTop}>
+                    <span className={styles.icon}><s.Icon /></span>
+                    <span className={styles.cardArrow} aria-hidden="true">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="7" y1="17" x2="17" y2="7" />
+                        <polyline points="7 7 17 7 17 17" />
+                      </svg>
+                    </span>
+                  </div>
+                  <div>
+                    <h3 className={styles.cardName}>{s.name}</h3>
+                    <p className={styles.cardDesc}>{s.desc}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
 
-            </article>
-          ))}
+          {/* Center Column: Live Mobile Mockup */}
+          <div className={styles.centerColumn}>
+            <LiveMobileMockup activeFeature={activeFeatureId} />
+          </div>
+
+          {/* Right Column (Desktop Only) */}
+          <div className={`${styles.column} ${styles.rightColumn}`}>
+            <div className={styles.scrollTrackRight} style={{ animationPlayState: hovered ? 'paused' : 'running' }}>
+              {[...rightServices, ...rightServices].map((s, idx) => (
+                <article
+                  key={`right-${s.id}-${idx}`}
+                  className={`${styles.card} ${activeFeatureId === s.id ? styles.cardActive : ""}`}
+                  onMouseEnter={() => setHovered(s.id)}
+                  onMouseLeave={() => setHovered(null)}
+                >
+                  <div className={styles.cardTop}>
+                    <span className={styles.icon}><s.Icon /></span>
+                    <span className={styles.cardArrow} aria-hidden="true">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="7" y1="17" x2="17" y2="7" />
+                        <polyline points="7 7 17 7 17 17" />
+                      </svg>
+                    </span>
+                  </div>
+                  <div>
+                    <h3 className={styles.cardName}>{s.name}</h3>
+                    <p className={styles.cardDesc}>{s.desc}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile Only Slider (Hidden on Desktop) */}
+          <div className={styles.mobileSliderWrapper}>
+            <div 
+              className={styles.mobileSliderTrack}
+              style={{ transform: `translateX(-${Math.floor(autoActiveIdx / 2) * 100}%)` }}
+            >
+              {[0, 2, 4, 6].map(startIndex => (
+                <div className={styles.mobileSliderPair} key={`pair-${startIndex}`}>
+                  {services.slice(startIndex, startIndex + 2).map((s) => (
+                    <article
+                      key={`mobile-${s.id}`}
+                      className={`${styles.card} ${activeFeatureId === s.id ? styles.cardActive : ""}`}
+                      onClick={() => setAutoActiveIdx(services.findIndex(svc => svc.id === s.id))}
+                    >
+                      <div className={styles.cardTop}>
+                        <span className={styles.icon}><s.Icon /></span>
+                        <span className={styles.cardArrow} aria-hidden="true">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <line x1="7" y1="17" x2="17" y2="7" />
+                            <polyline points="7 7 17 7 17 17" />
+                          </svg>
+                        </span>
+                      </div>
+                      <div>
+                        <h3 className={styles.cardName}>{s.name}</h3>
+                        <p className={styles.cardDesc}>{s.desc}</p>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Mobile-only CTA rendered below the grid */}

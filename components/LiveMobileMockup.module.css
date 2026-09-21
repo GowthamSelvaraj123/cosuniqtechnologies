@@ -1,0 +1,392 @@
+.mockupContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  perspective: 1000px;
+}
+
+.glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 400px;
+  background: var(--brand-orange, #FF6B00);
+  filter: blur(100px);
+  opacity: 0.15;
+  border-radius: 50%;
+  z-index: 0;
+  animation: pulseGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% { opacity: 0.1; transform: translate(-50%, -50%) scale(0.9); }
+  100% { opacity: 0.25; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+.phoneFrame {
+  position: relative;
+  width: 280px;
+  height: 580px;
+  background-color: #222; /* Match border to hide inner bleed */
+  border-radius: 40px;
+  border: 8px solid #222;
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.25),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  z-index: 1;
+  /* Add a very subtle floating animation */
+  animation: floatPhone 6s ease-in-out infinite;
+}
+
+@keyframes floatPhone {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+.notch {
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 28px;
+  background-color: #222;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  z-index: 10;
+  box-shadow: 0 -2px 0 #222, 0 0 2px #222; /* Eat subpixel rendering artifacts */
+}
+
+.screen {
+  position: absolute;
+  top: 1px; /* Prevents white background from touching the very top edge */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fafafa;
+  border-radius: 32px; /* Inner radius slightly smaller */
+  overflow: hidden;
+}
+
+.screenInner {
+  width: 100%;
+  height: 100%;
+  padding: 40px 20px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* UI Elements inside the mockup */
+.header {
+  margin-bottom: 20px;
+}
+
+.realTitle {
+  font-size: 16px;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 6px 0;
+  line-height: 1.2;
+}
+
+.realDesc {
+  font-size: 11px;
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.skeletonTitle {
+  height: 12px;
+  background-color: #ddd;
+  border-radius: 6px;
+  width: 80%;
+}
+
+.skeletonText {
+  height: 8px;
+  background-color: #eee;
+  border-radius: 4px;
+  width: 60%;
+  margin-top: 8px;
+}
+
+.skeletonBlock {
+  height: 60px;
+  background-color: #fff;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Specific Screen Styles */
+
+/* Strategy (Charts) */
+.chartArea {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  height: 120px;
+  margin: 20px 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eee;
+  position: relative;
+}
+
+.trendLine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.bar {
+  width: 15%;
+  background-color: #ccc;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+/* Branding */
+.brandHero {
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #111;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+.typographyIcon {
+  font-size: 48px;
+  font-weight: 900;
+  color: #fff;
+}
+
+.colorPalette {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.colorSwatch {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* UI/UX */
+.uiuxHeroImage {
+  width: 100%;
+  height: 120px;
+  border-radius: 12px;
+  border: 2px dashed #ddd;
+  margin-bottom: 20px;
+}
+.uiuxButton {
+  width: 50%;
+  margin: 0 auto;
+  height: 40px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* E-Commerce */
+.productImage {
+  height: 180px;
+  background-color: #eee;
+  border-radius: 12px;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.cartBadge {
+  width: 24px;
+  height: 24px;
+  background-color: var(--brand-orange, #FF6B00);
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.checkoutBtn {
+  height: 40px;
+  background-color: #111;
+  border-radius: 8px;
+  margin-top: auto;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Web Development */
+.browserTop {
+  height: 24px;
+  background: #eee;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  gap: 4px;
+}
+.browserDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ccc;
+}
+.browserContent {
+  background: #fff;
+  border: 2px solid #eee;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  padding: 10px;
+  height: 180px;
+}
+.codeLine {
+  height: 8px;
+  margin-bottom: 10px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  display: flex;
+  overflow: hidden;
+}
+.codeLine span {
+  height: 100%;
+  border-radius: 4px;
+}
+
+/* Mobile App */
+.appGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+.appIcon {
+  aspect-ratio: 1;
+  border-radius: 12px;
+}
+.appLaunchScreen {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #FF6B00;
+  border-radius: 32px;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  z-index: 20;
+}
+
+/* AI */
+.chatArea {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+.chatBubble {
+  padding: 12px 16px;
+  border-radius: 16px;
+  max-width: 85%;
+}
+.chatUser {
+  align-self: flex-end;
+  background: #FF6B00;
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+.chatBot {
+  align-self: flex-start;
+  background: #eee;
+  color: #111;
+  border-bottom-left-radius: 4px;
+}
+.typingIndicator {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  height: 12px;
+}
+.typingDot {
+  width: 6px;
+  height: 6px;
+  background: #aaa;
+  border-radius: 50%;
+}
+
+/* Cloud & DevOps */
+.cloudRackArea {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+}
+.serverRack {
+  background: #111;
+  border-radius: 8px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.serverDrive {
+  flex: 1;
+  height: 6px;
+  background: #333;
+  border-radius: 3px;
+}
+.serverLights {
+  display: flex;
+  gap: 6px;
+  margin-left: auto;
+}
+.serverLight {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+/* Default */
+.pulsingCircle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--brand-orange, #FF6B00);
+  margin: 30px auto;
+}
+
+/* Responsive adjustments for mobile view */
+@media (max-width: 991px) {
+  .mockupContainer {
+    transform: scale(0.75);
+    transform-origin: top center;
+    margin-bottom: -280px;
+  }
+}

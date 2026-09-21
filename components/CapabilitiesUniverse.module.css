@@ -109,11 +109,65 @@
 
 
 
-/* ── Grid ──────────────────────────────────────── */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+/* ── 3-Column Layout & Scrolling ─────────────────── */
+.layoutWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  height: 640px; /* Constrain height to show scrolling */
+  overflow: hidden;
+  position: relative;
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  padding: 0 10px; /* Allow room for card scaling */
+  /* Fade out edges so cards smoothly appear/disappear */
+  mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+}
+
+.centerColumn {
+  flex: 1.2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.scrollTrackLeft, .scrollTrackRight {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  /* Duplicate items so track is double height */
+}
+
+/* 
+  Because we duplicate the 4 items (so 8 items total), 
+  we translate exactly -50% to reset perfectly.
+*/
+.scrollTrackLeft {
+  animation: scrollVerticalUp 40s linear infinite;
+}
+
+.scrollTrackRight {
+  animation: scrollVerticalDown 40s linear infinite;
+}
+
+@keyframes scrollVerticalUp {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes scrollVerticalDown {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
 }
 
 /* ── Card ──────────────────────────────────────── */
@@ -127,89 +181,23 @@
   flex-direction: column;
   gap: 1.5rem;
   cursor: pointer;
-  /* Setup base transform variables */
-  --card-y: 0px;
-  --card-rot: 0deg;
-  transform: translateY(var(--card-y)) rotate(var(--card-rot));
+  background-color: #FFF6F0; /* prevent transparent overlap on scroll if needed */
   transition:
     background 0.25s ease,
     border-color 0.25s ease,
     transform 0.25s cubic-bezier(0.25, 1, 0.5, 1),
-    box-shadow 0.25s ease,
-    opacity 0.25s ease;
+    box-shadow 0.25s ease;
 }
 
 .card:hover,
 .cardActive {
-  background: transparent;
   border-color: #FF6B00;
-  /* Lift up by 6px from current position and scale slightly for emphasis */
-  transform: translateY(calc(var(--card-y) - 6px)) rotate(var(--card-rot)) scale(1.02);
+  transform: translateY(-4px) scale(1.02);
   box-shadow:
     0 4px 16px rgba(255, 107, 0, 0.07),
     0 16px 36px rgba(255, 107, 0, 0.1);
+  z-index: 5;
 }
-
-/* ── Scatter Column Effect (Organic Layout) ──────────── */
-@media (min-width: 1024px) {
-  .grid {
-    gap: 1.75rem;
-    /* Increase gap to prevent rotated corners from touching */
-    padding-bottom: 4rem;
-    /* padding to account for the shifted cards */
-  }
-
-  /* 
-     Give each card a unique slight rotation.
-     Cards in the same column MUST have the same --card-y to prevent vertical overlapping! 
-  */
-
-  /* Column 1 (Cards 1, 5) - No shift */
-  .card:nth-child(1) {
-    --card-y: 0rem;
-    --card-rot: -2deg;
-  }
-
-  .card:nth-child(5) {
-    --card-y: 0rem;
-    --card-rot: 1.5deg;
-  }
-
-  /* Column 2 (Cards 2, 6) - Shifted down */
-  .card:nth-child(2) {
-    --card-y: 2.5rem;
-    --card-rot: 1.5deg;
-  }
-
-  .card:nth-child(6) {
-    --card-y: 2.5rem;
-    --card-rot: -1deg;
-  }
-
-  /* Column 3 (Cards 3, 7) - Slight shift down */
-  .card:nth-child(3) {
-    --card-y: 0.5rem;
-    --card-rot: -1.5deg;
-  }
-
-  .card:nth-child(7) {
-    --card-y: 0.5rem;
-    --card-rot: 2deg;
-  }
-
-  /* Column 4 (Cards 4, 8) - Shifted down */
-  .card:nth-child(4) {
-    --card-y: 3rem;
-    --card-rot: 2.5deg;
-  }
-
-  .card:nth-child(8) {
-    --card-y: 3rem;
-    --card-rot: -1.5deg;
-  }
-}
-
-/* dimming removed — no opacity penalty on non-hovered cards */
 
 /* ── Top row ─────────────────────────────────────── */
 .cardTop {
@@ -299,10 +287,15 @@
   display: none;
 }
 
+.mobileSliderWrapper {
+  display: none;
+}
+
 /* ── Responsive ────────────────────────────────── */
 @media (max-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
+  .layoutWrapper {
+    height: 550px;
+    gap: 1rem;
   }
 }
 
@@ -327,14 +320,53 @@
     margin: 1rem 0 0 0;
   }
 
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
-    padding-bottom: 2.5rem;
-    align-items: stretch;
+  .layoutWrapper {
+    flex-direction: column;
+    height: auto;
+    overflow: visible;
   }
   
+  .column {
+    mask-image: none;
+    -webkit-mask-image: none;
+    width: 100%;
+  }
+
+  .centerColumn {
+    order: -1;
+    z-index: 1;
+  }
+
+  .leftColumn, .rightColumn {
+    display: none;
+  }
+
+  .mobileSliderWrapper {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 0;
+    z-index: 10; /* Ensure slider sits on top of the phone */
+    background: #FFF6F0; /* Completely hide the phone behind the gap */
+    box-shadow: 0 -20px 20px #FFF6F0; /* Soft fade out to blend with the page */
+  }
+  
+  .mobileSliderTrack {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  
+  .mobileSliderPair {
+    flex: 0 0 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    padding: 0 4px; /* small padding for card shadow */
+  }
+
   .card {
+    background-color: #ffffff; /* Make the cards pop! */
     padding: 1.25rem 1rem 1rem;
     gap: 1rem;
     height: 100%;
@@ -357,16 +389,6 @@
   
   .cardDesc {
     font-size: 0.75rem;
-  }
-
-  /* Scattered effect for mobile 2-column — keep same card-y so heights stay even */
-  .card:nth-child(odd) {
-    --card-y: 0rem;
-    --card-rot: -1.5deg;
-  }
-  .card:nth-child(even) {
-    --card-y: 0rem;
-    --card-rot: 1.5deg;
   }
 
   .headline {
