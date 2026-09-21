@@ -244,14 +244,6 @@ export default function FinalCta({ variant = 'default' }: { variant?: 'default' 
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ''
       );
 
-      // Send auto-reply email
-      await emailjs.sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
-        process.env.NEXT_PUBLIC_EMAILJS_AUTO_REPLY_TEMPLATE_ID || '',
-        form,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ''
-      );
-
       setStatus('success');
       form.reset();
       setTimeout(() => setStatus('idle'), 5000);

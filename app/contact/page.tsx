@@ -60,14 +60,6 @@ export default function Contact() {
           process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ''
         );
 
-        // Send auto-reply email
-        await emailjs.sendForm(
-          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
-          process.env.NEXT_PUBLIC_EMAILJS_AUTO_REPLY_TEMPLATE_ID || '',
-          form,
-          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ''
-        );
-
         setSubmitted(true);
         const nameStr = firstName ? firstName.trim().split(" ")[0] : "there";
         setSuccessMessage(`Thanks ${nameStr}! We'll get back to you soon.`);
