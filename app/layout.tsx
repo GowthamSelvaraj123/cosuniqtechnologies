@@ -5,6 +5,7 @@ import CustomCursor from "../components/CustomCursor";
 import GsapAnimations from "../components/GsapAnimations";
 
 import type { Metadata } from "next";
+import Script from "next/script";
 import { plusJakartaSans } from "./fonts";
 
 export const metadata: Metadata = {
@@ -90,6 +91,19 @@ export default function RootLayout({
         {/* Plus Jakarta Sans is loaded via next/font — no extra link needed */}
       </head>
       <body>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-27V2TYW5G8"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-27V2TYW5G8');
+          `}
+        </Script>
         <CustomCursor />
         <GsapAnimations />
         <Header />
