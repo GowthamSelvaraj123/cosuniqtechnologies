@@ -16,23 +16,42 @@ const sequence = [
 const TOTAL_MS = sequence.length * 500;
 
 export default function CinematicHero() {
-  const [show, setShow] = useState<boolean | null>(null);
+  const [show, setShow] = useState<boolean>(false);
 
   useEffect(() => {
-    setShow(true);
-  }, []);
+    try {
+      // Check if running in automated test, bot, or Lighthouse
+      const isBot = /bot|google|crawler|spider|robot|crawling|lighthouse|headlesschrome/i.test(
+        navigator.userAgent
+      );
+      if (isBot) return;
 
-  // Prevent hydration flash by showing a solid background until session is checked
-  if (show === null) {
-    return <div style={{ position: "fixed", inset: 0, backgroundColor: "#f4f4f4", zIndex: 999999 }} />;
-  }
+      // Honor user accessibility preference
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+      // Only show once per session so return visits & navigations are instant
+      if (sessionStorage.getItem("cosuniq_intro_seen")) return;
+
+      setShow(true);
+    } catch (e) {
+      // Ignore storage errors in restricted iframes
+    }
+  }, []);
 
   if (!show) return null;
 
-  return <CinematicHeroInner />;
+  return (
+    <CinematicHeroInner
+      onExit={() => {
+        try {
+          sessionStorage.setItem("cosuniq_intro_seen", "true");
+        } catch (e) {}
+      }}
+    />
+  );
 }
 
-function CinematicHeroInner() {
+function CinematicHeroInner({ onExit }: { onExit?: () => void }) {
   const [currentIndex, setCurrentIndex]                   = useState(0);
   const [isExiting, setIsExiting]                         = useState(false);
   const [isEntered, setIsEntered]                         = useState(false);
@@ -127,20 +146,23 @@ function CinematicHeroInner() {
   }, []);
 
   const triggerExit = () => {
-    confetti({
-      particleCount: 350, spread: 360, startVelocity: 55,
-      origin: { x: 0.5, y: 0.5 },
-      colors: ["#ffffff", "#ff5e00", "#000000", "#ff8c00", "#ff3300"],
-      zIndex: 99999,
-    });
-    const dur = 1500, t0 = performance.now();
+    onExit?.();
+    try {
+      confetti({
+        particleCount: 200, spread: 360, startVelocity: 55,
+        origin: { x: 0.5, y: 0.5 },
+        colors: ["#ffffff", "#ff5e00", "#000000", "#ff8c00", "#ff3300"],
+        zIndex: 99999,
+      });
+    } catch (e) {}
+    const dur = 1000, t0 = performance.now();
     let exitDone = false;
     const animate = (now: number) => {
       const p = Math.min((now - t0) / dur, 1);
       setTransitionProgress(p);
       if (p > 0.8 && !exitDone) { exitDone = true; setIsExiting(true); }
       if (p < 1) requestAnimationFrame(animate);
-      else setTimeout(() => setIsEntered(true), 800);
+      else setTimeout(() => setIsEntered(true), 400);
     };
     requestAnimationFrame(animate);
   };

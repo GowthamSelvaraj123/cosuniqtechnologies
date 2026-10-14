@@ -83,7 +83,7 @@ export default function Header() {
         }}
       >
         <Link href="/" className={styles.brand} aria-label="Cosuniq home">
-          <img src={isAcademy ? "/assets/cosuniq-academy.png" : "/assets/cosuniq-technologies.png"} alt={isAcademy ? "Cosuniq Academy" : "Cosuniq"} />
+          <img src={isAcademy ? "/assets/cosuniq-academy.png" : "/assets/cosuniq-technologies.png"} alt={isAcademy ? "Cosuniq Academy" : "Cosuniq"} width={169} height={35} fetchPriority="high" />
         </Link>
 
         <nav className={styles.desktopNav}>

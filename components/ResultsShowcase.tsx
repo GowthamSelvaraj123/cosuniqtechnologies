@@ -25,8 +25,7 @@ export default function ResultsShowcase() {
             </div>
             {/* The right-side overlapping image */}
             <div className={styles.showcaseImg}>
-              {/* Replace src with your transparent PNG */}
-              <img src="/assets/images/team.png" alt="Celebrating success" />
+              <img src="/assets/images/team.png" alt="Dedicated team" loading="lazy" decoding="async" width={700} height={467} />
             </div>
           </div>
 
@@ -38,16 +37,14 @@ export default function ResultsShowcase() {
             </div>
             {/* The right-side overlapping image */}
             <div className={styles.showcaseImg} style={{width:"160px"}}>
-              {/* Replace src with your transparent PNG */}
-              <img src="/assets/images/cash-flow.png" alt="Celebrating success" />
+              <img src="/assets/images/cash-flow.png" alt="Transparent pricing" loading="lazy" decoding="async" width={500} height={711} />
             </div>
           </div>
 
           {/* Card 3: Collaboration */}
           <div className={`${styles.card} ${styles.card3}`}>
             <div className={styles.showcaseImg}>
-              {/* Replace src with your transparent PNG */}
-              <img src="/assets/images/colloboaration.png" alt="Celebrating success" />
+              <img src="/assets/images/colloboaration.png" alt="Direct collaboration" loading="lazy" decoding="async" width={700} height={467} />
             </div>
             <div className={styles.textContent}>
               <span className={styles.value}>1:1</span>
@@ -57,9 +54,8 @@ export default function ResultsShowcase() {
 
           {/* Card 4: Workflow */}
           <div className={`${styles.card} ${styles.card4}`}>
-                        <div className={styles.showcaseImg}>
-              {/* Replace src with your transparent PNG */}
-              <img src="/assets/images/speed.png" alt="Celebrating success" />
+            <div className={styles.showcaseImg}>
+              <img src="/assets/images/speed.png" alt="Faster iteration speed" loading="lazy" decoding="async" width={700} height={467} />
             </div>
             <div className={styles.textContent}>
               <span className={styles.value}>2&times;</span>
@@ -74,10 +70,9 @@ export default function ResultsShowcase() {
               <span className={styles.value}>24/7</span>
               <p className={styles.label}>Proactive support and monitoring to ensure your digital assets are always live and performing.</p>
             </div>
-                        {/* The right-side overlapping image */}
+            {/* The right-side overlapping image */}
             <div className={styles.showcaseImg}>
-              {/* Replace src with your transparent PNG */}
-              <img src="/assets/images/24-by-7-support.png"  style={{"objectFit": "contain", "width": "206px"}} alt="Celebrating success" />
+              <img src="/assets/images/24-by-7-support.png" style={{"objectFit": "contain", "width": "206px"}} alt="24/7 Support" loading="lazy" decoding="async" width={500} height={897} />
             </div>
           </div>
 
@@ -88,7 +83,7 @@ export default function ResultsShowcase() {
               <p className={styles.label}>Your vision comes first. We build tailor-made solutions, not cookie-cutter templates.</p>
             </div>
             <div className={styles.showcaseImg}>
-              <img src="/assets/images/custom-vision.png" alt="Custom tailored vision" />
+              <img src="/assets/images/custom-vision.png" alt="Custom tailored vision" loading="lazy" decoding="async" width={700} height={467} />
             </div>
           </div>
 

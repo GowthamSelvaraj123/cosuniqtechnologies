@@ -57,7 +57,7 @@ export default function LivingBrandHero() {
           <h1 className={styles.headline}>
             We build brands<br />
             <span style={{ display: "inline-block", position: "relative", width: "100%", height: "1.1em" }}>
-              <AnimatePresence>
+              <AnimatePresence initial={false}>
                 <motion.span
                   key={wordIndex}
                   initial={{ opacity: 0, y: 30 }}
