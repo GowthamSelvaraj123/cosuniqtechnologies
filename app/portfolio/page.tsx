@@ -1,9 +1,27 @@
-"use client";
-
+import type { Metadata } from "next";
 import Link from "next/link";
 import FinalCta from "../../components/FinalCta";
 import InitReveal from "../../components/InitReveal";
 import InnerBanner from "../../components/InnerBanner";
+
+export const metadata: Metadata = {
+  title: "Portfolio",
+  description: "Explore Cosuniq Technologies' selected work — e-commerce platforms, mobile apps, SaaS products, branding, and more.",
+  keywords: ["Cosuniq portfolio", "web development projects", "e-commerce projects", "branding case studies", "mobile app projects"],
+  openGraph: {
+    title: "Portfolio | Cosuniq Technologies",
+    description: "Explore Cosuniq's selected work — e-commerce, mobile apps, SaaS, branding, and video projects.",
+    url: "https://cosuniq.in/portfolio",
+    images: [{ url: "/assets/og-image.png", width: 1200, height: 630, alt: "Cosuniq Portfolio" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Portfolio | Cosuniq Technologies",
+    description: "Explore Cosuniq's selected work — e-commerce, mobile apps, SaaS, branding, and video projects.",
+    images: ["/assets/og-image.png"],
+  },
+  alternates: { canonical: "https://cosuniq.in/portfolio" },
+};
 
 export default function Portfolio() {
   return (

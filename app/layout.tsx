@@ -88,9 +88,47 @@ export default function RootLayout({
   return (
     <html lang="en" className={plusJakartaSans.variable}>
       <head>
-        {/* Plus Jakarta Sans is loaded via next/font — no extra link needed */}
+        {/* Plus Jakarta Sans is loaded via next/font */}
       </head>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": "https://cosuniq.in/#organization",
+                  "name": "Cosuniq Technologies",
+                  "url": "https://cosuniq.in",
+                  "logo": "https://cosuniq.in/assets/cosuniq-technologies.png",
+                  "description":
+                    "Full-service creative agency delivering software, SaaS, CRM, e-commerce, branding & video production.",
+                  "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+917358696546",
+                    "contactType": "customer service",
+                    "areaServed": "IN",
+                    "availableLanguage": ["en", "ta"],
+                  },
+                  "sameAs": [
+                    "https://www.linkedin.com/company/cosuniq",
+                    "https://twitter.com/cosuniq",
+                    "https://www.instagram.com/cosuniq",
+                  ],
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://cosuniq.in/#website",
+                  "url": "https://cosuniq.in",
+                  "name": "Cosuniq Technologies",
+                  "publisher": { "@id": "https://cosuniq.in/#organization" },
+                },
+              ],
+            }),
+          }}
+        />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-27V2TYW5G8"
           strategy="afterInteractive"
