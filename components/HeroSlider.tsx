@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const slides = [
   {
-    image: "/assets/images/hero-tech.png",
+    image: "/assets/images/hero-tech.webp",
     alt: "Software and technology team",
     eyebrow: "Cosuniq Technologies",
     title: "We build software that <em>scales</em>.",
@@ -14,7 +14,7 @@ const slides = [
     link: "/contact"
   },
   {
-    image: "/assets/images/hero-brand.png",
+    image: "/assets/images/hero-brand.webp",
     alt: "Brand and design workspace",
     eyebrow: "Design · Brand · Web",
     title: "Beyond boundaries of <em>ordinary</em>.",
@@ -23,7 +23,7 @@ const slides = [
     link: "/services"
   },
   {
-    image: "/assets/images/dashboard.png",
+    image: "/assets/images/dashboard.webp",
     alt: "Digital product dashboard",
     eyebrow: "CRM · Commerce · AI",
     title: "Digital systems that <em>deliver</em>.",
@@ -32,7 +32,7 @@ const slides = [
     link: "/contact"
   },
   {
-    image: "/assets/images/hero-creative.png",
+    image: "/assets/images/hero-creative.webp",
     alt: "Creative visual storytelling",
     eyebrow: "Creative studio",
     title: "In a realm of <em>wonder</em>.",

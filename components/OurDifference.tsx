@@ -95,7 +95,7 @@ export default function OurDifference() {
               </div>
 
               <div className={styles.imageWrap}>
-                <img src="/assets/images/enjoy.png" alt="Why COSUNIQ" loading="lazy" decoding="async" width={600} height={600} />
+                <img src="/assets/images/enjoy.webp" alt="Why COSUNIQ" loading="lazy" decoding="async" width={600} height={600} />
               </div>
 
               <div className={styles.buttonWrap}>

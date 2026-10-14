@@ -4,41 +4,42 @@ export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://cosuniq.in';
+  const lastMod = new Date('2026-10-14');
   
   return [
     {
       url: `${baseUrl}`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
+      lastModified: lastMod,
+      changeFrequency: 'weekly',
       priority: 1,
     },
     {
       url: `${baseUrl}/services`,
-      lastModified: new Date(),
+      lastModified: lastMod,
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/portfolio`,
-      lastModified: new Date(),
+      lastModified: lastMod,
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/about`,
-      lastModified: new Date(),
+      lastModified: lastMod,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/academy`,
-      lastModified: new Date(),
+      lastModified: lastMod,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified: new Date(),
+      lastModified: lastMod,
       changeFrequency: 'yearly',
       priority: 0.7,
     }

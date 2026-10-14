@@ -38,7 +38,7 @@ export default function Portfolio() {
           <div className="portfolio-grid">
             <article className="portfolio-item reveal" data-category="ecommerce">
               <div className="portfolio-thumb">
-                <img src="/assets/images/laptop.jpg" alt="Own Product: Sellgy" />
+                <img src="/assets/images/laptop.webp" alt="Own Product: Sellgy" loading="lazy" decoding="async" width={700} height={440} />
               </div>
               <div className="portfolio-body">
                 <span className="tag">Product</span>
@@ -49,7 +49,7 @@ export default function Portfolio() {
 
             <article className="portfolio-item reveal" data-category="mobile">
               <div className="portfolio-thumb">
-                <img src="/assets/images/bento-mobile.jpg" alt="Classbell App" />
+                <img src="/assets/images/bento-mobile.webp" alt="Classbell App" loading="lazy" decoding="async" width={700} height={440} />
               </div>
               <div className="portfolio-body">
                 <span className="tag">Mobile App</span>
@@ -60,7 +60,7 @@ export default function Portfolio() {
 
             <article className="portfolio-item reveal" data-category="inventory">
               <div className="portfolio-thumb">
-                <img src="/assets/images/dashboard.png" alt="Shopify Inventory Sync 4" />
+                <img src="/assets/images/dashboard.webp" alt="Shopify Inventory Sync 4" loading="lazy" decoding="async" width={700} height={440} />
               </div>
               <div className="portfolio-body">
                 <span className="tag">Shopify / Inventory</span>
@@ -71,7 +71,7 @@ export default function Portfolio() {
 
             <article className="portfolio-item reveal" data-category="ecommerce">
               <div className="portfolio-thumb">
-                <img src="/assets/images/orangebabe_mockup.jpg" alt="Orangebabe" />
+                <img src="/assets/images/orangebabe_mockup.webp" alt="Orangebabe" loading="lazy" decoding="async" width={700} height={440} />
               </div>
               <div className="portfolio-body">
                 <span className="tag">E-commerce</span>
@@ -82,7 +82,7 @@ export default function Portfolio() {
 
             <article className="portfolio-item reveal" data-category="branding">
               <div className="portfolio-thumb">
-                <img src="/assets/images/hero-brand.jpg" alt="Cosuniq Technologies" />
+                <img src="/assets/images/hero-brand.webp" alt="Cosuniq Technologies" loading="lazy" decoding="async" width={700} height={440} />
               </div>
               <div className="portfolio-body">
                 <span className="tag">Branding</span>
@@ -93,6 +93,7 @@ export default function Portfolio() {
           </div>
         </div>
       </section>
+
 
       <FinalCta />
     </>

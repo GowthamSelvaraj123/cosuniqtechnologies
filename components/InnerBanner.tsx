@@ -27,37 +27,14 @@ export default function InnerBanner({ eyebrow, title, description, bgImage }: In
           style={{ y, backgroundImage: `url(${bgImage})` }}
         />
       )}
+      {/* CSS-animated decoration (GPU-composited, no Framer overhead) */}
       <div className={styles.decorationRight}>
-        <motion.div
-          className={styles.blob1}
-          animate={{ y: [0, -40, 0], scale: [1, 1.1, 1] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className={styles.blob2}
-          animate={{ y: [0, 50, 0], x: [0, -30, 0], rotate: [0, 45, 0] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className={styles.blob3}
-          animate={{ x: [0, 40, 0], scale: [0.9, 1.1, 0.9] }}
-          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className={styles.spark1}
-          animate={{ rotate: [0, 360], scale: [0.8, 1.2, 0.8] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className={styles.spark2}
-          animate={{ rotate: [360, 0], scale: [1, 0.5, 1], y: [0, 20, 0] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className={styles.spark3}
-          animate={{ rotate: [0, -360], scale: [0.7, 1.3, 0.7], x: [0, -15, 0] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        />
+        <div className={`${styles.blob1} ${styles.animBlob1}`} />
+        <div className={`${styles.blob2} ${styles.animBlob2}`} />
+        <div className={`${styles.blob3} ${styles.animBlob3}`} />
+        <div className={`${styles.spark1} ${styles.animSpark1}`} />
+        <div className={`${styles.spark2} ${styles.animSpark2}`} />
+        <div className={`${styles.spark3} ${styles.animSpark3}`} />
       </div>
 
       <div className={styles.container}>
@@ -97,3 +74,4 @@ export default function InnerBanner({ eyebrow, title, description, bgImage }: In
     </section>
   );
 }
+

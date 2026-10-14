@@ -96,7 +96,7 @@ export default function WorkSlider() {
 
         <div className="work-slider" ref={sliderRef}>
           <article className="work-slide">
-            <img className="work-slide__bg" src="/assets/images/sellgy_ui.jpg" alt="Own Product: Sellgy" loading="lazy" decoding="async" width={700} height={440} />
+            <img className="work-slide__bg" src="/assets/images/sellgy_ui.webp" alt="Own Product: Sellgy" loading="lazy" decoding="async" width={700} height={440} />
             <div className="work-slide__overlay"></div>
             <div className="work-slide__content">
               <div className="tags"><span>Product</span><span>E-com</span></div>
@@ -108,7 +108,7 @@ export default function WorkSlider() {
           </article>
 
           <article className="work-slide">
-            <img className="work-slide__bg" src="/assets/images/classbell_ui.jpg" alt="Classbell App" loading="lazy" decoding="async" width={700} height={440} />
+            <img className="work-slide__bg" src="/assets/images/classbell_ui.webp" alt="Classbell App" loading="lazy" decoding="async" width={700} height={440} />
             <div className="work-slide__overlay"></div>
             <div className="work-slide__content">
               <div className="tags"><span>Mobile App</span></div>
@@ -120,7 +120,7 @@ export default function WorkSlider() {
           </article>
 
           <article className="work-slide">
-            <img className="work-slide__bg" src="/assets/images/shopify_sync_ui.jpg" alt="Shopify Inventory Sync 4" loading="lazy" decoding="async" width={700} height={440} />
+            <img className="work-slide__bg" src="/assets/images/shopify_sync_ui.webp" alt="Shopify Inventory Sync 4" loading="lazy" decoding="async" width={700} height={440} />
             <div className="work-slide__overlay"></div>
             <div className="work-slide__content">
               <div className="tags"><span>Inventory</span><span>Shopify</span></div>
@@ -132,7 +132,7 @@ export default function WorkSlider() {
           </article>
 
           <article className="work-slide">
-            <img className="work-slide__bg" src="/assets/images/orangebabe_mockup.jpg" alt="Orangebabe kids ecommerce" loading="lazy" decoding="async" width={700} height={440} />
+            <img className="work-slide__bg" src="/assets/images/orangebabe_mockup.webp" alt="Orangebabe kids ecommerce" loading="lazy" decoding="async" width={700} height={440} />
             <div className="work-slide__overlay"></div>
             <div className="work-slide__content">
               <div className="tags"><span>E-com</span><span>Brand</span></div>
@@ -144,7 +144,7 @@ export default function WorkSlider() {
           </article>
 
           <article className="work-slide">
-            <img className="work-slide__bg" src="/assets/images/hero-brand.jpg" alt="Cosuniq Technologies" loading="lazy" decoding="async" width={700} height={440} />
+            <img className="work-slide__bg" src="/assets/images/hero-brand.webp" alt="Cosuniq Technologies" loading="lazy" decoding="async" width={700} height={440} />
             <div className="work-slide__overlay"></div>
             <div className="work-slide__content">
               <div className="tags"><span>Research</span><span>Brand</span></div>

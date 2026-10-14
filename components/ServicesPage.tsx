@@ -276,7 +276,7 @@ function OverviewSection() {
     {
       num: "01", name: "Strategy & Consulting", href: "#strategy",
       desc: "Addressing your core brand strategy to connect directly with people. We dive deep into market research, user personas, and competitive analysis to build a strong foundation for scale.",
-      image: "/assets/images/bento-strategy.jpg",
+      image: "/assets/images/bento-strategy.webp",
       imagePos: "left",
       icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -296,7 +296,7 @@ function OverviewSection() {
     {
       num: "03", name: "UI / UX Design", href: "#design",
       desc: "Designing interfaces that perform, delight users, and drive conversions. Our approach blends aesthetic excellence with cognitive psychology to create seamless user journeys.",
-      image: "/assets/images/bento-ui-ux.jpg",
+      image: "/assets/images/bento-ui-ux.webp",
       icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
@@ -315,7 +315,7 @@ function OverviewSection() {
     {
       num: "05", name: "Mobile App Development", href: "#mobile",
       desc: "Putting your business directly in their hands with engaging experiences. We build high-performance applications for iOS and Android using modern frameworks.",
-      image: "/assets/images/bento-mobile.jpg",
+      image: "/assets/images/bento-mobile.webp",
       imagePos: "right",
       icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -335,7 +335,7 @@ function OverviewSection() {
     {
       num: "07", name: "AI & Custom Software", href: "#software",
       desc: "Driving your brand&apos;s sales directly to the market with built-to-convert solutions. We engineer robust software tailored exactly to your complex operational needs.",
-      image: "/assets/images/bento-ai.jpg",
+      image: "/assets/images/bento-ai.webp",
       imagePos: "left",
       icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -454,7 +454,7 @@ function StrategySection() {
             <Link href="/contact" className={styles.moreDetailsBtn}>Start now <FiArrowRight style={{ marginLeft: '6px' }} /></Link>
           </div>
 
-          <div className={styles.serviceVisual}><img src="/assets/services/strategy_story.png" alt="strategy Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
+          <div className={styles.serviceVisual}><img src="/assets/services/strategy_story.webp" loading="lazy" decoding="async" width="800" height="533" alt="strategy Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
         </div>
       </div>
     </section>
@@ -490,7 +490,7 @@ function BrandSection() {
             <Link href="/contact" className={styles.moreDetailsBtn}>Start now <FiArrowRight style={{ marginLeft: '6px' }} /></Link>
           </div>
 
-          <div className={styles.serviceVisual}><img src="/assets/services/brand_story.png" alt="brand Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
+          <div className={styles.serviceVisual}><img src="/assets/services/brand_story.webp" loading="lazy" decoding="async" width="800" height="533" alt="brand Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
         </div>
       </div>
     </section>
@@ -526,7 +526,7 @@ function WebDevSection() {
             <Link href="/contact" className={styles.moreDetailsBtn}>Start now <FiArrowRight style={{ marginLeft: '6px' }} /></Link>
           </div>
 
-          <div className={styles.serviceVisual}><img src="/assets/services/webdev_story.png" alt="web-dev Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
+          <div className={styles.serviceVisual}><img src="/assets/services/webdev_story.webp" loading="lazy" decoding="async" width="800" height="533" alt="web-dev Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
         </div>
       </div>
     </section>
@@ -562,7 +562,7 @@ function DesignSection() {
             <Link href="/contact" className={styles.moreDetailsBtn}>Start now <FiArrowRight style={{ marginLeft: '6px' }} /></Link>
           </div>
 
-          <div className={styles.serviceVisual}><img src="/assets/services/design_story.jpg" alt="design Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
+          <div className={styles.serviceVisual}><img src="/assets/services/design_story.webp" loading="lazy" decoding="async" width="800" height="533" alt="design Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
         </div>
       </div>
     </section>
@@ -598,7 +598,7 @@ function EcommerceSection() {
             <Link href="/contact" className={styles.moreDetailsBtn}>Start now <FiArrowRight style={{ marginLeft: '6px' }} /></Link>
           </div>
 
-          <div className={styles.serviceVisual}><img src="/assets/services/ecommerce_story.jpg" alt="ecommerce Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
+          <div className={styles.serviceVisual}><img src="/assets/services/ecommerce_story.webp" loading="lazy" decoding="async" width="800" height="533" alt="ecommerce Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
         </div>
       </div>
     </section>
@@ -634,7 +634,7 @@ function SoftwareSection() {
             <Link href="/contact" className={styles.moreDetailsBtn}>Start now <FiArrowRight style={{ marginLeft: '6px' }} /></Link>
           </div>
 
-          <div className={styles.serviceVisual}><img src="/assets/services/software_story.png" alt="software Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
+          <div className={styles.serviceVisual}><img src="/assets/services/software_story.webp" loading="lazy" decoding="async" width="800" height="533" alt="software Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
         </div>
       </div>
     </section>
@@ -670,7 +670,7 @@ function MobileSection() {
             <Link href="/contact" className={styles.moreDetailsBtn}>Start now <FiArrowRight style={{ marginLeft: '6px' }} /></Link>
           </div>
 
-          <div className={styles.serviceVisual}><img src="/assets/services/mobile_story.png" alt="mobile Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
+          <div className={styles.serviceVisual}><img src="/assets/services/mobile_story.webp" loading="lazy" decoding="async" width="800" height="533" alt="mobile Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
         </div>
       </div>
     </section>
@@ -706,7 +706,7 @@ function CloudSection() {
             <Link href="/contact" className={styles.moreDetailsBtn}>Start now <FiArrowRight style={{ marginLeft: '6px' }} /></Link>
           </div>
 
-          <div className={styles.serviceVisual}><img src="/assets/services/cloud_story.png" alt="cloud Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
+          <div className={styles.serviceVisual}><img src="/assets/services/cloud_story.webp" loading="lazy" decoding="async" width="800" height="533" alt="cloud Story" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} /></div>
         </div>
       </div>
     </section>
@@ -941,7 +941,7 @@ export default function ServicesPage() {
       <InnerBanner
         title="We Build. We Design. We Deliver."
         description="Web development, UI/UX design, e-commerce, custom software, mobile apps & cloud — end-to-end digital services for ambitious businesses."
-        bgImage="/assets/images/office.jpg"
+        bgImage="/assets/images/office.webp"
       />
       <OverviewSection />
       <StrategySection />

@@ -60,7 +60,7 @@ export default function AboutContent() {
         eyebrow={<><span className="spark spark--inline" style={{ backgroundColor: '#ffffff' }} />About Us</>}
         title="We. Build. Uniq."
         description="Cosuniq Technologies is a digital solutions company blending software engineering with brand and media — so your product, presence, and story stay aligned."
-        bgImage="/assets/images/team.png"
+        bgImage="/assets/images/team.webp"
       />
 
       {/* 02 — WHO WE ARE */}
@@ -164,7 +164,7 @@ export default function AboutContent() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <Image 
-                src="/assets/images/evolution-new.png" 
+                src="/assets/images/evolution-new.webp" 
                 alt="The Evolution of Cosuniq" 
                 width={1920} 
                 height={1080} 
@@ -277,12 +277,12 @@ export default function AboutContent() {
             viewport={{ once: true, margin: "-100px" }}
           >
             {[
-              { name: "Gowtham", role: "Founder / CEO", img: "/assets/images/person-businessman.jpg" },
-              { name: "Kowsalya", role: "Business Advisor", img: "/assets/images/person-woman-phone.jpg" },
-              { name: "Dinesh babu.", role: "Investor", img: "/assets/images/team.jpg" },
-              { name: "Manikandan", role: "Fullstack Designer and Developer", img: "/assets/images/person-celebrate.jpg" },
-              { name: "Sumathi", role: "Fullstack developer", img: "/assets/images/person-woman-phone.jpg" },
-              { name: "Srilekha", role: "Fullstack developer", img: "/assets/images/person-celebrate.jpg" }
+              { name: "Gowtham", role: "Founder / CEO", img: "/assets/images/person-businessman.webp" },
+              { name: "Kowsalya", role: "Business Advisor", img: "/assets/images/person-woman-phone.webp" },
+              { name: "Dinesh babu.", role: "Investor", img: "/assets/images/team.webp" },
+              { name: "Manikandan", role: "Fullstack Designer and Developer", img: "/assets/images/person-celebrate.webp" },
+              { name: "Sumathi", role: "Fullstack developer", img: "/assets/images/person-woman-phone.webp" },
+              { name: "Srilekha", role: "Fullstack developer", img: "/assets/images/person-celebrate.webp" }
             ].map((member, index) => (
               <motion.div 
                 key={index} 

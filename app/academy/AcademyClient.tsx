@@ -267,7 +267,7 @@ export default function Academy() {
         <div className={`container ${styles.mentorGrid} reveal`}>
           <div className={styles.mentorImageWrapper}>
             <div className={styles.mentorImage}>
-              <img src="/assets/images/tech_mentor_avatar.jpg" alt="Mentor" />
+              <img src="/assets/images/tech_mentor_avatar.webp" alt="Mentor" />
             </div>
             <div className={styles.mentorBadge}>
               <span className={styles.badgeNum}>10+</span>
